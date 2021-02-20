@@ -1,0 +1,68 @@
+\documentclass{amsart}
+\usepackage{amsmath}
+
+% hyperref
+\usepackage[bookmarks=true, linktocpage=true,
+bookmarksnumbered=true, breaklinks=true,
+pdfstartview=FitH, hyperfigures=false,
+plainpages=false, naturalnames=true,
+colorlinks=true, pagebackref=true,
+pdfpagelabels]{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=blue,
+	linkcolor=blue,
+	urlcolor=blue
+}
+
+% layout
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-1.85in}
+\setlength{\textheight}{\paperheight}
+\addtolength{\textheight}{-2in}
+\calclayout
+
+% Updating to MSC2020
+\makeatletter
+\@namedef{subjclassname@2020}{%
+	\textup{2020} Mathematics Subject Classification}
+\makeatother
+
+% Commands
+\newcommand{\Z}{\mathbb Z}
+
+% Theorem environments
+
+% Revision
+\newcommand{\rev}[1]{\textcolor{red}{#1}} % red/black
+
+\begin{document}
+\title{An $E_\infty$-Hopf structure on the cobar construction}
+\author{Anibal M. Medina-Mardones}
+\address{Max Plank Institute for Mathematics, Bonn, Germany}
+\email{ammedmar@mpim-bonn.mpg.de}
+\address{Department of Mathematics, University of Notre Dame, Notre Dame, IN, USA}
+\email{amedinam@nd.edu}
+\author{Your name}
+\address{Your address}
+\email{Your email}
+
+\keywords{.}
+\subjclass[2020]{.}
+
+\begin{abstract}
+	
+\end{abstract} 
+
+\vspace*{-1cm}
+
+\maketitle
+
+\section{Introduction}
+
+
+\bibliographystyle{ieeetr} % ieeetr
+\bibliography{bibliography}
+
+\end{document}
