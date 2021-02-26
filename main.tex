@@ -1,5 +1,6 @@
 \documentclass{amsart}
 \usepackage{amsmath}
+\usepackage{tikz-cd}
 
 % hyperref
 \usepackage[bookmarks=true, linktocpage=true,
@@ -30,9 +31,23 @@ pdfpagelabels]{hyperref}
 \makeatother
 
 % Commands
-\newcommand{\Z}{\mathbb Z}
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\minel}{\hat{0}}
+\newcommand{\maxel}{\hat{1}}
+\newcommand{\Mprop}{\mathcal{M}}
+\newcommand{\M}{\mathsf{M}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ch}{\mathsf{Ch}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\Uleft}{U_{left}}
+\newcommand{\Uright}{U_{right}}
 
 % Theorem environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
 
 % Revision
 \newcommand{\rev}[1]{\textcolor{red}{#1}} % red/black
@@ -62,16 +77,108 @@ pdfpagelabels]{hyperref}
 \section{Introduction}
 The philosophy is to construct an explicit $E_{\infty}$-bialgebra structure on the cobar model for the based loop space of a space such that
 \\
-1) it is given by the action of a ``small" cofibrant model for the $E_{\infty}$-operad, recently introduced by A. Medina
+1) it is given by the action of a ``small" cofibrant model for the $E_{\infty}$-operad, recently introduced by A. Medina-Medina
 \\
 2) the topological applications include general spaces with arbitrary fundamental group and no finite type assumptions using the recent observations of M. Rivera and M. Zeinalian 
 
 \section{Simplices, cubes, and necklaces}
+
 Discuss simplicial sets, cubical sets, and necklical sets. Define their normalized chain complexes and the coassociative coalgebra structures.
 
-\section{A cofibrant model for the $E_{\infty}$-operad}
+\subsection{Linear and power posets}
 
-Recall the definition of the prop $\mathcal{M}$, the operad $U(\mathcal{M})$ and mention relation to the surjection operad. Explain what it means to be cofibrant. Discuss the Hopf operad structure of $U(\mathcal{M})$.  
+Let us consider the posets $\overline{n} = \{1 < \cdots < n\} \subset [n] = \{0 < \cdots < n\}$, and $\P(n) = \left\{U \subset \overline{n}\right\}$ ordered by inclusion. We identify $\P(n-1)$ with the set $\Omega(0, n)$ of ascending chains $(0 < \cdots < n)$ in $[n]$.
+
+Given two elements $x, x^\prime$ in a poset, their interval subposet is defined by
+\begin{equation*}
+[x, x^\prime] = \{x \leq x^{\prime\prime} \leq x^\prime\}.
+\end{equation*}
+
+Any subposet of $[n]$ is canonically isomorphic to $[m]$ for some $m$, and any interval subposet of $\P(n)$ is canonically isomorphic to $\P(m)$ for some $m$.
+
+The coface maps
+
+\begin{equation*}
+\delta_i^\varepsilon \colon \P(n) \to \P(n-1)
+\end{equation*}
+and
+\begin{equation*}
+\delta_i \colon [n] \to [n-1]
+\end{equation*}
+are ...
+
+The simplex and cube categories are ...
+
+\subsection{Splittings}
+Given a poset with a minimal and maximal elements $\minel$ and $\maxel$ we define the splitting of $P$ as the 
+
+\section{Operads and props}
+
+Given our applications, we consider $\Ch$ as the base category, remarking that all definitions in this section apply to general closed symmetric monoidal categories.
+
+\subsection{$\S$-modules}
+Recall that a group $G$ can be thought of as a category with a single object and only invertible morphisms, and that a left $G$-module (resp. right $G$-module and $G$-bimodule) is the same as a functor from $G$ (resp. $G^\op$ and $G \times G^\op$) to $\Ch$.
+
+Let $\S$ be the category whose objects are the natural numbers and whose set of morphisms between $m$ and $n$ is empty if $m \neq n$ and is otherwise the symmetric group $\S_n$.
+A \textit{left $\S$-module} (resp. right $\S$-module and $\S$-bimodule) is a covariant functor from $\S$ (resp. $\S^\op$ and $\S \times \S^\op$) to $\Ch$.
+
+The homomorphisms $\S_n \to \S_n \times \S_1$ and $\S_n^\op \to \S_1 \times \S_n^\op$ induce natural forgetful functors $\Uleft$ and $\Uright$ from the category of $\S$-bimodules to those of left and right $\S$-modules.
+
+Given a chain complex $C$ define
+\begin{align*}
+\End^C(r) &= \Hom(C, C^{\otimes r}), \\
+\End_C(r) &= \Hom(C^{\otimes r}, C), \\
+\End^C_C(r, s) &= \Hom(C^{\otimes r}, C^{\otimes s}),
+\end{align*}
+with their natural structures of left $\S$-module, right $\S$-module, and $\S$-bimodule respectively.
+The natural forgetful functors from $\S$-bimodules to left and right $\S$-modules send $\End^C_C$ to $\End^C$ and $\End_C$ respectively.
+
+\subsection{Composition structures}
+
+Operads an props are respectively $\S$-modules and \mbox{$\S$-bimodules} enriched with further compositional structure. These structures are best understood by abstracting the compositional structure naturally present in the $\S$-module $\End^C$, naturally an operad, and the $\S$-bimodule $\End^C_C$, naturally a prop.
+
+Succinctly, an operad $\mathcal O$ is an $\S$-module together with a collection of $R$-linear maps
+\begin{equation*}
+\mathcal O(r) \otimes \mathcal O(s) \to \mathcal O(r+s-1)
+\end{equation*}
+satisfying suitable associativity, equivariance and unitality conditions.
+A prop $\mathcal P$ is an $\S$-bimodule together with two types of compositions; horizontal
+\begin{equation*}
+\mathcal P(r_1, s_1) \otimes \mathcal P(r_2, s_2) \to \mathcal P(r_1 + r_2, s_1 + s_2)
+\end{equation*}
+and vertical
+\begin{equation*}
+\mathcal P(r,s) \otimes \mathcal P(s, t) \to \mathcal P(r, t)
+\end{equation*}
+satisfying their own versions of associativity, equivariance and unitality.
+For a complete presentation of these concepts we refer to Definition 11 and 54 of \cite{Markl08}.
+
+We remark that the compositional structure of a prop $\mathcal P$ restricts to operad structures on $\Uleft(\mathcal P)$ and $\Uright(\mathcal P)$.
+
+%The type of operads that we are most interested in are $E_\infty$-operads which, as we will discuss in the next section, are used to describe commutativity up to coherent homotopies.
+%
+%\begin{definition} [\cite{may72geometry}, \cite{boardman1973homotopy}]
+%	An operad is said to be $E_\infty$ if its underlying \mbox{$\S$-module} is $E_\infty$, and a prop $\mathcal P$ is said to be $E_\infty$ if either $U_1(\mathcal P)$ or $U(\mathcal P)$ is an \mbox{$E_\infty$-operad}.
+%\end{definition}
+
+\subsection{Algebras, coalgebra and bialgebras}
+
+A morphisms of operads or of props is simply a morphisms of their underlying $\S$-modules or $\S$-bimodules preserving the respective compositional structures.
+
+Given a chain complex $A$, an operad $\mathcal O$ and a prop $\mathcal P$. An $\mathcal O$-\textit{algebra} (resp. $\mathcal O$-\textit{coalgebra}) structure on $A$ is an operad morphism $\mathcal O \to \End_A$ (resp. $\mathcal O \to \End^A$), and a $\mathcal P$-\textit{bialgebra} structure on $A$ is a prop morphism $\mathcal P \to \End_A^A$.
+
+We remark that the linear duality functor naturally transforms an $\mathcal O$-coalgebra structure on a chain complex into an $\mathcal O$-algebra structure on its dual.
+
+%Algebras over $E_\infty$-operads are the central objects of study in this work. To develop intuition for them, let us consider a chain complex $A$ with an algebra structure over $\underline{R}$, thought of as an operad with all compositions corresponding to the identity map $R \to R$. The $\underline{R}$-algebra structure on $A$ is generated by a linear map $\mu \colon A \otimes A \to A$ which is (strictly) commutative and associative, and a linear map $\eta \colon R \to A$ that determines a (two-sided) unit for $\mu$. Since $E_\infty$-operads are resolutions of $\underline{R}$, their algebras can be thought of as usual unital algebras where the commutativity and associativity relations hold up to coherent homotopies. The two main examples to keep in mind are the cochains of spaces and the chains of infinite loops spaces.	
+
+\subsubsection{Free operads and props}
+
+\subsubsection{Linear order on the vertices of a $(m, n)$-graph}
+
+\subsection{A finitely presented Hopf $E_{\infty}$-prop}
+
+\subsection{The prop $\M$}
+Recall the definition of the prop $\mathcal{M}$, the operad $U(\mathcal{M})$ and mention relation to the surjection operad. 
 
 Give examples of the $\mathcal{M}$-bialgebra structures on the normalized chains on a standard simplex, on a standard cube, and on a necklace. Describe the $U(\mathcal{M})$-coalgebra structure on the normalized chains of simplicial, cubical, and necklical sets. 
 
@@ -95,7 +202,7 @@ Construct a functorial $E_{\infty}$-bialgebra structure on the cobar constructio
 
 Applications: if the natural chain map between the normalized chains on a cubical set and its triangulation preserves the $U(M)$-coalgebra structure (check?) we may deduce that our model is equivalent as a $E_{\infty}$-bialgebra to the normalized chains on the classical Kan loop group functor (this would use recent work of Rivera, Zeinalian, and Minichello). 
 
-\bibliographystyle{ieeetr} % ieeetr
-\bibliography{bibliography}
+\bibliographystyle{alpha} % ieeetr
+\bibliography{biblio}
 
 \end{document}
