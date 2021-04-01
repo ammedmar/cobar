@@ -69,7 +69,7 @@ $\Delta \colon \chains(\square^n) \to \chains(\square^n)^{\otimes 2}$
 be the composite
 \begin{equation*}
 \begin{tikzcd}
-\chains(\square)^{\otimes n} \arrow[r, "\Delta^{\otimes n}"] & \left( \chains(\square)^{\otimes 2}  \right)^{\otimes n} \arrow[r, "sh"] & \left( \chains(\square)^{\otimes n} \right)^{\otimes 2},
+\chains(\square^1)^{\otimes n} \arrow[r, "\Delta^{\otimes n}"] & \left( \chains(\square^1)^{\otimes 2} \right)^{\otimes n} \arrow[r, "sh"] & \left( \chains(\square^1)^{\otimes n} \right)^{\otimes 2},
 \end{tikzcd}
 \end{equation*}
 where $sh$ is the shuffle map that reorders tensor factors so that those in odd positions occur first. More explicitly, using Sweedler's notation, we have that if $x_i^{(1)}$ and $x_i^{(2)}$ are defined through the identity
@@ -83,5 +83,12 @@ then,
 \left( x_1^{(2)} \otimes \cdots \otimes x_n^{(2)} \right),
 \end{equation}	
 where the sign is determined by the Koszul convention.
+
+There is an action of $\S_d$ on $\chains(\square^d)$ given by permuting the factors of $\chains(\square^1)^{\otimes d}$.
+We now show that the Serre diagonal is equivariant with respect to this action in the following sense.
+
+\begin{proposition} \label{p:serre diagonal invariant}
+	...
+\end{proposition}
 
 \subsection{Necklaces}
