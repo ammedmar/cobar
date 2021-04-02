@@ -1,7 +1,26 @@
 \section{The cobar construction}
 
-Define the cobar construction of a connected dg coassociative coalgebra. 
+Let $R$ be a commutative ring. Given a graded $R$-module $M$ we denote by $s^{i}M$ the graded $R$-module given by $(s^{i}M)_n= M_{n-i}$.
+Denote by $\textbf{dgAlg}_R$ the category of augmented differential graded associative $R$-algebras (dg algebras, for short) and by $\textbf{dgCoalg}_R$ the category of coaugmented differential graded coassociative $R$-coalgebras (dg coalgebras, for short). We recall the definition of the cobar functor 
+$$\mathbf{\Omega}: \textbf{dgCoalg}_R \to \textbf{dgAlg}_R.$$
 
-Recall the construction of a coassociative associative bialgebra on the cobar construction of an $E_2$-coalgebra following Kadeishvhili/Matthias Franz. In fact, I think we can do this in the context of $U(M)$-coalgebras? Namely, if start with a $U(M)$-coalgebra then we may construct a coassociative coproduct on the cobar construction on the underlying $A_{\infty}$-coalgera by looking at its $E_2$ part.
+For any $(C, \partial, \Delta, \nu)  \in \textbf{dgCoalg}_R$ define
+$$\mathbf{\Omega}(C, \partial, \Delta, \nu) := ( T(s^{-1}  \widetilde{C} ), D, \mu, \eta) \in \textbf{dgAlg}_R$$ where 
+\begin{itemize}
+\item $\widetilde{C}=\text{coker}(\nu: R \to C)$
+\item $T(s^{-1} \widetilde{C})= R \oplus \widetilde{C} \oplus (\widetilde{C}  \otimes \widetilde{C} ) \oplus ( \widetilde{C} \otimes \widetilde{C} \otimes \widetilde{C} ) \oplus\cdots $
+\item $\mu: T(s^{-1}  \widetilde{C} )^{\otimes 2} \to T(s^{-1}  \widetilde{C} ) $ is the free associative product given by concatenation of monomials
+\item $D: T(s^{-1}  \widetilde{C} ) \to T(s^{-1}  \widetilde{C} )$ is the derivation of degree $-1$ determined by the linear map $$- s^{-1} \circ \partial \circ s^{+1} + (s^{-1} \otimes s^{-1}) \circ \Delta \circ s^{+1}: s^{-1}\widetilde{C} \to s^{-1}\widetilde{C} \oplus (s^{-1}\widetilde{C} \otimes s^{-1}\widetilde{C}) \hookrightarrow T(s^{-1}C)$$  by the graded Leibniz rule, and
+\item $\eta: T(s^{-1}C) \to R$ is the augmentation map given by the natural projection map
+\end{itemize}
 
-Discuss the localized version of the cobar construction.
+The coassociativity of $\Delta$, the compatibility of $\partial$ and $\Delta$, and the fact that $\partial^2 =0$ together imply that $D^2=0$. This construction is clearly functorial with respect to maps in $\textbf{dgCoalg}_R$. We will denote $C=(C, \partial, \Delta, \nu)$ and $\mathbf{\Omega} (C, \partial, \Delta, \nu)$ simply by $\mathbf{\Omega}(C)$. 
+
+In this article we will be concerned with \textit{connected} dg coalgebras, namely $(C, \partial, \Delta, \nu) \in \textbf{dgCoalg}_R$ which are non-negatively graded and $\nu: R \to C_0$ defines an isomorphism of coalgebras. We denote the category of connected dg coalgebras by $\textbf{dgCoalg}^0_R$. If $C \in \textbf{dgCoalg}_R^0$ then $\mathbf{\Omega}(C)$ is a dg algebra concentrated on non-negative degrees. 
+
+The cobar construction was originally applied by Adams' to the dg coalgebra of normalized chains on a $1$-reduced simplicial set to obtain a dg algebra model for the chains on the based loop space \cite{Adams}. The cobar construction as a model for the based loop space was furthered studied in \cite{Baues} and more recently, in the non-simply connected setting in \cite{Hess-Tonks}, \cite{Rivera-Zeinalian}.
+
+
+--- Recall the construction of a coassociative associative bialgebra on the cobar construction of an $E_2$-coalgebra following Kadeishvhili/Matthias Franz. In fact, I think we can do this in the context of $U(M)$-coalgebras? Namely, if start with a $U(M)$-coalgebra then we may construct a coassociative coproduct on the cobar construction on the underlying $A_{\infty}$-coalgera by looking at its $E_2$ part.
+
+Discuss the localized version of the cobar construction. ---
