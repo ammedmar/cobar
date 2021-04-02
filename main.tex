@@ -30,32 +30,39 @@ pdfpagelabels]{hyperref}
 	\textup{2020} Mathematics Subject Classification}
 \makeatother
 
-% Commands
-\newcommand{\Z}{\mathbb{Z}}
-\renewcommand{\k}{\Bbbk}
+% elements
 \renewcommand{\P}{\mathcal{P}}
 \renewcommand{\S}{\mathbb{S}}
 \newcommand{\A}{\mathcal{A}}
-\newcommand{\chains}{C_\bullet}
-\newcommand{\minel}{\hat{0}}
-\newcommand{\maxel}{\hat{1}}
-\newcommand{\Mprop}{\mathcal{M}}
 \newcommand{\M}{\mathcal{M}}
+
+% sets
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\id}{\mathrm{id}}
 \newcommand{\End}{\mathrm{End}}
 \newcommand{\Hom}{\mathrm{Hom}}
-\newcommand{\id}{\mathrm{id}}
-\newcommand{\Ch}{\mathsf{Ch}}
-\newcommand{\op}{\mathrm{op}}
+\newcommand{\Bij}{\mathfrak{Bij}}
+\newcommand{\G}{\mathfrak{G}}
+
+% categories
+\newcommand{\Ch}{\mathsf{Mod}}
+\newcommand{\Alg}{\mathsf{Alg}}
+\newcommand{\coAlg}{\mathsf{coAlg}}
+\newcommand{\sSet}{\mathsf{sSet}}
+\newcommand{\cSet}{\mathsf{cSet}}
+\newcommand{\nSet}{\mathsf{nSet}}
+\newcommand{\Mon}{\mathsf{Mon}}
+
+% functors
+\DeclareMathOperator*{\tensor}{\otimes}
+\newcommand{\chains}{N_\bullet}
+\newcommand{\cochains}{N_\bullet}
 \newcommand{\Uleft}{U_{left}}
 \newcommand{\Uright}{U_{right}}
-\newcommand{\Bij}{\mathfrak{Bij}}
+\newcommand{\op}{\mathrm{op}}
 \DeclareMathOperator*{\colim}{colim}
-\newcommand{\cSet}{\mathsf{cSet}}
-\newcommand{\G}{\mathfrak{G}}
-\newcommand{\B}{\mathrm{B}}
-\DeclareMathOperator*{\tensor}{\otimes}
 
-% Theorem environments
+% environments
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
 \theoremstyle{definition}
@@ -64,11 +71,11 @@ pdfpagelabels]{hyperref}
 % Comments
 \newcommand{\anibal}[1]{\textcolor{blue}{#1}}
 
-% Prop drawings
+% drawings
 \include{figures}
 
 \begin{document}
-\title{An $E_\infty$-Hopf structure on the cobar construction}
+\title{The cobar constructions as an $E_\infty$ Hopf algebra}
 \author{Anibal M. Medina-Mardones}
 \address{Max Plank Institute for Mathematics, Bonn, Germany}
 \email{ammedmar@mpim-bonn.mpg.de}
