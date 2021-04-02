@@ -137,6 +137,18 @@
 \newcommand{\leftcounitality}{% <- this 'right of' is inherited; how to avoid?
 	\usebox\preleftcounitality}
 
+\newsavebox\preleftcounitcoproduct
+\begin{lrbox}{\preleftcounitcoproduct}
+	\begin{tikzpicture}[scale=.3]
+	\draw (0,0)--(0,.8);
+	\draw (0,0)--(.5,-.5);
+	\draw (0,0)--(-.5,-.5);
+	\draw [fill] (-.5,-.5) circle [radius=0.1];
+	\end{tikzpicture}
+\end{lrbox}
+\newcommand{\leftcounitcoproduct}{% <- this 'right of' is inherited; how to avoid?
+	\usebox\preleftcounitcoproduct}
+
 \newsavebox\prerightcounitality
 \begin{lrbox}{\prerightcounitality}
 	\begin{tikzpicture}[scale=.3]
@@ -150,6 +162,18 @@
 \end{lrbox}
 \newcommand{\rightcounitality}{% <- this 'right of' is inherited; how to avoid?
 	\usebox\prerightcounitality}
+
+\newsavebox\prerightcounitcoproduct
+\begin{lrbox}{\prerightcounitcoproduct}
+	\begin{tikzpicture}[scale=.3]
+	\draw (0,0)--(0,.8);
+	\draw (0,0)--(.5,-.5);
+	\draw (0,0)--(-.5,-.5);
+	\draw [fill] (.5,-.5) circle [radius=0.1];
+	\end{tikzpicture}
+\end{lrbox}
+\newcommand{\rightcounitcoproduct}{% <- this 'right of' is inherited; how to avoid?
+	\usebox\prerightcounitcoproduct}
 
 \newsavebox\preleftunitality
 \begin{lrbox}{\preleftunitality}

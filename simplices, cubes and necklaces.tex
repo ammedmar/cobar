@@ -88,7 +88,19 @@ There is an action of $\S_d$ on $\chains(\square^d)$ given by permuting the fact
 We now show that the Serre diagonal is equivariant with respect to this action in the following sense.
 
 \begin{proposition} \label{p:serre diagonal invariant}
-	...
+	Let $T$ be the braiding on the symmetric monoidal category $(\Ch, \otimes, \Z)$. The following diagram commutes
+	\begin{equation*}
+	\begin{tikzcd}
+	\chains(\square^1)^{\otimes 2} \arrow[r, "\Delta"] \arrow[d, "T"] &
+	\chains(\square^1)^{\otimes 2} \otimes \chains(\square^1)^{\otimes 2} \arrow[d, "T \otimes T"] \\
+	\chains(\square^1)^{\otimes 2} \arrow[r, "\Delta"] &
+	\chains(\square^1)^{\otimes 2} \otimes \chains(\square^1)^{\otimes 2}.
+	\end{tikzcd}
+	\end{equation*}
 \end{proposition}
+
+\begin{proof}
+	This can be established by a straightforward verification. More conceptually, the reason behind this proposition is that in $\S_4$ one has $(12)(34)(23) = (23)(13)(24)$.
+\end{proof}
 
 \subsection{Necklaces}
