@@ -1,3 +1,4 @@
+
 \section{Main theorem and applications}
 
 Construct a functorial $E_{\infty}$-bialgebra structure on the cobar construction of the normalized chains on a simplicial set. This $E_{\infty}$-bialgebra on the cobar construction satisfies the following Hopf condition: it has an underlying dg associative/coassociative Hopf algebra structure. 
@@ -8,18 +9,29 @@ Applications: if the natural chain map between the normalized chains on a cubica
 Baues lift the cobar algebra over $\Ch$ to one over the category of $P$-coalgebras where $P$ is the Stasheff operad $\mathsf P$. The result is a A-infty coalgebras that happens to be coassociative. Then we came along and lift that algebra over Ch to one over E-infty coalgebras that happens to be coassociative.
 
 
+Adams
+
 \begin{equation*}
 \begin{tikzcd}
-\Mon_{\cSet} \arrow[r, "\chains"] & \Alg_{\coAlg} \\
+& \Mon_{\Ch} \\
+\sSet^0 \arrow[ru] \arrow[r, "\chains"] & \coAlg \arrow[u, "\cobar"]
+\end{tikzcd}
+\end{equation*}
+
+Baues 
+
+\begin{equation*}
+\begin{tikzcd}
+\Mon_{\cSet} \arrow[r, "\chains"] & \Mon_{\coAlg} \\
 \sSet^0 \arrow[r, "\chains"] \arrow[u, "\gcobar"] & \coAlg \arrow[u, "\cobar"]
 \end{tikzcd}
 \end{equation*}
 
-we extend this construction to
+Us
 
 \begin{equation*}
 \begin{tikzcd}
-\Mon_{\cSet} \arrow[r, "\chains"] & \Alg_{\coAlg_{U(\M)}} \\
+\Mon_{\cSet} \arrow[r, "\chains"] & \Mon_{\coAlg_{U(\M)}} \\
 \sSet^0 \arrow[r, "\chains"] \arrow[u, "\gcobar"] & \coAlg_{U(\M)} \arrow[u, "\cobar"]
 \end{tikzcd}
 \end{equation*}
