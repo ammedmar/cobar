@@ -1,2 +1,19 @@
 
-\subsection{Necklaces}
+\subsection{Necklaces} For any ordered sequence of positive integers $(n_1,...n_k)$ we denote by $\Delta^{n_1} \vee...\vee \Delta^{n_k} \in \sSet$ the simplicial set obtained by identifying the last vertex of $\Delta^{n_i}$ with the first vertex of $\Delta^{n_{i+1}}.$ A simplicial set of the form $T=\Delta^{n_1} \vee...\vee \Delta^{n_k}$, for $n_i>0$ if $k>0$ and $n_i \geq 0$ if $k=0$, is called a \textit{necklace}. For any necklace $T= \Delta^{n_1} \vee...\vee \Delta^{n_k}$ we call each $\Delta^{n_i}$ the \textit{$i$-th bead} of $T$. The set $V_T=T_0$ will be called the \textit{vertices} of the necklace $T$. We denote by $J_T$ to be the subset of $V_T$ consisting of those vertices which are the first or final vertex of some bead; the elements of $J_T$ are called \textit{joints}. For any necklace $T$, the ordering of the vertices of each bead together with the ordering of the beads of $T$ induces a total ordering on $T_0.$ We denote the first and last vertices of $T$ by $\alpha_T$ and $\omega_T$, respectively. 
+
+Necklaces form a category $\Nec$ with morphisms being maps of simplicial sets $f: T \to T'$ that preserve the first and last vertices, i.e. satisfying $f(\alpha_T)=\alpha_{T'}$ and $f(\omega_T)=\omega_{T'}.$ A \textit{neckilcal set} is a functor $K: \Nec^{op} \to \Set.$ Necklical sets form a category, denoted by $\nSet$, with morphisms being natural transformations. For any necklace $T \in \Nec$ we denote by $Y(T)\in \nSet$ the necklical set corpresented by $T$, i.e. $Y(T):=\Hom_{\Nec}( \text{ \_ ,} T).$
+
+
+Necklaces have been studied in \cite{Dugger and Spivak}, \cite{Rivera and Zeinalian}, and in a different form in \cite{Baues}. We recall Proposition 3.1 of \cite{Rivera and Zeinalian, cubical rigidification}, which provides a set of generators for the morphisms in $\Nec.$
+
+\begin{proposition} Any non-identity morphism in $\Nec$ is a composition of morphisms of the following type
+\begin{item}
+\item (i)  $f: T \to T'$ is an injective morphism of necklaces and $ |V_{T'}-J_{T'}|-|V_T-J_T| =1$
+\\
+\item (ii) $f: \Delta^{n_1} \vee ... \vee \Delta^{n_k} \to \Delta^{m_1} \vee ... \vee \Delta^{m_k}$ is a morphism of necklaces of the form $f=f_1 \vee ... \vee f_k$ such that for exactly one $p$, $f_p: \Delta^{n_p} \to \Delta^{m_p}$ is a codegeneracy morphism (so $m_p=n_p-1$) and for all $i \neq p$, $f_i: \Delta^{n_i}  \to \Delta^{m_i}$ is the identity map of standard simplices (so $n_i=m_i$ for $i \neq p$)
+\\
+\item (iii) $f: \Delta^{n_1} \vee ...\vee \Delta^{n_{p-1}} \vee \Delta^1 \vee \Delta^{n_{p+1}} \vee... \vee  \Delta^{n_k} \to \Delta^{n_1} \vee ...\vee \Delta^{n_{p-1}} \vee \Delta^{n_{p+1}} \vee... \vee  \Delta^{n_k}$ is a morphism of necklaces such that $f$ collapses the $p$-th bead $\Delta^1$  in the domain to the last vertex of the $(p-1)$-th bead in the target and the restriction of $f$ to all the other beads is injective. 
+\end{item}
+\end{proposition}
+
+
