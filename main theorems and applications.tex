@@ -1,31 +1,34 @@
 
 \section{Main theorem and applications}
 
-Construct a functorial $E_{\infty}$-bialgebra structure on the cobar construction of the normalized chains on a simplicial set. This $E_{\infty}$-bialgebra on the cobar construction satisfies the following Hopf condition: it has an underlying dg associative/coassociative Hopf algebra structure. 
-
-Applications: if the natural chain map between the normalized chains on a cubical set and its triangulation preserves the $U(M)$-coalgebra structure (check?) we may deduce that our model is equivalent as a $E_{\infty}$-bialgebra to the normalized chains on the classical Kan loop group functor (this would use recent work of Rivera, Zeinalian, and Minichello).
-
-
-Baues lift the cobar algebra over $\Ch$ to one over the category of $P$-coalgebras where $P$ is the Stasheff operad $\mathsf P$. The result is a A-infty coalgebras that happens to be coassociative. Then we came along and lift that algebra over Ch to one over E-infty coalgebras that happens to be coassociative.
-
-
-Adams
-
+Adams ...
 \begin{equation*}
 \begin{tikzcd}
 & \Mon_{\Ch} \\
-\sSet^0 \arrow[ru] \arrow[r, "\chains"] & \coAlg \arrow[u, "\cobar"]
+\sSet^1 \arrow[ru] \arrow[r, "\chains"] & \coAlg \arrow[u, "\cobar"]
 \end{tikzcd}
 \end{equation*}
 
-Baues 
+Modeling the loop space. Category of $1$-reduced simplicial sets.
+
+Baues lifted this construction through the forgetful functor $\coAlg \to \Ch$ to the category of coalgebras using a cubical monoid.
 
 \begin{equation*}
 \begin{tikzcd}
-\Mon_{\cSet} \arrow[r, "\chains"] & \Mon_{\coAlg} \\
-\sSet^0 \arrow[r, "\chains"] \arrow[u, "\gcobar"] & \coAlg \arrow[u, "\cobar"]
+\Mon_{\cSet} \arrow[r, "\chains"] & \Mon_{\coAlg_R} \\
+\sSet^0 \arrow[r, "\chains"] \arrow[u, "\gcobar"] & \coAlg_R \arrow[u, "\cobar"]
 \end{tikzcd}
 \end{equation*}
+
+The algebraic structure on the simplicial chains responsible for the Baues diagonal on $\Omega \chains$ is referred to as a homotopy $G$-coalgebra, which corresponds to the $E_2$-structure on simplicial chains, naturally an $E_\infty$-coalgebra.
+Later, Kadeishvili \cite{Kadeishvili03cup-i} extended this construction to produce cup-$i$ coproducts on the cobar construction. 
+The simplicial chains carry the structure of a coalgebra over the surjection operad, and Fresse \cite{Fresse03construction} constructed on the cobar construction of a surjection coalgebra the structure of a Barratt-Eccles coalgebra.
+Our result is most similar to Fresse's.
+As it will become clear, two key differences are that he uses distinct operads for chains and their cobar construction and does not relate his construction to cubical cochains, a hallmark of Baues's insight.
+
+
+%Applications: if the natural chain map between the normalized chains on a cubical set and its triangulation preserves the $U(M)$-coalgebra structure (check?) we may deduce that our model is equivalent as a $E_{\infty}$-bialgebra to the normalized chains on the classical Kan loop group functor (this would use recent work of Rivera, Zeinalian, and Minichello).
+
 
 Us
 

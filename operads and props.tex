@@ -1,32 +1,28 @@
 
 \section{Operads and props} \label{s:operads and props}
 
-We consider the category $\Ch$ of differential graded $R$-modules as our base category, remarking that all definitions in this section apply to general closed symmetric monoidal categories.
+Let $(\C, \otimes, \mathbb{1})$ be either the category $(\Ch, \otimes, R)$ of dg $R$-modules or the category $(\coAlg_R, \otimes, \mathbb{1})$ of coassociative counital dg-coalgebras.
+Both of these categories are closed symmetric monoidal.
+Given objects $C, C^\prime \in \C$ we denote the dg $R$-module of $R$-linear maps between them as $\Hom(C, C^\prime)$. 
 
-\subsection{$\S$-modules and $\S$-bimodules} \label{ss:symmetric (bi)modules}
-
-Recall that a group $G$ can be thought of as a category with a single object and only invertible morphisms. From this viewpoint, a left $G$-module (resp. right $G$-module or $G$-bimodule) is the same as a functor from $G$ (resp. $G^\op$ or $G \times G^\op$) to $\Ch$.
+Recall that a group $G$ can be thought of as a category with a single object and only invertible morphisms. From this viewpoint, a left $G$-module (resp. right $G$-module or $G$-bimodule) is the same as a functor from $G$ (resp. $G^\op$ or $G \times G^\op$) to $\C$.
 
 Let $\S$ be the category whose objects are the natural numbers and whose set of morphisms between $m$ and $n$ is empty if $m \neq n$ and is otherwise the symmetric group $\S_n$.
-A \textit{left $\S$-module} (resp. right $\S$-module or $\S$-bimodule) is a covariant functor from $\S$ (resp. $\S^\op$ or $\S \times \S^\op$) to $\Ch$.
+A \textit{left $\S$-module} (resp. right $\S$-module or $\S$-bimodule) is a covariant functor from $\S$ (resp. $\S^\op$ or $\S \times \S^\op$) to $\C$.
 In this paper we prioritize left module structures over their right counterparts. As usual, taking inverses makes both perspectives equivalent.
 
-The homomorphisms $\S_n \to \S_n \times \S_1$ and $\S_n^\op \to \S_1 \times \S_n^\op$ induce natural forgetful functors $\Uleft$ and $\Uright$ from the category of $\S$-bimodules to those of left and right $\S$-modules.
+The homomorphism $\S_n \to \S_n \times \S_1$ induces a forgetful functor $U$ from the category of $\S$-bimodules to that of $\S$-modules.
 
-Given a chain complex $C$ define:
+Given an object $C$ in $\C$ define:
 \begin{align*}
-\End^C(r) &= \Hom(C, C^{\otimes r})
-& \End_C(r) &= \Hom(C^{\otimes r}, C)
-&\End^C_C(r, s) &= \Hom(C^{\otimes r}, C^{\otimes s})
+\End^C(r) &= \Hom(C, C^{\otimes r}),
+&\End^C_C(r, s) &= \Hom(C^{\otimes r}, C^{\otimes s}),
 \end{align*}
-with their natural structures of left $\S$-module, right $\S$-module, and $\S$-bimodule respectively.
-The natural forgetful functors from $\S$-bimodules to left and right $\S$-modules send $\End^C_C$ to $\End^C$ and $\End_C$ respectively.
+with their natural structures of $\S$-module and $\S$-bimodule respectively.
+The forgetful functor $U$ sends $\End^C_C$ to $\End^C$.
 
-An $\S$-module $M$ for which $M(r)$ is free as a $\Z[\S_r]$-module and whose homology is that of a point is said to be $E_\infty$.
-
-\subsection{Composition structures} \label{ss:composition structure}
-
-Operads an props are $\S$-modules and \mbox{$\S$-bimodules} respectively enriched with certain composition structures. These are best understood by abstracting the composition structure naturally present in the $\S$-module $\End^C$, naturally an operad, and the $\S$-bimodule $\End^C_C$, naturally a prop.
+\textit{Operads} and \textit{props} are respectively $\S$-modules and \mbox{$\S$-bimodules} enriched with certain composition structures.
+These are best understood by abstracting the composition structure naturally present in the $\S$-module $\End^C$, naturally an operad, and the $\S$-bimodule $\End^C_C$, naturally a prop.
 
 Succinctly, an operad $\mathcal O$ is an $\S$-module together with a collection of $R$-linear maps
 \begin{equation*}
@@ -44,21 +40,20 @@ and vertical
 satisfying their own versions of associativity, equivariance and unitality.
 For a complete presentation of these concepts we refer to Definition 11 and 54 of \cite{Markl08}.
 
-The compositional structure of a prop $\mathcal P$ restricts to operad structures on $\Uleft(\mathcal P)$ and $\Uright(\mathcal P)$.
+We remark that the compositional structure of a prop $\mathcal P$ restricts to operad structures on $U(\mathcal P)$.
 
-An $E_\infty$-operad is an operad whose underlying $\S$-modules is $E_\infty$.
+An $E_\infty$-\textit{operad} is an operad whose underlying $\S$-module $M$ is such that $M(r)$ is free as a $\Z[\S_r]$-module and its homology is that of a point for every $r \geq 0$.
 
-\subsection{Representations} \label{ss:representations}
+Following \cite{Getzler1994operads, Moerdijk1999monads} we refer to operads and props over the category $\coAlg$ as \textit{Hopf} operads and props.
 
-A morphisms of operads or of props is simply a morphisms of their underlying $\S$-modules or $\S$-bimodules preserving the respective compositional structures.
+A \textit{morphisms} of operads or props is a morphism of its underlying $\S$-modules or $\S$-bimodules preserving the appropriate composition structures.
 
-Consider a chain complex $C$, an operad $\mathcal O$ and a prop $\mathcal P$. An $\mathcal O$-\textit{coalgebra} (resp. $\mathcal O$-\textit{algebra}) structure on $C$ is an operad morphism $\mathcal O \to \End^C$ (resp. $\mathcal O \to \End_C$), and a $\mathcal P$-\textit{bialgebra} structure on $C$ is a prop morphism $\mathcal P \to \End_C^C$.
+Consider an object $C$ of $\C$, an operad $\mathcal O$ and a prop $\mathcal P$.
+An $\mathcal O$-\textit{coalgebra} structure on $C$ is an operad morphism $\mathcal O \to \End^C$, and a $\mathcal P$-\textit{bialgebra} structure on $C$ is a prop morphism $\mathcal P \to \End_C^C$.
 
-We remark that the linear duality functor naturally transforms an $\mathcal O$-coalgebra structure on a chain complex into an $\mathcal O$-algebra structure on its dual.
+\section{The Hopf prop $\M$}
 
-\subsection{Free operads and props} \label{ss:free props}
-
-As described for example in \cite{Markl08}, the \textbf{free prop} $F(M)$ generated by a \mbox{$\S$-bimodule} $M$ is constructed using open directed graphs with no directed loops that are enriched with a labeling described next. We think of each directed edge as built from two compatibly directed half-edges. For each vertex $v$ of a directed graph $G$, we have the sets $in(v)$ and $out(v)$ of half-edges that are respectively incoming to and outgoing from $v$. Half-edges that do not belong to $in(v)$ or $out(v)$ for any $v$ are divided into the disjoint sets $in(G)$ and $out(G)$ of incoming and outgoing external half-edges. For any positive integer $n$, let $\overline{n} = \{1,\dots,n\}$ and $\overline{0} = \emptyset$. For any finite set $S$, denote the cardinality of $S$ by $|S|$. The labeling is given by bijections  
+As described for example in \cite{Markl08, Fresse2010props}, the \textbf{free prop} $F(M)$ generated by a \mbox{$\S$-bimodule} $M$ is constructed using open directed graphs with no directed loops that are enriched with a labeling described next. We think of each directed edge as built from two compatibly directed half-edges. For each vertex $v$ of a directed graph $G$, we have the sets $in(v)$ and $out(v)$ of half-edges that are respectively incoming to and outgoing from $v$. Half-edges that do not belong to $in(v)$ or $out(v)$ for any $v$ are divided into the disjoint sets $in(G)$ and $out(G)$ of incoming and outgoing external half-edges. For any positive integer $n$, let $\overline{n} = \{1,\dots,n\}$ and $\overline{0} = \emptyset$. For any finite set $S$, denote the cardinality of $S$ by $|S|$. The labeling is given by bijections  
 \begin{equation*}
 \overline{|in(G)|}\to in(G), \qquad
 \overline{|out(G)|}\to out(G),
@@ -78,10 +73,6 @@ F(M)(m,n) \ = \bigoplus_{\Gamma \in \G(m,n)} \bigotimes_{v \in Vert(\Gamma)} out
 where we simplified the notation writing $p$ and $q$ for $\overline{|in(v)|}$ and $\overline{|out(v)|}$ respectively. The composition structure is defined by (relabeled) grafting and union.
 
 \input{immersion}
-
-We remark that the free operad construction is described analogously using either graphs with a single input or output and only grafting.
-
-\subsection{The prop $\M$} \label{ss:the prop M}
 
 Let us consider the free prop $F(N)$ generated by the $\S$-bimodule $N$ whose only non-zero chain complexes are concentrated in degree $0$ and are give by
 \begin{equation*}
@@ -125,7 +116,7 @@ Define $\A$ as the quotient of $F(N)$ by the prop ideal generated by the relatio
 \node [scale=.8] at (-2.2,1.2) {$\Delta$};
 \end{tikzpicture}
 \end{equation*}
-We remark that representations of the prop $\A$ correspond to coassociative counital coalgebra.
+We remark that $U(\A)$-coalgebras in $\Ch$ are precisely coassociative counital coalgebra.
 
 Let $W^{(1)}$ be the chain complex of free $\Z[\S_2]$-modules
 \begin{equation*}
@@ -167,12 +158,12 @@ Consider the push-out
 \begin{equation*}
 \begin{tikzcd}
 F(W^{(0)}) \arrow[r, "F(\varphi)"] \arrow[d] & \A \arrow[d, dashed] \\
-F(W^{(1)}) \arrow[r, dashed] & \mu \vee \A
+F(W^{(1)}) \arrow[r, dashed] & \mu \vee_\varphi \A
 \end{tikzcd}
 \end{equation*}
-in the category of props. We think of $\mathcal A \vee_\varphi \mu$ as the prop obtained by attaching a $1$-cell in biarity $(2,1)$ to $\A$.
+in the category of props. We think of $\mu \vee_\varphi \A$ as the prop obtained by attaching a $1$-cell in biarity $(2,1)$ to $\A$.
 
-Define $\M$ as the quotient of $\mu \vee \A$ by the ideal generated by
+Define $\M$ as the quotient of $\mu \vee_\varphi \A$ by the ideal generated by
 \begin{equation*}
 \begin{tikzpicture}[scale=.2]
 \draw (5,4)--(5,3)--(6,2)--(6,0);
@@ -185,31 +176,29 @@ Define $\M$ as the quotient of $\mu \vee \A$ by the ideal generated by
 \end{tikzpicture}
 \end{equation*}
 
-We can give a more explicit description of $\M$ using the constructions of Subsection~\ref{ss:free props}.
-Consider the $(m,n)$-graphs which we identify with $\varepsilon$, $\Delta$, and $\mu$:
+We can give a more explicit description of $\M$ using the description of the free prop in terms of $(m,n)$-graphs.
+Consider the following elements in $\M$
 \begin{equation*}
-\counit \in \mathcal M(1,0)_0, \hspace*{.6cm} \coproduct \in \mathcal M(1,2)_0, \hspace*{.6cm} \product \in \mathcal M(2,1)_1.
+\counit \in \mathcal M(1,0)_0, \hspace*{.6cm} \coproduct \in \mathcal M(1,2)_0, \hspace*{.6cm} \product \in \mathcal M(2,1)_1,
 \end{equation*}
+where the decorations by $\varepsilon$, $\Delta$, and $\mu$ are omitted.
 Any element in $\M(m,n)$ can be written as a linear combination of the $(m,n)$-graphs generated by these three by grafting, disjoint union and relabeling, modulo the ideals generated by the relations
 \begin{equation*}
 \qquad \leftcounitality \, , \qquad \rightcounitality \, , \qquad \coassociativity \, , \qquad \productcounit \, .
 \end{equation*}
 Its chain complex structure is determined using \eqref{e:free prop} by 
 \begin{equation*}
-\partial\ \counit = 0, \hspace*{.6cm} \partial \ \coproduct = 0, \hspace*{.6cm} \partial \ \product = \ \boundary \, .
+\partial\ \counit = 0, \hspace*{.6cm} \partial \ \coproduct = 0, \hspace*{.6cm} \partial \ \product = \ \boundary \, ,
 \end{equation*}
+and its quasi-isomorphism type is determine by the following result.
 
 \begin{proposition}[\cite{Medina20prop1}]
-	The operad $\Uleft(\M)$ is an $E_\infty$-operad.
+	The operad $U(\M)$ is an $E_\infty$-operad.
 \end{proposition}
 
-We remark that the coassociativity relation is not needed for this result to hold.
-We have added it since the counital coalgebras we consider in this work, the Alexander-Whitney coalgebra and the Serre coalgebra are coassociative.
-In future work, the double loop space we will modeled using the Saneblize-Umble coalgebra which is not coassociative.
+We remark that the coassociativity relation is not needed for this result to hold, and that in other contexts it is preferable not to use it since then the associated reduced operad is cofibrant.
 
-\subsection{The Hopf prop structure} \label{ss:hopf prop structure}
-
-We now describe a diagonal map on $\M$, i.e., a chain map $\M(m,n) \to \M(m,n) \otimes \M(m,n)$ for every biarity $(m,n)$ compatible with the prop structure of $\M$.
+We now make $\M$ into a Hopf prop, i.e., we construct a chain map $\M(m,n) \to \M(m,n) \otimes \M(m,n)$ for every biarity $(m,n)$ compatible with the prop structure of $\M$.
 
 As can be seen from \eqref{e:free prop}, the $(m,n)$-part of the free prop is defined only up to a choice of total order on the set of vertices of the $(m,n)$-graph involved.
 Let $\Gamma \in \G(m,n)$ be a representative of an element in $\M(m,n)$ of degree $d$ and let us choose an order of its vertices.
@@ -224,21 +213,21 @@ and we define the value of diagonal of $\M$ on $\Gamma$ using the Serre diagonal
 \begin{equation} \label{e:diagonal of M}
 \Delta(\Gamma) = \iota_\Gamma^{\otimes 2} \circ \Delta \left([0,1]^{\otimes d}\right).
 \end{equation}
-This definition is independent of the choice of total order on $Vert(\Gamma)$ by Proposition~\ref{p:serre diagonal invariant}, and it is compatible with the relations since
-
+This definition is independent of the choice of total order on $Vert(\Gamma)$ by Proposition~\ref{p:serre diagonal invariant}, and it is compatible with the relations, for example
 \begin{center}
-	\begin{tikzcd}
-	\leftcounitcoproduct \arrow[r, "\Delta"] \arrow[d, <->] &[-5pt] \leftcounitcoproduct \otimes \leftcounitcoproduct \arrow[d, <->] \\
-	\identity \arrow[r, "\Delta"] & \identity \otimes \identity \, ,
-	\end{tikzcd}
-	\qquad
-	\begin{tikzcd}
-	\rightcounitcoproduct \arrow[r, "\Delta"] \arrow[d, <->] &[-5pt] \rightcounitcoproduct \otimes \rightcounitcoproduct \arrow[d, <->] \\
-	\identity \arrow[r, "\Delta"] & \identity \otimes \identity \, ,
-	\end{tikzcd}
-	\qquad
+%	\begin{tikzcd}
+%	\leftcounitcoproduct \arrow[r, "\Delta"] \arrow[d, <->] &[-5pt] \leftcounitcoproduct \otimes \leftcounitcoproduct \arrow[d, <->] \\
+%	\identity \arrow[r, "\Delta"] & \identity \otimes \identity \, ,
+%	\end{tikzcd}
+%	\qquad
+%	\begin{tikzcd}
+%	\rightcounitcoproduct \arrow[r, "\Delta"] \arrow[d, <->] &[-5pt] \rightcounitcoproduct \otimes \rightcounitcoproduct \arrow[d, <->] \\
+%	\identity \arrow[r, "\Delta"] & \identity \otimes \identity \, ,
+%	\end{tikzcd}
+%	\qquad
 	\begin{tikzcd}
 	\productcounit \arrow[r, "\Delta"] \arrow[d, <->] &[-5pt] \counit \, \otimes \productcounit + \productcounit \otimes \, \counit \arrow[d, <->] \\
-	0 \arrow[r, "\Delta"] & \, 0.
+	0 \arrow[r, "\Delta"] & \, 0,
 	\end{tikzcd}
 \end{center}
+with the others verified similarly.
