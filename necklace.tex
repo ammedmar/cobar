@@ -1,19 +1,42 @@
 
-\subsection{Necklaces} For any ordered sequence of positive integers $(n_1,...n_k)$ we denote by $\Delta^{n_1} \vee...\vee \Delta^{n_k} \in \sSet$ the simplicial set obtained by identifying the last vertex of $\Delta^{n_i}$ with the first vertex of $\Delta^{n_{i+1}}.$ A simplicial set of the form $T=\Delta^{n_1} \vee...\vee \Delta^{n_k}$, for $n_i>0$ if $k>0$ and $n_i \geq 0$ if $k=0$, is called a \textit{necklace}. For any necklace $T= \Delta^{n_1} \vee...\vee \Delta^{n_k}$ we call each $\Delta^{n_i}$ the \textit{$i$-th bead} of $T$. The set $V_T=T_0$ will be called the \textit{vertices} of the necklace $T$. We denote by $J_T$ to be the subset of $V_T$ consisting of those vertices which are the first or final vertex of some bead; the elements of $J_T$ are called \textit{joints}. For any necklace $T$, the ordering of the vertices of each bead together with the ordering of the beads of $T$ induces a total ordering on $T_0.$ We denote the first and last vertices of $T$ by $\alpha_T$ and $\omega_T$, respectively. 
+\subsection{Necklaces} For any ordered sequence of positive integers $(n_1,...,n_k)$ we denote by $\Delta^{n_1} \vee...\vee \Delta^{n_k} \in \sSet$ the simplicial set obtained by identifying the last vertex of $\Delta^{n_i}$ with the first vertex of $\Delta^{n_{i+1}}.$ A simplicial set of the form $T=\Delta^{n_1} \vee...\vee \Delta^{n_k}$, for $n_i>0$ if $k>0$ and $n_i \geq 0$ if $k=0$, is called a \textit{necklace}. For any necklace $T= \Delta^{n_1} \vee...\vee \Delta^{n_k}$ we call each $\Delta^{n_i}$ the \textit{$i$-th bead} of $T$. The set $V_T=T_0$ will be called the \textit{vertices} of the necklace $T$. We denote by $J_T$ to be the subset of $V_T$ consisting of those vertices which are the first or final vertex of some bead; the elements of $J_T$ are called \textit{joints}. For any necklace $T$, the ordering of the vertices of each bead together with the ordering of the beads of $T$ induces a total ordering on $T_0.$ We denote the first and last vertices of $T$ by $\alpha_T$ and $\omega_T$, respectively. The dimension of a necklace $T=\Delta^{n_1} \vee...\vee \Delta^{n_k}$ is defined to be $\text{dim}(T)=n_1 + ... +n_k-k.$
 
 Necklaces form a category $\Nec$ with morphisms being maps of simplicial sets $f: T \to T'$ that preserve the first and last vertices, i.e. satisfying $f(\alpha_T)=\alpha_{T'}$ and $f(\omega_T)=\omega_{T'}.$ A \textit{neckilcal set} is a functor $K: \Nec^{op} \to \Set.$ Necklical sets form a category, denoted by $\nSet$, with morphisms being natural transformations. For any necklace $T \in \Nec$ we denote by $Y(T)\in \nSet$ the necklical set corpresented by $T$, i.e. $Y(T):=\Hom_{\Nec}( \text{ \_ ,} T).$
 
 
-Necklaces have been studied in \cite{Dugger and Spivak}, \cite{Rivera and Zeinalian}, and in a different form in \cite{Baues}. We recall Proposition 3.1 of \cite{Rivera and Zeinalian, cubical rigidification}, which provides a set of generators for the morphisms in $\Nec.$
+Necklaces have been studied in Baues, Dugger and Spivak, Rivera and Zeinalian,  among others. We recall Proposition 3.1 of \cite{Rivera and Zeinalian, cubical rigidification}, which describes a set of generators for the morphisms in $\Nec.$
 
-\begin{proposition} Any non-identity morphism in $\Nec$ is a composition of morphisms of the following type
+\begin{proposition}\label{Necmorphs} Any non-identity morphism in $\Nec$ is a composition of morphisms of the following type
 \begin{item}
-\item (i)  $f: T \to T'$ is an injective morphism of necklaces and $ |V_{T'}-J_{T'}|-|V_T-J_T| =1$
+\item (i)  $f: T \to T'$ is an injective morphism of necklaces and $ \text{dim}(T')- \text{dim}(T)=1$
 \\
-\item (ii) $f: \Delta^{n_1} \vee ... \vee \Delta^{n_k} \to \Delta^{m_1} \vee ... \vee \Delta^{m_k}$ is a morphism of necklaces of the form $f=f_1 \vee ... \vee f_k$ such that for exactly one $p$, $f_p: \Delta^{n_p} \to \Delta^{m_p}$ is a codegeneracy morphism (so $m_p=n_p-1$) and for all $i \neq p$, $f_i: \Delta^{n_i}  \to \Delta^{m_i}$ is the identity map of standard simplices (so $n_i=m_i$ for $i \neq p$)
+\item (ii) $f: \Delta^{n_1} \vee ... \vee \Delta^{n_k} \to \Delta^{m_1} \vee ... \vee \Delta^{m_k}$ is a morphism of necklaces of the form $f=f_1 \vee ... \vee f_k$ such that for exactly one $p \in \{1,...,k\}$, $m_p=n_p-1$ and $f_p= s^j: \Delta^{n_p} \to \Delta^{m_p}= \Delta^{n_p-1}$ is a codegeneracy morphism for some $j \in \{0,...,n_p-1\}$, and for all $i \neq p$, $n_i=m_i$ and $f_i=id_{\Delta^{n_i}}$. 
 \\
 \item (iii) $f: \Delta^{n_1} \vee ...\vee \Delta^{n_{p-1}} \vee \Delta^1 \vee \Delta^{n_{p+1}} \vee... \vee  \Delta^{n_k} \to \Delta^{n_1} \vee ...\vee \Delta^{n_{p-1}} \vee \Delta^{n_{p+1}} \vee... \vee  \Delta^{n_k}$ is a morphism of necklaces such that $f$ collapses the $p$-th bead $\Delta^1$  in the domain to the last vertex of the $(p-1)$-th bead in the target and the restriction of $f$ to all the other beads is injective. 
 \end{item}
 \end{proposition}
 
+\begin{remark}\label{cofaces} Let $T= \Delta^{n_1} \vee ... \vee \Delta^{n_k}$ and $T'= \Delta^{m_1}\vee ... \vee \Delta^{m_l}$ be two necklaces such that $\text{dim}(T')-\text{dim}(T)=1$. Morphisms $f: T \to T'$ of type $(i)$ as in the above proposition can be of one of the following forms:
+\begin{item}
+\item $(ia)$ We have $k=l$ and there exists $p \in \{1,...,k\}$ such that $n_p= m_p - 1$ and $n_i = m_i$ for all $i \neq p$. The morphism $f: T\to T'$ is of the form $$f=id_{\Delta^{n_1}} \vee ... \vee id_{\Delta^{n_{p-1}}} \vee \partial^j \vee id_{\Delta^{n_{p+1}}} \vee id_{\Delta^{n_k}},$$ where $\partial^j: \Delta^{m_p-1} \to \Delta^{m_p}$ is the $j$-th coface map for some $j \in \{1,...,m_p-1\}.$ 
 
+\item $(ib)$ We have $k=l+1$ and there exists $p \in \{1,,...,k\}$ such that $n_p + n_{p+1} = m_p$ and $n_i=m_i$ for all $i \neq p, p+1$. The morphism $f: T \to T'$ is of the form
+$$f=id_{\Delta^{n_1}} \vee ... \vee id_{\Delta^{n_{p-1}}} \vee f_p \vee id_{\Delta^{n_{p+2}}} \vee id_{\Delta^{n_k}},$$
+where $f_p: \Delta^{n_p} \vee \Delta^{n_{p+1}} \to \Delta^{n_p + n_{p+1}}=\Delta^{m_p}$ is an injective map of necklaces. 
+\end{item}
+\end{remark} 
+Using Proposition \ref{Necmorphs} and Remark \ref{cofaces} we may construct a functor
+$$\mathcal{P}: \Nec \to \square_c$$
+defined on objects by $\mathcal{P}( T )= [1]^{\text{dim}(T)}$ and on morphisms as follows. Let $f: T\to T'$ be a morphism in $\Nec$ with $\text{dim}(T)=N$. 
+\begin{itemize}
+\item If $f$ is of type $(ia)$ as described in Remark \ref{cofaces}, then $\mathcal{P}(f): [1]^{N}\to [1]^{N+1}$ is the cubical coface functor $\mathcal{P}(f)= \delta_0^{n_1+...+n_{p-1}- (p-1) +j}.$ 
+
+\item If $f$ is of type $(ib)$ as described in Remark \ref{cofaces}, then $\mathcal{P}(f): [1]^{N}\to [1]^{N+1}$ is the cubical coface functor $\mathcal{P}(f)=\delta_1^{n_1+...+n_{p-1}- (p-1) +n_p$.
+
+\item Let $f$ be of type $(ii)$ as described in Proposition \ref{Necmorphs}. If $j=0$ or $j=n_p-1$, then $\mathcal{P}(f): [1]^N \to [1]^{N-1}$ is the cubical codegeneracy functor $\mathcal{P}(f)= \varepsilon^{n_1+...+n_{p-1} - (p-1) +j}.$ If $0<j<n_p-1$, then $\mathcal{P}(f): [1]^N \to [1]^{N-1}$ is the cubical coconnection functor $\gamma^{n_1 + ...+n_{p-1} - (p-1) +j.$
+
+\item If $f$ is of type $(iii)$ as described in Proposition \ref{Necmorphs}, then $\mathcal{P}(f): [1]^N \to [1]^N$ is the identity map.
+\end{itemize}
+\begin{remark}
+The functor $\mathcal{P}$ is neither faithful or full. However, for any necklace $T' \in \Nec$ with $\text{dim}(T')=N+1$ and any cubical coface functor $\delta_{\epsilon}^j: [1]^N \to [1]^{N+1}$ for $0 \leq j \leq N+1$, there exists a unique pair $(T, f: T \hookrightarrow T')$, where $T \in \Nec$ with $\text{dim}(T)=N$ and $f: T \hookrightarrow T'$ is an injective morphism in $\Nec$, such that $\mathcal{P}(f)=\delta_{\epsilon}^j $.
+\end{remark}
