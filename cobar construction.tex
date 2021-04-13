@@ -1,11 +1,11 @@
 \section{The cobar construction}
 
 Let $R$ be a commutative ring. Given a graded $R$-module $M$ we denote by $s^{i}M$ the graded $R$-module given by $(s^{i}M)_n= M_{n-i}$.
-Denote by $\textbf{dgAlg}_R$ the category of augmented differential graded associative $R$-algebras (dg algebras, for short) and by $\textbf{dgCoalg}_R$ the category of coaugmented differential graded coassociative $R$-coalgebras (dg coalgebras, for short). We recall the definition of the cobar functor 
-$$\mathbf{\Omega}: \textbf{dgCoalg}_R \to \textbf{dgAlg}_R.$$
+Denote by $\mathsf{dgAlg}^{\text{aug}}_R$ the category of augmented differential graded associative $R$-algebras (dg algebras, for short) and by $\mathsf{dgCoalg}^{\text{coaug}}_R$ the category of coaugmented differential graded coassociative $R$-coalgebras (dg coalgebras, for short). We recall the definition of the cobar functor 
+$$\mathbf{\Omega}: \mathsf{dgCoalg}^{\text{coaug}}_R \to \mathsf{dgAlg}^{\text{aug}}_R.$$
 
-For any $(C, \partial, \Delta, \nu)  \in \textbf{dgCoalg}_R$ define
-$$\mathbf{\Omega}(C, \partial, \Delta, \nu) := ( T(s^{-1}  \widetilde{C} ), D, \mu, \eta) \in \textbf{dgAlg}_R$$ where 
+For any $(C, \partial, \Delta, \nu)  \in \mathsf{dgCoalg}^{\text{coaug}}_R$ define
+$$\mathbf{\Omega}(C, \partial, \Delta, \nu) := ( T(s^{-1}  \widetilde{C} ), D, \mu, \eta) \in \mathsf{dgAlg}^{\text{aug}}_R$$ where 
 \begin{itemize}
 \item $\widetilde{C}=\text{coker}(\nu: R \to C)$
 \item $T(s^{-1} \widetilde{C})= R \oplus \widetilde{C} \oplus (\widetilde{C}  \otimes \widetilde{C} ) \oplus ( \widetilde{C} \otimes \widetilde{C} \otimes \widetilde{C} ) \oplus\cdots $
@@ -14,9 +14,9 @@ $$\mathbf{\Omega}(C, \partial, \Delta, \nu) := ( T(s^{-1}  \widetilde{C} ), D, \
 \item $\eta: T(s^{-1}C) \to R$ is the augmentation map given by the natural projection
 \end{itemize}
 
-The coassociativity of $\Delta$, the compatibility of $\partial$ and $\Delta$, and the fact that $\partial^2 =0$ together imply that $D^2=0$. This construction is clearly functorial with respect to maps in $\textbf{dgCoalg}_R$. We will denote $C=(C, \partial, \Delta, \nu)$ and $\mathbf{\Omega} (C, \partial, \Delta, \nu)$ simply by $\mathbf{\Omega}(C)$. 
+The coassociativity of $\Delta$, the compatibility of $\partial$ and $\Delta$, and the fact that $\partial^2 =0$ together imply that $D^2=0$. This construction is clearly functorial with respect to maps in $\mathsf{dgCoalg}^{\text{coaug}}_R$. We will denote $C=(C, \partial, \Delta, \nu)$ and $\mathbf{\Omega} (C, \partial, \Delta, \nu)$ simply by $\mathbf{\Omega}(C)$. 
 
-In this article we will be concerned with \textit{connected} dg coalgebras, namely $(C, \partial, \Delta, \nu) \in \textbf{dgCoalg}_R$ which are non-negatively graded and $\nu: R \to C_0$ defines an isomorphism of coalgebras. We denote the category of connected dg coalgebras by $\textbf{dgCoalg}^0_R$. If $C \in \textbf{dgCoalg}_R^0$ then $\mathbf{\Omega}(C)$ is a dg algebra concentrated on non-negative degrees. 
+In this article we are mostly concerned with \textit{connected} dg coalgebras, namely $(C, \partial, \Delta, \nu) \in \mathsf{dgCoalg}^{\text{coaug}}_R$ which are non-negatively graded and $\nu: R \to C_0$ defines an isomorphism of coalgebras. We denote the category of connected dg coalgebras by $\mathsf{dgCoalg}^0_R$. If $C \in \mathsf{dgCoalg}_R^0$ then $\mathbf{\Omega}(C)$ is a dg algebra concentrated on non-negative degrees. 
 
 The cobar construction was originally applied by Adams' to the dg coalgebra of normalized chains on a $1$-reduced simplicial set to obtain a dg algebra model for the chains on the based loop space \cite{Adams}. The cobar construction as a model for the based loop space was furthered studied in \cite{Baues} and more recently, in the non-simply connected setting in \cite{Hess-Tonks}, \cite{Rivera-Zeinalian}.
 
