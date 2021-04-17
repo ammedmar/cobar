@@ -33,6 +33,7 @@ pdfpagelabels]{hyperref}
 
 % elements
 \renewcommand{\P}{\mathcal{P}}
+\renewcommand{\O}{\mathcal{O}}
 \renewcommand{\S}{\mathbb{S}}
 \newcommand{\A}{\mathcal{A}s}
 \newcommand{\M}{\mathcal{M}}
@@ -47,20 +48,25 @@ pdfpagelabels]{hyperref}
 
 % categories
 \newcommand{\C}{\mathsf{C}}
-\newcommand{\Ch}{\mathsf{Mod}_R}
+\newcommand{\Ch}{\mathsf{Mod}}
 \newcommand{\Alg}{\mathsf{Alg}}
 \newcommand{\coAlg}{\mathsf{coAlg}}
+\newcommand{\simplex}{\mathbf{\Delta}}
 \newcommand{\sSet}{\mathsf{sSet}}
 \newcommand{\cSet}{\mathsf{cSet}}
 \newcommand{\Set}{\mathsf{Set}}
 \newcommand{\Nec}{\mathsf{Nec}}
 \newcommand{\nSet}{\mathsf{nSet}}
 \newcommand{\Mon}{\mathsf{Mon}}
+\newcommand{\smod}{\mathsf{Mod}_{\S}}
+\newcommand{\sbimod}{\mathsf{biMod}_{\S}}
+\newcommand{\operads}{\mathsf{Oper}}
+\newcommand{\props}{\mathsf{Prop}}
 
 % functors
 \DeclareMathOperator*{\tensor}{\otimes}
-\newcommand{\chains}{N_\bullet}
-\newcommand{\cochains}{N_\bullet}
+\newcommand{\chains}{N}
+\newcommand{\cochains}{N}
 \newcommand{\op}{\mathrm{op}}
 \DeclareMathOperator*{\colim}{colim}
 \newcommand{\cobar}{\Omega}
@@ -69,13 +75,15 @@ pdfpagelabels]{hyperref}
 % environments
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{remark}[theorem]{Remark}
 
-% comments
-\newcommand{\anibal}[1]{\textcolor{blue}{#1}}
+% other
+\newcommand{\anibal}[1]{\textcolor{blue}{\underline{Anibal}: #1}}
+\renewcommand{\th}{^\mathrm{th}}
 
 % drawings
 \include{figures}
@@ -106,7 +114,8 @@ pdfpagelabels]{hyperref}
 
 \input{introduction}
 \input{algebraic_preliminaries}
-\input{coaction}	
+\input{coaction}
+\input{hopf}
 \input{loop_space}
 \input{theorem}
 

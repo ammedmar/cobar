@@ -1,0 +1,60 @@
+
+\section{Hopf structures}
+
+We now make $\M$ into a Hopf prop, i.e., we construct a chain map $\M(m,n) \to \M(m,n) \otimes \M(m,n)$ for every biarity $(m,n)$ compatible with the prop structure of $\M$.
+Intuitively, this diagonal is defined on basis elements in $\M(m,n)_d$ as the sum of the $2^d$ summands obtained from the assignments 
+
+FIGURE
+
+We will need the following observations about the Serre diagonal.
+There is an action of $\S_n$ on $\chains(\square^n)$ given by permuting the factors of $\chains(\square^1)^{\otimes n}$.
+The Serre diagonal is equivariant with respect to this action in the following sense.
+
+\begin{lemma} \label{l:serre diagonal invariant}
+	Let $T$ be the braiding of $\Ch$.
+	The following diagram commutes
+	\begin{equation*}
+	\begin{tikzcd}
+	\chains(\square^1)^{\otimes 2} \arrow[r, "\Delta"] \arrow[d, "T"] &
+	\chains(\square^1)^{\otimes 2} \otimes \chains(\square^1)^{\otimes 2} \arrow[d, "T \otimes T"] \\
+	\chains(\square^1)^{\otimes 2} \arrow[r, "\Delta"] &
+	\chains(\square^1)^{\otimes 2} \otimes \chains(\square^1)^{\otimes 2}.
+	\end{tikzcd}
+	\end{equation*}
+\end{lemma}
+
+\begin{proof}
+	This can be proven by a straightforward verification. Conceptually, it holds because $(12)(34)(23) = (23)(13)(24)$ in $\S_4$.
+\end{proof}
+
+As can be seen from \eqref{e:free prop}, the $(m,n)$-part of the free prop is defined only up to a choice of total order on the set of vertices of the $(m,n)$-graph involved.
+Let $\Gamma \in \G(m,n)$ be a representative of an element in $\M(m,n)$ of degree $d$ and let us choose an order of its vertices.
+This order defines a chain map
+\begin{equation*}
+\begin{tikzcd}[row sep=tiny, column sep=small]
+\iota_\Gamma \colon \chains(\square^1)^{\otimes d} \arrow[r] & \M(m,n) \\
+\qquad {[0,1]}^{\otimes d} \arrow[r, |->] & \Gamma,
+\end{tikzcd}
+\end{equation*}
+and we define the value of diagonal of $\M$ on $\Gamma$ using the Serre diagonal
+\begin{equation} \label{e:diagonal of M}
+\Delta(\Gamma) = \iota_\Gamma^{\otimes 2} \circ \Delta \left([0,1]^{\otimes d}\right).
+\end{equation}
+This definition is independent of the choice of total order on $Vert(\Gamma)$ by Lemma~\ref{l:serre diagonal invariant}, and it is compatible with the relations.
+For example
+\begin{center}
+	%	\begin{tikzcd}
+	%	\leftcounitcoproduct \arrow[r, "\Delta"] \arrow[d, <->] &[-5pt] \leftcounitcoproduct \otimes \leftcounitcoproduct \arrow[d, <->] \\
+	%	\identity \arrow[r, "\Delta"] & \identity \otimes \identity \, ,
+	%	\end{tikzcd}
+	%	\qquad
+	%	\begin{tikzcd}
+	%	\rightcounitcoproduct \arrow[r, "\Delta"] \arrow[d, <->] &[-5pt] \rightcounitcoproduct \otimes \rightcounitcoproduct \arrow[d, <->] \\
+	%	\identity \arrow[r, "\Delta"] & \identity \otimes \identity \, ,
+	%	\end{tikzcd}
+	%	\qquad
+	\begin{tikzcd}
+	\productcounit \arrow[r, "\Delta"] \arrow[d, <->] &[-5pt] \counit \, \otimes \productcounit + \productcounit \otimes \, \counit \arrow[d, <->] \\
+	0 \arrow[r, "\Delta"] & \, 0.
+	\end{tikzcd}
+\end{center}

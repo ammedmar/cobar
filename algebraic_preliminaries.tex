@@ -1,5 +1,31 @@
 
 \section{Algebraic preliminaries}
 
+Let $R$ be a fix commutative ring which we omit from the notation.
+We work over the symmetric monoidal category $(\Ch, \otimes, R)$ of chain complexes of $R$-modules.
+As usual, we regard the set of $R$-linear maps $\Hom(C, C^\prime)$ between chain complexes as a chain complex.
+The $i\th$ suspension functor $s^i \colon \Ch \to \Ch$ is defined on objects by $(s^{i}M)_n= M_{n-i}$.
+
+A \textit{coassociative counital coalgebras} is ... satisfying ... 
+
+We remark that this notion is equivalent to that of a comonoid in the $(\Ch, \otimes, R)$.
+We denote the subcategory category of $\Ch$ with these objects and structure preserving morphisms by $\coAlg$.
+We notice that $(\coAlg, \otimes, R)$ is symmetric monoidal with structure maps:
+\begin{center}
+\begin{tikzcd}
+C \otimes C^\prime \arrow[r, "\Delta \otimes \Delta^\prime"] &
+(C \otimes C) \otimes (C^\prime \otimes C^\prime) \arrow[r, "(23)"] &
+(C \otimes C^\prime) \otimes (C \otimes C^\prime),
+\end{tikzcd} \par
+\begin{tikzcd}
+C \otimes C^\prime \arrow[r, "\varepsilon \otimes \varepsilon^\prime"] &
+R \otimes R \arrow[r, "\cong"] &
+R.
+\end{tikzcd}
+\end{center}
+
+We will denote the category of monoids on a symmetric monoidal category $\C$ by $\Mon_{\C}$.\footnote{Monoids in $\Ch$ and $\coAlg$ are sometimes referred to as associative unital algebras and bialgebras respectively, but we avoid this terminology.}
+
+
 \input{algebraic_cobar}
 \input{operads_and_props}
