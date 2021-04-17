@@ -61,8 +61,6 @@ pdfpagelabels]{hyperref}
 \DeclareMathOperator*{\tensor}{\otimes}
 \newcommand{\chains}{N_\bullet}
 \newcommand{\cochains}{N_\bullet}
-\newcommand{\Uleft}{U_{left}}
-\newcommand{\Uright}{U_{right}}
 \newcommand{\op}{\mathrm{op}}
 \DeclareMathOperator*{\colim}{colim}
 \newcommand{\cobar}{\Omega}
@@ -83,7 +81,7 @@ pdfpagelabels]{hyperref}
 \include{figures}
 
 \begin{document}
-\title{The cobar construction as an $E_\infty$ Hopf algebra}
+\title{The cobar construction as an $E_\infty$-Hopf algebra}
 \author{Anibal M. Medina-Mardones}
 \address{Max Plank Institute for Mathematics, Bonn, Germany}
 \email{ammedmar@mpim-bonn.mpg.de}
@@ -107,12 +105,10 @@ pdfpagelabels]{hyperref}
 \tableofcontents
 
 \input{introduction}
-\input{simplices, cubes and necklaces}
-\input{operads and props}
-\input{cobar construction}
-\input{coaction}
-\input{based loop space}
-\input{main theorems and applications} 
+\input{algebraic_preliminaries}
+\input{coaction}	
+\input{loop_space}
+\input{theorem}
 
 \bibliographystyle{alpha} % ieeetr
 \bibliography{biblio}
