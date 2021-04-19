@@ -7,7 +7,7 @@ Intuitively, this diagonal is defined on basis elements in $\M(m,n)_d$ as the su
 FIGURE
 
 We will need the following observations about the Serre diagonal.
-There is an action of $\S_n$ on $\chains(\square^n)$ given by permuting the factors of $\chains(\square^1)^{\otimes n}$.
+There is an action of $\S_n$ on $\cchains(\square^n)$ given by permuting the factors of $\cchains(\square^1)^{\otimes n}$.
 The Serre diagonal is equivariant with respect to this action in the following sense.
 
 \begin{lemma} \label{l:serre diagonal invariant}
@@ -15,10 +15,10 @@ The Serre diagonal is equivariant with respect to this action in the following s
 	The following diagram commutes
 	\begin{equation*}
 	\begin{tikzcd}
-	\chains(\square^1)^{\otimes 2} \arrow[r, "\Delta"] \arrow[d, "T"] &
-	\chains(\square^1)^{\otimes 2} \otimes \chains(\square^1)^{\otimes 2} \arrow[d, "T \otimes T"] \\
-	\chains(\square^1)^{\otimes 2} \arrow[r, "\Delta"] &
-	\chains(\square^1)^{\otimes 2} \otimes \chains(\square^1)^{\otimes 2}.
+	\cchains(\square^1)^{\otimes 2} \arrow[r, "\Delta"] \arrow[d, "T"] &
+	\cchains(\square^1)^{\otimes 2} \otimes \cchains(\square^1)^{\otimes 2} \arrow[d, "T \otimes T"] \\
+	\cchains(\square^1)^{\otimes 2} \arrow[r, "\Delta"] &
+	\cchains(\square^1)^{\otimes 2} \otimes \cchains(\square^1)^{\otimes 2}.
 	\end{tikzcd}
 	\end{equation*}
 \end{lemma}
@@ -32,7 +32,7 @@ Let $\Gamma \in \G(m,n)$ be a representative of an element in $\M(m,n)$ of degre
 This order defines a chain map
 \begin{equation*}
 \begin{tikzcd}[row sep=tiny, column sep=small]
-\iota_\Gamma \colon \chains(\square^1)^{\otimes d} \arrow[r] & \M(m,n) \\
+\iota_\Gamma \colon \cchains(\square^1)^{\otimes d} \arrow[r] & \M(m,n) \\
 \qquad {[0,1]}^{\otimes d} \arrow[r, |->] & \Gamma,
 \end{tikzcd}
 \end{equation*}

@@ -2,30 +2,26 @@
 
 \subsection{The cobar construction}
 
-\anibal{Please rewrite using the macros $\coAlg$ and $\Mon_{\Ch}$}
+Let $C$ be a coassociative counital coalgebra. A \textit{coaugmentation} is a morphism $\nu: R \to C$ in $\coAlg$, where $R$ is regarded as a coassociative counital coalgebra concentrated on degree $0$ with coproduct determined by $1 \mapsto 1 \otimes 1$. Denote by $\coAlg^*$ the category of coaugmented coassociative counital coalgebras with morphisms being morphisms of counital coalgebras that preserve coaugmentations. 
 
-\textit{coaugmented} if ... 
+We recall the definition of the \textit{cobar} functor 
+$$\mathbf{\Omega}: \coAlg^* \to \Mon_{\Ch}.$$
 
-Denote by $\mathsf{dgAlg}^{\text{aug}}_R$ the category of augmented differential graded associative $R$-algebras (dg algebras, for short) and by $\mathsf{dgCoalg}^{\text{coaug}}_R$ the category of coaugmented differential graded coassociative $R$-coalgebras (dg coalgebras, for short). We recall the definition of the cobar functor 
-$$\mathbf{\Omega}: \mathsf{dgCoalg}^{\text{coaug}}_R \to \mathsf{dgAlg}^{\text{aug}}_R.$$
-
-For any $(C, \partial, \Delta, \nu)  \in \mathsf{dgCoalg}^{\text{coaug}}_R$ define
-$$\mathbf{\Omega}(C, \partial, \Delta, \nu) := ( T(s^{-1}  \widetilde{C} ), D, \mu, \eta) \in \mathsf{dgAlg}^{\text{aug}}_R$$ where 
+Let  $(C, \partial, \Delta, \varepsilon, \nu)  \in \coAlg^*$ where $\nu: R \to C$ is the coaugmentation. Define
+$$\mathbf{\Omega}(C, \partial, \Delta, \varepsilon, \nu) := ( T(s^{-1}  \overline{C} ), D, \mu) \in \Mon_{\Ch}$$ where 
 \begin{itemize}
-\item $\widetilde{C}=\text{coker}(\nu: R \to C)$
-\item $T(s^{-1} \widetilde{C})= R \oplus \widetilde{C} \oplus (\widetilde{C}  \otimes \widetilde{C} ) \oplus ( \widetilde{C} \otimes \widetilde{C} \otimes \widetilde{C} ) \oplus\cdots $
-\item $\mu: T(s^{-1}  \widetilde{C} )^{\otimes 2} \to T(s^{-1}  \widetilde{C} ) $ is the free associative product given by concatenation of monomials
-\item $D: T(s^{-1}  \widetilde{C} ) \to T(s^{-1}  \widetilde{C} )$ is the derivation of degree $-1$ determined by the linear map $$- s^{-1} \circ \partial \circ s^{+1} + (s^{-1} \otimes s^{-1}) \circ \Delta \circ s^{+1}: s^{-1}\widetilde{C} \to s^{-1}\widetilde{C} \oplus (s^{-1}\widetilde{C} \otimes s^{-1}\widetilde{C}) \hookrightarrow T(s^{-1}C)$$  by the graded Leibniz rule, and
-\item $\eta: T(s^{-1}C) \to R$ is the augmentation map given by the natural projection
+\item $\overline{C}=\text{coker}(\nu: R \to C)$
+\item $T(s^{-1} \overline{C})= R \oplus \overline{C} \oplus (\overline{C}  \otimes \overline{C} ) \oplus ( \overline{C} \otimes \overline{C} \otimes \overline{C} ) \oplus\cdots $
+\item $\mu: T(s^{-1}  \overline{C} )^{\otimes 2} \to T(s^{-1}  \overline{C} ) $ is the free associative unital product given by concatenation of monomials
+\item $D: T(s^{-1}  \overline{C} ) \to T(s^{-1}  \overline{C} )$ is the derivation of degree $-1$ determined by extending the linear map $$- s^{-1} \circ \partial \circ s^{+1} + (s^{-1} \otimes s^{-1}) \circ \Delta \circ s^{+1}: s^{-1}\overline{C} \to s^{-1}\overline{C} \oplus (s^{-1}\overline{C} \otimes s^{-1}\overline{C}) \hookrightarrow T(s^{-1}C)$$ as a derivation.
 \end{itemize}
 
-The coassociativity of $\Delta$, the compatibility of $\partial$ and $\Delta$, and the fact that $\partial^2 =0$ together imply that $D^2=0$. This construction is clearly functorial with respect to maps in $\mathsf{dgCoalg}^{\text{coaug}}_R$. We will denote $C=(C, \partial, \Delta, \nu)$ and $\mathbf{\Omega} (C, \partial, \Delta, \nu)$ simply by $\mathbf{\Omega}(C)$. 
+The coassociativity of $\Delta$, the compatibility of $\partial$ and $\Delta$, and the fact that $\partial^2 =0$ together imply that $D^2=0$. This construction is clearly functorial with respect to maps in $\coAlg^*$. We will denote $\mathbf{\Omega} (C, \partial, \Delta, \varepsilon, \nu)$ simply by $\mathbf{\Omega}(C)$. 
 
-In this article we are mostly concerned with \textit{connected} dg coalgebras, namely $(C, \partial, \Delta, \nu) \in \mathsf{dgCoalg}^{\text{coaug}}_R$ which are non-negatively graded and $\nu: R \to C_0$ defines an isomorphism of coalgebras. We denote the category of connected dg coalgebras by $\mathsf{dgCoalg}^0_R$. If $C \in \mathsf{dgCoalg}_R^0$ then $\mathbf{\Omega}(C)$ is a dg algebra concentrated on non-negative degrees. 
+In this article we are mostly concerned with \textit{connected} coalgebras, namely $C \in \coAlg^*$ which are non-negatively graded and the coaugmentation $\nu: R \to C$ induces an isomorphism of coalgebras $R \cong C_0$. We denote by $\coAlg^0$ the full subcategory of $\coAlg^*$ consisting of connected coalgebras. If $C \in \coAlg^0$, then $\mathbf{\Omega}(C)$ is concentrated on non-negative degrees. 
 
-The cobar construction was originally applied by Adams' to the dg coalgebra of normalized chains on a $1$-reduced simplicial set to obtain a dg algebra model for the chains on the based loop space \cite{Adams}. The cobar construction as a model for the based loop space was furthered studied in \cite{Baues} and more recently, in the non-simply connected setting in \cite{Hess-Tonks}, \cite{Rivera-Zeinalian}.
+The cobar construction was originally applied by Adams' to the coalgebra of normalized chains on a $1$-reduced simplicial set to obtain a model for the chains on the based loop space \cite{Adams}. The cobar construction as a model for the based loop space was furthered studied in \cite{Baues} and more recently, in the non-simply connected setting in \cite{Hess-Tonks}, \cite{Rivera-Zeinalian}.
 
 
---- Recall the construction of a coassociative associative bialgebra on the cobar construction of an $E_2$-coalgebra following Kadeishvhili/Matthias Franz. In fact, I think we can do this in the context of $U(M)$-coalgebras? Namely, if start with a $U(M)$-coalgebra then we may construct a coassociative coproduct on the cobar construction on the underlying $A_{\infty}$-coalgera by looking at its $E_2$ part.
-
+---
 Discuss the localized version of the cobar construction. ---
