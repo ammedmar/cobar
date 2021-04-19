@@ -37,12 +37,14 @@ Denote by $\iota_n \in (\square^n_c)_n$ the top dimensional non-degenerate eleme
 
 To define an algebra map
 $$\varphi_X: \cchains(\mathcal{P}_!(\Lambda(X))) \xrightarrow{\cong} \mathbf{\Omega}(\chains(X))$$
-it suffices to define it on any generator of the form $\alpha=[\sigma \colon \Delta^{n+1} \to X, \iota_{n}]$, i.e. when $T$ is of the form $T=[n+1]$, for some $n\geq0$. If $n=0$ let $\varphi_X(\alpha)= [\overline{\sigma}]+ 1_R$, where $[\overline{\sigma}] \in s^{-1} \overline{ \chains(X)} \subset \mathbf{\Omega}(\chains(X))$ denotes the (length $1$) generator in the cobar construction determined by $\sigma \in X_{n+1}$ and $1_R$ denotes the unit of the underlying ring $R$. If $n>0$ then we let $\varphi_X(\alpha)=[\overline{\sigma}]$. A straightforward check yields that this gives rise to a well defined isomorphism of algebras, which is compatible with the differentials, and natural with respect to maps of simplicial sets.  
+it suffices to define it on any generator of the form $\alpha=[\sigma \colon \Delta^{n+1} \to X, \iota_{n}]$, i.e. when $T$ is of the form $T=[n+1]$, for some $n\geq0$. If $n=0$ let $\varphi_X(\alpha)= [\overline{\sigma}]+ 1_R$, where $[\overline{\sigma}] \in s^{-1} \overline{ \chains(X)} \subset \mathbf{\Omega}(\chains(X))$ denotes the (length $1$) generator in the cobar construction of $\chains(X)$ determined by $\sigma \in X_{n+1}$ and $1_R$ denotes the unit of the underlying ring $R$. If $n>0$, we let $\varphi_X(\alpha)=[\overline{\sigma}]$. A straightforward check yields that this gives rise to a well defined isomorphism of algebras, which is compatible with the differentials, and natural with respect to maps of simplicial sets.  
 \end{proof}
-As an immediate consequence, we obtain the following localized version of the isomorphism.
+In \cite{Hess and Tonks}, a localized version of the cobar construction of the chains on a $0$-reduced simplicial set was introduced. This construction is not quite functorial on $\coAlg$ since it depends on a choice of basis of the degree $1$ $R$-module of the underlying coalgebra. However, one may define a functor $$\widehat{\mathbf{\Omega}}: \sSet^0 \to \Mon_{\Ch}$$
+defined by formally inverting the set of cycles $\{ [\overline{\sigma}]+1_R | \sigma \in X_1 \} \subset \mathbf{\Omega}(\chains(X))_0$ in the associative algebra $\mathbf{\Omega}(\chains(X))$. Hess and Tonks showed that there is a natural chain homotopy equivalence of associative algebras $$\widehat{\mathbf{\Omega}}(X)\simeq \chains(GX),$$ where $GX$ denotes the Kan loop group of $X$. As an immediate consequence of our previous result, we obtain the following localized version of the isomorphism.
+
 \begin{corollary}
 There is a natural isomorphism of functors
-$$\cchains \circ \mathcal{P}_! \circ \widehat{\Lambda} \cong \widehat{\mathbf{\Omega}} :\sSet^0 \to \Mon_{\Ch},$$ where $\widehat{\mathbf{\Omega}}$ denotes the extended cobar construction of \cite{Hess and Tonk}. 
+$$\cchains \circ \mathcal{P}_! \circ \widehat{\Lambda} \cong \widehat{\mathbf{\Omega}} :\sSet^0 \to \Mon_{\Ch},$$ where $\widehat{\mathbf{\Omega}}$ denotes the extended cobar construction of \cite{Hess and Tonks}. 
 \end{corollary}
 
 

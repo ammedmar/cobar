@@ -2,26 +2,22 @@
 
 \subsection{The cobar construction}
 
-Let $C$ be a coassociative counital coalgebra. A \textit{coaugmentation} is a morphism $\nu: R \to C$ in $\coAlg$, where $R$ is regarded as a coassociative counital coalgebra concentrated on degree $0$ with coproduct determined by $1 \mapsto 1 \otimes 1$. Denote by $\coAlg^*$ the category of coaugmented coassociative counital coalgebras with morphisms being morphisms of counital coalgebras that preserve coaugmentations. 
+Let $C$ be a coassociative counital coalgebra. A \textit{coaugmentation} is a morphism $\nu \colon R \to C$ in $\coAlg$, where $R$ is regarded as a coassociative counital coalgebra concentrated on degree $0$ with coproduct determined by $1 \mapsto 1 \otimes 1$. Denote by $\coAlg^*$ the category of coaugmented coassociative counital coalgebras with morphisms being morphisms of counital coalgebras that preserve coaugmentations. 
 
 We recall the definition of the \textit{cobar} functor 
-$$\mathbf{\Omega}: \coAlg^* \to \Mon_{\Ch}.$$
+$$ \cobar \colon \coAlg^* \to \Mon_{\Ch}.$$
 
-Let  $(C, \partial, \Delta, \varepsilon, \nu)  \in \coAlg^*$ where $\nu: R \to C$ is the coaugmentation. Define
-$$\mathbf{\Omega}(C, \partial, \Delta, \varepsilon, \nu) := ( T(s^{-1}  \overline{C} ), D, \mu) \in \Mon_{\Ch}$$ where 
+Let  $(C, \partial, \Delta, \varepsilon, \nu)  \in \coAlg^*$ where $\nu \colon R \to C$ is the coaugmentation. Define
+$$ \cobar(C, \partial, \Delta, \varepsilon, \nu)  \colon= ( T(s^{-1}  \overline{C} ), D, \mu) \in \Mon_{\Ch}$$ where 
 \begin{itemize}
-\item $\overline{C}=\text{coker}(\nu: R \to C)$
+\item $\overline{C}=\text{coker}(\nu \colon R \to C)$
 \item $T(s^{-1} \overline{C})= R \oplus \overline{C} \oplus (\overline{C}  \otimes \overline{C} ) \oplus ( \overline{C} \otimes \overline{C} \otimes \overline{C} ) \oplus\cdots $
-\item $\mu: T(s^{-1}  \overline{C} )^{\otimes 2} \to T(s^{-1}  \overline{C} ) $ is the free associative unital product given by concatenation of monomials
-\item $D: T(s^{-1}  \overline{C} ) \to T(s^{-1}  \overline{C} )$ is the derivation of degree $-1$ determined by extending the linear map $$- s^{-1} \circ \partial \circ s^{+1} + (s^{-1} \otimes s^{-1}) \circ \Delta \circ s^{+1}: s^{-1}\overline{C} \to s^{-1}\overline{C} \oplus (s^{-1}\overline{C} \otimes s^{-1}\overline{C}) \hookrightarrow T(s^{-1}C)$$ as a derivation.
+\item $\mu \colon T(s^{-1}  \overline{C} )^{\otimes 2} \to T(s^{-1}  \overline{C} ) $ is the free associative unital product given by concatenation of monomials
+\item $D \colon T(s^{-1}  \overline{C} ) \to T(s^{-1}  \overline{C} )$ is the derivation of degree $-1$ determined by extending the linear map $$- s^{-1} \circ \partial \circ s^{+1} + (s^{-1} \otimes s^{-1}) \circ \Delta \circ s^{+1} \colon s^{-1}\overline{C} \to s^{-1}\overline{C} \oplus (s^{-1}\overline{C} \otimes s^{-1}\overline{C}) \hookrightarrow T(s^{-1}C)$$ as a derivation.
 \end{itemize}
 
-The coassociativity of $\Delta$, the compatibility of $\partial$ and $\Delta$, and the fact that $\partial^2 =0$ together imply that $D^2=0$. This construction is clearly functorial with respect to maps in $\coAlg^*$. We will denote $\mathbf{\Omega} (C, \partial, \Delta, \varepsilon, \nu)$ simply by $\mathbf{\Omega}(C)$. 
+The coassociativity of $\Delta$, the compatibility of $\partial$ and $\Delta$, and the fact that $\partial^2 =0$ together imply that $D^2=0$. This construction is clearly functorial with respect to maps in $\coAlg^*$. We will denote $ \cobar (C, \partial, \Delta, \varepsilon, \nu)$ simply by $ \cobar(C)$. 
 
-In this article we are mostly concerned with \textit{connected} coalgebras, namely $C \in \coAlg^*$ which are non-negatively graded and the coaugmentation $\nu: R \to C$ induces an isomorphism of coalgebras $R \cong C_0$. We denote by $\coAlg^0$ the full subcategory of $\coAlg^*$ consisting of connected coalgebras. If $C \in \coAlg^0$, then $\mathbf{\Omega}(C)$ is concentrated on non-negative degrees. 
+In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented coalgebras $C \in \coAlg^*$ which are non-negatively graded and the coaugmentation $\nu \colon R \to C$ induces an isomorphism of coalgebras $R \cong C_0$. We denote by $\coAlg^0$ the full subcategory of $\coAlg^*$ consisting of connected coalgebras. If $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees. 
 
 The cobar construction was originally applied by Adams' to the coalgebra of normalized chains on a $1$-reduced simplicial set to obtain a model for the chains on the based loop space \cite{Adams}. The cobar construction as a model for the based loop space was furthered studied in \cite{Baues} and more recently, in the non-simply connected setting in \cite{Hess-Tonks}, \cite{Rivera-Zeinalian}.
-
-
----
-Discuss the localized version of the cobar construction. ---
