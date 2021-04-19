@@ -6,10 +6,8 @@ We work over the symmetric monoidal category $(\Ch, \otimes, R)$ of chain comple
 As usual, we regard the set of $R$-linear maps $\Hom(C, C^\prime)$ between chain complexes as a chain complex.
 The $i\th$ suspension functor $s^i \colon \Ch \to \Ch$ is defined on objects by $(s^{i}M)_n= M_{n-i}$.
 
-A \textit{coassociative counital coalgebra} $C=(C, \partial, \Delta, \varepsilon)$ is the data of an object $(C, \partial) \in \Ch$ equipped with maps $\Delta: C \to C \otimes C$ and $\varepsilon: C\to R$ in $\Ch$ satisfying the usual coassociativity and counitality equations, respectively. 
-
-This notion is equivalent to that of a comonoid in the $(\Ch, \otimes, R)$. Denote by $\coAlg$ the category of coassociative counital coalgebra with morphisms being maps that preserve the structure. 
-
+A \textit{coassociative counital coalgebra} $C = (C, \partial, \Delta, \varepsilon)$ is the data of an object $(C, \partial) \in \Ch$ equipped with maps $\Delta \colon C \to C \otimes C$ and $\varepsilon \colon C\to R$ in $\Ch$ satisfying the usual coassociativity and counitality equations, respectively. 
+This notion is equivalent to that of a comonoid in the $(\Ch, \otimes, R)$. Denote by $\coAlg$ the category of coassociative counital coalgebra with morphisms being chain maps that preserve the structure. 
 We notice that $(\coAlg, \otimes, R)$ is symmetric monoidal with structure maps:
 \begin{center}
 \begin{tikzcd}
@@ -23,8 +21,7 @@ R \otimes R \arrow[r, "\cong"] &
 R.
 \end{tikzcd}
 \end{center}
-
-We will denote the category of monoids on a symmetric monoidal category $\C$ by $\Mon_{\C}$.\footnote{Monoids in $\Ch$ and $\coAlg$ are sometimes referred to as differential graded associative unital algebras and bialgebras respectively, but we avoid this terminology.}
+We will denote the category of monoids on a symmetric monoidal category $\C$ by $\Mon_{\C}$.\footnote{Monoids in $\Ch$ and $\coAlg$ are sometimes referred to as dg associative unital algebras and dg bialgebras respectively, but we avoid this terminology.}
 
 
 \input{algebraic_cobar}

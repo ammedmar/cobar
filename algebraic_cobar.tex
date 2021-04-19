@@ -2,10 +2,14 @@
 
 \subsection{The cobar construction}
 
-Let $C$ be a coassociative counital coalgebra. A \textit{coaugmentation} is a morphism $\nu: R \to C$ in $\coAlg$, where $R$ is regarded as a coassociative counital coalgebra concentrated on degree $0$ with coproduct determined by $1 \mapsto 1 \otimes 1$. Denote by $\coAlg^*$ the category of coaugmented coassociative counital coalgebras with morphisms being morphisms of counital coalgebras that preserve coaugmentations. 
+Let $C$ be a coassociative counital coalgebra.
+A \textit{coaugmentation} is a morphism $\nu \colon R \to C$ in $\coAlg$.
+Denote by $\coAlg^*$ the category of \textit{coaugmented coassociative counital coalgebras} with morphisms being structure preserving chain maps.
 
 We recall the definition of the \textit{cobar} functor 
-$$\mathbf{\Omega}: \coAlg^* \to \Mon_{\Ch}.$$
+\begin{equation*}
+\cobar \colon \coAlg^* \to \Mon_{\Ch}.
+\end{equation*}
 
 Let  $(C, \partial, \Delta, \varepsilon, \nu)  \in \coAlg^*$ where $\nu: R \to C$ is the coaugmentation. Define
 $$\mathbf{\Omega}(C, \partial, \Delta, \varepsilon, \nu) := ( T(s^{-1}  \overline{C} ), D, \mu) \in \Mon_{\Ch}$$ where 
