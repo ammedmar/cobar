@@ -1,48 +1,53 @@
 \section{Introduction}
-
-The philosophy is to construct an explicit $E_{\infty}$-bialgebra structure on the cobar model for the based loop space such that
-\\
-1) it is given by the action of a ``small" cofibrant model for the $E_{\infty}$-operad, recently introduced by A. Medina-Medina
-\\
-2) the topological applications include general spaces with arbitrary fundamental group and no finite type assumptions using the recent observations of M. Rivera and M. Zeinalian 
-
-\ \\
-
 In 1956 Adams introduced the cobar construction to model algebraically the passage from a simply connected pointed topological space to its topological monoid of based loops \cite{Adams}. The cobar construction may be described as a functor $\mathbf{\Omega} \colon \coAlg^* \to \Mon_{\Ch}$ from the category of (dg) coaugemented coassociative coalgebras over a commutative ring $R$ to the category of (dg) unital associative algebras over $R$, which we regard in this article as monoids over the monoidal category $(\Ch, \otimes) $ of chain complexes over $R$. Given a pointed topological space $(Y,y)$, Adams constructed a natural chain map of associative algebras
-$$\theta_Y: \mathbf{\Omega}(C(Y,y)) \xrightarrow{\simeq} C^{\square}(\Omega_yY),$$ where $C(Y,y)$ is a pointed version of the coassociative coalgebra of singular chains in $Y$ and $C^{\square}(\Omega_yY)$ is the associative algebra of cubical singular chains on the topological monoid of (Moore) loops in $Y$ based at $y \in Y$. Adams proved that $\theta_Y$ is a quasi-isomorphism if $Y$ is simply connected. In 2016 the second author together with Zeinalian, proved that $\theta_Y$ is still a quasi-isomorphism for any path-connected space $Y$, but the algebraic homotopy theory of coalgebras in this more general case must be interpreted differently.
+$$\theta_Y \colon \mathbf{\Omega}(C(Y,y)) \xrightarrow{\simeq} C^{\square}(\Omega_yY),$$ where $C(Y,y)$ is a pointed version of the coassociative coalgebra of singular chains in $Y$ and $C^{\square}(\Omega_yY)$ is the associative algebra of cubical singular chains on the topological monoid of (Moore) loops in $Y$ based at $y \in Y$. Adams proved that $\theta_Y$ is a quasi-isomorphism if $Y$ is simply connected. In 2016 the second author together with Zeinalian, proved that $\theta_Y$ is still a quasi-isomorphism for any path-connected space $Y$, but the algebraic homotopy theory of coalgebras in this more general case must be interpreted differently.
 
-In this article we study the interplay between the geometry, combinatorics, and algebraic structures arising from the cobar construction and its relationship to the based loop space. The starting point for our perspective is a combinatorial construction of Baues that associates to any $1$-reduced simplicial set $X$ a connected topological monoid built out of gluing cubical cells.  This cellular complex is a homotopy equivalent to the based loop space on $|X|$ and furthermore the chain complex of cubical chains is an associative algebra isomorphic to the cobar construction on $\chains(X)$, the normalized simplicial chains on $X$ with Alexander-Whitney coalgebra. Baues used this observation to equip $\cobar( \chains (X) )$ with a coassociative coalgebra structure making it into a dg Hopf algebra modeling the based loop space on $|X|$ \cite{Baues}. 
+In this article we study the interplay between the geometry, combinatorics, and algebraic structures arising from the cobar construction and its relationship to the based loop space. The starting point for our perspective is a combinatorial construction, originally due to Baues, that associates to any $0$-reduced simplicial set $X$ a connected topological monoid built out of gluing cubical cells.  This cellular complex is a homotopy equivalent to the based loop space on $|X|$ and furthermore the chain complex of cubical chains is an associative algebra isomorphic to the cobar construction on $\chains(X)$, the normalized simplicial chains on $X$ with Alexander-Whitney coproduct. When $X$ is a $1$-reduced simplicial set, Baues used this observation to equip $\cobar( \chains (X) )$ with a coassociative coalgebra structure making it into a dg Hopf algebra modeling the based loop space on $|X|$ \cite{Baues}. 
 
-We use the categorical framework of \textit{necklical sets} to describe Baues construction as well as a localized version which recovers the based loop space in the case of $0$-reduced simplicial sets. Necklical sets form a monoidal category denoted by $\nSet$ which can be thought of as a version of the category of cubical sets where cubes are labeled by sequences of simplices called \textit{necklaces}. More precisely, we describe a functor $$\gcobar: \sSet^0 \to \Mon_{\nSet},$$ where $\sSet^0$ denotes the category of $0$-reduced simplicial sets, which fits into a commutative square extending Baues' constructions
+We use the categorical framework of \textit{necklical sets} to describe Baues construction as well as a localized version which recovers the based loop space of a $0$-reduced simplicial set. Necklical sets form a monoidal category denoted by $\nSet$ which can be thought of as a version of the category of cubical sets where cubes are labeled by sequences of simplices called \textit{necklaces}. More precisely, we construct a functor $$\gcobar \colon \sSet^0 \to \Mon_{\nSet},$$ where $\sSet^0$ denotes the category of $0$-reduced simplicial sets, fitting into a square
 
 \begin{equation*}
 \begin{tikzcd}
-\Mon_{\nSet} \arrow[r] & \Mon_{\coAlg} \arrow[d] \\
-\sSet^0 \arrow[r, "\cobar \circ \chains"] \arrow[u, "\gcobar"] & \Mon_{\Ch}.
+\Mon_{\nSet} \arrow[r, "\widetilde{N}"] & \Mon_{\coAlg} \arrow[d] \\
+\sSet^0 \arrow[r, "\cobar \circ \chains"] \arrow[u, "\gcobar"] & \Mon_{\Ch}
 \end{tikzcd}
 \end{equation*}
-In the above diagram, the right vertical arrow is a forgetful functor and the top horizontal arrow is a version of the coalgebra of normalized cubical chains with the Serre diagonal coproduct. 
+which commutes up to natural isomorphism. In the above diagram, the right vertical arrow is a forgetful functor and $\widetilde{N} \colon \Mon_{\nSet} \to \Mon_{\coAlg}$ is induced by a functor $N \colon \nSet \to \coAlg$, which is a version (for necklical sets) of the coassociative coalgebra of normalized cubical chains with the \textit{Serre diagonal}. The functor $\gcobar$ is a version of Baues' \textit{geometric cobar construction}. Different versions of this construction have been studied in \cite{Cordier}, \cite{Dugger, Spivak}, \cite{Kaufmann, Galvez, Tonks}, \cite{Rivera-Zeinalian}, and \cite{Berger thesis}.
 
-The coalgebra structure on $\gbar$
-Whereas the algebraic structure on the simplicial chains $\chains$ giving rise to it is referred to as a homotopy $G$-coalgebra, which corresponds to the $E_2$-structure on $\chains$, naturally an $E_\infty$-coalgebra.
-Later, Kadeishvili extended this construction to produce cup-$i$ coproducts on the cobar construction $\Omega \chains$.
-Geometrically introducing cup-$i$ products for cubical sets extending the Serre diagonal \cite{Kadeishvili99coproducts} ---see also \cite{Pilarczyk2016cubical}--- and then identifying the algebraic structure on the simplicial cochains giving rise to it \cite{Kadeishvili03cup-i}.
-On the algebraic side, Fresse \cite{Fresse03construction} used the surjection coalgebra structure on $\chains$ to construct on the cobar construction $\Omega \chains$ the  structure of a Barratt-Eccles coalgebra, operating therefore at the $E_\infty$-level, but leaving the geometry of the situation unexplored.
+The natural coassociative coproduct on $\cobar \chains (X)$ obtained from the Serre diagonal arises from the $E_2$-coalgebra on the simplicial chains $\chains(X).$ In the $1$-connected setting, Kadeishvili described geometrically cup-$i$ products extending the Serre diagonal and then identified the algebraic structure on the simplicial cochains on $X$ giving rise to these operations \cite{Kadeishvili99coproducts},  \cite{Pilarczyk2016cubical}.
+
+Fresse \cite{Fresse03construction} used the surjection coalgebra structure on $\chains(X)$ to construct on the cobar construction $\cobar\chains(X)$ the  structure of a Barratt-Eccles coalgebra, working therefore at the $E_\infty$-level. His constructions are purely algebraic leaving the geometry of the situation somewhat unexplored.
+
 Our results are most similar to Fresse's.
-As it will become clear, two key differences are that he uses distinct operads for chains and their cobar construction and does not relate his construction to cubical cochains, a hallmark of Baues's insight.
+As it will become clear, two key differences are that he uses distinct operads acting on the normalized chains and the cobar construction and does not relate his construction to cubical chains, a hallmark of Baues's insight.
+
 A more abstract point of view for the iteration of the cobar and bar functors was given by Smith \cite{Smith94cobar} and Fresse \cite{Fresse10complex} respectively. 
-In Fresse's more general approach, the model category of operads is the operating framework, and he proves that the bar construction can be iterated for $E_\infty$-algebras that are cofibrant.
-Although we do not pursue this here, we mention that the reduced $E_\infty$-operad introduced in \cite{Medina20prop1} via a finitely presented prop, a key element in our constructions, is cofibrant.
+In Fresse's more general approach, the model category of operads is the operating framework, and he proves that the bar construction can be iterated for $E_\infty$-algebras that are cofibrant. Although we do not pursue this here, we mention that the reduced $E_\infty$-operad introduced in \cite{Medina20prop1} via a finitely presented prop, a key element in our constructions, is cofibrant.
 In this note we consider a coassociative version of this operad which makes both, simplicial and cubical sets into $E_\infty$-coalgebras.
 We endow this operad, denoted $U(\M)$, with the structure of a Hopf operad, that is one where the tensor product of coalgebras is again a coalgebra, so we can define monoids, and show that the cobar construction of the simplicial chains is a monoid on the category of $U(\M)$-coalgebras.
-The artificial associativity relation on $U(\M)$ is imposed so we have a forgetful map $\coAlg_{U(\M)} \to \coAlg$ and Baues construction could be compared to ours. We show that our monoid in the category of $U(\M)$-coalgebras lift Baues's one define in the category of coassociative coalgebras.
+The artificial associativity relation on $U(\M)$ is imposed so we have a forgetful map $\coAlg_{U(\M)} \to \coAlg$ and Baues construction could be compared to ours. More precisely, our main result is the following.
+
+\begin{theorem}
+There exists a monoidal functor $\mathcal{N} \colon \nSet \to \coAlg_{U(\M)}$, which factors as a composition $\nSet \to \cSet_c \to \coAlg_{U(\M)}$ through the category of cubical sets with connections via the cubical normalized chains functor and whose induced functor $\widetilde{\mathcal{N}} \colon \Mon_{\nSet} \to \Mon_{\coAlg_{U(\M)}}$ makes the square
 \begin{equation*}
 \begin{tikzcd}
-\Mon_{\cSet} \arrow[r, "\chains"] & \Mon_{\coAlg_{U(\M)}} \\
-\sSet^1 \arrow[r, "\chains"] \arrow[u, "\gcobar"] & \coAlg_{U(\M)} \arrow[u, "\cobar"]
+\Mon_{\nSet} \arrow[r, "\widetilde{\mathcal{N}}"] & \Mon_{\coAlg_{U(\M)}} \arrow[d]\\
+\sSet^0 \arrow[r, "\widetilde{N} \circ \gcobar"] \arrow[u, "\gcobar"] & \Mon_{\coAlg}.
 \end{tikzcd}
 \end{equation*}
+commutative up to natural isomorphism.
+\end{theorem} 
 
-The restriction to 1-reduced simplicial sets is not necessary, we ...
+The bottom horizontal functor in the above diagram is essentially Baues' construction. Hence, the above theorem provides a monoidal $E_{\infty}$-coalgebra structure on $\cobar(\chains (X))$, naturally associated to any $X \in \sSet^0$, extending Baues' coassociative coalgebra structure. Furthermore, this $E_{\infty}$-coalgebra structure is obtained by applying the functor $\widetilde{\mathcal{N}} \colon \Mon_{\nSet} \to \Mon_{\coAlg_{U(\M)}}$, which is constructed by taking advantadge of the cubical nature of necklical sets, just like Baues did to obtain the coassociative coalgebra structure on the cobar construction. 
 
-%Applications: if the natural chain map between the normalized chains on a cubical set and its triangulation preserves the $U(M)$-coalgebra structure (check?) we may deduce that our model is equivalent as a $E_{\infty}$-bialgebra to the normalized chains on the classical Kan loop group functor (this would use recent work of Rivera, Zeinalian, and Minichello).
+If $X \in \sSet^0$ is a Kan complex then the algebra $\cobar(\chains(X))$ is quasi-isomorphic to the singular chains on the based loop space of $|X|$ \cite{Rivera-Zeinalian}. For a general $X \in \sSet^0$, Hess and Tonks described a functor $\widehat{\cobar}: \sSet^0 \to \Mon_{\Ch}$ which extends the composition $\cobar \circ \chains$ by formally inverting the $1$-simplices of the underlying simplicial set. The algebra $\widehat{\cobar}(X)$ is then naturally quasi-isomorphic to the algebra of singular chains on the based loop space of $|X|$. Our main theorem above has the following application. 
+
+
+\begin{theorem}
+There exists a functor $\widehat{\gcobar} \colon \sSet^0 \to \Mon_{\nSet}$, which agrees with $\gcobar$ when restricted to $\sSet^1$ and factors the extended cobar construction as $\widehat{\cobar} \cong N \circ \widehat{\gcobar}$. Furthermore, for any $X \in sSet^0$, the monoidal $U(\M)$-coalgebra structure on $\widetilde{\mathcal{N}}(\widehat{\gcobar}(X))$ endows the associative algebra $\widehat{\cobar}(X)$ with a natural extension to a monoidal $U(\M)$-coalgebra structure whose underlying bialgebra has the property of being a Hopf algebra.
+\end{theorem}
+
+We say a monoidal $E_{\infty}$-coalgebra is an $E_{\infty}$-\textit{Hopf algebra} if its underlying bialgebra has the property of being a Hopf algebra. For any $0$-reduced simplicial set $X$, the above result is providing us with an $E_{\infty}$-Hopf algebra structure extending the cobar construction on $\chains(X)$ and modelling the based loop space of $|X|$. This $E_{\infty}$-Hopf algebra structure is built directly from the combinatorics of $X$. 
+
+
+%Applications \colon if the natural chain map between the normalized chains on a cubical set and its triangulation preserves the $U(M)$-coalgebra structure (check?) we may deduce that our model is equivalent as a $E_{\infty}$-bialgebra to the normalized chains on the classical Kan loop group functor (this would use recent work of Rivera, Zeinalian, and Minichello).

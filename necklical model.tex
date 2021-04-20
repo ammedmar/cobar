@@ -1,42 +1,42 @@
 \subsection{A monoidal necklical set model for the based loop space}
 We define a functor 
-$$\Lambda \colon \sSet^0 \to \Mon_{\nSet}.$$
-For any $0$-reduced simplicial set $X$, the underlying necklical set $\Lambda(X) \colon \Nec^{op} \to \Set$ is given by
-$$\Lambda(X) = \colim_{(f \colon \mathcal{S}(T) \to X) \in  \mathcal{S} \downarrow X} \mathcal{Y}(T).$$
-The monoidal structure $$\Lambda(X) \otimes \Lambda(X) \to \Lambda(X)$$
-is induced by the monoidal structure $\vee: \Nec \times \Nec \to \Nec$ together with the monoidal structure $\otimes: \nSet \times \nSet \to \nSet$ on necklicals sets. More precisely, for any $S, S' \in \Nec$, the product $$\Lambda(X)(S) \otimes \Lambda(X)(S') \to \Lambda(X)(S \vee S')$$ is given by $$[f\colon \mathcal{S}(T) \to X, a] \otimes [f'\colon \mathcal{S}(T') \to X, a'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, a \otimes  a'],$$
+$$\gcobar \colon \sSet^0 \to \Mon_{\nSet}.$$
+For any $0$-reduced simplicial set $X$, the underlying necklical set $\gcobar(X) \colon \Nec^{op} \to \Set$ is given by
+$$\gcobar(X) = \colim_{(f \colon \mathcal{S}(T) \to X) \in  \mathcal{S} \downarrow X} \mathcal{Y}(T).$$
+The monoidal structure $$\gcobar(X) \otimes \gcobar(X) \to \gcobar(X)$$
+is induced by the monoidal structure $\vee: \Nec \times \Nec \to \Nec$ together with the monoidal structure $\otimes: \nSet \times \nSet \to \nSet$ on necklicals sets. More precisely, for any $S, S' \in \Nec$, the product $$\gcobar(X)(S) \otimes \gcobar(X)(S') \to \gcobar(X)(S \vee S')$$ is given by $$[f\colon \mathcal{S}(T) \to X, a] \otimes [f'\colon \mathcal{S}(T') \to X, a'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, a \otimes  a'],$$
 where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $a\in \mathcal{Y}(T)(S)$, and $a'\in \mathcal{Y}(T')(S')$.
-We may formally invert all the $1$-simplices of $X$ inside $\Lambda(X)$ to obtain a localized version of $\Lambda$ as follows. Define 
-$$\widehat{\Lambda} \colon \sSet^0 \to \Mon_{\nSet}$$
+We may formally invert all the $1$-simplices of $X$ inside $\gcobar(X)$ to obtain a localized version of $\gcobar$ as follows. Define 
+$$\widehat{\gcobar} \colon \sSet^0 \to \Mon_{\nSet}$$
 by letting
-$$\widehat{\Lambda}(X)= \mathcal{L}_{X_1}\Lambda(X),$$
-namely $\widehat{\Lambda}(X)$ is the monoidal necklical set obtained by adding formal inverses for all $f\colon \Delta^1 \to X$ subject to the usual relations. This results in inverting all $(f: \mathcal{S}(T) \to X) \in \mathcal{S} \downarrow X$ such that $\text{dim}(T)=0.$
+$$\widehat{\gcobar}(X)= \mathcal{L}_{X_1}\gcobar(X),$$
+namely $\widehat{\gcobar}(X)$ is the monoidal necklical set obtained by adding formal inverses for all $f\colon \Delta^1 \to X$ subject to the usual relations. This results in inverting all $(f: \mathcal{S}(T) \to X) \in \mathcal{S} \downarrow X$ such that $\text{dim}(T)=0.$
 
 \begin{remark}
-We give a few remarks regarding the functor $\Lambda \colon \sSet^0 \to \Mon_{\nSet}$.
+We give a few remarks regarding the functor $\gcobar \colon \sSet^0 \to \Mon_{\nSet}$.
 \\
 $i)$ We may define a triangulation functor $\mathcal{T} \colon \cSet \to \sSet$ by $$\mathcal{T}(C) = \colim_{\square^n_c \to C} (\Delta^1)^{\times n}.$$
 The composition of functors
-$$\mathcal{T} \circ \mathcal{P}_! \circ  \Lambda\colon \sSet^0 \to \Mon_{\sSet}$$ coincides with the \textit{rigidification functor} introduced by Cordier and studied by Lurie, Dugger and Spivak in the theory of $\infty$-categories \cite{Rivera-Zeinalian}. The rigidification functor is the left adjoint of the homotopy coherent nerve functor. 
+$$\mathcal{T} \circ \mathcal{P}_! \circ  \gcobar\colon \sSet^0 \to \Mon_{\sSet}$$ coincides with the \textit{rigidification functor} introduced by Cordier and studied by Lurie, Dugger and Spivak in the theory of $\infty$-categories \cite{Rivera-Zeinalian}. The rigidification functor is the left adjoint of the homotopy coherent nerve functor. 
 \\
-$(ii)$ For any $X \in \sSet^0$, we also obtain a simplicial monoid $\mathcal{T}\mathcal{P}_! \widehat{\Lambda}(X) \in \Mon_{\sSet}$ and the monoid $\pi_0( \mathcal{T}\mathcal{P}_! \widehat{\Lambda}(X))$ has the property of being a group.
+$(ii)$ For any $X \in \sSet^0$, we also obtain a simplicial monoid $\mathcal{T}\mathcal{P}_! \widehat{\gcobar}(X) \in \Mon_{\sSet}$ and the monoid $\pi_0( \mathcal{T}\mathcal{P}_! \widehat{\gcobar}(X))$ has the property of being a group.
 \\
-$(iii)$ In the case of arbitrary (not necessarily $0$-reduced) simplicial sets, we may extend  $\Lambda$ to a functor
-$$\sSet \to \mathsf{Cat}_{\nSet}$$ from the category of simpicial sets to the category of small categories enriched over the monoidal category of necklical sets. Similarly, we may extend $\widehat{\Lambda}$ to obtain combinatorial model for the path category of a simplicial set.
+$(iii)$ In the case of arbitrary (not necessarily $0$-reduced) simplicial sets, we may extend  $\gcobar$ to a functor
+$$\sSet \to \mathsf{Cat}_{\nSet}$$ from the category of simpicial sets to the category of small categories enriched over the monoidal category of necklical sets. Similarly, we may extend $\widehat{\gcobar}$ to obtain combinatorial model for the path category of an arbitrary simplicial set.
 \end{remark}
 
-The main feature of the combinatorial model given by $\Lambda(X)$ is that it coincides with the cobar construction after applying the normalized cubical chains functor. 
+The main feature of the combinatorial model given by $\gcobar(X)$ is that it coincides with the cobar construction after applying the normalized cubical chains functor. 
 
 \begin{proposition}
 There is a natural isomorphisms of functors 
-$$\cchains \circ \mathcal{P}_! \circ \Lambda \cong \mathbf{\Omega} \circ \chains: \sSet^0 \to \Mon_{\Ch}.$$
+$$\cchains \circ \mathcal{P}_! \circ \gcobar \cong \mathbf{\Omega} \circ \chains: \sSet^0 \to \Mon_{\Ch}.$$
 \end{proposition}
 
 \begin{proof} 
-Denote by $\iota_n \in (\square^n_c)_n$ the top dimensional non-degenerate element of the standard $n$-cube with connections $\square^n_c$. Note that for any $X \in \sSet^0$, we may represent any non-degenerate $n$-cube $\alpha \in (\mathcal{P}_!(\Lambda(X)))_n$ as a pair $\alpha=[\sigma: \mathcal{Y}(T) \to X, \iota_n]$ for some $T=[n_1] \vee ... \vee [n_k] \in \Nec$ with $\text{dim}(T)=n_1+ ...+n_k-k=n.$
+Denote by $\iota_n \in (\square^n_c)_n$ the top dimensional non-degenerate element of the standard $n$-cube with connections $\square^n_c$. Note that for any $X \in \sSet^0$, we may represent any non-degenerate $n$-cube $\alpha \in (\mathcal{P}_!(\gcobar(X)))_n$ as a pair $\alpha=[\sigma: \mathcal{Y}(T) \to X, \iota_n]$ for some $T=[n_1] \vee ... \vee [n_k] \in \Nec$ with $\text{dim}(T)=n_1+ ...+n_k-k=n.$
 
 To define an algebra map
-$$\varphi_X: \cchains(\mathcal{P}_!(\Lambda(X))) \xrightarrow{\cong} \mathbf{\Omega}(\chains(X))$$
+$$\varphi_X: \cchains(\mathcal{P}_!(\gcobar(X))) \xrightarrow{\cong} \mathbf{\Omega}(\chains(X))$$
 it suffices to define it on any generator of the form $\alpha=[\sigma \colon \Delta^{n+1} \to X, \iota_{n}]$, i.e. when $T$ is of the form $T=[n+1]$, for some $n\geq0$. If $n=0$ let $\varphi_X(\alpha)= [\overline{\sigma}]+ 1_R$, where $[\overline{\sigma}] \in s^{-1} \overline{ \chains(X)} \subset \mathbf{\Omega}(\chains(X))$ denotes the (length $1$) generator in the cobar construction of $\chains(X)$ determined by $\sigma \in X_{n+1}$ and $1_R$ denotes the unit of the underlying ring $R$. If $n>0$, we let $\varphi_X(\alpha)=[\overline{\sigma}]$. A straightforward check yields that this gives rise to a well defined isomorphism of algebras, which is compatible with the differentials, and natural with respect to maps of simplicial sets.  
 \end{proof}
 In \cite{Hess and Tonks}, a localized version of the cobar construction of the chains on a $0$-reduced simplicial set was introduced. This construction is not quite functorial on $\coAlg$ since it depends on a choice of basis of the degree $1$ $R$-module of the underlying coalgebra. However, one may define a functor $$\widehat{\mathbf{\Omega}}: \sSet^0 \to \Mon_{\Ch}$$
@@ -44,7 +44,7 @@ defined by formally inverting the set of cycles $\{ [\overline{\sigma}]+1_R | \s
 
 \begin{corollary}
 There is a natural isomorphism of functors
-$$\cchains \circ \mathcal{P}_! \circ \widehat{\Lambda} \cong \widehat{\mathbf{\Omega}} :\sSet^0 \to \Mon_{\Ch},$$ where $\widehat{\mathbf{\Omega}}$ denotes the extended cobar construction of \cite{Hess and Tonks}. 
+$$\cchains \circ \mathcal{P}_! \circ \widehat{\gcobar} \cong \widehat{\mathbf{\Omega}} :\sSet^0 \to \Mon_{\Ch},$$ where $\widehat{\mathbf{\Omega}}$ denotes the extended cobar construction of \cite{Hess and Tonks}. 
 \end{corollary}
 
 
