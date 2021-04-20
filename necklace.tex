@@ -33,14 +33,14 @@ Given any category $\mathcal{C}$ one can generate a free strict monoidal categor
  
 Define the \textit{category of necklaces} $\Nec$ to be the category  $\mathcal{F}(\mathbf{\Delta}_{*,*}, \otimes)$, where $[n] \otimes [m]=[n+m]$, as defined above. More explicitly, the objects of $\Nec$ are ordered sequences $[n_1] \vee ... \vee[n_k]$ and there are four types of generating morphisms in $\Nec$
 \begin{itemize}
-\item $id_{[n_1]} \vee ... \vee id_{[n_{i-1}]} \vee \partial^j \vee id_{[n_{i+1}]} \vee ... \vee id_{[n_k]} \colon [n_1] \vee ...\vee [n_i-1] \vee... \vee [n_k] \to [n_1] \vee ...\vee [n_i] \vee ...\vee [n_k]$
-for $j=1,\dots,n_i-1$
-\item $id_{[n_1]} \vee ... \vee id_{[n_{i-1}]} \vee \Delta_{[j],[n_i-j]} \vee id_{[n_{i+2}]} \vee ... \vee id_{[n_k]} \colon [n_1] \vee ...\vee [j]\vee [n_{i}-j] \vee... \vee [n_k] \to [n_1] \vee ...\vee [n_i] \vee ...\vee [n_k]$ for $j=1,\dots,n_i-1$
-\item $id_{[n_1]} \vee ... \vee id_{[n_{i-1}]} \vee s^j \vee id_{[n_{i+1}]} \vee ... \vee id_{[n_k]} \colon [n_1] \vee ...\vee [n_i+1] \vee... \vee [n_k] \to [n_1] \vee ...\vee [n_i] \vee ...\vee [n_k]$ for $j=0,\dots,n_i$ and $n_i>0$, and 
+\item $\partial^j \colon [n-1] \to  [n] $
+for $j=1,\dots,n-1$
+\item $\Delta_{[j],[n-j]} \colon  [j]\vee [n-j] \to [n]$ for $j=1,\dots,n-1$
+\item $ s^j \colon [n+1] \to [n]$ for $j=0,\dots,n$ and $n>0$, and 
 \item $s^0 \colon [1] \to [0]$
 \end{itemize}
 
-The objects of $\Nec$ are called \textit{necklaces}. Given any necklace $T=[n_1] \vee ... \vee[n_k]$ in $\Nec$ define the \textit{dimension} of $T$ by $\text{dim}(T)=n_1+ ...+n_k-k$. A \textit{necklical set} is a functor $K \colon \Nec^{op} \to \Set$. Necklical sets form a category with natural transformations as morphisms, which we denote by $\nSet.$ Any necklace $T=[n_1] \vee ... \vee[n_k] \in \Nec$ gives rise to a simplicial set $\mathcal{S}(T)= \Delta^{n_1} \vee... \vee \Delta^{n_k} \in \sSet$, where the wedge symbol now means we identify the last vertex of $\Delta^{n_i}$ with the first vertex of $\Delta^{n_{i+1}}$ for $i=1,\dots,k-1$. Any necklace $T \in \Nec$ also gives rise to a necklical set $\mathcal{Y}(T)=\Hom_{\Nec}(\text{ \_ }, T) \colon \Nec^{op} \to \Set$. These constructions give rise to functors 
+The objects of $\Nec$ are called \textit{necklaces}. Given any necklace $T=[n_1] \vee ... \vee[n_k] \in \Nec$ define the \textit{dimension} of $T$ by $\text{dim}(T)=n_1+ ...+n_k-k$. A \textit{necklical set} is a functor $K \colon \Nec^{op} \to \Set$. Necklical sets form a category with natural transformations as morphisms, which we denote by $\nSet.$ Any necklace $T=[n_1] \vee ... \vee[n_k] \in \Nec$ gives rise to a simplicial set $\mathcal{S}(T)= \Delta^{n_1} \vee... \vee \Delta^{n_k} \in \sSet$, where the wedge symbol now means we identify the last vertex of $\Delta^{n_i}$ with the first vertex of $\Delta^{n_{i+1}}$ for $i=1,\dots,k-1$. Any necklace $T \in \Nec$ also gives rise to a necklical set $\mathcal{Y}(T)=\Hom_{\Nec}(\text{ \_ }, T) \colon \Nec^{op} \to \Set$. These constructions give rise to functors 
 $$\mathcal{S} \colon \Nec \to \sSet$$
 and
 $$\mathcal{Y} \colon \Nec \to \nSet,$$ respectively. 
