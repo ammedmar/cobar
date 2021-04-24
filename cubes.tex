@@ -28,10 +28,10 @@ N(2)_m =
 \partial (\tau) =
 \begin{cases}
 \delta^1 - \delta^0 & \tau  = (\id \colon 2 \to 2), \\
-0 & \text{ otherwise }.
+0 & \text{ otherwise}.
 \end{cases}
 \end{equation*}
-We remark that $\cchains(2)$ is isomorphic to the cellular chains $C(\mathbb I)$ on the topological interval with its standard CW structure, and that $\cchains(2^n)$ is therefore isomorphic to $C(\mathbb I)^{\otimes n}$. 
+We remark that $\cchains(2)$ is isomorphic to the cellular chains $C(\mathbb I)$ on the interval with its standard CW structure, and that $\cchains(2^n)$ is therefore isomorphic to $C(\mathbb I)^{\otimes n}$. 
 
 Since the category $\Ch$ is cocomplete, we can use a Kan extension of this functor along the Yoneda embedding to define the functor of \textit{(normalized) chains} $\cchains \colon \cSet \to \Ch$.
 By construction this functor satisfies $\cchains(\cube^n) \cong C(\mathbb I)^{\otimes n}$.
@@ -89,21 +89,32 @@ and the only non-zero values of $x_i \ast y_i$ are
 \ast([0] \otimes [1]) = [0, 1], \qquad  \ast([1] \otimes [0]) = -[0, 1].
 \end{equation*}
 
-We remark that the coproduct $\Delta$ is known as the \textit{Serre's diagonal}.
+The counit $\varepsilon$ and coproduct $\Delta$ are known respectively as the \textit{augmentation} and \textit{Serre's diagonal}.
+They define a natural counital coassociative coalgebra structure on each $\cchains(\cube)^n$, or equivalently a lift of the functor of chains
+\begin{equation} \label{e:Serre lift}
+\begin{tikzcd}[column sep=small, row sep=small]
+& \coAlg \arrow[d] \\
+\cube \arrow[r, "N"] \arrow[dashed, ur, bend left]& \Ch.
+\end{tikzcd}
+\end{equation}
+This fact is consequence of the following statement proven in \cite{??}.
 
 \begin{proposition}[\cite{bibid}] \label{thm: cubical chain bialgebra}
 	For every $n \in \mathbb{N}$, the assignment
 	\begin{equation*}
 	\counit \mapsto \epsilon, \quad \coproduct \mapsto \Delta, \quad \product \mapsto \ast,
 	\end{equation*}
-	defines a natural $\mathcal M$-bialgebra structure on $\cchains(\square^n)$.
+	defines a natural $\mathcal M$-bialgebra structure on $\cchains(\square^n)$ or, equivalently, a lift of the functor of chains
+	\begin{equation} \label{e:cubical lift to bialgebras}
+	\begin{tikzcd}[column sep=small, row sep=small]
+	& \biAlg_{\M} \arrow[d] \\
+	\cube \arrow[r, "N"] \arrow[dashed, ur, bend left]& \Ch.
+	\end{tikzcd}
+	\end{equation}
 \end{proposition}
 
-\begin{proof}
-	We present a proof of this statement in \cite{??}.
-\end{proof}
-
-Using the forgetful functor $U$ we can considering the previous construction as a functor $\cube \to \coAlg_{U(\M)}$ and use a Kan extension along the Yoneda embedding to define a lift of the functor of chains regarded as a coalgebra with the Serre diagonal:
+Using the forgetful functor $U$ on \eqref{e:cubical lift to bialgebras} we obtain a functor $\cube \to \coAlg_{U(\M)}$.
+Via Kan extensions along the Yoneda embedding of this functor and \eqref{e:Serre lift} we obtain the following lifts of the functor of chains
 \begin{equation}
 \begin{tikzcd}[column sep=small, row sep=small]
 & \coAlg_{U(\M)} \arrow[d] \\

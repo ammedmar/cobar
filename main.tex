@@ -52,6 +52,7 @@ pdfpagelabels]{hyperref}
 \newcommand{\Ch}{\mathsf{Ch}}
 \newcommand{\Alg}{\mathsf{Alg}}
 \newcommand{\coAlg}{\mathsf{coAlg}}
+\newcommand{\biAlg}{\mathsf{biAlg}}
 \newcommand{\simplex}{\triangle}
 \newcommand{\cube}{\square}
 \newcommand{\Set}{\mathsf{Set}}
@@ -70,7 +71,7 @@ pdfpagelabels]{hyperref}
 \newcommand{\Y}{\mathcal{Y}}
 \newcommand{\chains}{N^{\triangle}}
 \newcommand{\cochains}{N}
-\newcommand{\cchains}{N^{{\footnotesize \square}}}
+\newcommand{\cchains}{N}
 \newcommand{\ccochains}{N}
 \newcommand{\op}{\mathrm{op}}
 \DeclareMathOperator*{\colim}{colim}
@@ -92,7 +93,7 @@ pdfpagelabels]{hyperref}
 \renewcommand{\th}{^\mathrm{th}}
 
 % drawings
-\include{figures}
+\include{aux/figures}
 
 \begin{document}
 \title{The cobar construction as an $E_\infty$-Hopf algebra}
@@ -117,10 +118,10 @@ pdfpagelabels]{hyperref}
 \maketitle
 \tableofcontents
 \input{introduction}
-\input{algebraic_preliminaries}
+\input{preliminaries}
 \input{coaction}
 \input{hopf}
-\input{loop_space}
+%\input{loop_space}
 \input{theorem}
 
 \bibliographystyle{alpha} % ieeetr

@@ -1,0 +1,30 @@
+
+\section{Preliminaries}
+\anibal{does $R$ have to be commutative?}
+
+For the rest of this work we fix a commutative ring with unit $R$ and work over its associated symmetric monoidal category $(\Ch, \otimes, R)$ of chain complexes.
+As usual, we regard the set of $R$-linear maps $\Hom(C, C^\prime)$ between chain complexes as a chain complex.
+The $i\th$ suspension functor $s^i \colon \Ch \to \Ch$ is defined on objects by $(s^{i}C)_n= C_{n-i}$.
+
+A \textit{coassociative counital coalgebra} $C = (C, \partial, \Delta, \varepsilon)$ is the data of an object $(C, \partial) \in \Ch$ equipped with maps $\Delta \colon C \to C \otimes C$ and $\varepsilon \colon C\to R$ in $\Ch$ satisfying the usual coassociativity and counitality relations. 
+This notion is equivalent to that of a comonoid in $(\Ch, \otimes, R)$. Denote by $\coAlg$ the category of coassociative counital coalgebra with morphisms being structure preserving chain maps. 
+It is a symmetric monoidal category $(\coAlg, \otimes, R)$ with structure maps:
+\begin{equation} \label{e:coalgebras are symmetric monoidal1}
+\begin{tikzcd}
+C \otimes C^\prime \arrow[r, "\Delta \otimes \Delta^\prime"] &
+(C \otimes C) \otimes (C^\prime \otimes C^\prime) \arrow[r, "(23)"] &
+(C \otimes C^\prime) \otimes (C \otimes C^\prime),
+\end{tikzcd}
+\end{equation}
+\begin{equation} \label{e:coalgebras are symmetric monoidal2}
+\begin{tikzcd}
+C \otimes C^\prime \arrow[r, "\varepsilon \otimes \varepsilon^\prime"] &
+R \otimes R \arrow[r, "\cong"] & R.
+\end{tikzcd}
+\end{equation}
+
+We will denote the category of monoids in a monoidal category $\C$ by $\Mon_{\C}$.\footnote{Monoids in $\Ch$ and $\coAlg$ are sometimes referred to as dg associative unital algebras and dg bialgebras respectively, but we avoid this terminology.}
+
+
+\input{cobar}
+\input{props}

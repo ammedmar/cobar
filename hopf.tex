@@ -1,12 +1,49 @@
 
 \section{Hopf structures}
 
-We now make $\M$ into a Hopf prop, i.e., we construct a chain map $\M(m,n) \to \M(m,n) \otimes \M(m,n)$ for every biarity $(m,n)$ compatible with the prop structure of $\M$.
+By definition, the functor of chains $\cchains \colon \cube \to \Ch$ is monoidal, i.e., the diagram
+\begin{equation*}
+\begin{tikzcd}
+2^p \times 2^q \arrow[r, "\cong"] \arrow[d, "\cchains \otimes \cchains"']& 2^{p+q} \arrow[d, "\cchains"] \\
+\cchains(\cube^p) \otimes \cchains(\cube^q) \arrow[r, "\cong"] & \cchains(\cube^{p+q})
+\end{tikzcd}
+\end{equation*}
+commutes and $\cchains(2^0) = R$.
+Its lift to the symmetric monoidal category $\coAlg$ is also monoidal since the following diagrams associated to the Serre diagonal and augmentation map commute:
+\begin{equation*}
+\begin{tikzcd}
+\cchains(\cube^d) \otimes \cchains(\cube^{d^\prime}) \arrow[r, "\cong"] \arrow[d, "(23) \circ (\Delta \otimes \Delta)"'] & \cchains(\cube^{d+d^\prime}) \arrow[d, "\Delta"]\\
+\cchains(\cube^d)^{\otimes 2} \otimes \cchains(\cube^{d^\prime})^{\otimes 2} \arrow[r, "\cong"]& \cchains(\cube^{d+d^\prime})^{\otimes 2}
+\end{tikzcd}
+\qquad \qquad
+\begin{tikzcd}
+\cchains(\cube^d) \otimes \cchains(\cube^{d^\prime}) \arrow[r, "\cong"] \arrow[d, "(\varepsilon \otimes \varepsilon)"'] & \cchains(\cube^{d+d^\prime}) \arrow[d, "\varepsilon"] \\
+R \otimes R \arrow[r, "\cong"] & R,
+\end{tikzcd}
+\end{equation*}
+please consult \eqref{e:coalgebras are symmetric monoidal1} and \eqref{e:coalgebras are symmetric monoidal2} for the structure maps of the monoidal product of counital coassociative coalgebras.
+
+In this section we will show that the lift \eqref{e:cubical lift to bialgebras} is also monoidal.
+In order to make sense of this statement we first need to describe a monoidal structure on $\M$-bialgebras.
+
+To do so we now make $\M$ into a Hopf prop, that is, a prop over the category $\coAlg$.
+Explicitly, we will construct chain maps $\Delta_\M(m,n) \colon \M(m,n) \to \M(m,n) \otimes \M(m,n)$ and $\varepsilon_\M(m,n) \colon \M(m,n) \to R$ for every biarity $(m,n)$, compatible with the prop structure of $\M$ and making each $\M(m,n)$ into a counital coassociative coalgebra.
 Intuitively, this diagonal is defined on basis elements in $\M(m,n)_d$ as the sum of the $2^d$ summands obtained from the assignments 
 
 FIGURE
 
-We will need the following observations about the Serre diagonal.
+Then, the structure map of the monoidal product of $\M$-bialgebras is given in biarity $(m,n)$ by 
+
+\begin{equation*}
+\begin{tikzcd} [column sep = small, row sep=large]
+\M(m,n) \otimes (C \otimes C^\prime)^{\otimes m} \arrow[r, "\Delta_\M"] & \M(m,n) \otimes \M(m,n) \otimes (C \otimes C^\prime)^{\otimes m} \arrow[dl, out=-150, in=30, "Sh"'] &[-25pt] \\
+\big(\M(m,n) \otimes C^{\otimes m}\big) \otimes \big(\M(m,n) \otimes C^{\prime\, \otimes m}\big) \arrow[r] & 
+C^{\otimes n} \otimes C^{\prime\, \otimes n} \arrow[r, "Sh"] &[-25pt]
+(C \otimes C^\prime)^{\otimes n}.
+\end{tikzcd}
+\end{equation*}
+
+We will need the following observations about the Serre diagonal to define the Hopf structure on $\M$.
 There is an action of $\S_n$ on $\cchains(\square^n)$ given by permuting the factors of $\cchains(\square^1)^{\otimes n}$.
 The Serre diagonal is equivariant with respect to this action in the following sense.
 
@@ -28,33 +65,82 @@ The Serre diagonal is equivariant with respect to this action in the following s
 \end{proof}
 
 As can be seen from \eqref{e:free prop}, the $(m,n)$-part of the free prop is defined only up to a choice of total order on the set of vertices of the $(m,n)$-graph involved.
-Let $\Gamma \in \G(m,n)$ be a representative of an element in $\M(m,n)$ of degree $d$ and let us choose an order of its vertices.
-This order defines a chain map
-\begin{equation*}
-\begin{tikzcd}[row sep=tiny, column sep=small]
-\iota_\Gamma \colon \cchains(\square^1)^{\otimes d} \arrow[r] & \M(m,n) \\
-\qquad {[0,1]}^{\otimes d} \arrow[r, |->] & \Gamma,
-\end{tikzcd}
-\end{equation*}
-and we define the value of diagonal of $\M$ on $\Gamma$ using the Serre diagonal
-\begin{equation} \label{e:diagonal of M}
-\Delta(\Gamma) = \iota_\Gamma^{\otimes 2} \circ \Delta \left([0,1]^{\otimes d}\right).
-\end{equation}
-This definition is independent of the choice of total order on $Vert(\Gamma)$ by Lemma~\ref{l:serre diagonal invariant}, and it is compatible with the relations.
-For example
-\begin{center}
-	%	\begin{tikzcd}
-	%	\leftcounitcoproduct \arrow[r, "\Delta"] \arrow[d, <->] &[-5pt] \leftcounitcoproduct \otimes \leftcounitcoproduct \arrow[d, <->] \\
-	%	\identity \arrow[r, "\Delta"] & \identity \otimes \identity \, ,
-	%	\end{tikzcd}
-	%	\qquad
-	%	\begin{tikzcd}
-	%	\rightcounitcoproduct \arrow[r, "\Delta"] \arrow[d, <->] &[-5pt] \rightcounitcoproduct \otimes \rightcounitcoproduct \arrow[d, <->] \\
-	%	\identity \arrow[r, "\Delta"] & \identity \otimes \identity \, ,
-	%	\end{tikzcd}
-	%	\qquad
-	\begin{tikzcd}
-	\productcounit \arrow[r, "\Delta"] \arrow[d, <->] &[-5pt] \counit \, \otimes \productcounit + \productcounit \otimes \, \counit \arrow[d, <->] \\
-	0 \arrow[r, "\Delta"] & \, 0.
+
+\begin{definition}
+	Let $\Gamma \in \G(m,n)$ be a representative of an element in $\M(m,n)$ of degree $d$. A \textit{characteristic map} for $\Gamma$ is the chain map \vspace*{-5pt}
+	\begin{equation} \label{e:order chain map}
+	\begin{tikzcd}[row sep=tiny, column sep=small]
+	\iota_\Gamma \colon \cchains(\square^d) \arrow[r] & \M(m,n) \\
+	\qquad {[0,1]}^{\otimes d} \arrow[r, |->] & \Gamma.
 	\end{tikzcd}
-\end{center}
+	\end{equation}
+	induced by a choice of total order of the vertices of $\Gamma$.
+\end{definition}
+
+Since by Lemma~\ref{l:serre diagonal invariant} the Serre diagonal is equivariant, the following is well-defined.
+\begin{definition}
+	Let $m,n$ be a pair of non-negative integers.
+	The \textit{coproduct} $\Delta_\M(m,n) \colon \M(m,n) \to \M(m,n)^{\otimes 2}$ is defined on a basis element $\Gamma$ by
+	\begin{equation} \label{e:diagonal of M}
+	\Delta_{\M}(\Gamma) = \iota_\Gamma^{\otimes 2} \circ \Delta \left([0,1]^{\otimes d}\right)
+	\end{equation}
+	where $\iota_\Gamma$ is a characteristic map of $\Gamma$ and $\Delta$ is the Serre diagonal.
+	The \textit{counit} $\varepsilon_\M(m,n) \colon \M(m,n) \to R$ is the chain map whose value on basis elements of degree $0$ is $1$. 
+\end{definition}
+
+\begin{theorem}
+	The collections of maps $\Delta_\M = \{\Delta_\M(m,n)\}_{m,n \geq 0}$ and $\varepsilon_\M = \{\varepsilon_\M(m,n)\}_{m,n\geq0}$ make $\M$ into a Hopf prop, i.e., a prop over the category $\coAlg$.
+\end{theorem}
+
+\begin{proof}
+	The collection of maps $\Delta_\M$ compatible with the composition structure on $\M$ since given characteristic maps $\iota_\Gamma$ and $\iota_{\Gamma^\prime}$, then $\iota_\Gamma \otimes \iota_{\Gamma^\prime}$ is a characteristic map of any (vertical or horizontal) composition of $\Gamma$ and $\Gamma^\prime$.
+	It respects the relations defining $\M$ since
+	\begin{center}
+		\begin{tikzcd}
+		\leftcounitcoproduct \arrow[r, "\Delta_\M"] \arrow[d, <->] &[-0pt] \leftcounitcoproduct \otimes \leftcounitcoproduct \arrow[d, <->] \\
+		\identity \arrow[r, "\Delta_\M"] & \ \, \identity \otimes \identity \, ,
+		\end{tikzcd}
+		\qquad
+		\begin{tikzcd}
+		\rightcounitcoproduct \arrow[r, "\Delta_\M"] \arrow[d, <->] &[-0pt] \rightcounitcoproduct \otimes \rightcounitcoproduct \arrow[d, <->] \\
+		\identity \arrow[r, "\Delta_\M"] & \ \, \identity \otimes \identity \, ,
+		\end{tikzcd}
+		\qquad
+		\begin{tikzcd}
+		\leftcomb \arrow[r, "\Delta_\M"] \arrow[d, <->] &[-0pt] \leftcomb \, \otimes \leftcomb \arrow[d, <->] \\
+		\rightcomb \arrow[r, "\Delta_\M"] & \, \rightcomb \, \otimes \rightcomb,
+		\end{tikzcd}
+		\qquad
+		\begin{tikzcd}
+		\productcounit \arrow[r, "\Delta_\M"] \arrow[d, <->] &[-0pt] \counit\ \counit \, \otimes \productcounit + \productcounit \otimes \, \counit\ \counit \arrow[d, <->] \\
+		0 \arrow[r, "\Delta_\M"] & \ 0.
+		\end{tikzcd}
+	\end{center}
+	It is a chain map since
+	\begin{center}
+		\begin{tikzcd}
+		\counit \arrow[r, "\Delta_\M"] \arrow[d, "\partial"'] &[-0pt] \counit \otimes \counit \arrow[d, "\partial"'] \\
+		0 \arrow[r, "\Delta_\M"] & \ \, 0 \, ,
+		\end{tikzcd}
+		\qquad
+		\begin{tikzcd}
+		\coproduct \arrow[r, "\Delta_\M"] \arrow[d, "\partial"'] &[-0pt] \coproduct \otimes \coproduct \arrow[d, "\partial"'] \\
+		0 \arrow[r, "\Delta_\M"] & \ \, 0 \, ,
+		\end{tikzcd}
+		\qquad
+		\begin{tikzcd}
+		\product \arrow[r, "\Delta_\M"] \arrow[d, "\partial"'] &[-0pt] \leftboundary \ \otimes \product + \product \otimes\ \rightboundary \arrow[d, "\partial"'] \\
+		\rightboundary \,-\, \leftboundary \arrow[r, "\Delta_\M"] &
+		\, \rightboundary \otimes \rightboundary \,-\, \leftboundary \otimes \leftboundary\,.
+		\end{tikzcd}
+	\end{center}
+	The compatibility of the collection of maps $\varepsilon_\M$ is checked similarly and is left to the interested reader.
+\end{proof}
+
+\begin{theorem}
+	The functor $\cube \to \coAlg_{U(\M)}$ of Theorem~\ref{thm: cubical chain bialgebra} is monoidal.
+\end{theorem}
+
+\begin{proof}
+	content...
+\end{proof}
