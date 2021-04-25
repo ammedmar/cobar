@@ -12,12 +12,12 @@ commutes and $\cchains(2^0) = R$.
 Its lift to the symmetric monoidal category $\coAlg$ is also monoidal since the following diagrams associated to the Serre diagonal and augmentation map commute:
 \begin{equation*}
 \begin{tikzcd}
-\cchains(\cube^d) \otimes \cchains(\cube^{d^\prime}) \arrow[r, "\cong"] \arrow[d, "(23) \circ (\Delta \otimes \Delta)"'] & \cchains(\cube^{d+d^\prime}) \arrow[d, "\Delta"]\\
-\cchains(\cube^d)^{\otimes 2} \otimes \cchains(\cube^{d^\prime})^{\otimes 2} \arrow[r, "\cong"]& \cchains(\cube^{d+d^\prime})^{\otimes 2}
+\cchains(\cube^p) \otimes \cchains(\cube^{q}) \arrow[r, "\cong"] \arrow[d, "(23) \circ (\Delta \otimes \Delta)"'] & \cchains(\cube^{p+q}) \arrow[d, "\Delta"]\\
+\cchains(\cube^p)^{\otimes 2} \otimes \cchains(\cube^{q})^{\otimes 2} \arrow[r, "\cong"]& \cchains(\cube^{p+q})^{\otimes 2}
 \end{tikzcd}
 \qquad \qquad
 \begin{tikzcd}
-\cchains(\cube^d) \otimes \cchains(\cube^{d^\prime}) \arrow[r, "\cong"] \arrow[d, "(\varepsilon \otimes \varepsilon)"'] & \cchains(\cube^{d+d^\prime}) \arrow[d, "\varepsilon"] \\
+\cchains(\cube^p) \otimes \cchains(\cube^{q}) \arrow[r, "\cong"] \arrow[d, "(\varepsilon \otimes \varepsilon)"'] & \cchains(\cube^{p+q}) \arrow[d, "\varepsilon"] \\
 R \otimes R \arrow[r, "\cong"] & R,
 \end{tikzcd}
 \end{equation*}
@@ -27,21 +27,20 @@ In this section we will show that the lift \eqref{e:cubical lift to bialgebras} 
 In order to make sense of this statement we first need to describe a monoidal structure on $\M$-bialgebras.
 
 To do so we now make $\M$ into a Hopf prop, that is, a prop over the category $\coAlg$.
-Explicitly, we will construct chain maps $\Delta_\M(m,n) \colon \M(m,n) \to \M(m,n) \otimes \M(m,n)$ and $\varepsilon_\M(m,n) \colon \M(m,n) \to R$ for every biarity $(m,n)$, compatible with the prop structure of $\M$ and making each $\M(m,n)$ into a counital coassociative coalgebra.
-Intuitively, this diagonal is defined on basis elements in $\M(m,n)_d$ as the sum of the $2^d$ summands obtained from the assignments 
-
-FIGURE
-
-Then, the structure map of the monoidal product of $\M$-bialgebras is given in biarity $(m,n)$ by 
-
+Explicitly, we will construct chain maps $\Delta_\M(m,n) \colon \M(m,n) \to \M(m,n) \otimes \M(m,n)$ and $\varepsilon_\M(m,n) \colon \M(m,n) \to R$ for every $(m,n)$ compatible with the prop structure of $\M$ and making each $\M(m,n)$ into a counital coassociative coalgebra.
+Then, the structure map of the monoidal product of $\M$-bialgebras is given for any $(m,n)$ by 
 \begin{equation*}
 \begin{tikzcd} [column sep = small, row sep=large]
-\M(m,n) \otimes (C \otimes C^\prime)^{\otimes m} \arrow[r, "\Delta_\M"] & \M(m,n) \otimes \M(m,n) \otimes (C \otimes C^\prime)^{\otimes m} \arrow[dl, out=-150, in=30, "Sh"'] &[-25pt] \\
+\M(m,n) \otimes (C \otimes C^\prime)^{\otimes m} \arrow[r, "\Delta_\M \otimes \id"] & \M(m,n) \otimes \M(m,n) \otimes (C \otimes C^\prime)^{\otimes m} \arrow[dl, out=-150, in=30, "Sh"'] &[-25pt] \\
 \big(\M(m,n) \otimes C^{\otimes m}\big) \otimes \big(\M(m,n) \otimes C^{\prime\, \otimes m}\big) \arrow[r] & 
 C^{\otimes n} \otimes C^{\prime\, \otimes n} \arrow[r, "Sh"] &[-25pt]
 (C \otimes C^\prime)^{\otimes n}.
 \end{tikzcd}
 \end{equation*}
+
+Intuitively, this diagonal is defined on basis elements in $\M(m,n)_d$ as the sum of the $2^d$ summands obtained from the assignments 
+
+FIGURE
 
 We will need the following observations about the Serre diagonal to define the Hopf structure on $\M$.
 There is an action of $\S_n$ on $\cchains(\square^n)$ given by permuting the factors of $\cchains(\square^1)^{\otimes n}$.
@@ -79,8 +78,7 @@ As can be seen from \eqref{e:free prop}, the $(m,n)$-part of the free prop is de
 
 Since by Lemma~\ref{l:serre diagonal invariant} the Serre diagonal is equivariant, the following is well-defined.
 \begin{definition}
-	Let $m,n$ be a pair of non-negative integers.
-	The \textit{coproduct} $\Delta_\M(m,n) \colon \M(m,n) \to \M(m,n)^{\otimes 2}$ is defined on a basis element $\Gamma$ by
+	For any $(m,n)$ the \textit{coproduct} $\Delta_\M(m,n) \colon \M(m,n) \to \M(m,n)^{\otimes 2}$ is defined on a basis element $\Gamma$ by
 	\begin{equation} \label{e:diagonal of M}
 	\Delta_{\M}(\Gamma) = \iota_\Gamma^{\otimes 2} \circ \Delta \left([0,1]^{\otimes d}\right)
 	\end{equation}
@@ -138,9 +136,62 @@ Since by Lemma~\ref{l:serre diagonal invariant} the Serre diagonal is equivarian
 \end{proof}
 
 \begin{theorem}
-	The functor $\cube \to \coAlg_{U(\M)}$ of Theorem~\ref{thm: cubical chain bialgebra} is monoidal.
+	The functor $\cube \to \biAlg_{\M}$ of Theorem~\ref{thm: cubical chain bialgebra} is monoidal.
 \end{theorem}
 
 \begin{proof}
-	content...
+	We have already establish that the Serre diagonal and the augmentation map are compatible with the monoidal structure of $\cube$. In diagrammatic terms,
+	\begin{equation*}
+	\begin{tikzcd}
+	\coproduct \otimes \cchains(\cube^{p+q}) \arrow[r, "\Delta_\M \otimes Sh"] \arrow[d] &[20pt]
+	\left( \ \coproduct \otimes \coproduct \ \right) \otimes
+	\cchains(\cube^{p}) \otimes \cchains(\cube^{q}) \arrow[d] \\
+	\cchains(\cube^{p+q})^{\otimes 2} \arrow[r, "Sh"] &
+	\cchains(\cube^{p})^{\otimes 2} \otimes \cchains(\cube^{q})^{\otimes 2}
+	\end{tikzcd}
+	\end{equation*}
+	and
+	\begin{equation*}
+	\begin{tikzcd}
+	\counit \ \otimes \cchains(\cube^{p+q}) \arrow[r, "\Delta_\M \otimes Sh"] \arrow[d] &[20pt]
+	\left( \ \counit \ \otimes \ \counit \ \right) \otimes
+	\cchains(\cube^{p}) \otimes \cchains(\cube^{q}) \arrow[d] \\
+	R \arrow[r, "\cong"] &
+	R \otimes R
+	\end{tikzcd}
+	\end{equation*}
+	commute.
+	We will now show that the following diagram commutes:
+	\begin{equation*}
+	\begin{tikzcd}
+	\product \otimes \cchains(\cube^{p+q})^{\otimes 2} \arrow[d] \arrow[r, "\Delta_\M \otimes Sh"] &[20pt]
+	\left(\, \ \leftboundary \ \otimes \product + \product \otimes \ \rightboundary \ \, \right) \otimes \cchains(\cube^{p})^{\otimes 2} \otimes \cchains(\cube^{q})^{\otimes 2} \arrow[d]\\
+	\cchains(\cube^{p+q}) \arrow[r, "Sh"] &
+	\, \cchains(\cube^{p}) \otimes \cchains(\cube^{q}).
+	\end{tikzcd}
+	\end{equation*}
+	Since this is immediate for $p=0$ or $q=0$ and $\cube$ is generated as a monoidal category by $2^1$, we only need to verify the commutativity of this diagram for $p=q=1$.
+	Consider $(x_1 \otimes y_1) \otimes (x_2 \otimes y_2) \in \cchains(\cube^1)^{\otimes 2} \otimes \cchains(\cube^1)^{\otimes 2}$.
+	We have
+	\begin{equation*}
+	\begin{split}
+	\big((\id \otimes \varepsilon) \otimes \ast \ + \ \ast \otimes (\varepsilon \otimes \Delta)\big) \ (-1)^{\bars{y_1} \bars{x_2}} \ (x_1 \otimes x_2) \otimes (y_1 \otimes y_2) \ & = \\
+	(-1)^{\bars{y_1} \bars{x_2} + \bars{x_1} + \bars{x_2} + \bars{y_1}} \ x_1 \cdot \varepsilon(x_2) \otimes y_1 \ast y_2 \ & + \ 
+	(-1)^{\bars{y_1} \bars{x_2} + \bars{x_1}} \ x_1 \ast x_2 \otimes \varepsilon(y_1) \ast y_2.
+	\end{split}
+	\end{equation*}
+	The first summand on the left hand side is non-zero only if $\bars{x_2} = \bars{y_1} = \bars{y_2} = 0$, whereas the second is non-zero only if $\bars{x_1} = \bars{x_2} = \bars{y_1} = 0$, so the above is also equal to
+	\begin{equation} \label{e:join is monoidal 1}
+	(-1)^{\bars{x_1}} \ x_1 \cdot \varepsilon(x_2) \otimes y_1 \ast y_2 \ + \ 
+	x_1 \ast x_2 \otimes \varepsilon(y_1) \ast y_2.
+	\end{equation}
+	On the other hand,
+	\begin{align*}
+	(x_1 \otimes y_1) \ast (x_2 \otimes y_2) \ & =\ 
+	(-1)^{\bars{x_1} + \bars{y_1}} \ (x_1 \ast x_2) \otimes \varepsilon(y_1) \cdot y_2 \ +\
+	(-1)^{\bars{x_1} + \bars{y_1}} \ x_1 \cdot \varepsilon(x_2) \otimes (y_1 \ast y_2) \\ \ & =\ 
+	(x_1 \ast x_2) \otimes \varepsilon(y_1) \cdot y_2 \ +\
+	(-1)^{\bars{x_1}} \ x_1 \cdot \varepsilon(x_2) \otimes (y_1 \ast y_2),
+	\end{align*}
+	which is equal to \eqref{e:join is monoidal 1} as claimed.
 \end{proof}
