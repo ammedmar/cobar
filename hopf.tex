@@ -9,7 +9,7 @@ By definition, the functor of chains $\cchains \colon \cube \to \Ch$ is monoidal
 \end{tikzcd}
 \end{equation*}
 commutes and $\cchains(2^0) = R$.
-Its lift to the symmetric monoidal category $\coAlg$ is also monoidal since the following diagrams associated to the Serre diagonal and augmentation map commute:
+The lift of  $N \colon \cube \to \Ch$ to the symmetric monoidal category $\coAlg$ is also monoidal since the following diagrams associated to the Serre diagonal and augmentation map commute:
 \begin{equation*}
 \begin{tikzcd}
 \cchains(\cube^p) \otimes \cchains(\cube^{q}) \arrow[r, "\cong"] \arrow[d, "(23) \circ (\Delta \otimes \Delta)"'] & \cchains(\cube^{p+q}) \arrow[d, "\Delta"]\\
@@ -18,10 +18,9 @@ Its lift to the symmetric monoidal category $\coAlg$ is also monoidal since the 
 \qquad \qquad
 \begin{tikzcd}
 \cchains(\cube^p) \otimes \cchains(\cube^{q}) \arrow[r, "\cong"] \arrow[d, "(\varepsilon \otimes \varepsilon)"'] & \cchains(\cube^{p+q}) \arrow[d, "\varepsilon"] \\
-R \otimes R \arrow[r, "\cong"] & R,
+R \otimes R \arrow[r, "\cong"] & R.
 \end{tikzcd}
 \end{equation*}
-please consult \eqref{e:coalgebras are symmetric monoidal1} and \eqref{e:coalgebras are symmetric monoidal2} for the structure maps of the monoidal product of counital coassociative coalgebras.
 
 In this section we will show that the lift \eqref{e:cubical lift to bialgebras} is also monoidal.
 In order to make sense of this statement we first need to describe a monoidal structure on $\M$-bialgebras.
@@ -38,11 +37,7 @@ C^{\otimes n} \otimes C^{\prime\, \otimes n} \arrow[r, "Sh"] &[-25pt]
 \end{tikzcd}
 \end{equation*}
 
-Intuitively, this diagonal is defined on basis elements in $\M(m,n)_d$ as the sum of the $2^d$ summands obtained from the assignments 
-
-FIGURE
-
-We will need the following observations about the Serre diagonal to define the Hopf structure on $\M$.
+We will use the following observation about the Serre diagonal to define the Hopf structure on $\M$.
 There is an action of $\S_n$ on $\cchains(\square^n)$ given by permuting the factors of $\cchains(\square^1)^{\otimes n}$.
 The Serre diagonal is equivariant with respect to this action in the following sense.
 
@@ -76,7 +71,7 @@ As can be seen from \eqref{e:free prop}, the $(m,n)$-part of the free prop is de
 	induced by a choice of total order of the vertices of $\Gamma$.
 \end{definition}
 
-Since by Lemma~\ref{l:serre diagonal invariant} the Serre diagonal is equivariant, the following is well-defined.
+Since, by Lemma~\ref{l:serre diagonal invariant}, the Serre diagonal is equivariant, the following is well-defined.
 \begin{definition}
 	For any $(m,n)$ the \textit{coproduct} $\Delta_\M(m,n) \colon \M(m,n) \to \M(m,n)^{\otimes 2}$ is defined on a basis element $\Gamma$ by
 	\begin{equation} \label{e:diagonal of M}
@@ -132,11 +127,11 @@ Since by Lemma~\ref{l:serre diagonal invariant} the Serre diagonal is equivarian
 		\, \rightboundary \otimes \rightboundary \,-\, \leftboundary \otimes \leftboundary\,.
 		\end{tikzcd}
 	\end{center}
-	The compatibility of the collection of maps $\varepsilon_\M$ is checked similarly and is left to the interested reader.
+	The compatibility of the collection of maps $\varepsilon_\M$ is checked similarly.
 \end{proof}
-
-\begin{theorem}
-	The functor $\cube \to \biAlg_{\M}$ of Theorem~\ref{thm: cubical chain bialgebra} is monoidal.
+The Hopf structure of $\M$ makes the category $\biAlg_{\M}$ into a monoidal category. We now show the normalized chains functor $\cube \to \biAlg_{\M}$ is monoidal.
+\begin{theorem} \label{chainsismonoidal}
+	The functor $\cube \to \biAlg_{\M}$ of Proposition~\ref{thm: cubical chain bialgebra} is monoidal.
 \end{theorem}
 
 \begin{proof}
@@ -195,3 +190,9 @@ Since by Lemma~\ref{l:serre diagonal invariant} the Serre diagonal is equivarian
 	\end{align*}
 	which is equal to \eqref{e:join is monoidal 1} as claimed.
 \end{proof}
+
+We have the following immediate consequence.
+
+\begin{theorem} \label{t:lift chains on cSet to UM coAlg is monoidal}
+    The functor $\cchains_{U(\M)} \colon \cSet \to \coAlg_{U(\M)}$ is monoidal.
+\end{theorem}

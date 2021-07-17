@@ -1,3 +1,43 @@
 
-\section{Main theorem and applications}
+\section{Main theorems}
 
+We now have all the ingredients to prove the theorems stated in the introduction. 
+
+\begin{proof}[Proof of Theorem~\ref{t:1st main thm in the intro}]
+    Recall Theorem~\ref{t:lift of chains of cSets to UM coalgebras} stating that the normalized cubical chains functor lifts to a functor $\cchains_{U(\M)} \colon \cSet_c \to \coAlg_{U(\M)}$ extending the coassociative coalgebra given by the Serre diagonal construction.
+    Theorem~\ref{t:lift chains on cSet to UM coAlg is monoidal} states that this lift is  monoidal with respect to the Day convolution product on $\cSet_c$ and the monoidal structure on $\coAlg_{U(\M)}$ induced by the Hopf structure of $\M$.
+    Therefore, there is an induced functor $\Mon_{\cSet_c} \to \Mon_{\coAlg_{U(\M)}}$ between the associated categories of monoids.
+    By Proposition \ref{gcobarandcobar}, the functors $\cchains \circ \gcobar \colon \sSet^0 \to \Mon_{\Ch}$ and $\mathcal{F} \colon \sSet^0 \to \Mon_{\Ch}$ are naturally isomorphic.
+    Hence, the functor $\Mon_{\cSet_c} \to \Mon_{\coAlg_{U(\M)}}$ provides a lift of $\mathcal{F} \colon \sSet^0 \to \Mon_{\Ch}$ to a functor  $\sSet^0 \to \Mon_{\coAlg_{U(\M)}}$ which factors through $\gcobar,$ as desired.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{t:2nd main thm in the intro}]
+Using Corollary \ref{localizedcobar}, a similar argument as above gives the desired lift in the localized case. 
+\end{proof}
+
+Kan constructed a functor $$G: \sSet^0 \to \mathsf{sGrp}$$ known as the Kan loop group, which models the based loop space functor in terms of simplicial sets. More precisely, for any $X \in \sSet^0$, the geometric realization of the Kan loop group $|G(X)|$ is homotopy equivalent, as a topological monoid, to the based loop space $\Omega|X|$ on the geometric realization of $X$ \cite{Berger}. 
+
+We finish by arguing that $\widehat{\mathcal{F}}(X)$ is naturally quasi-isomorphic, \textit{as an $E_{\infty}$-coalgebra}, to the chains on $G(X)$, the Kan loop group of $X$. The argument relies on the fundamental observation that the simplicial monoid obtained by triangulating $\widehat{\gcobar}(X)$ is naturally weak homotopy equivalent as a simplicial monoid to $G(X)$ a result outlined in \cite{Hinich} and also proven in \cite{minichello-rivera-zeinalian}. 
+
+\begin{proof}[Proof of Theorem ~\ref{t:3rd main thm in the intro}]
+
+We construct a zig-zag of quasi-isomorphisms of $U(\M)$-coalgebras between $\widehat{\gcobar}(X)$ and $\chains (G(X))$.
+The triangulation functor $$\mathcal{T}\colon \cSet \to \sSet$$
+has a right adjoint $$\mathcal{U}\colon \sSet \to \cSet$$
+given by the formula
+$$\mathcal{U}(X)_n= \sSet((\Delta^1)^{\times n}, X)$$
+together with the obvious induced cubical faces, degeneracies, and connections. For any $C \in \cSet_c$ there are quasi-isomorphisms of $U(\M)$-coalgebras
+$$\chains(TC) \xrightarrow{\simeq} \cchains(UTC) \xleftarrow{\simeq} \cchains(C).$$
+
+[Insert proof of the above fact: The first is a weak-equivalence of $E_\infty$ algebras by \cite{medina2021cubical}.]
+
+Applying the above to $C= \widehat{\gcobar}(X),$ we obtain that $\chains(T\widehat{\gcobar}(X))$ and $\chains(\widehat{\gcobar}(X)) \cong \widehat{\mathcal{F}}(X)$ are quasi-isomorphic as $U(\M)$-coalgebras. 
+
+By Theorem ?? of \cite{minichello-rivera-zeinalian} it follows that $T\widehat{\gcobar}(X)$, which is naturally isomorphic to $\mathfrak{C}(X)$, is naturally weak homotopy equivalent to $G(X)$ via a map of simplicial monoids $Sz \colon \mathfrak{C}(X) \xrightarrow{\simeq} G(X)$ induced by the ``Szczarba operators". By naturality, we have an induced quasi-isomorphism of $U(\M)$-coalgebras
+$$\chains(T\widehat{\gcobar}(X)) \xrightarrow{\simeq} \chains(G(X)).$$
+Therefore, $\widehat{\mathcal{F}}(X) \cong \cchains(\widehat{\gcobar}(X))$ and $\chains(G(X))$ are quasi-isomorphic as $U(\M)$-coalgebras, as desired. 
+
+
+
+
+\end{proof}

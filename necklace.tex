@@ -27,11 +27,11 @@
 %\end{item}
 %\end{remark} 
 
-\subsection{Necklaces} We follow section 4.3 of \cite{Imma, Ralph, Andy} to define the category of necklaces. First let $\mathbf{\Delta}_{*,*}$ be the subcategory of $\mathbf{\Delta}$ consisting of objects $\{ [1], [2],\dots\}$ and morphisms being functors $f \colon [n] \to [m]$ satisfying $f(0)=0$ and $f(n)=m$. The category $\mathbf{\Delta}_{*,*}$ is a strict monoidal category when equipped with the monoidal structure $[n] \otimes [m]= [n+m]$ given by identifying objects $n \in [n]$ and $0 \in [m]$.
+\subsection{Necklaces} We follow section 4.3 of \cite{Galvez-Kaufmann-Tonks} to define the category of necklaces. First let $\mathbf{\Delta}_{*,*}$ be the subcategory of $\mathbf{\Delta}$ consisting of objects $\{ [1], [2],\dots\}$ and morphisms being functors $f \colon [n] \to [m]$ satisfying $f(0)=0$ and $f(n)=m$. The category $\mathbf{\Delta}_{*,*}$ is a strict monoidal category when equipped with the monoidal structure $[n] \otimes [m]= [n+m]$ given by identifying objects $n \in [n]$ and $0 \in [m]$.
 
-Given any category $\mathcal{C}$ one can generate a free strict monoidal category $\mathcal{F}(\mathcal{C})$ with monoid structure denoted by $\vee$. The  objects of $\mathcal{F}(\mathcal{C})$ are ordered sequences $C_1 \vee ... \vee C_k$ of objects $C_i \in ob(\mathcal{C})$ together with morphisms given by ordered sequences $(f_1 \vee ... \vee f_k) \colon C_1 \vee ... \vee C_k \to C'_1 \vee ... \vee C'_k$ of morphisms $f_i \colon C_i \to C'_i$ in $\mathcal{C}.$ The monoidal structure $\vee$ is then given by concatenation of sequences and the empty sequence is the identity object. If $\mathcal{C}$ is equipped with a monoidal structure $\otimes \colon \mathcal{C} \times \mathcal{C} \to C$ we may define a new category $\mathcal{F}(C, \otimes)$ by formally adding morphisms $\Delta_{C,C'} \colon C \vee C' \to C \otimes C'$, for all objects $C, C' \in \mathcal{C},$ to $\mathcal{F}(\mathcal{C}).$
+Given any category $\mathcal{C}$ one can generate a free strict monoidal category $\mathcal{B}(\mathcal{C})$ with monoid structure denoted by $\vee$. The  objects of $\mathcal{B}(\mathcal{C})$ are ordered sequences $C_1 \vee ... \vee C_k$ of objects $C_i \in ob(\mathcal{C})$ together with morphisms given by ordered sequences $$(f_1 \vee ... \vee f_k) \colon C_1 \vee ... \vee C_k \to C'_1 \vee ... \vee C'_k$$ of morphisms $f_i \colon C_i \to C'_i$ in $\mathcal{C}.$ The monoidal structure $\vee$ is then given by concatenation of sequences and the empty sequence is the identity object. If $\mathcal{C}$ is equipped with a monoidal structure $\otimes \colon \mathcal{C} \times \mathcal{C} \to C$ we may define a new category $\mathcal{B}(C, \otimes)$ by formally adding morphisms $\Delta_{C,C'} \colon C \vee C' \to C \otimes C'$, for all objects $C, C' \in \mathcal{C},$ to $\mathcal{B}(\mathcal{C}).$
  
-Define the \textit{category of necklaces} $\Nec$ to be the category  $\mathcal{F}(\mathbf{\Delta}_{*,*}, \otimes)$, where $[n] \otimes [m]=[n+m]$, as defined above. More explicitly, the objects of $\Nec$ are ordered sequences $[n_1] \vee ... \vee[n_k]$ and there are four types of generating morphisms in $\Nec$
+Define the \textit{category of necklaces} $\Nec$ to be the category  $\mathcal{B}(\mathbf{\Delta}_{*,*}, \otimes)$, where $[n] \otimes [m]=[n+m]$, as defined above. More explicitly, the objects of $\Nec$ are ordered sequences $[n_1] \vee ... \vee[n_k]$ and there are four types of generating morphisms in $\Nec$
 \begin{itemize}
 \item $\partial^j \colon [n-1] \to  [n] $
 for $j=1,\dots,n-1$
@@ -48,29 +48,30 @@ $$\mathcal{Y} \colon \Nec \to \nSet,$$ respectively.
 The category of necklical sets $\nSet$ is a (non-symmetric) monoidal category when equipped with monoidal structure $\otimes\colon \nSet \times \nSet \to \nSet$ given by $$K \otimes K' = \colim_{\mathcal{Y}(T) \to K, \mathcal{Y}(T')\to K'} \mathcal{Y}(T \vee T').$$
 
 We now construct a monoidal functor
-$$\mathcal{P} \colon \Nec \to \square_c.$$
+$$\mathcal{P} \colon \Nec \to \cube.$$
 
-If $T= \Delta^0$ we set $\mathcal{P}(\Delta^0)=[0]$ and on any other $T \in \Nec$ we define $\mathcal{P}( T )= [1]^{\text{dim}(T)}$. In order to define $\mathcal{P}$ on morphisms, it is sufficient to consider the following cases.
+If $T= \Delta^0$ we set $\mathcal{P}(\Delta^0)=2^0$ and on any other $T \in \Nec$ we define $\mathcal{P}( T )= 2^{\text{dim}(T)}$. In order to define $\mathcal{P}$ on morphisms, it is sufficient to consider the following cases.
 \begin{itemize}
-\item For any $\partial^j \colon [n] \to [n+1]$ such that $0< j<{n+1}$, define $\mathcal{P}(\partial^j) \colon [1]^{n-1}\to [1]^{n}$ to be the cubical coface functor $\mathcal{P}(f)= \delta_0^{j}.$ 
+\item For any $\partial^j \colon [n] \to [n+1]$ such that $0< j<{n+1}$, define $\mathcal{P}(\partial^j) \colon 2^{n-1}\to 2^{n}$ to be the cubical coface functor $\mathcal{P}(f)= \delta_0^{j}.$ 
 
-\item For any $\Delta_{[j], [n+1-j]} \colon [j] \vee [n+1-j] \to [n+1]$ such that $0<j<n+1$, define $\mathcal{P}(\Delta_{[j], [n+1-j]}) \colon [1]^{n-1}\to [1]^{n}$ to be the cubical coface functor $\mathcal{P}(f)=\delta_1^{j}$.
+\item For any $\Delta_{[j], [n+1-j]} \colon [j] \vee [n+1-j] \to [n+1]$ such that $0<j<n+1$, define $\mathcal{P}(\Delta_{[j], [n+1-j]}) \colon 2^{n-1}\to 2^{n}$ to be the cubical coface functor $\mathcal{P}(f)=\delta_1^{j}$.
 
-\item We now consider morphisms of the form $s^j \colon [n+1] \to [n]$ for $n>0$. If $j=0$ or $j=n$, then $\mathcal{P}(f) \colon [1]^n \to [1]^{n-1}$ is defined to be the cubical codegeneracy functor $\mathcal{P}(s^j)= \varepsilon^{j}.$ If $0<j<n$, then we define $\mathcal{P}(s^j) \colon [1]^n \to [1]^{n-1}$ to be the cubical coconnection functor $\gamma^{j}.$
+\item We now consider morphisms of the form $s^j \colon [n+1] \to [n]$ for $n>0$. If $j=0$ or $j=n$, then $\mathcal{P}(f) \colon 2^n \to 2^{n-1}$ is defined to be the cubical codegeneracy functor $\mathcal{P}(s^j)= \varepsilon^{j}.$ If $0<j<n$, then we define $\mathcal{P}(s^j) \colon 2^n \to 2^{n-1}$ to be the cubical coconnection functor $\gamma^{j}.$
 
-\item For $s^0 \colon [1] \to [0]$ we define $\mathcal{P}(s^0) \colon [0] \to [0]$ to be the identity functor $id_{[0]}.$
+\item For $s^0 \colon [1] \to [0]$ we define $\mathcal{P}(s^0) \colon 2^0 \to 2^0$ to be the identity functor.
 
 \end{itemize}
 \begin{remark}
-The functor $\mathcal{P}$ is neither faithful or full. However, for any necklace $T' \in \Nec$ with $\text{dim}(T')=n+1$ and any cubical coface functor $\delta_{\epsilon}^j \colon [1]^n \to [1]^{n+1}$ for $0 \leq j \leq n+1$, there exists a unique pair $(T, f \colon T \hookrightarrow T')$, where $T \in \Nec$ with $\text{dim}(T)=n$ and $f \colon T \hookrightarrow T'$ is an injective morphism in $\Nec$, such that $\mathcal{P}(f)=\delta_{\epsilon}^j $.
+The functor $\mathcal{P}$ is neither faithful or full. However, for any necklace $T' \in \Nec$ with $\text{dim}(T')=n+1$ and any cubical coface functor $\delta_{\epsilon}^j \colon 2^n \to 2^{n+1}$ for $0 \leq j \leq n+1$, there exists a unique pair $(T, f \colon T \hookrightarrow T')$, where $T \in \Nec$ with $\text{dim}(T)=n$ and $f \colon T \hookrightarrow T'$ is an injective morphism in $\Nec$, such that $\mathcal{P}(f)=\delta_{\epsilon}^j $.
 \end{remark}
 
-The functor $\mathcal{P} \colon \Nec \to \square_c$ induces an adjunction between $\cSet$ and $\nSet$
+The functor $\mathcal{P} \colon \Nec \to \cube$ induces an adjunction between $\cSet$ and $\nSet$
 with right adjoint
 $$\mathcal{P}^* \colon \cSet \to \nSet$$
 and left adjoint
-$$\mathcal{P}_{!}  \colon \nSet \to \cSet.$$
-Given a cubical set with connections $C \colon \square_c^{op} \to \Set$, we have $$\mathcal{P}^*(C)= C \circ \mathcal{P}^{op}.$$ Given a necklical set $K \colon \Nec^{op} \to \Set$, we have $$\mathcal{P}_{!}(K)= \colim_{(\mathcal{Y}(T) \to K) \in \mathcal{Y} \downarrow K} \mathcal{P}(T) \cong \colim_{(\mathcal{Y}(T) \to K) \in \mathcal{Y} \downarrow K} \square_c^{\text{dim}(T)}.$$
+$$\mathcal{P}_{!}  \colon \nSet \to \cSet_c.$$
+Given a cubical set with connections $C \colon \square_c^{op} \to \Set$, we have $$\mathcal{P}^*(C)= C \circ \mathcal{P}^{op}.$$ Given a necklical set $K \colon \Nec^{op} \to \Set$, we have $$\mathcal{P}_{!}(K)= \colim_{(\mathcal{Y}(T) \to K) \in \mathcal{Y} \downarrow K} \mathcal{P}(T) \cong \colim_{(\mathcal{Y}(T) \to K) \in \mathcal{Y} \downarrow K} \cube^{\text{dim}(T)}.$$ 
+The functor $\mathcal{P}_{!}: \nSet \to \cSet$ is clearly a monoidal functor. 
 
 \input{necklical model}
 
