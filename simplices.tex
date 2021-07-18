@@ -20,26 +20,26 @@ X_n \cong \colim_{\simplex^n \to X} \simplex^n.
 
 Consider the functor $\simplex \to \Ch$ defined by
 \begin{equation*}
-\chains([n])_m = \frac{R\{\simplex([m], [n])\}}{R\{\simplex_{\deg}([m], [n])\}},
+\schains([n])_m = \frac{R\{\simplex([m], [n])\}}{R\{\simplex_{\deg}([m], [n])\}},
 \qquad \qquad
 \partial(\tau) = \sum (-1)^i \tau \circ \delta_i.
 \end{equation*}
 
-We review from \cite{Medina20prop1} a natural $\mathcal M$-bialgebra structure on the normalized chains of standard simplices $\chains(\triangle^n)$.
+We review from \cite{Medina20prop1} a natural $\mathcal M$-bialgebra structure on the normalized chains of standard simplices $\schains(\triangle^n)$.
 The $\M$-bialgebra is specified by three linear maps, the images of the generators
 \begin{equation*}
 \counit, \quad \coproduct, \quad \product,
 \end{equation*}
 satisfying the relations in the presentation of $\mathcal M$. For $n \in \mathbb{N}$, define: \vspace*{5pt} \\
-(1) The counit $\epsilon \in \Hom(\chains(\triangle^n), \Z)$ by
+(1) The counit $\epsilon \in \Hom(\schains(\triangle^n), \Z)$ by
 \begin{equation*}
 \epsilon \big( [v_0, \dots, v_q] \big) = \begin{cases} 1 & \text{ if } q = 0, \\ 0 & \text{ if } q>0. \end{cases}
 \end{equation*}
-(2) The coproduct $\Delta \in \Hom(\chains(\triangle^n), \chains(\triangle^n)^{\otimes2})$ by
+(2) The coproduct $\Delta \in \Hom(\schains(\triangle^n), \schains(\triangle^n)^{\otimes2})$ by
 \begin{equation*}
 \Delta \big( [v_0, \dots, v_q] \big) = \sum_{i=0}^q [v_0, \dots, v_i] \otimes [v_i, \dots, v_q].
 \end{equation*}
-(3) The product $\ast \in \Hom(\chains(\triangle^n)^{\otimes 2}, \chains(\triangle^n))$ by
+(3) The product $\ast \in \Hom(\schains(\triangle^n)^{\otimes 2}, \schains(\triangle^n))$ by
 \begin{equation*}
 \left[v_0, \dots, v_p \right] \ast \left[v_{p+1}, \dots, v_q\right] = \begin{cases} (-1)^{p+|\pi|} \left[v_{\pi(0)}, \dots, v_{\pi(q)}\right] & \text{ if } v_i \neq v_j \text{ for } i \neq j, \\
 0 & \text{ if not}, \end{cases}
@@ -51,7 +51,7 @@ where $\pi$ is the permutation that orders the totally ordered set of vertices, 
 	\begin{equation*}
 	\counit \mapsto \epsilon, \quad \coproduct \mapsto \Delta, \quad \product \mapsto \ast,
 	\end{equation*}
-	defines a natural $\mathcal M$-bialgebra structure  on $\chains(\triangle^n)$.
+	defines a natural $\mathcal M$-bialgebra structure  on $\schains(\triangle^n)$.
 \end{proposition}
 
 \begin{proof}
