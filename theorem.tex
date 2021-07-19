@@ -1,7 +1,7 @@
 
 \section{Main theorems}
 
-We now have all the ingredients to prove the theorems stated in the introduction. 
+In this section we prove the theorems stated in the introduction. 
 
 \begin{proof}[Proof of Theorem~\ref{t:1st main thm in the intro}]
     Recall Theorem~\ref{t:lift of chains of cSets to UM coalgebras} stating that the normalized cubical chains functor lifts to a functor $\cchains_{U(\M)} \colon \cSet_c \to \coAlg_{U(\M)}$ extending the coassociative coalgebra given by the Serre diagonal construction.
@@ -15,10 +15,59 @@ We now have all the ingredients to prove the theorems stated in the introduction
 Using Corollary \ref{localizedcobar}, a similar argument as above gives the desired lift in the localized case. 
 \end{proof}
 
-Kan constructed a functor $$G: \sSet^0 \to \mathsf{sGrp}$$ known as the Kan loop group, which models the based loop space functor in terms of simplicial sets. More precisely, for any $X \in \sSet^0$, the geometric realization of the Kan loop group $|G(X)|$ is homotopy equivalent, as a topological monoid, to the based loop space $\Omega|X|$ on the geometric realization of $X$ \cite{Berger}. 
+Before proving Theorem \ref{t:3rd main thm in the intro} we recall some results and constructions. 
+Kan constructed a functor $$G\colon \sSet^0 \to \mathsf{sGrp}$$ known as the \textit{Kan loop group functor}, which models the based loop space functor in terms of simplicial sets. More precisely, for any $X \in \sSet^0$, the geometric realization of the Kan loop group $|G(X)|$ is homotopy equivalent, as a topological monoid, to the based loop space $\Omega|X|$ on the geometric realization of $X$ \cite{Berger}. 
 
-We finish by arguing that $\widehat{\mathcal{F}}(X)$ is naturally quasi-isomorphic, \textit{as an $E_{\infty}$-coalgebra}, to the chains on $G(X)$, the Kan loop group of $X$. The argument relies on the fundamental observation that the simplicial monoid obtained by triangulating $\widehat{\gcobar}(X)$ is naturally weak homotopy equivalent as a simplicial monoid to $G(X)$ a result outlined in \cite{Hinich} and also proven in \cite{minichello-rivera-zeinalian}. 
 
+The Kan loop group functor has a right adjoint usually denoted by 
+$$\overline{W} \colon \mathsf{sGrp} \to \sSet^0,$$ which is a model for the classifying space of a simplicial group. This adjunction induces an equivalence of homotopy theories in the following sense.
+
+\begin{theorem} \label{kan} There exists a model category structure on the category $\mathsf{sGrp}$ of simplicial groups such that 
+\begin{itemize}
+    \item weak equivalences are those maps simplicial groups whose underlying map of simplicial sets is a weak homotopy equivalence
+    \item all objects are fibrant, and
+\item the adjunction
+$$G \colon \sSet^0 \leftrightarrows \mathsf{sGrp}\colon \overline{W}$$
+becomes a Quillen equivalence when $\sSet^0$ is equipped with the Kan-Quillen model category structure.
+\end{itemize}
+\end{theorem}
+
+ For the definition of the Kan loop group construction as well as a proof of the above statement we refer to \cite{Goerss-Jardine} Chapter VI. 
+
+In a similar vein, D. Dugger and D. Spivak, inspired by the work of J. Lurie,  proved that the adjunction between the rigidification functor $\mathfrak{C} \colon \sSet \to \mathsf{Cat}_{\sSet}$ and the homotopy coherent nerve functor $\mathfrak{N} \colon \mathsf{Cat}_{\sSet} \to \sSet$ yields an equivalence of homotopy theories that model $\infty$-categories \cite{Dugger-Spivak}.
+
+\begin{theorem} \label{joyalbergner} The adjunction $$ \mathfrak{C} \colon \sSet \leftrightarrows \mathsf{Cat}_{\sSet} \colon \mathfrak{N}$$ induces a Quillen equivalence when $\sSet$ is equipped with the Joyal model structure and $\mathsf{Cat}_{\sSet}$ with the Bergner model structure.
+\end{theorem}
+
+
+\begin{remark} The Bergner model structure on $\mathsf{Cat}_{\sSet}$ has as weak equivalences maps of simplicially enriched categories that induce a weak homotopy equivalence between the simplicial sets of morphisms and are essentially surjective after passing to the homotopy categories. Fibrant objects in the Bergner model structure are precisely categories enriched over Kan complexes. On the other hand, fibrant objects in the Joyal model structure on $\sSet$ are precisely quasi-categories and all objects are cofibrant. The weak equivalences are known as \textit{Joyal equivalences} and, based on the above result, we can take them to be maps of simplicial sets that become weak equivalences of simplicially enriched categories after applying $\mathfrak{C}$. The Kan-Quillen model structure is a left Bousfield localization of the Joyal model structure obtained by localizing the single morphism $\Delta^1 \to \Delta^0.$
+\end{remark}
+
+
+The following statement, which is Proposition 2.6.2 in \cite{Hinich}, relates $\overline{W}$ and $\mathfrak{N}$.
+
+\begin{proposition}\label{hinich} There is a natural transformation of functors $$\varphi: \overline{W} \Longrightarrow \mathfrak{N}$$ such that for any simplicial group $C \in \mathsf{sGrp}$, we have a weak equivalence
+$$\varphi_C: \overline{W}(C) \xrightarrow{\simeq} \mathfrak{N}(C).$$
+\end{proposition} 
+
+ Given a simplicial monoid $M$, or equivalently a simplicially enriched category with one object, and a set of morphisms $A$ in $M$ we denote by $\mathcal{L}_A M$ the simplicial monoid obtained by formally inverting the elements of $A$ in $M$ subject to the usual relations. We denote by $\mathcal{L}M$ the simplicial group obtained by formally inverting all morphisms of $M$ (level by level) subject to the usual relations. We now deduce the following relationship between the rigidification functor $\mathfrak{C}$ and the Kan loop group functor $G$.
+
+\begin{proposition} Let $X \in \sSet^0$ be a reduced simplicial set. There are natural weak equivalences of simplicial monoids
+$$\mathcal{L}_{X_1} \mathfrak{C}(X) \xrightarrow{\simeq} \mathcal{L}\mathfrak{C}(X) \xrightarrow{\simeq} G(X).$$
+\end{proposition}
+
+\begin{proof}
+Since $\mathfrak{C}$ is a left Quillen functor and every $X \in \sSet$ is cofibrant in the Joyal model structure, it follows from Theorem \ref{joyalbergner} that $\mathfrak{C}(X)$ is cofibrant as well. Proposition 9.5 of \cite{Dwyer-Kan} implies that the natural inclusion $\mathcal{L}_{X_1} \mathfrak{C}(X) \to \mathcal{L}\mathfrak{C}(X)$ is a weak equivalence of simplicially enriched categories. 
+
+By Proposition \ref{hinich} we have that for any $X \in \sSet^0$, $\varphi_{G(X)}: \overline{W}(G(X)) \xrightarrow{\simeq} \mathfrak{N}(G(X))$ is a weak homotopy equivalence. By Theorem \ref{kan}, we have a weak homotopy equivalence $X \xrightarrow{\simeq} \overline{W}(G(X))$ given by the unit of the adjunction. Composing these two maps we obtain a weak homotopy equivalence
+$$X \xrightarrow{\simeq} \mathfrak{N}(G(X)).$$ 
+The Quillen equivalence of Theorem \ref{joyalbergner} localizes to a Quillen equivalence
+$$\mathcal{L} \mathfrak{C} \colon \sSet^0 \leftrightarrows \mathsf{sGrp} \colon \mathfrak{N}\iota$$
+when $\sSet^0$ is equipped with the Kan-Quillen model structure and $\mathsf{sGrp}$ with the model structure of Theorem \ref{kan}. Here $\iota: \mathsf{sGrp} \to \mathsf{Cat}_{\sSet}$ denotes the natural inclusion functor. It follows that the adjoint of the weak homotopy equivalence $X \xrightarrow{\simeq} \mathfrak{N}(G(X))$ is a weak equivalence of simplicial groups
+$$\mathcal{L}\mathfrak{C}(X) \xrightarrow{\simeq} G(X).$$ 
+\end{proof}
+
+We now have all the ingredients to prove Theorem \ref{t:3rd main thm in the intro}.
 \begin{proof}[Proof of Theorem ~\ref{t:3rd main thm in the intro}]
 
 We construct a zig-zag of quasi-isomorphisms of $U(\M)$-coalgebras between $\widehat{\gcobar}(X)$ and $\schains (G(X))$.
