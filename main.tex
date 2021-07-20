@@ -39,6 +39,7 @@ pdfpagelabels]{hyperref}
 \renewcommand{\S}{\mathbb{S}}
 \newcommand{\As}{\mathcal{A}\mathsf{s}}
 \newcommand{\M}{\mathcal{M}}
+\newcommand{\UM}{{\mathrm{U}(\mathcal{M})}}
 
 % sets and spaces
 \newcommand{\N}{\mathbb{N}}
@@ -67,6 +68,7 @@ pdfpagelabels]{hyperref}
 \newcommand{\Set}{\mathsf{Set}}
 \newcommand{\sSet}{\mathsf{sSet}}
 \newcommand{\cSet}{\mathsf{cSet}}
+\newcommand{\sGrp}{\mathsf{sGrp}}
 \newcommand{\Nec}{\mathsf{Nec}}
 \newcommand{\nSet}{\mathsf{nSet}}
 \newcommand{\Mon}{\mathsf{Mon}}
@@ -79,13 +81,14 @@ pdfpagelabels]{hyperref}
 \newcommand{\op}{\mathrm{op}}
 \DeclareMathOperator{\Y}{\mathcal{Y}}
 \DeclareMathOperator{\A}{\mathcal{A}}
+\DeclareMathOperator{\Ahat}{\mathcal{\widehat{A}}}
 \DeclareMathOperator{\chains}{N}
 \DeclareMathOperator{\schains}{N^{\triangle}}
 \DeclareMathOperator{\cchains}{N^{\square}}
 \DeclareMathOperator{\schainsAS}{N^{\triangle}_{\As}}
 \DeclareMathOperator{\cchainsAS}{N^{\square}_{\As}}
 \DeclareMathOperator{\schainsUM}{N^{\triangle}_{\As}}
-\DeclareMathOperator{\cchainsUM}{N^{\square}_{U(\M)}}
+\DeclareMathOperator{\cchainsUM}{N^{\square}_{\UM}}
 \DeclareMathOperator*{\colim}{colim}
 \DeclareMathOperator{\cobar}{\mathbf{\Omega}}
 \DeclareMathOperator{\gcobar}{\mathbb{\Omega}}
@@ -131,9 +134,8 @@ pdfpagelabels]{hyperref}
 \begin{abstract}
     In the fifties, Adams introduced a comparison map $\theta_Y \colon \cobar(S^\triangle(Y,y)) \to S^\square(\Omega_y Y)$ from his cobar construction on the (simplicial) singular chains of a pointed space $(Y, y)$ to the cubical singular chains on its based loops space $\Omega_y Y$.
 	This comparison map is a quasi-isomorphism of algebras, which was shown by Baues to be one of bialgebras by considering Serre's cubical coproduct.
-	In this work we generalize Baues result by constructing an $E_{\infty}$-bialgebra structure on the cobar construction of the coalgebra of singular chains making Adams' comparison map a quasi-isomorphism of $E_\infty$ bialgebras.
-	We also show that, for a general reduced simplicial set $X$, the Hess-Tonks quasi-isomorphism from a localized version of Adams' cobar construction on the chains of $X$ to the chains on the Kan loop group $G(X)$ is a quasi-isomorphism of $E_\infty$-coalgebras.
-	This generalizes a result of Franz who proved this map to be a quasi-isomorphism of bialgebras.
+	In this work we generalize Baues result by constructing an $E_\infty$ bialgebra structure on the cobar construction of the coalgebra of singular chains, and proving that Adams' comparison map is a quasi-isomorphism of $E_\infty$ bialgebras.
+	We also show that, for a general reduced simplicial set $X$, ...
 \end{abstract}
 
 \vspace*{-1cm}

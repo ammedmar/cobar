@@ -28,7 +28,11 @@ Given a chain complex $C$ define
 \end{align*}
 with their natural operad and prop structures respectively.
 Given an operad $\O$ and a prop $\P$, An $\O$-\textit{structure} (resp. $\P$-\textit{structure}) on $C$ is a structure preserving morphism $\O \to \End^C$ (resp. $\P \to \End_C^C$).
-%Given these structures, it is usual to call $C$ an $\O$-coalgebra and a $\P$-bialgebra respectively, but we avoid this terminology.
+We say that a chain complex is an $\O$-\textit{coalgebra} (resp. $\P$-bialgebra) if it is equipped with a $\O$-\textit{structure} (resp. $\P$-structure).
+
+\subsection{Coalgebras revisited}
+
+operad $\As$ ...
 
 \subsection{$E_\infty$ operads}
 
@@ -94,7 +98,7 @@ We now review the definition of the finitely presented $E_\infty$ prop $\M$ whic
 
 Originally this prop was defined without imposing the coassociativity condition \ \coassociativity \,.
 This is advantageous since in that case the associated reduced operad is a cofibrant resolution of the terminal operad.
-Since in this work we are interested in extending the Alexander-Whitney and Serre coproducts we find it convenient to impose the coassociative relation, so obtaining a forgetful functor $\coAlg_{U(\M)} \to \coAlg$.
+Since in this work we are interested in extending the Alexander-Whitney and Serre coproducts we find it convenient to impose the coassociative relation, so obtaining a forgetful functor $\coAlg_\UM \to \coAlg$.
 
 The same proof given for Theorem 3.3 in \cite{medina2020prop1} establishes the following.
 
@@ -131,10 +135,10 @@ Notice that the coproduct $\Delta$ is the \textit{Alexander-Whitney coproduct} o
 	See Theorem 4.2 in \cite{medina2020prop1}.
 \end{proof}
 
-By applying the forgetful functor $U$ from the category of props to the category of operads, the construction of Proposition \ref{p:simplicial chain bialgebra} gives rise to a functor $\simplex \to \coAlg_{U(\M)}$. Since the category of coalgebras over an operad is cocomplete, we may use Kan extension along the Yoneda embedding to define a lift of the functor of chains regarded as a coalgebra with the Alexander-Whitney diagonal:
+By applying the forgetful functor $U$ from the category of props to the category of operads, the construction of Proposition \ref{p:simplicial chain bialgebra} gives rise to a functor $\simplex \to \coAlg_\UM$. Since the category of coalgebras over an operad is cocomplete, we may use Kan extension along the Yoneda embedding to define a lift of the functor of chains regarded as a coalgebra with the Alexander-Whitney diagonal:
 \begin{equation*}
 \begin{tikzcd}[column sep=small, row sep=small]
-& \coAlg_{U(\M)} \arrow[d] \\
+& \coAlg_\UM \arrow[d] \\
 & \coAlg \arrow[d] \\
 \sSet \arrow[r, "N"] \arrow[dashed, uur, bend left]& \Ch.
 \end{tikzcd}
@@ -193,15 +197,15 @@ The following statement was shown in \cite{medina2021cubical}.
 	\end{equation}
 \end{proposition}
 
-Using the forgetful functor $U$ on \eqref{e:cubical lift to bialgebras} we obtain a functor $\cube \to \coAlg_{U(\M)}$.
-Kan extending this functor and \eqref{e:Serre lift} along the Yoneda embedding we obtain a functor $\cchains_{U(\M)} \colon \cSet \to \coAlg_{U(\M)}$. Hence, we obtain an $E_{\infty}$-coalgebra structure, described explicitly through the operad $U(\M)$, on the normalized chains of any cubical set extending the coassociative Serre diagonal.
+Using the forgetful functor $U$ on \eqref{e:cubical lift to bialgebras} we obtain a functor $\cube \to \coAlg_\UM$.
+Kan extending this functor and \eqref{e:Serre lift} along the Yoneda embedding we obtain a functor $\cchains_\UM \colon \cSet \to \coAlg_\UM$. Hence, we obtain an $E_{\infty}$-coalgebra structure, described explicitly through the operad $U(\M)$, on the normalized chains of any cubical set extending the coassociative Serre diagonal.
 \begin{theorem} \label{t:lift of chains of cSets to UM coalgebras}
 	The following diagram commutes up to natural isomorphism
 	\begin{equation}
 	\begin{tikzcd}[column sep=small, row sep=small]
-	& \coAlg_{U(\M)} \arrow[d] \\
+	& \coAlg_\UM \arrow[d] \\
 	& \coAlg \arrow[d] \\
-	\cSet \arrow[r, "N"] \arrow[dashed, uur, bend left, "\cchains_{U(\M)}"]& \Ch.
+	\cSet \arrow[r, "N"] \arrow[dashed, uur, bend left, "\cchains_\UM"]& \Ch.
 	\end{tikzcd}
 	\end{equation}
 \end{theorem}
