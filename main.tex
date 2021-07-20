@@ -19,6 +19,7 @@ pdfpagelabels]{hyperref}
 }
 \usepackage[capitalize, noabbrev]{cleveref}
 \crefname{subsection}{\subsect\!}{subsections}
+\let\subsect\S % copying the subsection symbol before overwriting it
 
 % layout
 \setlength{\textwidth}{\paperwidth}
@@ -82,12 +83,13 @@ pdfpagelabels]{hyperref}
 \DeclareMathOperator{\Y}{\mathcal{Y}}
 \DeclareMathOperator{\A}{\mathcal{A}}
 \DeclareMathOperator{\Ahat}{\mathcal{\widehat{A}}}
+\DeclareMathOperator{\U}{U}
 \DeclareMathOperator{\chains}{N}
 \DeclareMathOperator{\schains}{N^{\triangle}}
 \DeclareMathOperator{\cchains}{N^{\square}}
 \DeclareMathOperator{\schainsAS}{N^{\triangle}_{\As}}
 \DeclareMathOperator{\cchainsAS}{N^{\square}_{\As}}
-\DeclareMathOperator{\schainsUM}{N^{\triangle}_{\As}}
+\DeclareMathOperator{\schainsUM}{N^{\triangle}_{\UM}}
 \DeclareMathOperator{\cchainsUM}{N^{\square}_{\UM}}
 \DeclareMathOperator*{\colim}{colim}
 \DeclareMathOperator{\cobar}{\mathbf{\Omega}}
