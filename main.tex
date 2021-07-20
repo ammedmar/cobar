@@ -37,7 +37,7 @@ pdfpagelabels]{hyperref}
 \renewcommand{\P}{\mathcal{P}}
 \renewcommand{\O}{\mathcal{O}}
 \renewcommand{\S}{\mathbb{S}}
-\newcommand{\As}{\mathcal{A}s}
+\newcommand{\As}{\mathcal{A}\mathsf{s}}
 \newcommand{\M}{\mathcal{M}}
 
 % sets and spaces
@@ -76,21 +76,23 @@ pdfpagelabels]{hyperref}
 \newcommand{\props}{\mathsf{Prop}}
 
 % functors
-\DeclareMathOperator*{\tensor}{\otimes}
-\newcommand{\Y}{\mathcal{Y}}
-\newcommand{\A}{\mathcal{A}}
-\newcommand{\schains}{N^{\triangle}}
-\newcommand{\cochains}{N}
-\newcommand{\cchains}{N^{\square}}
-\newcommand{\ccochains}{N}
 \newcommand{\op}{\mathrm{op}}
+\DeclareMathOperator{\Y}{\mathcal{Y}}
+\DeclareMathOperator{\A}{\mathcal{A}}
+\DeclareMathOperator{\chains}{N}
+\DeclareMathOperator{\schains}{N^{\triangle}}
+\DeclareMathOperator{\cchains}{N^{\square}}
+\DeclareMathOperator{\schainsAS}{N^{\triangle}_{\As}}
+\DeclareMathOperator{\cchainsAS}{N^{\square}_{\As}}
+\DeclareMathOperator{\schainsUM}{N^{\triangle}_{\As}}
+\DeclareMathOperator{\cchainsUM}{N^{\square}_{U(\M)}}
 \DeclareMathOperator*{\colim}{colim}
 \DeclareMathOperator{\cobar}{\mathbf{\Omega}}
-\newcommand{\gcobar}{\mathbb{\Omega}}
-\newcommand{\sSing}{\mathsf{Sing}^{\triangle}}
-\newcommand{\cSing}{\mathsf{Sing}^{\square}}
-\newcommand{\sS}{S^{\triangle}}
-\newcommand{\cS}{S^{\square}}
+\DeclareMathOperator{\gcobar}{\mathbb{\Omega}}
+\DeclareMathOperator{\sSing}{Sing^{\triangle}}
+\DeclareMathOperator{\cSing}{Sing^{\square}}
+\DeclareMathOperator{\sS}{S^{\triangle}}
+\DeclareMathOperator{\cS}{S^{\square}}
 
 % environments
 \newtheorem{theorem}{Theorem}

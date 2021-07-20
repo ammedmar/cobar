@@ -25,7 +25,7 @@ The functor of cubical singular chains $S^\square$ appearing in the target of Ad
 The monoidal structure on the site defining the category of cubical sets with connections $\cSet$ provides it, via Day convolution, with a monoidal structure, which, with the usual monoidal structures on $\Ch$ and $\Top$, makes both $\cSing$ and $\cchains$ into monoidal functors.
 Consequently, $S^\square(\Omega_y Y)$ is a monoid in $\Ch$ since $\Omega_y Y$ is a monoid in $\Top$ for any pointed space $(Y, y)$.
 Cubical chains are equipped with a natural coalgebra structure coming from Serre's chain approximation to the diagonal.
-This structure lifts $\cchains$ to the category of coalgebras $\cchains_\coAlg \colon \cSet \to \coAlg$ as a monoidal functor, which, in particular, makes $S^\square(\Omega_y Y)$ into a monoid in $\coAlg$ for any pointed space $(Y, y)$.
+This structure lifts $\cchains$ to the category of coalgebras $\cchainsAS \colon \cSet \to \coAlg$ as a monoidal functor, which, in particular, makes $S^\square(\Omega_y Y)$ into a monoid in $\coAlg$ for any pointed space $(Y, y)$.
 
 Denoting by $\sSet^0$ the category of reduced simplicial sets, Baues' introduced the \textit{cubical cobar construction}
 \begin{equation*}
@@ -43,11 +43,11 @@ where the first chain map is an isomorphism and the second is induced from an in
 Additionally, Baues proved that when $Y$ is simply connected this inclusion is a homotopy equivalence, a result extended to the non-simply connected setting in \cite{rivera2019path}.
 
 The first map in \eqref{e:baues factorization of adams map} is defined for a general reduced simplicial set $X$ and is always an isomorphism.
-Using this map, Baues transferred the Serre coproduct on $\cchains_\coAlg(\gcobar X)$ to $\cobar(\schains(X))$ and proved that, together with its formal monoid structure, this coproduct makes $\cobar(\schains(X))$ into a bialgebra, that is to say, a monoid in $\coAlg$.
+Using this map, Baues transferred the Serre coproduct on $\cchainsAS(\gcobar X)$ to $\cobar(\schains(X))$ and proved that, together with its formal monoid structure, this coproduct makes $\cobar(\schains(X))$ into a bialgebra, that is to say, a monoid in $\coAlg$.
 In other words, Baues lifted Adams' cobar construction $\cobar \circ \schains$ so that it fits in the following diagram commuting up to a natural isomorphism:
 \begin{equation*}
 \begin{tikzcd}
-\Mon_{\cSet} \arrow[r, "\cchains_\coAlg \ "] & \Mon_{\coAlg} \arrow[d] \\
+\Mon_{\cSet} \arrow[r, "\cchainsAS \ "] & \Mon_{\coAlg} \arrow[d] \\
 \sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\gcobar"] & \Mon_{\Ch}.
 \end{tikzcd}
 \end{equation*}
@@ -58,20 +58,20 @@ More precisely, our lift is to the category of monoids in $\coAlg_{U(\M)}$, wher
 For this statement to be meaningful, we first need to define a monoidal structure on $\coAlg_{U(\M)}$.
 We do so by introducing a Hopf structure on $U(\M)$, that is to say, by making it into an operad over the category of coalgebras, a structure that has other potential applications \cite{livernet2008hopf}.
 Once we have shown that $\coAlg_{U(\M)}$ is a monoidal category, we prove the main technical result of this work.
-It states that the functor $\cchains_{\coAlg_{U(\M)}} \colon \cSet \to \coAlg_{U(\M)}$ defined in \cite{medina2021cubical} as a lift of $\cchains_\coAlg$ is monoidal.
+It states that the functor $\cchainsUM \colon \cSet \to \coAlg_{U(\M)}$ defined in \cite{medina2021cubical} as a lift of $\cchainsAS$ is monoidal.
 
-Generalizing Baues' first step in the construction of his lift of Adams' cobar construction, we have that $\cchains_{\coAlg_{U(\M)}}(\gcobar X)$ is a monoid in $\coAlg_{U(\M)}$.
-This is because $\gcobar X$ is a monoid in $\cSet$ and $\cchains_{\coAlg_{U(\M)}}$ is shown to be a monoidal functor.
+Generalizing Baues' first step in the construction of his lift of Adams' cobar construction, we have that $\cchainsUM(\gcobar X)$ is a monoid in $\coAlg_{U(\M)}$.
+This is because $\gcobar X$ is a monoid in $\cSet$ and $\cchainsUM$ is shown to be a monoidal functor.
 Similar to Baues' second step, we use for any reduced simplicial set $X$ his isomorphism $\cobar(\schains(X)) \to \cchains(\gcobar X)$ to transfer the constructed $E_\infty$ bialgebra structure on $\cchains(\gcobar X)$ to $\cobar(\schains(X))$.
 In particular we have, generalizing Baues' result, that for any pointed space $(Y, y)$ Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\square}(\Omega_y Y)$ is a quasi-isomorphism of $E_\infty$ bialgebras.
 We condense this discussion in our main result.
 
 \begin{theorem} \label{t:1st main thm in the intro}
-    The functor $\cchains_{\coAlg_{U(\M)}}$ is monoidal and its associated functor on monoids fits in the following diagram commuting up to a natural isomorphism:
+    The functor $\cchainsUM$ is monoidal and its associated functor on monoids fits in the following diagram commuting up to a natural isomorphism:
     \begin{equation*}
     \begin{tikzcd}
     & \Mon_{\coAlg_{U(\M)}} \arrow[d] \\
-    \Mon_{\cSet} \arrow[ru, "\cchains_{\coAlg_{U(\M)}}", out=70, in=180] \arrow[r, "\cchains_\coAlg"]
+    \Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180] \arrow[r, "\cchainsAS"]
     & \Mon_{\coAlg} \arrow[d] \\
     \sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\gcobar"]
     & \Mon_{\Ch}.
@@ -121,10 +121,14 @@ We summarize this discussion in the following statement.
 
 \begin{theorem} There exists a functor $\widehat{\mathcal{A}}_{U(\M)} \colon \sSet^0 \to \Mon_{\coAlg_{U(\M)}}$ that fits into a commutative diagram
 \begin{equation*}
-\begin{tikzcd}[column sep=large]
-& \phantom{aaaaa}\Mon_{\coAlg_{U(\M)}} \arrow[d, shift left=5, ""]\\
-& \phantom{aaaaa}\Mon_{\coAlg} \ar[d, shift left=5, ""]\\
-\phantom{sssssssssss}\sSet^0 \phantom{aaaaaaa} \ar[r, "\widehat{\mathcal{A}}", ]\ar[ru, "\widehat{\mathcal{A}}_{\coAlg}", very near end]\arrow[ruu,  "\widehat{\mathcal{A}}_{U(\M)}", near end] & \phantom{aaaaa} \Mon_{\Ch}.
+\begin{tikzcd}[row sep=small]
+& \Mon_{\coAlg_{U(\M)}} \arrow[d] \\
+& \Mon_{\coAlg} \arrow[d] \\
+\sSet^0
+\arrow[r, "\widehat{\A}"', ]
+\arrow[ru, "\widehat{\A}_{\coAlg}"', out=45, in=180] 
+\arrow[ruu, "\widehat{\A}_{U(\M)}", out=90, in=180]
+& \Mon_{\Ch}.
 \end{tikzcd}
 \end{equation*}
 Furthermore, for any $X \in \sSet^0$, there is a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras between $\widehat{\mathcal{A}}_{U(\M)}(X)$ and $\schains(G(X))$.
