@@ -52,7 +52,7 @@ $$\psi_C: \overline{W}(C) \xrightarrow{\simeq} \mathfrak{N}(C).$$
 
  Given a simplicial monoid $M$, or equivalently a simplicially enriched category with one object, and a set of morphisms $A$ in $M$ we denote by $\mathcal{L}_A M$ the simplicial monoid obtained by formally inverting the elements of $A$ in $M$ subject to the usual relations. We denote by $\mathcal{L}M$ the simplicial group obtained by formally inverting all morphisms of $M$ (level by level) subject to the usual relations. We now deduce the following relationship between the rigidification functor $\mathfrak{C}$ and the Kan loop group functor $G$.
 
-\begin{proposition} Let $X \in \sSet^0$ be a reduced simplicial set. There are natural weak equivalences of simplicial monoids
+\begin{proposition}\label{CandG} Let $X \in \sSet^0$ be a reduced simplicial set. There are natural weak equivalences of simplicial monoids
 $$\mathcal{L}_{X_1} \mathfrak{C}(X) \xra{\simeq} \mathcal{L}\mathfrak{C}(X) \xra{\simeq} G(X).$$
 \end{proposition}
 
@@ -82,7 +82,8 @@ $$\schains(TC) \xra{\simeq} \cchains(UTC) \xleftarrow{\simeq} \cchains(C).$$
 
 Applying the above to $C= \widehat{\gcobar}(X),$ we obtain that $\schains(T\widehat{\gcobar}(X))$ and $\schains(\widehat{\gcobar}(X)) \cong \widehat{\mathcal{F}}(X)$ are quasi-isomorphic as $U(\M)$-coalgebras. 
 
-By Theorem ?? of \cite{minichello-rivera-zeinalian} it follows that $T\widehat{\gcobar}(X)$, which is naturally isomorphic to $\mathfrak{C}(X)$, is naturally weak homotopy equivalent to $G(X)$ via a map of simplicial monoids $Sz \colon \mathfrak{C}(X) \xra{\simeq} G(X)$ induced by the ``Szczarba operators". By naturality, we have an induced quasi-isomorphism of $U(\M)$-coalgebras
+By Proposition\ref{CandG} we have a weak homotopy equivalence of simplicial monoids
+$$T\widehat{\gcobar}(X) \cong \mathcal{L}_{X_1}\mathfrak{C}(X) \xrightarrow{\simeq} G(X)$$ for any $X \in \sSet^0.$ By naturality, we have an induced quasi-isomorphism of $U(\M)$-coalgebras
 $$\schains(T\widehat{\gcobar}(X)) \xra{\simeq} \schains(G(X)).$$
 Therefore, $\widehat{\mathcal{F}}(X) \cong \cchains(\widehat{\gcobar}(X))$ and $\schains(G(X))$ are quasi-isomorphic as $U(\M)$-coalgebras, as desired. 
 
