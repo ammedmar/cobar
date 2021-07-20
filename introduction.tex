@@ -88,12 +88,41 @@ TBW
 %For any reduced simplicial set $X$, an alternative construction of an $E_\infty$ bialgebra model is given by the chains on Kan's simplicial loop group $G(X)$.
 %More explicitly, Kan constructed a functor $G \colon \sSet^0 \to \mathsf{sGrp}$ to the category of simplicial groups such that, for any $X$, the geometric realization of $G(X)$ is homotopy equivalent, as a topological monoid, to the based loop space on the geometric realization of $X$ \cite{berger1995loops}.
 %In \cite{mcclure2003multivariate, berger2004combinatorial}, the functor of (normalized) chains $\schains$ was lifted to that of $E_\infty$ coalgebras, a result generalized in \cite{medina2020prop1} by constructing a lift $\schains_{\coAlg_{U(\M)}} \colon \sSet \to \coAlg_{U(\M)}$.
+\manuel{I took it from here}
+The proof that Adams’ map $\theta_Y \colon \cobar(S^\triangle(Y, y)) \to S^{\square}(\Omega_y Y)$ is a quasi-isomorphism uses the fact that $S^\triangle(Y, y)$ is obtained by applying the chains functor to the fibrant simplicial set $\text{Sing}(Y,y)$. In general, for an arbitrary reduced simplicial set $X \in \sSet^0$ with $X_0=\{b\}$,  it is not true that the algebras
+$\cobar(\schains(X))$ and $S^{\square}(\Omega_b |X|)$ are quasi-isomorphic. One way of correcting this failure is by first Kan replacing $X$. Another way, which involves a smaller amount of data, is by localizing the cobar construction at the $1$-simplices of $X$ as proposed in \cite{hess2010cobar}.
 
-\anibal{Now motivation for Kan's loop group and the rest. (Manuel will take the first go)}
+The based loop space of an arbitrary reduced simplicial set can be modeled through the classical \textit{Kan loop group functor}. This is a functor 
+$$G\colon \sSet^0 \to \mathsf{sGrp}$$ from reduced simplicial sets to the category of simplicial groups with the property that the geometric realization $|G(X)|$ is homotopy equivalent to the based loop space $\Omega_b|X|$ as a topological monoid \cite{berger1995loops}. Furthermore, the Kan loop group together with its right adjoint $$\overline{W}: \mathsf{sGrp} \to \sSet^0,$$ called the classifying space functor, yield a Quillen equivalence of model categories when $\sSet^0$ is equipped with the Kan-Quillen model structure and $\mathsf{sGrp}$ with an appropriate model structure having as weak equivalences maps of simplicial groups whose underlying maps of simplicial sets are weak homotopy equivalences. 
 
-We now describe a comparison between this $E_\infty$ bialgebra model and the one constructed here.
-To do so in full generality we need a localized version of the cobar construction.
-Following K. Hess and A. Tonks \cite{hess2010cobar}, we formally invert all $1$-simplices appearing in Adams' cobar construction $\A = \cobar \circ \schains \colon \sSet^0 \to \Mon_{\Ch}$ and obtain a new functor $\widehat{\A} \colon \sSet^0 \to \Mon_{\Ch}$ together with a natural quasi-isomorphism 
+Hess and Tonks considered a localized version of $\mathcal{A} = \cobar \circ \schains \colon \sSet^0 \to \Mon_\Ch$, which they called the \textit{extended cobar construction}, and compared it explicitly with the composition $$\schains \circ G \colon \sSet^0 \to \Mon_\Ch.$$ More precisely, they construct a functor
+$$\widehat{\mathcal{A}} \colon \sSet^0 \to \Mon_\Ch$$
+given by the localization $$\widehat{\mathcal{A}}(X)= \mathcal{L}_{A_X} \mathcal{A}(X),$$
+where $A_X$ is a set of $0$-degree elements in $\mathcal{A}(X)$ determined by the set of $1$-simplices of $X$, together with a natural transformation
+$$\phi \colon \widehat{\mathcal{A}} \Longrightarrow \schains \circ G$$  whose components are all quasi-isomorphisms of algebras.
+
+Following Baues’ construction, Franz described a lift of $\widehat{\mathcal{A}}$ to a functor
+$$\widehat{\mathcal{A}}_{\coAlg} \colon \sSet^0 \to \Mon_{\coAlg}$$ and showed that Hess and Tonks' natural transformation preserves the coalgebra structure, namely, it induces a natural transformation
+$$\phi_{\coAlg} \colon \widehat{\mathcal{A}}_{\coAlg} \Longrightarrow \schains \circ G$$
+whose components are all quasi-isomorphisms of bialgebras.
+
+Using similar methods to those that lead to Theorem 1, we construct a further lift
+$$\widehat{\mathcal{A}}_{U(\M)} \colon \sSet^0 \to \Mon_{\coAlg_{U(\M)}}$$
+of the extended cobar construction. Denoting by $U \colon \Mon_{\coAlg_{U(\M)}} \to \coAlg_{U(\M)}$ the forgetful functor, we show that Hess and Tonks' comparison map gives rise to a natural transformation
+
+$$\phi_{U(\M)} \colon U \circ \widehat{\mathcal{A}}_{U(\M)} \Longrightarrow \schains \circ G$$
+whose components are all quasi-isomorphisms of $E_{\infty}$-coalgebras.  We apply the forgetful functor in this discussion since the algebra structure of $\schains(G(X))$ is not compatible with the $E_{\infty}$-coalgebra structure (in contrast to the cubical case). Hence, we may think of $\mathcal{A}_{U(\M)}(X)$ as an algebraic model for the based loop space in which the $E_{\infty}$-coalgebra and associative algebra structures are strictly compatible. 
+
+
+We summarize this discussion in the following statement.
+\begin{theorem} The extended cobar construction $\widehat{\mathcal{A}} \colon \sSet^0 \to \Mon_\Ch$ lifts to a functor $\widehat{\mathcal{A}}_{U(\M)} \colon \sSet^0 \to \Mon_{\coAlg_{U(\M)}}$ such that for any $X \in \sSet^0$, the natural transformation $\phi \colon \widehat{\mathcal{A}} \Longrightarrow \schains \circ G$ induces a quasi-isomorphism of $E_{\infty}$-coalgebras
+$$  U(\widehat{\mathcal{A}}_{U(\M)}(X)) \xrightarrow{\simeq} \schains(G(X)).$$
+\end{theorem}
+
+
+%We now describe a comparison between this $E_\infty$ bialgebra model and the one constructed here.
+%To do so in full generality we need a localized version of the cobar construction.
+%Following K. Hess and A. Tonks \cite{hess2010cobar}, we formally invert all $1$-simplices appearing in Adams' cobar construction $\A = \cobar \circ \schains \colon \sSet^0 \to \Mon_{\Ch}$ and obtain a new functor $\widehat{\A} \colon \sSet^0 \to \Mon_{\Ch}$ together with a natural quasi-isomorphism 
 
 
 %\begin{equation*}
@@ -109,32 +138,37 @@ Following K. Hess and A. Tonks \cite{hess2010cobar}, we formally invert all $1$-
 % For example, if $X \in \sSet^0$ is a Kan complex then the algebra $\cobar(\schains(X))$ is quasi-isomorphic to the singular chains on the based loop space of $|X|$ \cite{Rivera-Zeinalian}.
 % In fact, the $E_{\infty}$-coalgebra structure on $\schains (X)$ completely determines the fundamental group of $X$ \cite{Rivera- Zeinalian Fundamenta Math}.
 
-We can use our construction of a monoidal lift of the functor of cubical chains to $E_\infty$ coalgebras to endow their model with such a structure.
-We do so by using a localized version $\widehat \gcobar$ of the cubical cobar functor~$\gcobar$.
+%We can use our construction of a monoidal lift of the functor of cubical chains to $E_\infty$ coalgebras to endow their model with such a structure.
+%we do so by using a localized version $\widehat \gcobar$ of the cubical cobar functor~$\gcobar$.
 
-\begin{theorem} \label{t:2nd main thm in the intro}
-    Our functor (dashed arrow) fits in the following diagram which is commutative up to natural isomorphism
-    \begin{equation*}
-    \begin{tikzcd}
-    & \Mon_{\coAlg_{U(\M)}} \arrow[d] \\
-    \Mon_{\cSet} \arrow[ru, dashed, out=70, in=180] & \Mon_{\coAlg} \arrow[d] \\
-    \sSet^0 \arrow[r, "\widehat{\A}"] \arrow[u, "\widehat \gcobar"] & \Mon_{\Ch}
-    \end{tikzcd}
-    \end{equation*}
-    where $\widehat{\gcobar} \colon \sSet^0 \to \Mon_{\cSet}$ is a localization of $\gcobar$.
-\end{theorem}
+%\begin{theorem} \label{t:2nd main thm in the intro}
+   % Our functor (dashed arrow) fits in the following diagram which is commutative up to natural isomorphism
+   % \begin{equation*}
+   % \begin{tikzcd}
+   % & \Mon_{\coAlg_{U(\M)}} \arrow[d] \\
+    %\Mon_{\cSet} \arrow[ru, dashed, out=70, in=180] & \Mon_{\coAlg} \arrow[d] \\
+    %\sSet^0 \arrow[r, "\widehat{\A}"] \arrow[u, "\widehat \gcobar"] & \Mon_{\Ch}
+    %\end{tikzcd}
+    %\end{equation*}
+   % where $\widehat{\gcobar} \colon \sSet^0 \to \Mon_{\cSet}$ is a localization of $\gcobar$.
+%\end{theorem}
 
-For any $X \in \sSet^0$, the above result describes an $E_{\infty}$-Hopf algebra structure on $\widehat{\A}(X)$, which may be thought of as an algebraic model for the based loop space of $|X|$ built directly from the combinatorics of $X$.
-This statement can be made precise by relating to Kan's simplicial loop group construction as follows.
+%For any $X \in \sSet^0$, the above result describes an $E_{\infty}$-Hopf algebra structure on $\widehat{\A}(X)$, which may be thought of as an algebraic model for the based loop space of $|X|$ built directly from the combinatorics of $X$.
+%This statement can be made precise by relating to Kan's simplicial loop group construction as follows.
 
-\begin{theorem} \label{t:3rd main thm in the intro}
-Let $X \in \sSet^0$ and denote by $G(X)$ Kan's simplicial loop group construction.
-There is a natural zig-zag of quasi-isomorphisms of $U(\M)$-coalgebras between $\schains(G(X))$ and $\widehat{\A}(X)$.
-In particular, there is a natural isomorphism of bialgebras $H_0(\widehat{\gcobar}(X)) \cong R[\pi_1(|X|)]$.
-\end{theorem}
-The above statement extends a recent result of M. Franz, who showed that $\schains(G(X))$ and $\widehat{\A}(X)$ are naturally quasi-isomorphic as coassociative coalgebras building upon previous results of Hess and Tonks, see \cite{franz2020szczarba}, \cite{hess2010cobar}.
-The main idea in the proof is to use the following ``space-level" observation: after triangulating $\widehat\gcobar({X})$ one obtains a simplicial monoid that is naturally weak homotopy equivalent to $G(X).$ 
+%\begin{theorem} \label{t:3rd main thm in the intro}
+%Let $X \in \sSet^0$ and denote by $G(X)$ Kan's simplicial loop group construction.
+%There is a natural zig-zag of quasi-isomorphisms of $U(\M)$-coalgebras between $\schains(G(X))$ and $\widehat{\A}(X)$.
+%In particular, there is a natural isomorphism of bialgebras $H_0(\widehat{\gcobar}(X)) \cong R[\pi_1(|X|)]$.
+%\end{theorem}
+%The above statement extends a recent result of M. Franz, who showed that $\schains(G(X))$ and $\widehat{\A}(X)$ are naturally quasi-isomorphic as coassociative coalgebras building upon previous results of Hess and Tonks, see \cite{franz2020szczarba}, \cite{hess2010cobar}.
 
+The main idea in the proof of the above result is to use the following ``space-level" observation: after triangulating $\widehat\gcobar({X})$, a localized version of the monoidal cubical set $\gcobar(X)$, one obtains a simplicial monoid that is naturally weak homotopy equivalent to $G(X).$ 
+\\
+\\
+\manuel{maybe add here a short subsection about relation to previous work.}
+\\
+\\
 For any $0$-reduced simplicial set $X$, the natural coassociative coproduct on $\cobar (\schains (X))$ obtained from Baues construction may be described directly in terms of the $E_2$-coalgebra structure of the simplicial chains $\schains(X).$ Furthermore, in the $1$-connected setting, Kadeishvili described cup-$i$ products extending the Serre product and then identified the algebraic structure on the simplicial cochains on $X$ giving rise to these operations \cite{kadeishvili1999coproducts, kadeishvili2003cup-i}.
 See also \cite{pilarczyk2016cubical} for a different description of cubical cup-$i$ products.
 

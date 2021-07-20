@@ -7,7 +7,7 @@ The monoidal structure $$\gcobar^{\text{nec}}(X) \otimes \gcobar^{\text{nec}}(X)
 is induced by the monoidal structure $\vee: \Nec \times \Nec \to \Nec$ together with the monoidal structure $\otimes: \nSet \times \nSet \to \nSet$ on necklicals sets. More precisely, for any $S, S' \in \Nec$, the product $$\gcobar^{\text{nec}}(X)(S) \otimes \gcobar^{\text{nec}}(X)(S') \to \gcobar^{\text{nec}}(X)(S \vee S')$$ is given by $$[f\colon \mathcal{S}(T) \to X, a] \otimes [f'\colon \mathcal{S}(T') \to X, a'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, a \otimes  a'],$$
 where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $a\in \mathcal{Y}(T)(S)$, and $a'\in \mathcal{Y}(T')(S')$.
 
-We may now define the \textit{cubical cobar functor} $$\gcobar: \sSet^0 \to \Mon_{\cSet}$$ as the composition $$\gcobar= \mathcal{P}_! \circ \gcobar^{\text{nec}}.$$ This is a reinterpretation of a classical construction of Baues \cite{Baues} also studied in \cite{rivera-zeinalian-cubical}. 
+We may now define the \textit{cubical cobar functor} $$\gcobar: \sSet^0 \to \Mon_{\cSet}$$ as the composition $$\gcobar= \mathcal{P}_! \circ \gcobar^{\text{nec}}.$$ This is a reinterpretation of a classical construction of Baues \cite{baues1998hopf} also studied in \cite{rivera2018cubical}. 
 
 
 \begin{remark}
@@ -16,7 +16,7 @@ In the case of arbitrary (not necessarily $0$-reduced) simplicial sets, we may e
 $$\Lambda: \sSet \to \mathsf{Cat}_{\cSet}$$ from the category of simpicial sets to the category of small categories enriched over the monoidal category of necklical sets. Define a functor $\mathcal{T} \colon \cSet \to \sSet$ by $$\mathcal{T}(C) = \colim_{\cube^n \to C} (\Delta^1)^{\times n}.$$ This is a monoidal functor known as \textit{triangulation} and it induces a functor $$\mathfrak{T}: \mathsf{Cat}_{\cSet} \to \mathsf{Cat}_{\sSet}$$ between enriched categories. The composition 
 $$\mathfrak{T} \circ \Lambda \colon \sSet \to \mathsf{Cat}_{\sSet}$$ is naturally isomorphic to the \textit{rigidification functor}
 $$\mathfrak{C} \colon \sSet \to \mathsf{Cat}_{\sSet}$$
-introduced by Cordier and studied by Lurie, Dugger and Spivak in the theory of $\infty$-categories, see \cite{rivera-zeinalian-cubical} and the references therein. The rigidification functor is the left adjoint of the \textit{homotopy coherent nerve functor}, which we denote by
+introduced by Cordier and studied by Lurie, Dugger and Spivak in the theory of $\infty$-categories, see \cite{rivera2018cubical} and the references therein. The rigidification functor is the left adjoint of the \textit{homotopy coherent nerve functor}, which we denote by
 $$\mathfrak{N} \colon \mathsf{Cat}_{\sSet} \to \sSet.$$
 \end{remark}
 
@@ -34,11 +34,11 @@ To define an algebra map
 $$\varphi_X: \cchains(\mathcal{P}_!(\gcobar^{\text{nec}}(X))) \xrightarrow{\cong} \mathbf{\Omega}(\schains(X))$$
 it suffices to define it on any generator of the form $\alpha=[\sigma \colon \Delta^{n+1} \to X, \iota_{n}]$, i.e. when $T$ is of the form $T=[n+1]$, for some $n\geq0$. If $n=0$ let $\varphi_X(\alpha)= [\overline{\sigma}]+ 1_R$, where $[\overline{\sigma}] \in s^{-1} \overline{ \schains(X)} \subset \mathbf{\Omega}(\schains(X))$ denotes the (length $1$) generator in the cobar construction of $\schains(X)$ determined by $\sigma \in X_{n+1}$ and $1_R$ denotes the unit of the underlying ring $R$. If $n>0$, we let $\varphi_X(\alpha)=[\overline{\sigma}]$. A straightforward computation yields that this gives rise to a well defined isomorphism of algebras, which is compatible with the differentials, and natural with respect to maps of simplicial sets.  
 \end{proof}
-Denote $$\A= \cobar \circ \schains \colon \sSet^0 \to \Mon_{\Ch}.$$ In \cite{Hess-Tonks}, a localized version of the cobar construction of the chains on a $0$-reduced simplicial set was introduced in order to relate to the Kan loop group construction. This localized construction is not quite functorial on $\coAlg$ since it depends on a choice of basis of the degree one $R$-module of the underlying coalgebra. However, one may define a functor $$\widehat{\A}: \sSet^0 \to \Mon_{\Ch}$$
+Denote $$\A= \cobar \circ \schains \colon \sSet^0 \to \Mon_{\Ch}.$$ In \cite{hess2010cobar}, a localized version of the cobar construction of the chains on a $0$-reduced simplicial set was introduced in order to relate to the Kan loop group construction. This localized construction is not quite functorial on $\coAlg$ since it depends on a choice of basis of the degree one $R$-module of the underlying coalgebra. However, one may define a functor $$\widehat{\A}: \sSet^0 \to \Mon_{\Ch}$$
 by formally inverting the set of $0$-cycles $$A_X=\{ [\overline{\sigma}]+1_R | \sigma \in X_1 \} \subset \A(X)_0$$ in the associative algebra $\A(X)$ to obtain a new associative algebra
 $$\widehat{\A}(X):= \A(X)[A_X^{-1}]$$
 with the property that there is an isomorphism of algebras $$H_0(\widehat{\A}(X)) \cong R[\pi_1(X)].$$
-K. Hess and A. Tonks constructed a natural chain homotopy equivalence of associative algebras $$\widehat{\A}(X)\simeq \schains(G(X)),$$ where $G(X)$ denotes the Kan loop group of $X$. 
+K. Hess and A. Tonks constructed a natural quasi-isomorphism of associative algebras $$\phi_{X} \colon \widehat{\A}(X)\xrightarrow{\simeq} \schains(G(X)),$$ where $G(X)$ denotes the Kan loop group of $X$. 
 
 We may formally invert all the $0$-dimensional elements in $\gcobar^{\text{nec}}(X)$ to obtain a localized version of $\gcobar^{\text{nec}}$ as follows. Define 
 $$\widehat{\gcobar}^{\text{nec}} \colon \sSet^0 \to \Mon_{\nSet}$$
