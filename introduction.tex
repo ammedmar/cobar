@@ -83,8 +83,8 @@ We condense this discussion in our main result.
 %In \cite{mcclure2003multivariable, berger2004combinatorial}, the functor of (normalized) chains $\schains$ was lifted to that of $E_\infty$ coalgebras, a result generalized in \cite{medina2020prop1} by constructing a lift $\schains_{\coAlg_{U(\M)}} \colon \sSet \to \coAlg_{U(\M)}$.
 %We may then naturally ask about the relationship between the $E_\infty$ bialgebra structure on $\sS(\Omega_y Y)$ and the one we construct on $\Omega(\sS(Y, y))$.
 
-For any reduced simplicial set $X$, an alternative construction of an $E_\infty$ bialgebra model is given by the chains on Kan's simplicial loop group $G(X)$.
-More explicitly, Kan constructed a functor $G \colon \sSet^0 \to \mathsf{sGrp}$ to the category of simplicial groups such that, for any $X$, the geometric realization of $G(X)$ is homotopy equivalent, as a topological monoid, to the based loop space on the geometric realization of $X$ \cite{berger1995loops}.
+%For any reduced simplicial set $X$, an alternative construction of an $E_\infty$ bialgebra model is given by the chains on Kan's simplicial loop group $G(X)$.
+%More explicitly, Kan constructed a functor $G \colon \sSet^0 \to \mathsf{sGrp}$ to the category of simplicial groups such that, for any $X$, the geometric realization of $G(X)$ is homotopy equivalent, as a topological monoid, to the based loop space on the geometric realization of $X$ \cite{berger1995loops}.
 
 TBW
 
@@ -92,11 +92,16 @@ TBW
 %More explicitly, Kan constructed a functor $G \colon \sSet^0 \to \mathsf{sGrp}$ to the category of simplicial groups such that, for any $X$, the geometric realization of $G(X)$ is homotopy equivalent, as a topological monoid, to the based loop space on the geometric realization of $X$ \cite{berger1995loops}.
 %In \cite{mcclure2003multivariate, berger2004combinatorial}, the functor of (normalized) chains $\schains$ was lifted to that of $E_\infty$ coalgebras, a result generalized in \cite{medina2020prop1} by constructing a lift $\schains_{\coAlg_{U(\M)}} \colon \sSet \to \coAlg_{U(\M)}$.
 \manuel{I took it from here}
-The proof that Adams’ map $\theta_Y \colon \cobar(S^\triangle(Y, y)) \to S^{\square}(\Omega_y Y)$ is a quasi-isomorphism uses the fact that $S^\triangle(Y, y)$ is obtained by applying the chains functor to the fibrant simplicial set $\text{Sing}(Y,y)$. In general, for an arbitrary reduced simplicial set $X \in \sSet^0$ with $X_0=\{b\}$,  it is not true that the algebras
-$\cobar(\schains(X))$ and $S^{\square}(\Omega_b |X|)$ are quasi-isomorphic. One way of correcting this failure is by first Kan replacing $X$. Another way, which involves a smaller amount of data, is by localizing the cobar construction at the $1$-simplices of $X$ as proposed in \cite{hess2010cobar}.
+The proof that Adams’ map $\theta_Y \colon \cobar(S^\triangle(Y, y)) \to S^{\square}(\Omega_y Y)$ is a quasi-isomorphism uses the fact that $S^\triangle(Y, y)$ is obtained by applying the chains functor to the fibrant simplicial set $\text{Sing}(Y,y)$.
+In general, for an arbitrary reduced simplicial set $X \in \sSet^0$ with $X_0=\{b\}$, it is not true that the algebras
+$\cobar(\schains(X))$ and $S^{\square}(\Omega_b |X|)$ are quasi-isomorphic.
+One way of correcting this failure is by first Kan replacing $X$.
+Another way, which involves a smaller amount of data, is by localizing the cobar construction at the $1$-simplices of $X$ as proposed in \cite{hess2010cobar}.
 
-The based loop space of an arbitrary reduced simplicial set can be modeled through the classical \textit{Kan loop group functor}. This is a functor 
-$$G\colon \sSet^0 \to \mathsf{sGrp}$$ from reduced simplicial sets to the category of simplicial groups with the property that the geometric realization $|G(X)|$ is homotopy equivalent to the based loop space $\Omega_b|X|$ as a topological monoid \cite{berger1995loops}. Furthermore, the Kan loop group together with its right adjoint $$\overline{W}: \mathsf{sGrp} \to \sSet^0,$$ called the classifying space functor, yield a Quillen equivalence of model categories when $\sSet^0$ is equipped with the Kan-Quillen model structure and $\mathsf{sGrp}$ with an appropriate model structure having as weak equivalences maps of simplicial groups whose underlying maps of simplicial sets are weak homotopy equivalences. 
+The based loop space of an arbitrary reduced simplicial set can be modeled combinatorially through the classical \textit{Kan loop group functor}.
+This is a functor 
+$$G\colon \sSet^0 \to \mathsf{sGrp}$$
+from reduced simplicial sets to the category of simplicial groups with the property that the geometric realization $|G(X)|$ is homotopy equivalent to the based loop space $\Omega_b|X|$ as a topological monoid \cite{berger1995loops}. Furthermore, the Kan loop group together with its right adjoint $$\overline{W}: \mathsf{sGrp} \to \sSet^0,$$ called the classifying space functor, yield a Quillen equivalence of model categories when $\sSet^0$ is equipped with the Kan-Quillen model structure and $\mathsf{sGrp}$ with an appropriate model structure having as weak equivalences maps of simplicial groups whose underlying maps of simplicial sets are weak homotopy equivalences. 
 
 Hess and Tonks considered a localized version of $\mathcal{A} = \cobar \circ \schains \colon \sSet^0 \to \Mon_\Ch$, which they called the \textit{extended cobar construction}, and compared it explicitly with the composition $$\schains \circ G \colon \sSet^0 \to \Mon_\Ch.$$ More precisely, they construct a functor
 $$\widehat{\mathcal{A}} \colon \sSet^0 \to \Mon_\Ch$$
@@ -109,12 +114,8 @@ $$\widehat{\mathcal{A}}_{\coAlg} \colon \sSet^0 \to \Mon_{\coAlg}$$ and showed t
 $$\phi_X \colon \widehat{\mathcal{A}}_{\coAlg}(X) \to \schains (G(X)).$$
 
 Using similar methods to those that lead to Theorem 1, we construct a further lift
-$$\widehat{\mathcal{A}}_{U(\M)} \colon \sSet^0 \to \Mon_{\coAlg_{U(\M)}}$$
-and show that Hess and Tonks' comparison map preserves the $E_{\infty}$-coalgebra structure, namely, it induces a natural quasi-isomorphism of $E_{\infty}$-coalgebras
-$$\phi_X \colon  \widehat{\mathcal{A}}_{U(\M)}(X) \to \schains(G(X)).$$
-
-The associative algebra structure of $\schains(G(X))$ is not strictly compatible with the $E_{\infty}$-coalgebra structure. This failure is a consequence of the fact that the Eilenberg-Zilber natural transformation is not compatible with the $U(\M)$-coalgebra structures. In contrast, the $U(\M)$-coalgebra structure on the extended cobar construction gives rise to an algebraic model $\mathcal{A}_{U(\M)}(X)$ in which the associative algebra structure is strictly compatible with the $E_{\infty}$-coalgebra structure. This is a consequence of the cubical nature of  $\mathcal{A}_{U(\M)}(X).$ 
-
+$$\widehat{\mathcal{A}}_{U(\M)} \colon \sSet^0 \to \Mon_{\coAlg_{U(\M)}}.$$
+In order to compare with the above functor with the Kan loop group construction, there is a fundamental asymmetry between the interaction of the cubical chains and simplicial chains with the monoidal structures that we have to take into account. For any two cubical sets $K$ and $K'$ the isomorphism $$\cchains(K) \otimes \cchains(K') \xrightarrow{\cong} \cchains(K \otimes K')$$ preserves the $U(\M)$-coalgebra structures. However, for any two simplicial sets $X$ and $Y$, the Eilenberg-Zilber shuffle map $$\schains(X) \otimes \schains(Y) \xrightarrow{\simeq} \schains(X \times Y)$$ is a quasi-isomorphism of coassociative coalgebras but not of $U(\M)$-coalgebras. This last point has two important manifestations: 1) the $U(\M)$-coalgebra structure on $\schains(G(X))$ is not strictly compatible with the associative algebra structure, and 2) the Hess and Tonks comparison map $\phi_X: \widehat{\mathcal{A}}(X) \to \schains(G(X))$ does not preserve the $U(\M)$-coalgebra structures, namely, it is not compatible with our lift $\widehat{\mathcal{A}}_{U(\M)} \colon \sSet^0 \to \Mon_{\coAlg_{U(\M)}}.$ Nevertheless, we construct a zig-zag of natural quasi-isomorphisms of $U(\M)$-coalgebras connecting $\widehat{\mathcal{A}}_{U(\M)} (X)$ and $\schains(G(X))$. 
 
 We summarize this discussion in the following statement.
 
@@ -126,8 +127,7 @@ We summarize this discussion in the following statement.
 \phantom{sssssssssss}\sSet^0 \phantom{aaaaaaa} \ar[r, "\widehat{\mathcal{A}}", ]\ar[ru, "\widehat{\mathcal{A}}_{\coAlg}", very near end]\arrow[ruu,  "\widehat{\mathcal{A}}_{U(\M)}", near end] & \phantom{aaaaa} \Mon_{\Ch}.
 \end{tikzcd}
 \end{equation*}
-Furthermore, for any $X \in \sSet^0$, Hess and Tonks' comparison map induces a natural quasi-isomorphism 
-$$ \phi_X \colon \widehat{\mathcal{A}}_{U(\M)}(X) \xrightarrow{\simeq} \schains(G(X))$$ that preserves the underlying $E_{\infty}$-coalgebra structures.
+Furthermore, for any $X \in \sSet^0$, there is a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras between $\widehat{\mathcal{A}}_{U(\M)}(X)$ and $\schains(G(X))$.
 \end{theorem}
 
 
@@ -175,11 +175,9 @@ $$ \phi_X \colon \widehat{\mathcal{A}}_{U(\M)}(X) \xrightarrow{\simeq} \schains(
 %The above statement extends a recent result of M. Franz, who showed that $\schains(G(X))$ and $\widehat{\A}(X)$ are naturally quasi-isomorphic as coassociative coalgebras building upon previous results of Hess and Tonks, see \cite{franz2020szczarba}, \cite{hess2010cobar}.
 
 The main idea in the proof of the above result is to use the following ``space-level" observation: after triangulating $\widehat\gcobar({X})$, a localized version of the monoidal cubical set $\gcobar(X)$, one obtains a simplicial monoid that is naturally weak homotopy equivalent to $G(X).$ 
-\\
-\\
-\manuel{maybe add here a short subsection about relation to previous work.}
-\\
-\\
+
+\subsection*{Relation to previous work}
+
 For any $0$-reduced simplicial set $X$, the natural coassociative coproduct on $\cobar (\schains (X))$ obtained from Baues construction may be described directly in terms of the $E_2$-coalgebra structure of the simplicial chains $\schains(X).$ Furthermore, in the $1$-connected setting, Kadeishvili described cup-$i$ products extending the Serre product and then identified the algebraic structure on the simplicial cochains on $X$ giving rise to these operations \cite{kadeishvili1999coproducts, kadeishvili2003cup-i}.
 See also \cite{pilarczyk2016cubical} for a different description of cubical cup-$i$ products.
 
