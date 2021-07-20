@@ -1,5 +1,5 @@
 
-\section{Operads and props} \label{s:operads and props}
+\section{Operads, props and $E_\infty$ structures} \label{s:operads and props}
 
 In this section we review the basic notions of operads and props.
 For a more complete presentation we refer the reader to, for example, \cite{markl2008props}.
@@ -9,7 +9,7 @@ For a more complete presentation we refer the reader to, for example, \cite{mark
 Let $\S$ be the category whose objects are the natural numbers and whose set of morphisms between $m$ and $n$ is empty if $m \neq n$ and is otherwise the symmetric group $\S_n$.
 A \textit{left $\S$ module} (resp. $\S$ \textit{bimodule}) is a functor from $\S$ (resp. $\S \times \S^\op$) to $\Ch$.
 We respectively denote by $\smod$ and $\sbimod$ the categories of left $\S$ modules and of $\S$ bimodules with morphisms given by natural transformations.
-We notice that the group homomorphisms $\S_n \to \S_n \times \S_1$ induce a forgetful functor $U \colon \sbimod \to \smod$.
+We notice that the group homomorphisms $\S_n \to \S_n \times \S_1$ induce a forgetful functor $\U \colon \sbimod \to \smod$.
 
 \subsection{Composition structures}
 
@@ -17,7 +17,7 @@ We can define \textit{operads} and \textit{props} by enriching $\S$ modules and 
 For a complete presentation of these concepts we refer to Definition~11 and 54 of \cite{markl2008props}.
 Intuitively, using examples defined in the next subsection, operads and props can be understood by abstracting the composition structure naturally present in the left $\S$ module $\End^C$, naturally an operad, and the $\S$ bimodule $\End^C_C$, naturally a prop.
 
-We remark that if $\P$ is a prop, then its composition structure provides $U(\P)$ with the structure of an operad.
+We remark that if $\P$ is a prop, then its composition structure provides $\U(\P)$ with the structure of an operad.
 
 \subsection{Representations}
 
@@ -106,12 +106,12 @@ Since in this work we are interested in extending the Alexander--Whitney and Ser
 The same proof given for Theorem 3.3 in \cite{medina2020prop1} establishes the following.
 
 \begin{proposition}
-	The operad $U(\M)$ is an $E_\infty$ operad.
+	The operad $\UM$ is an $E_\infty$ operad.
 \end{proposition}
 
 \subsection{Simplicial $E_\infty$ structure}
 
-We review from \cite{medina2020prop1} a natural $\mathcal M$-structure on the chains of standard simplices leading to a natural $U(\M)$-structure on the chains of a simplicial set.
+We review from \cite{medina2020prop1} a natural $\mathcal M$-structure on the chains of standard simplices leading to a natural $\UM$-structure on the chains of a simplicial set.
 The $\M$-bialgebra is specified by three linear maps, the images of the generators
 \begin{equation*}
 \counit, \quad \coproduct, \quad \product,
@@ -134,7 +134,7 @@ The same proof given in \cite[Theorem 4.2]{medina2020prop1} establishes the foll
 	defines a natural $\mathcal M$-bialgebra structure on $\schains(\triangle^n)$ extending the Alexander--Whitney coalgebra.
 \end{proposition}
 
-The chains on general simplicial sets are not equipped with a $\M$-structure, but using the forgetful functor from $\biAlg_{\M}$ to the cocomplete category $\coAlg_\UM$ allows us to Kan extend the natural $\UM$-structures on standard simplices to all simplicial sets.
+The chains on general simplicial sets are not equipped with a $\M$-structure, but using the forgetful functor from $\biAlg_{\M}$ to the cocomplete category $\coAlg_\UM$ allows us to Kan extend the induced natural $\UM$-structures on standard simplices to all simplicial sets.
 Specifically, we obtain a lift:
 \begin{equation*}
 \begin{tikzcd}[column sep=normal, row sep=small]
@@ -147,7 +147,7 @@ Specifically, we obtain a lift:
 \end{tikzcd}
 \end{equation*}
 
-As explained in \cite{medina2020prop1}, this $U(\M)$-structure on simplicial chains generalizes the $E_\infty$ coalgebra structures constructed McClure--Smith \cite{mcclure2003multivariable} and Berger--Fresse \cite{berger2004combinatorial}.
+As explained in \cite{medina2020prop1}, this $\UM$-structure on simplicial chains generalizes the $E_\infty$ coalgebra structures constructed McClure--Smith \cite{mcclure2003multivariable} and Berger--Fresse \cite{berger2004combinatorial}.
 
 \subsection{Cubical $E_\infty$ structure}
 
@@ -200,8 +200,8 @@ The following statement was shown in \cite{medina2021cubical}.
 	\end{equation}
 \end{proposition}
 
-Using the forgetful functor $U$ on \eqref{e:cubical lift to bialgebras} we obtain a functor $\cube \to \coAlg_\UM$.
-Kan extending this functor and \eqref{e:Serre lift} along the Yoneda embedding we obtain a functor $\cchains_\UM \colon \cSet \to \coAlg_\UM$. Hence, we obtain an $E_{\infty}$-coalgebra structure, described explicitly through the operad $U(\M)$, on the normalized chains of any cubical set extending the coassociative Serre diagonal.
+Using the forgetful functor $\U$ on \eqref{e:cubical lift to bialgebras} we obtain a functor $\cube \to \coAlg_\UM$.
+Kan extending this functor and \eqref{e:Serre lift} along the Yoneda embedding we obtain a functor $\cchains_\UM \colon \cSet \to \coAlg_\UM$. Hence, we obtain an $E_{\infty}$-coalgebra structure, described explicitly through the operad $\UM$, on the normalized chains of any cubical set extending the coassociative Serre diagonal.
 \begin{theorem} \label{t:lift of chains of cSets to UM coalgebras}
 	The following diagram commutes up to natural isomorphism
 	\begin{equation}
