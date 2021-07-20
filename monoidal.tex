@@ -1,41 +1,41 @@
 
-\section{Hopf structures}
+\section{Monoidal properties}
 
-By definition, the functor of chains $\cchains \colon \cube \to \Ch$ is monoidal, i.e., the diagram
-\begin{equation*}
-\begin{tikzcd}
-2^p \times 2^q \arrow[r, "\cong"] \arrow[d, "\cchains \otimes \cchains"']& 2^{p+q} \arrow[d, "\cchains"] \\
-\cchains(\cube^p) \otimes \cchains(\cube^q) \arrow[r, "\cong"] & \cchains(\cube^{p+q})
-\end{tikzcd}
-\end{equation*}
-commutes and $\cchains(2^0) = R$.
-The lift of  $N \colon \cube \to \Ch$ to the symmetric monoidal category $\coAlg$ is also monoidal since the following diagrams associated to the Serre diagonal and augmentation map commute:
-\begin{equation*}
-\begin{tikzcd}
-\cchains(\cube^p) \otimes \cchains(\cube^{q}) \arrow[r, "\cong"] \arrow[d, "(23) \circ (\Delta \otimes \Delta)"'] & \cchains(\cube^{p+q}) \arrow[d, "\Delta"]\\
-\cchains(\cube^p)^{\otimes 2} \otimes \cchains(\cube^{q})^{\otimes 2} \arrow[r, "\cong"]& \cchains(\cube^{p+q})^{\otimes 2}
-\end{tikzcd}
-\qquad \qquad
-\begin{tikzcd}
-\cchains(\cube^p) \otimes \cchains(\cube^{q}) \arrow[r, "\cong"] \arrow[d, "(\varepsilon \otimes \varepsilon)"'] & \cchains(\cube^{p+q}) \arrow[d, "\varepsilon"] \\
-R \otimes R \arrow[r, "\cong"] & R.
-\end{tikzcd}
-\end{equation*}
+\subsection{Monoidal functors}
 
-In this section we will show that the lift \eqref{e:cubical lift to bialgebras} is also monoidal.
-In order to make sense of this statement we first need to describe a monoidal structure on $\M$-bialgebras.
+TBW categorically. Induces functor on Monoids.
 
-To do so we now make $\M$ into a Hopf prop, that is, a prop over the category $\coAlg$.
-Explicitly, we will construct chain maps $\Delta_\M(m,n) \colon \M(m,n) \to \M(m,n) \otimes \M(m,n)$ and $\varepsilon_\M(m,n) \colon \M(m,n) \to R$ for every $(m,n)$ compatible with the prop structure of $\M$ and making each $\M(m,n)$ into a counital coassociative coalgebra.
-Then, the structure map of the monoidal product of $\M$-bialgebras is given for any $(m,n)$ by 
-\begin{equation*}
-\begin{tikzcd} [column sep = small, row sep=large]
-\M(m,n) \otimes (C \otimes C^\prime)^{\otimes m} \arrow[r, "\Delta_\M \otimes \id"] & \M(m,n) \otimes \M(m,n) \otimes (C \otimes C^\prime)^{\otimes m} \arrow[dl, out=-150, in=30, "Sh"'] &[-25pt] \\
-\big(\M(m,n) \otimes C^{\otimes m}\big) \otimes \big(\M(m,n) \otimes C^{\prime\, \otimes m}\big) \arrow[r] & 
-C^{\otimes n} \otimes C^{\prime\, \otimes n} \arrow[r, "Sh"] &[-25pt]
-(C \otimes C^\prime)^{\otimes n}.
-\end{tikzcd}
-\end{equation*}
+\subsection{Day convolution}
+
+TBW
+
+\subsection{Cubical chains}
+
+TBW
+
+%By definition, the functor of chains $\cchains \colon \cube \to \Ch$ is monoidal, i.e., the diagram
+%\begin{equation*}
+%\begin{tikzcd}
+%2^p \times 2^q \arrow[r, "\cong"] \arrow[d, "\cchains \otimes \cchains"']& 2^{p+q} \arrow[d, "\cchains"] \\
+%\cchains(\cube^p) \otimes \cchains(\cube^q) \arrow[r, "\cong"] & \cchains(\cube^{p+q})
+%\end{tikzcd}
+%\end{equation*}
+%commutes and $\cchains(2^0) = R$.
+
+\subsection{Serre coalgebra}
+
+%The lift of  $N \colon \cube \to \Ch$ to the symmetric monoidal category $\coAlg$ is also monoidal since the following diagrams associated to the Serre diagonal and augmentation map commute:
+%\begin{equation*}
+%\begin{tikzcd}
+%\cchains(\cube^p) \otimes \cchains(\cube^{q}) \arrow[r, "\cong"] \arrow[d, "(23) \circ (\Delta \otimes \Delta)"'] & \cchains(\cube^{p+q}) \arrow[d, "\Delta"]\\
+%\cchains(\cube^p)^{\otimes 2} \otimes \cchains(\cube^{q})^{\otimes 2} \arrow[r, "\cong"]& \cchains(\cube^{p+q})^{\otimes 2}
+%\end{tikzcd}
+%\qquad \qquad
+%\begin{tikzcd}
+%\cchains(\cube^p) \otimes \cchains(\cube^{q}) \arrow[r, "\cong"] \arrow[d, "(\varepsilon \otimes \varepsilon)"'] & \cchains(\cube^{p+q}) \arrow[d, "\varepsilon"] \\
+%R \otimes R \arrow[r, "\cong"] & R.
+%\end{tikzcd}
+%\end{equation*}
 
 We will use the following observation about the Serre diagonal to define the Hopf structure on $\M$.
 There is an action of $\S_n$ on $\cchains(\square^n)$ given by permuting the factors of $\cchains(\square^1)^{\otimes n}$.
@@ -57,6 +57,27 @@ The Serre diagonal is equivariant with respect to this action in the following s
 \begin{proof}
 	This can be proven by a straightforward verification. Conceptually, it holds because $(12)(34)(23) = (23)(13)(24)$ in $\S_4$.
 \end{proof}
+
+\subsection{Hopf operads}
+
+TBW Coalgebras are a monoidal category.
+
+\subsection{Hopf structure on $\M$}
+
+In this section we will show that the lift \eqref{e:cubical lift to bialgebras} is also monoidal.
+In order to make sense of this statement we first need to describe a monoidal structure on $\M$-bialgebras.
+
+To do so we now make $\M$ into a Hopf prop, that is, a prop over the category $\coAlg$.
+Explicitly, we will construct chain maps $\Delta_\M(m,n) \colon \M(m,n) \to \M(m,n) \otimes \M(m,n)$ and $\varepsilon_\M(m,n) \colon \M(m,n) \to R$ for every $(m,n)$ compatible with the prop structure of $\M$ and making each $\M(m,n)$ into a counital coassociative coalgebra.
+Then, the structure map of the monoidal product of $\M$-bialgebras is given for any $(m,n)$ by 
+\begin{equation*}
+\begin{tikzcd} [column sep = small, row sep=large]
+\M(m,n) \otimes (C \otimes C^\prime)^{\otimes m} \arrow[r, "\Delta_\M \otimes \id"] & \M(m,n) \otimes \M(m,n) \otimes (C \otimes C^\prime)^{\otimes m} \arrow[dl, out=-150, in=30, "Sh"'] &[-25pt] \\
+\big(\M(m,n) \otimes C^{\otimes m}\big) \otimes \big(\M(m,n) \otimes C^{\prime\, \otimes m}\big) \arrow[r] & 
+C^{\otimes n} \otimes C^{\prime\, \otimes n} \arrow[r, "Sh"] &[-25pt]
+(C \otimes C^\prime)^{\otimes n}.
+\end{tikzcd}
+\end{equation*}
 
 As can be seen from \eqref{e:free prop}, the $(m,n)$-part of the free prop is defined only up to a choice of total order on the set of vertices of the $(m,n)$-graph involved.
 

@@ -3,7 +3,7 @@
 \usepackage{tikz-cd}
 \usepackage{mathbbol} % mathbb on greek letters
 
-% hyperref
+% (hyper-)references
 \usepackage[bookmarks=true, linktocpage=true,
 bookmarksnumbered=true, breaklinks=true,
 pdfstartview=FitH, hyperfigures=false,
@@ -17,6 +17,8 @@ pdfpagelabels]{hyperref}
 	linkcolor=blue,
 	urlcolor=blue
 }
+\usepackage[capitalize, noabbrev]{cleveref}
+\crefname{subsection}{\subsect\!}{subsections}
 
 % layout
 \setlength{\textwidth}{\paperwidth}
@@ -38,16 +40,22 @@ pdfpagelabels]{hyperref}
 \newcommand{\As}{\mathcal{A}s}
 \newcommand{\M}{\mathcal{M}}
 
-% sets
+% sets and spaces
 \newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\k}{\Bbbk}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\End}{\mathrm{End}}
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\Bij}{\mathfrak{Bij}}
 \newcommand{\G}{\mathfrak{G}}
+\newcommand{\gsimplex}{\mathbb{\Delta}}
+\newcommand{\gcube}{\mathbb{I}}
+\DeclareMathOperator{\coker}{coker}
 
 % categories
 \newcommand{\C}{\mathsf{C}}
+\newcommand{\Cat}{\mathsf{Cat}}
+\newcommand{\Top}{\mathsf{Top}}
 \newcommand{\Fun}{\mathsf{Fun}}
 \newcommand{\Ch}{\mathsf{Ch}}
 \newcommand{\Alg}{\mathsf{Alg}}
@@ -76,10 +84,12 @@ pdfpagelabels]{hyperref}
 \newcommand{\ccochains}{N}
 \newcommand{\op}{\mathrm{op}}
 \DeclareMathOperator*{\colim}{colim}
-\newcommand{\cobar}{\mathbf{\Omega}}
+\DeclareMathOperator{\cobar}{\mathbf{\Omega}}
 \newcommand{\gcobar}{\mathbb{\Omega}}
-\newcommand{\sSing}{\mathsf{Sing}^{\triangle}_{\, \ast}}
+\newcommand{\sSing}{\mathsf{Sing}^{\triangle}}
 \newcommand{\cSing}{\mathsf{Sing}^{\square}}
+\newcommand{\sS}{S^{\triangle}}
+\newcommand{\cS}{S^{\square}}
 
 % environments
 \newtheorem{theorem}{Theorem}
@@ -96,6 +106,7 @@ pdfpagelabels]{hyperref}
 \newcommand{\manuel}[1]{\textcolor{red}{\underline{Manuel}: #1}}
 \renewcommand{\th}{^\mathrm{th}}
 \newcommand{\bars}[1]{\vert{#1}\vert}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
 
 % drawings
 \include{aux/figures}
@@ -115,28 +126,23 @@ pdfpagelabels]{hyperref}
 \subjclass[2020]{.}
 
 \begin{abstract}
-    The classical cobar construction of Adams, producing a monoid in chain complexes from the coalgebra of chains on a reduced simplicial set, was shown by Baues to be a monoid in the category of coalgebras by identifying it with the chains of a cubical monoid, a chain complex naturally equipped with the Serre coproduct.
-    In this paper we extend this result by showing the cobar construction to be a monoid in the category of $E_\infty$ coalgebras for a combinatorial model of the $E_\infty$ operad.
-    Additionally, for any reduced simplicial set we show that, as monoids in $E_\infty$ coalgebras, the cobar construction and the chains on the Kan loop group are quasi-isomorphic.
-    
-    
-    
-    I propose this: 
-    
-    Baues constructed a natural coassociative coproduct on the cobar construction of the coalgebra of chains on a reduced simplicial set enhancing a classical construction of Adams with extra algebraic structure. This construction may be interpreted as a functor from the category of reduced simplicial sets to the category of monoids in differential graded coalgebras. This functor models the passage from a pointed topological space to the differential graded bialgebra of chains on its based loop space. In this article, we construct a further lift of this functor to the category of monoids in $E_{\infty}$-coalgebras. This is achieved by identifying the cobar construction of the chains on a reduced simplicial set with the chains on a monoidal cubical set and constructing a Hopf operad structure on a suitable model for the $E_{\infty}$-operad. After localizing the cobar construction appropriately, we prove the resulting $E_{\infty}$-coalgebra structure is naturally quasi-isomorphic to the $E_{\infty}$-coalgebra on the simplicial chains on the Kan loop group construction of a reduced simplicial set. 
-
+	In the fifties, Adams introduced a comparison map $\theta_Y \colon \Omega(\sS(Y,y)) \to S^\square(\Omega_y Y)$ from his cobar construction on the (simplicial) singular chains of a pointed space $(Y, y)$ to the cubical singular chains on its based loops space $\Omega_y Y$.
+	This comparison map is a quasi-isomorphism of algebras, which was shown by Baues to be one of bialgebras by considering Serre's cubical coproduct.
+	In this work we generalize Baues result by showing that Adams' comparison map is in fact a morphism of $E_\infty$ bialgebras.
+	We also show that, for a general reduced simplicial set $X$, the Hess--Tonks comparison quasi-isomorphism from a localized version of Adams' cobar construction on the chains of $X$ to the chains on the Kan loop group $G(X)$ is also a morphisms of $E_\infty$ bialgebras.
+	This generalizes a result of Franz who proved this map to be a morphism of bialgebras.
 \end{abstract}
-
-
 
 \vspace*{-1cm}
 
 \maketitle
+\setcounter{tocdepth}{1}
 \tableofcontents
 \input{introduction}
 \input{preliminaries}
-\input{coaction}
-\input{hopf}
+\input{operads}
+\input{representations}
+\input{monoidal}
 \input{loop_space}
 \input{theorem}
 

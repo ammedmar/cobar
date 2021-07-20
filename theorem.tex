@@ -47,24 +47,24 @@ In a similar vein, D. Dugger and D. Spivak, inspired by the work of J. Lurie,  p
 The following statement, which is Proposition 2.6.2 in \cite{Hinich}, relates $\overline{W}$ and $\mathfrak{N}$.
 
 \begin{proposition}\label{hinich} There is a natural transformation of functors $$\varphi: \overline{W} \Longrightarrow \mathfrak{N}$$ such that for any simplicial group $C \in \mathsf{sGrp}$, we have a weak equivalence
-$$\varphi_C: \overline{W}(C) \xrightarrow{\simeq} \mathfrak{N}(C).$$
+$$\varphi_C: \overline{W}(C) \xra{\simeq} \mathfrak{N}(C).$$
 \end{proposition} 
 
  Given a simplicial monoid $M$, or equivalently a simplicially enriched category with one object, and a set of morphisms $A$ in $M$ we denote by $\mathcal{L}_A M$ the simplicial monoid obtained by formally inverting the elements of $A$ in $M$ subject to the usual relations. We denote by $\mathcal{L}M$ the simplicial group obtained by formally inverting all morphisms of $M$ (level by level) subject to the usual relations. We now deduce the following relationship between the rigidification functor $\mathfrak{C}$ and the Kan loop group functor $G$.
 
 \begin{proposition} Let $X \in \sSet^0$ be a reduced simplicial set. There are natural weak equivalences of simplicial monoids
-$$\mathcal{L}_{X_1} \mathfrak{C}(X) \xrightarrow{\simeq} \mathcal{L}\mathfrak{C}(X) \xrightarrow{\simeq} G(X).$$
+$$\mathcal{L}_{X_1} \mathfrak{C}(X) \xra{\simeq} \mathcal{L}\mathfrak{C}(X) \xra{\simeq} G(X).$$
 \end{proposition}
 
 \begin{proof}
 Since $\mathfrak{C}$ is a left Quillen functor and every $X \in \sSet$ is cofibrant in the Joyal model structure, it follows from Theorem \ref{joyalbergner} that $\mathfrak{C}(X)$ is cofibrant as well. Proposition 9.5 of \cite{Dwyer-Kan} implies that the natural inclusion $\mathcal{L}_{X_1} \mathfrak{C}(X) \to \mathcal{L}\mathfrak{C}(X)$ is a weak equivalence of simplicially enriched categories. 
 
-By Proposition \ref{hinich} we have that for any $X \in \sSet^0$, $\varphi_{G(X)}: \overline{W}(G(X)) \xrightarrow{\simeq} \mathfrak{N}(G(X))$ is a weak homotopy equivalence. By Theorem \ref{kan}, we have a weak homotopy equivalence $X \xrightarrow{\simeq} \overline{W}(G(X))$ given by the unit of the adjunction. Composing these two maps we obtain a weak homotopy equivalence
-$$X \xrightarrow{\simeq} \mathfrak{N}(G(X)).$$ 
+By Proposition \ref{hinich} we have that for any $X \in \sSet^0$, $\varphi_{G(X)}: \overline{W}(G(X)) \xra{\simeq} \mathfrak{N}(G(X))$ is a weak homotopy equivalence. By Theorem \ref{kan}, we have a weak homotopy equivalence $X \xra{\simeq} \overline{W}(G(X))$ given by the unit of the adjunction. Composing these two maps we obtain a weak homotopy equivalence
+$$X \xra{\simeq} \mathfrak{N}(G(X)).$$ 
 The Quillen equivalence of Theorem \ref{joyalbergner} localizes to a Quillen equivalence
 $$\mathcal{L} \mathfrak{C} \colon \sSet^0 \leftrightarrows \mathsf{sGrp} \colon \mathfrak{N}\iota$$
-when $\sSet^0$ is equipped with the Kan-Quillen model structure and $\mathsf{sGrp}$ with the model structure of Theorem \ref{kan}. Here $\iota: \mathsf{sGrp} \to \mathsf{Cat}_{\sSet}$ denotes the natural inclusion functor. It follows that the adjoint of the weak homotopy equivalence $X \xrightarrow{\simeq} \mathfrak{N}(G(X))$ is a weak equivalence of simplicial groups
-$$\mathcal{L}\mathfrak{C}(X) \xrightarrow{\simeq} G(X).$$ 
+when $\sSet^0$ is equipped with the Kan-Quillen model structure and $\mathsf{sGrp}$ with the model structure of Theorem \ref{kan}. Here $\iota: \mathsf{sGrp} \to \mathsf{Cat}_{\sSet}$ denotes the natural inclusion functor. It follows that the adjoint of the weak homotopy equivalence $X \xra{\simeq} \mathfrak{N}(G(X))$ is a weak equivalence of simplicial groups
+$$\mathcal{L}\mathfrak{C}(X) \xra{\simeq} G(X).$$ 
 \end{proof}
 
 We now have all the ingredients to prove Theorem \ref{t:3rd main thm in the intro}.
@@ -76,14 +76,14 @@ has a right adjoint $$\mathcal{U}\colon \sSet \to \cSet$$
 given by the formula
 $$\mathcal{U}(X)_n= \sSet((\Delta^1)^{\times n}, X)$$
 together with the obvious induced cubical faces, degeneracies, and connections. For any $C \in \cSet_c$ there are quasi-isomorphisms of $U(\M)$-coalgebras
-$$\schains(TC) \xrightarrow{\simeq} \cchains(UTC) \xleftarrow{\simeq} \cchains(C).$$
+$$\schains(TC) \xra{\simeq} \cchains(UTC) \xleftarrow{\simeq} \cchains(C).$$
 
 [Insert proof of the above fact: The first is a weak-equivalence of $E_\infty$ algebras by \cite{medina2021cubical}.]
 
 Applying the above to $C= \widehat{\gcobar}(X),$ we obtain that $\schains(T\widehat{\gcobar}(X))$ and $\schains(\widehat{\gcobar}(X)) \cong \widehat{\mathcal{F}}(X)$ are quasi-isomorphic as $U(\M)$-coalgebras. 
 
-By Theorem ?? of \cite{minichello-rivera-zeinalian} it follows that $T\widehat{\gcobar}(X)$, which is naturally isomorphic to $\mathfrak{C}(X)$, is naturally weak homotopy equivalent to $G(X)$ via a map of simplicial monoids $Sz \colon \mathfrak{C}(X) \xrightarrow{\simeq} G(X)$ induced by the ``Szczarba operators". By naturality, we have an induced quasi-isomorphism of $U(\M)$-coalgebras
-$$\schains(T\widehat{\gcobar}(X)) \xrightarrow{\simeq} \schains(G(X)).$$
+By Theorem ?? of \cite{minichello-rivera-zeinalian} it follows that $T\widehat{\gcobar}(X)$, which is naturally isomorphic to $\mathfrak{C}(X)$, is naturally weak homotopy equivalent to $G(X)$ via a map of simplicial monoids $Sz \colon \mathfrak{C}(X) \xra{\simeq} G(X)$ induced by the ``Szczarba operators". By naturality, we have an induced quasi-isomorphism of $U(\M)$-coalgebras
+$$\schains(T\widehat{\gcobar}(X)) \xra{\simeq} \schains(G(X)).$$
 Therefore, $\widehat{\mathcal{F}}(X) \cong \cchains(\widehat{\gcobar}(X))$ and $\schains(G(X))$ are quasi-isomorphic as $U(\M)$-coalgebras, as desired. 
 
 
