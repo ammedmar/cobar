@@ -97,26 +97,34 @@ $$G\colon \sSet^0 \to \mathsf{sGrp}$$ from reduced simplicial sets to the catego
 
 Hess and Tonks considered a localized version of $\mathcal{A} = \cobar \circ \schains \colon \sSet^0 \to \Mon_\Ch$, which they called the \textit{extended cobar construction}, and compared it explicitly with the composition $$\schains \circ G \colon \sSet^0 \to \Mon_\Ch.$$ More precisely, they construct a functor
 $$\widehat{\mathcal{A}} \colon \sSet^0 \to \Mon_\Ch$$
-given by the localization $$\widehat{\mathcal{A}}(X)= \mathcal{L}_{A_X} \mathcal{A}(X),$$
-where $A_X$ is a set of $0$-degree elements in $\mathcal{A}(X)$ determined by the set of $1$-simplices of $X$, together with a natural transformation
-$$\phi \colon \widehat{\mathcal{A}} \Longrightarrow \schains \circ G$$  whose components are all quasi-isomorphisms of algebras.
+by formally inverting a basis of $0$-degree elements in $\mathcal{A}(X)$ together with a natural comparison map
+$$\phi_X: \widehat{\mathcal{A}}(X) \to \schains(G(X))$$
+which is a quasi-isomorphism of algebras for any $X \in \sSet^0.$
 
 Following Baues’ construction, Franz described a lift of $\widehat{\mathcal{A}}$ to a functor
-$$\widehat{\mathcal{A}}_{\coAlg} \colon \sSet^0 \to \Mon_{\coAlg}$$ and showed that Hess and Tonks' natural transformation preserves the coalgebra structure, namely, it induces a natural transformation
-$$\phi_{\coAlg} \colon \widehat{\mathcal{A}}_{\coAlg} \Longrightarrow \schains \circ G$$
-whose components are all quasi-isomorphisms of bialgebras.
+$$\widehat{\mathcal{A}}_{\coAlg} \colon \sSet^0 \to \Mon_{\coAlg}$$ and showed that Hess and Tonks' comparison map preserves the coalgebra structure, namely, it induces a natural quasi-isomorohism of bialgebras
+$$\phi_X \colon \widehat{\mathcal{A}}_{\coAlg}(X) \to \schains (G(X)).$$
 
 Using similar methods to those that lead to Theorem 1, we construct a further lift
 $$\widehat{\mathcal{A}}_{U(\M)} \colon \sSet^0 \to \Mon_{\coAlg_{U(\M)}}$$
-of the extended cobar construction. Denoting by $U \colon \Mon_{\coAlg_{U(\M)}} \to \coAlg_{U(\M)}$ the forgetful functor, we show that Hess and Tonks' comparison map gives rise to a natural transformation
+and show that Hess and Tonks' comparison map preserves the $E_{\infty}$-coalgebra structure, namely, it induces a natural quasi-isomorphism of $E_{\infty}$-coalgebras
+$$\phi_X \colon  \widehat{\mathcal{A}}_{U(\M)}(X) \to \schains(G(X)).$$
 
-$$\phi_{U(\M)} \colon U \circ \widehat{\mathcal{A}}_{U(\M)} \Longrightarrow \schains \circ G$$
-whose components are all quasi-isomorphisms of $E_{\infty}$-coalgebras.  We apply the forgetful functor in this discussion since the algebra structure of $\schains(G(X))$ is not compatible with the $E_{\infty}$-coalgebra structure (in contrast to the cubical case). Hence, we may think of $\mathcal{A}_{U(\M)}(X)$ as an algebraic model for the based loop space in which the $E_{\infty}$-coalgebra and associative algebra structures are strictly compatible. 
+The associative algebra structure of $\schains(G(X))$ is not strictly compatible with the $E_{\infty}$-coalgebra structure. This failure is a consequence of the fact that the Eilenberg-Zilber natural transformation is not compatible with the $U(\M)$-coalgebra structures. In contrast, the $U(\M)$-coalgebra structure on the extended cobar construction gives rise to an algebraic model $\mathcal{A}_{U(\M)}(X)$ in which the associative algebra structure is strictly compatible with the $E_{\infty}$-coalgebra structure. This is a consequence of the cubical nature of  $\mathcal{A}_{U(\M)}(X).$ 
 
 
 We summarize this discussion in the following statement.
-\begin{theorem} The extended cobar construction $\widehat{\mathcal{A}} \colon \sSet^0 \to \Mon_\Ch$ lifts to a functor $\widehat{\mathcal{A}}_{U(\M)} \colon \sSet^0 \to \Mon_{\coAlg_{U(\M)}}$ such that for any $X \in \sSet^0$, the natural transformation $\phi \colon \widehat{\mathcal{A}} \Longrightarrow \schains \circ G$ induces a quasi-isomorphism of $E_{\infty}$-coalgebras
-$$  U(\widehat{\mathcal{A}}_{U(\M)}(X)) \xrightarrow{\simeq} \schains(G(X)).$$
+
+\begin{theorem} There exists a functor $\widehat{\mathcal{A}}_{U(\M)} \colon \sSet^0 \to \Mon_{\coAlg_{U(\M)}}$ that fits into a commutative diagram
+\begin{equation*}
+\begin{tikzcd}[column sep=large]
+& \phantom{aaaaa}\Mon_{\coAlg_{U(\M)}} \arrow[d, shift left=5, ""]\\
+& \phantom{aaaaa}\Mon_{\coAlg} \ar[d, shift left=5, ""]\\
+\phantom{sssssssssss}\sSet^0 \phantom{aaaaaaa} \ar[r, "\widehat{\mathcal{A}}", ]\ar[ru, "\widehat{\mathcal{A}}_{\coAlg}", very near end]\arrow[ruu,  "\widehat{\mathcal{A}}_{U(\M)}", near end] & \phantom{aaaaa} \Mon_{\Ch}.
+\end{tikzcd}
+\end{equation*}
+Furthermore, for any $X \in \sSet^0$, Hess and Tonks' comparison map induces a natural quasi-isomorphism 
+$$ \phi_X \colon \widehat{\mathcal{A}}_{U(\M)}(X) \xrightarrow{\simeq} \schains(G(X))$$ that preserves the underlying $E_{\infty}$-coalgebra structures.
 \end{theorem}
 
 
