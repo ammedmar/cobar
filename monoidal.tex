@@ -42,7 +42,7 @@ $\cchains$ is monoidal. $\cchainsAS$ is monoidal
 
 \subsection{Equivariance of the Serre coproduct}
 %We will use the following observation about the Serre diagonal to define the Hopf structure on $\M$.
-There is an action of $\S_n$ on $\cchains(\square^n)$ given by permuting the factors of $\cchains(\square^1)^{\otimes n}$.
+There is an action of $\S_n$ on $\chains(\cube^n)$ given by permuting the factors of $\chains(\cube^1)^{\otimes n}$.
 The Serre diagonal is equivariant with respect to this action in the following sense.
 
 \begin{lemma} \label{l:serre diagonal invariant}
@@ -50,10 +50,10 @@ The Serre diagonal is equivariant with respect to this action in the following s
 	The following diagram commutes
 	\begin{equation*}
 	\begin{tikzcd}
-	\cchains(\square^1)^{\otimes 2} \arrow[r, "\Delta"] \arrow[d, "T"] &
-	\cchains(\square^1)^{\otimes 2} \otimes \cchains(\square^1)^{\otimes 2} \arrow[d, "T \otimes T"] \\
-	\cchains(\square^1)^{\otimes 2} \arrow[r, "\Delta"] &
-	\cchains(\square^1)^{\otimes 2} \otimes \cchains(\square^1)^{\otimes 2}.
+	\chains(\cube^1)^{\otimes 2} \arrow[r, "\Delta"] \arrow[d, "T"] &
+	\chains(\cube^1)^{\otimes 2} \otimes \chains(\cube^1)^{\otimes 2} \arrow[d, "T \otimes T"] \\
+	\chains(\cube^1)^{\otimes 2} \arrow[r, "\Delta"] &
+	\chains(\cube^1)^{\otimes 2} \otimes \chains(\cube^1)^{\otimes 2}.
 	\end{tikzcd}
 	\end{equation*}
 \end{lemma}
@@ -171,19 +171,19 @@ We now show the functor $\cchainsUM$ is monoidal.
 	We have already establish that the Serre diagonal and the augmentation map are compatible with the monoidal structure of $\cube$. In diagrammatic terms,
 	\begin{equation*}
 	\begin{tikzcd}
-	\coproduct \otimes \cchains(\cube^{p+q}) \arrow[r, "\Delta_\M \otimes Sh"] \arrow[d] &[20pt]
+	\coproduct \otimes \chains(\cube^{p+q}) \arrow[r, "\Delta_\M \otimes Sh"] \arrow[d] &[20pt]
 	\left( \ \coproduct \otimes \coproduct \ \right) \otimes
-	\cchains(\cube^{p}) \otimes \cchains(\cube^{q}) \arrow[d] \\
-	\cchains(\cube^{p+q})^{\otimes 2} \arrow[r, "Sh"] &
-	\cchains(\cube^{p})^{\otimes 2} \otimes \cchains(\cube^{q})^{\otimes 2}
+	\chains(\cube^{p}) \otimes \chains(\cube^{q}) \arrow[d] \\
+	\chains(\cube^{p+q})^{\otimes 2} \arrow[r, "Sh"] &
+	\chains(\cube^{p})^{\otimes 2} \otimes \chains(\cube^{q})^{\otimes 2}
 	\end{tikzcd}
 	\end{equation*}
 	and
 	\begin{equation*}
 	\begin{tikzcd}
-	\counit \ \otimes \cchains(\cube^{p+q}) \arrow[r, "\Delta_\M \otimes Sh"] \arrow[d] &[20pt]
+	\counit \ \otimes \chains(\cube^{p+q}) \arrow[r, "\Delta_\M \otimes Sh"] \arrow[d] &[20pt]
 	\left( \ \counit \ \otimes \ \counit \ \right) \otimes
-	\cchains(\cube^{p}) \otimes \cchains(\cube^{q}) \arrow[d] \\
+	\chains(\cube^{p}) \otimes \chains(\cube^{q}) \arrow[d] \\
 	R \arrow[r, "\cong"] &
 	R \otimes R
 	\end{tikzcd}
@@ -192,14 +192,14 @@ We now show the functor $\cchainsUM$ is monoidal.
 	We will now show that the following diagram commutes:
 	\begin{equation*}
 	\begin{tikzcd}
-	\product \otimes \cchains(\cube^{p+q})^{\otimes 2} \arrow[d] \arrow[r, "\Delta_\M \otimes Sh"] &[20pt]
-	\left(\, \ \leftboundary \ \otimes \product + \product \otimes \ \rightboundary \ \, \right) \otimes \cchains(\cube^{p})^{\otimes 2} \otimes \cchains(\cube^{q})^{\otimes 2} \arrow[d]\\
-	\cchains(\cube^{p+q}) \arrow[r, "Sh"] &
-	\, \cchains(\cube^{p}) \otimes \cchains(\cube^{q}).
+	\product \otimes \chains(\cube^{p+q})^{\otimes 2} \arrow[d] \arrow[r, "\Delta_\M \otimes Sh"] &[20pt]
+	\left(\, \ \leftboundary \ \otimes \product + \product \otimes \ \rightboundary \ \, \right) \otimes \chains(\cube^{p})^{\otimes 2} \otimes \chains(\cube^{q})^{\otimes 2} \arrow[d]\\
+	\chains(\cube^{p+q}) \arrow[r, "Sh"] &
+	\, \chains(\cube^{p}) \otimes \chains(\cube^{q}).
 	\end{tikzcd}
 	\end{equation*}
 	Since this is immediate for $p=0$ or $q=0$ and $\cube$ is generated as a monoidal category by $2^1$, we only need to verify the commutativity of this diagram for $p=q=1$.
-	Consider $(x_1 \otimes y_1) \otimes (x_2 \otimes y_2) \in \cchains(\cube^1)^{\otimes 2} \otimes \cchains(\cube^1)^{\otimes 2}$.
+	Consider $(x_1 \otimes y_1) \otimes (x_2 \otimes y_2) \in \chains(\cube^1)^{\otimes 2} \otimes \chains(\cube^1)^{\otimes 2}$.
 	We have
 	\begin{equation*}
 	\begin{split}
@@ -227,5 +227,5 @@ We now show the functor $\cchainsUM$ is monoidal.
 We have the following immediate consequence.
 
 \begin{theorem} \label{t:lift chains on cSet to UM coAlg is monoidal}
-    The functor $\cchains_\UM \colon \cSet \to \coAlg_\UM$ is monoidal.
+    The functor $\cchainsUM \colon \cSet \to \coAlg_\UM$ is monoidal.
 \end{theorem}
