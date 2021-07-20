@@ -11,23 +11,19 @@ In this section we prove the theorems stated in the introduction.
     Hence, the functor $\Mon_{\cSet} \to \Mon_{\coAlg_{U(\M)}}$ provides a lift of $\mathcal{A} \colon \sSet^0 \to \Mon_{\Ch}$ to a functor  $\sSet^0 \to \Mon_{\coAlg_{U(\M)}}$ which factors through $\gcobar,$ as desired.
 \end{proof}
 
-\begin{proof}[Proof of Theorem~\ref{t:2nd main thm in the intro}]
-Using Corollary \ref{localizedcobar}, a similar argument as above gives the desired lift in the localized case. 
-\end{proof}
-
-Before proving Theorem \ref{t:3rd main thm in the intro} we recall some results and constructions. 
-Kan constructed a functor $$G\colon \sSet^0 \to \mathsf{sGrp}$$ known as the \textit{Kan loop group functor}, which models the based loop space functor in terms of simplicial sets. More precisely, for any $X \in \sSet^0$, the geometric realization of the Kan loop group $|G(X)|$ is homotopy equivalent, as a topological monoid, to the based loop space $\Omega|X|$ on the geometric realization of $X$ \cite{Berger}. 
+Before proving Theorem \ref{t:3rd main thm in the intro} we recall some classical results and constructions. 
+Kan constructed a functor $$G\colon \sSet^0 \to \sGrp$$ known as the \textit{Kan loop group functor}, which models the based loop space functor in terms of simplicial sets. More precisely, for any $X \in \sSet^0$, the geometric realization of the Kan loop group $|G(X)|$ is homotopy equivalent, as a topological monoid, to the based loop space $\Omega|X|$ on the geometric realization of $X$ \cite{Berger}. 
 
 
 The Kan loop group functor has a right adjoint usually denoted by 
-$$\overline{W} \colon \mathsf{sGrp} \to \sSet^0,$$ which is a model for the classifying space of a simplicial group. This adjunction induces an equivalence of homotopy theories in the following sense.
+$$\overline{W} \colon \sGrp \to \sSet^0,$$ which is a model for the classifying space of a simplicial group. This adjunction induces an equivalence of homotopy theories in the following sense.
 
-\begin{theorem} \label{kan} There exists a model category structure on the category $\mathsf{sGrp}$ of simplicial groups such that 
+\begin{theorem} \label{kan} There exists a model category structure on the category $\sGrp$ of simplicial groups such that 
 \begin{itemize}
     \item weak equivalences are those maps simplicial groups whose underlying map of simplicial sets is a weak homotopy equivalence
     \item all objects are fibrant, and
 \item the adjunction
-$$G \colon \sSet^0 \leftrightarrows \mathsf{sGrp}\colon \overline{W}$$
+$$G \colon \sSet^0 \leftrightarrows \sGrp\colon \overline{W}$$
 becomes a Quillen equivalence when $\sSet^0$ is equipped with the Kan-Quillen model category structure.
 \end{itemize}
 \end{theorem}
@@ -46,8 +42,8 @@ In a similar vein, D. Dugger and D. Spivak, inspired by the work of J. Lurie,  p
 
 The following statement, which is Proposition 2.6.2 in \cite{hinich2007deformation}, relates $\overline{W}$ and $\mathfrak{N}$.
 
-\begin{proposition}\label{hinich} There is a natural transformation of functors $$\psi: \overline{W} \Longrightarrow \mathfrak{N}$$ such that for any simplicial group $C \in \mathsf{sGrp}$, we have a weak equivalence
-$$\psi_C: \overline{W}(C) \xrightarrow{\simeq} \mathfrak{N}(C).$$
+\begin{proposition}\label{hinich} There is a natural transformation of functors $$\psi: \overline{W} \Longrightarrow \mathfrak{N}$$ inducing a weak homotopy equivalence
+$$\psi_C: \overline{W}(C) \xrightarrow{\simeq} \mathfrak{N}(C),$$ for any simplicial group $C \in \sGrp$. 
 \end{proposition} 
 
  Given a simplicial monoid $M$, or equivalently a simplicially enriched category with one object, and a set of morphisms $A$ in $M$ we denote by $\mathcal{L}_A M$ the simplicial monoid obtained by formally inverting the elements of $A$ in $M$ subject to the usual relations. We denote by $\mathcal{L}M$ the simplicial group obtained by formally inverting all morphisms of $M$ (level by level) subject to the usual relations. We now deduce the following relationship between the rigidification functor $\mathfrak{C}$ and the Kan loop group functor $G$.
@@ -62,30 +58,30 @@ Since $\mathfrak{C}$ is a left Quillen functor and every $X \in \sSet$ is cofibr
 By Proposition \ref{hinich} we have that for any $X \in \sSet^0$, $\psi_{G(X)}: \overline{W}(G(X)) \xrightarrow{\simeq} \mathfrak{N}(G(X))$ is a weak homotopy equivalence. By Theorem \ref{kan}, we have a weak homotopy equivalence $X \xrightarrow{\simeq} \overline{W}(G(X))$ given by the unit of the adjunction. Composing these two maps we obtain a weak homotopy equivalence
 $$X \xrightarrow{\simeq} \mathfrak{N}(G(X)).$$ 
 The Quillen equivalence of Theorem \ref{joyalbergner} localizes to a Quillen equivalence
-$$\mathcal{L} \mathfrak{C} \colon \sSet^0 \leftrightarrows \mathsf{sGrp} \colon \mathfrak{N}\iota$$
-when $\sSet^0$ is equipped with the Kan-Quillen model structure and $\mathsf{sGrp}$ with the model structure of Theorem \ref{kan}. Here $\iota: \mathsf{sGrp} \to \mathsf{Cat}_{\sSet}$ denotes the natural inclusion functor. It follows that the adjoint of the weak homotopy equivalence $X \xra{\simeq} \mathfrak{N}(G(X))$ is a weak equivalence of simplicial groups
+$$\mathcal{L} \mathfrak{C} \colon \sSet^0 \leftrightarrows \sGrp \colon \mathfrak{N}\iota$$
+when $\sSet^0$ is equipped with the Kan-Quillen model structure and $\sGrp$ with the model structure of Theorem \ref{kan}. Here $\iota: \sGrp \to \mathsf{Cat}_{\sSet}$ denotes the natural inclusion functor. It follows that the adjoint of the weak homotopy equivalence $X \xra{\simeq} \mathfrak{N}(G(X))$ is a weak equivalence of simplicial groups
 $$\mathcal{L}\mathfrak{C}(X) \xra{\simeq} G(X).$$ 
 \end{proof}
 
-We now have all the ingredients to prove Theorem \ref{t:3rd main thm in the intro}.
-\begin{proof}[Proof of Theorem ~\ref{t:3rd main thm in the intro}]
+We now have all the ingredients to prove Theorem \ref{t:2nd main thm in the intro}.
+\begin{proof}[Proof of Theorem ~\ref{t:2nd main thm in the intro}]
 
-We construct a zig-zag of quasi-isomorphisms of $U(\M)$-coalgebras between $\widehat{\gcobar}(X)$ and $\schains (G(X))$.
+We now construct a zig-zag of quasi-isomorphisms of $U(\M)$-coalgebras between $\widehat{\mathcal{A}}_{U(\M)}(X)$ and $\schains (G(X))$.
 The triangulation functor $$\mathcal{T}\colon \cSet \to \sSet$$
 has a right adjoint $$\mathcal{U}\colon \sSet \to \cSet$$
 given by the formula
 $$\mathcal{U}(X)_n= \sSet((\Delta^1)^{\times n}, X)$$
-together with the obvious induced cubical faces, degeneracies, and connections. For any $C \in \cSet_c$ there are quasi-isomorphisms of $U(\M)$-coalgebras
-$$\schains(TC) \xra{\simeq} \cchains(UTC) \xleftarrow{\simeq} \cchains(C).$$
+together with the obvious induced cubical faces, degeneracies, and connections. For any $K \in \cSet$ there are quasi-isomorphisms of $U(\M)$-coalgebras
+$$\schains_{U(\M)}(TK) \xra{\simeq} \cchains_{U(\M)}(UTK) \xleftarrow{\simeq} \cchains_{U(\M)}(K).$$
 
 [Insert proof of the above fact: The first is a weak-equivalence of $E_\infty$ algebras by \cite{medina2021cubical}.]
 
-Applying the above to $C= \widehat{\gcobar}(X),$ we obtain that $\schains(T\widehat{\gcobar}(X))$ and $\schains(\widehat{\gcobar}(X)) \cong \widehat{\mathcal{F}}(X)$ are quasi-isomorphic as $U(\M)$-coalgebras. 
+Applying the above to $C= \widehat{\gcobar}(X),$ we obtain that $\schains_{U(\M)}(T\widehat{\gcobar}(X))$ and $\cchains_{U(\M)}(\widehat{\gcobar}(X)) \cong \widehat{\mathcal{A}}_{U(\M)}(X)$ are quasi-isomorphic as $U(\M)$-coalgebras. 
 
-By Proposition\ref{CandG} we have a weak homotopy equivalence of simplicial monoids
+By Proposition \ref{CandG} we have a weak homotopy equivalence of simplicial monoids
 $$T\widehat{\gcobar}(X) \cong \mathcal{L}_{X_1}\mathfrak{C}(X) \xrightarrow{\simeq} G(X)$$ for any $X \in \sSet^0.$ By naturality, we have an induced quasi-isomorphism of $U(\M)$-coalgebras
 $$\schains(T\widehat{\gcobar}(X)) \xra{\simeq} \schains(G(X)).$$
-Therefore, $\widehat{\mathcal{F}}(X) \cong \cchains(\widehat{\gcobar}(X))$ and $\schains(G(X))$ are quasi-isomorphic as $U(\M)$-coalgebras, as desired. 
+Therefore, $\widehat{\mathcal{A}}(X) \cong \cchains(\widehat{\gcobar}(X))$ and $\schains(G(X))$ are quasi-isomorphic as $U(\M)$-coalgebras, as desired. 
 
 
 
