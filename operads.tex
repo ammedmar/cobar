@@ -105,21 +105,22 @@ Originally this prop was defined without imposing the coassociativity relation \
 This is advantageous since in that case the associated reduced operad is a cofibrant resolution of the terminal operad.
 Since in this work we are interested in extending the Alexander--Whitney and Serre coproducts we find it convenient to impose the coassociative relation, so obtaining an inclusion $\As \to \UM$ and a forgetful functor $\coAlg_\UM \to \coAlg$.
 
-The same proof given for Theorem 3.3 in \cite{medina2020prop1} establishes the following.
+The same proof given in \cite[Theorem 3.3]{medina2020prop1} establishes the following.
 
 \begin{proposition}
 	The operad $\UM$ is an $E_\infty$ operad.
 \end{proposition}
 
-\subsection{Simplicial $E_\infty$ structure}
+\subsection{Simplicial $E_\infty$ structure} \label{ss:e infty struc simplicial}
 
 We review from \cite{medina2020prop1} a natural $\mathcal M$-structure on the chains of standard simplices leading to a natural $\UM$-structure on the chains of a simplicial set.
-The $\M$-bialgebra is specified by three linear maps, the images of the generators
+
+An $\M$-structure is specified by three linear maps, the images of the generators
 \begin{equation*}
 \counit, \quad \coproduct, \quad \product,
 \end{equation*}
 satisfying the relations in the presentation of $\mathcal M$.
-The first two generators are send respectively to the Alexander--Whitney counit and coproduct as defined in \cref{ss:aw coalgebra}, and the third generator to an algebraic version of the join $\ast \colon \schains(\triangle^n)^{\otimes 2} \to \schains(\triangle^n)$ defined by
+For the chains on standard simplices, the first two generators are send respectively to the counit and coproduct of the Alexander--Whitney coalgebra as defined in \cref{ss:aw coalgebra}, and the third generator to an algebraic version of the join $\ast \colon \chains(\triangle^n)^{\otimes 2} \to \chains(\triangle^n)$ defined by
 \begin{equation*}
 \left[v_0, \dots, v_p \right] \ast \left[v_{p+1}, \dots, v_q\right] = \begin{cases} (-1)^{p+|\pi|} \left[v_{\pi(0)}, \dots, v_{\pi(q)}\right] & \text{ if } v_i \neq v_j \text{ for } i \neq j, \\
 0 & \text{ otherwise}, \end{cases}
@@ -133,7 +134,7 @@ The same proof given in \cite[Theorem 4.2]{medina2020prop1} establishes the foll
 	\begin{equation*}
 	\counit \mapsto \epsilon, \quad \coproduct \mapsto \Delta, \quad \product \mapsto \ast,
 	\end{equation*}
-	defines a natural $\mathcal M$-bialgebra structure on $\schains(\triangle^n)$ extending the Alexander--Whitney coalgebra.
+	defines a natural $\mathcal M$-structure on $\chains(\triangle^n)$ extending the Alexander--Whitney coalgebra.
 \end{proposition}
 
 The chains on general simplicial sets are not equipped with a $\M$-structure, but using the forgetful functor from $\biAlg_{\M}$ to the cocomplete category $\coAlg_\UM$ allows us to Kan extend the induced natural $\UM$-structures on standard simplices to all simplicial sets.
@@ -153,11 +154,14 @@ As explained in \cite{medina2020prop1}, this $\UM$-structure on simplicial chain
 
 \subsection{Cubical $E_\infty$ structure}
 
-We recall a natural $\mathcal M$-bialgebra structure on $\cchains(\square^n)$ for every $n \geq 0$, where $\mathcal M$ is the $E_{\infty}$-prop defined in \ref{propM}. This structure is determined by three linear maps satisfying the relations in the presentation of $\mathcal M$.
+We follow the presentation of \cref{ss:e infty struc simplicial} closely to review from \cite{medina2021cubical} a natural $\mathcal M$-structure on the chains of standard cubes which leads to natural $\UM$-structure on the chains of cubical sets.
 
-\anibal{improve}
-
-(3) The product $\ast \in \Hom(\cchains(\square^n)^{\otimes 2}, \cchains(\square^n))$ by
+An $\M$-structure is specified by three linear maps, the images of the generators
+\begin{equation*}
+\counit, \quad \coproduct, \quad \product,
+\end{equation*}
+satisfying the relations in the presentation of $\mathcal M$.
+For the chains on standard cubes, the first two generators are send respectively to the counit and coproduct of the Serre coalgebra as defined in \cref{ss:serre coalgebra}, and the third generator to a degree one map $\ast \colon \schains(\triangle^n)^{\otimes 2} \to \schains(\triangle^n)$ defined by
 \begin{align*}
 (x_1 \otimes \cdots \otimes x_n) \ast (y_1 \otimes \cdots \otimes y_n) =
 (-1)^{|x|} \sum_{i=1}^n x_{<i} \epsilon(y_{<i}) \otimes x_i \ast y_i \otimes \epsilon(x_{>i})y_{>i},
@@ -178,39 +182,26 @@ and the only non-zero values of $x_i \ast y_i$ are
 \ast([0] \otimes [1]) = [0, 1], \qquad  \ast([1] \otimes [0]) = -[0, 1].
 \end{equation*}
 
-The counit $\varepsilon$ and coproduct $\Delta$ are known respectively as the \textit{augmentation} and \textit{Serre's diagonal}.
-They define a natural counital coassociative coalgebra structure on each $\cchains(\cube^n)$, or equivalently a lift of the functor of chains
-\begin{equation} \label{e:Serre lift}
-\begin{tikzcd}[column sep=small, row sep=small]
-& \coAlg \arrow[d] \\
-\cube \arrow[r, "N"] \arrow[dashed, ur, bend left]& \Ch.
-\end{tikzcd}
-\end{equation}
-The following statement was shown in \cite{medina2021cubical}.
+The same proof given in \cite{medina2020prop1} establishes the following.
 
 \begin{proposition} \label{thm: cubical chain bialgebra}
 	For every $n \in \mathbb{N}$, the assignment
 	\begin{equation*}
 	\counit \mapsto \epsilon, \quad \coproduct \mapsto \Delta, \quad \product \mapsto \ast,
 	\end{equation*}
-	defines a natural $\mathcal M$-bialgebra structure on $\cchains(\square^n)$ or, equivalently, a lift of the functor of chains
-	\begin{equation} \label{e:cubical lift to bialgebras}
-	\begin{tikzcd}[column sep=small, row sep=small]
-	& \biAlg_{\M} \arrow[d] \\
-	\cube \arrow[r, "N"] \arrow[dashed, ur, bend left]& \Ch.
-	\end{tikzcd}
-	\end{equation}
+	defines a natural $\mathcal M$-structure on $\chains(\square^n)$ extending the Serre coalgebra.
 \end{proposition}
 
-Using the forgetful functor $\U$ on \eqref{e:cubical lift to bialgebras} we obtain a functor $\cube \to \coAlg_\UM$.
-Kan extending this functor and \eqref{e:Serre lift} along the Yoneda embedding we obtain a functor $\cchains_\UM \colon \cSet \to \coAlg_\UM$. Hence, we obtain an $E_{\infty}$-coalgebra structure, described explicitly through the operad $\UM$, on the normalized chains of any cubical set extending the coassociative Serre diagonal.
-\begin{theorem} \label{t:lift of chains of cSets to UM coalgebras}
-	The following diagram commutes up to natural isomorphism
-	\begin{equation}
-	\begin{tikzcd}[column sep=small, row sep=small]
-	& \coAlg_\UM \arrow[d] \\
-	& \coAlg \arrow[d] \\
-	\cSet \arrow[r, "N"] \arrow[dashed, uur, bend left, "\cchains_\UM"]& \Ch.
-	\end{tikzcd}
-	\end{equation}
-\end{theorem}
+Kan extending the induced natural $\UM$-structures on standard simplices to all simplicial sets defines a lift:
+\begin{equation*}
+\begin{tikzcd}[column sep=normal, row sep=small]
+& \coAlg_\UM \arrow[d] \\
+& \coAlg \arrow[d] \\
+\cSet \arrow[r, "\cchains"]
+\arrow[ur, "\cchainsAS", out=45, in=180]
+\arrow[uur, "\cchainsUM", out=90, in=180]
+& \Ch.
+\end{tikzcd}
+\end{equation*}
+
+In the next section we will show that $\cchainsUM$ is a monoidal functor.
