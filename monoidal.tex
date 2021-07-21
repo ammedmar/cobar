@@ -66,9 +66,9 @@ The Serre diagonal is equivariant with respect to this action in the following s
 
 So far we have consider operad and props over the category $\Ch$ but, since $\coAlg$ is also a symmetric monoidal category, we can consider them over $\coAlg$ as well.
 That is to say, demand that all defining chain complexes be coalgebras with composition maps being morphisms of coalgebras.
-We refer to operads (resp. props) over $\coAlg$ as \textit{Hopf operads} (resp. \textit{Hopf props}).
+We refer to operads and props over $\coAlg$ as \textit{Hopf operads and props} respectively.
 
-The category $\coAlg_\O$ is monoidal, with the structure maps of a product of $\O$-coalgebras $C \otimes C^\prime$ given by
+If $\O$ is a Hopf operad, the category $\coAlg_\O$ is monoidal with structure maps of a product of $\O$-coalgebras $C \otimes C^\prime$ given by
 \begin{equation*}
 \begin{tikzcd} [column sep = normal, row sep=large]
 \O(r) \otimes (C \otimes C^\prime) \arrow[r, "\Delta_\O \otimes \id"] &[10 pt] \O(r) \otimes \O(r) \otimes (C \otimes C^\prime) \arrow[d, "Sh"'] & & \\ &
@@ -79,10 +79,15 @@ C^{\otimes r} \otimes C^{\prime\, \otimes r} \arrow[r, "Sh"] &
 \end{equation*}
 A similar statement holds for the category of representations of a Hopf prop.
 
-%We will use this observation together with the result, proven in the next section, that $\M$ is Hopf to provide $\coAlg_\UM$ with a monoidal structure and prove in ... that $\cchainsUM$ is monoidal.
-
 \subsection{Cubical structure on $\M$}
 
+
+------------------
+
+\input{props}
+
+
+---------------
 As can be seen from \eqref{e:free prop}, the $(m,n)$-part of the free prop is defined only up to a choice of total order on the set of vertices of the $(m,n)$-graph involved.
 
 \begin{definition}
