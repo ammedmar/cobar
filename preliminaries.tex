@@ -69,11 +69,11 @@ as a derivation.
 
 We now review the central examples of augmented coalgebras on which Adams used this construction.
 
-%In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented coalgebras which are non-negatively graded and for which the coaugmentation induces an isomorphism of (not graded or) coalgebras $R \cong C_0$.
-%
-%\anibal{Say this better or maybe don't say it.}
-%
-%We denote by $\coAlg^0$ the full subcategory of $\coAlg^*$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees.
+In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented coalgebras which are non-negatively graded and for which the coaugmentation induces an isomorphism of (not graded or) coalgebras $R \cong C_0$.
+
+\anibal{Say this better, coalgebras are dg.}
+
+We denote by $\coAlg^0$ the full subcategory of $\coAlg^*$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees.
 
 %The cobar construction was originally applied by Adams to the coalgebra of normalized chains on a $1$-reduced simplicial set to obtain a model for the chains on the based loop space \cite{Adams}.
 %The cobar construction as a model for the based loop space was furthered studied in \cite{Baues} and more recently, in the non-simply connected setting in \cite{Hess--Tonks}, \cite{rivera-zeinalian-cubical}.
@@ -90,10 +90,11 @@ for $j \in \{0, \dots, n\}$.
 
 The category of \textit{simplicial sets} is the functor category $\sSet = \Fun(\simplex^\op, \Set)$.
 The \textit{standard $n$-simplex} is the simplicial set $\simplex^n = \simplex(-, [n])$, and the \textit{Yoneda embedding} $\Y \colon \simplex \to \sSet$ is the functor induced by $[n] \mapsto \cube^n$.
-For any simplicial set $X$ we have
+For any simplicial set $X$ we write, as usual, $X_n$ instead of $X([n])$, and remark that
 \begin{equation*}
 X_n \cong \colim_{\simplex^n \to X} \simplex^n.
 \end{equation*}
+If $X$ is such that $X_0$ is a singleton we say it is \textit{reduced}, and we denote the full subcategory of reduced simplicial sets by $\sSet^0$.
 
 \subsection{Simplicial chains}
 
@@ -143,7 +144,20 @@ and $\Delta \colon \chains(\simplex^n) \to \chains(\simplex^n)^{\otimes2})$ by
 
 \subsection{Simplicial singular complex}
 
-TBW include also the pointed version.
+Consider the topological $n$-simplex
+\begin{equation*}
+\gsimplex^{n} = \{(x_0, \dots, x_n) \in [0,1]^{n+1} \mid \ \textstyle{\sum}_i x_i = 1\}.
+\end{equation*}
+The assignment $[n] \to \gsimplex^n$ defines a functor $\simplex \to \Top$ whose Kan extension is known as (simplicial) \textit{geometric realization}.
+It has a right adjoint $\sSing \colon \Top \to \sSet$ given by
+\begin{equation*}
+Y \to \Big( 2^n \to \Top(\gsimplex^n, Y) \Big)
+\end{equation*}
+and referred to as the (simplicial) \textit{singular complex} of the topological space $Y$.
+The chain complex $\chains(\cSing Y)$ is referred to as the \textit{cubical singular chains} of $Y$.
+
+We modify this construction for a pointed topological space $(Y, y)$ by considering only maps of $\gsimplex^n \to Y$ sending all vertices to $y$.
+This produces a reduced simplicial set $\sSing(Y, y)$.
 
 \subsection{Cubical sets}
 
