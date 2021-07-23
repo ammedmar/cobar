@@ -62,7 +62,7 @@ and
 \end{equation*}
 for every vertex $v$.
 We refer to the isomorphism classes of such labeled directed graphs with no directed loops as $(n,m)$\textit{-graphs} denoting the set of these by $\G(m,n)$.
-We use graphs immersed in the plane to represent elements in $\G(m,n)$, please see Figure \ref{f:immersion}.
+We use graphs immersed in the plane to represent elements in $\G(m,n)$, please see \cref{f:immersion}.
 We consider the right action of $\S_n$ and the left action of $\S_m$ on a $(n,m)$-graph given respectively by permuting the labels of $in(G)$ and $out(G)$.
 This action defines the $\S$ bimodule structure on the free prop
 \begin{equation} \label{e:free prop}
@@ -128,7 +128,7 @@ An $\M$-structure is specified by three linear maps, the images of the generator
 \counit, \quad \coproduct, \quad \product,
 \end{equation*}
 satisfying the relations in the presentation of $\mathcal M$.
-For the chains on standard simplices, the first two generators are send respectively to the counit and coproduct of the Alexander--Whitney coalgebra as defined in \cref{ss:aw coalgebra}, and the third generator to an algebraic version of the join $\ast \colon \chains(\triangle^n)^{\otimes 2} \to \chains(\triangle^n)$ defined by
+For the chains on standard simplices, the first two generators are send respectively to the counit and coproduct of the Alexander--Whitney coalgebra as defined in \cref{ss:aw coalgebra}, and the third generator to an algebraic version of the join $\ast \colon \chains(\simplex^n)^{\otimes 2} \to \chains(\simplex^n)$ defined by
 \begin{equation*}
 \left[v_0, \dots, v_p \right] \ast \left[v_{p+1}, \dots, v_q\right] = \begin{cases} (-1)^{p+|\pi|} \left[v_{\pi(0)}, \dots, v_{\pi(q)}\right] & \text{ if } v_i \neq v_j \text{ for } i \neq j, \\
 0 & \text{ otherwise}, \end{cases}
@@ -142,7 +142,7 @@ The same proof given in \cite[Theorem 4.2]{medina2020prop1} establishes the foll
 	\begin{equation*}
 	\counit \mapsto \epsilon, \quad \coproduct \mapsto \Delta, \quad \product \mapsto \ast,
 	\end{equation*}
-	defines a natural $\mathcal M$-structure on $\chains(\triangle^n)$ extending the Alexander--Whitney coalgebra.
+	defines a natural $\mathcal M$-structure on $\chains(\simplex^n)$ extending the Alexander--Whitney coalgebra.
 \end{proposition}
 
 The chains on general simplicial sets are not equipped with a $\M$-structure, but using the forgetful functor from $\biAlg_{\M}$ to the cocomplete category $\coAlg_\UM$ allows us to Kan extend the induced natural $\UM$-structures on standard simplices to all simplicial sets.
@@ -167,7 +167,7 @@ An $\M$-structure is specified by three linear maps, the images of the generator
 \counit, \quad \coproduct, \quad \product,
 \end{equation*}
 satisfying the relations in the presentation of $\mathcal M$.
-For the chains on standard cubes, the first two generators are send respectively to the counit and coproduct of the Serre coalgebra as defined in \cref{ss:serre coalgebra}, and the third generator to a degree one map $\ast \colon \schains(\triangle^n)^{\otimes 2} \to \schains(\triangle^n)$ defined by
+For the chains on standard cubes, the first two generators are send respectively to the counit and coproduct of the Serre coalgebra as defined in \cref{ss:serre coalgebra}, and the third generator to a degree one map $\ast \colon \schains(\simplex^n)^{\otimes 2} \to \schains(\simplex^n)$ defined by
 \begin{align*}
 (x_1 \otimes \cdots \otimes x_n) \ast (y_1 \otimes \cdots \otimes y_n) =
 (-1)^{|x|} \sum_{i=1}^n x_{<i} \epsilon(y_{<i}) \otimes x_i \ast y_i \otimes \epsilon(x_{>i})y_{>i},

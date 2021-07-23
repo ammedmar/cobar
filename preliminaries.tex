@@ -99,7 +99,7 @@ If $X$ is such that $X_0$ is a singleton we say it is \textit{reduced}, and we d
 \subsection{Simplicial chains} \label{ss:simplicial sets}
 
 For non-negative integers $m$ and $n$, let $\simplex_{\deg} \big( [m], [n] \big)$ be the subset of \textit{degenerate morphisms} in $\simplex \big( [m], [n] \big)$, i.e., those of the form $\sigma_i \circ \tau$ with $\tau$ any morphism in $\simplex \big( [m], [n+1] \big)$.
-The functor of (simplicial) \textit{chains} $\schains \colon \sSet \to \Ch$ is the Kan extension along the Yoneda embedding of the functor $\triangle \to \Ch$ defined next.
+The functor of (simplicial) \textit{chains} $\schains \colon \sSet \to \Ch$ is the Kan extension along the Yoneda embedding of the functor $\simplex \to \Ch$ defined next.
 To an object $[n]$ it assigns the chain complex having in degree $m$ the module
 \begin{equation*}
 \schains([n])_m = \frac{\k\{\simplex \big( [m], [n] \big) \}}{\k\{\simplex_{\deg} \big( [m], [n] \big) \}},
@@ -272,9 +272,12 @@ Z \to \Big(2^n \to \Top(\gcube^n, Z)\Big)
 and referred to as the \textit{cubical singular complex} of the topological space $Z$.
 The chain complex $\chains(\cSing Z)$ is referred to as the \textit{cubical singular chains} of $Z$.
 
-\subsection{Triangulation and its right adjoint}
+\subsection{Triangulation and its right adjoint} \label{ss:triangulation and its adjoint}
 
-TBW
+\anibal{improve}
+
+Define a functor $\mathcal{T} \colon \cSet \to \sSet$ by $$\mathcal{T}(C) = \colim_{\cube^n \to C} (\Delta^1)^{\times n}.$$
+This is a monoidal functor known as \textit{triangulation} and it induces a functor $$\mathcal{T} \colon \Mon_{\cSet} \to \Mon_{\sSet}.$$
 
 
 %Explicitly,

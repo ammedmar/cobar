@@ -3,7 +3,7 @@
 
 \subsection{Adams' map}
 
-In \cite{adams1956cobar}, Adams constructed a natural map of differential graded algebras \begin{equation} \label{e:adams map}
+In \cite{adams1956cobar}, Adams constructed a natural map of differential graded algebras \begin{equation} \label{e:adams map 2}
 \theta_Y \colon \cobar(\sS(Y, y)) \to S^{\square}(\Omega_y Y),
 \end{equation}
 for any pointed topological space $(Y,y)$.
@@ -19,7 +19,7 @@ These maps are constructed inductively so that following equations are satisfied
 \end{enumerate}
 In the above equations $f_j\colon \gsimplex^j \rightarrow \gsimplex^n$ and $l_{n-j}\colon \gsimplex^{n-j} \rightarrow \gsimplex^n$ denote the first $j$-th face map and last $(n-j)$-th face map of $\gsimplex^n$, respectively, and
 $e_j^0,e_j^1\colon \gcube^{n-1} \rightarrow \gcube^{n}$ denote the $j$-th bottom and top face inclusion maps, respectively.
-For any continuous map of spaces $f\colon X \to Y$, we denote by $P(f)\colon P(X) \to P(Y)$ the induced map at the level of spaces of paths.
+For any continuous map of spaces $f\colon X \to Y$, we denote by $P(f) \colon P(X) \to P(Y)$ the induced map at the level of spaces of paths.
 Given any two composable paths $\alpha$ and $\beta$, the dot symbol in $\alpha \cdot \beta$ denotes the composition (or concatenation) of paths.
 
 Adams' map $\theta_Y$ is now given as follows.
@@ -42,14 +42,14 @@ The category $\simplex_{*,*}$ is a strict monoidal category when equipped with t
 
 Denote by
 \begin{equation*}
-\barConst \colon \Mon_{\mathsf{Cat}} \to \mathsf{Fun}[\simplex^{op}, \Mon_{\mathsf{Cat}}]
+\barConst \colon \Mon_{\Cat} \to \Fun[\simplex^{op}, \Mon_{\Cat}]
 \end{equation*}
 
 \anibal{introduced command \texttt{barConst} for this}
 
-the bar construction from the category of monoidal categories, i.e., monoids in $\Cat$, to simplicial objects in $\Mon_{\mathsf{Cat}}$ and by
+the bar construction from the category of monoidal categories, i.e., monoids in $\Cat$, to simplicial objects in $\Mon_{\Cat}$ and by
 \begin{equation*}
-\bars{\ \cdot \ } \colon \mathsf{Fun}[\simplex^{op}, \Mon_{\mathsf{Cat}}] \to \Mon_{\mathsf{Cat}}
+\bars{\ \cdot \ } \colon \Fun[\simplex^{op}, \Mon_{\Cat}] \to \Mon_{\Cat}
 \end{equation*}
 the realization functor.
 
@@ -200,7 +200,7 @@ Adams' map can now be factored as
 $$\theta_Y \colon \cobar(\sS(Y, y)) \xrightarrow{\cong} 
 \cchains(\ccobar \sSing(Y, y)) \xrightarrow{\cchains(\Theta)} 
 S^{\square}(\Omega_y Y).$$
-The first map is given by the natural isomorphism of algebras $$\cobar \schains (\sSing(Y, y)) \cong  \cchains \ccobar (\sSing(Y, y))$$ of Proposition \ref{p:ccobar and cobar}.
+The first map is given by the natural isomorphism of algebras $$\cobar \schains (\sSing(Y, y)) \cong  \cchains \ccobar (\sSing(Y, y))$$ of \cref{p:ccobar and cobar}.
 The second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
 $$\Theta \colon \ccobar (\sSing(Y, y) \to \cSing( \Omega_yY)$$
 determined by sending any singular $n$-simplex $$(\sigma\colon \gsimplex^n \to Y) \in \sSing(Y, y)$$ to the singular $(n-1)$-cube $$(P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \Omega_yY) \in \cSing( \Omega_yY).$$ 
@@ -226,7 +226,7 @@ We now put together the constructions and results discussed above to deduce our 
 \begin{proof}
 	The fact that $\cchainsUM$ is monoidal and that it fits in the desired commutative diagram follows directly from Section 4.
 	    
-	The natural $\UM$-coalgebra structure on $\cobar(\sS(Y, y))$ is induced by $\cchainsUM ( \ccobar (\sSing(Y,y)) )$, as discussed in \ref{ss:e-infty on cobar}.
+	The natural $\UM$-coalgebra structure on $\cobar(\sS(Y, y))$ is induced by $\cchainsUM ( \ccobar (\sSing(Y,y)) )$, as discussed in \cref{ss:e-infty on cobar}.
 	The natural $\UM$-coalgebra structure on $S^{\square}(\Omega_yY)$ is precisely given by $\cchainsUM( \cSing(\Omega_yY) ).$ These two $\UM$-coalgebra structures are compatible with the algebra structures, giving rise to monoinds in $\coAlg_{\UM}.$
 	     
 	By naturality, we obtain a map
@@ -235,7 +235,7 @@ We now put together the constructions and results discussed above to deduce our 
 	\cchainsUM \big( \ccobar(\sSing(Y, y)) \big) \xra{\cchainsUM(\Theta)}
 	\cchainsUM \big( \cSing(\Omega_y Y) \big)
 	\end{equation*}
-	of monoids in $\coAlg_{\UM}$,  lifting Adams' classical map by \ref{factorization}, as desired.
+	of monoids in $\coAlg_{\UM}$, lifting Adams' classical map by \cref{factorization}, as desired.
 	Since $\sSing(Y,y)$ is a fibrant reduced simplicial set, Adams' map $\theta_Y$ is a quasi-isomorphism, as proven in \cite{rivera2018cubical} and \cite{rivera2019path}. 
 \end{proof}
 

@@ -41,7 +41,9 @@ pdfpagelabels]{hyperref}
 \renewcommand{\S}{\mathbb{S}}
 \newcommand{\As}{\mathcal{A}\mathsf{s}}
 \newcommand{\M}{\mathcal{M}}
-\newcommand{\UM}{{\mathrm{U}(\mathcal{M})}}
+\newcommand{\UM}{{\U(\mathcal{M})}}
+\newcommand{\SL}{{\mathcal{M}_{sl}}}
+\newcommand{\USL}{{\U(\mathcal{M}_{sl})}}
 
 % sets and spaces
 \newcommand{\N}{\mathbb{N}}
@@ -87,19 +89,23 @@ pdfpagelabels]{hyperref}
 \DeclareMathOperator{\U}{U}
 \DeclareMathOperator{\F}{F}
 \DeclareMathOperator{\chains}{N}
-\DeclareMathOperator{\schains}{N^{\triangle}}
+\DeclareMathOperator{\schains}{N^{\simplex}}
 \DeclareMathOperator{\cchains}{N^{\square}}
-\DeclareMathOperator{\schainsAS}{N^{\triangle}_{\As}}
+\DeclareMathOperator{\schainsAS}{N^{\simplex}_{\As}}
 \DeclareMathOperator{\cchainsAS}{N^{\square}_{\As}}
-\DeclareMathOperator{\schainsUM}{N^{\triangle}_{\UM}}
+\DeclareMathOperator{\schainsUM}{N^{\simplex}_{\UM}}
 \DeclareMathOperator{\cchainsUM}{N^{\square}_{\UM}}
+\DeclareMathOperator{\schainsUSL}{N^{\simplex}_{\USL}}
+\DeclareMathOperator{\cchainsUSL}{N^{\square}_{\USL}}
 \DeclareMathOperator*{\colim}{colim}
 \DeclareMathOperator{\cobar}{\mathbf{\Omega}}
 \DeclareMathOperator{\ccobar}{\mathbb{\Omega}}
+\DeclareMathOperator{\ccobarE}{\widehat{\mathbb{\Omega}}}
 \DeclareMathOperator{\ncobar}{\mathbb{\Omega}^{\mathrm{nec}}}
-\DeclareMathOperator{\sSing}{Sing^{\triangle}}
+\DeclareMathOperator{\ncobarE}{\widehat{\mathbb{\Omega}}^{\mathrm{nec}}}
+\DeclareMathOperator{\sSing}{Sing^{\simplex}}
 \DeclareMathOperator{\cSing}{Sing^{\square}}
-\DeclareMathOperator{\sS}{S^{\triangle}}
+\DeclareMathOperator{\sS}{S^{\simplex}}
 \DeclareMathOperator{\cS}{S^{\square}}
 \DeclareMathOperator{\barConst}{Bar}
 
@@ -139,7 +145,7 @@ pdfpagelabels]{hyperref}
 \subjclass[2020]{.}
 
 \begin{abstract}
-    In the fifties, Adams introduced a comparison map $\theta_Y \colon \cobar(S^\triangle(Y,y)) \to S^\square(\Omega_y Y)$ from his cobar construction on the (simplicial) singular chains of a pointed space $(Y, y)$ to the cubical singular chains on its based loops space $\Omega_y Y$.
+    In the fifties, Adams introduced a comparison map $\theta_Y \colon \cobar(S^\simplex(Y,y)) \to S^\square(\Omega_y Y)$ from his cobar construction on the (simplicial) singular chains of a pointed space $(Y, y)$ to the cubical singular chains on its based loops space $\Omega_y Y$.
 	This comparison map is a quasi-isomorphism of algebras, which was shown by Baues to be one of bialgebras by considering Serre's cubical coproduct.
 	In this work we generalize Baues result by constructing an $E_\infty$ bialgebra structure on the cobar construction of the coalgebra of singular chains, and proving that Adams' comparison map is a quasi-isomorphism of $E_\infty$ bialgebras.
 	We also show that, for a general reduced simplicial set $X$, Hess and Tonks' extended cobar construction on $\schains(X)$ is quasi-isomorphic to $\schains(G(X))$, the chains on the Kan loop group of $X$, as $E_{\infty}$-coalgebras. 
