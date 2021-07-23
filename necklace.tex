@@ -47,7 +47,9 @@ $$\mathcal{Y} \colon \Nec \to \nSet,$$ respectively.
 
 The category of necklical sets $\nSet$ is a (non-symmetric) monoidal category when equipped with monoidal structure $\otimes\colon \nSet \times \nSet \to \nSet$ given by $$K \otimes K' = \colim_{\mathcal{Y}(T) \to K, \mathcal{Y}(T')\to K'} \mathcal{Y}(T \vee T').$$
 
-We now construct a monoidal functor
+\subsection{Associating a cube to a necklace.}
+
+To any monomial of singular chains on a pointed space, Adams' described a natural construction that produces a singular cube on the based loop space by decomposing a singular $n$-simplex into a family of loops parametrized by the $(n-1)$-cube.  We now describe a categorical version of this idea by constructing a monoidal functor
 $$\mathcal{P} \colon \Nec \to \cube.$$
 
 If $T= \Delta^0$ we set $\mathcal{P}(\Delta^0)=2^0$ and on any other $T \in \Nec$ we define $\mathcal{P}( T )= 2^{\text{dim}(T)}$. In order to define $\mathcal{P}$ on morphisms, it is sufficient to consider the following cases.
