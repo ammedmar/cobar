@@ -1,6 +1,11 @@
 
 \section{Monoidal properties}
 
+The first goal of this section is to construct a monoidal structure on $\coAlg_\UM$.
+We will do so by providing $\M$ with the structure of a Hopf prop.
+Then, we will show that the functor $\cchainsUM \colon \cSet \to \coAlg_{\UM}$ defined in \eqref{e:lift of cubical chains to UM-coalgs} is monoidal.
+Finally, we will use this fact and the cubical cobar construction, a monoid in $\cSet$, to provide $\cobar(\schains(X))$ with the structure of an $E_\infty$-bialgebra, specifically, of a monoid in $\coAlg_{\UM}$
+
 \subsection{Monoidal functors}
 
 TBW categorically. Induce functor on Monoids.
@@ -121,7 +126,7 @@ Since, by \cref{l:serre diagonal invariant}, the Serre diagonal is equivariant, 
 \end{definition}
 
 \begin{theorem}
-	The collections of maps $\Delta_\M = \{\Delta_\M(m,n)\}_{m,n \geq 0}$ and $\varepsilon_\M = \{\varepsilon_\M(m,n)\}_{m,n\geq0}$ make $\M$ into a Hopf prop, i.e., a prop over the category $\coAlg$.
+	The collections of maps $\Delta_\M = \{\Delta_\M(m,n)\}_{m,n \geq 0}$ and $\varepsilon_\M = \{\varepsilon_\M(m,n)\}_{m,n\geq0}$ are well defined and make $\M$ into a Hopf prop, i.e., a prop over the category $\coAlg$.
 \end{theorem}
 
 \begin{proof}
@@ -165,7 +170,7 @@ Since, by \cref{l:serre diagonal invariant}, the Serre diagonal is equivariant, 
 		\, \rightboundary \otimes \rightboundary \,-\, \leftboundary \otimes \leftboundary\,.
 		\end{tikzcd}
 	\end{center}
-	Furthermore, $\Delta_\M$ is compatible with the composition structure since given characteristic maps $\iota_\Gamma$ and $\iota_{\Gamma^\prime}$, the chain map $\iota_\Gamma \otimes \iota_{\Gamma^\prime}$ is a characteristic map of any (vertical or horizontal) composition of $\Gamma$ and $\Gamma^\prime$.
+	Furthermore, $\Delta_\M$ is compatible with the composition structure since for any pair of characteristic maps $\iota_\Gamma$ and $\iota_{\Gamma^\prime}$, the chain map $\iota_\Gamma \otimes \iota_{\Gamma^\prime}$ is a characteristic map for any composition of $\Gamma$ and $\Gamma^\prime$ with the induce order on vertices.
 	
 	One can check similarly that $\varepsilon_\M$ is well defined.
 \end{proof}
@@ -183,27 +188,7 @@ We now prove the main technical result of this paper.
 	These are equipped with a natural $\M$-structure, and we will prove the stronger statement that the functor $\mathrm{N}^\cube_\M \colon \cube \to \biAlg_{\M}$ is monoidal.
 	
 	We have already establish that the Serre diagonal and the augmentation map are compatible with the monoidal structure of $\cube$.
-%	In diagrammatic terms,
-%	\begin{equation*}
-%	\begin{tikzcd}
-%	\coproduct \otimes \chains(\cube^{p+q}) \arrow[r, "\Delta_\M \otimes Sh"] \arrow[d] &[20pt]
-%	\left( \ \coproduct \otimes \coproduct \ \right) \otimes
-%	\chains(\cube^{p}) \otimes \chains(\cube^{q}) \arrow[d] \\
-%	\chains(\cube^{p+q})^{\otimes 2} \arrow[r, "Sh"] &
-%	\chains(\cube^{p})^{\otimes 2} \otimes \chains(\cube^{q})^{\otimes 2}
-%	\end{tikzcd}
-%	\end{equation*}
-%	and
-%	\begin{equation*}
-%	\begin{tikzcd}
-%	\counit \ \otimes \chains(\cube^{p+q}) \arrow[r, "\Delta_\M \otimes Sh"] \arrow[d] &[20pt]
-%	\left( \ \counit \ \otimes \ \counit \ \right) \otimes
-%	\chains(\cube^{p}) \otimes \chains(\cube^{q}) \arrow[d] \\
-%	R \arrow[r, "\cong"] &
-%	R \otimes R
-%	\end{tikzcd}
-%	\end{equation*}
-%	commute.
+
 	We will now show that the following diagram commutes:
 	\begin{equation*}
 	\begin{tikzcd}
@@ -238,3 +223,25 @@ We now prove the main technical result of this paper.
 	\end{align*}
 	which is equal to \eqref{e:join is monoidal 1} as claimed.
 \end{proof}
+
+%	In diagrammatic terms,
+%	\begin{equation*}
+%	\begin{tikzcd}
+%	\coproduct \otimes \chains(\cube^{p+q}) \arrow[r, "\Delta_\M \otimes Sh"] \arrow[d] &[20pt]
+%	\left( \ \coproduct \otimes \coproduct \ \right) \otimes
+%	\chains(\cube^{p}) \otimes \chains(\cube^{q}) \arrow[d] \\
+%	\chains(\cube^{p+q})^{\otimes 2} \arrow[r, "Sh"] &
+%	\chains(\cube^{p})^{\otimes 2} \otimes \chains(\cube^{q})^{\otimes 2}
+%	\end{tikzcd}
+%	\end{equation*}
+%	and
+%	\begin{equation*}
+%	\begin{tikzcd}
+%	\counit \ \otimes \chains(\cube^{p+q}) \arrow[r, "\Delta_\M \otimes Sh"] \arrow[d] &[20pt]
+%	\left( \ \counit \ \otimes \ \counit \ \right) \otimes
+%	\chains(\cube^{p}) \otimes \chains(\cube^{q}) \arrow[d] \\
+%	R \arrow[r, "\cong"] &
+%	R \otimes R
+%	\end{tikzcd}
+%	\end{equation*}
+%	commute.
