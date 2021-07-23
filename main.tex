@@ -2,6 +2,7 @@
 \usepackage{amsmath, amssymb}
 \usepackage{tikz-cd}
 \usepackage{mathbbol} % mathbb on greek letters
+\usepackage{verbatim} % just for comments, remove afterwards
 
 % (hyper-)references
 \usepackage[bookmarks=true, linktocpage=true,
@@ -94,14 +95,17 @@ pdfpagelabels]{hyperref}
 \DeclareMathOperator{\cchainsUM}{N^{\square}_{\UM}}
 \DeclareMathOperator*{\colim}{colim}
 \DeclareMathOperator{\cobar}{\mathbf{\Omega}}
-\DeclareMathOperator{\gcobar}{\mathbb{\Omega}}
+\DeclareMathOperator{\ccobar}{\mathbb{\Omega}}
+\DeclareMathOperator{\ncobar}{\mathbb{\Omega}^{\mathrm{nec}}}
 \DeclareMathOperator{\sSing}{Sing^{\triangle}}
 \DeclareMathOperator{\cSing}{Sing^{\square}}
 \DeclareMathOperator{\sS}{S^{\triangle}}
 \DeclareMathOperator{\cS}{S^{\square}}
+\DeclareMathOperator{\barConst}{Bar}
 
 % environments
 \newtheorem{theorem}{Theorem}
+\newtheorem*{nntheorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -144,9 +148,9 @@ pdfpagelabels]{hyperref}
 \vspace*{-1cm}
 
 \maketitle
-%\setcounter{tocdepth}{1}
-%\tableofcontents
-%\input{introduction}
+\setcounter{tocdepth}{1}
+\tableofcontents
+\input{introduction}
 \input{preliminaries}
 \input{operads}
 \input{monoidal}

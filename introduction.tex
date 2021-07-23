@@ -29,26 +29,26 @@ This structure lifts $\cchains$ to the category of coalgebras $\cchainsAS \colon
 
 Denoting by $\sSet^0$ the category of reduced simplicial sets, Baues' introduced the \textit{cubical cobar construction}
 \begin{equation*}
-\gcobar \colon \sSet^0 \to \Mon_{\cSet},
+\ccobar \colon \sSet^0 \to \Mon_{\cSet},
 \end{equation*}
 a functor he used in \cite{baues1998hopf} to factor Adams' comparison map as a composition
 \begin{equation} \label{e:baues factorization of adams map}
 \begin{tikzcd}[column sep = small]
 \theta_Y \colon \cobar(\sS(Y, y)) \arrow[r] &
-\cchains(\gcobar \sSing(Y, y)) \arrow[r] &
+\cchains(\ccobar \sSing(Y, y)) \arrow[r] &
 S^{\square}(\Omega_y Y),
 \end{tikzcd}
 \end{equation}
-where the first chain map is an isomorphism and the second is induced from an inclusion of cubical sets with connections $\gcobar \sSing(Y, y) \to \cSing(\Omega_y Y)$.
+where the first chain map is an isomorphism and the second is induced from an inclusion of cubical sets with connections $\ccobar \sSing(Y, y) \to \cSing(\Omega_y Y)$.
 Additionally, Baues proved that when $Y$ is simply connected this inclusion is a homotopy equivalence, a result extended to the non-simply connected setting in \cite{rivera2019path}.
 
 The first map in \eqref{e:baues factorization of adams map} is defined for a general reduced simplicial set $X$ and is always an isomorphism.
-Using this map, Baues transferred the Serre coproduct on $\cchainsAS(\gcobar X)$ to $\cobar(\schains(X))$ and proved that, together with its formal monoid structure, this coproduct makes $\cobar(\schains(X))$ into a bialgebra, that is to say, a monoid in $\coAlg$.
+Using this map, Baues transferred the Serre coproduct on $\cchainsAS(\ccobar X)$ to $\cobar(\schains(X))$ and proved that, together with its formal monoid structure, this coproduct makes $\cobar(\schains(X))$ into a bialgebra, that is to say, a monoid in $\coAlg$.
 In other words, Baues lifted Adams' cobar construction $\cobar \circ \schains$ so that it fits in the following diagram commuting up to a natural isomorphism:
 \begin{equation*}
 \begin{tikzcd}
 \Mon_{\cSet} \arrow[r, "\cchainsAS \ "] & \Mon_{\coAlg} \arrow[d] \\
-\sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\gcobar"] & \Mon_{\Ch}.
+\sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\ccobar"] & \Mon_{\Ch}.
 \end{tikzcd}
 \end{equation*}
 Furthermore, when $(Y, y)$ is a pointed space, Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\square}(\Omega_y Y)$ is a quasi-isomorphism of bialgebras, i.e., of monoids in $\coAlg$.
@@ -60,9 +60,9 @@ We do so by introducing a Hopf structure on $U(\M)$, that is to say, by making i
 Once we have shown that $\coAlg_\UM$ is a monoidal category, we prove the main technical result of this work.
 It states that the functor $\cchainsUM \colon \cSet \to \coAlg_\UM$ defined in \cite{medina2021cubical} as a lift of $\cchainsAS$ is monoidal.
 
-Generalizing Baues' first step in the construction of his lift of Adams' cobar construction, we have that $\cchainsUM(\gcobar X)$ is a monoid in $\coAlg_\UM$.
-This is because $\gcobar X$ is a monoid in $\cSet$ and $\cchainsUM$ is shown to be a monoidal functor.
-Similar to Baues' second step, we use for any reduced simplicial set $X$ his isomorphism $\cobar(\schains(X)) \to \cchains(\gcobar X)$ to transfer the constructed $E_\infty$ bialgebra structure on $\cchains(\gcobar X)$ to $\cobar(\schains(X))$.
+Generalizing Baues' first step in the construction of his lift of Adams' cobar construction, we have that $\cchainsUM(\ccobar X)$ is a monoid in $\coAlg_\UM$.
+This is because $\ccobar X$ is a monoid in $\cSet$ and $\cchainsUM$ is shown to be a monoidal functor.
+Similar to Baues' second step, we use for any reduced simplicial set $X$ his isomorphism $\cobar(\schains(X)) \to \cchains(\ccobar X)$ to transfer the constructed $E_\infty$ bialgebra structure on $\cchains(\ccobar X)$ to $\cobar(\schains(X))$.
 In particular we have, generalizing Baues' result, that for any pointed space $(Y, y)$ Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\square}(\Omega_y Y)$ is a quasi-isomorphism of $E_\infty$ bialgebras.
 We condense this discussion in our main result.
 
@@ -73,7 +73,7 @@ We condense this discussion in our main result.
 	& \Mon_{\coAlg_\UM} \arrow[d] \\
 	\Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180] \arrow[r, "\cchainsAS"]
 	& \Mon_{\coAlg} \arrow[d] \\
-	\sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\gcobar"]
+	\sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\ccobar"]
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\end{equation*}
@@ -131,7 +131,7 @@ We summarize this discussion in the following statement.
 	Furthermore, for any $X \in \sSet^0$, there is a zig-zag of natural quasi-isomorphisms of $E_{\infty}$ coalgebras between $\Ahat_\UM(X)$ and $\schainsUM(G(X))$.
 \end{theorem}
 
-%The main idea in the proof of the above result is to use the following ``space-level" observation: after triangulating $\widehat\gcobar({X})$, a localized version of the monoidal cubical set $\gcobar(X)$, one obtains a simplicial monoid that is naturally weak homotopy equivalent to $G(X).$ 
+%The main idea in the proof of the above result is to use the following ``space-level" observation: after triangulating $\widehat\ccobar({X})$, a localized version of the monoidal cubical set $\ccobar(X)$, one obtains a simplicial monoid that is naturally weak homotopy equivalent to $G(X).$ 
 
 \subsection*{Relation to previous work}
 
@@ -159,7 +159,7 @@ Although we do not pursue the following observation in this article, we mention 
 %where $\nSet$ denotes the monoidal category of \textit{necklical sets}. A necklical set can be thought of as a version of a cubical set in which cubes are now labeled by ordered sequences of simplices called \textit{necklaces}. Injective maps of necklaces realize all cubical faces, however, non-injective maps describe a particular selection of cubical degeneracies and cubical connections. In some sense, the monoidal category of necklical sets is the framework with the minimal combinatorial data needed to make categorical sense of Baues' geometric cobar construction. Different aspects of the theory of necklaces and necklical sets have been studied in \cite{Dugger-Spivak}, \cite{Galvez-Kaufmann-Tonks}, and \cite{rivera-zeinalian-cubical}.
 
 
-%satisfying $\cobar(\schains(X)) \cong \cchains(\gcobar X)$ for any reduced simplicial set $X$ and $\cchains(\gcobar \sSing(Y, y)) \cong C(\Omega^{\square}_y Y)$ for any pointed space $(Y, y)$, and such that, up to a choice of this isomorphism, the second chain map in Baues' factorization \eqref{e:baues factorization of adams map} is induced from a cubical map $\gcobar \mathsf{Sing}(Y, y) \to \mathsf{Sing}^\square(\Omega_y Y)$.
+%satisfying $\cobar(\schains(X)) \cong \cchains(\ccobar X)$ for any reduced simplicial set $X$ and $\cchains(\ccobar \sSing(Y, y)) \cong C(\Omega^{\square}_y Y)$ for any pointed space $(Y, y)$, and such that, up to a choice of this isomorphism, the second chain map in Baues' factorization \eqref{e:baues factorization of adams map} is induced from a cubical map $\ccobar \mathsf{Sing}(Y, y) \to \mathsf{Sing}^\square(\Omega_y Y)$.
 
 
 %There are several advantages to working with the coalgebra of chains and the cobar construction, as opposed to the dual algebra of cochains and the bar construction.
