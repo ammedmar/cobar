@@ -1,0 +1,159 @@
+\section{Theorem 1}
+
+\subsection{Adams' map}
+
+In \cite{adams1956cobar}, Adams constructed a natural map of differential graded algebras \begin{equation} \label{e:adams map}
+\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\square}(\Omega_y Y),
+\end{equation}
+for any pointed topological space $(Y,y)$. The construction is based on a collection of continuous maps $$\theta_n: \gcube^{n-1} \to P(\gsimplex^n;0,n),$$
+where $P(\gsimplex^n;0,n)$ denotes the topological space of Moore paths in $\gsimplex^n$ from the $0$-th vertex $v_0$ to the $n$-th vertex $v_n$. These maps are constructed inductively so that following equations are satisfied:
+\begin{itemize}
+\item $\theta_1(0)\colon \gcube^1 \to \gsimplex^1$ is the path $\theta_1(0)(s)=sv_1 +(1-s)v_0$.
+\item
+ $\theta_n \circ e_j^0=P(d_j) \circ \theta_{n-1}$
+\item
+ $\theta_n \circ e_j^1=(P(f_j) \circ \theta_j) \cdot (P(l_{n-j}) \circ \theta_{n-j})$.
+\end{itemize}
+In the above equations $f_j\colon \gsimplex^j \rightarrow \gsimplex^n$ and $l_{n-j}\colon \gsimplex^{n-j} \rightarrow \gsimplex^n$ denote the first $j$-th face map and last $(n-j)$-th face map of $\gsimplex^n$, respectively, and
+$e_j^0,e_j^1\colon \gcube^{n-1} \rightarrow \gcube^{n}$ denote the $j$-th bottom and top face inclusion maps, respectively. For any continuous map of spaces $f\colon X \to Y$, we denote by $P(f)\colon P(X) \to P(Y)$ the induced map at the level of spaces of paths. Given any two composable paths $\alpha$ and $\beta$, the dot symbol in $\alpha \cdot \beta$ denotes the composition (or concatenation) of paths.
+
+Adams' map $\theta_Y$ is now given as follows. For any singular $1$-simplex $\sigma \in S^{\Delta}_1(Y, y)$ let
+$$\theta_Y([\sigma])= P(\sigma) \circ \theta_1 - c_y,$$
+where $c_y \in S^{\square}_0(\Omega_y Y)$ is the singular $0$-cube determined by the constant loop at $y \in Y.$ For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Y, y)$ with $n>1$, let
+$$\theta_Y([\sigma])= P(\sigma) \circ \theta_n.$$ Since the underlying graded algebra of $\cobar(\sS(Y, y))$ is free, we may extend the above to an algebra map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\square}(\Omega_y Y)$. The compatibility equations for the maps $\theta_n$ imply that $\theta_Y$ is a chain map. 
+
+We will construct an $E_{\infty}$-bialgebra structure on $\cobar(\sS(Y, y))$ and show that $\theta_Y$ preserves this structure. In order to do this, we shall describe a categorical version of Adams' constructions.
+
+
+
+
+%In this section we revisit two combinatorial models for the based loop space of a reduced simplicial set $X \in \sSet^0$. First we discuss a cubical model which has the feature that after taking cubical chains we obtain a dg algebra which is naturally \textit{isomorphic} to the cobar construction on the connected dg coalgebra of simplicial normalized chains $\schains(X)$. This is a reinterpretation of a construction of Baues \cite{baues1998hopf}. We also describe a version of the model which is localized at the $1$-simplices of $X$ and recovers the extended cobar construction defined in \cite{hess2010cobar} after applying cubical chains. This localization step is required in order to obtain the correct homotopy type of the based loop space in the non-simply connected, non-fibrant setting. The construction of the cubical model for the based loop space is best described using necklical sets, a notion related to both simplicial sets and cubical sets with connections. Different approaches to this framework can be found in \cite{baues1998hopf}, \cite{galvez2020hopf}, \cite{dugger2011rigidification}, \cite{rivera2018cubical}, \cite{rivera2018cubical}, among other works. We start the section by reviewing this framework. 
+%We finish the section by reviewing the classical Kan loop group functor and relating it to the cubical model for the based loop space. 
+
+\subsection{Necklaces}
+
+We construct a cubical model for the based loop space using necklical sets, a notion related to both simplicial sets and cubical sets with connections. Different approaches to this framework can be found in \cite{baues1998hopf}, \cite{galvez2020hopf}, \cite{dugger2011rigidification}, \cite{rivera2018cubical}, \cite{rivera2018cubical}, among other works. 
+
+Let $\mathbf{\Delta}_{*,*}$ be the subcategory of $\mathbf{\Delta}$ consisting of objects $\{ [1], [2],\dots\}$ and morphisms being functors $f \colon [n] \to [m]$ satisfying $f(0)=0$ and $f(n)=m$. The category $\mathbf{\Delta}_{*,*}$ is a strict monoidal category when equipped with the monoidal structure $[n] \otimes [m]= [n+m]$ given by identifying objects $n \in [n]$ and $0 \in [m]$.
+
+Denote by $$\mathsf{Bar} \colon \Mon_{\mathsf{Cat}} \to \mathsf{Fun}[\mathbf{\Delta}^{op}, \Mon_{\mathsf{Cat}}]$$ the bar construction from the category of monoidal categories to simplicial objects in $\Mon_{\mathsf{Cat}}$ and by 
+$$| \text{ }\cdot\text{ }  | \colon \mathsf{Fun}[\mathbf{\Delta}^{op}, \Mon_{\mathsf{Cat}}] \to \Mon_{\mathsf{Cat}}$$ the realization functor. 
+
+We define the \textit{category of necklaces} to be the monoidal category $$\Nec= |\mathsf{Bar}(\mathbf{\Delta}_{*,*}, \otimes)|.$$
+
+ More explicitly, the objects of $\Nec$ are the elements of the set of ordered sequences
+ $$ ob(\Nec) = \{ [n_1] \vee ... \vee[n_k] | n_i, k \in \mathbb{Z}_{>0} \} \bigcup \{ [0] \}$$ together with the following four types of generating morphisms:
+\begin{itemize}
+\item $\partial^j \colon [n-1] \to  [n] $
+for $j=1,\dots,n-1$
+\item $\Delta_{[j],[n-j]} \colon  [j]\vee [n-j] \to [n]$ for $j=1,\dots,n-1$
+\item $ s^j \colon [n+1] \to [n]$ for $j=0,\dots,n$ and $n>0$, and 
+\item $s^0 \colon [1] \to [0]$
+\end{itemize}
+
+ The objects of $\Nec$ are called \textit{necklaces}.
+ The monoidal structure of $\Nec$ is given by concatenation of ordered sequences, denoted by $T \vee T'$ for any two necklaces $T, T' \in \Nec$. Given any necklace $T=[n_1] \vee ... \vee[n_k] \in \Nec$ define the \textit{dimension} of $T$ by $\text{dim}(T)=n_1+ ...+n_k-k$. A \textit{necklical set} is a functor $K \colon \Nec^{op} \to \Set$. Necklical sets form a category with natural transformations as morphisms, which we denote by $\nSet.$ Any necklace $T=[n_1] \vee ... \vee[n_k] \in \Nec$ gives rise to a simplicial set $\mathcal{S}(T)= \Delta^{n_1} \vee... \vee \Delta^{n_k} \in \sSet$, where the wedge symbol now means we identify the last vertex of $\Delta^{n_i}$ with the first vertex of $\Delta^{n_{i+1}}$ for $i=1,\dots,k-1$. Any necklace $T \in \Nec$ also gives rise to a necklical set $\mathcal{Y}(T)=\Hom_{\Nec}(\text{ \_ }, T) \colon \Nec^{op} \to \Set$. These constructions give rise to functors 
+$$\mathcal{S} \colon \Nec \to \sSet$$
+and
+$$\mathcal{Y} \colon \Nec \to \nSet,$$ respectively. 
+
+The category of necklical sets $\nSet$ is a (non-symmetric) monoidal category when equipped with monoidal structure $\otimes\colon \nSet \times \nSet \to \nSet$ given by $$K \otimes K' = \colim_{\mathcal{Y}(T) \to K, \mathcal{Y}(T')\to K'} \mathcal{Y}(T \vee T').$$
+
+\subsection{Associating a cube to a necklace.}
+We now describe a categorical version of Adams' collection of maps $\{\theta_n: \gcube^{n-1} \to P(\gsimplex^{n};0,n)\}$ by constructing a monoidal functor
+$$\mathcal{P} \colon \Nec \to \cube$$
+that associates a cube to any necklace. 
+
+If $T= \Delta^0$ we set $\mathcal{P}(\Delta^0)=2^0$ and on any other $T \in \Nec$ we define $\mathcal{P}( T )= 2^{\text{dim}(T)}$. In order to define $\mathcal{P}$ on morphisms, it is sufficient to consider the following cases.
+\begin{itemize}
+\item For any $\partial^j \colon [n] \to [n+1]$ such that $0< j<{n+1}$, define $\mathcal{P}(\partial^j) \colon 2^{n-1}\to 2^{n}$ to be the cubical coface functor $\mathcal{P}(f)= \delta_0^{j}.$ 
+
+\item For any $\Delta_{[j], [n+1-j]} \colon [j] \vee [n+1-j] \to [n+1]$ such that $0<j<n+1$, define $\mathcal{P}(\Delta_{[j], [n+1-j]}) \colon 2^{n-1}\to 2^{n}$ to be the cubical coface functor $\mathcal{P}(f)=\delta_1^{j}$.
+
+\item We now consider morphisms of the form $s^j \colon [n+1] \to [n]$ for $n>0$. If $j=0$ or $j=n$, then $\mathcal{P}(f) \colon 2^n \to 2^{n-1}$ is defined to be the cubical codegeneracy functor $\mathcal{P}(s^j)= \varepsilon^{j}.$ If $0<j<n$, then we define $\mathcal{P}(s^j) \colon 2^n \to 2^{n-1}$ to be the cubical coconnection functor $\gamma^{j}.$
+
+\item For $s^0 \colon [1] \to [0]$ we define $\mathcal{P}(s^0) \colon 2^0 \to 2^0$ to be the identity functor.
+
+\end{itemize}
+\begin{remark}
+The functor $\mathcal{P}$ is neither faithful or full. However, for any necklace $T' \in \Nec$ with $\text{dim}(T')=n+1$ and any cubical coface functor $\delta_{\epsilon}^j \colon 2^n \to 2^{n+1}$ for $0 \leq j \leq n+1$, there exists a unique pair $(T, f \colon T \hookrightarrow T')$, where $T \in \Nec$ with $\text{dim}(T)=n$ and $f \colon T \hookrightarrow T'$ is an injective morphism in $\Nec$, such that $\mathcal{P}(f)=\delta_{\epsilon}^j $.
+\end{remark}
+
+The functor $\mathcal{P} \colon \Nec \to \cube$ induces an adjunction between $\cSet$ and $\nSet$
+with right adjoint
+$$\mathcal{P}^* \colon \cSet \to \nSet$$
+and left adjoint
+$$\mathcal{P}_{!}  \colon \nSet \to \cSet_c.$$
+Given a cubical set with connections $C \colon \square_c^{op} \to \Set$, we have $$\mathcal{P}^*(C)= C \circ \mathcal{P}^{op}.$$ Given a necklical set $K \colon \Nec^{op} \to \Set$, we have $$\mathcal{P}_{!}(K)= \colim_{(\mathcal{Y}(T) \to K) \in \mathcal{Y} \downarrow K} \mathcal{P}(T) \cong \colim_{(\mathcal{Y}(T) \to K) \in \mathcal{Y} \downarrow K} \cube^{\text{dim}(T)}.$$ 
+The functor $\mathcal{P}_{!}: \nSet \to \cSet$ is clearly a monoidal functor. 
+
+\subsection{Geometric cobar construction}
+
+Using the framework of necklical sets, we may reinterpret a construction of Baues as a functor
+$$\gcobar^{\text{nec}} \colon \sSet^0 \to \Mon_{\nSet},$$ which we now define. 
+
+For any $0$-reduced simplicial set $X$, the underlying necklical set $\gcobar^{\text{nec}}(X) \colon \Nec^{op} \to \Set$ is defined by
+$$\gcobar^{\text{nec}}(X) = \colim_{(f \colon \mathcal{S}(T) \to X) \in  \mathcal{S} \downarrow X} \mathcal{Y}(T).$$
+The monoidal structure $$\gcobar^{\text{nec}}(X) \otimes \gcobar^{\text{nec}}(X) \to \gcobar^{\text{nec}}(X)$$
+is induced by the monoidal structure $\vee: \Nec \times \Nec \to \Nec$ together with the monoidal structure $\otimes: \nSet \times \nSet \to \nSet$ on necklicals sets. More precisely, for any $S, S' \in \Nec$, the product $$\gcobar^{\text{nec}}(X)(S) \otimes \gcobar^{\text{nec}}(X)(S') \to \gcobar^{\text{nec}}(X)(S \vee S')$$ is given by $$[f\colon \mathcal{S}(T) \to X, a] \otimes [f'\colon \mathcal{S}(T') \to X, a'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, a \otimes  a'],$$
+where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $a\in \mathcal{Y}(T)(S)$, and $a'\in \mathcal{Y}(T')(S')$.
+
+We may now define the \textit{geometric cobar construction} $$\gcobar: \sSet^0 \to \Mon_{\cSet}$$ as the composition $$\gcobar= \mathcal{P}_! \circ \gcobar^{\text{nec}}.$$ This is a further reinterpretation of Baues construction in terms of cubical sets with connections, which was also studied in \cite{rivera2018cubical}. 
+
+\subsection{Relation to the cobar construction}
+
+The geometric cobar functor $\gcobar\colon \sSet^0 \to \Mon_{\cSet}$ is related to the cobar construction $\mathbf{\Omega}\colon \coAlg \to \Mon_{\Ch}$ via normalized chains as follows.
+
+\begin{proposition} \label{gcobarandcobar}
+There is a natural isomorphisms of functors 
+$$\cchains \circ \gcobar \cong \mathbf{\Omega} \circ \schains: \sSet^0 \to \Mon_{\Ch}.$$
+\end{proposition}
+
+\begin{proof} 
+Denote by $\iota_n \in (\cube^n)_n$ the top dimensional non-degenerate element of the standard $n$-cube with connections $\cube^n$. Note that for any $X \in \sSet^0$, we may represent any non-degenerate $n$-cube $\alpha \in (\mathcal{P}_!(\gcobar^{\text{nec}}(X)))_n$ as a pair $\alpha=[\sigma: \mathcal{Y}(T) \to X, \iota_n]$ for some $T=[n_1] \vee ... \vee [n_k] \in \Nec$ with $\text{dim}(T)=n_1+ ...+n_k-k=n.$
+
+To define an algebra map
+$$\varphi_X: \cchains(\mathcal{P}_!(\gcobar^{\text{nec}}(X))) \xra{\cong} \mathbf{\Omega}(\schains(X))$$
+it suffices to define it on any generator of the form $\alpha=[\sigma \colon \Delta^{n+1} \to X, \iota_{n}]$, i.e. when $T$ is of the form $T=[n+1]$, for some $n\geq0$. If $n=0$ let $\varphi_X(\alpha)= [\overline{\sigma}]+ 1_R$, where $[\overline{\sigma}] \in s^{-1} \overline{ \schains(X)} \subset \mathbf{\Omega}(\schains(X))$ denotes the (length $1$) generator in the cobar construction of $\schains(X)$ determined by $\sigma \in X_{n+1}$ and $1_R$ denotes the unit of the underlying ring $R$. If $n>0$, we let $\varphi_X(\alpha)=[\overline{\sigma}]$. A straightforward computation yields that this gives rise to a well defined isomorphism of algebras, which is compatible with the differentials, and natural with respect to maps of simplicial sets.  
+\end{proof}
+
+\subsection{$E_{\infty}$-bialgebra structure on the cobar construction}\label{UMoncobar}
+
+Using Proposition \ref{gcobarandcobar} together with Theorem \ref{t:lift chains on cSet to UM coAlg is monoidal} we may obtain a natural $E_{\infty}$-bialgebra structure on $\cobar(\schains(X))$ of any $X \in \sSet^0$ extending Baues' coproduct. Namely, using the observation that $\cchainsUM \colon \cSet \to \coAlg_{\UM}$ is monoidal, the desired $E_{\infty}$-bialgebra structure is provided by the composition 
+$$\cchainsUM \circ \gcobar \colon \sSet^0 \to \Mon_{\U(M)}.$$
+
+\subsection{Factorization of Adams' map}\label{factorization}
+
+Adams' map can now be factored as 
+$$\theta_Y \colon \cobar(\sS(Y, y)) \xrightarrow{\cong} 
+\cchains(\gcobar \sSing(Y, y)) \xrightarrow{\cchains(\Theta)} 
+S^{\square}(\Omega_y Y).$$
+The first map is given by the natural isomorphism of algebras $$\cobar \schains (\sSing(Y, y)) \cong  \cchains \gcobar (\sSing(Y, y))$$ of Proposition \ref{gcobarandcobar}. The second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
+$$\Theta \colon \gcobar (\sSing(Y, y) \to \cSing( \Omega_yY)$$
+determined by sending any singular $n$-simplex $$(\sigma\colon \gsimplex^n \to Y) \in \sSing(Y, y)$$ to the singular $(n-1)$-cube $$(P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \Omega_yY) \in \cSing( \Omega_yY).$$ 
+
+\subsection{Proof of Theorem 1.}
+We now put together the constructions and results discussed above to deduce our first main theorem. 
+\begin{theorem}
+	The functor $\cchainsUM$ is monoidal and its associated functor on monoids fits in the following diagram commuting up to a natural isomorphism:
+	\begin{equation*}
+	\begin{tikzcd}
+	& \Mon_{\coAlg_\UM} \arrow[d] \\
+	\Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180] \arrow[r, "\cchainsAS"]
+	& \Mon_{\coAlg} \arrow[d] \\
+	\sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\gcobar"]
+	& \Mon_{\Ch}.
+	\end{tikzcd}
+	\end{equation*}
+	Furthermore, when $(Y, y)$ is a pointed space, Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\square}(\Omega_y Y)$ is a quasi-isomorphism of $E_\infty$ bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
+\end{theorem} 
+
+\begin{proof}
+The fact that $\cchainsUM$ is monoidal and that it fits in the desired commutative diagram follows directly from Section 4. 
+    
+The natural $\UM$-coalgebra structure on $\cobar(\sS(Y, y))$ is induced by $\cchainsUM ( \gcobar (\sSing(Y,y)) )$, as discussed in \ref{UMoncobar}. The natural $\UM$-coalgebra structure on $S^{\square}(\Omega_yY)$ is precisely given by $\cchainsUM( \cSing(\Omega_yY) ).$ These two $\UM$-coalgebra structures are compatible with the algebra structures, giving rise to monoinds in $\coAlg_{\UM}.$
+     
+By naturality, we obtain a map
+     $$ \cobar(\schains(\sSing(Y,y))) \cong \cchainsUM ( \gcobar (\sSing(Y,y)) ) \xrightarrow{ \cchainsUM(\Theta)} \cchainsUM( \cSing(\Omega_yY) )$$
+of monoids in $\coAlg_{\UM}$,  lifting Adams' classical map by \ref{factorization}, as desired. Since $\sSing(Y,y)$ is a fibrant reduced simplicial set, Adams' map $\theta_Y$ is a quasi-isomorphism, as proven in \cite{rivera2018cubical} and \cite{rivera2019path}.  
+\end{proof}
