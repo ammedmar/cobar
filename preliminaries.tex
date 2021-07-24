@@ -18,7 +18,7 @@ commute.
 
 \subsection{Chain complexes}
 
-Fix a commutative and unital ring $\k$ and denoted by $\Ch$ the category of differential graded modules (of $\k$-modules).
+Fix a commutative and unital ring $\k$ and denoted by $\Ch$ the category of differential graded $\k$-modules with the homological convention.
 Its objects and morphisms are referred to as \textit{chain complexes} and \textit{chain maps} respectively.
 For chain complexes $C$ and $C^\prime$ we regard, as usual, their product $C \otimes C^\prime$ and set of linear maps $\Hom(C, C^\prime)$ as a chain complexes, making $\Ch$ into a closed symmetric monoidal category.
 The $i\th$ \textit{suspension} functor $s^i \colon \Ch \to \Ch$ is defined at the level of graded modules by $(s^{i}M)_n = M_{n-i}$.
@@ -36,17 +36,17 @@ C \otimes C^\prime \xra{\Delta \otimes \Delta^\prime}
 C \otimes C^\prime \xra{\varepsilon \otimes \varepsilon^\prime}
 \k \otimes \k \xra{\cong} \k.
 \end{gather*}
-and braiding induced from that in $\Ch$.
+and braiding induced from $\Ch$.
 
 \subsection{Monoids}
 
-\anibal{complete.}
-
-Categorically...
+\anibal{TBW}
 
 We will denote the category of monoids in a monoidal category $\C$ by $\Mon_{\C}$.
 
 Monoids in $\Ch$ are called \textit{algebras} and those in $\coAlg$, \textit{bialgebras}.
+
+Monoidal category as example, monoidal functors as morphisms between them.
 
 \subsection{The cobar construction}
 
@@ -275,25 +275,4 @@ It has a right adjoint $\cSing \colon \Top \to \cSet$ given by
 Z \to \Big(2^n \to \Top(\gcube^n, Z)\Big)
 \end{equation*}
 and referred to as the \textit{cubical singular complex} of the topological space $Z$.
-We will refer to $\chains(\cSing Z)$ as the \textit{cubical singular chains} of $Z$ and for simplicity denote it by $\cS(Z).$
-
-\subsection{Triangulation and its right adjoint} \label{ss:triangulation and its adjoint}
-
-\ \par \anibal{Missing motivation for $(\simplex^1)^n$}
-
-\anibal{Day convolution is defined in the next section}
-
-Define the \textit{triangulation} functor $\mathcal{T} \colon \cSet \to \sSet$ by $$\mathcal{T}(C) = \colim_{\cube^n \to C} (\Delta^1)^{\times n}.$$
-When $\sSet$ is equipped with the cartesian product and $\cSet$ with the Day convolution product, the triangulation functor is monoidal. Thus it induces a functor $$\mathcal{T} \colon \Mon_{\cSet} \to \Mon_{\sSet}$$ between the associated categories of monoids. 
-
-The triangulation functor has a right adjoint $$\mathcal{U}\colon \sSet \to \cSet$$
-	given by the formula
-	$$\mathcal{U}(X)_n= \sSet((\simplex^1)^{\times n}, X)$$
-	together with the obvious induced cubical faces, degeneracies, and connections.
-
-
-%Explicitly,
-%\begin{equation*}
-%\cchains(X) = \bigoplus_{n \geq 0} \cchains(\cube^n) \otimes \k[X_n] \ \Big/ \sim
-%\end{equation*}
-%where $(2^m \to 2^n) \circ \delta_i^\varepsilon \otimes x \sim (2^m \to 2^n) \otimes d_i^\varepsilon(x)$.
+We will refer to $\chains(\cSing Z)$ as the \textit{cubical singular chains} of $Z$ and for simplicity denote it by $\cS(Z)$.

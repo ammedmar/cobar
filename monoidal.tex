@@ -4,30 +4,35 @@
 The first goal of this section is to construct a monoidal structure on $\coAlg_\UM$.
 We will do so by providing $\M$ with the structure of a Hopf prop.
 Then, we will show that the functor $\cchainsUM \colon \cSet \to \coAlg_{\UM}$ defined in \eqref{e:lift of cubical chains to UM-coalgs} is monoidal.
-Finally, we will use this fact and the cubical cobar construction, a monoid in $\cSet$, to provide $\cobar(\schains(X))$ with the structure of an $E_\infty$-bialgebra, specifically, of a monoid in $\coAlg_{\UM}$
+Finally, we will use this fact and the cubical cobar construction, a monoid in $\cSet$, to provide $\cobar(\schains(X))$ with the structure of an $E_\infty$ bialgebra, specifically, of a monoid in $\coAlg_{\UM}$
 
-\subsection{Monoidal functors}
+\subsection{Cartesian product and Day convolution} \label{ss:day convolution}
 
-TBW categorically. Induce functor on Monoids.
+\anibal{Cartesian for simplicial sets}
 
-\subsection{Day convolution} \label{ss:day convolution}
+\anibal{Day for cubical sets} 
 
-Define
+\anibal{singular complex and realization realization in both cases: monoidal comments}
 
-\anibal{Monoidal Statement about triangulation and it's adjoint}
+\subsection{Triangulation and its right adjoint} \label{ss:triangulation and its adjoint}
 
-\subsection{Cubical singular complex}
+Simplicial and cubical sets can be related using the the simplicial cubes $(\simplex^1)^{\times n}$.
 
-It is monoidal.
+The \textit{triangulation} functor $\mathcal{T} \colon \cSet \to \sSet$ is defined by
+\begin{equation*}
+\mathcal{T}(Y) = \colim_{\cube^n \to Y} (\simplex^1)^{\times n}.
+\end{equation*}
+It has a right adjoint $\mathcal{U} \colon \sSet \to \cSet$ which is given by the formula
+\begin{equation*}
+\mathcal{U}(X)_n = \sSet((\simplex^1)^{\times n}, X).
+\end{equation*}
 
-%By definition, the functor of chains $\cchains \colon \cube \to \Ch$ is monoidal, i.e., the diagram
-%\begin{equation*}
-%\begin{tikzcd}
-%2^p \times 2^q \arrow[r, "\cong"] \arrow[d, "\cchains \otimes \cchains"']& 2^{p+q} \arrow[d, "\cchains"] \\
-%\cchains(\cube^p) \otimes \cchains(\cube^q) \arrow[r, "\cong"] & \cchains(\cube^{p+q})
-%\end{tikzcd}
-%\end{equation*}
-%commutes and $\cchains(2^0) = R$.
+With the monoidal structure defined in \cref{ss:day convolution}, the triangulation functor is monoidal.
+Thus, it induces a functor
+\begin{equation*}
+\mathcal{T} \colon \Mon_{\cSet} \to \Mon_{\sSet}
+\end{equation*}
+between the associated categories of monoids.
 
 \subsection{Serre coalgebra} \label{ss:serre coalgebra sym monoidal}
 
