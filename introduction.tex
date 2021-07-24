@@ -2,12 +2,12 @@
 \section{Introduction}
 
 In 1956, F. Adams introduced the cobar construction to model algebraically the passage from a simply connected pointed space to its topological monoid of based loops \cite{adams1956cobar}.
-Fixing a commutative ring, the algebraic cobar construction may be described as a functor $\cobar \colon \coAlg^* \to \Mon_{\Ch}$ from the category of coaugemented coalgebras to the category of algebras, which we regard in this article as monoids over the symmetric monoidal category $\Ch$ of chain complexes.
-Given a pointed space $(Y, y)$, Adams constructed a \textit{comparison map}, a natural chain map of algebras
+Fixing a commutative ring, the algebraic cobar construction may be described as a functor $\cobar \colon \coAlg^* \to \Mon_{\Ch}$ from the category of coaugemented (dgca) coalgebras to the category of algebras, which we regard in this article as monoids over the symmetric monoidal category $\Ch$ of chain complexes.
+For any pointed space $(Y, y)$, Adams constructed a \textit{comparison map}
 \begin{equation} \label{e:adams map}
 \theta_Y \colon \cobar(\sS(Y, y)) \to S^{\square}(\Omega_y Y),
 \end{equation}
-where $\sS(Y,y)$ is a pointed version of the coalgebra of (simplicial) singular chains in $Y$ and $S^{\square}(\Omega_yY)$ is the algebra of cubical singular chains on the topological monoid of Moore loops in $Y$ based at~$y$.
+i.e., a natural chain map of algebras, where $\sS(Y,y)$ is a pointed version of the coalgebra of (simplicial) singular chains in $Y$ and $S^{\square}(\Omega_yY)$ is the algebra of cubical singular chains on the topological monoid of Moore loops in $Y$ based at~$y$.
 More precisely, $\sS(Y,y)$ is obtained by applying the functor of (normalized) chains $\schains$ to the pointed simplicial singular complex $\sSing(Y, y)$ of continuous maps $\gsimplex^n \to Y$ sending all vertices to $y$.
 Adams proved that $\theta_Y$ is a quasi-isomorphism if $Y$ is simply connected, a result extended to path-connected spaces in \cite{rivera2018cubical} by considering finer homotopical algebra, and in \cite{hess2010cobar} by a localization procedure.
 

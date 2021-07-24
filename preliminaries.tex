@@ -25,10 +25,10 @@ The $i\th$ \textit{suspension} functor $s^i \colon \Ch \to \Ch$ is defined at th
 
 \subsection{Coalgebras} \label{ss:coalgebras}
 
-A \textit{coalgebra} consists of an object $C$ in $\Ch$ and morphisms $\Delta \colon C \to C \otimes C$ and $\varepsilon \colon C \to R$ in this category satisfying the usual coassociativity and counitality relations. 
+A \textit{coalgebra} consists of an object $C$ in $\Ch$ and morphisms $\Delta \colon C \to C \otimes C$ and $\varepsilon \colon C \to \k$ in this category satisfying the usual coassociativity and counitality relations. 
 This notion is equivalent to that of a comonoid in $\Ch$.
 Denote by $\coAlg$ the category of coalgebras with morphisms being structure preserving chain maps.
-The category $\coAlg$ is symmetric monoidal, with the structure maps of a product $C \otimes C^\prime$ given by:
+The category $\coAlg$ is symmetric monoidal, with the structure maps of a product $C \otimes C^\prime$ given by
 \begin{equation} \label{e:coalgebras are symmetric monoidal1}
 C \otimes C^\prime \xra{\Delta \otimes \Delta^\prime}
 (C \otimes C) \otimes (C^\prime \otimes C^\prime) \xra{(23)}
@@ -36,9 +36,10 @@ C \otimes C^\prime \xra{\Delta \otimes \Delta^\prime}
 \end{equation}
 \begin{equation} \label{e:coalgebras are symmetric monoidal2}
 C \otimes C^\prime \xra{\varepsilon \otimes \varepsilon^\prime}
-R \otimes R \xra{\cong}
-R.
+\k \otimes \k \xra{\cong}
+\k,
 \end{equation}
+and braiding induced from that in $\Ch$.
 
 \subsection{Monoids}
 
@@ -135,7 +136,7 @@ We review a classical lift to coalgebras of the functor of simplicial chains:
 \end{equation*}
 
 Using a Kan extension along the Yoneda embedding, it suffices to equip the chains on standard simplices with a natural coalgebra structure.
-For any $n \in \N$, define $\epsilon  \colon \chains(\simplex^n) \to \Z$ by
+For any $n \in \N$, define $\epsilon  \colon \chains(\simplex^n) \to \k$ by
 \begin{equation*}
 \epsilon \big( [v_0, \dots, v_q] \big) = \begin{cases} 1 & \text{ if } q = 0, \\ 0 & \text{ if } q>0, \end{cases}
 \end{equation*}
