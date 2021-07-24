@@ -79,15 +79,12 @@ We condense this discussion in our main result.
 	\end{equation*}
 	Furthermore, when $(Y, y)$ is a pointed space, Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\square}(\Omega_y Y)$ is a quasi-isomorphism of $E_\infty$ bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
 \end{theorem} 
-
-\manuel{I took it from here}
-
-The homotopy theory of spaces can be modeled as the Kan-Quillen model category of simplicial sets. We would also like to understand how the cobar construction and its algebraic structure fits in this combinatorial framework. A purely combinatorial model for the based loop space of an arbitrary reduced simplicial set is given by the classical \textit{Kan loop group functor}.
+The homotopy theory of spaces can be modeled as the Kan-Quillen model category of simplicial sets. We would also like to understand how the cobar construction and its algebraic structure fit in this combinatorial framework. A purely combinatorial model for the based loop space of an arbitrary reduced simplicial set is given by the classical \textit{Kan loop group functor}.
 This is a functor 
 $$G\colon \sSet^0 \to \sGrp$$
 from reduced simplicial sets to the category of simplicial groups with the property that the geometric realization $|G(X)|$ is homotopy equivalent to the based loop space $\Omega_b|X|$ as a topological monoid \cite{berger1995loops}. Furthermore, the Kan loop group together with its right adjoint $$\overline{W} \colon  \sGrp \to \sSet^0,$$ called the classifying space functor, yield a Quillen equivalence of model categories when $\sSet^0$ is equipped with the Kan-Quillen model category structure and $\sGrp$ with an appropriate model structure having as weak equivalences maps of simplicial groups whose underlying maps of simplicial sets are weak homotopy equivalences. 
 
-In \cite{mcclure2003multivariable, berger2004combinatorial}, the functor of (normalized) chains $\schains$ was lifted to that of $E_\infty$ coalgebras, a result generalized in \cite{medina2020prop1} by constructing a lift $\schains_{\coAlg_{\UM}} \colon \sSet \to \coAlg_{\UM}$. Hence, a natural problem is to compare the algebraic structures in $\cobar \schains(X)$ and $\schains_{\coAlg_{U(\M)}}(G(X))$. In general, for an arbitraty $X \in \sSet^0$, $\cobar \schains(X)$ and $\schains(G(X))$ are not quasi-isomorphic.
+In \cite{mcclure2003multivariable, berger2004combinatorial}, the functor of (normalized) chains $\schains$ was lifted to that of $E_\infty$ coalgebras, a result generalized in \cite{medina2020prop1} by constructing a lift $\schains_{\UM} \colon \sSet \to \coAlg_{U(\M)}$. Hence, a natural problem is to compare the algebraic structures in $\cobar \schains(X)$ and $\schains_{\UM}(G(X))$. In general, for an arbitraty $X \in \sSet^0$, $\cobar \schains(X)$ and $\schains(G(X))$ are not quasi-isomorphic.
 This can be seen from the fact that, if $X$ is not fibrant, $H_0(\cobar \schains(X))$ need not be a group ring, while $H_0(G(X))$ is always isomorphic to $ \k[\pi_1(|X|)]$.
 
 Hess and Tonks proposed a way of modifying the cobar construction so that it could be compare to the chains on the Kan loop group \cite{hess2010cobar}. They construct a localized version of the cobar construction, called \textit{extended cobar construction}, as a functor
