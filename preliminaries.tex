@@ -29,16 +29,22 @@ A \textit{coalgebra} consists of an object $C$ in $\Ch$ and morphisms $\Delta \c
 This notion is equivalent to that of a comonoid in $\Ch$.
 Denote by $\coAlg$ the category of coalgebras with morphisms being structure preserving chain maps.
 The category $\coAlg$ is symmetric monoidal, with the structure maps of a product $C \otimes C^\prime$ given by
-\begin{equation} \label{e:coalgebras are symmetric monoidal1}
+%\begin{equation} \label{e:coalgebras are symmetric monoidal1}
+%C \otimes C^\prime \xra{\Delta \otimes \Delta^\prime}
+%(C \otimes C) \otimes (C^\prime \otimes C^\prime) \xra{(23)}
+%(C \otimes C^\prime) \otimes (C \otimes C^\prime),
+%\end{equation}
+%\begin{equation} \label{e:coalgebras are symmetric monoidal2}
+%C \otimes C^\prime \xra{\varepsilon \otimes \varepsilon^\prime}
+%\k \otimes \k \xra{\cong} \k.
+%\end{equation}
+\begin{gather}
 C \otimes C^\prime \xra{\Delta \otimes \Delta^\prime}
 (C \otimes C) \otimes (C^\prime \otimes C^\prime) \xra{(23)}
-(C \otimes C^\prime) \otimes (C \otimes C^\prime),
-\end{equation}
-\begin{equation} \label{e:coalgebras are symmetric monoidal2}
+(C \otimes C^\prime) \otimes (C \otimes C^\prime), \\
 C \otimes C^\prime \xra{\varepsilon \otimes \varepsilon^\prime}
 \k \otimes \k \xra{\cong} \k.
-
-\end{equation}
+\end{gather}
 and braiding induced from that in $\Ch$.
 
 \subsection{Monoids}
@@ -60,7 +66,7 @@ We denote by $\coAlg^*$ the category coaugmented coalgebras with morphisms being
 The \textit{cobar construction} is the functor $\cobar \colon \coAlg^* \to \Mon_{\Ch}$ defined on objects as follows.
 Let $(C, \partial, \Delta, \varepsilon, \nu)$ be the data of a coaugmented coalgebra.
 Denote by $\overline{C}$ the cokernel of $\nu \colon \k \to C$ and recall that $s^{-1}$ is the $(-1)\th$ suspension.
-The cobar construction $\cobar C$ of this coaugmented dg coalgebra is the graded module
+The cobar construction $\cobar C$ of this coaugmented coalgebra is the graded module
 \begin{equation*}
 T(s^{-1} \overline{C}) = \k \oplus s^{-1}\overline{C} \oplus (s^{-1}\overline{C})^{\otimes 2} \oplus (s^{-1}\overline{C})^{\otimes 3} \oplus \cdots
 \end{equation*}
@@ -73,12 +79,7 @@ as a derivation.
 
 In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented  coalgebras that are non-negatively graded and for which the coaugmentation induces an isomorphism $\k \cong C_0$ of $\k$-modules. We denote by $\coAlg^0$ the full subcategory of $\coAlg^*$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees.
 
-We now review the central examples of coaugmented dg coalgebras on which Adams used this construction.
-
-
-
-%The cobar construction was originally applied by Adams to the coalgebra of normalized chains on a $1$-reduced simplicial set to obtain a model for the chains on the based loop space \cite{Adams}.
-%The cobar construction as a model for the based loop space was furthered studied in \cite{Baues} and more recently, in the non-simply connected setting in \cite{Hess--Tonks}, \cite{rivera-zeinalian-cubical}.
+We now review the central examples of coaugmented coalgebras on which Adams used this construction.
 
 \subsection{Simplicial sets}
 
@@ -144,7 +145,7 @@ and $\Delta \colon \chains(\simplex^n) \to \chains(\simplex^n)^{\otimes2}$ by
 \Delta \big( [v_0, \dots, v_q] \big) = \sum_{i=0}^q [v_0, \dots, v_i] \otimes [v_i, \dots, v_q].
 \end{equation*}
 
-If $X \in \sSet^0$ is a reduced simplicial set with $X_0=\{b\}$ then $\schainsAS(X)$ becomes a connected dg coalgebra with the coaugmentation $\nu \colon \k \to \schains(X)$ induced by $\nu(1)=b \in\schains_0(X).$ Hence, the functor $\schainsAS$ restricts to a functor
+If $X \in \sSet^0$ is a reduced simplicial set with $X_0=\{b\}$ then $\schainsAS(X)$ becomes a connected coalgebra with the coaugmentation $\nu \colon \k \to \schains(X)$ induced by $\nu(1)=b \in\schains_0(X).$ Hence, the functor $\schainsAS$ restricts to a functor
 $$\schainsAS \colon \sSet^0 \to \coAlg^0.$$
 
 \subsection{Simplicial singular complex}
