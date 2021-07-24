@@ -36,10 +36,6 @@ For a prop $\P$, using $\End_C^C$ we define analogously the notion of $\P$-bialg
 
 We remark that among these two categories only $\coAlg_\O$ is cocomplete in general.
 
-\subsection{Coalgebras revisited}
-
-operad $\As$ ...
-
 \subsection{$E_\infty$ operads}
 
 An $\S$ module $M$ is said to be $E_\infty$ if for each $r$ the chain complex $M(r)$ is an algebraic model for the universal bundle $E\S_r$, i.e., it is free as an $\k[\S_r]$-module and its homology is that of a point.
@@ -82,6 +78,11 @@ and we assume this has been done whenever a free prop is described in terms of a
 	\caption{Immersed graphs represent labeled directed graphs with the direction implicitly given from top to bottom and the labeling from left to right.}
 	\label{f:immersion}
 \end{figure}
+
+\subsection{Coalgebras revisited}
+
+Let $\As$ be the operad whose arity $r$
+
 
 \subsection{The prop $\M$} \label{ss:definition of M}
 
@@ -160,7 +161,7 @@ Specifically, we obtain a lift:
 
 \subsection{Cubical $E_\infty$ structure}
 
-We follow the presentation of \cref{ss:e infty struc simplicial} closely to review from \cite{medina2021cubical} a natural $\mathcal M$-structure on the chains of standard cubes which leads to natural $\UM$-structure on the chains of cubical sets.
+We follow the presentation of \cref{ss:e infty struc simplicial} closely to review from \cite{medina2021cubical} a natural $\mathcal M$-structure on the chains of standard cubes leading to a natural $\UM$-structure on the chains of any cubical sets.
 
 An $\M$-structure is specified by three linear maps, the images of the generators
 \begin{equation*}
@@ -198,8 +199,8 @@ The same proof given in \cite{medina2020prop1} establishes the following.
 	defines a natural $\mathcal M$-structure on $\chains(\square^n)$ extending the Serre coalgebra.
 \end{proposition}
 
-Kan extending the induced natural $\UM$-structures on standard simplices to all simplicial sets defines a lift:
-\begin{equation*}
+Kan extending the induced natural $\UM$-structures on standard simplices to all simplicial sets defines a lift of the functor of cubical chains to $\UM$-coalgebras:
+\begin{equation} \label{e:lift of cubical chains to UM-coalgs}
 \begin{tikzcd}[column sep=normal, row sep=small]
 & \coAlg_\UM \arrow[d] \\
 & \coAlg \arrow[d] \\
@@ -208,6 +209,6 @@ Kan extending the induced natural $\UM$-structures on standard simplices to all 
 \arrow[uur, "\cchainsUM", out=90, in=180]
 & \Ch.
 \end{tikzcd}
-\end{equation*}
+\end{equation}
 
 In the next section we will show that $\cchainsUM$ is a monoidal functor.
