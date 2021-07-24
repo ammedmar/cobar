@@ -28,48 +28,30 @@ It is monoidal.
 %\end{equation*}
 %commutes and $\cchains(2^0) = R$.
 
-\subsection{Serre coalgebra}
+\subsection{Serre coalgebra} \label{ss:serre coalgebra sym monoidal}
 
-$\cchains$ is monoidal. $\cchainsAS$ is monoidal
+Recall that both $\Ch$ and $\coAlg$ are symmetric monoidal categories.
+Consider $\cSet$ to be equipped with the Day convolution symmetric monoidal structure \cref{ss:day convolution}, then, both, the functor $\cchains$ and its lift $\cchainsAS$ are symmetric monoidal.
+These statements follow from the canonical isomorphism $\chains(\cube^n) \cong \chains(\cube^1)^{\otimes n}$ and a straightforward verification.
 
-%The lift of  $N \colon \cube \to \Ch$ to the symmetric monoidal category $\coAlg$ is also monoidal since the following diagrams associated to the Serre diagonal and augmentation map commute:
-%\begin{equation*}
-%\begin{tikzcd}
-%\cchains(\cube^p) \otimes \cchains(\cube^{q}) \arrow[r, "\cong"] \arrow[d, "(23) \circ (\Delta \otimes \Delta)"'] & \cchains(\cube^{p+q}) \arrow[d, "\Delta"]\\
-%\cchains(\cube^p)^{\otimes 2} \otimes \cchains(\cube^{q})^{\otimes 2} \arrow[r, "\cong"]& \cchains(\cube^{p+q})^{\otimes 2}
-%\end{tikzcd}
-%\qquad \qquad
-%\begin{tikzcd}
-%\cchains(\cube^p) \otimes \cchains(\cube^{q}) \arrow[r, "\cong"] \arrow[d, "(\varepsilon \otimes \varepsilon)"'] & \cchains(\cube^{p+q}) \arrow[d, "\varepsilon"] \\
-%R \otimes R \arrow[r, "\cong"] & R.
-%\end{tikzcd}
-%\end{equation*}
-
-\subsection{Equivariance of the Serre coproduct}
-%We will use the following observation about the Serre diagonal to define the Hopf structure on $\M$.
-There is an action of $\S_n$ on $\chains(\cube^n)$ given by permuting the factors of $\chains(\cube^1)^{\otimes n}$.
-The Serre diagonal is equivariant with respect to this action in the following sense.
+For later reference we record a specific consequence of the fact that the braiding is a morphism of coalgebras.
 
 \begin{lemma} \label{l:serre diagonal invariant}
-	Let $T$ be the braiding of $\Ch$.
-	The following diagram commutes
+	The following diagram commutes:
 	\begin{equation*}
 	\begin{tikzcd}
 	\chains(\cube^1)^{\otimes 2} \arrow[r, "\Delta"] \arrow[d, "T"] &
 	\chains(\cube^1)^{\otimes 2} \otimes \chains(\cube^1)^{\otimes 2} \arrow[d, "T \otimes T"] \\
 	\chains(\cube^1)^{\otimes 2} \arrow[r, "\Delta"] &
-	\chains(\cube^1)^{\otimes 2} \otimes \chains(\cube^1)^{\otimes 2}.
+	\chains(\cube^1)^{\otimes 2} \otimes \chains(\cube^1)^{\otimes 2},
 	\end{tikzcd}
 	\end{equation*}
+	where $T$ is the braiding $x \otimes y \mapsto (-1)^{\bars{x} \bars{y}} y \otimes x$.
 \end{lemma}
-
-\begin{proof}
-	This can be proven by a straightforward verification. Conceptually, it holds because $(12)(34)(23) = (23)(13)(24)$ in $\S_4$.
-\end{proof}
 
 \subsection{Hopf operads and props}
 
-So far we have consider operad and props over the category $\Ch$ but, since $\coAlg$ is also a symmetric monoidal category, we can consider them over $\coAlg$ as well.
+So far we have consider operad and props over the category $\Ch$ but, since $\coAlg$ is also a symmetric monoidal category, we can consider them over $\coAlg$.
 That is to say, demand that all defining chain complexes be coalgebras with composition maps being morphisms of coalgebras.
 We refer to operads and props over $\coAlg$ as \textit{Hopf operads and props} respectively.
 
@@ -83,7 +65,7 @@ C^{\otimes r} \otimes C^{\prime\, \otimes r} \arrow[r, "Sh"] &
 \end{tikzcd}
 \end{equation*}
 
-A similar statement holds for the category of representations $\biAlg_\P$ of a Hopf prop $\P$.
+A similar statement holds for the category of representations of a Hopf prop $\P$.
 
 \subsection{Cubical structure on $\M$}
 
