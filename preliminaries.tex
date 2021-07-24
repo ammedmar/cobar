@@ -25,7 +25,7 @@ The $i\th$ \textit{suspension} functor $s^i \colon \Ch \to \Ch$ is defined at th
 
 \subsection{Coalgebras} \label{ss:coalgebras}
 
-A \textit{coalgebra} consists of an object $C$ in $\Ch$ and morphisms $\Delta \colon C \to C \otimes C$ and $\varepsilon \colon C \to R$ in this category satisfying the usual coassociativity and counitality relations. 
+A \textit{coalgebra} consists of an object $C$ in $\Ch$ and morphisms $\Delta \colon C \to C \otimes C$ and $\varepsilon \colon C \to \k$ in this category satisfying the usual coassociativity and counitality relations. 
 This notion is equivalent to that of a comonoid in $\Ch$.
 Denote by $\coAlg$ the category of coalgebras with morphisms being structure preserving chain maps.
 The category $\coAlg$ is monoidal, with the structure maps of a product $C \otimes C^\prime$ given by:
@@ -36,8 +36,8 @@ C \otimes C^\prime \xra{\Delta \otimes \Delta^\prime}
 \end{equation}
 \begin{equation} \label{e:coalgebras are symmetric monoidal2}
 C \otimes C^\prime \xra{\varepsilon \otimes \varepsilon^\prime}
-R \otimes R \xra{\cong}
-R.
+\k \otimes \k \xra{\cong}
+\k.
 \end{equation}
 
 \subsection{Monoids}
@@ -50,13 +50,14 @@ Monoids in $\Ch$ are called \textit{algebras} and those in $\coAlg$, \textit{bia
 
 \subsection{The cobar construction}
 
-A \textit{coaugmentation} on a coalgebra $C$ is a morphism $\nu \colon R \to C$ in $\coAlg$.
-We denote by $\coAlg^*$ the category of coaugmented coalgebras with morphisms being coaugmentation preserving coalgebra morphisms.
+A \textit{coaugmentation} on a coalgebra $C$ is a morphism $\nu \colon \k \to C$ in $\coAlg$. A coalgebra is said to be \textit{coaugmented} if it is equipped with a coaugmentation. 
+
+We denote by $\coAlg^*$ the category coaugmented coalgebras with morphisms being coaugmentation preserving coalgebra morphisms.
 
 The \textit{cobar construction} is the functor $\cobar \colon \coAlg^* \to \Mon_{\Ch}$ defined on objects as follows.
 Let $(C, \partial, \Delta, \varepsilon, \nu)$ be the data of a coaugmented coalgebra.
-Denote by $\overline{C}$ the cokernel of $\nu \colon R \to C$ and recall that $s^{-1}$ is the $(-1)\th$ suspension.
-The cobar construction $\cobar C$ of this coaugmented coalgebra is the graded module
+Denote by $\overline{C}$ the cokernel of $\nu \colon \k \to C$ and recall that $s^{-1}$ is the $(-1)\th$ suspension.
+The cobar construction $\cobar C$ of this coaugmented dg coalgebra is the graded module
 \begin{equation*}
 T(s^{-1} \overline{C}) = \k \oplus s^{-1}\overline{C} \oplus (s^{-1}\overline{C})^{\otimes 2} \oplus (s^{-1}\overline{C})^{\otimes 3} \oplus \cdots
 \end{equation*}
@@ -67,13 +68,11 @@ s^{-1} \overline{C} \to s^{-1}\overline{C} \oplus (s^{-1}\overline{C} \otimes s^
 \end{equation*}
 as a derivation.
 
-We now review the central examples of augmented coalgebras on which Adams used this construction.
+In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented  coalgebras that are non-negatively graded and for which the coaugmentation induces an isomorphism $\k \cong C_0$ of $\k$-modules. We denote by $\coAlg^0$ the full subcategory of $\coAlg^*$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees.
 
-In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented coalgebras which are non-negatively graded and for which the coaugmentation induces an isomorphism of (not graded or) coalgebras $R \cong C_0$.
+We now review the central examples of coaugmented dg coalgebras on which Adams used this construction.
 
-\anibal{Say this better, coalgebras are dg.}
 
-We denote by $\coAlg^0$ the full subcategory of $\coAlg^*$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees.
 
 %The cobar construction was originally applied by Adams to the coalgebra of normalized chains on a $1$-reduced simplicial set to obtain a model for the chains on the based loop space \cite{Adams}.
 %The cobar construction as a model for the based loop space was furthered studied in \cite{Baues} and more recently, in the non-simply connected setting in \cite{Hess--Tonks}, \cite{rivera-zeinalian-cubical}.
@@ -137,10 +136,13 @@ For any $n \in \N$, define $\epsilon  \colon \chains(\simplex^n) \to \Z$ by
 \begin{equation*}
 \epsilon \big( [v_0, \dots, v_q] \big) = \begin{cases} 1 & \text{ if } q = 0, \\ 0 & \text{ if } q>0, \end{cases}
 \end{equation*}
-and $\Delta \colon \chains(\simplex^n) \to \chains(\simplex^n)^{\otimes2})$ by
+and $\Delta \colon \chains(\simplex^n) \to \chains(\simplex^n)^{\otimes2}$ by
 \begin{equation*}
 \Delta \big( [v_0, \dots, v_q] \big) = \sum_{i=0}^q [v_0, \dots, v_i] \otimes [v_i, \dots, v_q].
 \end{equation*}
+
+If $X \in \sSet^0$ is a reduced simplicial set with $X_0=\{b\}$ then $\schainsAS(X)$ becomes a connected dg coalgebra with the coaugmentation $\nu \colon \k \to \schains(X)$ induced by $\nu(1)=b \in\schains_0(X).$ Hence, the functor $\schainsAS$ restricts to a functor
+$$\schainsAS \colon \sSet^0 \to \coAlg^0.$$
 
 \subsection{Simplicial singular complex}
 
@@ -157,7 +159,7 @@ and referred to as the (simplicial) \textit{singular complex} of the topological
 The chain complex $\chains(\cSing Y)$ is referred to as the \textit{cubical singular chains} of $Y$.
 
 We modify this construction for a pointed topological space $(Y, y)$ by considering only maps of $\gsimplex^n \to Y$ sending all vertices to $y$.
-This produces a reduced simplicial set $\sSing(Y, y)$.
+This produces a reduced simplicial set $\sSing(Y, y) \in \sSet^0$. We will refer to $\schains(\sSing(Y, y))$ as the \textit{simplicial singular chains on $(Y,y)$} and for simplicity denote it by $\sS(Y,y).$
 
 \subsection{Cubical sets} \label{ss:cubical sets}
 
@@ -270,14 +272,16 @@ It has a right adjoint $\cSing \colon \Top \to \cSet$ given by
 Z \to \Big(2^n \to \Top(\gcube^n, Z)\Big)
 \end{equation*}
 and referred to as the \textit{cubical singular complex} of the topological space $Z$.
-The chain complex $\chains(\cSing Z)$ is referred to as the \textit{cubical singular chains} of $Z$.
+We will refer to $\chains(\cSing Z)$ as the \textit{cubical singular chains} of $Z$ and for simplicity denote it by $\cS(Z).$
 
 \subsection{Triangulation and its right adjoint} \label{ss:triangulation and its adjoint}
+Define the \textit{triangulation} functor $\mathcal{T} \colon \cSet \to \sSet$ by $$\mathcal{T}(C) = \colim_{\cube^n \to C} (\Delta^1)^{\times n}.$$
+When $\sSet$ is equipped with the cartesian product and $\cSet$ with the Day convolution product, the triangulation functor is monoidal. Thus it induces a functor $$\mathcal{T} \colon \Mon_{\cSet} \to \Mon_{\sSet}$$ between the associated categories of monoids. 
 
-\anibal{improve}
-
-Define a functor $\mathcal{T} \colon \cSet \to \sSet$ by $$\mathcal{T}(C) = \colim_{\cube^n \to C} (\Delta^1)^{\times n}.$$
-This is a monoidal functor known as \textit{triangulation} and it induces a functor $$\mathcal{T} \colon \Mon_{\cSet} \to \Mon_{\sSet}.$$
+The triangulation functor has a right adjoint $$\mathcal{U}\colon \sSet \to \cSet$$
+	given by the formula
+	$$\mathcal{U}(X)_n= \sSet((\simplex^1)^{\times n}, X)$$
+	together with the obvious induced cubical faces, degeneracies, and connections.
 
 
 %Explicitly,
