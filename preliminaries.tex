@@ -29,22 +29,13 @@ A \textit{coalgebra} consists of an object $C$ in $\Ch$ and morphisms $\Delta \c
 This notion is equivalent to that of a comonoid in $\Ch$.
 Denote by $\coAlg$ the category of coalgebras with morphisms being structure preserving chain maps.
 The category $\coAlg$ is symmetric monoidal, with the structure maps of a product $C \otimes C^\prime$ given by
-%\begin{equation} \label{e:coalgebras are symmetric monoidal1}
-%C \otimes C^\prime \xra{\Delta \otimes \Delta^\prime}
-%(C \otimes C) \otimes (C^\prime \otimes C^\prime) \xra{(23)}
-%(C \otimes C^\prime) \otimes (C \otimes C^\prime),
-%\end{equation}
-%\begin{equation} \label{e:coalgebras are symmetric monoidal2}
-%C \otimes C^\prime \xra{\varepsilon \otimes \varepsilon^\prime}
-%\k \otimes \k \xra{\cong} \k.
-%\end{equation}
-\begin{gather}
+\begin{gather*}
 C \otimes C^\prime \xra{\Delta \otimes \Delta^\prime}
 (C \otimes C) \otimes (C^\prime \otimes C^\prime) \xra{(23)}
 (C \otimes C^\prime) \otimes (C \otimes C^\prime), \\
 C \otimes C^\prime \xra{\varepsilon \otimes \varepsilon^\prime}
 \k \otimes \k \xra{\cong} \k.
-\end{gather}
+\end{gather*}
 and braiding induced from that in $\Ch$.
 
 \subsection{Monoids}
@@ -241,7 +232,7 @@ We review a classical lift to coalgebras of the functor of cubical chains:
 \end{equation*}
 
 Using a Kan extension along the Yoneda embedding, it suffices to equip the chains on standard cubes with a natural coalgebra structure.
-For any $n \in \N$, define $\epsilon \colon \chains(\square^n) \to \k$ by
+For any $n \in \N$, define $\epsilon \colon \chains(\cube^n) \to \k$ by
 \begin{equation*}
 \epsilon \left( x_1 \otimes \cdots \otimes x_d \right) = \epsilon(x_1) \cdots \, \epsilon(x_n),
 \end{equation*}
@@ -249,7 +240,7 @@ where
 \begin{equation*}
 \epsilon([0]) = \epsilon([1]) = 1, \qquad \epsilon([0, 1]) = 0,
 \end{equation*} 
-and $\Delta \colon \chains(\square^n) \to \chains(\square^n)^{\otimes 2}$ by
+and $\Delta \colon \chains(\cube^n) \to \chains(\cube^n)^{\otimes 2}$ by
 \begin{equation*}	
 \Delta (x_1 \otimes \cdots \otimes x_n) = 	
 \sum \pm \left( x_1^{(1)} \otimes \cdots \otimes x_n^{(1)} \right) \otimes 	
@@ -259,15 +250,15 @@ where the sign is determined using the Koszul convention, and we are using Sweed
 \begin{equation*}	
 \Delta(x_i) = \sum x_i^{(1)} \otimes x_i^{(2)}
 \end{equation*}
-for the chain map $\Delta \colon \chains(\square^1) \to \chains(\square^1)^{\otimes 2}$ defined by
+for the chain map $\Delta \colon \chains(\cube^1) \to \chains(\cube^1)^{\otimes 2}$ defined by
 \begin{equation*}
 \Delta([0]) = [0] \otimes [0], \quad \Delta([1]) = [1] \otimes [1], \quad \Delta([0,1]) = [0] \otimes [0,1] + [0,1] \otimes [1].
 \end{equation*}
 
-We remark that, using the canonical isomorphism $\chains(\square^n) \cong \chains(\square^1)^{\otimes n}$, the coproduct $\Delta$ can be described as the composition
+We remark that, using the canonical isomorphism $\chains(\cube^n) \cong \chains(\cube^1)^{\otimes n}$, the coproduct $\Delta$ can be described as the composition
 \begin{equation*}
 \begin{tikzcd}
-\chains(\square^1)^{\otimes n} \arrow[r, "\Delta^{\otimes n}"] & \left( \chains(\square^1)^{\otimes 2}  \right)^{\otimes n} \arrow[r, "sh"] & \left( \chains(\square^1)^{\otimes n} \right)^{\otimes 2}
+\chains(\cube^1)^{\otimes n} \arrow[r, "\Delta^{\otimes n}"] & \left( \chains(\cube^1)^{\otimes 2}  \right)^{\otimes n} \arrow[r, "sh"] & \left( \chains(\cube^1)^{\otimes n} \right)^{\otimes 2}
 \end{tikzcd}
 \end{equation*}
 where $sh$ is the shuffle map that places tensor factors in odd position first. \vspace*{5pt} \\
@@ -287,6 +278,11 @@ and referred to as the \textit{cubical singular complex} of the topological spac
 We will refer to $\chains(\cSing Z)$ as the \textit{cubical singular chains} of $Z$ and for simplicity denote it by $\cS(Z).$
 
 \subsection{Triangulation and its right adjoint} \label{ss:triangulation and its adjoint}
+
+\ \par \anibal{Missing motivation for $(\simplex^1)^n$}
+
+\anibal{Day convolution is defined in the next section}
+
 Define the \textit{triangulation} functor $\mathcal{T} \colon \cSet \to \sSet$ by $$\mathcal{T}(C) = \colim_{\cube^n \to C} (\Delta^1)^{\times n}.$$
 When $\sSet$ is equipped with the cartesian product and $\cSet$ with the Day convolution product, the triangulation functor is monoidal. Thus it induces a functor $$\mathcal{T} \colon \Mon_{\cSet} \to \Mon_{\sSet}$$ between the associated categories of monoids. 
 

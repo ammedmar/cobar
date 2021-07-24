@@ -6,7 +6,7 @@ The goal of this section is to prove \cref{t:1st main thm in the intro}. We do s
 \subsection{Adams' map}
 
 In \cite{adams1956cobar}, Adams constructed a natural map of algebras \begin{equation} \label{e:adams map 2}
-\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\square}(\Omega_y Y),
+\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y),
 \end{equation}
 for any pointed topological space $(Y,y)$.
 The construction is based on a collection of continuous maps $$\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n),$$
@@ -27,8 +27,8 @@ Given any two composable paths $\alpha$ and $\beta$, the dot symbol in $\alpha \
 Adams' map $\theta_Y$ is now given as follows.
 For any singular $1$-simplex $\sigma \in S^{\Delta}_1(Y, y)$ let
 $$\theta_Y([\sigma])= P(\sigma) \circ \theta_1 - c_y,$$
-where $c_y \in S^{\square}_0(\Omega_y Y)$ is the singular $0$-cube determined by the constant loop at $y \in Y.$ For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Y, y)$ with $n>1$, let
-$$\theta_Y([\sigma])= P(\sigma) \circ \theta_n.$$ Since the underlying graded algebra of $\cobar(\sS(Y, y))$ is free, we may extend the above to an algebra map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\square}(\Omega_y Y)$.
+where $c_y \in S^{\cube}_0(\Omega_y Y)$ is the singular $0$-cube determined by the constant loop at $y \in Y.$ For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Y, y)$ with $n>1$, let
+$$\theta_Y([\sigma])= P(\sigma) \circ \theta_n.$$ Since the underlying graded algebra of $\cobar(\sS(Y, y))$ is free, we may extend the above to an algebra map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y)$.
 The compatibility equations for the maps $\theta_n$ imply that $\theta_Y$ is a chain map.
 
 We will construct an $E_{\infty}$-bialgebra structure on $\cobar(\sS(Y, y))$ and show that $\theta_Y$ preserves this structure.
@@ -118,7 +118,7 @@ The functor $\mathcal{P} \colon \Nec \to \cube$ induces an adjunction between $\
 \qquad \text{and} \qquad
 \mathcal{P}_{!}  \colon \nSet \to \cSet.
 \end{equation*}
-Explicitly, for a cubical set with connections $C \colon \square^\op \to \Set$, \begin{equation*}
+Explicitly, for a cubical set with connections $C \colon \cube^\op \to \Set$, \begin{equation*}
 \mathcal{P}^*(C)= C \circ \mathcal{P}^\op,
 \end{equation*}
 and for a necklical set $K \colon \Nec^\op \to \Set$,
@@ -186,7 +186,7 @@ $$\cchainsUM \circ \ccobar \colon \sSet^0 \to \Mon_{\U(M)}.$$
 Adams' map can now be factored as 
 $$\theta_Y \colon \cobar(\sS(Y, y)) \xrightarrow{\cong} 
 \cchains(\ccobar \sSing(Y, y)) \xrightarrow{\cchains(\Theta)} 
-S^{\square}(\Omega_y Y).$$
+S^{\cube}(\Omega_y Y).$$
 The first map is given by the natural isomorphism of algebras $$\cobar \schains (\sSing(Y, y)) \cong  \cchains \ccobar (\sSing(Y, y))$$ of \cref{p:ccobar and cobar}.
 The second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
 $$\Theta \colon \ccobar (\sSing(Y, y) \to \cSing( \Omega_yY)$$
@@ -207,14 +207,14 @@ We now put together the constructions and results discussed above to deduce our 
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\end{equation*}
-	Furthermore, when $(Y, y)$ is a pointed space, Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\square}(\Omega_y Y)$ is a quasi-isomorphism of $E_\infty$ bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
+	Furthermore, when $(Y, y)$ is a pointed space, Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y)$ is a quasi-isomorphism of $E_\infty$ bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
 \end{nntheorem} 
 
 \begin{proof}
 	The fact that $\cchainsUM$ is monoidal and that it fits in the desired commutative diagram follows directly from Section 4.
 	    
 	The natural $\UM$-coalgebra structure on $\cobar(\sS(Y, y))$ is induced by $\cchainsUM ( \ccobar (\sSing(Y,y)) )$, as discussed in \cref{ss:e-infty on cobar}.
-	The natural $\UM$-coalgebra structure on $S^{\square}(\Omega_yY)$ is precisely given by $\cchainsUM( \cSing(\Omega_yY) ).$ These two $\UM$-coalgebra structures are compatible with the algebra structures, giving rise to monoinds in $\coAlg_{\UM}.$
+	The natural $\UM$-coalgebra structure on $S^{\cube}(\Omega_yY)$ is precisely given by $\cchainsUM( \cSing(\Omega_yY) ).$ These two $\UM$-coalgebra structures are compatible with the algebra structures, giving rise to monoinds in $\coAlg_{\UM}.$
 	     
 	By naturality, we obtain a map
 	\begin{equation*}
