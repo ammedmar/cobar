@@ -8,19 +8,21 @@ Finally, we will use this fact and the cubical cobar construction, a monoid in $
 
 \subsection{Cartesian product and Day convolution} \label{ss:day convolution}
 
-We recall the monoidal structures on simplicial sets and cubical sets that will be relevant for this article.
+We recall the monoidal structures on simplicial and cubical sets which are relevant for this article.
 
-Given $X, X' \in \sSet$ define a new simplicial set $X \times X'$, called the \textit{cartesian product}, given by the degree-wise cartesian product of sets
+Given simplicial sets $X, X^\prime$ their \textit{Cartesian product} $X \times X^\prime$ is induced from
+\begin{equation*}
+(X \times X^\prime)_n = X_n \times X^\prime_n.
+\end{equation*}
+This construction makes $\sSet$ into a symmetric monoidal category with unit $\simplex^0$.
+The Cartesian product of simplicial sets coincides with the more general notion of the categorical product, since limits of presheaves are computed object-wise. 
 
-\[(X \times X')_n = X_n \times X'_n\]
-
-together with the cartesian product of the face and degeneracy maps. This notion makes $\sSet$ into a symmetric monoidal category with unit $\simplex^0.$ The cartesian product of simplicial sets coincides with the more general notion of the categorical product, since limits of presheaves are computed object-wise. 
-
-Given $Y, Y' \in \cSet$ define a new cubical set $Y \otimes Y'$, called the \textit{Day convolution}, given by the 
-
-\[ Y \otimes Y' = \colim_{\cube^n \to Y, \cube^{m} \to Y} \square^{n+m}. \]
-
-This notion makes $\cSet$ into a non-symmetric monoidal category with unit $\cube^0.$ The Day convolution monoidal structure can be defined more generally for presheaves over a monoidal category. 
+Given cubical sets with connections $Y, Y'$ their \textit{Day convolution} is defined by
+\begin{equation*}
+Y \otimes Y' = \colim_{\substack{\cube^n \to Y \\ \cube^{m} \to Y}} \square^{n+m}.
+\end{equation*}
+This notion makes $\cSet$ into a (non-symmetric) monoidal category with unit $\cube^0$.
+The Day convolution monoidal structure can be defined more generally for presheaves over a monoidal category.
 
 \subsection{Triangulation and its right adjoint} \label{ss:triangulation and its adjoint}
 
