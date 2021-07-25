@@ -6,23 +6,22 @@ The goal of this section is to prove \cref{t:1st main thm in the intro}. We do s
 
 \subsection{Adams' map}
 
-In \cite{adams1956cobar}, Adams constructed a natural map of algebras \begin{equation} \label{e:adams map 2}
+In \cite{adams1956cobar}, Adams constructed a natural map of algebras
+\begin{equation} \label{e:adams map 2}
 \theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y),
 \end{equation}
-for any pointed topological space $(Y,y)$.
+for any pointed topological space $(Y, y)$.
 The construction is based on a collection of continuous maps $$\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n),$$
 where $P(\gsimplex^n;0,n)$ denotes the topological space of Moore paths in $\gsimplex^n$ from the $0$-th vertex $v_0$ to the $n$-th vertex $v_n$.
 These maps are constructed inductively so that following equations are satisfied:
 \begin{enumerate}
 	\item $\theta_1(0)\colon \gcube^1 \to \gsimplex^1$ is the path $\theta_1(0)(s) = sv_1 +(1-s)v_0$.
-	\item
-	 $\theta_n \circ e_j^0 = P(d_j) \circ \theta_{n-1}$
-	\item
-	 $\theta_n \circ e_j^1 = (P(f_j) \circ \theta_j) \cdot (P(l_{n-j}) \circ \theta_{n-j})$.
+	\item $\theta_n \circ e_j^0 = P(d_j) \circ \theta_{n-1}$.
+	\item $\theta_n \circ e_j^1 = (P(f_j) \circ \theta_j) \cdot (P(l_{n-j}) \circ \theta_{n-j})$.
 \end{enumerate}
 In the above equations $f_j\colon \gsimplex^j \rightarrow \gsimplex^n$ and $l_{n-j}\colon \gsimplex^{n-j} \rightarrow \gsimplex^n$ denote the first $j$-th face map and last $(n-j)$-th face map of $\gsimplex^n$, respectively, and
 $e_j^0,e_j^1\colon \gcube^{n-1} \rightarrow \gcube^{n}$ denote the $j$-th bottom and top face inclusion maps, respectively.
-For any continuous map of spaces $f\colon X \to Y$, we denote by $P(f) \colon P(X) \to P(Y)$ the induced map at the level of spaces of paths.
+For any continuous map of spaces $f \colon X \to Y$, we denote by $P(f) \colon P(X) \to P(Y)$ the induced map at the level of spaces of paths.
 Given any two composable paths $\alpha$ and $\beta$, the dot symbol in $\alpha \cdot \beta$ denotes the composition (or concatenation) of paths.
 
 Adams' map $\theta_Y$ is now given as follows.
@@ -120,7 +119,8 @@ The functor $\mathcal{P} \colon \Nec \to \cube$ induces an adjunction between $\
 \qquad \text{and} \qquad
 \mathcal{P}_{!}  \colon \nSet \to \cSet.
 \end{equation*}
-Explicitly, for a cubical set with connections $C \colon \cube^\op \to \Set$, \begin{equation*}
+Explicitly, for a cubical set with connections $C \colon \cube^\op \to \Set$,
+\begin{equation*}
 \mathcal{P}^*(C)= C \circ \mathcal{P}^\op,
 \end{equation*}
 and for a necklical set $K \colon \Nec^\op \to \Set$,
@@ -139,7 +139,7 @@ Using the framework of necklical sets, we may reinterpret a construction of Baue
 \end{equation*}
 which we now define.
 
-For any $0$-reduced simplicial set $X$, the underlying necklical set $\ncobar(X) \colon \Nec^\op \to \Set$ is defined by
+For any reduced simplicial set $X$, the underlying necklical set $\ncobar(X) \colon \Nec^\op \to \Set$ is defined by
 \begin{equation*}
 \ncobar(X) = \colim_{\mathcal{S}(T) \to X} \mathcal{Y}(T).
 \end{equation*}
