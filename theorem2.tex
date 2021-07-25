@@ -10,9 +10,10 @@ This may be expressed using the language of model categories by saying that the 
 \begin{equation*}
 \bars{\ \cdot\ } \colon \sSet \leftrightarrows \mathsf{Top} \colon \sSing
 \end{equation*}
-define a Quillen equivalence between model category structures.
+defines a Quillen equivalence between model category structures.
 %in which the weak equivalences are the weak homotopy equivalences.
-This model category structure on $\sSet$, which we call the \textit{Kan-Quillen model structure}, has weak homotopy equivalences as weak equivalences and inclusions as cofibrations. The fibrations are known as \textit{Kan fibrations}. There is also a induced model structure on $\sSet^0$ which we call by the same name.
+We call this model category structure on $\sSet$ the \textit{Kan-Quillen model structure}.
+There is also a induced model structure on $\sSet^0$ which we call by the same name.
 
 The based loop space of a reduced simplicial set may be modeled in purely combinatorial terms through the \textit{Kan loop group functor} 
 \begin{equation*}
@@ -30,7 +31,7 @@ The face and degeneracy maps are defined by the following equations
 Berger showed that this construction models the based loop space \textit{as a topological monoid,} more precisely, he showed that for any $X \in \sSet^0$, the geometric realization of the Kan loop group $|G(X)|$ is weak homotopy equivalent, as a topological monoid, to the based loop space $\Omega|X|$ on the geometric realization of $X$ \cite{berger1995loops}.
 
 One may construct a model category structure on the category $\mathsf{sGrp}$ of simplicial groups such that 
-both weak equivalences and fibrations are maps of simplicial groups whose underlying maps of simplicial sets are weak homotopy equivalences and Kan fibrations, respectively.  We call this model category structure the \textit{Kan model structure on $\sGrp.$}
+both weak equivalences and fibrations are maps of simplicial groups whose underlying maps of simplicia sets are weak homotopy equivalences and Kan fibrations. We call this model category structure the \textit{Kan model structure on $\sGrp.$}
 
 The Kan loop group functor has a right adjoint usually denoted by 
 $$\overline{W} \colon \mathsf{sGrp} \to \sSet^0,$$ which is a model for the classifying space of a simplicial group. This adjunction induces an equivalence of homotopy theories in the following sense.
@@ -48,7 +49,7 @@ For a proof of the above statement we refer to \cite[Chapter V]{goerss2009simpli
 
 The proof that Adams' map in \cref{t:1st main thm in the intro} is a quasi-isomorphism relies on the fibrancy condition of the underlying Kan complex. In general, for an arbitrary reduced simplicial set $X$, the cobar construction $\cobar \schains(X)$ is not naturally quasi-isomorphic to $S^{\cube}(\Omega|X|),$ the singular cubical chains on the based loop space of the geometric realization of $X$. This is true, however, if $X$ is $1$-connected.
 
-In \cite{hess2010cobar}, it is described how to formally invert the elements of $X_1$ inside $\cobar \schains(X)$ to obtain the correct quasi-isomorphism type. The resulting model, called the extended cobar construction, is then compared to the chains on the classical the Kan loop group construction $G(X)$. We lift this comparison to the ``space-level" with the goal of comparing the $E_{\infty}$-coalgebra structures after taking chains. 
+In \cite{hess2010cobar}, it is described how to formally invert the elements of $X_1$ inside $\cobar \schains(X)$ to obtain the correct quasi-isomorphism type. The resulting model, called the extended cobar construction, is then compared as an algebra to the chains on the classical the Kan loop group construction $G(X)$. We lift these constructions to the ``space-level" with the goal of comparing the $E_{\infty}$-coalgebra structures after taking chains. 
 
 Denote by $$\mathcal{L} \colon \Mon_{\sSet} \to \sGrp$$ the functor from simplicial monoids to simplicial groups defined by formally inverting all morphisms (degree by degree) subject to the usual relations.
 If $M \in \Mon_{\sSet}$ and $A \in M_0$ is a set of $0$-morphisms, we denote by $\mathcal{L}_AM$ the simplicial monoid obtained by formally inverting the elements of $A$, i.e., the pushout
@@ -95,10 +96,10 @@ In order to relate the functors $\widehat{\ccobar} \colon \sSet^0 \to \Mon_{\cSe
 
 This functor is obtained by restricting to $\sSet^0$ a more general construction
 $$\mathfrak{C}: \sSet \to \Cat_{\simplex},$$
-where $\Cat_{\simplex}$ denotes the category of small categories enriched over the monoidal category $(\sSet, \times)$. We now recall its definition.
+where $\Cat_{\simplex}$ denotes the category of small categories enriched over the monoidal category $(\sSet, \times)$. 
 
 Given integers $0 \leq  i \leq j$ denote by $P_{i,j}$ the category whose objects are all the subsets of $\{i, i+1, \dots, j\}$ containing both $i$ and $j$ and morphisms are inclusions.
-For each integer $n \geq 0$ define $\mathfrak{C}(\simplex^n) \in \Cat_{\simplex}$ having the set $\{0, \dots, n\}$ as objects and simplicial sets of morphisms given as follows. If $i \leq j$, let $\mathfrak{C}(\simplex^n)(i,j)= N(P_{i,j})$, where $N$ is the ordinary nerve functor.
+For each integer $n \geq 0$ define $\mathfrak{C}(\simplex^n) \in \Cat_{\simplex}$ to have the set $\{0, \dots, n\}$ as objects and if $i \leq j$, define $\mathfrak{C}(\simplex^n)(i,j)= N(P_{i,j})$, where $N$ is the ordinary nerve functor.
 If $j < i$, $\mathfrak{C}(\simplex^n)(i,j) = \emptyset.$ The composition law in $\mathfrak{C}(\simplex^n)$ is induced by the functor $P_{j,k} \times P_{i,k} \to P_{i,k}$ defined as the union of sets.
 The assignment $[n] \mapsto \mathfrak{C}(\simplex^n)$ defines a cosimplicial object in $\Cat_{\simplex}$.
 For any $S \in \sSet$ we can now define
@@ -106,7 +107,6 @@ For any $S \in \sSet$ we can now define
 The functor $\mathfrak{C}$ has a right adjoint, called the \textit{homotopy coherent nerve functor} and denoted by
 $$\mathfrak{N} \colon \Cat_{\simplex} \to \sSet,$$ whose $n$-simplices are given by 
 $$\mathfrak{N}(\mathcal{C})_n=\text{Hom}_{\Cat_{\simplex}}(\mathfrak{C}(\simplex^n), \mathcal{C}).$$
-Note that for any $i \leq j$, we have $\mathfrak{C}(\simplex^n)(i,j) \cong (\simplex^1)^{j-i-1} \cong \mathcal{T}(\cube^{j-i-1})$. 
 
 The homotopy coherent nerve functor was originally introduced by Cordier and further studied by Joyal and Lurie in the theory of $\infty$-categories.
 Dugger and Spivak described the construction more explicitly in terms of necklaces in \cite{dugger2011rigidification}.
@@ -169,7 +169,7 @@ We now deduce the following relationship between the rigidification functor $\ma
 	The Quillen equivalence of \cref{joyalbergner} localizes to a Quillen equivalence
 	$$\mathcal{L} \circ \mathfrak{C} \colon \sSet^0 \leftrightarrows \mathsf{sGrp} \colon \mathfrak{N} \circ \iota$$
 	when $\sSet^0$ is equipped with the Kan-Quillen model structure and $\mathsf{sGrp}$ with the model structure of \cref{kan}.
-	Here $\iota \colon \mathsf{sGrp} \to \Mon_{\sSet}$ denotes the natural inclusion functor.
+	Here $\iota \colon \mathsf{sGrp} \to \Cat_{\simplex}$ denotes the natural inclusion functor.
 	It follows that the adjoint of the weak homotopy equivalence $X \xra{\simeq} \mathfrak{N}(G(X))$ is a weak equivalence of simplicial groups
 	$$\mathcal{L}\mathfrak{C}(X) \xra{\simeq} G(X).$$ 
 \end{proof}
@@ -196,9 +196,64 @@ The above statement should be understood as a lift to the level of simplicial se
 
 \anibal{The map should be defined outside the proof. It is OK to prove the first half of thm 2 here.}
 
-\subsection{Serre comparison map}
+\subsection{Serre--Cartan comparison map}
 
 We review from \cite{medina2021cubical} the relationship between the $E_\infty$-structures defined on simplicial chains in \cref{ss:e-infty on simplicial} and on cubical chains in \cref{ss:e-infty on cubical}.
+
+In \cite[sect]{serre1951homologie}, the \textit{Serre--Cartan collapse} $\gcube^n \to \gsimplex^n$ was introduced and used to define a natural quasi-isomorphism of coalgebras $\sS(Z) \to \cS(Z)$ for any topological space $Z$.
+This map factors as
+\begin{equation*}
+\chains(\sSing(Z)) \xra{\CS_{\sSing(Z)}}
+\cchains(\mathcal{U} \sSing(Z)) \to
+\chains(\cSing(Z)),
+\end{equation*}
+where $\CS_X$, referred to as the \textit{Serre--Cartan comparison map}, is a quasi-isomorphism defined for any simplicial set $X$, whereas the other chain map is induced from a cubical map.
+
+Although both $\schains(X)$ and $\cchains(\mathcal{U} X)$ have natural $\UM$-structures, the map $\CS_X$ is not a morphism of $\UM$-coalgebras for a generic simplicial set $X$.
+But, after restriction of their $\UM$-structures to a sub-$E_\infty$-operad, the Cartan-Serre comparison map becomes a morphism of $E_\infty$-coalgebras.
+This operad, denoted $\USL$, is generated as a suboperad of $\UM$ by and all immerse graphs of the form
+\begin{center}
+	\begin{tikzpicture}[scale=1]
+	\draw (0,0)--(0,-.6) node[below, scale=.75]{$1$};
+	\draw (0,0)--(.5,.5);
+	\draw (-.3, .3)-- (-.2,.5) node[scale=.75] at (-.2,.7) {\qquad $1\, \ \ 2\ \ ...\ \ k_1$};
+	\draw (-.5,.5)--(0,0);
+	\node[scale=.75] at (.11,.4){$...$};
+	
+	\node[scale=.75] at (1,0){$\cdots$};
+	\node[scale=.75] at (1,-.9){$\cdots$};
+	
+	\draw (2,0)--(2,-.68) node[scale=.75, below]{$r$};
+	\draw (2,0)--(2.5,.5);
+	\draw (1.7, .3)--(1.8,.5) node[scale=.75] at (1.78,.7) {\qquad $1\, \ \ 2\ \ ...\ \ k_r$};
+	\draw (1.5,.5)--(2,0);
+	\node[scale=.75] at (2.11,.4){$...$};
+	
+	\draw (1,2.5)--(1,3) node[scale=.75, above]{$1$};
+	\draw (1,2.5)--(0,2) node[scale=.75, below]{$1$};
+	\draw (.25,2.125)--(.5,2) node[scale=.75, below]{$2$};
+	\draw (.5,2.25)--(1,2) node[scale=.75, below]{$3$};
+	\draw (1,2.5)--(2,2) node[scale=.75, below]{\ \quad $n + r$};
+	\node[scale=.75] at (1.5,1.75){$\cdots$};
+	
+	\node[scale=.75] at (1,1.3) {$\vdots$};
+	
+	\node at (2.85,0){};
+	\end{tikzpicture}
+\end{center}
+where there are no hidden vertices and the strands are joined so that the associated maps $\{1, \dots, k_j\} \to \{1, \dots, n+k\}$ are order-preserving.
+From \cite{medina2021cubical} we have the following statement.
+\begin{lemma}
+	The suboperad $\USL$ of $\UM$ is an $E_\infty$-operad and the Cartan-Serre comparison map
+	\begin{equation*}
+	\CS_X \colon \schains(X) \to \cchains(\mathcal U X)
+	\end{equation*}
+	is a natural quasi-isomorphism of $\USL$-coalgebras for any simplicial set $X$.
+\end{lemma}
+
+We will denote by $\chains_\USL$ the functor of (cubical or simplicial) chains with its induced $\USL$-structure.
+
+We remark that the inclusion $\As \to \UM$ factors through $\USL$.
 
 \subsection{A zig-zag of $E_\infty$-coalgebras}
 
