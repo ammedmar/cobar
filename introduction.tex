@@ -2,7 +2,7 @@
 \section{Introduction}
 
 In 1956, F. Adams introduced the cobar construction to model algebraically the passage from a simply connected pointed space to its topological monoid of based loops \cite{adams1956cobar}.
-Fixing a commutative ring, the algebraic cobar construction may be described as a functor $\cobar \colon \coAlg^* \to \Mon_{\Ch}$ from the category of coaugemented  (dgca) coalgebras to the category of algebras, which we regard in this article as monoids over the symmetric monoidal category $\Ch$ of chain complexes.
+Fixing a commutative ring, the algebraic cobar construction may be described as a functor $\cobar \colon \coAlg^* \to \Mon_{\Ch}$ from the category of coaugemented  (differential graded coassociative) coalgebras to the category of (dga) algebras, which we regard in this article as monoids over the symmetric monoidal category $\Ch$ of chain complexes.
 For any pointed space $(Y, y)$, Adams constructed a \textit{comparison map}
 \begin{equation} \label{e:adams map}
 \theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y),
@@ -128,8 +128,6 @@ We summarize this discussion in the following statement.
 	Furthermore, for any $X \in \sSet^0$, there is a zig-zag of natural quasi-isomorphisms of $E_{\infty}$ coalgebras between $\Ahat_\UM(X)$ and $\schainsUM(G(X))$.
 \end{theorem}
 
-%The main idea in the proof of the above result is to use the following ``space-level" observation: after triangulating $\widehat\ccobar({X})$, a localized version of the monoidal cubical set $\ccobar(X)$, one obtains a simplicial monoid that is naturally weak homotopy equivalent to $G(X).$ 
-
 \subsection*{Relation to previous work}
 
 For any $0$-reduced simplicial set $X$, the natural coassociative coproduct on $\cobar (\schains (X))$ obtained from Baues construction may be described directly in terms of the $E_2$-coalgebra structure of the simplicial chains $\schains(X).$ Furthermore, in the $1$-connected setting, Kadeishvili described cup-$i$ products extending the Serre product and then identified the algebraic structure on the simplicial cochains on $X$ giving rise to these operations \cite{kadeishvili1999coproducts, kadeishvili2003cup-i}.
@@ -137,9 +135,7 @@ See also \cite{pilarczyk2016cubical} for a different description of cubical cup-
 
 B. Fresse used the surjection coalgebra structure on $\schains(X)$ to construct on the cobar construction $\cobar(\schains(X))$ the  structure of a Barratt-Eccles coalgebra \cite{fresse2003hopf}.
 Our results are similar to Fresse's but we emphasize the geometric perspective developed by Baues' insight.
-In fact, the present article may be taken as an extension of Baues' original construction to the context of $E_{\infty}$ coalgebras. 
-%We also treat the case of non-simply connected spaces.
-%Namely, we describe an explicit $E_{\infty}$ coalgebra structure on the cobar construction of the coalgebra of chains on reduced simplicial in terms of the Hopf operad $U(\M)$ and as well as a localized version that models the based loop space in the non-simply connected case.
+In fact, the present article may be taken as an extension of Baues' original construction to the context of $E_{\infty}$ coalgebras.
 
 More abstract viewpoints for the iteration of the cobar and bar functors were respectively given by J. Smith \cite{smith1994cobar} and B. Fresse \cite{fresse2010props}.
 In Smith's approach, it is described how certain coalgebraic structure, called an $\mathfrak{m}$-coalgebra structure, on the chains of a simplicial complex passes to the cobar construction and how they correspond to operations on chains on the based loop space.
@@ -148,18 +144,4 @@ Although we do not pursue the following observation in this article, we mention 
 
 \subsection*{Acknowledgements}
 
-The second author acknowledges support by the \textit{Karen EDGE Fellowship} and the excellent working conditions of the \textit{Max Planck Institute for Mathematics} in Bonn, Germany. We would like to thank Clemens Berger, Matthias Franz, Kathryn Hess, Ralph Kaufmann, Emilio Minichello, and Mahmoud Zeinalian, for insightful discussions and email exchanges.  
-%In this note we consider a coassociative version of this operad which makes both, simplicial and cubical sets into $E_\infty$ coalgebras.
-%The strict associativity relation is imposed so we have a forgetful map $\coAlg_\UM \to \coAlg$ and Baues' construction could be compared to ours.
-
-%We also observe that the cubical cobar construction factors as a composition
-%$$\sSet^0 \to \Mon_{\nSet} \to \Mon_{\cSet},
-%$$
-%where $\nSet$ denotes the monoidal category of \textit{necklical sets}. A necklical set can be thought of as a version of a cubical set in which cubes are now labeled by ordered sequences of simplices called \textit{necklaces}. Injective maps of necklaces realize all cubical faces, however, non-injective maps describe a particular selection of cubical degeneracies and cubical connections. In some sense, the monoidal category of necklical sets is the framework with the minimal combinatorial data needed to make categorical sense of Baues' geometric cobar construction. Different aspects of the theory of necklaces and necklical sets have been studied in \cite{Dugger-Spivak}, \cite{Galvez-Kaufmann-Tonks}, and \cite{rivera-zeinalian-cubical}.
-
-
-%satisfying $\cobar(\schains(X)) \cong \cchains(\ccobar X)$ for any reduced simplicial set $X$ and $\cchains(\ccobar \sSing(Y, y)) \cong C(\Omega^{\cube}_y Y)$ for any pointed space $(Y, y)$, and such that, up to a choice of this isomorphism, the second chain map in Baues' factorization \eqref{e:baues factorization of adams map} is induced from a cubical map $\ccobar \mathsf{Sing}(Y, y) \to \mathsf{Sing}^\cube(\Omega_y Y)$.
-
-
-%There are several advantages to working with the coalgebra of chains and the cobar construction, as opposed to the dual algebra of cochains and the bar construction.
-%We will expand on two which are related to algebraic models in the non-simply connected setting.
+We would like to thank Clemens Berger, Matthias Franz, Kathryn Hess, Ralph Kaufmann, Emilio Minichello, and Mahmoud Zeinalian, for insightful discussions regarding this project.
