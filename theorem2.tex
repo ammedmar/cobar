@@ -108,23 +108,15 @@ The functor $\mathfrak{C}$ has a right adjoint, called the \textit{homotopy cohe
 $$\mathfrak{N} \colon \Cat_{\simplex} \to \sSet,$$ whose $n$-simplices are given by 
 $$\mathfrak{N}(\mathcal{C})_n=\text{Hom}_{\Cat_{\simplex}}(\mathfrak{C}(\simplex^n), \mathcal{C}).$$
 
-The homotopy coherent nerve functor was originally introduced by Cordier and further studied by Joyal and Lurie in the theory of $\infty$-categories.
-Dugger and Spivak described the construction more explicitly in terms of necklaces in \cite{dugger2011rigidification}.
-The adjunction between rigidification and homotopy coherent nerve yield an equivalence of two homotopy theories that model the theory of $\infty$-categories.
-The following statement is attributed to both Lurie and Joyal.
+The category of simplicial sets also serves as a combinatorial framework to model the homotopy theory of $\infty$-categories. More precisely, both Joyal and Lurie independently described a model category structure on $\sSet$ whose weak equivalences are given by a sub-collection of the weak homotopy equivalences called the \textit{categorical equivalences}, cofibrations are injective maps, and fibrant objects are quasi-categories. This model category is known as the \textit{Joyal model structure}. The Kan-Quillen model structure is a left Bousfield localization of the Joyal model structure obtained by localizing the single morphism $\simplex^1 \to \simplex^0$.
+
+On the other hand, Bergner constructed a model structure on $\Cat_{\simplex}$ having as weak equivalences those maps of simplicially enriched categories that induce a weak homotopy equivalence between the simplicial sets of morphisms and are essentially surjective after passing to the homotopy categories. Fibrant objects are categories enriched over Kan complexes. This model category is known as the \textit{Bergner model structure}. 
+
+The adjunction between rigidification and the homotopy coherent nerve yields an equivalence of homotopy theories in the following sense.
 
 \begin{theorem} \label{joyalbergner}
 	The adjunction $$ \mathfrak{C} \colon \sSet \leftrightarrows \Cat_{\simplex} :\!\mathfrak{N}$$ induces a Quillen equivalence when $\sSet$ is equipped with the Joyal model structure and $\Cat_{\simplex}$ with the Bergner model structure.
 \end{theorem}
-
-
-\begin{remark}
-	The Bergner model structure on $\Cat_{\simplex}$ has as weak equivalences those maps of simplicially enriched categories that induce a weak homotopy equivalence between the simplicial sets of morphisms and are essentially surjective after passing to the homotopy categories.
-	Fibrant objects in the Bergner model structure are precisely categories enriched over Kan complexes.
-	On the other hand, fibrant objects in the Joyal model structure on $\sSet$ are precisely quasi-categories and all objects are cofibrant.
-	The weak equivalences are known as \textit{Joyal equivalences} and, based on the above result, we can take them to be maps of simplicial sets that become weak equivalences of simplicially enriched categories after applying $\mathfrak{C}$.
-	Furthermore, the Kan-Quillen model structure is a left Bousfield localization of the Joyal model structure obtained by localizing the single morphism $\simplex^1 \to \simplex^0$.
-\end{remark}
 
 The next result relates the cubical cobar construction and the rigidification functor via the triangulation functor as defined in  \cref{ss:triangulation and its adjoint}.
 
@@ -134,7 +126,7 @@ The next result relates the cubical cobar construction and the rigidification fu
 	$$\mathfrak{C} \colon \sSet^0 \to \Mon_{\sSet}.$$
 \end{proposition}
 
-The above statement is Proposition 5.3 in \cite{rivera2018cubical}, where $\widehat{\ccobar}$ is denoted by $\mathfrak{C}_{\cube_c}.$
+The above statement is Proposition 5.3 in \cite{rivera2018cubical}, where $\widehat{\ccobar}$ is denoted by $\mathfrak{C}_{\cube_c}.$ The proof relies on a description of the rigidification functor in terms of necklaces due to Dugger and Spivak \cite{dugger2011rigidification}. 
 
 \cref{Candgcobar} also holds in the many-object setting, but we do not need this level of generality for the purposes of this article.
 
@@ -192,9 +184,20 @@ We have the following comparison between the triangulation of the localized geom
 
 The above statement should be understood as a lift to the level of simplicial sets of Hess and Tonks' map between the extended cobar construction and the chains on the Kan loop group.
 
-\subsection{The map $\Ahat$}
+\subsection{The functor $\Ahat_{\UM}$} \label{s:ahatum}
 
-\anibal{The map should be defined outside the proof. It is OK to prove the first half of thm 2 here.}
+Define the functor
+
+	$$\Ahat_{\coAlg} \colon \sSet^0 \to \Mon_{\coAlg}$$
+	as the composition
+	$$\Ahat_{\coAlg} = \cchainsAS \circ \widehat{\ccobar}.$$
+Similarly define
+	
+	$$\Ahat_{\UM} \colon \sSet^0 \to \Mon_{\coAlg_{\UM}}$$
+	as the composition
+	$$\Ahat_{\UM} = \cchainsUM \circ \widehat{\ccobar}.$$
+
+It follows directly from the definitions that $\Ahat_{\coAlg}$ is a lift of $\Ahat$, and $\Ahat_{\UM}$ is a lift $\Ahat_{\coAlg}$.
 
 \subsection{Serre--Cartan comparison map}
 
@@ -243,7 +246,7 @@ This operad, denoted $\USL$, is generated as a suboperad of $\UM$ by and all imm
 \end{center}
 where there are no hidden vertices and the strands are joined so that the associated maps $\{1, \dots, k_j\} \to \{1, \dots, n+k\}$ are order-preserving.
 From \cite{medina2021cubical} we have the following statement.
-\begin{lemma}
+\begin{lemma} \label{l:simplicialandcubical}
 	The suboperad $\USL$ of $\UM$ is an $E_\infty$-operad and the Cartan-Serre comparison map
 	\begin{equation*}
 	\CS_X \colon \schains(X) \to \cchains(\mathcal U X)
@@ -256,8 +259,23 @@ We will denote by $\chains_\USL$ the functor of (cubical or simplicial) chains w
 We remark that the inclusion $\As \to \UM$ factors through $\USL$.
 
 \subsection{A zig-zag of $E_\infty$-coalgebras}
-
-\anibal{Please the zig-zag outside the proof}
+The $E_{\infty}$-coalgebra structures on the simplicial chains on a triangulated cubical set $Y$ and on the cubical chains on $Y$ are related as follows. 
+\begin{proposition} \label{p:zigzag} 
+For any  $Y \in \cSet$ there are quasi-isomorphisms of $\USL$-coalgebras
+	\begin{equation} \label{e:zig-zag of quasi-isos}
+	\schainsUSL(\mathcal{T}Y) \xra{\simeq}
+	\cchainsUSL(\mathcal{U}\mathcal{T}Y) \xleftarrow{\simeq}
+	\cchainsUSL(Y).
+	\end{equation}	
+	\end{proposition}
+	\begin{proof}
+	The first map in \eqref{e:zig-zag of quasi-isos} is a quasi-isomorphism of $\USL$-coalgebras by \cref{l:simplicialandcubical}.
+	
+	The second map in \eqref{e:zig-zag of quasi-isos} is induced by the morphism of cubical sets $Y \to \mathcal{U} \mathcal{T} (Y)$ given by the unit of the adjunction
+	$$\mathcal{T} \colon \cSet \leftrightarrows \sSet \colon \mathcal{U}.$$
+	The unit map is in fact a weak homotopy equivalence of cubical sets since the adjunction defines a Quillen equivalence between the Kan-Quillen model structure and an analogue model structure on $\cSet$ in which all objects are cofibrant \cite{cisinski2006presheaves}.
+	Hence, the unit map induces a quasi-isomorphism of $\USL$-coalgebras after applying the cubical chains functor. 
+	\end{proof}
 
 \subsection{Proof of Theorem 2}
 
@@ -280,38 +298,9 @@ We now put together the constructions and results discussed above to deduce our 
 \end{nntheorem}
 
 \begin{proof}
-	Define the functor
-	$$\Ahat_{\UM} \colon \sSet^0 \to \Mon_{\coAlg_{\UM}}$$
-	as the composition
-	$$\Ahat_{\UM} = \cchainsUM \circ \widehat{\ccobar}.$$
-	The commutativity of the desired diagram is straightforward by construction.
-	
-	We now construct a zig-zag of quasi-isomorphisms of $E_{\infty}$-coalgebras between $\cchainsUSL(\widehat{\ccobar}(X)) = \Ahat_{\USL}(X)$ and $\schainsUSL (G(X))$ using the $E_{\infty}$ suboperad $\USL$ of $\UM$, which is suitable for comparing simplicial and cubical chains.
-	
-	\manuel{the following should just obtained by referencing the corresponging statement in the previous section about serre comparison map.}
-	
-	For any $C \in \cSet$ there are quasi-isomorphisms of $\USL$-coalgebras
-	\begin{equation} \label{e:zig-zag of quasi-isos}
-	\schainsUSL(\mathcal{T}C) \xra{\simeq}
-	\cchainsUSL(\mathcal{U}\mathcal{T}C) \xleftarrow{\simeq}
-	\cchainsUSL(C).
-	\end{equation}	
-	The first map $\schainsUSL(\mathcal{T}C) \to \cchainsUSL(\mathcal{U}\mathcal{T}C)$ is induced by the Serre collapse map.
-	This is a natural map
-	$$\schains(S) \to \cchains(\mathcal{U}S)$$
-	defined for any simplicial set $S \in \sSet.$
-	The fact that this is a quasi-isomorphism follows from a standard acyclic models argument by taking the set of simplicial cubes $\{ \simplex^0, \simplex^1, (\simplex^1)^{\times 2}, \dots\}$ as the collection of acyclic models inside $\sSet$. This map preserves the $\USL$-coalgebra structure by \cite{medina2021cubical}.
-	
-	The second map in \eqref{e:zig-zag of quasi-isos} is induced by the morphism of cubical sets $C \to \mathcal{U} \mathcal{T} (C)$ given by the unit of the adjunction
-	$$\mathcal{T} \colon \cSet \leftrightarrows \sSet \colon \mathcal{U}.$$
-	The unit map is in fact a weak homotopy equivalence of cubical sets since the adjunction defines a Quillen equivalence between the Kan-Quillen model structure and an analogue model structure on $\cSet$ in which all objects are cofibrant \cite{cisinski2006presheaves}.
-	
-	Hence, by naturality, the unit map induces a quasi-isomorphism of $\USL$-coalgebras after applying cubical chains.
-	
-	Applying the above to $C= \widehat{\ccobar}(X),$ we obtain that $\schainsUSL (\mathcal{T} \widehat{\ccobar}(X))$ and $\cchainsUSL(\widehat{\ccobar}(X)) = \Ahat_{\USL}(X)$ are quasi-isomorphic as $\USL$-coalgebras.
-	
-	By \cref{widehatgcobarandG} we have a weak equivalence of simplicial monoids
+	The first part of the theorem follows from \cref{s:ahatum}. 
+	Applying \cref{p:zigzag} to $Y= \widehat{\ccobar}(X),$ we obtain that $\schainsUSL (\mathcal{T} \widehat{\ccobar}(X))$ and $\cchainsUSL(\widehat{\ccobar}(X)) = \Ahat_{\USL}(X)$ are quasi-isomorphic via a zig-zag of natural maps of $\USL$-coalgebras. By \cref{widehatgcobarandG} we have a weak equivalence of simplicial monoids
 	$$\mathcal{T}\widehat{\ccobar}(X) \xrightarrow{\simeq} G(X)$$ for any $X \in \sSet^0.$ By naturality, we have an induced quasi-isomorphism of $\UM$-coalgebras
 	$$\schainsUSL(\mathcal{T}\widehat{\ccobar}(X)) \xra{\simeq} \schainsUSL(G(X)).$$
-	Therefore, $\Ahat_{\USL}(X)$ and $\schainsUSL(G(X))$ are quasi-isomorphic as $\USL$-coalgebras, as desired.
+	Therefore, $\Ahat_{\USL}(X)$ and $\schainsUSL(G(X))$ are quasi-isomorphic through a zig-zag of natural maps of $\USL$-coalgebras, as desired.
 \end{proof}

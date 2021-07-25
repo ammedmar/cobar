@@ -8,11 +8,19 @@ Finally, we will use this fact and the cubical cobar construction, a monoid in $
 
 \subsection{Cartesian product and Day convolution} \label{ss:day convolution}
 
-\anibal{Cartesian for simplicial sets}
+We recall the monoidal structures on simplicial sets and cubical sets that will be relevant for this article.
 
-\anibal{Day for cubical sets} 
+Given $X, X' \in \sSet$ define a new simplicial set $X \times X'$, called the \textit{cartesian product}, given by the degree-wise cartesian product of sets
 
-\anibal{singular complex and realization realization in both cases: monoidal comments}
+\[(X \times X')_n = X_n \times X'_n\]
+
+together with the cartesian product of the face and degeneracy maps. This notion makes $\sSet$ into a symmetric monoidal category with unit $\simplex^0.$ The cartesian product of simplicial sets coincides with the more general notion of the categorical product, since limits of presheaves are computed object-wise. 
+
+Given $Y, Y' \in \cSet$ define a new cubical set $Y \otimes Y'$, called the \textit{Day convolution}, given by the 
+
+\[ Y \otimes Y' = \colim_{\cube^n \to Y, \cube^{m} \to Y} \square^{n+m}. \]
+
+This notion makes $\cSet$ into a non-symmetric monoidal category with unit $\cube^0.$ The Day convolution monoidal structure can be defined more generally for presheaves over a monoidal category. 
 
 \subsection{Triangulation and its right adjoint} \label{ss:triangulation and its adjoint}
 
