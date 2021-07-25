@@ -37,7 +37,7 @@ In order to do this, we shall describe a categorical version of Adams' construct
 \subsection{Necklace category}
 
 We construct a cubical model for the based loop space using necklical sets, a notion related to both simplicial sets and cubical sets with connections.
-Different approaches to this framework can be found in \cite{baues1998hopf}, \cite{galvez2020hopf}, \cite{dugger2011rigidification}, \cite{rivera2018cubical}, \cite{rivera2019path} among other works.
+Different approaches to this framework can be found in \cite{baues1998hopf}, \cite{galvez2020hopf}, \cite{dugger2011rigidification}, \cite{rivera2018cubical}, \cite{rivera2019path}, among other works.
 
 Let $\simplex_{*,*}$ be the subcategory of the simplex category $\simplex$ with the same objects and morphisms being functors $f \colon [n] \to [m]$ satisfying $f(0) = 0$ and $f(n) = m$.
 The category $\simplex_{*,*}$ is a strict monoidal category when equipped with the monoidal structure $[n] \otimes [m] = [n+m]$, thought of as identifying the elements $n \in [n]$ and $0 \in [m]$, and unit given by $[0]$.
@@ -77,7 +77,7 @@ Given any necklace $T = [n_1] \vee \dots \vee[n_k] \in \Nec$ define the \textit{
 
 We denote the Yoneda embedding by $$\mathcal{Y} \colon \Nec \to \nSet,$$ i.e. the functor induced by $T \mapsto \Nec(-,T).$
 
-We denote by $$\mathcal{S} \colon \Nec \to \sSet$$ the functor induced by sending any necklace $T=[n_1] \vee \dots \vee[n_k] \in \Nec$ to the simplicial set $\mathcal{S}(T)= \simplex^{n_1} \vee\dots \vee \simplex^{n_k} \in \sSet$, where the wedge symbol now means we identify the last vertex of $\simplex^{n_i}$ with the first vertex of $\simplex^{n_{i+1}}$ for $i=1,\dots,k-1$.
+We denote by $$\mathcal{S} \colon \Nec \to \sSet$$ the functor induced by sending any necklace $T=[n_1] \vee \dots \vee[n_k] \in \Nec$ to the simplicial set $$\mathcal{S}(T)= \simplex^{n_1} \vee\dots \vee \simplex^{n_k} \in \sSet,$$ where the wedge symbol now means we identify the last vertex of $\simplex^{n_i}$ with the first vertex of $\simplex^{n_{i+1}}$ for $i=1,\dots,k-1$.
 
 The category of necklical sets $\nSet$ is a (non-symmetric) monoidal category when equipped with the Day convolution monoidal structure $\otimes\colon \nSet \times \nSet \to \nSet$
 $$K \otimes K' = \colim_{\substack{\mathcal{Y}(T) \to K, \\ \mathcal{Y}(T')\to K'}} \mathcal{Y}(T \vee T'),$$ as described in
@@ -94,7 +94,7 @@ by constructing a monoidal functor
 \mathcal{P} \colon \Nec \to \cube.
 \end{equation*}
 
-If $T = \simplex^0$ we set $\mathcal{P}(\simplex^0)=2^0$ and on any other $T \in \Nec$ we define $\mathcal{P}( T )= 2^{\text{dim}(T)}$.
+We first set $\mathcal{P}([0])=2^0$.On any other necklace $T \in \Nec$ we define $\mathcal{P}( T )= 2^{\text{dim}(T)}$.
 In order to define $\mathcal{P}$ on morphisms, it is sufficient to consider the following cases.
 \begin{enumerate}
 	\item For any $\partial^j \colon [n] \to [n+1]$ such that $0< j<{n+1}$, define $\mathcal{P}(\partial^j) \colon 2^{n-1}\to 2^{n}$ to be the cubical coface functor $\mathcal{P}(f)= \delta_0^{j}.$ 

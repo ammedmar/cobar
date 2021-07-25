@@ -2,7 +2,7 @@
 \section{Introduction}
 
 In 1956, F. Adams introduced the cobar construction to model algebraically the passage from a simply connected pointed space to its topological monoid of based loops \cite{adams1956cobar}.
-Fixing a commutative ring, the algebraic cobar construction may be described as a functor $\cobar \colon \coAlg^* \to \Mon_{\Ch}$ from the category of coaugemented (dgca) coalgebras to the category of algebras, which we regard in this article as monoids over the symmetric monoidal category $\Ch$ of chain complexes.
+Fixing a commutative ring, the algebraic cobar construction may be described as a functor $\cobar \colon \coAlg^* \to \Mon_{\Ch}$ from the category of coaugemented  (dgca) coalgebras to the category of algebras, which we regard in this article as monoids over the symmetric monoidal category $\Ch$ of chain complexes.
 For any pointed space $(Y, y)$, Adams constructed a \textit{comparison map}
 \begin{equation} \label{e:adams map}
 \theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y),
@@ -53,16 +53,16 @@ In other words, Baues lifted Adams' cobar construction $\cobar \circ \schains$ s
 \end{equation*}
 Furthermore, when $(Y, y)$ is a pointed space, Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y)$ is a quasi-isomorphism of bialgebras, i.e., of monoids in $\coAlg$.
 
-We extend Baues' work by lifting $\cobar \circ \schains$ to the category of $E_\infty$ bialgebras, that is to say, of monoids in $E_\infty$ coalgebras; a notion that should not be confused with that of bialgebras over an $E_\infty$ prop.
+We extend Baues' work by lifting $\cobar \circ \schains$ to the category of $E_\infty$ \textit{bialgebras}, that is to say, of monoids in $E_\infty$ coalgebras; a notion that should not be confused with that of bialgebras over an $E_\infty$ prop.
 More precisely, our lift is to the category of monoids in $\coAlg_\UM$, where $\coAlg_\UM$ is the category of coalgebas over the combinatorial model $U(\M)$ of the $E_\infty$ operad introduced via a finitely presented prop in \cite{medina2020prop1}.
-For this statement to be meaningful, we first need to define a monoidal structure on $\coAlg_\UM$.the
+For this statement to be meaningful, we first need to define a monoidal structure on $\coAlg_\UM$.
 We do so by introducing a Hopf structure on $U(\M)$, that is to say, by making it into an operad over the category of coalgebras, a structure that has other potential applications \cite{livernet2008hopf}.
 Once we have shown that $\coAlg_\UM$ is a monoidal category, we prove the main technical result of this work.
 It states that the functor $\cchainsUM \colon \cSet \to \coAlg_\UM$ defined in \cite{medina2021cubical} as a lift of $\cchainsAS$ is monoidal.
 
 Generalizing Baues' first step in the construction of his lift of Adams' cobar construction, we have that $\cchainsUM(\ccobar X)$ is a monoid in $\coAlg_\UM$.
 This is because $\ccobar X$ is a monoid in $\cSet$ and $\cchainsUM$ is shown to be a monoidal functor.
-Similar to Baues' second step, we use for any reduced simplicial set $X$ his isomorphism $\cobar(\schains(X)) \to \cchains(\ccobar X)$ to transfer the constructed $E_\infty$ bialgebra structure on $\cchains(\ccobar X)$ to $\cobar(\schains(X))$.
+Similar to Baues' second step, we use for any reduced simplicial set $X$ the natural isomorphism $\cobar(\schains(X)) \to \cchains(\ccobar X)$ to transfer the constructed $E_\infty$ bialgebra structure on $\cchains(\ccobar X)$ to $\cobar(\schains(X))$.
 In particular we have, generalizing Baues' result, that for any pointed space $(Y, y)$ Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y)$ is a quasi-isomorphism of $E_\infty$ bialgebras.
 We condense this discussion in our main result.
 
@@ -87,15 +87,15 @@ from reduced simplicial sets to the category of simplicial groups with the prope
 In \cite{mcclure2003multivariable, berger2004combinatorial}, the functor of (normalized) chains $\schains$ was lifted to that of $E_\infty$ coalgebras, a result generalized in \cite{medina2020prop1} by constructing a lift $\schains_{\UM} \colon \sSet \to \coAlg_{U(\M)}$. Hence, a natural problem is to compare the algebraic structures in $\cobar \schains(X)$ and $\schains_{\UM}(G(X))$. In general, for an arbitraty $X \in \sSet^0$, $\cobar \schains(X)$ and $\schains(G(X))$ are not quasi-isomorphic.
 This can be seen from the fact that, if $X$ is not fibrant, $H_0(\cobar \schains(X))$ need not be a group ring, while $H_0(G(X))$ is always isomorphic to $ \k[\pi_1(|X|)]$.
 
-Hess and Tonks proposed a way of modifying the cobar construction so that it could be compare to the chains on the Kan loop group \cite{hess2010cobar}. They construct a localized version of the cobar construction, called \textit{extended cobar construction}, as a functor
+Hess and Tonks proposed a way of modifying the cobar construction so that it could be compared to the chains on the Kan loop group \cite{hess2010cobar}. They construct a localized version of the cobar construction, called \textit{extended cobar construction}, which we interpret as a functor
 $$\Ahat \colon \sSet^0 \to \Mon_\Ch$$
-by formally inverting a basis of $0$-degree elements in $\mathcal{A}(X)$ together with a natural quasi-isomorphism of algebras
+extending the composition $$\A:= \cobar \circ \schains \colon \sSet^0 \to \Mon_\Ch$$ by formally inverting a basis of $0$-degree elements in $\mathcal{A}(X)$ determined by the $1$-simplices of $X$ for any $X \in \sSet^0.$ Hess and Tonks also describe a natural quasi-isomorphism of algebras
 \begin{equation*}
-\phi_X \colon \Ahat(X) \to \schains(G(X))
+\phi_X \colon \Ahat(X) \to \schains(G(X)).
 \end{equation*}
-for any $X \in \sSet^0.$
 
-Following Baues’ construction, Franz described a lift of $\Ahat$ to a functor
+
+Following Baues’ construction, Franz described in \cite{franz2020szczarba} a lift of $\Ahat$ to a functor
 \begin{equation*}
 \Ahat_{\coAlg} \colon \sSet^0 \to \Mon_{\coAlg}
 \end{equation*}
@@ -108,7 +108,7 @@ Using similar methods to those that lead to \cref{t:1st main thm in the intro}, 
 \begin{equation*}
 \Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}.
 \end{equation*}
-We may now try to compare the above functor with the Kan loop group construction via Hess and Tonk's comparison map. However, there is a fundamental asymmetry between the interaction of the cubical chains and simplicial chains with the monoidal structures that we have to take into account. For any two cubical sets $K$ and $K'$ the isomorphism $$\cchains(K) \otimes \cchains(K') \xrightarrow{\cong} \cchains(K \otimes K')$$ preserves the $U(\M)$-coalgebra structures. However, for any two simplicial sets $X$ and $Y$, the Eilenberg-Zilber shuffle map $$\schains(X) \otimes \schains(Y) \xrightarrow{\simeq} \schains(X \times Y)$$ is a quasi-isomorphism of coassociative coalgebras but not of $U(\M)$-coalgebras. This last point has two important manifestations: 1) the $U(\M)$-coalgebra structure of $\schainsUM(G(X))$ is not (strictly) compatible with the associative algebra structure, i.e. it is not an $E_{\infty}$-bialgera in our sense, and 2) the Hess and Tonks comparison map $\phi_X \colon \Ahat(X) \to \schains(G(X))$ does not preserve the $U(\M)$-coalgebra structures, namely, it is not compatible with the lifts $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$
+We may now try to compare the above functor with the Kan loop group construction via Hess and Tonk's comparison map. However, there is a fundamental asymmetry between the interaction of the cubical chains and simplicial chains with the monoidal structures that we have to take into account. For any two cubical sets $K$ and $K'$ the isomorphism $$\cchains(K) \otimes \cchains(K') \xrightarrow{\cong} \cchains(K \otimes K')$$ preserves the $U(\M)$-coalgebra structures. However, for any two simplicial sets $X$ and $X'$, the Eilenberg-Zilber shuffle map $$\schains(X) \otimes \schains(X') \xrightarrow{\simeq} \schains(X \times X')$$ is a quasi-isomorphism of coassociative coalgebras but not of $U(\M)$-coalgebras. This last point has two important manifestations: 1) the $U(\M)$-coalgebra structure of $\schainsUM(G(X))$ is not (strictly) compatible with the algebra structure, i.e. it is not an $E_{\infty}$-bialgera in our sense, and 2) the Hess and Tonks comparison map $\phi_X \colon \Ahat(X) \to \schains(G(X))$ does not preserve the $U(\M)$-coalgebra structures, namely, it is not compatible with the lifts $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$
 and $\schainsUM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$. Nevertheless, we construct a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras connecting $\Ahat(X)$ and $\schains(G(X))$, for any $X \in \sSet^0$
 
 We summarize this discussion in the following statement.
@@ -142,11 +142,13 @@ In fact, the present article may be taken as an extension of Baues' original con
 %Namely, we describe an explicit $E_{\infty}$ coalgebra structure on the cobar construction of the coalgebra of chains on reduced simplicial in terms of the Hopf operad $U(\M)$ and as well as a localized version that models the based loop space in the non-simply connected case.
 
 More abstract viewpoints for the iteration of the cobar and bar functors were respectively given by J. Smith \cite{smith1994cobar} and B. Fresse \cite{fresse2010props}.
-In Smith's approach, it is described how certain coalgebraic structure on the chains of a simplicial complex passes to the cobar construction and how they correspond to operations on chains on the based loop space.
-In Fresse's approach, a model category structure on operads and their algebras is the operating framework; he proves that the bar construction can be iterated for $E_\infty$ algebras that are cofibrant.
-Although we do not pursue the following observation in this article, we mention that the reduced version of the $E_\infty$ operad $U(\M)$ is cofibrant. In both approaches there are restrictions on the fundamental group of the underlying space or simplicial set, which we remove in this work. Also their constructions leave the cubical geometry of the situation, effectively used by both Adams and Baues, somewhat unexplored.
+In Smith's approach, it is described how certain coalgebraic structure, called an $\mathfrak{m}$-coalgebra structure, on the chains of a simplicial complex passes to the cobar construction and how they correspond to operations on chains on the based loop space.
+In Fresse's approach, a model category structure on operads and their algebras is the operating framework; he proves that the bar construction can be iterated for $E_\infty$ algebras under cofibrancy conditions.
+Although we do not pursue the following observation in this article, we mention that the reduced version of the $E_\infty$ operad $U(\M)$ is cofibrant. In both approaches there are restrictions on the fundamental group of the underlying space or simplicial set, which we remove in this work. Also their constructions leave the cubical geometry of the situation, effectively used in the seminal work of both Adams and Baues, somewhat unexplored.
 
+\subsection*{Acknowledgements}
 
+The second author acknowledges support by the \textit{Karen EDGE Fellowship} and the excellent working conditions of the \textit{Max Planck Institute for Mathematics} in Bonn, Germany. We would like to thank Clemens Berger, Matthias Franz, Kathryn Hess, Ralph Kaufmann, Emilio Minichello, and Mahmoud Zeinalian, for insightful discussions and email exchanges.  
 %In this note we consider a coassociative version of this operad which makes both, simplicial and cubical sets into $E_\infty$ coalgebras.
 %The strict associativity relation is imposed so we have a forgetful map $\coAlg_\UM \to \coAlg$ and Baues' construction could be compared to ours.
 
