@@ -192,14 +192,79 @@ We have the following comparison between the triangulation of the localized geom
 
 The above statement should be understood as a lift to the level of simplicial sets of Hess and Tonks' map between the extended cobar construction and the chains on the Kan loop group.
 
-\subsection{Serre comparison map}
+\subsection{The map $\Ahat$}
 
-TBW
+\anibal{The map should be defined outside the proof. It is OK to prove the first half of thm 2 here.}
+
+\subsection{Serre--Cartan comparison map}
+
+We review from \cite{medina2021cubical} the relationship between the $E_\infty$-structures defined on simplicial chains in \cref{ss:e-infty on simplicial} and on cubical chains in \cref{ss:e-infty on cubical}.
+
+In \cite[sect]{serre1951homologie}, the \textit{Serre--Cartan collapse} $\gcube^n \to \gsimplex^n$ was introduced and used to define a natural quasi-isomorphism of coalgebras $\sS(Z) \to \cS(Z)$ for any topological space $Z$.
+This map factors as
+\begin{equation*}
+\chains(\sSing(Z)) \xra{\CS_{\sSing(Z)}}
+\cchains(\mathcal{U} \sSing(Z)) \to
+\chains(\cSing(Z)),
+\end{equation*}
+where $\CS_X$, referred to as the \textit{Serre--Cartan comparison map}, is a quasi-isomorphism defined for any simplicial set $X$, whereas the other chain map is induced from a cubical map.
+
+Although both $\schains(X)$ and $\cchains(\mathcal{U} X)$ have natural $\UM$-structures, the map $\CS_X$ is not a morphism of $\UM$-coalgebras for a generic simplicial set $X$.
+But, after restriction of their $\UM$-structures to a sub-$E_\infty$-operad, the Cartan-Serre comparison map becomes a morphism of $E_\infty$-coalgebras.
+This operad, denoted $\USL$, is generated as a suboperad of $\UM$ by and all immerse graphs of the form
+\begin{center}
+	\begin{tikzpicture}[scale=1]
+	\draw (0,0)--(0,-.6) node[below, scale=.75]{$1$};
+	\draw (0,0)--(.5,.5);
+	\draw (-.3, .3)-- (-.2,.5) node[scale=.75] at (-.2,.7) {\qquad $1\, \ \ 2\ \ ...\ \ k_1$};
+	\draw (-.5,.5)--(0,0);
+	\node[scale=.75] at (.11,.4){$...$};
+	
+	\node[scale=.75] at (1,0){$\cdots$};
+	\node[scale=.75] at (1,-.9){$\cdots$};
+	
+	\draw (2,0)--(2,-.68) node[scale=.75, below]{$r$};
+	\draw (2,0)--(2.5,.5);
+	\draw (1.7, .3)--(1.8,.5) node[scale=.75] at (1.78,.7) {\qquad $1\, \ \ 2\ \ ...\ \ k_r$};
+	\draw (1.5,.5)--(2,0);
+	\node[scale=.75] at (2.11,.4){$...$};
+	
+	\draw (1,2.5)--(1,3) node[scale=.75, above]{$1$};
+	\draw (1,2.5)--(0,2) node[scale=.75, below]{$1$};
+	\draw (.25,2.125)--(.5,2) node[scale=.75, below]{$2$};
+	\draw (.5,2.25)--(1,2) node[scale=.75, below]{$3$};
+	\draw (1,2.5)--(2,2) node[scale=.75, below]{\ \quad $n + r$};
+	\node[scale=.75] at (1.5,1.75){$\cdots$};
+	
+	\node[scale=.75] at (1,1.3) {$\vdots$};
+	
+	\node at (2.85,0){};
+	\end{tikzpicture}
+\end{center}
+where there are no hidden vertices and the strands are joined so that the associated maps $\{1, \dots, k_j\} \to \{1, \dots, n+k\}$ are order-preserving.
+From \cite{medina2021cubical} we have the following statement.
+\begin{lemma}
+	The suboperad $\USL$ of $\UM$ is an $E_\infty$-operad and the Cartan-Serre comparison map
+	\begin{equation*}
+	\CS_X \colon \schains(X) \to \cchains(\mathcal U X)
+	\end{equation*}
+	is a natural quasi-isomorphism of $\USL$-coalgebras for any simplicial set $X$.
+\end{lemma}
+
+We will denote by $\chains_\USL$ the functor of (cubical or simplicial) chains with its induced $\USL$-structure.
+
+We remark that the inclusion $\As \to \UM$ factors through $\USL$.
+
+\subsection{A zig-zag of $E_\infty$-coalgebras}
+
+\anibal{Please the zig-zag outside the proof}
 
 \subsection{Proof of Theorem 2}
+
 We now put together the constructions and results discussed above to deduce our first main theorem, stated in the introduction as \cref{t:2nd main thm in the intro} and restated here for convenience.
 
-\begin{nntheorem} There exists a functor $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$ that fits into a commutative diagram
+\begin{nntheorem}
+	There exists a functor $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$ that fits into a commutative diagram
 	\begin{equation*}
 	\begin{tikzcd}[row sep=small]
 	& \Mon_{\coAlg_\UM} \arrow[d] \\
@@ -213,6 +278,7 @@ We now put together the constructions and results discussed above to deduce our 
 	\end{equation*}
 	Furthermore, for any $X \in \sSet^0$, there is a zig-zag of natural quasi-isomorphisms of $\USL$-coalgebras between $\Ahat_\USL(X)$ and $\schainsUSL(G(X))$.
 \end{nntheorem}
+
 \begin{proof}
 	Define the functor
 	$$\Ahat_{\UM} \colon \sSet^0 \to \Mon_{\coAlg_{\UM}}$$
@@ -234,8 +300,7 @@ We now put together the constructions and results discussed above to deduce our 
 	This is a natural map
 	$$\schains(S) \to \cchains(\mathcal{U}S)$$
 	defined for any simplicial set $S \in \sSet.$
-	The fact that this is a quasi-isomorphism follows from a standard acyclic models argument by taking the set of simplicial cubes $\{ \simplex^0, \simplex^1, (\simplex^1)^{\times 2}, \dots\}$
-as the collection of acyclic models inside $\sSet$. This map preserves the $\USL$-coalgebra structure by \cite{medina2021cubical}.
+	The fact that this is a quasi-isomorphism follows from a standard acyclic models argument by taking the set of simplicial cubes $\{ \simplex^0, \simplex^1, (\simplex^1)^{\times 2}, \dots\}$ as the collection of acyclic models inside $\sSet$. This map preserves the $\USL$-coalgebra structure by \cite{medina2021cubical}.
 	
 	The second map in \eqref{e:zig-zag of quasi-isos} is induced by the morphism of cubical sets $C \to \mathcal{U} \mathcal{T} (C)$ given by the unit of the adjunction
 	$$\mathcal{T} \colon \cSet \leftrightarrows \sSet \colon \mathcal{U}.$$
