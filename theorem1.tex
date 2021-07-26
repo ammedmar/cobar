@@ -77,7 +77,15 @@ The category of \textit{necklical sets} is the functor category $\nSet=\Fun[\Nec
 
 We denote the Yoneda embedding by $$\mathcal{Y} \colon \Nec \to \nSet,$$ i.e. the functor induced by $T \mapsto \Nec(-,T).$
 
-We denote by $$\mathcal{S} \colon \Nec \to \sSet$$ the functor induced by sending any necklace $T=[n_1] \vee \dots \vee[n_k] \in \Nec$ to the simplicial set $$\mathcal{S}(T)= \simplex^{n_1} \vee\dots \vee \simplex^{n_k} \in \sSet,$$ where the wedge symbol now means we identify the last vertex of $\simplex^{n_i}$ with the first vertex of $\simplex^{n_{i+1}}$ for $i=1,\dots,k-1$.
+We denote by
+\begin{equation*}
+\mathcal{S} \colon \Nec \to \sSet
+\end{equation*}
+the functor induced by sending any necklace $T = [n_1] \vee \dots \vee[n_k] \in \Nec$ to the simplicial set
+\begin{equation*}
+\mathcal{S}(T)= \simplex^{n_1} \vee\dots \vee \simplex^{n_k},
+\end{equation*}
+where the wedge symbol now means we identify the last vertex of $\simplex^{n_i}$ with the first vertex of $\simplex^{n_{i+1}}$ for $i = 1, \dots, k-1$.
 
 The category of necklical sets $\nSet$ is a (non-symmetric) monoidal category when equipped with the Day convolution monoidal structure $\otimes\colon \nSet \times \nSet \to \nSet$
 $$K \otimes K' = \colim_{\substack{\mathcal{Y}(T) \to K, \\ \mathcal{Y}(T')\to K'}} \mathcal{Y}(T \vee T'),$$ as described in
@@ -164,7 +172,7 @@ The cubical cobar functor $\ccobar\colon \sSet^0 \to \Mon_{\cSet}$ is related to
 
 \begin{proof} 
 	Denote by $\iota_n \in (\cube^n)_n$ the top dimensional non-degenerate element of the standard $n$-cube with connections $\cube^n$.
-	Note that for any $X \in \sSet^0$, we may represent any non-degenerate $n$-cube $\alpha \in (\mathcal{P}_!(\ncobar(X)))_n$ as a pair $\alpha=[\sigma \colon \mathcal{Y}(T) \to X, \iota_n]$ for some $T=[n_1] \vee \dots \vee [n_k] \in \Nec$ with $\text{dim}(T)=n_1+ \dots+n_k-k=n.$
+	Note that for a reduced simplicial set $X$, we may represent any non-degenerate $n$-cube $\alpha \in (\mathcal{P}_!(\ncobar(X)))_n$ as a pair $\alpha = [\sigma \colon \mathcal{Y}(T) \to X, \iota_n]$ for some $T = [n_1] \vee \dots \vee [n_k] \in \Nec$ with $\text{dim}(T) = n_1 + \dots + n_k-k = n$.
 	
 	To define an algebra map
 	\begin{equation*}
@@ -226,13 +234,3 @@ We now put together the constructions and results discussed above to deduce our 
 	of monoids in $\coAlg_{\UM}$, lifting Adams' classical map by \cref{factorization}, as desired.
 	Since $\sSing(Z, z)$ is a fibrant reduced simplicial set, Adams' map $\theta_Z$ is a quasi-isomorphism, as proven in \cite{rivera2018cubical} and \cite{rivera2019path}. 
 \end{proof}
-
-%In this section we revisit two combinatorial models for the based loop space of a reduced simplicial set $X \in \sSet^0$.
-%First we discuss a cubical model which has the feature that after taking cubical chains we obtain a algebra which is naturally \textit{isomorphic} to the cobar construction on the connected coalgebra of simplicial normalized chains $\schains(X)$.
-%This is a reinterpretation of a construction of Baues \cite{baues1998hopf}.
-%We also describe a version of the model which is localized at the $1$-simplices of $X$ and recovers the extended cobar construction defined in \cite{hess2010cobar} after applying cubical chains.
-%This localization step is required in order to obtain the correct homotopy type of the based loop space in the non-simply connected, non-fibrant setting.
-%The construction of the cubical model for the based loop space is best described using necklical sets, a notion related to both simplicial sets and cubical sets with connections.
-%Different approaches to this framework can be found in \cite{baues1998hopf}, \cite{galvez2020hopf}, \cite{dugger2011rigidification}, \cite{rivera2018cubical}, \cite{rivera2018cubical}, among other works.
-%We start the section by reviewing this framework.
-%We finish the section by reviewing the classical Kan loop group functor and relating it to the cubical model for the based loop space.

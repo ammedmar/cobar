@@ -1,7 +1,8 @@
 
 \section{Relation to the Kan loop group construction}
 
-The goal of this section is to prove \cref{t:2nd main thm in the intro}. This will require some basic constructions and results from homotopy theory, which we will review for completeness. 
+The goal of this section is to prove \cref{t:2nd main thm in the intro}.
+This will require some basic constructions and results from homotopy theory, which we will review for completeness.
 
 \subsection{Kan's loop group construction}
 
@@ -20,7 +21,7 @@ The based loop space of a reduced simplicial set may be modeled in purely combin
 G \colon \sSet^0 \to \mathsf{sGrp}
 \end{equation*}
 defined as follows.
-For any $X \in \sSet^0$ each $G(X)_n$ is the group with one generator $\overline{x}$ for every simplex $x \in X_{n+1}$ modulo the relation $\overline{s_0(x)} = e$.
+For any reduced simplicial set $X$ each $G(X)_n$ is the group with one generator $\overline{x}$ for every simplex $x \in X_{n+1}$ modulo the relation $\overline{s_0(x)} = e$.
 The face and degeneracy maps are defined by the following equations
 \begin{enumerate}
     \item $\delta_0(\overline{x}) = \overline{\delta_1(x)} \cdot (\overline{\delta_0(x)})^{-1}$,
@@ -28,13 +29,15 @@ The face and degeneracy maps are defined by the following equations
     \item $s_n(\overline{x})= \overline{s_{n+1}(x)}$.
 \end{enumerate}
 
-Berger showed that this construction models the based loop space \textit{as a topological monoid,} more precisely, he showed that for any $X \in \sSet^0$, the geometric realization of the Kan loop group $|G(X)|$ is weak homotopy equivalent, as a topological monoid, to the based loop space $\Omega|X|$ on the geometric realization of $X$ \cite{berger1995loops}.
+Berger showed that this construction models the based loop space \textit{as a topological monoid,} more precisely, he showed that for any reduced simplicial set $X$, the geometric realization of the Kan loop group $|G(X)|$ is weak homotopy equivalent, as a topological monoid, to the based loop space $\Omega|X|$ on the geometric realization of $X$ \cite{berger1995loops}.
 
 One may construct a model category structure on the category $\mathsf{sGrp}$ of simplicial groups such that 
-both weak equivalences and fibrations are maps of simplicial groups whose underlying maps of simplicia sets are weak homotopy equivalences and Kan fibrations. We call this model category structure the \textit{Kan model structure on $\sGrp.$}
+both weak equivalences and fibrations are maps of simplicial groups whose underlying maps of simplicia sets are weak homotopy equivalences and Kan fibrations.
+We call this model category structure the \textit{Kan model structure on $\sGrp.$}
 
 The Kan loop group functor has a right adjoint usually denoted by 
-$$\overline{W} \colon \mathsf{sGrp} \to \sSet^0,$$ which is a model for the classifying space of a simplicial group. This adjunction induces an equivalence of homotopy theories in the following sense.
+$$\overline{W} \colon \mathsf{sGrp} \to \sSet^0,$$ which is a model for the classifying space of a simplicial group.
+This adjunction induces an equivalence of homotopy theories in the following sense.
 
 
 \begin{theorem} \label{kan}
@@ -47,12 +50,16 @@ For a proof of the above statement we refer to \cite[Chapter V]{goerss2009simpli
 
 \subsection{Localization of the cubical cobar construction}
 
-The proof that Adams' map in \cref{t:1st main thm in the intro} is a quasi-isomorphism relies on the fibrancy condition of the underlying Kan complex. In general, for an arbitrary reduced simplicial set $X$, the cobar construction $\cobar \schains(X)$ is not naturally quasi-isomorphic to $S^{\cube}(\Omega|X|),$ the singular cubical chains on the based loop space of the geometric realization of $X$. This is true, however, if $X$ is $1$-connected.
+The proof that Adams' map in \cref{t:1st main thm in the intro} is a quasi-isomorphism relies on the fibrancy condition of the underlying Kan complex.
+In general, for an arbitrary reduced simplicial set $X$, the cobar construction $\cobar \schains(X)$ is not naturally quasi-isomorphic to $S^{\cube}(\Omega|X|),$ the singular cubical chains on the based loop space of the geometric realization of $X$.
+This is true, however, if $X$ is $1$-connected.
 
-In \cite{hess2010cobar}, it is described how to formally invert the elements of $X_1$ inside $\cobar \schains(X)$ to obtain the correct quasi-isomorphism type. The resulting model, called the extended cobar construction, is then compared as an algebra to the chains on the classical the Kan loop group construction $G(X)$. We lift these constructions to the ``space-level" with the goal of comparing the $E_{\infty}$-coalgebra structures after taking chains. 
+In \cite{hess2010cobar}, it is described how to formally invert the elements of $X_1$ inside $\cobar \schains(X)$ to obtain the correct quasi-isomorphism type.
+The resulting model, called the extended cobar construction, is then compared as an algebra to the chains on the classical the Kan loop group construction $G(X)$.
+We lift these constructions to the ``space-level" with the goal of comparing the $E_{\infty}$-coalgebra structures after taking chains.
 
 Denote by $$\mathcal{L} \colon \Mon_{\sSet} \to \sGrp$$ the functor from simplicial monoids to simplicial groups defined by formally inverting all morphisms (degree by degree) subject to the usual relations.
-If $M \in \Mon_{\sSet}$ and $A \in M_0$ is a set of $0$-morphisms, we denote by $\mathcal{L}_AM$ the simplicial monoid obtained by formally inverting the elements of $A$, i.e., the pushout
+If $M \in \Mon_{\sSet}$ and $A \in M_0$ is a set of $0$-morphisms, we denote by $\mathcal{L}_AM$ the simplicial monoid obtained by formally inverting the elements of $A$, i.e., the push-out
 $$\mathcal{L}_AM = M \coprod_{A} \mathcal{L}F(A),$$
 where $F(A)$ is the monoid freely generated by the set $A$.
 
@@ -72,13 +79,12 @@ Hence, we reinterpret the extended cobar construction as the functor
 \begin{equation*}
 \Ahat \colon \sSet^0 \to \Mon_{\Ch}
 \end{equation*}
-
-given on any $X \in \sSet^0$ by formally inverting the set of $0$-cycles
+given on any reduced simplicial set $X$ by formally inverting the set of $0$-cycles
 \begin{equation*}
 A_X = \{ [\overline{\sigma}]+1_R \mid \sigma \in X_1 \} \subset \A(X)_0
 \end{equation*}
 in the associative algebra $\A(X)$.
-This construction has the property that, for any $X \in \sSet^0$ there is a natural isomorphism of algebras
+This construction has the property that, for any reduced simplicial set $X$ there is a natural isomorphism of algebras
 \begin{equation*}
 H_0(\Ahat(X)) \cong R[\pi_1(X)].
 \end{equation*}
@@ -96,21 +102,28 @@ In order to relate the functors $\widehat{\ccobar} \colon \sSet^0 \to \Mon_{\cSe
 
 This functor is obtained by restricting to $\sSet^0$ a more general construction
 $$\mathfrak{C}: \sSet \to \Cat_{\simplex},$$
-where $\Cat_{\simplex}$ denotes the category of small categories enriched over the monoidal category $(\sSet, \times)$. 
+where $\Cat_{\simplex}$ denotes the category of small categories enriched over the monoidal category $(\sSet, \times)$.
 
 Given integers $0 \leq  i \leq j$ denote by $P_{i,j}$ the category whose objects are all the subsets of $\{i, i+1, \dots, j\}$ containing both $i$ and $j$ and morphisms are inclusions.
 For each integer $n \geq 0$ define $\mathfrak{C}(\simplex^n) \in \Cat_{\simplex}$ to have the set $\{0, \dots, n\}$ as objects and if $i \leq j$, define $\mathfrak{C}(\simplex^n)(i,j)= N(P_{i,j})$, where $N$ is the ordinary nerve functor.
 If $j < i$, $\mathfrak{C}(\simplex^n)(i,j) = \emptyset.$ The composition law in $\mathfrak{C}(\simplex^n)$ is induced by the functor $P_{j,k} \times P_{i,k} \to P_{i,k}$ defined as the union of sets.
 The assignment $[n] \mapsto \mathfrak{C}(\simplex^n)$ defines a cosimplicial object in $\Cat_{\simplex}$.
-For any $S \in \sSet$ we can now define
- $$\mathfrak{C}(S) = \underset{{\simplex^n \to S} }{\text{colim }} \mathfrak{C}(\simplex^n).$$
+For any reduced simplicial set $S$ we can now define
+\begin{equation*}
+\mathfrak{C}(S) = \underset{{\simplex^n \to S} }{\text{colim }} \mathfrak{C}(\simplex^n).
+\end{equation*}
 The functor $\mathfrak{C}$ has a right adjoint, called the \textit{homotopy coherent nerve functor} and denoted by
 $$\mathfrak{N} \colon \Cat_{\simplex} \to \sSet,$$ whose $n$-simplices are given by 
 $$\mathfrak{N}(\mathcal{C})_n=\text{Hom}_{\Cat_{\simplex}}(\mathfrak{C}(\simplex^n), \mathcal{C}).$$
 
-The category of simplicial sets also serves as a combinatorial framework to model the homotopy theory of $\infty$-categories. More precisely, both Joyal and Lurie independently described a model category structure on $\sSet$ whose weak equivalences are given by a sub-collection of the weak homotopy equivalences called the \textit{categorical equivalences}, cofibrations are injective maps, and fibrant objects are quasi-categories. This model category is known as the \textit{Joyal model structure}. The Kan-Quillen model structure is a left Bousfield localization of the Joyal model structure obtained by localizing the single morphism $\simplex^1 \to \simplex^0$.
+The category of simplicial sets also serves as a combinatorial framework to model the homotopy theory of $\infty$-categories.
+More precisely, both Joyal and Lurie independently described a model category structure on $\sSet$ whose weak equivalences are given by a sub-collection of the weak homotopy equivalences called the \textit{categorical equivalences}, cofibrations are injective maps, and fibrant objects are quasi-categories.
+This model category is known as the \textit{Joyal model structure}.
+The Kan-Quillen model structure is a left Bousfield localization of the Joyal model structure obtained by localizing the single morphism $\simplex^1 \to \simplex^0$.
 
-On the other hand, Bergner constructed a model structure on $\Cat_{\simplex}$ having as weak equivalences those maps of simplicially enriched categories that induce a weak homotopy equivalence between the simplicial sets of morphisms and are essentially surjective after passing to the homotopy categories. Fibrant objects are categories enriched over Kan complexes. This model category is known as the \textit{Bergner model structure}. 
+On the other hand, Bergner constructed a model structure on $\Cat_{\simplex}$ having as weak equivalences those maps of simplicially enriched categories that induce a weak homotopy equivalence between the simplicial sets of morphisms and are essentially surjective after passing to the homotopy categories.
+Fibrant objects are categories enriched over Kan complexes.
+This model category is known as the \textit{Bergner model structure}.
 
 The adjunction between rigidification and the homotopy coherent nerve yields an equivalence of homotopy theories in the following sense.
 
@@ -126,7 +139,7 @@ The next result relates the cubical cobar construction and the rigidification fu
 	$$\mathfrak{C} \colon \sSet^0 \to \Mon_{\sSet}.$$
 \end{proposition}
 
-The above statement is Proposition 5.3 in \cite{rivera2018cubical}, where $\widehat{\ccobar}$ is denoted by $\mathfrak{C}_{\cube_c}.$ The proof relies on a description of the rigidification functor in terms of necklaces due to Dugger and Spivak \cite{dugger2011rigidification}. 
+The above statement is Proposition 5.3 in \cite{rivera2018cubical}, where $\widehat{\ccobar}$ is denoted by $\mathfrak{C}_{\cube_c}.$ The proof relies on a description of the rigidification functor in terms of necklaces due to Dugger and Spivak \cite{dugger2011rigidification}.
 
 \cref{Candgcobar} also holds in the many-object setting, but we do not need this level of generality for the purposes of this article.
 
@@ -145,16 +158,18 @@ The starting point of the comparison between the rigidification functor and Kan'
 We now deduce the following relationship between the rigidification functor $\mathfrak{C}$ and the Kan loop group functor $G$.
 
 \begin{proposition} \label{CandG}
-	Let $X \in \sSet^0$ be a reduced simplicial set.
 	There are natural weak equivalences of simplicial monoids
-	$$\mathcal{L}_{X_1} \mathfrak{C}(X) \xra{\simeq} \mathcal{L}\mathfrak{C}(X) \xra{\simeq} G(X).$$
+	\begin{equation*}
+	\mathcal{L}_{X_1} \mathfrak{C}(X) \xra{\simeq} \mathcal{L}\mathfrak{C}(X) \xra{\simeq} G(X)
+	\end{equation*}
+	for any reduced simplicial set $X$.
 \end{proposition}
 
 \begin{proof}
-	Since $\mathfrak{C}$ is a left Quillen functor and every $X \in \sSet$ is cofibrant in the Joyal model structure, it follows from \cref{joyalbergner} that the simplicially enriched category $\mathfrak{C}(X)$ is a cofibrant.
+	Since $\mathfrak{C}$ is a left Quillen functor and every simplicial set $X$ is cofibrant in the Joyal model structure, it follows from \cref{joyalbergner} that the simplicially enriched category $\mathfrak{C}(X)$ is a cofibrant.
 	Proposition 9.5 of \cite{dwyer1980simplicial} implies that the natural inclusion $\mathcal{L}_{X_1} \mathfrak{C}(X) \to \mathcal{L}\mathfrak{C}(X)$ is a weak equivalence of simplicially enriched categories.
 	
-	By \cref{hinich} we have that for any $X \in \sSet^0$, $\psi_{G(X)} \colon \overline{W}(G(X)) \xrightarrow{\simeq} \mathfrak{N}(G(X))$ is a weak homotopy equivalence.
+	By \cref{hinich} we have that $\psi_{G(X)} \colon \overline{W}(G(X)) \xrightarrow{\simeq} \mathfrak{N}(G(X))$ is a weak homotopy equivalence for any reduced simplicial set $X$.
 	By \cref{kan}, we have a weak homotopy equivalence $X \xrightarrow{\simeq} \overline{W}(G(X))$ given by the unit of the adjunction.
 	Composing these two maps we obtain a weak homotopy equivalence
 	$$X \xrightarrow{\simeq} \mathfrak{N}(G(X)).$$ 
@@ -172,9 +187,11 @@ Further details regarding the weak equivalence $\mathcal{L} \mathfrak{C}(X) \xra
 We have the following comparison between the triangulation of the localized geometric cobar construction and the Kan loop group.
 
 \begin{corollary} \label{widehatgcobarandG}
-	Let $X \in \sSet^0$.
 	There is a natural weak equivalence of simplicial monoids
-	$$\mathcal{T} \widehat{\ccobar}(X) \xrightarrow{\simeq}G(X).$$
+	\begin{equation*}
+	\mathcal{T} \widehat{\ccobar}(X) \xrightarrow{\simeq} G(X)
+	\end{equation*}
+	for any reduced simplicial set $X$.
 \end{corollary}
 
 \begin{proof}
@@ -260,23 +277,26 @@ We will denote by $\chains_\USL$ the functor of (cubical or simplicial) chains w
 We remark that the inclusion $\As \to \UM$ factors through $\USL$.
 
 \subsection{A zig-zag of $E_\infty$-coalgebras}
-The $E_{\infty}$-coalgebra structures on the simplicial chains on a triangulated cubical set $Y$ and on the cubical chains on $Y$ are related as follows. 
+The $E_{\infty}$-coalgebra structures on the simplicial chains on a triangulated cubical set $Y$ and on the cubical chains on $Y$ are related as follows.
+
 \begin{proposition} \label{p:zigzag} 
-For any  $Y \in \cSet$ there are quasi-isomorphisms of $\USL$-coalgebras
+	For any cubical set $Y$ there are natural quasi-isomorphisms of $\USL$-coalgebras
 	\begin{equation} \label{e:zig-zag of quasi-isos}
 	\schainsUSL(\mathcal{T}Y) \xra{\simeq}
 	\cchainsUSL(\mathcal{U}\mathcal{T}Y) \xleftarrow{\simeq}
 	\cchainsUSL(Y).
 	\end{equation}	
-	\end{proposition}
-	\begin{proof}
+\end{proposition}
+
+\begin{proof}
 	The first map in \eqref{e:zig-zag of quasi-isos} is a quasi-isomorphism of $\USL$-coalgebras by \cref{l:simplicialandcubical}.
-	
-	The second map in \eqref{e:zig-zag of quasi-isos} is induced by the morphism of cubical sets $Y \to \mathcal{U} \mathcal{T} (Y)$ given by the unit of the adjunction
-	$$\mathcal{T} \colon \cSet \leftrightarrows \sSet \colon \mathcal{U}.$$
+	Whereas the second is induced by the morphism of cubical sets $Y \to \mathcal{U} \mathcal{T} (Y)$ given by the unit of the adjunction
+	\begin{equation*}
+	\mathcal{T} \colon \cSet \leftrightarrows \sSet :\! \mathcal{U}.
+	\end{equation*}
 	The unit map is in fact a weak homotopy equivalence of cubical sets since the adjunction defines a Quillen equivalence between the Kan-Quillen model structure and an analogue model structure on $\cSet$ in which all objects are cofibrant \cite{cisinski2006presheaves}.
-	Hence, the unit map induces a quasi-isomorphism of $\USL$-coalgebras after applying the cubical chains functor. 
-	\end{proof}
+	Hence, the unit map induces a quasi-isomorphism of $\USL$-coalgebras after applying the cubical chains functor.
+\end{proof}
 
 \subsection{Proof of Theorem 2}
 
@@ -295,13 +315,21 @@ We now put together the constructions and results discussed above to deduce our 
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\end{equation*}
-	Furthermore, for any $X \in \sSet^0$, there is a zig-zag of natural quasi-isomorphisms of $\USL$-coalgebras between $\Ahat_\USL(X)$ and $\schainsUSL(G(X))$.
+	Furthermore, for any reduced simplicial set $X$, there is a zig-zag of natural quasi-isomorphisms of $\USL$-coalgebras between $\Ahat_\USL(X)$ and $\schainsUSL(G(X))$.
 \end{nntheorem}
 
 \begin{proof}
-	The first part of the theorem follows from \cref{s:ahatum}. 
-	Applying \cref{p:zigzag} to $Y= \widehat{\ccobar}(X),$ we obtain that $\schainsUSL (\mathcal{T} \widehat{\ccobar}(X))$ and $\cchainsUSL(\widehat{\ccobar}(X)) = \Ahat_{\USL}(X)$ are quasi-isomorphic via a zig-zag of natural maps of $\USL$-coalgebras. By \cref{widehatgcobarandG} we have a weak equivalence of simplicial monoids
-	$$\mathcal{T}\widehat{\ccobar}(X) \xrightarrow{\simeq} G(X)$$ for any $X \in \sSet^0.$ By naturality, we have an induced quasi-isomorphism of $\UM$-coalgebras
-	$$\schainsUSL(\mathcal{T}\widehat{\ccobar}(X)) \xra{\simeq} \schainsUSL(G(X)).$$
+	The first part of the theorem follows from \cref{s:ahatum}.
+	Applying \cref{p:zigzag} to $Y= \widehat{\ccobar}(X),$ we obtain that $\schainsUSL (\mathcal{T} \widehat{\ccobar}(X))$ and $\cchainsUSL(\widehat{\ccobar}(X)) = \Ahat_{\USL}(X)$ are quasi-isomorphic via a zig-zag of natural maps of $\USL$-coalgebras.
+	By \cref{widehatgcobarandG} we have a weak equivalence of simplicial monoids
+	\begin{equation*}
+	\mathcal{T}\widehat{\ccobar}(X) \xrightarrow{\simeq} G(X)
+	\end{equation*}
+	for any reduced simplicial set $X$.
+	By naturality, we have an induced quasi-isomorphism of $\UM$-coalgebras
+	\begin{equation*}
+	\schainsUSL \big( \mathcal{T}\widehat{\ccobar}(X) \big) \xra{\simeq}
+	\schainsUSL \big( G(X) \big).
+	\end{equation*}
 	Therefore, $\Ahat_{\USL}(X)$ and $\schainsUSL(G(X))$ are quasi-isomorphic through a zig-zag of natural maps of $\USL$-coalgebras, as desired.
 \end{proof}
