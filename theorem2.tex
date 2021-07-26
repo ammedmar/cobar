@@ -106,12 +106,11 @@ As an immediate consequence of \cref{p:ccobar and cobar}, we obtain the followin
 
 \subsection{Rigidification and homotopy coherent nerve}
 
-In order to relate the functors $\widehat{\ccobar} \colon \sSet^0 \to \Mon_{\cSet}$ and $G \colon \sSet^0\to \sGrp$ we introduce a third player, the \textit{rigidification functor}
-$$\rigid \colon \sSet^0 \to \Mon_{\sSet}.$$
-
-This functor is obtained by restricting to $\sSet^0$ a more general construction
-$$\rigid: \sSet \to \Cat_{\simplex},$$
-where $\Cat_{\simplex}$ denotes the category of small categories enriched over the monoidal category $(\sSet, \times)$.
+In order to relate the functors $\widehat{\ccobar} \colon \sSet^0 \to \Mon_{\cSet}$ and $G \colon \sSet^0\to \sGrp$ we introduce a third construction, the \textit{rigidification functor}
+$$\rigid \colon \sSet^0 \to \Mon_{\sSet},$$
+which is obtained by restricting to $\sSet^0$ a more general construction
+$$\rigid \colon \sSet \to \Cat_{\simplex},$$
+where $\Cat_{\simplex}$ denotes the category of small categories enriched over $\sSet$.
 
 Given integers $0 \leq  i \leq j$ denote by $P_{i,j}$ the category whose objects are all the subsets of $\{i, i+1, \dots, j\}$ containing both $i$ and $j$ and morphisms are inclusions.
 For each integer $n \geq 0$ define $\rigid(\simplex^n) \in \Cat_{\simplex}$ to have the set $\{0, \dots, n\}$ as objects and if $i \leq j$, define $\rigid(\simplex^n)(i,j)= N(P_{i,j})$, where $N$ is the ordinary nerve functor.
@@ -119,12 +118,15 @@ If $j < i$, $\rigid(\simplex^n)(i,j) = \emptyset.$ The composition law in $\rigi
 The assignment $[n] \mapsto \rigid(\simplex^n)$ defines a cosimplicial object in $\Cat_{\simplex}$.
 For any reduced simplicial set $S$ we can now define
 \begin{equation*}
-\rigid(S) = \underset{{\simplex^n \to S} }{\text{colim }} \rigid(\simplex^n).
+\rigid(S) = \underset{{\simplex^n \to S}}{\colim} \rigid(\simplex^n).
 \end{equation*}
+
+\anibal{There is a command \texttt{colim} for that}
+
 The functor $\rigid$ has a right adjoint, called the \textit{homotopy coherent nerve functor} and denoted by
 $$\nerve \colon \Cat_{\simplex} \to \sSet,$$
 whose $n$-simplices are given by 
-$$\nerve(\mathcal{C})_n=\text{Hom}_{\Cat_{\simplex}}(\rigid(\simplex^n), \mathcal{C}).$$
+$$\nerve(\mathcal{C})_n = \Hom_{\Cat_{\simplex}}(\rigid(\simplex^n), \mathcal{C}).$$
 
 The category of simplicial sets also serves as a combinatorial framework to model the homotopy theory of $\infty$-categories.
 More precisely, both Joyal and Lurie independently described a model category structure on $\sSet$ whose weak equivalences are given by a sub-collection of the weak homotopy equivalences called the \textit{categorical equivalences}, cofibrations are injective maps, and fibrant objects are quasi-categories.
