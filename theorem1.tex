@@ -35,7 +35,7 @@ In order to do this, we shall describe a categorical version of Adams' construct
 
 \subsection{Necklace category}
 
-We construct a cubical model for the based loop space using necklical sets, a notion related to both simplicial sets and cubical sets with connections.
+We construct a cubical model for the based loop space using necklical sets, a notion related to both simplicial sets and cubical sets.
 Different approaches to this framework can be found in \cite{baues1998hopf}, \cite{galvez2020hopf}, \cite{dugger2011rigidification}, \cite{rivera2018cubical}, \cite{rivera2019path}, among other works.
 
 Let $\simplex_{*,*}$ be the subcategory of the simplex category $\simplex$ with the same objects and morphisms being functors $f \colon [n] \to [m]$ satisfying $f(0) = 0$ and $f(n) = m$.
@@ -73,9 +73,11 @@ Given any necklace $T = [n_1] \vee \dots \vee[n_k] \in \Nec$ define the \textit{
 
 \subsection{Necklical sets}
 
-The category of \textit{necklical sets} is the functor category $\nSet=\Fun[\Nec^{\op}, \Set].$
+The category of \textit{necklical sets} is the functor category $\nSet = \Fun(\Nec^{\op}, \Set)$.
 
-We denote the Yoneda embedding by $$\mathcal{Y} \colon \Nec \to \nSet,$$ i.e. the functor induced by $T \mapsto \Nec(-,T).$
+We denote the Yoneda embedding by
+$$\mathcal{Y} \colon \Nec \to \nSet,$$
+i.e., the functor induced by $T \mapsto \Nec(-,T)$.
 
 We denote by
 \begin{equation*}
@@ -87,9 +89,11 @@ the functor induced by sending any necklace $T = [n_1] \vee \dots \vee[n_k] \in 
 \end{equation*}
 where the wedge symbol now means we identify the last vertex of $\simplex^{n_i}$ with the first vertex of $\simplex^{n_{i+1}}$ for $i = 1, \dots, k-1$.
 
-The category of necklical sets $\nSet$ is a (non-symmetric) monoidal category when equipped with the Day convolution monoidal structure $\otimes\colon \nSet \times \nSet \to \nSet$
-$$K \otimes K' = \colim_{\substack{\mathcal{Y}(T) \to K, \\ \mathcal{Y}(T')\to K'}} \mathcal{Y}(T \vee T'),$$ as described in
- \cref{ss:day convolution}.
+The category of necklical sets $\nSet$ is a (non-symmetric) monoidal category when equipped with the Day convolution monoidal structure $\otimes \colon \nSet \times \nSet \to \nSet$
+\begin{equation*}
+K \otimes K' \, = \colim_{\substack{\mathcal{Y}(T) \to K, \\ \mathcal{Y}(T')\to K'}} \mathcal{Y}(T \vee T'),
+\end{equation*}
+as described in \cref{ss:day convolution}.
 
 \subsection{From necklaces to cubes}
 
@@ -157,7 +161,7 @@ More precisely, for any $S, S' \in \Nec$, the product $$\ncobar(X)(S) \otimes \n
 where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $a\in \mathcal{Y}(T)(S)$, and $a'\in \mathcal{Y}(T')(S')$.
 
 We may now define the \textit{cubical cobar construction}
-$$\ccobar \colon \sSet^0 \to \Mon_{\cSet}$$ as the composition $$\ccobar= \mathcal{P}_! \circ \ncobar.$$ This reinterpretation of Baues construction in terms of cubical sets with connections was also studied in \cite{rivera2018cubical}.
+$$\ccobar \colon \sSet^0 \to \Mon_{\cSet}$$ as the composition $$\ccobar= \mathcal{P}_! \circ \ncobar.$$ This reinterpretation of Baues construction in terms of cubical sets was also studied in \cite{rivera2018cubical}.
 
 \subsection{Relation to the cobar construction}
 
@@ -171,7 +175,7 @@ The cubical cobar functor $\ccobar\colon \sSet^0 \to \Mon_{\cSet}$ is related to
 \end{proposition}
 
 \begin{proof} 
-	Denote by $\iota_n \in (\cube^n)_n$ the top dimensional non-degenerate element of the standard $n$-cube with connections $\cube^n$.
+	Denote by $\iota_n \in (\cube^n)_n$ the top dimensional non-degenerate element of the standard $n$-cube $\cube^n$.
 	Note that for a reduced simplicial set $X$, we may represent any non-degenerate $n$-cube $\alpha \in (\mathcal{P}_!(\ncobar(X)))_n$ as a pair $\alpha = [\sigma \colon \mathcal{Y}(T) \to X, \iota_n]$ for some $T = [n_1] \vee \dots \vee [n_k] \in \Nec$ with $\text{dim}(T) = n_1 + \dots + n_k-k = n$.
 	
 	To define an algebra map
@@ -186,7 +190,7 @@ The cubical cobar functor $\ccobar\colon \sSet^0 \to \Mon_{\cSet}$ is related to
 
 \subsection{An $E_{\infty}$-bialgebra structure on the cobar construction} \label{ss:e-infty on cobar}
 
-Using \cref{p:ccobar and cobar} together with \cref{t:cubical e-infty chains are monoidal} we obtain a natural $E_{\infty}$-bialgebra structure on $\cobar(\schains(X))$ extending Baues' coproduct for any cubical set with connections $X$.
+Using \cref{p:ccobar and cobar} together with \cref{t:cubical e-infty chains are monoidal} we obtain a natural $E_{\infty}$-bialgebra structure on $\cobar(\schains(X))$ extending Baues' coproduct for any simplicial set $X$.
 Namely, using the observation that $\cchainsUM \colon \cSet \to \coAlg_{\UM}$ is monoidal, the desired $E_{\infty}$-bialgebra structure is provided by the composition 
 $$\cchainsUM \circ \ccobar \colon \sSet^0 \to \Mon_{\U(M)}.$$
 
