@@ -3,13 +3,13 @@
 
 In 1956, F. Adams introduced the cobar construction to model algebraically the passage from a simply connected pointed space to its topological monoid of based loops \cite{adams1956cobar}.
 Fixing a commutative ring, the algebraic cobar construction may be described as a functor $\cobar \colon \coAlg^* \to \Mon_{\Ch}$ from the category of coaugemented  (differential graded coassociative) coalgebras to the category of (dga) algebras, which we regard in this article as monoids over the symmetric monoidal category $\Ch$ of chain complexes.
-For any pointed space $(Y, y)$, Adams constructed a \textit{comparison map}
+For any pointed space $(Z, z)$, Adams constructed a \textit{comparison map}
 \begin{equation} \label{e:adams map}
-\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y),
+\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z),
 \end{equation}
-i.e., a natural chain map of algebras, where $\sS(Y,y)$ is a pointed version of the coalgebra of (simplicial) singular chains in $Y$ and $S^{\cube}(\Omega_yY)$ is the algebra of cubical singular chains on the topological monoid of Moore loops in $Y$ based at~$y$.
-More precisely, $\sS(Y,y)$ is obtained by applying the functor of (normalized) chains $\schains$ to the pointed simplicial singular complex $\sSing(Y, y)$ of continuous maps $\gsimplex^n \to Y$ sending all vertices to $y$.
-Adams proved that $\theta_Y$ is a quasi-isomorphism if $Y$ is simply connected, a result extended to path-connected spaces in \cite{rivera2018cubical} by considering finer homotopical algebra, and in \cite{hess2010cobar} by a localization procedure.
+i.e., a natural chain map of algebras, where $\sS(Z,z)$ is a pointed version of the coalgebra of (simplicial) singular chains in $Y$ and $S^{\cube}(\Omega_zZ)$ is the algebra of cubical singular chains on the topological monoid of Moore loops in $Y$ based at~$y$.
+More precisely, $\sS(Z,z)$ is obtained by applying the functor of (normalized) chains $\schains$ to the pointed simplicial singular complex $\sSing(Z, z)$ of continuous maps $\gsimplex^n \to Z$ sending all vertices to $Z$.
+Adams proved that $\theta_Z$ is a quasi-isomorphism if $Z$ is simply connected, a result extended to path-connected spaces in \cite{rivera2018cubical} by considering finer homotopical algebra, and in \cite{hess2010cobar} by a localization procedure.
 
 In this article we study the interplay between the geometric, combinatorial, and algebraic structures arising from the cobar construction and its relationship to the based loop space.
 Our starting point is an insight of H.~Baues which is best explained in terms of \textit{cubical sets with connections}, i.e., presheaves over the 
@@ -23,9 +23,9 @@ restricted by certain relations \cite{brown1981cubes, grandis2003cubical}.
 
 The functor of cubical singular chains $S^\cube$ appearing in the target of Adams' comparison map \eqref{e:adams map 2} is equal to the composition $\cchains \circ \cSing$, where $\cSing$ is constructed by considering all continuous maps from geometric cubes.
 The monoidal structure on the site defining the category of cubical sets with connections $\cSet$ provides it, via Day convolution, with a monoidal structure, which, with the usual monoidal structures on $\Ch$ and $\Top$, makes both $\cSing$ and $\cchains$ into monoidal functors.
-Consequently, $S^\cube(\Omega_y Y)$ is a monoid in $\Ch$ since $\Omega_y Y$ is a monoid in $\Top$ for any pointed space $(Y, y)$.
+Consequently, $S^\cube(\Omega_z Z)$ is a monoid in $\Ch$ since $\Omega_z Z$ is a monoid in $\Top$ for any pointed space $(Z, z)$.
 Cubical chains are equipped with a natural coalgebra structure coming from Serre's chain approximation to the diagonal.
-This structure lifts $\cchains$ to the category of coalgebras $\cchainsAS \colon \cSet \to \coAlg$ as a monoidal functor, which, in particular, makes $S^\cube(\Omega_y Y)$ into a monoid in $\coAlg$ for any pointed space $(Y, y)$.
+This structure lifts $\cchains$ to the category of coalgebras $\cchainsAS \colon \cSet \to \coAlg$ as a monoidal functor, which, in particular, makes $S^\cube(\Omega_z Z)$ into a monoid in $\coAlg$ for any pointed space $(Z, z)$.
 
 Denoting by $\sSet^0$ the category of reduced simplicial sets, Baues' introduced the \textit{cubical cobar construction}
 \begin{equation*}
@@ -34,13 +34,13 @@ Denoting by $\sSet^0$ the category of reduced simplicial sets, Baues' introduced
 a functor he used in \cite{baues1998hopf} to factor Adams' comparison map as a composition
 \begin{equation} \label{e:baues factorization of adams map}
 \begin{tikzcd}[column sep = small]
-\theta_Y \colon \cobar(\sS(Y, y)) \arrow[r] &
-\cchains(\ccobar \sSing(Y, y)) \arrow[r] &
-S^{\cube}(\Omega_y Y),
+\theta_Z \colon \cobar(\sS(Z, z)) \arrow[r] &
+\cchains(\ccobar \sSing(Z, z)) \arrow[r] &
+S^{\cube}(\Omega_z Z),
 \end{tikzcd}
 \end{equation}
-where the first chain map is an isomorphism and the second is induced from an inclusion of cubical sets with connections $\ccobar \sSing(Y, y) \to \cSing(\Omega_y Y)$.
-Additionally, Baues proved that when $Y$ is simply connected this inclusion is a homotopy equivalence, a result extended to the non-simply connected setting in \cite{rivera2019path}.
+where the first chain map is an isomorphism and the second is induced from an inclusion of cubical sets with connections $\ccobar \sSing(Z, z) \to \cSing(\Omega_z Z)$.
+Additionally, Baues proved that when $Z$ is simply connected this inclusion is a homotopy equivalence, a result extended to the non-simply connected setting in \cite{rivera2019path}.
 
 The first map in \eqref{e:baues factorization of adams map} is defined for a general reduced simplicial set $X$ and is always an isomorphism.
 Using this map, Baues transferred the Serre coproduct on $\cchainsAS(\ccobar X)$ to $\cobar(\schains(X))$ and proved that, together with its formal monoid structure, this coproduct makes $\cobar(\schains(X))$ into a bialgebra, that is to say, a monoid in $\coAlg$.
@@ -51,7 +51,7 @@ In other words, Baues lifted Adams' cobar construction $\cobar \circ \schains$ s
 \sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\ccobar"] & \Mon_{\Ch}.
 \end{tikzcd}
 \end{equation*}
-Furthermore, when $(Y, y)$ is a pointed space, Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y)$ is a quasi-isomorphism of bialgebras, i.e., of monoids in $\coAlg$.
+Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of bialgebras, i.e., of monoids in $\coAlg$.
 
 We extend Baues' work by lifting $\cobar \circ \schains$ to the category of $E_\infty$ \textit{bialgebras}, that is to say, of monoids in $E_\infty$ coalgebras; a notion that should not be confused with that of bialgebras over an $E_\infty$ prop.
 More precisely, our lift is to the category of monoids in $\coAlg_\UM$, where $\coAlg_\UM$ is the category of coalgebas over the combinatorial model $U(\M)$ of the $E_\infty$ operad introduced via a finitely presented prop in \cite{medina2020prop1}.
@@ -63,7 +63,7 @@ It states that the functor $\cchainsUM \colon \cSet \to \coAlg_\UM$ defined in \
 Generalizing Baues' first step in the construction of his lift of Adams' cobar construction, we have that $\cchainsUM(\ccobar X)$ is a monoid in $\coAlg_\UM$.
 This is because $\ccobar X$ is a monoid in $\cSet$ and $\cchainsUM$ is shown to be a monoidal functor.
 Similar to Baues' second step, we use for any reduced simplicial set $X$ the natural isomorphism $\cobar(\schains(X)) \to \cchains(\ccobar X)$ to transfer the constructed $E_\infty$ bialgebra structure on $\cchains(\ccobar X)$ to $\cobar(\schains(X))$.
-In particular we have, generalizing Baues' result, that for any pointed space $(Y, y)$ Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y)$ is a quasi-isomorphism of $E_\infty$ bialgebras.
+In particular we have, generalizing Baues' result, that for any pointed space $(Z, z)$ Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of $E_\infty$ bialgebras.
 We condense this discussion in our main result.
 
 \begin{theorem} \label{t:1st main thm in the intro}
@@ -77,7 +77,7 @@ We condense this discussion in our main result.
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\end{equation*}
-	Furthermore, when $(Y, y)$ is a pointed space, Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y)$ is a quasi-isomorphism of $E_\infty$ bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
+	Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of $E_\infty$ bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
 \end{theorem} 
 The homotopy theory of spaces can be modeled as the Kan-Quillen model category of simplicial sets. We would also like to understand how the cobar construction and its algebraic structure fit in this combinatorial framework.
 A model in this context for the based loop space of an arbitrary reduced simplicial set is given by the classical \textit{Kan loop group functor}.
@@ -113,12 +113,12 @@ Using similar methods to those that lead to \cref{t:1st main thm in the intro}, 
 \begin{equation*}
 \Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}.
 \end{equation*}
-We may now try to compare the above functor with the Kan loop group construction via Hess and Tonk's comparison map. However, there is a fundamental asymmetry between the interaction of the cubical chains and simplicial chains with the monoidal structures that we have to take into account. For any two cubical sets $K$ and $K'$ the isomorphism
+We may now try to compare the above functor with the Kan loop group construction via Hess and Tonk's comparison map. However, there is a fundamental asymmetry between the interaction of the cubical chains and simplicial chains with the monoidal structures that we have to take into account. For any two cubical sets $Y$ and $Y'$ the isomorphism
 \begin{equation*}
-\cchains(K) \otimes \cchains(K') \xrightarrow{\cong} \cchains(K \otimes K')
+\cchains(Y) \otimes \cchains(Y') \xrightarrow{\cong} \cchains(Y \otimes Y')
 \end{equation*}
-preserves the $U(\M)$-coalgebra structures. However, for any two simplicial sets $X$ and $X^\prime$, the Eilenberg-Zilber shuffle map $$\schains(X) \otimes \schains(X^\prime) \xrightarrow{\simeq} \schains(X \times X^\prime)$$ is a quasi-isomorphism of coassociative coalgebras but not of $U(\M)$-coalgebras. This last point has two important manifestations: 1) the $U(\M)$-coalgebra structure of $\schainsUM(G(X))$ is not (strictly) compatible with the algebra structure, i.e. it is not an $E_{\infty}$-bialgera in our sense, and 2) the Hess and Tonks comparison map $\phi_X \colon \Ahat(X) \to \schains(G(X))$ does not preserve the $U(\M)$-coalgebra structures, namely, it is not compatible with the lifts $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$
-and $\schainsUM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$. Nevertheless, we construct a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras connecting $\Ahat(X)$ and $\schains(G(X))$, for any $X \in \sSet^0$
+preserves the $U(\M)$-coalgebra structures. However, for any two simplicial sets $X$ and $X^\prime$, the Eilenberg-Zilber shuffle map $$\schains(X) \otimes \schains(X^\prime) \xrightarrow{\simeq} \schains(X \times X^\prime)$$ is a quasi-isomorphism of coassociative coalgebras but not of $U(\M)$-coalgebras. This last point has two important manifestations: 1) the $U(\M)$-coalgebra structure of $\schainsUM(G(X))$ is not (strictly) compatible with the algebra structure, i.e. it is not an $E_{\infty}$ bialgebra in our sense, and 2) the Hess and Tonks comparison map $\phi_X \colon \Ahat(X) \to \schains(G(X))$ does not preserve the $U(\M)$-coalgebra structures, namely, it is not compatible with the lifts $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$
+and $\schainsUM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$. Nevertheless, we construct a zig-zag of natural quasi-isomorphisms of $E_{\infty}$ coalgebras connecting $\Ahat(X)$ and $\schains(G(X))$, for any $X \in \sSet^0$.
 
 We summarize this discussion in the following statement.
 

@@ -8,9 +8,9 @@ The goal of this section is to prove \cref{t:1st main thm in the intro}. We do s
 
 In \cite{adams1956cobar}, Adams constructed a natural map of algebras
 \begin{equation} \label{e:adams map 2}
-\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y),
+\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z),
 \end{equation}
-for any pointed topological space $(Y, y)$.
+for any pointed topological space $(Z, z)$.
 The construction is based on a collection of continuous maps $$\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n),$$
 where $P(\gsimplex^n;0,n)$ denotes the topological space of Moore paths in $\gsimplex^n$ from the $0$-th vertex $v_0$ to the $n$-th vertex $v_n$.
 These maps are constructed inductively so that following equations are satisfied:
@@ -21,17 +21,16 @@ These maps are constructed inductively so that following equations are satisfied
 \end{enumerate}
 In the above equations $f_j\colon \gsimplex^j \rightarrow \gsimplex^n$ and $l_{n-j}\colon \gsimplex^{n-j} \rightarrow \gsimplex^n$ denote the first $j$-th face map and last $(n-j)$-th face map of $\gsimplex^n$, respectively, and
 $e_j^0,e_j^1\colon \gcube^{n-1} \rightarrow \gcube^{n}$ denote the $j$-th bottom and top face inclusion maps, respectively.
-For any continuous map of spaces $f \colon X \to Y$, we denote by $P(f) \colon P(X) \to P(Y)$ the induced map at the level of spaces of paths.
-Given any two composable paths $\alpha$ and $\beta$, the dot symbol in $\alpha \cdot \beta$ denotes the composition (or concatenation) of paths.
+For any continuous map of spaces $f \colon Z \to Z'$, we denote by $P(f) \colon P(Z) \to P(Z')$ the induced map at the level of spaces of paths. Given any two composable paths $\alpha$ and $\beta$, the dot symbol in $\alpha \cdot \beta$ denotes the composition (or concatenation) of paths.
 
-Adams' map $\theta_Y$ is now given as follows.
-For any singular $1$-simplex $\sigma \in S^{\Delta}_1(Y, y)$ let
-$$\theta_Y([\sigma])= P(\sigma) \circ \theta_1 - c_y,$$
-where $c_y \in S^{\cube}_0(\Omega_y Y)$ is the singular $0$-cube determined by the constant loop at $y \in Y.$ For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Y, y)$ with $n>1$, let
-$$\theta_Y([\sigma])= P(\sigma) \circ \theta_n.$$ Since the underlying graded algebra of $\cobar(\sS(Y, y))$ is free, we may extend the above to an algebra map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y)$.
-The compatibility equations for the maps $\theta_n$ imply that $\theta_Y$ is a chain map.
+Adams' map $\theta_Z$ is now given as follows.
+For any singular $1$-simplex $\sigma \in S^{\Delta}_1(Z, z)$ let
+$$\theta_Z([\sigma])= P(\sigma) \circ \theta_1 - c_z,$$
+where $c_z \in S^{\cube}_0(\Omega_z Z)$ is the singular $0$-cube determined by the constant loop at $z \in Z.$ For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Z, z)$ with $n>1$, let
+$$\theta_Z([\sigma])= P(\sigma) \circ \theta_n.$$ Since the underlying graded algebra of $\cobar(\sS(Z, z))$ is free, we may extend the above to an algebra map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$.
+The compatibility equations for the maps $\theta_n$ imply that $\theta_Z$ is a chain map.
 
-We will construct an $E_{\infty}$-bialgebra structure on $\cobar(\sS(Y, y))$ and show that $\theta_Y$ preserves this structure.
+We will construct an $E_{\infty}$-bialgebra structure on $\cobar(\sS(Z, z))$ and show that $\theta_Z$ preserves this structure.
 In order to do this, we shall describe a categorical version of Adams' constructions.
 
 \subsection{Necklace category}
@@ -119,9 +118,9 @@ The functor $\mathcal{P} \colon \Nec \to \cube$ induces an adjunction between $\
 \qquad \text{and} \qquad
 \mathcal{P}_{!}  \colon \nSet \to \cSet.
 \end{equation*}
-Explicitly, for a cubical set with connections $C \colon \cube^\op \to \Set$,
+Explicitly, for a cubical set $Y \colon \cube^\op \to \Set$,
 \begin{equation*}
-\mathcal{P}^*(C)= C \circ \mathcal{P}^\op,
+\mathcal{P}^*(Y)= Y \circ \mathcal{P}^\op,
 \end{equation*}
 and for a necklical set $K \colon \Nec^\op \to \Set$,
 \begin{equation*}
@@ -150,7 +149,7 @@ More precisely, for any $S, S' \in \Nec$, the product $$\ncobar(X)(S) \otimes \n
 where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $a\in \mathcal{Y}(T)(S)$, and $a'\in \mathcal{Y}(T')(S')$.
 
 We may now define the \textit{cubical cobar construction}
-$$\ccobar \colon \sSet^0 \to \Mon_{\cSet}$$ as the composition $$\ccobar= \mathcal{P}_! \circ \ncobar.$$ This is a further reinterpretation of Baues construction in terms of cubical sets with connections, which was also studied in \cite{rivera2018cubical}.
+$$\ccobar \colon \sSet^0 \to \Mon_{\cSet}$$ as the composition $$\ccobar= \mathcal{P}_! \circ \ncobar.$$ This reinterpretation of Baues construction in terms of cubical sets with connections was also studied in \cite{rivera2018cubical}.
 
 \subsection{Relation to the cobar construction}
 
@@ -186,13 +185,13 @@ $$\cchainsUM \circ \ccobar \colon \sSet^0 \to \Mon_{\U(M)}.$$
 \subsection{Factorization of Adams' map} \label{factorization}
 
 Adams' map can now be factored as 
-$$\theta_Y \colon \cobar(\sS(Y, y)) \xrightarrow{\cong} 
-\cchains(\ccobar \sSing(Y, y)) \xrightarrow{\cchains(\Theta)} 
-S^{\cube}(\Omega_y Y).$$
-The first map is given by the natural isomorphism of algebras $$\cobar \schains (\sSing(Y, y)) \cong  \cchains \ccobar (\sSing(Y, y))$$ of \cref{p:ccobar and cobar}.
+$$\theta_Z \colon \cobar(\sS(Z, z)) \xrightarrow{\cong} 
+\cchains(\ccobar \sSing(Z, z)) \xrightarrow{\cchains(\Theta)} 
+S^{\cube}(\Omega_z Z).$$
+The first map is given by the natural isomorphism of algebras $$\cobar \schains (\sSing(Z, z)) \cong  \cchains \ccobar (\sSing(Z, z))$$ of \cref{p:ccobar and cobar}.
 The second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
-$$\Theta \colon \ccobar (\sSing(Y, y) \to \cSing( \Omega_yY)$$
-determined by sending any singular $n$-simplex $$(\sigma\colon \gsimplex^n \to Y) \in \sSing(Y, y)$$ to the singular $(n-1)$-cube $$(P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \Omega_yY) \in \cSing( \Omega_yY).$$ 
+$$\Theta \colon \ccobar (\sSing(Z, z) )\to \cSing( \Omega_z Z)$$
+determined by sending any singular $n$-simplex $$(\sigma\colon \gsimplex^n \to Z) \in \sSing(Z, z)$$ to the singular $(n-1)$-cube $$(P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \Omega_z Z) \in \cSing( \Omega_z Z).$$ 
 
 \subsection{Proof of Theorem 1}
 
@@ -209,23 +208,23 @@ We now put together the constructions and results discussed above to deduce our 
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\end{equation*}
-	Furthermore, when $(Y, y)$ is a pointed space, Adams' comparison map $\theta_Y \colon \cobar(\sS(Y, y)) \to S^{\cube}(\Omega_y Y)$ is a quasi-isomorphism of $E_\infty$ bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
+	Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of $E_\infty$ bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
 \end{nntheorem} 
 
 \begin{proof}
 	The fact that $\cchainsUM$ is monoidal and that it fits in the desired commutative diagram follows directly from Section 4.
 	    
-	The natural $\UM$-coalgebra structure on $\cobar(\sS(Y, y))$ is induced by $\cchainsUM ( \ccobar (\sSing(Y,y)) )$, as discussed in \cref{ss:e-infty on cobar}.
-	The natural $\UM$-coalgebra structure on $S^{\cube}(\Omega_yY)$ is precisely given by $\cchainsUM( \cSing(\Omega_yY) ).$ These two $\UM$-coalgebra structures are compatible with the algebra structures, giving rise to monoinds in $\coAlg_{\UM}.$
+	The natural $\UM$-coalgebra structure on $\cobar(\sS(Z, z))$ is induced by $\cchainsUM ( \ccobar (\sSing(Z, z)) )$, as discussed in \cref{ss:e-infty on cobar}.
+	The natural $\UM$-coalgebra structure on $S^{\cube}(\Omega_z Z)$ is precisely given by $\cchainsUM( \cSing(\Omega_z Z) ).$ These two $\UM$-coalgebra structures are compatible with the algebra structures, giving rise to monoinds in $\coAlg_{\UM}.$
 	     
 	By naturality, we obtain a map
 	\begin{equation*}
-	\cobar(\schains(\sSing(Y, y))) \cong
-	\cchainsUM \big( \ccobar(\sSing(Y, y)) \big) \xra{\cchainsUM(\Theta)}
-	\cchainsUM \big( \cSing(\Omega_y Y) \big)
+	\cobar(\schains(\sSing(Z, z))) \cong
+	\cchainsUM \big( \ccobar(\sSing(Z, z)) \big) \xra{\cchainsUM(\Theta)}
+	\cchainsUM \big( \cSing(\Omega_z Z) \big)
 	\end{equation*}
 	of monoids in $\coAlg_{\UM}$, lifting Adams' classical map by \cref{factorization}, as desired.
-	Since $\sSing(Y,y)$ is a fibrant reduced simplicial set, Adams' map $\theta_Y$ is a quasi-isomorphism, as proven in \cite{rivera2018cubical} and \cite{rivera2019path}. 
+	Since $\sSing(Z, z)$ is a fibrant reduced simplicial set, Adams' map $\theta_Z$ is a quasi-isomorphism, as proven in \cite{rivera2018cubical} and \cite{rivera2019path}. 
 \end{proof}
 
 %In this section we revisit two combinatorial models for the based loop space of a reduced simplicial set $X \in \sSet^0$.
