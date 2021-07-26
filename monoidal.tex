@@ -15,18 +15,21 @@ Given simplicial sets $X, X^\prime$ their \textit{Cartesian product} $X \times X
 (X \times X^\prime)_n = X_n \times X^\prime_n.
 \end{equation*}
 This construction makes $\sSet$ into a symmetric monoidal category with unit $\simplex^0$.
-The Cartesian product of simplicial sets coincides with the more general notion of the categorical product, since limits of presheaves are computed object-wise. 
+
+We remark that Cartesian product of simplicial sets coincides with the more general notion of categorical product, since limits of presheaves are computed object-wise. 
 
 Given cubical sets with connections $Y, Y'$ their \textit{Day convolution} is defined by
 \begin{equation*}
 Y \otimes Y' = \colim_{\substack{\cube^n \to Y \\ \cube^{m} \to Y}} \square^{n+m}.
 \end{equation*}
 This notion makes $\cSet$ into a (non-symmetric) monoidal category with unit $\cube^0$.
-The Day convolution monoidal structure can be defined more generally for presheaves over a monoidal category.
+Furthermore, with this monoidal structure $\cSing$ is a monoidal functor.
+
+We remark that Day convolution can be defined for general presheaves over a monoidal category.
 
 \subsection{Triangulation and its right adjoint} \label{ss:triangulation and its adjoint}
 
-Simplicial and cubical sets can be related using the the simplicial cubes $(\simplex^1)^{\times n}$.
+As we recall below, simplicial and cubical sets can be related using the simplicial cubes $(\simplex^1)^{\times n}$.
 
 The \textit{triangulation} functor $\mathcal{T} \colon \cSet \to \sSet$ is defined by
 \begin{equation*}
@@ -34,7 +37,7 @@ The \textit{triangulation} functor $\mathcal{T} \colon \cSet \to \sSet$ is defin
 \end{equation*}
 It has a right adjoint $\mathcal{U} \colon \sSet \to \cSet$ which is given by the formula
 \begin{equation*}
-\mathcal{U}(X)_n = \sSet((\simplex^1)^{\times n}, X).
+\mathcal{U}(X)_n = \sSet \big( (\simplex^1)^{\times n}, X \big).
 \end{equation*}
 
 With the monoidal structure defined in \cref{ss:day convolution}, the triangulation functor is monoidal.
@@ -47,7 +50,7 @@ between the associated categories of monoids.
 \subsection{Serre coalgebra} \label{ss:serre coalgebra sym monoidal}
 
 Recall that both $\Ch$ and $\coAlg$ are symmetric monoidal categories.
-If $\cSet$ to be equipped with the Day convolution symmetric monoidal structure \cref{ss:day convolution}, then the functors $\cchains$ and its lift $\cchainsAS$ are symmetric monoidal.
+If $\cSet$ is equipped with the Day convolution symmetric monoidal structure \cref{ss:day convolution}, then the functors $\cchains$ and its lift $\cchainsAS$ are symmetric monoidal.
 Together with straightforward computations, these statements follow from the fact that the chain complexes $\chains(\cube^p) \otimes \chains(\cube^q)$ and $\chains(\cube^{p+q})$ are canonically isomorphic for any $p, q \geq 0$.
 
 For later reference we record the following consequence of the previous claims and the fact that, for any coalgebra, the braiding $x \otimes y \mapsto (-1)^{\bars{x} \bars{y}} y \otimes x$ is a morphism of coalgebras.
@@ -64,7 +67,12 @@ For later reference we record the following consequence of the previous claims a
 	\end{equation*}
 \end{lemma}
 
-\subsection{Hopf operads and props}
+\subsection{Alexander--Whitney coalgebra}
+
+The functors of simplicial chains $\schains$ and its lift $\cchainsAS$ to $\coAlg$ (\cref{ss:aw coalgebra}) are not monoidal in the strict sense.
+Nonetheless, with the Eilenberg--Zilber map $\schains(X) \otimes \schains(Y) \to \schains(X \times Y)$ they are lax monoidal functors, a sufficient condition for monoids to be sent to monoids.
+
+\subsection{Hopf operads and $E_\infty$-bialgebras}
 
 So far we have consider operad and props over the category $\Ch$ but, since $\coAlg$ is also a symmetric monoidal category, we can consider them over $\coAlg$.
 That is to say, demand that all defining chain complexes be coalgebras, and composition maps be morphisms of coalgebras.
@@ -77,11 +85,12 @@ The structure maps of a product of $\O$-coalgebras $C \otimes C^\prime$ are give
 \O(r) \otimes (C \otimes C^\prime) \arrow[r, "\Delta_\O \otimes \id"] &[10 pt] \O(r) \otimes \O(r) \otimes (C \otimes C^\prime) \arrow[d, "Sh"'] & & \\ &
 \big(\O(r) \otimes C \big) \otimes \big( \O(r) \otimes C \big) \arrow[r] & 
 C^{\otimes r} \otimes C^{\prime\, \otimes r} \arrow[r, "Sh"] &
-(C \otimes C^\prime)^{\otimes r}.
+(C \otimes C^\prime)^{\otimes r},
 \end{tikzcd}
 \end{equation*}
+If $\O$ is a Hopf $E_\infty$ operad we refer to monoids in $\coAlg_\O$ as $E_\infty$-\textit{bialgebras}.
 
-A similar statement holds for the category of representations of a Hopf prop $\P$.
+Similarly, if $\P$ is a Hopf prop then its category of representations is also symmetric monoidal.
 
 \subsection{Cubical structure on $\M$}
 
