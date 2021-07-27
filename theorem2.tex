@@ -134,11 +134,11 @@ This model category is known as the \textit{Bergner model structure}.
 
 The adjunction between rigidification and the homotopy coherent nerve yields an equivalence of homotopy theories in the following sense.
 
-\begin{theorem} \label{joyalbergner}
+\begin{proposition} \label{joyalbergner}
 	The adjunction
 	$$\rigid \colon \sSet \leftrightarrows \Cat_{\simplex} :\!\nerve$$
 	induces a Quillen equivalence when $\sSet$ is equipped with the Joyal model structure and $\Cat_{\simplex}$ with the Bergner model structure.
-\end{theorem}
+\end{proposition}
 
 The next result relates the cubical cobar construction and the rigidification functor via the triangulation functor as defined in  \cref{ss:triangulation and its adjoint}.
 
@@ -164,13 +164,13 @@ The starting point of the comparison between the rigidification functor and Kan'
 
 We now deduce the following relationship between the rigidification functor $\rigid$ and the Kan loop group functor $G$.
 
-\begin{proposition} \label{CandG}
+\begin{lemma} \label{CandG}
 	There are natural weak equivalences of simplicial monoids
 	\begin{equation*}
 	\mathcal{L}_{X_1} \rigid(X) \xra{\simeq} \mathcal{L}\rigid(X) \xra{\simeq} G(X)
 	\end{equation*}
 	for any reduced simplicial set $X$.
-\end{proposition}
+\end{lemma}
 
 \begin{proof}
 	Since $\rigid$ is a left Quillen functor and every simplicial set $X$ is cofibrant in the Joyal model structure, it follows from \cref{joyalbergner} that the simplicially enriched category $\rigid(X)$ is a cofibrant.
@@ -272,13 +272,13 @@ This operad, denoted $\USL$, is generated as a suboperad of $\UM$ by and all imm
 where there are no hidden vertices and the strands are joined so that the associated maps $\{1, \dots, k_j\} \to \{1, \dots, n+k\}$ are order-preserving.
 From \cite{medina2021cubical} we have the following statement.
 
-\begin{lemma} \label{l:simplicialandcubical}
+\begin{proposition} \label{p:simplicialandcubical}
 	The suboperad $\USL$ of $\UM$ is an $E_\infty$-operad and the Cartan-Serre comparison map
 	\begin{equation*}
 	\CS_X \colon \schains(X) \to \cchains(\mathcal U X)
 	\end{equation*}
 	is a natural quasi-isomorphism of $\USL$-coalgebras for any simplicial set $X$.
-\end{lemma}
+\end{proposition}
 
 We will denote by $\chains_\USL$ the functor of (cubical or simplicial) chains with its induced $\USL$-structure.
 
@@ -287,17 +287,17 @@ We remark that the inclusion $\As \to \UM$ factors through $\USL$.
 \subsection{A zig-zag of $E_\infty$-coalgebras}
 The $E_{\infty}$-coalgebra structures on the simplicial chains on a triangulated cubical set $Y$ and on the cubical chains on $Y$ are related as follows.
 
-\begin{proposition} \label{p:zigzag} 
+\begin{lemma} \label{l:zigzag} 
 	For any cubical set $Y$ there are natural quasi-isomorphisms of $\USL$-coalgebras
 	\begin{equation} \label{e:zig-zag of quasi-isos}
 	\schainsUSL(\mathcal{T}Y) \xra{\simeq}
 	\cchainsUSL(\mathcal{U}\mathcal{T}Y) \xleftarrow{\simeq}
 	\cchainsUSL(Y).
 	\end{equation}	
-\end{proposition}
+\end{lemma}
 
 \begin{proof}
-	The first map in \eqref{e:zig-zag of quasi-isos} is a quasi-isomorphism of $\USL$-coalgebras by \cref{l:simplicialandcubical}.
+	The first map in \eqref{e:zig-zag of quasi-isos} is a quasi-isomorphism of $\USL$-coalgebras by \cref{p:simplicialandcubical}.
 	Whereas the second is induced by the morphism of cubical sets $Y \to \mathcal{U} \mathcal{T} (Y)$ given by the unit of the adjunction
 	\begin{equation*}
 	\mathcal{T} \colon \cSet \leftrightarrows \sSet :\! \mathcal{U}.
@@ -328,7 +328,7 @@ We now put together the constructions and results discussed above to deduce our 
 
 \begin{proof}
 	The first part of the theorem follows from \cref{s:ahatum}.
-	Applying \cref{p:zigzag} to $Y= \widehat{\ccobar}(X),$ we obtain that $\schainsUSL (\mathcal{T} \widehat{\ccobar}(X))$ and $\cchainsUSL(\widehat{\ccobar}(X)) = \Ahat_{\USL}(X)$ are quasi-isomorphic via a zig-zag of natural maps of $\USL$-coalgebras.
+	Applying \cref{l:zigzag} to $Y= \widehat{\ccobar}(X),$ we obtain that $\schainsUSL (\mathcal{T} \widehat{\ccobar}(X))$ and $\cchainsUSL(\widehat{\ccobar}(X)) = \Ahat_{\USL}(X)$ are quasi-isomorphic via a zig-zag of natural maps of $\USL$-coalgebras.
 	By \cref{widehatgcobarandG} we have a weak equivalence of simplicial monoids
 	\begin{equation*}
 	\mathcal{T}\widehat{\ccobar}(X) \xrightarrow{\simeq} G(X)

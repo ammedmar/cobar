@@ -130,9 +130,7 @@ Since $\mathcal{P}$ is a monoidal functor, the functor $\mathcal{P}_{!} \colon \
 
 \subsection{Cubical cobar construction}
 
-Using the framework of necklical sets, we may reinterpret a construction of Baues as a functor
-
-\anibal{What construction? Reference please}
+Using the framework of necklical sets, we may reinterpret a Baues' geometric cobar construction from \cite{baues1998hopf} as a functor
 
 \begin{equation*}
 \ncobar \colon \sSet^0 \to \Mon_{\nSet},
@@ -143,19 +141,19 @@ For any reduced simplicial set $X$, the underlying necklical set $\ncobar(X) \co
 \begin{equation*}
 \ncobar(X) \, = \! \colim_{\mathcal{S}(T) \to X} \mathcal{Y}(T).
 \end{equation*}
-The monoidal structure
+The product 
 $$\ncobar(X) \otimes \ncobar(X) \to \ncobar(X)$$
-is induced by the monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ together with the monoidal structure $\otimes \colon \nSet \times \nSet \to \nSet$ on necklicals sets.
-
-\anibal{Wasn't this already defined?}
-
-More precisely, for any $S, S' \in \Nec$, the product
-$$\ncobar(X)(S) \otimes \ncobar(X)(S') \to \ncobar(X)(S \vee S')$$
+is induced by the monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ together with the monoidal structure $\otimes \colon \nSet \times \nSet \to \nSet$ on necklicals sets. Recall that $\mathcal{Y}(T) = \Nec(-,T)$, and so we have 
+\begin{equation*}
+    \mathcal{Y}(T) \cong \colim_{(R \to T) \in \Nec \downarrow T} \mathcal{Y}(R).
+\end{equation*}
+More precisely, the product
+$$\ncobar(X) \otimes \ncobar(X) \to \ncobar(X)$$
 is given by
-$$[f\colon \mathcal{S}(T) \to X, a] \otimes [f'\colon \mathcal{S}(T') \to X, a'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, a \otimes  a'],$$
-where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $a \in \mathcal{Y}(T)(S)$, and $a'\in \mathcal{Y}(T')(S')$.
+$$[f\colon \mathcal{S}(T) \to X, R \to T] \otimes [f'\colon \mathcal{S}(T') \to X, R' \to T'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, R \vee  R'\to T \vee T'],$$
+where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $ (R\to T) \in \Nec \downarrow T$, and $(R' \to T') \in \Nec \downarrow T'$.
 
-\anibal{this doesn't flow for me. What is the bracket notation?}
+The bracket notation $[f\colon \mathcal{S}(T) \to X, R\to T]$ denotes the equivalence class of a pair $(f \colon \mathcal{S}(T) \to X, R \to T)$ in the colimit defining $\ncobar(X).$
 
 We may now define the \textit{cubical cobar construction}
 $$\ccobar \colon \sSet^0 \to \Mon_{\cSet}$$ as the composition $$\ccobar= \mathcal{P}_! \circ \ncobar.$$ This reinterpretation of Baues construction in terms of cubical sets was also studied in \cite{rivera2018cubical}.
@@ -233,18 +231,18 @@ where second map is given by applying the cubical chains functor $\cchains \colo
 \begin{equation*}
 \Theta \colon \ccobar(\sSing(Z, z)) \to \cSing(\Omega_z Z)
 \end{equation*}
-determined by sending an $n$-simplex $(\sigma \colon \gsimplex^n \to Z)$ to the singular $(n-1)$-cube
+determined through the monoid structure by sending an $n$-simplex $(\sigma \colon \gsimplex^n \to Z)$ to the singular $(n-1)$-cube
 \begin{equation*}
 P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \Omega_z Z.
 \end{equation*}
-
-\anibal{This ``determine" uses the monoidal structure, right? I think that should be explained better.}
 
 \subsection{Adams's map as an $E_{\infty}$-bialgebra quasi-isomorphism}
 
 Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ was originally identified to be a morphism of monoids in $\Ch$ which, if applied to simply-connected spaces, induces a homology isomorphism.
 Baues showed that $\theta_Z$ is in fact a morphism of monoids in $\coAlg$, i.e., of bialgebras.
-Whereas, using that $\sSing(Z, z)$ is a fibrant reduced simplicial set, the second named author and M. Zeinalian \cite{rivera2018cubical} removed the restriction to simply-connected spaces.
+Whereas, using that $\sSing(Z, z)$ is a fibrant reduced simplicial set, the second named author and M. Zeinalian \cite{rivera2018cubical} showed that for a possibly non-simply connected pointed space $(Z,y)$ the algebras $\cobar(\sS(Z, z))$ and $S^{\cube}(\Omega_zZ)$ are quasi-isomorphic. Later on, the second named author and S. Saneblidze 
+\cite{rivera2019path} showed that $\Theta \colon \ccobar(\sSing(Z, z)) \to \cSing(\Omega_z Z)$ is a weak homotopy equivalence monoids in $\cSet.$
+
 We now show that $\theta_Z$ is in fact a quasi-isomorphism of $E_{\infty}$-bialgebras.
 Considering the factorization
 \begin{equation*}
@@ -259,7 +257,3 @@ We summarize this discussion, which constitutes the second half of \cref{t:1st m
 \begin{lemma}
 	Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$ for any pointed space $(Z, z)$.
 \end{lemma}
-
-\anibal{Delicate diplomatic point. I removed the reference to \cite{rivera2019path} from this subsection.}
-
-\anibal{Is the ``weak-equivalence" claim I made true?}
