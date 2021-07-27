@@ -147,7 +147,7 @@ The monoidal structure
 $$\ncobar(X) \otimes \ncobar(X) \to \ncobar(X)$$
 is induced by the monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ together with the monoidal structure $\otimes \colon \nSet \times \nSet \to \nSet$ on necklicals sets.
 
-\anibal{Wasn't this was already defined before?}
+\anibal{Wasn't this already defined?}
 
 More precisely, for any $S, S' \in \Nec$, the product
 $$\ncobar(X)(S) \otimes \ncobar(X)(S') \to \ncobar(X)(S \vee S')$$
@@ -194,8 +194,8 @@ Since $\ccobar$ produces monoids in $\cSet$ and $\cchainsAS$ is monoidal, the fu
 
 After \cite{medina2021cubical}, we know that cubical chains can be enriched with an $E_\infty$-coalgebra structure extending the Serre coalgebra (\cref{ss:e-infty on cubical}).
 This $\UM$-structure can be transferred via $\cchains \circ \ccobar \cong \cobar \circ \schains$ to provide the cobar construction with and $E_\infty$-structure extending Baues coalgebra structure.
-Furthermore, thanks to \cref{t:cubical e-infty chains are monoidal}, we know that $\cchainsUM$ is monoidal and therefore, $\cchains \circ \ccobar$ produces monoids in $\coAlg_{\UM}$, i.e., $E_\infty$-bialgebras.
-We have the following part of our first main result \cref{t:1st main thm in the intro}.
+Furthermore, thanks to \cref{l:cubical e-infty chains are monoidal}, we know that $\cchainsUM$ is monoidal and therefore, $\cchains \circ \ccobar$ produces monoids in $\coAlg_{\UM}$, i.e., $E_\infty$-bialgebras.
+This discussion proves the first half of \cref{t:1st main thm in the intro}, which we collect in the following.
 
 \begin{lemma}
 	The functor $\cchainsUM$ is monoidal and fits in the following diagram commuting up to a natural isomorphism:
@@ -209,6 +209,10 @@ We have the following part of our first main result \cref{t:1st main thm in the 
 	\end{tikzcd}
 	\end{equation*}	
 \end{lemma}
+
+\subsection{Steenrod operations}
+
+TBW
 
 \subsection{Factorization of Adams' map} \label{factorization}
 
@@ -227,45 +231,35 @@ S^{\cube}(\Omega_z Z),
 \end{equation*}
 where second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
 \begin{equation*}
-\Theta \colon \ccobar (\sSing(Z, z) )\to \cSing(\Omega_z Z)
+\Theta \colon \ccobar(\sSing(Z, z)) \to \cSing(\Omega_z Z)
 \end{equation*}
-determined by sending an $n$-simplex $(\sigma\colon \gsimplex^n \to Z)$ to the singular $(n-1)$-cube
+determined by sending an $n$-simplex $(\sigma \colon \gsimplex^n \to Z)$ to the singular $(n-1)$-cube
 \begin{equation*}
 P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \Omega_z Z.
 \end{equation*}
 
 \anibal{This ``determine" uses the monoidal structure, right? I think that should be explained better.}
 
-\subsection{Proof of \cref{t:1st main thm in the intro}}
+\subsection{Adams's map as an $E_{\infty}$-bialgebra quasi-isomorphism}
 
-We now put together the constructions and results discussed above to deduce our first main theorem, stated in the introduction as \cref{t:1st main thm in the intro} and restated here for convenience.
+Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ was originally identified to be a morphism of monoids in $\Ch$ which, if applied to simply-connected spaces, induces a homology isomorphism.
+Baues showed that $\theta_Z$ is in fact a morphism of monoids in $\coAlg$, i.e., of bialgebras.
+Whereas, using that $\sSing(Z, z)$ is a fibrant reduced simplicial set, the second named author and M. Zeinalian \cite{rivera2018cubical} removed the restriction to simply-connected spaces.
+We now show that $\theta_Z$ is in fact a quasi-isomorphism of $E_{\infty}$-bialgebras.
+Considering the factorization
+\begin{equation*}
+\theta_Z \colon \cobar(\sS(Z, z)) \xrightarrow{\cong} 
+\cchains(\ccobar \sSing(Z, z)) \xrightarrow{\cchains(\Theta)} 
+S^{\cube}(\Omega_z Z).
+\end{equation*}
+The isomorphism if by construction one of $\UM$-bialgebras, whereas the second map, induced from a weak-equivalence of monoids in $\cSet$, is also a morphism of $\UM$-bialgebras
+since $\cchainsUM$ is monoidal (\cref{l:cubical e-infty chains are monoidal}).
+We summarize this discussion, which constitutes the second half of \cref{t:1st main thm in the intro}, in the following.
 
-\begin{nntheorem}
-	The functor $\cchainsUM$ is monoidal and its associated functor on monoids fits in the following diagram commuting up to a natural isomorphism:
-	\begin{equation*}
-	\begin{tikzcd}
-	& \Mon_{\coAlg_\UM} \arrow[d] \\
-	\Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180] \arrow[r, "\cchainsAS"]
-	& \Mon_{\coAlg} \arrow[d] \\
-	\sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\ccobar"]
-	& \Mon_{\Ch}.
-	\end{tikzcd}
-	\end{equation*}
-	Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
-\end{nntheorem} 
+\begin{lemma}
+	Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$ for any pointed space $(Z, z)$.
+\end{lemma}
 
-\begin{proof}
-	The fact that $\cchainsUM$ is monoidal and that it fits in the desired commutative diagram follows directly from Section 4.
-	    
-	The natural $\UM$-coalgebra structure on $\cobar(\sS(Z, z))$ is induced by $\cchainsUM ( \ccobar (\sSing(Z, z)) )$, as discussed in \cref{ss:e-infty on cobar}.
-	The natural $\UM$-coalgebra structure on $S^{\cube}(\Omega_z Z)$ is precisely given by $\cchainsUM( \cSing(\Omega_z Z) ).$ These two $\UM$-coalgebra structures are compatible with the algebra structures, giving rise to monoinds in $\coAlg_{\UM}.$
-	     
-	By naturality, we obtain a map
-	\begin{equation*}
-	\cobar(\schains(\sSing(Z, z))) \cong
-	\cchainsUM \big( \ccobar(\sSing(Z, z)) \big) \xra{\cchainsUM(\Theta)}
-	\cchainsUM \big( \cSing(\Omega_z Z) \big)
-	\end{equation*}
-	of monoids in $\coAlg_{\UM}$, lifting Adams' classical map by \cref{factorization}, as desired.
-	Since $\sSing(Z, z)$ is a fibrant reduced simplicial set, Adams' map $\theta_Z$ is a quasi-isomorphism, as proven in \cite{rivera2018cubical} and \cite{rivera2019path}. 
-\end{proof}
+\anibal{Delicate diplomatic point. I removed the reference to \cite{rivera2019path} from this subsection.}
+
+\anibal{Is the ``weak-equivalence" claim I made true?}
