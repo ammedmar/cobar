@@ -31,21 +31,20 @@ The face and degeneracy maps are defined by the following equations
 
 Berger showed that this construction models the based loop space \textit{as a topological monoid,} more precisely, he showed that for any reduced simplicial set $X$, the geometric realization of the Kan loop group $|G(X)|$ is weak homotopy equivalent, as a topological monoid, to the based loop space $\Omega|X|$ on the geometric realization of $X$ \cite{berger1995loops}.
 
-One may construct a model category structure on the category $\mathsf{sGrp}$ of simplicial groups such that 
-both weak equivalences and fibrations are maps of simplicial groups whose underlying maps of simplicia sets are weak homotopy equivalences and Kan fibrations.
-We call this model category structure the \textit{Kan model structure on $\sGrp.$}
+Using Kan's ideas, Quillen constructed a model category structure on the category $\mathsf{sGrp}$ of simplicial groups determined by
+weak equivalences and fibrations being maps of simplicial groups whose underlying maps of simplicial sets are weak homotopy equivalences and Kan fibrations, respectively. 
+We call this model category structure the \textit{Kan model structure} on $\sGrp$.
 
 The Kan loop group functor has a right adjoint usually denoted by 
 $$\overline{W} \colon \mathsf{sGrp} \to \sSet^0,$$
 which is a model for the classifying space of a simplicial group.
 This adjunction induces an equivalence of homotopy theories in the following sense.
 
-
-\begin{theorem} \label{kan}
-The adjunction
-		$$G \colon \sSet^0 \leftrightarrows \mathsf{sGrp}\colon \overline{W}$$
-		becomes a Quillen equivalence when $\sSet^0$ is equipped with the Kan-Quillen model category structure and $\sGrp$ with the Kan model structure.
-\end{theorem}
+\begin{proposition} \label{kan}
+    The adjunction
+	$$G \colon \sSet^0 \leftrightarrows \mathsf{sGrp}\colon \overline{W}$$
+	becomes a Quillen equivalence when $\sSet^0$ is equipped with the Kan-Quillen model category structure and $\sGrp$ with the Kan model structure.
+\end{proposition}
 
 For a proof of the above statement we refer to \cite[Chapter V]{goerss2009simplicial}.
 
@@ -118,10 +117,8 @@ If $j < i$, $\rigid(\simplex^n)(i,j) = \emptyset.$ The composition law in $\rigi
 The assignment $[n] \mapsto \rigid(\simplex^n)$ defines a cosimplicial object in $\Cat_{\simplex}$.
 For any reduced simplicial set $S$ we can now define
 \begin{equation*}
-\rigid(S) = \underset{{\simplex^n \to S}}{\colim} \rigid(\simplex^n).
+\rigid(S) = \colim_{\simplex^n \to S} \rigid(\simplex^n).
 \end{equation*}
-
-\anibal{There is a command \texttt{colim} for that}
 
 The functor $\rigid$ has a right adjoint, called the \textit{homotopy coherent nerve functor} and denoted by
 $$\nerve \colon \Cat_{\simplex} \to \sSet,$$
@@ -147,7 +144,7 @@ The adjunction between rigidification and the homotopy coherent nerve yields an 
 
 The next result relates the cubical cobar construction and the rigidification functor via the triangulation functor as defined in  \cref{ss:triangulation and its adjoint}.
 
-\begin{proposition}\label{Candgcobar}
+\begin{proposition} \label{Candgcobar}
 	The composition 
 	$$\mathcal{T} \circ \ccobar \colon \sSet^0 \to \Mon_{\sSet}$$
 	is naturally isomorphic to
@@ -157,9 +154,6 @@ The next result relates the cubical cobar construction and the rigidification fu
 The above statement is Proposition 5.3 in \cite{rivera2018cubical}, where $\widehat{\ccobar}$ is denoted by $\rigid_{\cube_c}.$ The proof relies on a description of the rigidification functor in terms of necklaces due to Dugger and Spivak \cite{dugger2011rigidification}.
 
 \cref{Candgcobar} also holds in the many-object setting, but we do not need this level of generality for the purposes of this article.
-
-
-
 
 \subsection{The rigidification functor and Kan's loop group construction}
 
@@ -314,7 +308,7 @@ The $E_{\infty}$-coalgebra structures on the simplicial chains on a triangulated
 	Hence, the unit map induces a quasi-isomorphism of $\USL$-coalgebras after applying the cubical chains functor.
 \end{proof}
 
-\subsection{Proof of Theorem 2}
+\subsection{Proof of \cref{t:2nd main thm in the intro}}
 
 We now put together the constructions and results discussed above to deduce our second main theorem, stated in the introduction as \cref{t:2nd main thm in the intro} and restated here for convenience.
 
