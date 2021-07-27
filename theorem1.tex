@@ -35,7 +35,7 @@ In order to do this, we shall describe a categorical version of Adams' construct
 \subsection{Necklical sets}
 
 We construct a cubical model for the based loop space using necklical sets, a notion related to both simplicial sets and cubical sets.
-Different approaches to this framework can be found in \cite{baues1998hopf}, \cite{galvez2020hopf}, \cite{dugger2011rigidification}, \cite{rivera2018cubical}, \cite{rivera2019path}, among other works.
+Other approaches to this framework can be found in \cite{baues1998hopf}, \cite{galvez2020hopf}, \cite{dugger2011rigidification}, and \cite{rivera2018cubical, rivera2019path}.
 
 Let us first consider the subcategory $\simplex_{*,*}$ of the simplex category $\simplex$ with the same objects and morphisms given by functors $f \colon [n] \to [m]$ satisfying $f(0) = 0$ and $f(n) = m$.
 It is a strict monoidal category when equipped with the monoidal structure $[n] \otimes [m] = [n+m]$, thought of as identifying the elements $n \in [n]$ and $0 \in [m]$, and unit given by $[0]$.
@@ -57,7 +57,8 @@ The morphism of $\Nec$ are generated through the monoidal structure by the follo
 	\item $s^j \colon [n+1] \to [n]$ for $j = 0, \dots, n$ and $n>0$, and 
 	\item $s^0 \colon [1] \to [0]$.
 \end{enumerate}
-We may identify $\Nec$ with a full sub-category of $\sSet_{*,*}$, the category of double pointed simplicial sets as follows. Consider the functor
+We may identify $\Nec$ with a full sub-category of the category of double pointed simplicial sets $\sSet_{*,*}$ as follows.
+Consider the functor
 \begin{equation*}
 \mathcal{S} \colon \Nec \to \sSet_{*,*}
 \end{equation*}
@@ -66,21 +67,18 @@ We may identify $\Nec$ with a full sub-category of $\sSet_{*,*}$, the category o
 \mathcal{S}(T)= \simplex^{n_1} \vee\dots \vee \simplex^{n_k},
 \end{equation*}
 where the wedge symbol now means we identify the last vertex of $\simplex^{n_i}$ with the first vertex of $\simplex^{n_{i+1}}$ for $i = 1, \dots, k-1$ and the two base points are given by the first vertex of $\simplex^{n_1}$ and the last vertex of $\simplex^{n_k}.$
-Then $\mathcal{S}$ is a fully faithful functor, so $\Nec$ may be identified with the full sub-category of $\sSet_{*,*}$ having as objects those double pointed simplicial sets of the form $\simplex^{n_1} \vee ... \vee \simplex^{n_k}.$
-
-Given any necklace $T = [n_1] \vee \dots \vee[n_k] \in \Nec$ define the \textit{dimension} of $T$ by $\text{dim}(T)=n_1 + \dots + n_k-k$.
+Then $\mathcal{S}$ is a fully faithful functor, so $\Nec$ may be identified with the full sub-category of $\sSet_{*,*}$ having as objects those double pointed simplicial sets of the form $\simplex^{n_1} \vee \dots \vee \simplex^{n_k}.$
+The \textit{dimension} of a necklace $T = [n_1] \vee \dots \vee[n_k]$ is define by $\dim(T) = n_1 + \dots + n_k-k$.
 
 The category of \textit{necklical sets} is the functor category $\nSet = \Fun(\Nec^{\op}, \Set)$.
-
-We denote the Yoneda embedding by
+The \textit{Yoneda embedding}
 $$\mathcal{Y} \colon \Nec \to \nSet,$$
-i.e., the functor induced by $T \mapsto \Nec(-,T)$.
+is the functor induced by by $T \mapsto \Nec(-,T)$.
 
-The category of necklical sets $\nSet$ is a (non-symmetric) monoidal category when equipped with the Day convolution monoidal structure $\otimes \colon \nSet \times \nSet \to \nSet$
+The category of necklical sets $\nSet$ is a (non-symmetric) monoidal category when equipped with the Day convolution structure $\otimes \colon \nSet \times \nSet \to \nSet$ (\cref{ss:day convolution}) given by
 \begin{equation*}
-K \otimes K' \, = \colim_{\substack{\mathcal{Y}(T) \to K, \\ \mathcal{Y}(T')\to K'}} \mathcal{Y}(T \vee T'),
+K \otimes K' \, = \colim_{\substack{\mathcal{Y}(T) \to K, \\ \mathcal{Y}(T')\to K'}} \mathcal{Y}(T \vee T').
 \end{equation*}
-as described in \cref{ss:day convolution}.
 
 \subsection{From necklaces to cubes}
 
@@ -93,7 +91,8 @@ by constructing a monoidal functor
 \mathcal{P} \colon \Nec \to \cube.
 \end{equation*}
 
-We first set $\mathcal{P}([0])=2^0$.On any other necklace $T \in \Nec$ we define $\mathcal{P}( T )= 2^{\text{dim}(T)}$.
+We first set $\mathcal{P}([0])=2^0$.
+On any other necklace $T \in \Nec$ we define $\mathcal{P}( T )= 2^{\dim(T)}$.
 In order to define $\mathcal{P}$ on morphisms, it is sufficient to consider the following cases.
 \begin{enumerate}
 	\item For any $\partial^j \colon [n] \to [n+1]$ such that $0< j<{n+1}$, define $\mathcal{P}(\partial^j) \colon 2^{n-1}\to 2^{n}$ to be the cubical coface functor $\mathcal{P}(f)= \delta_0^{j}.$ 
@@ -108,7 +107,7 @@ In order to define $\mathcal{P}$ on morphisms, it is sufficient to consider the 
 
 \begin{remark}
 	The functor $\mathcal{P}$ is neither faithful or full.
-	However, for any necklace $T' \in \Nec$ with $\text{dim}(T')=n+1$ and any cubical coface functor $\delta_{\epsilon}^j \colon 2^n \to 2^{n+1}$ for $0 \leq j \leq n+1$, there exists a unique pair $(T, f \colon T \hookrightarrow T')$, where $T \in \Nec$ with $\text{dim}(T)=n$ and $f \colon T \hookrightarrow T'$ is an injective morphism in $\Nec$, such that $\mathcal{P}(f) = \delta_{\epsilon}^j $.
+	However, for any necklace $T' \in \Nec$ with $\dim(T')=n+1$ and any cubical coface functor $\delta_{\epsilon}^j \colon 2^n \to 2^{n+1}$ for $0 \leq j \leq n+1$, there exists a unique pair $(T, f \colon T \hookrightarrow T')$, where $T \in \Nec$ with $\dim(T)=n$ and $f \colon T \hookrightarrow T'$ is an injective morphism in $\Nec$, such that $\mathcal{P}(f) = \delta_{\epsilon}^j $.
 \end{remark}
 
 The functor $\mathcal{P} \colon \Nec \to \cube$ induces an adjunction between $\cSet$ and $\nSet$ with right and left adjoint functors given respectively by
@@ -125,13 +124,16 @@ and for a necklical set $K \colon \Nec^\op \to \Set$,
 \begin{equation*}
 \mathcal{P}_{!}(K) \ =
 \colim_{\mathcal{Y}(T) \to K} \mathcal{P}(T) \ \cong 
-\colim_{\mathcal{Y}(T) \to K} \cube^{\text{dim}(T)}.
+\colim_{\mathcal{Y}(T) \to K} \cube^{\dim(T)}.
 \end{equation*}
 Since $\mathcal{P}$ is a monoidal functor, the functor $\mathcal{P}_{!} \colon \nSet \to \cSet$ is a monoidal as well.
 
 \subsection{Cubical cobar construction}
 
 Using the framework of necklical sets, we may reinterpret a construction of Baues as a functor
+
+\anibal{What construction? Reference please}
+
 \begin{equation*}
 \ncobar \colon \sSet^0 \to \Mon_{\nSet},
 \end{equation*}
@@ -139,58 +141,100 @@ which we now define.
 
 For any reduced simplicial set $X$, the underlying necklical set $\ncobar(X) \colon \Nec^\op \to \Set$ is defined by
 \begin{equation*}
-\ncobar(X) = \colim_{\mathcal{S}(T) \to X} \mathcal{Y}(T).
+\ncobar(X) \, = \! \colim_{\mathcal{S}(T) \to X} \mathcal{Y}(T).
 \end{equation*}
 The monoidal structure
 $$\ncobar(X) \otimes \ncobar(X) \to \ncobar(X)$$
 is induced by the monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ together with the monoidal structure $\otimes \colon \nSet \times \nSet \to \nSet$ on necklicals sets.
-More precisely, for any $S, S' \in \Nec$, the product $$\ncobar(X)(S) \otimes \ncobar(X)(S') \to \ncobar(X)(S \vee S')$$ is given by $$[f\colon \mathcal{S}(T) \to X, a] \otimes [f'\colon \mathcal{S}(T') \to X, a'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, a \otimes  a'],$$
-where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $a\in \mathcal{Y}(T)(S)$, and $a'\in \mathcal{Y}(T')(S')$.
+
+\anibal{Wasn't this was already defined before?}
+
+More precisely, for any $S, S' \in \Nec$, the product
+$$\ncobar(X)(S) \otimes \ncobar(X)(S') \to \ncobar(X)(S \vee S')$$
+is given by
+$$[f\colon \mathcal{S}(T) \to X, a] \otimes [f'\colon \mathcal{S}(T') \to X, a'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, a \otimes  a'],$$
+where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $a \in \mathcal{Y}(T)(S)$, and $a'\in \mathcal{Y}(T')(S')$.
+
+\anibal{this doesn't flow for me. What is the bracket notation?}
 
 We may now define the \textit{cubical cobar construction}
 $$\ccobar \colon \sSet^0 \to \Mon_{\cSet}$$ as the composition $$\ccobar= \mathcal{P}_! \circ \ncobar.$$ This reinterpretation of Baues construction in terms of cubical sets was also studied in \cite{rivera2018cubical}.
 
 \subsection{Relation to the cobar construction}
 
-The cubical cobar functor $\ccobar\colon \sSet^0 \to \Mon_{\cSet}$ is related to the cobar construction $\mathbf{\Omega}\colon \coAlg \to \Mon_{\Ch}$ via normalized chains as follows.
+The cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}$ is related to the cobar construction $\cobar \colon \coAlg \to \Mon_{\Ch}$ (\cref{ss:cobar construction}) as follows.
 
-\begin{proposition} \label{p:ccobar and cobar}
+\begin{lemma} \label{l:ccobar and cobar}
 	There is a natural isomorphisms of functors 
 	\begin{equation*}
-	\cchains \circ \ccobar \cong \mathbf{\Omega} \circ \schains \colon \sSet^0 \to \Mon_{\Ch}.
+	\cchains \circ \ccobar \cong \cobar \circ \schains \colon \sSet^0 \to \Mon_{\Ch}.
 	\end{equation*}
-\end{proposition}
+\end{lemma}
 
 \begin{proof} 
 	Denote by $\iota_n \in (\cube^n)_n$ the top dimensional non-degenerate element of the standard $n$-cube $\cube^n$.
-	Note that for a reduced simplicial set $X$, we may represent any non-degenerate $n$-cube $\alpha \in (\mathcal{P}_!(\ncobar(X)))_n$ as a pair $\alpha = [\sigma \colon \mathcal{Y}(T) \to X, \iota_n]$ for some $T = [n_1] \vee \dots \vee [n_k] \in \Nec$ with $\text{dim}(T) = n_1 + \dots + n_k-k = n$.
+	Note that for a reduced simplicial set $X$, we may represent any non-degenerate $n$-cube $\alpha \in (\mathcal{P}_!(\ncobar(X)))_n$ as a pair $\alpha = [\sigma \colon \mathcal{Y}(T) \to X, \iota_n]$ for some $T = [n_1] \vee \dots \vee [n_k] \in \Nec$ with $\dim(T) = n_1 + \dots + n_k-k = n$.
 	
 	To define an algebra map
 	\begin{equation*}
-	\varphi_X \colon \cchains(\mathcal{P}_!(\ncobar(X))) \xra{\cong} \mathbf{\Omega}(\schains(X))
+	\varphi_X \colon \cchains(\mathcal{P}_!(\ncobar(X))) \xra{\cong} \cobar(\schains(X))
 	\end{equation*}
 	it suffices to define it on any generator of the form $\alpha=[\sigma \colon \simplex^{n+1} \to X, \iota_{n}]$, i.e., when $T$ is of the form $T=[n+1]$, for some $n\geq0$.
-	If $n=0$ let $\varphi_X(\alpha)= [\overline{\sigma}]+ 1_R$, where $[\overline{\sigma}] \in s^{-1} \overline{ \schains(X)} \subset \mathbf{\Omega}(\schains(X))$ denotes the (length $1$) generator in the cobar construction of $\schains(X)$ determined by $\sigma \in X_{n+1}$ and $1_R$ denotes the unit of the underlying ring $R$.
+	If $n = 0$ let $\varphi_X(\alpha)= [\overline{\sigma}] + 1_\k$, where $[\overline{\sigma}] \in s^{-1} \overline{ \schains(X)} \subset \cobar(\schains(X))$ denotes the (length $1$) generator in the cobar construction of $\schains(X)$ determined by $\sigma \in X_{n+1}$ and $1_\k$ denotes the unit of the underlying ring $R$.
 	If $n>0$, we let $\varphi_X(\alpha)=[\overline{\sigma}]$.
 	A straightforward computation yields that this gives rise to a well defined isomorphism of algebras, which is compatible with the differentials, and natural with respect to maps of simplicial sets.
 \end{proof}
 
 \subsection{An $E_{\infty}$-bialgebra structure on the cobar construction} \label{ss:e-infty on cobar}
 
-Using \cref{p:ccobar and cobar} together with \cref{t:cubical e-infty chains are monoidal} we obtain a natural $E_{\infty}$-bialgebra structure on $\cobar(\schains(X))$ extending Baues' coproduct for any simplicial set $X$.
-Namely, using the observation that $\cchainsUM \colon \cSet \to \coAlg_{\UM}$ is monoidal, the desired $E_{\infty}$-bialgebra structure is provided by the composition 
-$$\cchainsUM \circ \ccobar \colon \sSet^0 \to \Mon_{\U(M)}.$$
+The original cobar construction of Adams produces monoids in $\Ch$.
+Baues enriched this construction to produce monoids in $\coAlg$.
+He did this by using a version of the isomorphism $\cchains \circ \ccobar \cong \cobar \circ \schains$ of \cref{l:ccobar and cobar} and the Serre coalgebra on cubical chains.
+Since $\ccobar$ produces monoids in $\cSet$ and $\cchainsAS$ is monoidal, the functor $\cchainsAS \circ \ccobar$ produces bialgebras, as claimed.
+
+After \cite{medina2021cubical}, we know that cubical chains can be enriched with an $E_\infty$-coalgebra structure extending the Serre coalgebra (\cref{ss:e-infty on cubical}).
+This $\UM$-structure can be transferred via $\cchains \circ \ccobar \cong \cobar \circ \schains$ to provide the cobar construction with and $E_\infty$-structure extending Baues coalgebra structure.
+Furthermore, thanks to \cref{t:cubical e-infty chains are monoidal}, we know that $\cchainsUM$ is monoidal and therefore, $\cchains \circ \ccobar$ produces monoids in $\coAlg_{\UM}$, i.e., $E_\infty$-bialgebras.
+We have the following part of our first main result \cref{t:1st main thm in the intro}.
+
+\begin{lemma}
+	The functor $\cchainsUM$ is monoidal and fits in the following diagram commuting up to a natural isomorphism:
+	\begin{equation*}
+	\begin{tikzcd}
+	& \Mon_{\coAlg_\UM} \arrow[d] \\
+	\Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180] \arrow[r, "\cchainsAS"]
+	& \Mon_{\coAlg} \arrow[d] \\
+	\sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\ccobar"]
+	& \Mon_{\Ch}.
+	\end{tikzcd}
+	\end{equation*}	
+\end{lemma}
 
 \subsection{Factorization of Adams' map} \label{factorization}
 
-Adams' map can now be factored as 
-$$\theta_Z \colon \cobar(\sS(Z, z)) \xrightarrow{\cong} 
+We now use the ideas developed so far to study the based loop space of a pointed topological space $(Z, z)$.
+
+Using the natural isomorphism of algebras
+\begin{equation*}
+\cobar \schains (\sSing(Z, z)) \cong  \cchains \ccobar (\sSing(Z, z))
+\end{equation*}
+of \cref{l:ccobar and cobar}.
+Adams' map can be factored as 
+\begin{equation*}
+\theta_Z \colon \cobar(\sS(Z, z)) \xrightarrow{\cong} 
 \cchains(\ccobar \sSing(Z, z)) \xrightarrow{\cchains(\Theta)} 
-S^{\cube}(\Omega_z Z).$$
-The first map is given by the natural isomorphism of algebras $$\cobar \schains (\sSing(Z, z)) \cong  \cchains \ccobar (\sSing(Z, z))$$ of \cref{p:ccobar and cobar}.
-The second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
-$$\Theta \colon \ccobar (\sSing(Z, z) )\to \cSing( \Omega_z Z)$$
-determined by sending any singular $n$-simplex $$(\sigma\colon \gsimplex^n \to Z) \in \sSing(Z, z)$$ to the singular $(n-1)$-cube $$(P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \Omega_z Z) \in \cSing( \Omega_z Z).$$ 
+S^{\cube}(\Omega_z Z),
+\end{equation*}
+where second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
+\begin{equation*}
+\Theta \colon \ccobar (\sSing(Z, z) )\to \cSing(\Omega_z Z)
+\end{equation*}
+determined by sending an $n$-simplex $(\sigma\colon \gsimplex^n \to Z)$ to the singular $(n-1)$-cube
+\begin{equation*}
+P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \Omega_z Z.
+\end{equation*}
+
+\anibal{This ``determine" uses the monoidal structure, right? I think that should be explained better.}
 
 \subsection{Proof of \cref{t:1st main thm in the intro}}
 
