@@ -1,7 +1,11 @@
 
 \section{Adams's map as an $E_{\infty}$-bialgebra quasi-isomorphism}
 
-The goal of this section is to prove \cref{t:1st main thm in the intro}. We do so by reformulating Baues construction of a cubical model for the based loop space in categorical terms. Then we use the natural $\UM$-coalgebra structure of the chains on a cubical set and its monoidal properties.
+The goal of this section is to prove \cref{t:1st main thm in the intro}.
+Explicitly, to construct a natural $E_{\infty}$-bialgebra structure on $\cobar(\schains(X))$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(Z, z)$, Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
+
+The first goal is achieved using a categorical reformulation of Baues' cubical model for the based loop space (\cref{ss:cubical cobar}), and using on it the natural $\UM$-coalgebra structure defined on cubical cochains (\cref{ss:e-infty on cubical}) with its monoidal properties (\cref{l:cubical e-infty chains are monoidal}).
+The second goal is obtained by factoring Adams' comparison map through this cubical model (\cref{ss:factorization of adams}).
 
 \subsection{Adams' map}
 
@@ -128,7 +132,7 @@ and for a necklical set $K \colon \Nec^\op \to \Set$,
 \end{equation*}
 Since $\mathcal{P}$ is a monoidal functor, the functor $\mathcal{P}_{!} \colon \nSet \to \cSet$ is a monoidal as well.
 
-\subsection{Cubical cobar construction}
+\subsection{Cubical cobar construction} \label{ss:cubical cobar}
 
 Using the framework of necklical sets, we may reinterpret a Baues' geometric cobar construction from \cite{baues1998hopf} as a functor
 
@@ -195,7 +199,7 @@ This $\UM$-structure can be transferred via $\cchains \circ \ccobar \cong \cobar
 Furthermore, thanks to \cref{l:cubical e-infty chains are monoidal}, we know that $\cchainsUM$ is monoidal and therefore, $\cchains \circ \ccobar$ produces monoids in $\coAlg_{\UM}$, i.e., $E_\infty$-bialgebras.
 This discussion proves the first half of \cref{t:1st main thm in the intro}, which we collect in the following.
 
-\begin{lemma}
+\begin{lemma} \label{l:lift of cobar to e-infty}
 	The functor $\cchainsUM$ is monoidal and fits in the following diagram commuting up to a natural isomorphism:
 	\begin{equation*}
 	\begin{tikzcd}
@@ -212,7 +216,7 @@ This discussion proves the first half of \cref{t:1st main thm in the intro}, whi
 
 TBW
 
-\subsection{Factorization of Adams' map} \label{factorization}
+\subsection{Factorization of Adams' map} \label{ss:factorization of adams}
 
 We now use the ideas developed so far to study the based loop space of a pointed topological space $(Z, z)$.
 
@@ -254,6 +258,6 @@ The isomorphism if by construction one of $\UM$-bialgebras, whereas the second m
 since $\cchainsUM$ is monoidal (\cref{l:cubical e-infty chains are monoidal}).
 We summarize this discussion, which constitutes the second half of \cref{t:1st main thm in the intro}, in the following.
 
-\begin{lemma}
+\begin{lemma} \label{l:adams comparison is an e-infty bialgebra map}
 	Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$ for any pointed space $(Z, z)$.
 \end{lemma}
