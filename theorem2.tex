@@ -27,12 +27,12 @@ The based loop space of a reduced simplicial set may be modeled in purely combin
 defined as follows.
 For any reduced simplicial set $X$ each $\kan(X)_n$ is the group with one generator $\overline{x}$ for every simplex $x \in X_{n+1}$ modulo the relation $\overline{s_0(x)} = e$, where $e$ denotes the identity element of the group.  
 
-The face and degeneracy maps are defined by the following equations
-\begin{enumerate}
-    \item $\delta_0(\overline{x}) = \overline{\delta_1(x)} \cdot (\overline{\delta_0(x)})^{-1}$,
-    \item $\delta_n(\overline{x})= \overline{\delta_{n+1}(x)}$ for $n >0$,
-    \item $s_n(\overline{x})= \overline{s_{n+1}(x)}$.
-\end{enumerate}
+The face and degeneracy maps are defined by the following equations:
+\begin{equation*}
+	\delta_0(\overline{x}) = \overline{\delta_1(x)} \cdot (\overline{\delta_0(x)})^{-1},
+	\qquad \quad \delta_n(\overline{x}) = \overline{\delta_{n+1}(x)} \text{ for } n>0,
+	\qquad \quad s_n(\overline{x}) = \overline{s_{n+1}(x)}.
+\end{equation*}
 
 Berger showed that this construction models the based loop space as a topological monoid.
 More precisely, he showed that for any reduced simplicial set $X$, the geometric realization of the Kan loop group $\bars{\kan(X)}$ is weak homotopy equivalent, as a topological monoid, to the based loop space $\loops\bars{X}$ on the geometric realization of $X$ \cite{berger1995loops}.

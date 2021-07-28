@@ -215,11 +215,36 @@ This discussion proves the first half of \cref{t:1st main thm in the intro}, whi
 
 \subsection{Consequences for the bar construction of cochains}
 
-TBW
+\anibal{if one can include the bar on cochains into the dual of the cobar on chains then likely one can show that the E-infty algebra restricts, and, therefore, provides the bar construction with another such structure apart from the one constructed by Fresse. I would be quite happy with that, and if there is some kind of comonoid preservation that would be really good.}
 
 \subsection{Steenrod operations}
 
-TBW (there are explicit representatives for Steenrod operations on the linear dual of cobar.)
+Throughout this subsection let us consider $\k$ to be the finite field $\Fp$ and $X$ a reduced simplicial set.
+
+Since $\cobar \schains(X)$ is isomorphic to the chains on a cubical set by \cref{l:ccobar and cobar}, its mod $p$ homology is a priori equipped with a right action of the Steenrod algebra \cite{bibid}.
+As an application of the explicit construction of a natural $\UM$-coalgebra structure on $\cobar \schains(X)$, we can describe at the chain level this action using the constructions of \cite{medina2020maysteenrod}.
+More explicitly, let $\Cp$ be the cyclic group of order $p$ and
+\begin{equation*}
+\begin{tikzcd} [column sep = .5cm]
+\mathcal W(p) = \Fp[\Cp]\{e_0\} & \arrow[l, "\,T"'] \Fp[\Cp]\{e_1\} & \arrow[l, "\,N"'] \Fp[\Cp]\{e_2\} & \arrow[l, "\,T"'] \cdots
+\end{tikzcd}
+\end{equation*}
+be the minimal free resolution of $\Fp$ as an $\Fp[\Cp]$-module.
+Consider the $\Cp$-equivariant quasi-isomorphism $\psi_\UM \colon W(p) \to \UM(p)$ constructed in \cite{medina2020maysteenrod}, and denote by $\Psi^{\cobar}$ its composition with the morphism $\UM \to \End^{\cobar \schains(X)}$ defining our $E_\infty$-coalgebra structure on $\cobar \schains(X)$.
+
+For $p = 2$, $Sq^s$ is represented by the map sending a representative $\mu$ of a class in the $q\th$ homology of $\cobar \schains(X)$ to the following element in its double linear dual:
+\begin{equation*}
+\mu \mapsto \Big( \alpha \mapsto \alpha^{\otimes p} \big( \psi^{\cobar}(e_{s-q})(\mu) \big) \Big).
+\end{equation*}
+Similarly, for $p$ an odd prime, we have that the actions of $P_s$ and $\beta P_s$ are determined respectibly for $\varepsilon = 0,1$ by
+\begin{equation*}
+\mu \mapsto \Big( \alpha \mapsto \alpha^{\otimes p} \big( (-1)^p \, \nu(q) \, \psi^{\cobar}(e_{(2s-q)(p-1)-\varepsilon})(\mu) \big) \Big).
+\end{equation*}
+where $\nu(q) = (-1)^{q(q-1)m/2}(m!)^q$ and $m = (p-1)/2$.
+
+\anibal{check degrees and signs}
+
+The map $\psi^{\cobar}$, being a special case of the map $\psi^\cube$ defined in \cite{medina2020maysteenrod}, can be described effectively, and it has been implemented in the specialized computer algebra system \texttt{ComCH} \cite{medina2021computer}.
 
 \subsection{Factorization of Adams' map} \label{factorization}
 
