@@ -109,9 +109,7 @@ To a morphism $\tau \colon [n] \to [n^\prime]$ it assigns the chain map
 \big( [m] \to [n] \big) \arrow[r, mapsto] & \big( [m] \to [n] \xra{\tau} [n^\prime] \big).
 \end{tikzcd}
 \end{equation*}
-
 When no confusion arises from doing so we write $\chains$ instead of $\schains$.
-
 We denote, as usual, the basis elements in $\chains(\simplex^n)_m$ by increasing tuples $[v_0, \dots, v_m]$ with $v_i \in \{0, \dots, n\}$.
 
 \subsection{Alexander--Whitney coalgebra} \label{ss:aw coalgebra}
@@ -149,10 +147,10 @@ Consider the topological $n$-simplex
 The assignment $[n] \to \gsimplex^n$ defines a functor $\simplex \to \Top$ whose Kan extension is known as (simplicial) \textit{geometric realization}.
 It has a right adjoint $\sSing \colon \Top \to \sSet$ given by
 \begin{equation*}
-Y \to \Big( 2^n \to \Top(\gsimplex^n, Y) \Big)
+Z \to \Big( 2^n \to \Top(\gsimplex^n, Z) \Big)
 \end{equation*}
-and referred to as the (simplicial) \textit{singular complex} of the topological space $Y$.
-The chain complex $\chains(\cSing Y)$ is referred to as the \textit{cubical singular chains} of $Y$.
+and referred to as the (simplicial) \textit{singular complex} of the topological space $Z$.
+The chain complex $\chains(\cSing Z)$ is referred to as the \textit{simplicial singular chains} of $Z$.
 
 We modify this construction for a pointed topological space $(Y, y)$ by considering only maps of $\gsimplex^n \to Y$ sending all vertices to $y$.
 This produces a reduced simplicial set $\sSing(Y, y)$. We will refer to $\schains(\sSing(Y, y))$ as the \textit{simplicial singular chains on $(Y,y)$} and for simplicity denote it by $\sS(Y,y).$

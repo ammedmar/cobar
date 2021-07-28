@@ -141,23 +141,24 @@ Using the framework of necklical sets, we may reinterpret a Baues' geometric cob
 \end{equation*}
 which we now define.
 
-For any reduced simplicial set $X$, the underlying necklical set $\ncobar(X) \colon \Nec^\op \to \Set$ is defined by
+For any reduced simplicial set $X$, we define a  necklical set $\ncobar(X) \colon \Nec^\op \to \Set$ having as necklical cells all necklaces inside $X$; namely
 \begin{equation*}
 \ncobar(X) \, = \! \colim_{\mathcal{S}(T) \to X} \mathcal{Y}(T).
 \end{equation*}
 The product 
 $$\ncobar(X) \otimes \ncobar(X) \to \ncobar(X)$$
-is induced by the monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ together with the monoidal structure $\otimes \colon \nSet \times \nSet \to \nSet$ on necklicals sets. Recall that $\mathcal{Y}(T) = \Nec(-,T)$, and so we have 
+is induced by the monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ given by concatenation of necklaces.
+More precisely, using that
 \begin{equation*}
     \mathcal{Y}(T) \cong \colim_{(R \to T) \in \Nec \downarrow T} \mathcal{Y}(R).
-\end{equation*}
-More precisely, the product
+\end{equation*} 
+we may describe the product
 $$\ncobar(X) \otimes \ncobar(X) \to \ncobar(X)$$
-is given by
+by
 $$[f\colon \mathcal{S}(T) \to X, R \to T] \otimes [f'\colon \mathcal{S}(T') \to X, R' \to T'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, R \vee  R'\to T \vee T'],$$
-where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $ (R\to T) \in \Nec \downarrow T$, and $(R' \to T') \in \Nec \downarrow T'$.
+where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $ (R\to T) \in \Nec \downarrow T$, and $(R' \to T') \in \Nec \downarrow T'$. 
 
-The bracket notation $[f\colon \mathcal{S}(T) \to X, R\to T]$ denotes the equivalence class of a pair $(f \colon \mathcal{S}(T) \to X, R \to T)$ in the colimit defining $\ncobar(X).$
+The bracket notation $[f\colon \mathcal{S}(T) \to X, R\to T]$ denotes the equivalence class of a pair $(f \colon \mathcal{S}(T) \to X, R \to T)$ in the colimit defining $\ncobar(X).$ 
 
 We may now define the \textit{cubical cobar construction}
 $$\ccobar \colon \sSet^0 \to \Mon_{\cSet}$$ as the composition $$\ccobar= \mathcal{P}_! \circ \ncobar.$$ This reinterpretation of Baues construction in terms of cubical sets was also studied in \cite{rivera2018cubical}.
@@ -212,11 +213,15 @@ This discussion proves the first half of \cref{t:1st main thm in the intro}, whi
 	\end{equation*}	
 \end{lemma}
 
-\subsection{Steenrod operations}
+\subsection{Consequences for the bar construction of cochains}
 
 TBW
 
-\subsection{Factorization of Adams' map} \label{ss:factorization of adams}
+\subsection{Steenrod operations}
+
+TBW (there are explicit representatives for Steenrod operations on the linear dual of cobar.)
+
+\subsection{Factorization of Adams' map} \label{factorization}
 
 We now use the ideas developed so far to study the based loop space of a pointed topological space $(Z, z)$.
 
