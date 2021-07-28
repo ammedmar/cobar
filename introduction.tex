@@ -86,13 +86,13 @@ This is a functor
 \begin{equation*}
 G\colon \sSet^0 \to \sGrp
 \end{equation*}
-from reduced simplicial sets to the category of simplicial groups with the property that the geometric realization $|G(X)|$ is homotopy equivalent to the based loop space $\loops_b|X|$ as a topological monoid \cite{berger1995loops}.
+from reduced simplicial sets to the category of simplicial groups with the property that the geometric realization $|\kan(X)|$ is homotopy equivalent to the based loop space $\loops_b|X|$ as a topological monoid \cite{berger1995loops}.
 Furthermore, the Kan loop group together with its right adjoint define a Quillen equivalence of model categories when $\sSet^0$ is equipped with the Kan-Quillen model category structure and $\sGrp$ with an appropriate model structure, having as weak equivalences maps of simplicial groups whose underlying maps of simplicial sets are weak homotopy equivalences.
 
 In \cite{mcclure2003multivariable, berger2004combinatorial}, the functor of (normalized) chains $\schains$ was lifted to that of $E_{\infty}$-coalgebras, a result generalized in \cite{medina2020prop1} using a lift $\schainsUM \colon \sSet \to \coAlg_{\UM}$.
-Hence, a natural problem is to compare the algebraic structures in $\cobar \schains(X)$ and $\schains_{\UM}(G(X))$.
-In general, $\cobar \schains(X)$ and $\schains(G(X))$ are not quasi-isomorphic for an arbitrary reduced simplicial set $X$.
-This can be seen from the fact that, if $X$ is not fibrant, $H_0(\cobar \schains(X))$ need not be a group ring, while $H_0(G(X))$ is always isomorphic to $ \k[\pi_1(|X|)]$.
+Hence, a natural problem is to compare the algebraic structures in $\cobar \schains(X)$ and $\schains_{\UM}(\kan(X))$.
+In general, $\cobar \schains(X)$ and $\schains(\kan(X))$ are not quasi-isomorphic for an arbitrary reduced simplicial set $X$.
+This can be seen from the fact that, if $X$ is not fibrant, $H_0(\cobar \schains(X))$ need not be a group ring, while $H_0(\kan(X))$ is always isomorphic to $ \k[\pi_1(|X|)]$.
 
 K. Hess and A. Tonks proposed a way of modifying the cobar construction so that it could be compared to the chains on the Kan loop group \cite{hess2010cobar}.
 They construct a localized version of the cobar construction, called \textit{extended cobar construction}, which we interpret as a functor
@@ -100,7 +100,7 @@ $$\Ahat \colon \sSet^0 \to \Mon_\Ch$$
 extending the composition $$\A:= \cobar \circ \schains \colon \sSet^0 \to \Mon_\Ch$$ by formally inverting a basis of $0$-degree elements in $\mathcal{A}(X)$ determined by the $1$-simplices of $X$ for any $X$ reduced simplicial set.
 Hess and Tonks also describe a natural quasi-isomorphism of algebras
 \begin{equation*}
-\phi_X \colon \Ahat(X) \to \schains(G(X)).
+\phi_X \colon \Ahat(X) \to \schains(\kan(X)).
 \end{equation*}
 
 
@@ -110,7 +110,7 @@ Following Baues’ construction, Franz described in \cite{franz2020szczarba} a l
 \end{equation*}
 and showed that Hess--Tonks' comparison map preserves the coalgebra structure, namely, it induces a natural quasi-isomorphism of bialgebras
 \begin{equation*}
-\phi_X \colon \Ahat_{\coAlg}(X) \to \schains (G(X)).
+\phi_X \colon \Ahat_{\coAlg}(X) \to \schains (\kan(X)).
 \end{equation*}
 
 Using similar methods to those that lead to \cref{t:1st main thm in the intro}, we construct a further lift
@@ -125,9 +125,9 @@ For any two cubical sets $Y$ and $Y'$ the isomorphism
 \end{equation*}
 preserves the $U(\M)$-coalgebra structures.
 However, for any two simplicial sets $X$ and $X^\prime$, the Eilenberg-Zilber shuffle map $$\schains(X) \otimes \schains(X^\prime) \xrightarrow{\simeq} \schains(X \times X^\prime)$$ is a quasi-isomorphism of coassociative coalgebras but not of $U(\M)$-coalgebras.
-This last point has two important manifestations: 1) the $U(\M)$-coalgebra structure of $\schainsUM(G(X))$ is not (strictly) compatible with the algebra structure, i.e., it is not an $E_{\infty}$-bialgebra in our sense, and 2) the Hess and Tonks comparison map $\phi_X \colon \Ahat(X) \to \schains(G(X))$ does not preserve the $U(\M)$-coalgebra structures, namely, it is not compatible with the lifts $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$
+This last point has two important manifestations: 1) the $U(\M)$-coalgebra structure of $\schainsUM(\kan(X))$ is not (strictly) compatible with the algebra structure, i.e., it is not an $E_{\infty}$-bialgebra in our sense, and 2) the Hess and Tonks comparison map $\phi_X \colon \Ahat(X) \to \schains(\kan(X))$ does not preserve the $U(\M)$-coalgebra structures, namely, it is not compatible with the lifts $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$
 and $\schainsUM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$.
-Nevertheless, we construct a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras connecting $\Ahat(X)$ and $\schains(G(X))$, for any reduced simplicial set $X$.
+Nevertheless, we construct a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras connecting $\Ahat(X)$ and $\schains(\kan(X))$, for any reduced simplicial set $X$.
 
 We summarize this discussion in the following statement.
 
@@ -143,7 +143,7 @@ We summarize this discussion in the following statement.
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\end{equation*}
-	Furthermore, for any reduced simplicial set $X$, there is a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras between $\Ahat_\UM(X)$ and $\schainsUM(G(X))$.
+	Furthermore, for any reduced simplicial set $X$, there is a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras between $\Ahat_\UM(X)$ and $\schainsUM(\kan(X))$.
 \end{theorem}
 
 \subsection*{Relation to previous work}

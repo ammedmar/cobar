@@ -4,7 +4,11 @@
 The goal of this section is to prove \cref{t:2nd main thm in the intro}.
 Explicitly, we construct an $E_{\infty}$-coalgebra structure on the extended cobar construction of \cite{hess2010cobar} together with a natural zig-zag of quasi-isomorphisms of $E_{\infty}$-coalgebras connecting it to the chains on the Kan loop group. 
 
-Our comparison relies on constructions and results from homotopy theory, which we will review for completeness. In particular, we will use the fact that the rigidification functor (or the left adjoint of the homotopy coherent nerve) provides a passage from simplicial sets to simplicially enriched categories such that after localizing appropriately agrees, up to homotopy, with the Kan loop group functor. Then we relate both the Kan loop group functor and the extended cobar construction to a localized version of the rigidification functor, which will play the role of a middle object. 
+Our comparison relies on constructions and results from homotopy theory, which we will review for completeness. In particular, we will use the fact that the rigidification functor (left adjoint of the homotopy coherent nerve) provides a passage from simplicial sets to simplicially enriched categories such that after localizing appropriately agrees, up to homotopy, with the Kan loop group functor.
+
+\anibal{This sentence is so long. Could you also add references to lemmas or relevant subsections}
+
+Then we relate both the Kan loop group functor and the extended cobar construction to a localized version of the rigidification functor, which will play the role of a middle object. 
 
 \subsection{Kan's loop group construction}
 
@@ -14,24 +18,24 @@ This may be expressed using the language of model categories by stating that the
 \bars{\ \cdot\ } \colon \sSet \leftrightarrows \mathsf{Top} :\! \sSing
 \end{equation*}
 defines a Quillen equivalence between model category structures, where $\Top$ is equipped with its usual model category structure and $\sSet$ with the \textit{Kan-Quillen model structure}.
-There is also a induced model structure on $\sSet^0$ which we call by the same name.
+We refer to the induced model structure on $\sSet^0$ by the same name.
 
 The based loop space of a reduced simplicial set may be modeled in purely combinatorial terms through the \textit{Kan loop group functor} 
 \begin{equation*}
-G \colon \sSet^0 \to \sGrp
+\kan \colon \sSet^0 \to \sGrp
 \end{equation*}
 defined as follows.
-For any reduced simplicial set $X$ each $G(X)_n$ is the group with one generator $\overline{x}$ for every simplex $x \in X_{n+1}$ modulo the relation $\overline{s_0(x)} = e$, where $e$ denotes the identity element of the group.  
+For any reduced simplicial set $X$ each $\kan(X)_n$ is the group with one generator $\overline{x}$ for every simplex $x \in X_{n+1}$ modulo the relation $\overline{s_0(x)} = e$, where $e$ denotes the identity element of the group.  
 
-The face and degeneracy maps are defined by the following equations
-\begin{enumerate}
-    \item $\delta_0(\overline{x}) = \overline{\delta_1(x)} \cdot (\overline{\delta_0(x)})^{-1}$,
-    \item $\delta_n(\overline{x})= \overline{\delta_{n+1}(x)}$ for $n >0$,
-    \item $s_n(\overline{x})= \overline{s_{n+1}(x)}$.
-\end{enumerate}
+The face and degeneracy maps are defined by the following equations:
+\begin{equation*}
+	\delta_0(\overline{x}) = \overline{\delta_1(x)} \cdot (\overline{\delta_0(x)})^{-1},
+	\qquad \quad \delta_n(\overline{x}) = \overline{\delta_{n+1}(x)} \text{ for } n>0,
+	\qquad \quad s_n(\overline{x}) = \overline{s_{n+1}(x)}.
+\end{equation*}
 
 Berger showed that this construction models the based loop space as a topological monoid.
-More precisely, he showed that for any reduced simplicial set $X$, the geometric realization of the Kan loop group $|G(X)|$ is weak homotopy equivalent, as a topological monoid, to the based loop space $\loops|X|$ on the geometric realization of $X$ \cite{berger1995loops}.
+More precisely, he showed that for any reduced simplicial set $X$, the geometric realization of the Kan loop group $\bars{\kan(X)}$ is weak homotopy equivalent, as a topological monoid, to the based loop space $\loops\bars{X}$ on the geometric realization of $X$ \cite{berger1995loops}.
 
 Using Kan's ideas, Quillen constructed a model category structure on the category $\sGrp$ of simplicial groups determined by
 weak equivalences and fibrations being maps of simplicial groups whose underlying maps of simplicial sets are weak homotopy equivalences and Kan fibrations, respectively. 
@@ -43,7 +47,7 @@ As proven for example in \cite[Chapter V]{goerss2009simplicial}, this adjunction
 \begin{proposition} \label{p:kan adjuntion}
     The adjunction
 	\begin{equation*}
-	G \colon \sSet^0 \leftrightarrows \sGrp :\! \classifying
+	\kan \colon \sSet^0 \leftrightarrows \sGrp :\! \classifying
 	\end{equation*}
 	defines a Quillen equivalence when $\sSet^0$ and $\sGrp$ are equipped respectively with the Kan-Quillen and the Kan model category structures.
 \end{proposition}
@@ -55,7 +59,7 @@ In general, for an arbitrary reduced simplicial set $X$, the cobar construction 
 This is true, however, if $X$ is $1$-connected.
 
 In \cite{hess2010cobar}, it is described how to formally invert the elements of $X_1$ inside $\cobar \schains(X)$ to obtain the correct quasi-isomorphism type.
-The resulting model, called the \textit{extended cobar construction}, is then compared as an algebra to the chains on the classical Kan loop group construction $G(X)$.
+The resulting model, called the \textit{extended cobar construction}, is then compared as an algebra to the chains on the classical Kan loop group construction $\kan(X)$.
 
 We reinterpret these constructions in categorical terms with the goal of comparing $E_{\infty}$-coalgebra structures on chains. 
 
@@ -74,7 +78,7 @@ in the associative algebra $\A(X)$.
 The algebra $\Ahat(X)$ recovers Hess and Tonk's extended cobar construction applied to the coalgebra $\schains(X)$ at the $\k$-basis of the degree $1$-elements given by the set $X_1$. More precisely, using the notation of \cite{hess2010cobar}, we have $\Ahat(X)= \hat{\Omega}\schains(X)$. Note that the extended cobar construction is not a functorial construction with respect to maps in $\coAlg$ since it depends on a choice of basis of the degree one $\k$-module in the underlying coalgebra. It is, however, functorial with respect to maps of reduced simplicial sets and that is how we have interpreted it. 
 
 Furthermore, for any reduced simplicial set $X$, the natural quasi-isomorphism of algebras 
-\[\phi_X \colon \Ahat(X) \to \schains(G(X)) \] 
+\[\phi_X \colon \Ahat(X) \to \schains(\kan(X)) \] 
 constructed in \cite{hess2010cobar} induces a natural isomorphism
 \begin{equation*}
 H_0(\Ahat(X)) \cong R[\pi_1(X)].
@@ -139,7 +143,7 @@ The functor $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$ fits into a commuta
 
 \subsection{Rigidification and homotopy coherent nerve}
 
-In order to relate the functors $\widehat{\ccobar} \colon \sSet^0 \to \Mon_{\cSet}$ and $G \colon \sSet^0\to \sGrp$ we introduce a third construction, the \textit{rigidification functor}
+In order to relate the functors $\widehat{\ccobar} \colon \sSet^0 \to \Mon_{\cSet}$ and $\kan \colon \sSet^0\to \sGrp$ we introduce a third construction, the \textit{rigidification functor}
 $$\rigid \colon \sSet^0 \to \Mon_{\sSet},$$
 which is obtained by restricting to $\sSet^0$ a more general construction
 $$\rigid \colon \sSet \to \Cat_{\simplex},$$
@@ -209,7 +213,7 @@ Denote by
 \begin{lemma} \label{CandG}
 	There are natural weak equivalences of simplicial monoids
 	\begin{equation*}
-	\localization_{X_1} \rigid(X) \xra{\simeq} \localization\rigid(X) \xra{\simeq} G(X)
+	\localization_{X_1} \rigid(X) \xra{\simeq} \localization\rigid(X) \xra{\simeq} \kan(X)
 	\end{equation*}
 	for any reduced simplicial set $X$.
 \end{lemma}
@@ -218,18 +222,20 @@ Denote by
 	Since $\rigid$ is a left Quillen functor and every simplicial set $X$ is cofibrant in the Joyal model structure, it follows from \cref{joyalbergner} that the simplicially enriched category $\rigid(X)$ is a cofibrant.
 	Proposition 9.5 of \cite{dwyer1980simplicial} implies that the natural inclusion $\localization_{X_1} \rigid(X) \to \localization\rigid(X)$ is a weak equivalence of simplicially enriched categories.
 	
-	By \cref{hinich} we have a natural weak homotopy equivalence $\psi_{G(X)} \colon \classifying(G(X)) \xrightarrow{\simeq} \nerve(G(X))$ for any reduced simplicial set $X$.
-	By \cref{p:kan adjuntion}, the unit of the adjunction gives rise to a natural weak homotopy equivalence $X \xrightarrow{\simeq} \classifying(G(X))$.
-	Composing these two maps we obtain a natural weak homotopy equivalence
-	$$X \xrightarrow{\simeq} \nerve(G(X)).$$
+	By \cref{hinich} we have that $\psi_{\kan(X)} \colon \classifying(\kan(X)) \xrightarrow{\simeq} \nerve(\kan(X))$ is a weak homotopy equivalence for any reduced simplicial set $X$.
+	By \cref{p:kan adjuntion}, we have a weak homotopy equivalence $X \xrightarrow{\simeq} \classifying(\kan(X))$ given by the unit of the adjunction.
+	Composing these two maps we obtain a weak homotopy equivalence
+	$$X \xrightarrow{\simeq} \nerve(\kan(X)).$$
 	The Quillen equivalence of \cref{joyalbergner} localizes to a Quillen equivalence
 	$$\localization \circ \rigid \colon \sSet^0 \leftrightarrows \sGrp \colon \nerve \circ \iota$$
-	when $\sSet^0$ is equipped with the Kan-Quillen model structure and $\sGrp$ with the model structure of \cref{p:kan adjuntion}. It follows that the adjoint of the weak homotopy equivalence $X \xra{\simeq} \nerve( \iota (G(X)))$ is a weak equivalence of simplicial groups
-	$$\localization\rigid(X) \xra{\simeq} G(X),$$
+	when $\sSet^0$ is equipped with the Kan-Quillen model structure and $\sGrp$ with the model structure of \cref{p:kan adjuntion}.
+	Here $\iota \colon \sGrp \to \Cat_{\simplex}$ denotes the natural inclusion functor.
+	It follows that the adjoint of the weak homotopy equivalence $X \xra{\simeq} \nerve(\kan(X))$ is a weak equivalence of simplicial groups
+	$$\localization\rigid(X) \xra{\simeq} \kan(X),$$
 	which finishes the proof.
 \end{proof}
 
-Further details regarding the weak equivalence $\localization \rigid(X) \xra{\simeq} G(X)$, including an explicit description in terms of the Szczarba operators, may be found in \cite{minichello2021path}.
+Further details regarding the weak equivalence $\localization \rigid(X) \xra{\simeq} \kan(X)$, including an explicit description in terms of the Szczarba operators, may be found in \cite{minichello2021path}.
 
 \subsection{Localized cubical cobar and the Kan loop group}
 
@@ -238,7 +244,7 @@ We have the following comparison between the triangulation of the localized geom
 \begin{corollary} \label{widehatgcobarandG}
 	There is a natural weak equivalence of simplicial monoids
 	\begin{equation*}
-	\mathcal{T} \widehat{\ccobar}(X) \xrightarrow{\simeq} G(X)
+	\mathcal{T} \widehat{\ccobar}(X) \xrightarrow{\simeq} \kan(X)
 	\end{equation*}
 	for any reduced simplicial set $X$.
 \end{corollary}
@@ -339,16 +345,16 @@ The $E_{\infty}$-coalgebra structures on the simplicial chains on a triangulated
 	Applying \cref{l:zigzag} to $Y= \widehat{\ccobar}(X),$ we obtain that $\schainsUSL (\mathcal{T} \widehat{\ccobar}(X))$ and $\cchainsUSL(\widehat{\ccobar}(X)) = \Ahat_{\USL}(X)$ are quasi-isomorphic via a zig-zag of natural maps of $\USL$-coalgebras.
 	By \cref{widehatgcobarandG} we have a weak equivalence of simplicial monoids
 	\begin{equation*}
-	\mathcal{T}\widehat{\ccobar}(X) \xrightarrow{\simeq} G(X)
+	\mathcal{T}\widehat{\ccobar}(X) \xrightarrow{\simeq} \kan(X)
 	\end{equation*}
 	for any reduced simplicial set $X$.
 	By naturality, we have an induced quasi-isomorphism of $\USL$-coalgebras
 	\begin{equation*}
 	\schainsUSL \big( \mathcal{T}\widehat{\ccobar}(X) \big) \xra{\simeq}
-	\schainsUSL \big( G(X) \big).
+	\schainsUSL \big( \kan(X) \big).
 	\end{equation*}
-	Therefore, $\Ahat_{\USL}(X)$ and $\schainsUSL(G(X))$ are quasi-isomorphic through a zig-zag of natural maps of $\USL$-coalgebras, as desired.
+	Therefore, $\Ahat_{\USL}(X)$ and $\schainsUSL(\kan(X))$ are quasi-isomorphic through a zig-zag of natural maps of $\USL$-coalgebras, as desired.
 We summarize this discussion, which constitutes the second half of \cref{t:2nd main thm in the intro}, in the following.
 \begin{lemma}
-For any reduced simplicial set $X$, there is a zig-zag of natural quasi-isomorphisms of $\USL$-coalgebras between $\Ahat_\USL(X)$ and $\schainsUSL(G(X)).$
+For any reduced simplicial set $X$, there is a zig-zag of natural quasi-isomorphisms of $\USL$-coalgebras between $\Ahat_\USL(X)$ and $\schainsUSL(\kan(X)).$
 \end{lemma}
