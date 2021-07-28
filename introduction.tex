@@ -5,9 +5,9 @@ In 1956, F. Adams introduced the cobar construction to model algebraically the p
 Fixing a commutative ring, the algebraic cobar construction may be described as a functor $\cobar \colon \coAlg^\ast \to \Mon_{\Ch}$ from the category of coaugemented  (differential graded coassociative) coalgebras to the category of (dga) algebras, which we regard in this article as monoids over the symmetric monoidal category $\Ch$ of chain complexes.
 For any pointed space $(Z, z)$, Adams constructed a \textit{comparison map}
 \begin{equation} \label{e:adams map}
-\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z),
+\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\loops_z Z),
 \end{equation}
-i.e., a natural chain map of algebras, where $\sS(Z,z)$ is a pointed version of the coalgebra of (simplicial) singular chains in $Y$ and $S^{\cube}(\Omega_zZ)$ is the algebra of cubical singular chains on the topological monoid of Moore loops in $Y$ based at~$y$.
+i.e., a natural chain map of algebras, where $\sS(Z,z)$ is a pointed version of the coalgebra of (simplicial) singular chains in $Y$ and $S^{\cube}(\loops_zZ)$ is the algebra of cubical singular chains on the topological monoid of Moore loops in $Y$ based at~$y$.
 More precisely, $\sS(Z,z)$ is obtained by applying the functor of (normalized) chains $\schains$ to the pointed simplicial singular complex $\sSing(Z, z)$ of continuous maps $\gsimplex^n \to Z$ sending all vertices to $Z$.
 Adams proved that $\theta_Z$ is a quasi-isomorphism if $Z$ is simply connected, a result extended to path-connected spaces in \cite{rivera2018cubical} by considering finer homotopical algebra, and in \cite{hess2010cobar} by a localization procedure.
 
@@ -23,9 +23,9 @@ restricted by certain relations \cite{brown1981cubes, grandis2003cubical}.
 
 The functor of cubical singular chains $S^\cube$ appearing in the target of Adams' comparison map \eqref{e:adams map 2} is equal to the composition $\cchains \circ \cSing$, where $\cSing$ is constructed by considering all continuous maps from geometric cubes.
 The monoidal structure on the site defining the category of cubical sets $\cSet$ provides it, via Day convolution, with a monoidal structure, which, with the usual monoidal structures on $\Ch$ and $\Top$, makes both $\cSing$ and $\cchains$ into monoidal functors.
-Consequently, $S^\cube(\Omega_z Z)$ is a monoid in $\Ch$ since $\Omega_z Z$ is a monoid in $\Top$ for any pointed space $(Z, z)$.
+Consequently, $S^\cube(\loops_z Z)$ is a monoid in $\Ch$ since $\loops_z Z$ is a monoid in $\Top$ for any pointed space $(Z, z)$.
 Cubical chains are equipped with a natural coalgebra structure coming from Serre's chain approximation to the diagonal.
-This structure lifts $\cchains$ to the category of coalgebras $\cchainsAS \colon \cSet \to \coAlg$ as a monoidal functor, which, in particular, makes $S^\cube(\Omega_z Z)$ into a monoid in $\coAlg$ for any pointed space $(Z, z)$.
+This structure lifts $\cchains$ to the category of coalgebras $\cchainsAS \colon \cSet \to \coAlg$ as a monoidal functor, which, in particular, makes $S^\cube(\loops_z Z)$ into a monoid in $\coAlg$ for any pointed space $(Z, z)$.
 
 Denoting by $\sSet^0$ the category of reduced simplicial sets, Baues' introduced the \textit{cubical cobar construction}
 \begin{equation*}
@@ -36,10 +36,10 @@ a functor he used in \cite{baues1998hopf} to factor Adams' comparison map as a c
 \begin{tikzcd}[column sep = small]
 \theta_Z \colon \cobar(\sS(Z, z)) \arrow[r] &
 \cchains(\ccobar \sSing(Z, z)) \arrow[r] &
-S^{\cube}(\Omega_z Z),
+S^{\cube}(\loops_z Z),
 \end{tikzcd}
 \end{equation}
-where the first chain map is an isomorphism and the second is induced from an inclusion of cubical sets $\ccobar \sSing(Z, z) \to \cSing(\Omega_z Z)$.
+where the first chain map is an isomorphism and the second is induced from an inclusion of cubical sets $\ccobar \sSing(Z, z) \to \cSing(\loops_z Z)$.
 Additionally, Baues proved that when $Z$ is simply connected this inclusion is a homotopy equivalence, a result extended to the non-simply connected setting in \cite{rivera2019path}.
 
 The first map in \eqref{e:baues factorization of adams map} is defined for a general reduced simplicial set $X$ and is always an isomorphism.
@@ -51,7 +51,7 @@ In other words, Baues lifted Adams' cobar construction $\cobar \circ \schains$ s
 \sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\ccobar"] & \Mon_{\Ch}.
 \end{tikzcd}
 \end{equation*}
-Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of bialgebras, i.e., of monoids in $\coAlg$.
+Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of bialgebras, i.e., of monoids in $\coAlg$.
 
 We extend Baues' work by lifting $\cobar \circ \schains$ to the category of $E_{\infty}$-\textit{bialgebras}, that is to say, of monoids in $E_{\infty}$-coalgebras; a notion that should not be confused with that of bialgebras over an $E_{\infty}$-prop.
 More precisely, our lift is to the category of monoids in $\coAlg_\UM$, where $\coAlg_\UM$ is the category of coalgebas over the combinatorial model $U(\M)$ of the $E_{\infty}$-operad introduced via a finitely presented prop in \cite{medina2020prop1}.
@@ -63,7 +63,7 @@ It states that the functor $\cchainsUM \colon \cSet \to \coAlg_\UM$ defined in \
 Generalizing Baues' first step in the construction of his lift of Adams' cobar construction, we have that $\cchainsUM(\ccobar X)$ is a monoid in $\coAlg_\UM$.
 This is because $\ccobar X$ is a monoid in $\cSet$ and $\cchainsUM$ is shown to be a monoidal functor.
 Similar to Baues' second step, we use for any reduced simplicial set $X$ the natural isomorphism $\cobar(\schains(X)) \to \cchains(\ccobar X)$ to transfer the constructed $E_{\infty}$-bialgebra structure on $\cchains(\ccobar X)$ to $\cobar(\schains(X))$.
-In particular we have, generalizing Baues' result, that for any pointed space $(Z, z)$ Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras.
+In particular we have, generalizing Baues' result, that for any pointed space $(Z, z)$ Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras.
 We condense this discussion in our main result.
 
 \begin{theorem} \label{t:1st main thm in the intro}
@@ -77,7 +77,7 @@ We condense this discussion in our main result.
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\end{equation*}
-	Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
+	Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
 \end{theorem} 
 The homotopy theory of spaces can be modeled as the Kan-Quillen model category of simplicial sets.
 We would also like to understand how the cobar construction and its algebraic structure fit in this combinatorial framework.
@@ -86,7 +86,7 @@ This is a functor
 \begin{equation*}
 G\colon \sSet^0 \to \sGrp
 \end{equation*}
-from reduced simplicial sets to the category of simplicial groups with the property that the geometric realization $|G(X)|$ is homotopy equivalent to the based loop space $\Omega_b|X|$ as a topological monoid \cite{berger1995loops}.
+from reduced simplicial sets to the category of simplicial groups with the property that the geometric realization $|G(X)|$ is homotopy equivalent to the based loop space $\loops_b|X|$ as a topological monoid \cite{berger1995loops}.
 Furthermore, the Kan loop group together with its right adjoint define a Quillen equivalence of model categories when $\sSet^0$ is equipped with the Kan-Quillen model category structure and $\sGrp$ with an appropriate model structure, having as weak equivalences maps of simplicial groups whose underlying maps of simplicial sets are weak homotopy equivalences.
 
 In \cite{mcclure2003multivariable, berger2004combinatorial}, the functor of (normalized) chains $\schains$ was lifted to that of $E_{\infty}$-coalgebras, a result generalized in \cite{medina2020prop1} using a lift $\schainsUM \colon \sSet \to \coAlg_{\UM}$.

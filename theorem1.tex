@@ -1,13 +1,17 @@
 
 \section{Adams's map as an $E_{\infty}$-bialgebra quasi-isomorphism}
 
-The goal of this section is to prove \cref{t:1st main thm in the intro}. We do so by reformulating Baues construction of a cubical model for the based loop space in categorical terms. Then we use the natural $\UM$-coalgebra structure of the chains on a cubical set and its monoidal properties.
+The goal of this section is to prove \cref{t:1st main thm in the intro}.
+Explicitly, to construct a natural $E_{\infty}$-bialgebra structure on $\cobar(\schains(X))$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(Z, z)$, Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
+
+The first goal is achieved using a categorical reformulation of Baues' cubical model for the based loop space (\cref{ss:cubical cobar}), and using on it the natural $\UM$-coalgebra structure defined on cubical cochains (\cref{ss:e-infty on cubical}) with its monoidal properties (\cref{l:cubical e-infty chains are monoidal}).
+The second goal is obtained by factoring Adams' comparison map through this cubical model (\cref{ss:factorization of adams}).
 
 \subsection{Adams' map}
 
 In \cite{adams1956cobar}, Adams constructed a natural map of algebras
 \begin{equation} \label{e:adams map 2}
-\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z),
+\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\loops_z Z),
 \end{equation}
 for any pointed topological space $(Z, z)$.
 The construction is based on a collection of continuous maps $$\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n),$$
@@ -25,8 +29,8 @@ For any continuous map of spaces $f \colon Z \to Z'$, we denote by $P(f) \colon 
 Adams' map $\theta_Z$ is now given as follows.
 For any singular $1$-simplex $\sigma \in S^{\Delta}_1(Z, z)$ let
 $$\theta_Z([\sigma])= P(\sigma) \circ \theta_1 - c_z,$$
-where $c_z \in S^{\cube}_0(\Omega_z Z)$ is the singular $0$-cube determined by the constant loop at $z \in Z.$ For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Z, z)$ with $n>1$, let
-$$\theta_Z([\sigma])= P(\sigma) \circ \theta_n.$$ Since the underlying graded algebra of $\cobar(\sS(Z, z))$ is free, we may extend the above to an algebra map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$.
+where $c_z \in S^{\cube}_0(\loops_z Z)$ is the singular $0$-cube determined by the constant loop at $z \in Z.$ For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Z, z)$ with $n>1$, let
+$$\theta_Z([\sigma])= P(\sigma) \circ \theta_n.$$ Since the underlying graded algebra of $\cobar(\sS(Z, z))$ is free, we may extend the above to an algebra map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\loops_z Z)$.
 The compatibility equations for the maps $\theta_n$ imply that $\theta_Z$ is a chain map.
 
 We will construct an $E_{\infty}$-bialgebra structure on $\cobar(\sS(Z, z))$ and show that $\theta_Z$ preserves this structure.
@@ -128,7 +132,7 @@ and for a necklical set $K \colon \Nec^\op \to \Set$,
 \end{equation*}
 Since $\mathcal{P}$ is a monoidal functor, the functor $\mathcal{P}_{!} \colon \nSet \to \cSet$ is a monoidal as well.
 
-\subsection{Cubical cobar construction}
+\subsection{Cubical cobar construction} \label{ss:cubical cobar}
 
 Using the framework of necklical sets, we may reinterpret a Baues' geometric cobar construction from \cite{baues1998hopf} as a functor
 
@@ -196,7 +200,7 @@ This $\UM$-structure can be transferred via $\cchains \circ \ccobar \cong \cobar
 Furthermore, thanks to \cref{l:cubical e-infty chains are monoidal}, we know that $\cchainsUM$ is monoidal and therefore, $\cchains \circ \ccobar$ produces monoids in $\coAlg_{\UM}$, i.e., $E_\infty$-bialgebras.
 This discussion proves the first half of \cref{t:1st main thm in the intro}, which we collect in the following.
 
-\begin{lemma}
+\begin{lemma} \label{l:lift of cobar to e-infty}
 	The functor $\cchainsUM$ is monoidal and fits in the following diagram commuting up to a natural isomorphism:
 	\begin{equation*}
 	\begin{tikzcd}
@@ -230,35 +234,35 @@ Adams' map can be factored as
 \begin{equation*}
 \theta_Z \colon \cobar(\sS(Z, z)) \xrightarrow{\cong} 
 \cchains(\ccobar \sSing(Z, z)) \xrightarrow{\cchains(\Theta)} 
-S^{\cube}(\Omega_z Z),
+S^{\cube}(\loops_z Z),
 \end{equation*}
 where second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
 \begin{equation*}
-\Theta \colon \ccobar(\sSing(Z, z)) \to \cSing(\Omega_z Z)
+\Theta \colon \ccobar(\sSing(Z, z)) \to \cSing(\loops_z Z)
 \end{equation*}
 determined through the monoid structure by sending an $n$-simplex $(\sigma \colon \gsimplex^n \to Z)$ to the singular $(n-1)$-cube
 \begin{equation*}
-P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \Omega_z Z.
+P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \loops_z Z.
 \end{equation*}
 
 \subsection{Adams's map as an $E_{\infty}$-bialgebra quasi-isomorphism}
 
-Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ was originally identified to be a morphism of monoids in $\Ch$ which, if applied to simply-connected spaces, induces a homology isomorphism.
+Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\loops_z Z)$ was originally identified to be a morphism of monoids in $\Ch$ which, if applied to simply-connected spaces, induces a homology isomorphism.
 Baues showed that $\theta_Z$ is in fact a morphism of monoids in $\coAlg$, i.e., of bialgebras.
-Whereas, using that $\sSing(Z, z)$ is a fibrant reduced simplicial set, the second named author and M. Zeinalian \cite{rivera2018cubical} showed that for a possibly non-simply connected pointed space $(Z,y)$ the algebras $\cobar(\sS(Z, z))$ and $S^{\cube}(\Omega_zZ)$ are quasi-isomorphic. Later on, the second named author and S. Saneblidze 
-\cite{rivera2019path} showed that $\Theta \colon \ccobar(\sSing(Z, z)) \to \cSing(\Omega_z Z)$ is a weak homotopy equivalence monoids in $\cSet.$
+Whereas, using that $\sSing(Z, z)$ is a fibrant reduced simplicial set, the second named author and M. Zeinalian \cite{rivera2018cubical} showed that for a possibly non-simply connected pointed space $(Z,y)$ the algebras $\cobar(\sS(Z, z))$ and $S^{\cube}(\loops_zZ)$ are quasi-isomorphic. Later on, the second named author and S. Saneblidze 
+\cite{rivera2019path} showed that $\Theta \colon \ccobar(\sSing(Z, z)) \to \cSing(\loops_z Z)$ is a weak homotopy equivalence monoids in $\cSet.$
 
 We now show that $\theta_Z$ is in fact a quasi-isomorphism of $E_{\infty}$-bialgebras.
 Considering the factorization
 \begin{equation*}
 \theta_Z \colon \cobar(\sS(Z, z)) \xrightarrow{\cong} 
 \cchains(\ccobar \sSing(Z, z)) \xrightarrow{\cchains(\Theta)} 
-S^{\cube}(\Omega_z Z).
+S^{\cube}(\loops_z Z).
 \end{equation*}
 The isomorphism if by construction one of $\UM$-bialgebras, whereas the second map, induced from a weak-equivalence of monoids in $\cSet$, is also a morphism of $\UM$-bialgebras
 since $\cchainsUM$ is monoidal (\cref{l:cubical e-infty chains are monoidal}).
 We summarize this discussion, which constitutes the second half of \cref{t:1st main thm in the intro}, in the following.
 
-\begin{lemma}
-	Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\Omega_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$ for any pointed space $(Z, z)$.
+\begin{lemma} \label{l:adams comparison is an e-infty bialgebra map}
+	Adams' comparison map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$ for any pointed space $(Z, z)$.
 \end{lemma}
