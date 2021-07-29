@@ -14,7 +14,10 @@ In \cite{adams1956cobar}, Adams constructed a natural map of algebras
 \theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\loops_z Z),
 \end{equation}
 for any pointed topological space $(Z, z)$.
-The construction is based on a collection of continuous maps $$\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n),$$
+The construction is based on a collection of continuous maps 
+\[
+\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n),
+\]
 where $P(\gsimplex^n;0,n)$ denotes the topological space of Moore paths in $\gsimplex^n$ from the $0$-th vertex $v_0$ to the $n$-th vertex $v_n$.
 These maps are constructed inductively so that following equations are satisfied:
 \begin{enumerate}
@@ -28,9 +31,14 @@ For any continuous map of spaces $f \colon Z \to Z'$, we denote by $P(f) \colon 
 
 Adams' map $\theta_Z$ is now given as follows.
 For any singular $1$-simplex $\sigma \in S^{\Delta}_1(Z, z)$ let
-$$\theta_Z([\sigma])= P(\sigma) \circ \theta_1 - c_z,$$
+\[
+\theta_Z([\sigma])= P(\sigma) \circ \theta_1 - c_z,
+\]
 where $c_z \in S^{\cube}_0(\loops_z Z)$ is the singular $0$-cube determined by the constant loop at $z \in Z.$ For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Z, z)$ with $n>1$, let
-$$\theta_Z([\sigma])= P(\sigma) \circ \theta_n.$$ Since the underlying graded algebra of $\cobar(\sS(Z, z))$ is free, we may extend the above to an algebra map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\loops_z Z)$.
+\[
+\theta_Z([\sigma])= P(\sigma) \circ \theta_n.
+\]
+Since the underlying graded algebra of $\cobar(\sS(Z, z))$ is free, we may extend the above to an algebra map $\theta_Z \colon \cobar(\sS(Z, z)) \to S^{\cube}(\loops_z Z)$.
 The compatibility equations for the maps $\theta_n$ imply that $\theta_Z$ is a chain map.
 
 We will construct an $E_{\infty}$-bialgebra structure on $\cobar(\sS(Z, z))$ and show that $\theta_Z$ preserves this structure.
@@ -76,7 +84,9 @@ The \textit{dimension} of a necklace $T = [n_1] \vee \dots \vee[n_k]$ is define 
 
 The category of \textit{necklical sets} is the functor category $\nSet = \Fun(\Nec^{\op}, \Set)$.
 The \textit{Yoneda embedding}
-$$\mathcal{Y} \colon \Nec \to \nSet,$$
+\[
+\mathcal{Y} \colon \Nec \to \nSet,
+\]
 is the functor induced by by $T \mapsto \Nec(-,T)$.
 
 The category of necklical sets $\nSet$ is a (non-symmetric) monoidal category when equipped with the Day convolution structure $\otimes \colon \nSet \times \nSet \to \nSet$ (\cref{ss:day convolution}) given by
@@ -146,22 +156,35 @@ For any reduced simplicial set $X$, we define a  necklical set $\ncobar(X) \colo
 \ncobar(X) \, = \! \colim_{\mathcal{S}(T) \to X} \mathcal{Y}(T).
 \end{equation*}
 The product 
-$$\ncobar(X) \otimes \ncobar(X) \to \ncobar(X)$$
+\[
+\ncobar(X) \otimes \ncobar(X) \to \ncobar(X)
+\]
 is induced by the monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ given by concatenation of necklaces.
 More precisely, using that
 \begin{equation*}
     \mathcal{Y}(T) \cong \colim_{(R \to T) \in \Nec \downarrow T} \mathcal{Y}(R).
 \end{equation*} 
 we may describe the product
-$$\ncobar(X) \otimes \ncobar(X) \to \ncobar(X)$$
+\[
+\ncobar(X) \otimes \ncobar(X) \to \ncobar(X)
+\]
 by
-$$[f\colon \mathcal{S}(T) \to X, R \to T] \otimes [f'\colon \mathcal{S}(T') \to X, R' \to T'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, R \vee  R'\to T \vee T'],$$
+\[
+[f\colon \mathcal{S}(T) \to X, R \to T] \otimes [f'\colon \mathcal{S}(T') \to X, R' \to T'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, R \vee  R'\to T \vee T'],
+\]
 where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $ (R\to T) \in \Nec \downarrow T$, and $(R' \to T') \in \Nec \downarrow T'$. 
 
 The bracket notation $[f\colon \mathcal{S}(T) \to X, R\to T]$ denotes the equivalence class of a pair $(f \colon \mathcal{S}(T) \to X, R \to T)$ in the colimit defining $\ncobar(X).$ 
 
 We may now define the \textit{cubical cobar construction}
-$$\ccobar \colon \sSet^0 \to \Mon_{\cSet}$$ as the composition $$\ccobar= \mathcal{P}_! \circ \ncobar.$$ This reinterpretation of Baues construction in terms of cubical sets was also studied in \cite{rivera2018cubical}.
+\[
+\ccobar \colon \sSet^0 \to \Mon_{\cSet}
+\]
+as the composition 
+\[
+\ccobar= \mathcal{P}_! \circ \ncobar.
+\]
+This reinterpretation of Baues construction in terms of cubical sets was also studied in \cite{rivera2018cubical}.
 
 \subsection{Relation to the cobar construction}
 
