@@ -14,30 +14,21 @@ Given simplicial sets $X, X^\prime$ their \textit{Cartesian product} $X \times X
 \[
 (X \times X^\prime)_n = X_n \times X^\prime_n.
 \]
-This construction makes $\sSet$ into a symmetric monoidal category with unit $\simplex^0$.
+This construction makes $\sSet$ into a symmetric monoidal category with unit $\simplex^0$. We remark that Cartesian product of simplicial sets coincides with the more general notion of categorical product, since limits of presheaves are computed object-wise.
 
-We remark that Cartesian product of simplicial sets coincides with the more general notion of categorical product, since limits of presheaves are computed object-wise.
-
-We remark that Day convolution can be defined for general presheaves over a monoidal category. Namely, if $(\mathsf{J}, \boxtimes)$ is a monoidal category, we may define a monoidal structure
+We now recall a monoidal structure, called the \textit{Day convolution}, on the category of presheaves over a monoidal category. Let $(\mathsf{J}, \boxtimes)$ be a monoidal category. Define 
 \[ 
-\otimes \colon \Fun(\mathsf{J}^{\op}, \Set) \times \Fun(\mathsf{J}^{\op}, \Set) \to \Fun(\mathsf{J}^{\op}, \Set)
+\otimes \colon \Fun[\mathsf{J}^{\op}, \Set] \times \Fun[\mathsf{J}^{\op}, \Set]\to \Fun[\mathsf{J}^{\op}, \Set]
 \]
 by the formula
 \[
 F \otimes F^\prime = \colim_{\substack{\mathcal{Y}(i) \to F \\ \mathcal{Y}(j) \to F^\prime}} \mathcal{Y}(i \boxtimes j),
 \]
-where $\mathcal{Y} \colon \mathsf{J} \to \Fun(\mathsf{J}^{\op}, \Set)$ denotes the Yoneda embedding $j \mapsto \mathsf{J}(-,j)$.
+where $\mathcal{Y} \colon \mathsf{J} \to \Fun[\mathsf{J}^{\op}, \Set]$ denotes the Yoneda embedding $j \mapsto \mathsf{J}(-,j)$.
 
-\anibal{$\Fun(\cdot)$ not $\Fun[\cdot]$ and categories are always \texttt{mathsf}}
+This notion makes $\cSet$ into a (non-symmetric) monoidal category with unit $\cube^0$. Furthermore, with this monoidal structure $\cSing$ is a monoidal functor.
 
-\anibal{don't write the formula again, just explain how this specializes to $\cSet$}
-
-Given cubical sets $Y$ and $Y^\prime$ their \textit{Day convolution} is defined by
-\[
-Y \otimes Y^\prime = \colim_{\substack{\cube^n \to Y \\ \cube^{m} \to Y}} \square^{n+m}.
-\]
-This notion makes $\cSet$ into a (non-symmetric) monoidal category with unit $\cube^0$.
-Furthermore, with this monoidal structure $\cSing$ is a monoidal functor.
+Throughout this article we will always consider $\sSet$ and $\cSet$ as monoidal categories equipped with the Cartesian product and Day convolution, respectively. 
 
 \subsection{Triangulation and its right adjoint} \label{ss:triangulation and its adjoint}
 
