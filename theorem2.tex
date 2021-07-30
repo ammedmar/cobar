@@ -4,7 +4,8 @@
 The goal of this section is to prove \cref{t:2nd main thm in the intro}.
 Explicitly, we construct an $E_{\infty}$-coalgebra structure on the extended cobar construction of \cite{hess2010cobar} together with a natural zig-zag of quasi-isomorphisms of $E_{\infty}$-coalgebras connecting it to the chains on the Kan loop group.
 
-Our comparison uses the rigidification functor, a construction introduced by Cordier and used by Lurie in the theory of $\infty$-categories, as a middle object to relate the Kan loop group and the cubical cobar construction.
+Our comparison uses the rigidification functor, a construction introduced by Cordier and used by Lurie, Dugger, and Spivak in the theory of $\infty$-categories, as a middle object to relate the Kan loop group and the cubical cobar construction.
+
 The rigidification functor is naturally isomorphic to the triangulation of the cubical cobar construction, as explained in \cref{Candgcobar}.
 Then, in \cref{CandG}, we show that a localized version of the rigidification functor agrees, up to homotopy, with the Kan loop group.
 Our main result then follows by applying the corresponding chain functors and comparing these via the Serre--Cartan map, as explained in the last three subsections.
@@ -171,7 +172,7 @@ which is obtained by restricting to $\sSet^0$ a more general construction
 \[
 \rigid \colon \sSet \to \Cat_{\simplex},
 \]
-where $\Cat_{\simplex}$ denotes the category of small categories enriched over $\sSet$.
+where $\Cat_{\simplex}$ denotes the category of small categories enriched over $\sSet$. We now recall the construction and refer to \cite{dugger2011rigidification} for further details. 
 
 Given integers $0 \leq  i \leq j$ denote by $P_{i,j}$ the category whose objects are all the subsets of $\{i, i+1, \dots, j\}$ containing both $i$ and $j$ and morphisms are inclusions.
 For each integer $n \geq 0$ define $\rigid(\simplex^n) \in \Cat_{\simplex}$ to have the set $\{0, \dots, n\}$ as objects and if $i \leq j$, define $\rigid(\simplex^n)(i,j)= N(P_{i,j})$, where $N$ is the ordinary nerve functor.
@@ -201,7 +202,7 @@ On the other hand, Bergner constructed a model structure on $\Cat_{\simplex}$ ha
 Fibrant objects are categories enriched over Kan complexes.
 This model category is known as the \textit{Bergner model structure}.
 
-The adjunction between rigidification and the homotopy coherent nerve yields an equivalence of homotopy theories in the following sense.
+The adjunction between rigidification and the homotopy coherent nerve yields an equivalence of homotopy theories modeling the $\infty$-categories. More precisely, we have the following statement, which is one of the main results of \cite{dugger2011mappingspaces}.
 
 \begin{proposition} \label{joyalbergner}
 	The adjunction
@@ -210,8 +211,8 @@ The adjunction between rigidification and the homotopy coherent nerve yields an 
 	\]
 	induces a Quillen equivalence when $\sSet$ is equipped with the Joyal model structure and $\Cat_{\simplex}$ with the Bergner model structure.
 \end{proposition}
-
-The next result relates the cubical cobar construction and the rigidification functor via the triangulation functor as defined in  \cref{ss:triangulation and its adjoint}.
+ 
+The next result, which is an observation of the second named author and Zeinalian, relates the cubical cobar construction and the rigidification functor via the triangulation functor as defined in  \cref{ss:triangulation and its adjoint}.
 
 \begin{proposition} \label{Candgcobar}
 	The composition 
@@ -225,18 +226,15 @@ The next result relates the cubical cobar construction and the rigidification fu
 \end{proposition}
 
 The above statement is Proposition 5.3 in \cite{rivera2018cubical}, where $\ccobarE$ is denoted by $\rigid_{\cube_c}$.
-The proof relies on a description of the rigidification functor in terms of necklaces due to Dugger and Spivak \cite{dugger2011rigidification}.
-
-\cref{Candgcobar} also holds in the many-object setting, but we do not need this level of generality for the purposes of this article.
+The proof relies on a description of the rigidification functor in terms of necklaces due to Dugger and Spivak \cite{dugger2011rigidification}. \cref{Candgcobar} also holds in the many-object setting, but we do not need this level of generality for the purposes of this article.
 
 \subsection{The rigidification functor and Kan's loop group construction}
 
-The starting point of the comparison between the rigidification functor and Kan's loop group functor is the following statement about their adjoints, which is Proposition 2.6.2 in \cite{hinich2007deformation}.
 Denote by 
 \[
 \iota \colon \sGrp \to \Mon_{\sSet}
 \]
-the natural fully faithful embedding, through which we regard simplicial groups as simplicial monoids.
+the natural fully faithful embedding, through which we regard simplicial groups as simplicial monoids. The starting point of the comparison between the rigidification functor and Kan's loop group functor is the following statement about their adjoints, which is Proposition 2.6.2 in \cite{hinich2007deformation}.
 
 \begin{proposition} \label{hinich}
 	For any simplicial group $\mathcal{G} \in \sGrp$, we have a natural weak homotopy equivalence
@@ -246,18 +244,16 @@ the natural fully faithful embedding, through which we regard simplicial groups 
 \end{proposition} 
 
 We now relate the rigidification functor $\rigid$ and the Kan loop group functor $G$.
-First we introduce some notation.
-
-The embedding $\iota \colon \sGrp \to \Mon_{\sSet}$ has a let adjoint, which we denote by
+First we introduce some notation. The embedding $\iota \colon \sGrp \to \Mon_{\sSet}$ has a left adjoint, which we denote by
 \[
 \mathcal{L} \colon \Mon_{\sSet} \to \sGrp.
 \]
-More precisely, this is the functor from simplicial monoids to simplicial groups defined by formally inverting all morphisms (degree by degree) subject to the usual relations.
-If $M \in \Mon_{\sSet}$ and $A \in M_0$ is a set of $0$-morphisms, we denote by $\mathcal{L}_AM$ the simplicial monoid obtained by formally inverting the elements of $A$, i.e. the pushout
+More precisely, this is the functor from simplicial monoids to simplicial groups given by formally inverting all morphisms (degree by degree) subject to the usual relations.
+If $M \in \Mon_{\sSet}$ and $A \subseteq M_0$ is a subset of $0$-morphisms, we denote by $\mathcal{L}_AM$ the simplicial monoid obtained by formally inverting the elements of $A$, i.e. the pushout
 \[ 
 \mathcal{L}_AM= M \coprod_A \mathcal{L}F(A),
 \]
-where $F(A)$ is the monoid freely generated by the set $A$.
+where $F(A)$ is the monoid freely generated by the set $A$ regarded as a discrete simplicial monoid. 
 
 \begin{lemma} \label{CandG}
 	There are natural weak equivalences of simplicial monoids
