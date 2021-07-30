@@ -313,18 +313,18 @@ The above statement should be understood as a lift of Hess and Tonk's quasi-isom
 
 We review from \cite{medina2021cubical} the relationship between the $E_\infty$-structures defined on simplicial chains in \cref{ss:e-infty on simplicial} and on cubical chains in \cref{ss:e-infty on cubical}.
 
-In \cite[sect]{serre1951homologie}, the \textit{Serre--Cartan collapse} $\gcube^n \to \gsimplex^n$ was introduced and used to define a natural quasi-isomorphism of coalgebras $\sS(Z) \to \cS(Z)$ for any topological space $Z$.
-This map factors as
+In \cite[p.442]{serre1951homologie}, the \textit{Serre--Cartan collapse} $\gcube^n \to \gsimplex^n$ was introduced and used to define a natural quasi-isomorphism of coalgebras $\sS(Z) \to \cS(Z)$ for any topological space $Z$.
+This map factors as the composition
 \[
 \chains(\sSing(Z)) \xra{\CS_{\sSing(Z)}}
 \cchains(\mathcal{U} \sSing(Z)) \to
 \chains(\cSing(Z)),
 \]
-where $\CS_X$, referred to as the \textit{Serre--Cartan comparison map}, is a quasi-isomorphism defined for any simplicial set $X$, whereas the other chain map is induced from a cubical map.
+where the first map $\CS_X$, referred to as the \textit{Serre--Cartan comparison map}, is a quasi-isomorphism defined for any simplicial set $X$, and the second map is induced from a morphism of cubical sets.
 
 Although both $\schains(X)$ and $\cchains(\mathcal{U} X)$ have natural $\UM$-structures, the map $\CS_X$ is not a morphism of $\UM$-coalgebras for a generic simplicial set $X$.
-But, after restriction of their $\UM$-structures to a sub-$E_\infty$-operad, the Cartan-Serre comparison map becomes a morphism of $E_\infty$-coalgebras.
-This operad, denoted $\USL$, is generated as a suboperad of $\UM$ by and all immerse connected graphs of the form
+But, after restriction of their $\UM$-structures via an inclusion of $E_\infty$-operads $\USL \to \UM$, the Cartan-Serre comparison map becomes a morphism of $E_\infty$-coalgebras.
+The operad $\USL$ is generated as a suboperad of $\UM$ by all immerse connected graphs of the form
 \begin{equation*}
 \begin{tikzpicture}[scale=1]
 \draw (0,0)--(0,-.6) node[below, scale=.75]{$1$};
@@ -355,7 +355,7 @@ This operad, denoted $\USL$, is generated as a suboperad of $\UM$ by and all imm
 \end{tikzpicture}
 \end{equation*}
 where there are no hidden vertices and the strands are joined so that the associated maps $\{1, \dots, k_j\} \to \{1, \dots, n+k\}$ are order-preserving.
-From \cite{medina2021cubical} we have the following statement.
+From \cite{medina2021cubical} we have the following.
 
 \begin{proposition} \label{p:simplicialandcubical}
 	The suboperad $\USL$ of $\UM$ is an $E_\infty$-operad and the Cartan-Serre comparison map
@@ -366,8 +366,7 @@ From \cite{medina2021cubical} we have the following statement.
 \end{proposition}
 
 We will denote by $\chains_\USL$ the functor of (cubical or simplicial) chains with its induced $\USL$-structure.
-
-We remark that the inclusion $\As \to \UM$ factors through $\USL$.
+We remark that the inclusion $\As \to \UM$ factors through $\USL$ so $\chains_\USL$ is also a lift to a category of $E_\infty$-coalgebras of the functors $\chains_\As$ to $\coAlg$.
 
 \subsection{A zig-zag of $E_\infty$-coalgebras}
 The $E_{\infty}$-coalgebra structures on the simplicial chains on a triangulated cubical set $Y$ and on the cubical chains on $Y$ are related as follows.
@@ -401,11 +400,11 @@ By \cref{widehatgcobarandG} we have a weak equivalence of simplicial monoids
 for any reduced simplicial set $X$.
 By naturality, we have an induced quasi-isomorphism of $\USL$-coalgebras
 \[
-\schainsUSL \big( \mathcal{T}\ccobarE(X) \big) \xra{\simeq}
-\schainsUSL \big( \kan(X) \big).
+\schainsUSL \big( \mathcal{T} \ccobarE(X) \big) \xra{\simeq}
+\schainsUSL (\kan(X)).
 \]
 Therefore, $\Ahat_{\USL}(X)$ and $\schainsUSL(\kan(X))$ are quasi-isomorphic through a zig-zag of natural maps of $\USL$-coalgebras, as desired.
-We summarize this discussion, which constitutes the second half of \cref{t:2nd main thm in the intro}, in the following.
+We summarize this discussion in the following lemma, constituting the second half of \cref{t:2nd main thm in the intro}.
 
 \begin{lemma}
 	For any reduced simplicial set $X$, there is a zig-zag of natural quasi-isomorphisms of $\USL$-coalgebras between $\Ahat_\USL(X)$ and $\schainsUSL(\kan(X))$.

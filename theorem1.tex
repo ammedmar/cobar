@@ -258,17 +258,22 @@ More explicitly, let $\Cp$ be the cyclic group of order $p$ and
 be the minimal free resolution of $\Fp$ as an $\Fp[\Cp]$-module.
 Consider the $\Cp$-equivariant quasi-isomorphism $\psi_\UM \colon W(p) \to \UM(p)$ constructed in \cite{medina2020maysteenrod}, and denote by $\Psi^{\cobar}$ its composition with the morphism $\UM \to \End^{\cobar \schains(X)}$ defining our $E_\infty$-coalgebra structure on $\cobar \schains(X)$.
 
-For $p = 2$, $Sq^s$ is represented by the map sending a representative $\mu$ of a class in the $q\th$ homology of $\cobar \schains(X)$ to the following element in its double linear dual:
+For $p = 2$, the Steenrod square $P_s$ is represented by the map sending a representative $\mu$ of a class in the $k\th$ homology of $\cobar \schains(X)$ to the following element in its double linear dual:
 \[
-\mu \mapsto \Big( \alpha \mapsto \alpha^{\otimes p} \big( \psi^{\cobar}(e_{s-q})(\mu) \big) \Big).
+\mu \mapsto 
+\Big( \alpha \mapsto (\alpha \otimes \alpha) \big( \psi^{\cobar}(e_{k+2s})(\mu) \big) \Big).
 \]
-Similarly, for $p$ an odd prime, we have that the actions of $P_s$ and $\beta P_s$ are determined respectibly for $\varepsilon = 0,1$ by
+Similarly, for $p$ an odd prime, we have that the action of the Steenrod operations $\beta^\varepsilon P_{s}$ where $\varepsilon = 0,1$ are represented by
 \[
-\mu \mapsto \Big( \alpha \mapsto \alpha^{\otimes p} \big( (-1)^p \, \nu(q) \, \psi^{\cobar}(e_{(2s-q)(p-1)-\varepsilon})(\mu) \big) \Big).
+\mu \mapsto
+\Big( \alpha \mapsto \alpha^{\otimes p} \big( (-1)^p \, \nu(q) \, \psi^{\cobar}(e_{(2s-q)(p-1)-\varepsilon})(\mu) \big) \Big)
 \]
-where $\nu(q) = (-1)^{q(q-1)m/2}(m!)^q$ and $m = (p-1)/2$.
-
-\anibal{check degrees and signs}
+where
+\[
+q = -k -2s(p-1)+\varepsilon, \qquad
+\nu(q) = (-1)^{q(q-1)m/2}(m!)^q, \qquad
+m = (p-1)/2.
+\]
 
 The map $\psi^{\cobar}$, being a special case of the map $\psi^\cube$ defined in \cite{medina2020maysteenrod}, can be described effectively, and it has been implemented in the specialized computer algebra system \texttt{ComCH} \cite{medina2021computer}.
 
@@ -295,6 +300,8 @@ determined through the monoid structure by sending an $n$-simplex $(\sigma \colo
 \[
 P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \loops_z Z.
 \]
+
+\anibal{Maybe a reference to where this was defined?}
 
 \subsection{Adams's map as an $E_{\infty}$-bialgebra quasi-isomorphism}
 
