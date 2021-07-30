@@ -4,7 +4,7 @@
 \usepackage{mathbbol} % mathbb on greek letters
 \usepackage{verbatim} % just for comments, remove afterwards
 
-% (hyper-)references
+% references
 \usepackage[bookmarks=true, linktocpage=true,
 bookmarksnumbered=true, breaklinks=true,
 pdfstartview=FitH, hyperfigures=false,
@@ -140,33 +140,28 @@ pdfpagelabels]{hyperref}
 
 \begin{document}
 \title{The cobar construction as an $E_{\infty}$-bialgebra model of the based loop space}
-\author{Anibal M. Medina-Mardones}
-\address{Max Plank Institute for Mathematics, Bonn, Germany}
+
+\author[A. Medina-Mardones]{Anibal M. Medina-Mardones}
+\address{A. Medina-Mardones, Max Plank Institute for Mathematics in Bonn \and University of Notre Dame du Lac}
 \email{ammedmar@mpim-bonn.mpg.de}
-\address{Department of Mathematics, University of Notre Dame, Notre Dame, IN, USA}
-\email{amedinam@nd.edu}
 \thanks{A.M-M. acknowledges financial support from Innosuisse grant \mbox{32875.1 IP-ICT - 1} and the hospitality of the \textit{Laboratory for Topology and Neuroscience} at EPFL}
 
-\author{Manuel Rivera}
-\address{Department of Mathematics, Purdue University, West Lafayette, IN, USA}
+\author[M. Rivera]{Manuel Rivera}
+\address{M. Rivera, Department of Mathematics, Purdue University}
 \email{manuelr@purdue.edu}
 \thanks{M.R. acknowledges support from the \textit{Karen EDGE Fellowship} and the excellent working conditions of the \textit{Max Planck Institute for Mathematics} in Bonn, Germany.}
 
 \keywords{.}
+
 \subjclass[2020]{.}
 
-\begin{abstract}
-    In the fifties, Adams introduced a comparison map $\theta_Z \colon \cobar(S^\simplex(Z,z)) \to S^\cube(\loops_z Z)$ from his cobar construction on the (simplicial) singular chains of a pointed space $(Z, z)$ to the cubical singular chains on its based loops space $\loops_z Z$.
-	This comparison map is a quasi-isomorphism of algebras, which was shown by Baues to be one of bialgebras by considering Serre's cubical coproduct.
-	In this work we generalize Baues result by constructing an $E_{\infty}$-bialgebra structure on the cobar construction of the coalgebra of singular chains, and proving that Adams' comparison map is a quasi-isomorphism of $E_{\infty}$-bialgebras.
-	We also show that, for a general reduced simplicial set $X$, Hess and Tonks' extended cobar construction on $\schains(X)$ is quasi-isomorphic to $\schains(\kan(X))$, the chains on the Kan loop group of $X$, as an $E_{\infty}$-coalgebra. 
-\end{abstract}
-
-\vspace*{-1cm}
+\input{abstract}
 
 \maketitle
+
 \setcounter{tocdepth}{1}
 \tableofcontents
+
 \input{introduction}
 \input{preliminaries}
 \input{operads}
