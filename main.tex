@@ -1,79 +1,34 @@
 \documentclass{amsart}
-\usepackage{amsmath, amssymb}
-\usepackage{tikz-cd}
-\usepackage{mathbbol} % mathbb on greek letters
+\include{aux/style}
+\include{aux/commands}
 
-% references
-\usepackage[bookmarks=true, linktocpage=true,
-bookmarksnumbered=true, breaklinks=true,
-pdfstartview=FitH, hyperfigures=false,
-plainpages=false, naturalnames=true,
-colorlinks=true, pagebackref=true,
-pdfpagelabels]{hyperref}
-\hypersetup{
-	colorlinks,
-	citecolor=blue,
-	filecolor=blue,
-	linkcolor=blue,
-	urlcolor=blue
-}
-\usepackage[capitalize, noabbrev]{cleveref}
-\crefname{subsection}{\subsect\!}{subsections}
-\let\subsect\S % copying the subsection symbol before overwriting it
-
-% layout
-\setlength{\textwidth}{\paperwidth}
-\addtolength{\textwidth}{-1.85in}
-\setlength{\textheight}{\paperheight}
-\addtolength{\textheight}{-2in}
-\calclayout
-
-% update to MSC2020
-\makeatletter
-\@namedef{subjclassname@2020}{%
-	\textup{2020} Mathematics Subject Classification}
-\makeatother
-
-% table of contents
-\setcounter{tocdepth}{1}
-
-% commands
-\include{commands}
-
-% drawings
-\include{aux/figures}
-
-\begin{document}
 \title{The cobar construction as an $E_{\infty}$-bialgebra model of the based loop space}
-
+    
 \author[A. Medina-Mardones]{Anibal M. Medina-Mardones}
-\address{A. Medina-Mardones, Max Plank Institute for Mathematics in Bonn \and University of Notre Dame du Lac}
+\address{A. Medina-Mardones, Max Plank Institute for Mathematics \and University of Notre Dame}
 \email{ammedmar@mpim-bonn.mpg.de}
-\thanks{A.M-M. acknowledges financial support from Innosuisse grant \mbox{32875.1 IP-ICT - 1} and the hospitality of the \textit{Laboratory for Topology and Neuroscience} at EPFL}
 
 \author[M. Rivera]{Manuel Rivera}
 \address{M. Rivera, Department of Mathematics, Purdue University}
 \email{manuelr@purdue.edu}
-\thanks{M.R. acknowledges support from the \textit{Karen EDGE Fellowship} and the excellent working conditions of the \textit{Max Planck Institute for Mathematics} in Bonn, Germany.}
 
-\keywords{.}
+\subjclass[2020]{57T30, 55P35, 18N70, 55U10, 55N45, 55S05}
+\keywords{cobar construction, ${E_\infty}$-structures, loop spaces, simplicial sets, Steenrod operations}
 
-\subjclass[2020]{.}
+\include{aux/figures}
 
-\input{abstract}
-
-\maketitle
-
-\input{introduction}
-\tableofcontents
-\input{acknowledgements}
-\input{preliminaries}
-\input{operads}
-\input{monoidal}
-\input{theorem1}
-\input{theorem2}
-
-\bibliographystyle{alpha} % ieeetr
-\bibliography{biblio}
-
+\begin{document}
+    \input{aux/abstract}
+    \maketitle
+    
+    \input{cobar/introduction}
+    \input{aux/acknowledgements}
+    \input{cobar/preliminaries}
+    \input{cobar/operads}
+    \input{cobar/monoidal}
+    \input{cobar/theorem1}
+    \input{cobar/theorem2}
+    
+    \bibliographystyle{alpha} % ieeetr
+    \bibliography{aux/biblio}
 \end{document}
