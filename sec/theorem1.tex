@@ -186,7 +186,7 @@ We may now define the \textit{cubical cobar construction}
 \]
 as the composition 
 \[
-\ccobar= \mathcal{P}_! \circ \ncobar.
+\ccobar = \mathcal{P}_! \, \ncobar.
 \]
 This reinterpretation of Baues construction in terms of cubical sets was also studied in \cite{rivera2018cubical}.
 
@@ -197,7 +197,7 @@ The cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}$ is related t
 \begin{lemma} \label{l:ccobar and cobar}
 	There is a natural isomorphisms of functors 
 	\[
-	\cchains \circ \ccobar \cong \cobar \circ \schains \colon \sSet^0 \to \Mon_{\Ch}.
+	\cchains \ccobar \cong \cobar \schains \colon \sSet^0 \to \Mon_{\Ch}.
 	\]
 \end{lemma}
 
@@ -219,12 +219,12 @@ The cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}$ is related t
 
 The original cobar construction of Adams produces monoids in $\Ch$.
 Baues enriched this construction to produce monoids in $\coAlg$.
-He did this by using a version of the isomorphism $\cchains \circ \ccobar \cong \cobar \circ \schains$ of \cref{l:ccobar and cobar} and the Serre coalgebra on cubical chains.
-Since $\ccobar$ produces monoids in $\cSet$ and $\cchainsAs$ is monoidal, the functor $\cchainsAs \circ \ccobar$ produces bialgebras, as claimed.
+He did this by using a version of the isomorphism $\cchains \ccobar \cong \cobar \schains$ of \cref{l:ccobar and cobar} and the Serre coalgebra on cubical chains.
+Since $\ccobar$ produces monoids in $\cSet$ and $\cchainsAs$ is monoidal, the functor $\cchainsAs \ccobar$ produces bialgebras, as claimed.
 
 After \cite{medina2021cubical}, we know that cubical chains can be enriched with an $E_\infty$-coalgebra structure extending the Serre coalgebra (\cref{ss:e-infty on cubical}).
-This $\UM$-structure can be transferred via $\cchains \circ \ccobar \cong \cobar \circ \schains$ to provide the cobar construction with and $E_\infty$-structure extending Baues coalgebra structure.
-Furthermore, thanks to \cref{l:cubical e-infty chains are monoidal}, we know that $\cchainsUM$ is monoidal and therefore, $\cchains \circ \ccobar$ produces monoids in $\coAlg_{\UM}$, i.e., $E_\infty$-bialgebras.
+This $\UM$-structure can be transferred via $\cchains \ccobar \cong \cobar \schains$ to provide the cobar construction with and $E_\infty$-structure extending Baues coalgebra structure.
+Furthermore, thanks to \cref{l:cubical e-infty chains are monoidal}, we know that $\cchainsUM$ is monoidal and therefore, $\cchains \ccobar$ produces monoids in $\coAlg_{\UM}$, i.e., $E_\infty$-bialgebras.
 This discussion proves the first half of \cref{t:1st main thm in the intro}, which we collect in the following.
 
 \begin{lemma} \label{l:lift of cobar to e-infty}
@@ -234,7 +234,7 @@ This discussion proves the first half of \cref{t:1st main thm in the intro}, whi
 	& \Mon_{\coAlg_\UM} \arrow[d] \\
 	\Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180] \arrow[r, "\cchainsAs"]
 	& \Mon_{\coAlg} \arrow[d] \\
-	\sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\ccobar"]
+	\sSet^0 \arrow[r, "\cobar \schains"] \arrow[u, "\ccobar"]
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\]	
