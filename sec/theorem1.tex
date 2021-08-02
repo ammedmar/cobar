@@ -2,7 +2,7 @@
 \section{Adams's map as an \texorpdfstring{$E_{\infty}$}{}-bialgebra quasi-isomorphism} \label{s:theorem1}
 
 The goal of this section is to prove \cref{t:1st main thm in the intro}.
-Explicitly, we construct a natural $E_{\infty}$-bialgebra structure on $\cobar(\schains(X))$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(Z, z)$, Adams' comparison map $\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
+Explicitly, we construct a natural $E_{\infty}$-bialgebra structure on $\cobar \schains(X)$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(Z, z)$, Adams' comparison map $\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
 
 The first goal is achieved using a categorical reformulation of Baues' geometric cobar construction (\cref{ss:cubical cobar}) together with the natural $\UM$-coalgebra structure defined on cubical chains (\cref{ss:e-infty on cubical}) and its monoidal properties (\cref{l:cubical e-infty chains are monoidal}).
 The second goal is obtained by factoring Adams' comparison map through this cubical model (\cref{ss:factorization of adams}).
@@ -207,10 +207,10 @@ The cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}$ is related t
 	
 	To define an algebra map
 	\[
-	\varphi_X \colon \cchains(\mathcal{P}_!(\ncobar(X))) \xra{\cong} \cobar(\schains(X))
+	\varphi_X \colon \cchains(\mathcal{P}_!(\ncobar(X))) \xra{\cong} \cobar \schains(X)
 	\]
 	it suffices to define it on any generator of the form $\alpha=[\sigma \colon \simplex^{n+1} \to X, \iota_{n}]$, i.e., when $T$ is of the form $T = [n+1]$, for some $n \geq 0$.
-	If $n = 0$ let $\varphi_X(\alpha)= [\overline{\sigma}] + 1_\k$, where $[\overline{\sigma}] \in s^{-1} \overline{ \schains(X)} \subset \cobar(\schains(X))$ denotes the (length $1$) generator in the cobar construction of $\schains(X)$ determined by $\sigma \in X_{n+1}$ and $1_\k$ denotes the unit of the underlying ring $\k$.
+	If $n = 0$ let $\varphi_X(\alpha)= [\overline{\sigma}] + 1_\k$, where $[\overline{\sigma}] \in s^{-1} \overline{ \schains(X)} \subset \cobar \schains(X)$ denotes the (length $1$) generator in the cobar construction of $\schains(X)$ determined by $\sigma \in X_{n+1}$ and $1_\k$ denotes the unit of the underlying ring $\k$.
 	If $n > 0$, we let $\varphi_X(\alpha)=[\overline{\sigma}]$.
 	A straightforward computation yields that this gives rise to a well defined isomorphism of algebras, which is compatible with the differentials, and natural with respect to maps of simplicial sets.
 \end{proof}
@@ -220,7 +220,7 @@ The cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}$ is related t
 The original cobar construction of Adams produces monoids in $\Ch$.
 Baues enriched this construction to produce monoids in $\coAlg$.
 He did this by using a version of the isomorphism $\cchains \circ \ccobar \cong \cobar \circ \schains$ of \cref{l:ccobar and cobar} and the Serre coalgebra on cubical chains.
-Since $\ccobar$ produces monoids in $\cSet$ and $\cchainsAS$ is monoidal, the functor $\cchainsAS \circ \ccobar$ produces bialgebras, as claimed.
+Since $\ccobar$ produces monoids in $\cSet$ and $\cchainsAs$ is monoidal, the functor $\cchainsAs \circ \ccobar$ produces bialgebras, as claimed.
 
 After \cite{medina2021cubical}, we know that cubical chains can be enriched with an $E_\infty$-coalgebra structure extending the Serre coalgebra (\cref{ss:e-infty on cubical}).
 This $\UM$-structure can be transferred via $\cchains \circ \ccobar \cong \cobar \circ \schains$ to provide the cobar construction with and $E_\infty$-structure extending Baues coalgebra structure.
@@ -232,7 +232,7 @@ This discussion proves the first half of \cref{t:1st main thm in the intro}, whi
 	\[
 	\begin{tikzcd}
 	& \Mon_{\coAlg_\UM} \arrow[d] \\
-	\Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180] \arrow[r, "\cchainsAS"]
+	\Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180] \arrow[r, "\cchainsAs"]
 	& \Mon_{\coAlg} \arrow[d] \\
 	\sSet^0 \arrow[r, "\cobar \circ \schains"] \arrow[u, "\ccobar"]
 	& \Mon_{\Ch}.
