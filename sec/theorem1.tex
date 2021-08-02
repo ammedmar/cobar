@@ -1,10 +1,10 @@
 
-\section{Adams's map as an \texorpdfstring{$E_{\infty}$}{}-bialgebra quasi-isomorphism}
+\section{Adams's map as an \texorpdfstring{$E_{\infty}$}{}-bialgebra quasi-isomorphism} \label{s:theorem1}
 
 The goal of this section is to prove \cref{t:1st main thm in the intro}.
 Explicitly, we construct a natural $E_{\infty}$-bialgebra structure on $\cobar(\schains(X))$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(Z, z)$, Adams' comparison map $\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
 
-The first goal is achieved using a categorical reformulation of Baues' cubical model for the based loop space (\cref{ss:cubical cobar}), and using on it the natural $\UM$-coalgebra structure defined on cubical cochains (\cref{ss:e-infty on cubical}) with its monoidal properties (\cref{l:cubical e-infty chains are monoidal}).
+The first goal is achieved using a categorical reformulation of Baues' geometric cobar construction (\cref{ss:cubical cobar}) together with the natural $\UM$-coalgebra structure defined on cubical chains (\cref{ss:e-infty on cubical}) and its monoidal properties (\cref{l:cubical e-infty chains are monoidal}).
 The second goal is obtained by factoring Adams' comparison map through this cubical model (\cref{ss:factorization of adams}).
 
 \subsection{Adams' map}\label{adamsmaps}
@@ -210,7 +210,7 @@ The cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}$ is related t
 	\varphi_X \colon \cchains(\mathcal{P}_!(\ncobar(X))) \xra{\cong} \cobar(\schains(X))
 	\]
 	it suffices to define it on any generator of the form $\alpha=[\sigma \colon \simplex^{n+1} \to X, \iota_{n}]$, i.e., when $T$ is of the form $T = [n+1]$, for some $n \geq 0$.
-	If $n = 0$ let $\varphi_X(\alpha)= [\overline{\sigma}] + 1_\k$, where $[\overline{\sigma}] \in s^{-1} \overline{ \schains(X)} \subset \cobar(\schains(X))$ denotes the (length $1$) generator in the cobar construction of $\schains(X)$ determined by $\sigma \in X_{n+1}$ and $1_\k$ denotes the unit of the underlying ring $R$.
+	If $n = 0$ let $\varphi_X(\alpha)= [\overline{\sigma}] + 1_\k$, where $[\overline{\sigma}] \in s^{-1} \overline{ \schains(X)} \subset \cobar(\schains(X))$ denotes the (length $1$) generator in the cobar construction of $\schains(X)$ determined by $\sigma \in X_{n+1}$ and $1_\k$ denotes the unit of the underlying ring $\k$.
 	If $n > 0$, we let $\varphi_X(\alpha)=[\overline{\sigma}]$.
 	A straightforward computation yields that this gives rise to a well defined isomorphism of algebras, which is compatible with the differentials, and natural with respect to maps of simplicial sets.
 \end{proof}
@@ -273,6 +273,7 @@ m = (p-1)/2.
 \]
 
 The map $\psi^{\cobar}$, being a special case of the map $\psi^\cube$ defined in \cite{medina2020maysteenrod}, can be described effectively, and it has been implemented in the specialized computer algebra system \texttt{ComCH} \cite{medina2021computer}.
+In similar effective manner, for the mod 2 case, explicit Cartan and Adem coboundaries \cite{medina2020cartan, medina2020adem} can be described for the cochain level Steenrod squares of the cobar construction.
 
 \subsection{Factorization of Adams' map} \label{ss:factorization of adams}
 

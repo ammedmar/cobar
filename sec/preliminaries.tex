@@ -1,5 +1,5 @@
 
-\section{Algebraic and categorical preliminaries}
+\section{Algebraic and categorical preliminaries} \label{s:preliminaries}
 
 \subsection{Kan extensions}
 
@@ -28,7 +28,7 @@ The $i\th$ \textit{suspension} functor $s^i \colon \Ch \to \Ch$ is defined at th
 A \textit{coalgebra} consists of an object $C$ in $\Ch$ and morphisms $\Delta \colon C \to C \otimes C$ and $\varepsilon \colon C \to \k$ in this category satisfying the usual coassociativity and counitality relations.
 This notion is equivalent to that of a comonoid in $\Ch$.
 Denote by $\coAlg$ the category of coalgebras with morphisms being structure preserving chain maps.
-The category $\coAlg$ is symmetric monoidal, with the structure maps of a product $C \otimes C^\prime$ given by
+The category $\coAlg$ is symmetric monoidal, with braiding induced from $\Ch$ and structure maps of a product $C \otimes C^\prime$ given by
 \begin{gather*}
 C \otimes C^\prime \xra{\Delta \otimes \Delta^\prime}
 (C \otimes C) \otimes (C^\prime \otimes C^\prime) \xra{(23)}
@@ -36,7 +36,6 @@ C \otimes C^\prime \xra{\Delta \otimes \Delta^\prime}
 C \otimes C^\prime \xra{\varepsilon \otimes \varepsilon^\prime}
 \k \otimes \k \xra{\cong} \k.
 \end{gather*}
-and braiding induced from $\Ch$.
 
 \subsection{Monoids}
 
@@ -93,7 +92,7 @@ If $X$ is such that $X_0$ is a singleton we say it is \textit{reduced}, and we d
 \subsection{Simplicial chains} \label{ss:simplicial sets}
 
 For non-negative integers $m$ and $n$, let $\simplex_{\deg} \big( [m], [n] \big)$ be the subset of \textit{degenerate morphisms} in $\simplex \big( [m], [n] \big)$, i.e., those of the form $\sigma_i \circ \tau$ with $\tau$ any morphism in $\simplex \big( [m], [n+1] \big)$.
-The functor of (simplicial) \textit{chains} $\schains \colon \sSet \to \Ch$ is the Kan extension along the Yoneda embedding of the functor $\simplex \to \Ch$ defined next.
+The functor of \textit{simplicial chains} $\schains \colon \sSet \to \Ch$ is the Kan extension along the Yoneda embedding of the functor $\simplex \to \Ch$ defined next.
 To an object $[n]$ it assigns the chain complex having in degree $m$ the module
 \[
 \frac{\k\{\simplex \big( [m], [n] \big) \}}{\k\{\simplex_{\deg} \big( [m], [n] \big) \}},
@@ -111,12 +110,12 @@ To a morphism $\tau \colon [n] \to [n^\prime]$ it assigns the chain map
 \big( [m] \to [n] \big) \arrow[r, mapsto] & \big( [m] \to [n] \xra{\tau} [n^\prime] \big).
 \end{tikzcd}
 \]
-When no confusion arises from doing so we write $\chains$ instead of $\schains$.
+When no confusion arises from doing so we write $\chains$ instead of $\schains$ and refer to it simply as the functor of \textit{chains}.
 We denote, as usual, the basis elements in $\chains(\simplex^n)_m$ by increasing tuples $[v_0, \dots, v_m]$ with $v_i \in \{0, \dots, n\}$.
 
 \subsection{Alexander--Whitney coalgebra} \label{ss:aw coalgebra}
 
-We review a classical lift to coalgebras of the functor of simplicial chains:
+We review a classical lift to coalgebras of the functor of chains:
 \[
 \begin{tikzcd}
 & \coAlg \arrow[d] \\
@@ -134,7 +133,7 @@ and $\Delta \colon \chains(\simplex^n) \to \chains(\simplex^n)^{\otimes2}$ by
 \Delta \big( [v_0, \dots, v_q] \big) = \sum_{i=0}^q [v_0, \dots, v_i] \otimes [v_i, \dots, v_q].
 \]
 
-If $X$ is a reduced simplicial set with $X_0 = \{b\}$ then $\schainsAS(X)$ becomes a connected coalgebra with the coaugmentation $\nu \colon \k \to \schains(X)$ induced by $\nu(1) = b \in \schains_0(X)$.
+If $X$ is a reduced simplicial set then $\schainsAS(X)$ becomes a connected coalgebra with the coaugmentation $\nu \colon \k \to \schains(X)$ induced by sending $1$ to the basis element represented by the unique $0$-simplex of $X$.
 Hence, the functor $\schainsAS$ restricts to a functor
 \[
 \schainsAS \colon \sSet^0 \to \coAlg^0.
@@ -149,14 +148,14 @@ Consider the topological $n$-simplex
 The assignment $[n] \to \gsimplex^n$ defines a functor $\simplex \to \Top$ whose Kan extension is known as (simplicial) \textit{geometric realization}.
 It has a right adjoint $\sSing \colon \Top \to \sSet$ given by
 \[
-Z \to \Big( 2^n \to \Top(\gsimplex^n, Z) \Big)
+Z \to \Big( [n] \mapsto \Top(\gsimplex^n, Z) \Big)
 \]
-and referred to as the (simplicial) \textit{singular complex} of the topological space $Z$.
+and referred to as the \textit{simplicial singular complex} of the topological space $Z$.
 The chain complex $\chains(\cSing Z)$ is referred to as the \textit{simplicial singular chains} of $Z$.
 
-We modify this construction for a pointed topological space $(Y, y)$ by considering only maps of $\gsimplex^n \to Y$ sending all vertices to $y$.
-This produces a reduced simplicial set $\sSing(Y, y)$.
-We will refer to $\schains(\sSing(Y, y))$ as the \textit{simplicial singular chains on $(Y,y)$} and for simplicity denote it by $\sS(Y,y)$.
+We modify this construction for a pointed topological space $(Z, z)$ by considering only maps of $\gsimplex^n \to Z$ sending all vertices to $z$.
+This produces a reduced simplicial set $\sSing(Z, z)$.
+We will refer to $\schains(\sSing(Z, z))$ as the \textit{simplicial singular chains on $(Z, z)$} and for simplicity denote it by $\sS(Z, z)$.
 
 \subsection{Cubical sets} \label{ss:cubical sets}
 
@@ -197,7 +196,7 @@ To neutralize a possible source of confusion, we mention that in this article th
 
 \subsection{Cubical chains}
 
-For non-negative integers $m$ and $n$, let $\cube_{\deg}(2^m, 2^n)$ be the subset of \textit{degenerate morphisms} in $\cube(2^m, 2^n)$, i.e., those of the form $\sigma_i \circ \tau$ with $\tau$ any morphism in $\cube(2^m, 2^{n+1})$.
+For non-negative integers $m$ and $n$, let $\cube_{\deg}(2^m, 2^n)$ be the subset of \textit{degenerate morphisms} in $\cube(2^m, 2^n)$, i.e., those of the form $\sigma_i \circ \tau$ or $\gamma_i \circ \tau$ with $\tau$ any morphism in $\cube(2^m, 2^{n+1})$.
 The functor of (cubical) \textit{chains} $\cchains \colon \cSet \to \Ch$ is the Kan extension along the Yoneda embedding of the functor $\cube \to \Ch$ defined next.
 To an object $2^n$ it assigning the chain complex having in degree $m$ the module
 \[
@@ -274,7 +273,7 @@ Consider the topological $n$-cube
 The assignment $2^n \to \gcube^n$ defines a functor $\cube \to \Top$ whose Kan extension is known as \textit{geometric realization}.
 It has a right adjoint $\cSing \colon \Top \to \cSet$ given by
 \[
-Z \to \Big(2^n \to \Top(\gcube^n, Z)\Big)
+Z \to \Big(2^n \mapsto \Top(\gcube^n, Z)\Big)
 \]
 and referred to as the \textit{cubical singular complex} of the topological space $Z$.
 We will refer to $\chains(\cSing Z)$ as the \textit{cubical singular chains} of $Z$ and for simplicity denote it by $\cS(Z)$.
