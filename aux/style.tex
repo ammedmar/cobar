@@ -8,21 +8,37 @@
 	backref=true,
 	url=false,
 	doi=false,
+	isbn=false,
 	eprint=false]{biblatex}
-
-\newbibmacro{string+doi}[1]{%
-	\iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
-\DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
-\DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
-
-\newbibmacro{string+eprint}[1]{%
-	\iffieldundef{eprint}{#1}{\href{http://dx.doi.org/\thefield{eprint}}{#1}}}
-\DeclareFieldFormat{title}{\usebibmacro{string+eprint}{\mkbibemph{#1}}}
-\DeclareFieldFormat[article]{title}{\usebibmacro{string+eprint}{\mkbibquote{#1}}}
 
 \addbibresource{aux/bibliography.bib}
 \addbibresource{aux/einfinity.bib}
-\addbibresource{aux/mypapers.bib}
+\addbibresource{aux/mypapers.bib}	
+
+\DeclareFieldFormat{title}{\myhref{\mkbibemph{#1}}}
+\DeclareFieldFormat
+[article,inbook,incollection,inproceedings,patent,thesis,unpublished]
+{title}{\myhref{\mkbibquote{#1\isdot}}}
+
+\newcommand{\doiorurl}{%
+	\iffieldundef{doi}
+	{\iffieldundef{eprint}
+		{}
+		{http://arxiv.org/abs/\strfield{eprint}}}
+	{http://dx.doi.org/\strfield{doi}}%
+}
+
+\newcommand{\myhref}[1]{%
+	\ifboolexpr{%
+		test {\ifhyperref}
+		and
+		not test {\iftoggle{bbx:eprint}}
+		and
+		not test {\iftoggle{bbx:doi}}
+	}
+	{\href{\doiorurl}{#1}}
+	{#1}%
+}
 
 % references
 \usepackage[bookmarks=true,
