@@ -8,10 +8,12 @@
 	backref=true,
 	url=false,
 	doi=false]{biblatex}
+
 \newbibmacro{string+doi}[1]{%
 	\iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
 \DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
 \DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+
 \addbibresource{aux/bibliography.bib}
 \addbibresource{aux/einfinity.bib}
 \addbibresource{aux/mypapers.bib}
@@ -28,6 +30,7 @@
 	colorlinks=true,
 	pagebackref=false,
 	pdfpagelabels]{hyperref}
+	
 \hypersetup{
 	colorlinks,
 	citecolor=blue,
@@ -35,9 +38,10 @@
 	linkcolor=blue,
 	urlcolor=blue
 }
+
 \usepackage[capitalize, noabbrev]{cleveref}
-\crefname{subsection}{\subsect\!}{subsections}
-\let\subsect\S % copying the subsection symbol before overwriting it
+\let\subsectionSymbol\S
+\crefname{subsection}{\subsectionSymbol\!}{subsections}
 
 % layout
 \addtolength{\textwidth}{1.2in}
