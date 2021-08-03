@@ -7,12 +7,18 @@
 	style=alphabetic,
 	backref=true,
 	url=false,
-	doi=false]{biblatex}
+	doi=false,
+	eprint=false]{biblatex}
 
 \newbibmacro{string+doi}[1]{%
 	\iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
 \DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
 \DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+
+\newbibmacro{string+eprint}[1]{%
+	\iffieldundef{eprint}{#1}{\href{http://dx.doi.org/\thefield{eprint}}{#1}}}
+\DeclareFieldFormat{title}{\usebibmacro{string+eprint}{\mkbibemph{#1}}}
+\DeclareFieldFormat[article]{title}{\usebibmacro{string+eprint}{\mkbibquote{#1}}}
 
 \addbibresource{aux/bibliography.bib}
 \addbibresource{aux/einfinity.bib}
