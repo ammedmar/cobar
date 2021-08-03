@@ -3,19 +3,31 @@
 \usepackage{mathbbol}
 
 % bibliography
-\usepackage[backend=biber, style=alphabetic,
-backref=true, url=false]{biblatex}
+\usepackage[backend=biber,
+	style=alphabetic,
+	backref=true,
+	url=false,
+	doi=false]{biblatex}
+\newbibmacro{string+doi}[1]{%
+	\iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+\DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
+\DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
 \addbibresource{aux/bibliography.bib}
 \addbibresource{aux/einfinity.bib}
 \addbibresource{aux/mypapers.bib}
 
 % references
-\usepackage[bookmarks=true, linktocpage=true,
-bookmarksnumbered=true, breaklinks=true,
-pdfstartview=FitH, hyperfigures=false,
-plainpages=false, naturalnames=true,
-colorlinks=true, pagebackref=false,
-pdfpagelabels]{hyperref}
+\usepackage[bookmarks=true,
+	linktocpage=true,
+	bookmarksnumbered=true,
+	breaklinks=true,
+	pdfstartview=FitH,
+	hyperfigures=false,
+	plainpages=false,
+	naturalnames=true,
+	colorlinks=true,
+	pagebackref=false,
+	pdfpagelabels]{hyperref}
 \hypersetup{
 	colorlinks,
 	citecolor=blue,
@@ -28,10 +40,8 @@ pdfpagelabels]{hyperref}
 \let\subsect\S % copying the subsection symbol before overwriting it
 
 % layout
-\setlength{\textwidth}{\paperwidth}
-\addtolength{\textwidth}{-2in}
-\setlength{\textheight}{\paperheight}
-\addtolength{\textheight}{-2in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\textheight}{1.2in}
 \calclayout
 
 % update to MSC2020
