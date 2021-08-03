@@ -23,11 +23,11 @@
 {title}{\myhref{\mkbibquote{#1\isdot}}}
 
 \newcommand{\doiorurl}{%
-	\iffieldundef{doi}
+	\iffieldundef{url}
 	{\iffieldundef{eprint}
 		{}
 		{http://arxiv.org/abs/\strfield{eprint}}}
-	{http://dx.doi.org/\strfield{doi}}%
+	{\strfield{url}}%
 }
 
 \newcommand{\myhref}[1]{%
@@ -36,7 +36,7 @@
 		and
 		not test {\iftoggle{bbx:eprint}}
 		and
-		not test {\iftoggle{bbx:doi}}
+		not test {\iftoggle{bbx:url}}
 	}
 	{\href{\doiorurl}{#1}}
 	{#1}%

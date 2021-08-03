@@ -117,7 +117,11 @@ In order to define $\mathcal{P}$ on morphisms, it is sufficient to consider the 
 \begin{enumerate}
 	\item For any $\partial^j \colon [n] \to [n+1]$ such that $0< j<{n+1}$, define $\mathcal{P}(\partial^j) \colon 2^{n-1}\to 2^{n}$ to be the cubical coface functor $\mathcal{P}(f)= \delta_0^{j}$.
 	
-	\item For any $\Delta_{[j], [n+1-j]} \colon [j] \vee [n+1-j] \to [n+1]$ such that $0<j<n+1$, define $\mathcal{P}(\Delta_{[j], [n+1-j]}) \colon 2^{n-1}\to 2^{n}$ to be the cubical coface functor $\mathcal{P}(f)=\delta_1^{j}$.
+	\item For any $\Delta_{[j], [n+1-j]} \colon [j] \vee [n+1-j] \to [n+1]$ such that $0<j<n+1$, define
+	\[
+	\mathcal{P}(\Delta_{[j], [n+1-j]}) \colon 2^{n-1}\to 2^{n}
+	\]
+	to be the cubical coface functor $\mathcal{P}(f)=\delta_1^{j}$.
 	
 	\item We now consider morphisms of the form $s^j \colon [n+1] \to [n]$ for $n>0$.
 	If $j=0$ or $j=n$, then $\mathcal{P}(f) \colon 2^n \to 2^{n-1}$ is defined to be the cubical codegeneracy functor $\mathcal{P}(s^j)= \varepsilon^{j}$.
@@ -249,7 +253,7 @@ As an application of the explicit construction of a natural $\UM$-coalgebra stru
 More explicitly, let $\Cp$ be the cyclic group of order $p$ and
 \[
 \begin{tikzcd} [column sep = .5cm]
-\mathcal W(p) = \Fp[\Cp]\{e_0\} & \arrow[l, "\,T"'] \Fp[\Cp]\{e_1\} & \arrow[l, "\,N"'] \Fp[\Cp]\{e_2\} & \arrow[l, "\,T"'] \dots
+\mathcal W(p) = \Fp[\Cp]\{e_0\} & \arrow[l, "\,T"'] \Fp[\Cp]\{e_1\} & \arrow[l, "\,N"'] \Fp[\Cp]\{e_2\} & \arrow[l, "\,T"'] \dotsb
 \end{tikzcd}
 \]
 be the minimal free resolution of $\Fp$ as an $\Fp[\Cp]$-module.
