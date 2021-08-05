@@ -14,7 +14,7 @@ In \cite{adams1956cobar}, Adams constructed a natural map of algebras
 \theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z),
 \end{equation}
 for any pointed topological space $(Z, z)$.
-The construction is based on a collection of continuous maps 
+The construction is based on a collection of continuous maps
 \[
 \theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n),
 \]
@@ -43,7 +43,8 @@ For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Z, z)$ with $n>1$, let
 Since the underlying graded algebra of $\cobar \sS(Z, z)$ is free, we may extend the above to an algebra map $\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z)$.
 The compatibility equations for the maps $\theta_n$ imply that $\theta_Z$ is a chain map.
 
-We will construct an $E_{\infty}$-bialgebra structure on $\cobar \sS(Z, z)$ and show that, when $S^{\cube}(\loops_z Z)$ is equipped with the $E_{\infty}$-coalgebra structure described in \cref{ss:e-infty on cubical}, the map $\theta_Z$ is a map of $E_{\infty}$-coalgebras. With this goal in mind, we  describe a categorical version of Adams' constructions.
+We will construct an $E_{\infty}$-bialgebra structure on $\cobar \sS(Z, z)$ and show that, when $S^{\cube}(\loops_z Z)$ is equipped with the $E_{\infty}$-coalgebra structure described in \cref{ss:e-infty on cubical}, the map $\theta_Z$ is a map of $E_{\infty}$-coalgebras.
+With this goal in mind, we describe a categorical version of Adams' constructions.
 
 \subsection{Necklical sets}
 
@@ -56,7 +57,7 @@ In passing, we mention that this category is $\op$-dual to the augmented simplex
 
 The \textit{necklace category} $\Nec$ is obtained from $\simplex_{*,*}$ as follows.
 Thinking of $\simplex_{*,*}$ as a monoid in $\Cat$, we first apply the bar construction to it and produce a simplicial object in $\Mon_{\Cat}$ which, after realization, defines the strict monoidal category $\Nec$.
-We denote the monoidal structure by 
+We denote the monoidal structure by
 \[
 \vee \colon \Nec \times \Nec \to \Nec.
 \]
@@ -71,8 +72,8 @@ together with $[0]$ serving as the monoidal unit.
 The morphism of $\Nec$ are generated through the monoidal structure by the following four types of morphisms:
 \begin{enumerate}
 	\item $\partial^j \colon [n-1] \to [n]$ for $j = 1, \dots, n-1$
-	\item $\Delta_{[j], [n-j]} \colon  [j] \vee [n-j] \to [n]$ for $j = 1, \dots, n-1$
-	\item $s^j \colon [n+1] \to [n]$ for $j = 0, \dots, n$ and $n>0$, and 
+	\item $\Delta_{[j], [n-j]} \colon [j] \vee [n-j] \to [n]$ for $j = 1, \dots, n-1$
+	\item $s^j \colon [n+1] \to [n]$ for $j = 0, \dots, n$ and $n>0$, and
 	\item $s^0 \colon [1] \to [0]$.
 \end{enumerate}
 We may identify $\Nec$ with a full sub-category of the category of double pointed simplicial sets $\sSet_{*,*}$ as follows.
@@ -116,17 +117,17 @@ On any other necklace $T \in \Nec$ we define $\mathcal{P}( T )= 2^{\dim(T)}$.
 In order to define $\mathcal{P}$ on morphisms, it is sufficient to consider the following cases.
 \begin{enumerate}
 	\item For any $\partial^j \colon [n] \to [n+1]$ such that $0< j<{n+1}$, define $\mathcal{P}(\partial^j) \colon 2^{n-1}\to 2^{n}$ to be the cubical coface functor $\mathcal{P}(f)= \delta_0^{j}$.
-	
+
 	\item For any $\Delta_{[j], [n+1-j]} \colon [j] \vee [n+1-j] \to [n+1]$ such that $0<j<n+1$, define
 	\[
 	\mathcal{P}(\Delta_{[j], [n+1-j]}) \colon 2^{n-1}\to 2^{n}
 	\]
 	to be the cubical coface functor $\mathcal{P}(f)=\delta_1^{j}$.
-	
+
 	\item We now consider morphisms of the form $s^j \colon [n+1] \to [n]$ for $n>0$.
 	If $j=0$ or $j=n$, then $\mathcal{P}(f) \colon 2^n \to 2^{n-1}$ is defined to be the cubical codegeneracy functor $\mathcal{P}(s^j)= \varepsilon^{j}$.
 	If $0<j<n$, then we define $\mathcal{P}(s^j) \colon 2^n \to 2^{n-1}$ to be the cubical coconnection functor $\gamma^{j}$.
-	
+
 	\item For $s^0 \colon [1] \to [0]$ we define $\mathcal{P}(s^0) \colon 2^0 \to 2^0$ to be the identity functor.
 \end{enumerate}
 
@@ -139,7 +140,7 @@ The functor $\mathcal{P} \colon \Nec \to \cube$ induces an adjunction between $\
 \[
 \mathcal{P}^\ast \colon \cSet \to \nSet,
 \qquad \text{and} \qquad
-\mathcal{P}_{!}  \colon \nSet \to \cSet.
+\mathcal{P}_{!} \colon \nSet \to \cSet.
 \]
 Explicitly, for a cubical set $Y \colon \cube^\op \to \Set$,
 \[
@@ -148,7 +149,7 @@ Explicitly, for a cubical set $Y \colon \cube^\op \to \Set$,
 and for a necklical set $K \colon \Nec^\op \to \Set$,
 \[
 \mathcal{P}_{!}(K) \ =
-\colim_{\mathcal{Y}(T) \to K} \mathcal{P}(T) \ \cong 
+\colim_{\mathcal{Y}(T) \to K} \mathcal{P}(T) \ \cong
 \colim_{\mathcal{Y}(T) \to K} \cube^{\dim(T)}.
 \]
 Since $\mathcal{P}$ is a monoidal functor, the functor $\mathcal{P}_{!} \colon \nSet \to \cSet$ is a monoidal as well.
@@ -161,11 +162,11 @@ Using the framework of necklical sets, we may reinterpret a Baues' geometric cob
 \]
 which we now define.
 
-For any reduced simplicial set $X$, we define a  necklical set $\ncobar(X) \colon \Nec^\op \to \Set$ having as necklical cells all necklaces inside $X$; namely
+For any reduced simplicial set $X$, we define a necklical set $\ncobar(X) \colon \Nec^\op \to \Set$ having as necklical cells all necklaces inside $X$; namely
 \[
 \ncobar(X) \, = \! \colim_{\mathcal{S}(T) \to X} \mathcal{Y}(T).
 \]
-The product 
+The product
 \[
 \ncobar(X) \otimes \ncobar(X) \to \ncobar(X)
 \]
@@ -173,22 +174,23 @@ is induced by the monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ giv
 More precisely, using that
 \[
 \mathcal{Y}(T) \cong \colim_{(R \to T) \in \Nec \downarrow T} \mathcal{Y}(R),
-\] 
+\]
 we may describe the product
 \[
 \ncobar(X) \otimes \ncobar(X) \to \ncobar(X)
 \]
 by
 \[
-[f\colon \mathcal{S}(T) \to X, R \to T] \otimes [f'\colon \mathcal{S}(T') \to X, R' \to T'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, R \vee  R'\to T \vee T'],
+[f\colon \mathcal{S}(T) \to X, R \to T] \otimes [f'\colon \mathcal{S}(T') \to X, R' \to T'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, R \vee R'\to T \vee T'],
 \]
-where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $ (R\to T) \in \Nec \downarrow T$, and $(R' \to T') \in \Nec \downarrow T'$. The bracket notation $[f\colon \mathcal{S}(T) \to X, R\to T]$ denotes the equivalence class of a pair $(f \colon \mathcal{S}(T) \to X, R \to T)$ in the colimit defining $\ncobar(X)$.
+where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $ (R\to T) \in \Nec \downarrow T$, and $(R' \to T') \in \Nec \downarrow T'$.
+The bracket notation $[f\colon \mathcal{S}(T) \to X, R\to T]$ denotes the equivalence class of a pair $(f \colon \mathcal{S}(T) \to X, R \to T)$ in the colimit defining $\ncobar(X)$.
 
 We may now define the \textit{cubical cobar construction}
 \[
 \ccobar \colon \sSet^0 \to \Mon_{\cSet}
 \]
-as the composition 
+as the composition
 \[
 \ccobar = \mathcal{P}_! \, \ncobar.
 \]
@@ -196,19 +198,20 @@ This reinterpretation of Baues construction in terms of cubical sets was also st
 
 \subsection{Relation to the cobar construction}
 
-We now relate the cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}$  to the cobar construction $\cobar \colon \coAlg \to \Mon_{\Ch}$ (\cref{ss:cobar construction}). The following result has also been observed, in a different form, in section 3.5 of \cite{berger1995loops}.
+We now relate the cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}$ to the cobar construction $\cobar \colon \coAlg \to \Mon_{\Ch}$ (\cref{ss:cobar construction}).
+The following result has also been observed, in a different form, in section 3.5 of \cite{berger1995loops}.
 
 \begin{lemma} \label{l:ccobar and cobar}
-	There is a natural isomorphisms of functors 
+	There is a natural isomorphisms of functors
 	\[
 	\cchains \ccobar \cong \cobar \schains \colon \sSet^0 \to \Mon_{\Ch}.
 	\]
 \end{lemma}
 
-\begin{proof} 
+\begin{proof}
 	Denote by $\iota_n \in (\cube^n)_n$ the top dimensional non-degenerate element of the standard $n$-cube $\cube^n$.
 	Note that for a reduced simplicial set $X$, we may represent any non-degenerate $n$-cube $\alpha \in (\mathcal{P}_!(\ncobar(X)))_n$ as a pair $\alpha = [\sigma \colon \mathcal{Y}(T) \to X, \iota_n]$ for some $T = [n_1] \vee \dots \vee [n_k] \in \Nec$ with $\dim(T) = n_1 + \dots + n_k - k = n$.
-	
+
 	To define an algebra map
 	\[
 	\varphi_X \colon \cchains(\mathcal{P}_!(\ncobar(X))) \xra{\cong} \cobar \schains(X)
@@ -218,7 +221,7 @@ We now relate the cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}
 	If $n > 0$, we let $\varphi_X(\alpha)=[\overline{\sigma}]$.
 	A straightforward computation yields that this gives rise to a well defined isomorphism of algebras, which is compatible with the differentials, and natural with respect to maps of simplicial sets.
 \end{proof}
- 
+
 \subsection{An $E_{\infty}$-bialgebra structure on the cobar construction} \label{ss:e-infty on cobar}
 
 The original cobar construction of Adams produces monoids in $\Ch$.
@@ -241,14 +244,14 @@ This discussion proves the first half of \cref{t:1st main thm in the intro}, whi
 	\sSet^0 \arrow[r, "\cobar \schains"] \arrow[u, "\ccobar"]
 	& \Mon_{\Ch}.
 	\end{tikzcd}
-	\]	
+	\]
 \end{lemma}
 
 \subsection{Steenrod operations}
 
 Throughout this subsection let us consider $\k$ to be the finite field $\Fp$ and $X$ a reduced simplicial set.
 
-Since $\cobar \schains(X)$ is isomorphic to the chains on a cubical set by \cref{l:ccobar and cobar}, its mod $p$ homology is a priori equipped with a right action of the Steenrod algebra \cite{steenrod1962cohomology, milnor1958steenrod}.
+Since, \cref{l:ccobar and cobar}, $\cobar \schains(X)$ is isomorphic to the chains on a cubical set, its mod $p$ homology is a priori equipped with a right action of the Steenrod algebra \cite{steenrod1962cohomology, milnor1958steenrod}.
 As an application of the explicit construction of a natural $\UM$-coalgebra structure on $\cobar \schains(X)$, we can describe at the chain level this action using the constructions of \cite{medina2020maysteenrod}.
 More explicitly, let $\Cp$ be the cyclic group of order $p$ and
 \[
@@ -261,7 +264,7 @@ Consider the $\Cp$-equivariant quasi-isomorphism $\psi_\UM \colon W(p) \to \UM(p
 
 For $p = 2$, the Steenrod square $P_s$ is represented by the map sending a representative $\mu$ of a class in the $k\th$ homology of $\cobar \schains(X)$ to the following element in its double linear dual:
 \[
-\mu \mapsto 
+\mu \mapsto
 \Big( \alpha \mapsto (\alpha \otimes \alpha) \big( \psi^{\cobar}(e_{k+2s})(\mu) \big) \Big).
 \]
 Similarly, for $p$ an odd prime, we have that the action of the Steenrod operations $\beta^\varepsilon P_{s}$ where $\varepsilon = 0,1$ are represented by
@@ -285,13 +288,13 @@ We now use the ideas developed so far to study the based loop space of a pointed
 
 Using the natural isomorphism of algebras
 \[
-\cobar \schains (\sSing(Z, z)) \cong  \cchains \ccobar (\sSing(Z, z))
+\cobar \schains (\sSing(Z, z)) \cong \cchains \ccobar (\sSing(Z, z))
 \]
 of \cref{l:ccobar and cobar}.
-Adams' map can be factored as 
+Adams' map can be factored as
 \begin{equation} \label{e:factorization of adams}
-\theta_Z \colon \cobar \sS(Z, z) \xrightarrow{\cong} 
-\cchains \ccobar(\sSing(Z, z)) \xrightarrow{\cchains(\Theta)} 
+\theta_Z \colon \cobar \sS(Z, z) \xrightarrow{\cong}
+\cchains \ccobar(\sSing(Z, z)) \xrightarrow{\cchains(\Theta)}
 S^{\cube}(\loops_z Z),
 \end{equation}
 where second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
@@ -314,7 +317,7 @@ Adams' comparison map
 was originally identified to be a morphism of monoids in $\Ch$ which, if applied to simply-connected spaces, induces a homology isomorphism.
 Baues showed that $\theta_Z$ is in fact a morphism of monoids in $\coAlg$, i.e., of bialgebras.
 Whereas, using that $\sSing(Z, z)$ is a fibrant reduced simplicial set, the second named author and M. Zeinalian \cite{rivera2018cubical} showed that for a possibly non-simply connected pointed space $(Z,y)$ the algebras $\cobar \sS(Z, z)$ and $S^{\cube}(\loops_zZ)$ are quasi-isomorphic.
-Later on, the second named author and S. Saneblidze 
+Later on, the second named author and S. Saneblidze
 \cite{rivera2019path} showed that $\Theta \colon \ccobar(\sSing(Z, z)) \to \cSing(\loops_z Z)$ is a weak homotopy equivalence monoids in $\cSet$.
 
 We now show that $\theta_Z$ is in fact a quasi-isomorphism of $E_{\infty}$-bialgebras.

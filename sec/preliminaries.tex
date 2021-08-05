@@ -10,8 +10,8 @@ A category is said to be \textit{cocomplete} if any functor to it from a small c
 If $\mathsf{A}$ is small and $\mathsf{C}$ cocomplete, then the \textit{(left) Kan extension of $g$ along $f$} exists for any pair of functors $f$ and $g$ in the diagram below, and it is the initial object in $\Fun[\mathsf{B}, \mathsf{C}]$ making
 \[
 \begin{tikzcd}[column sep=normal, row sep=normal]
-\mathsf{A} \arrow[d, "f"'] \arrow[r, "g"] & \mathsf{C} \\ 
-\mathsf{B} \arrow[dashed, ur, bend right] & \quad 
+\mathsf{A} \arrow[d, "f"'] \arrow[r, "g"] & \mathsf{C} \\
+\mathsf{B} \arrow[dashed, ur, bend right] & \quad
 \end{tikzcd}
 \]
 commute.
@@ -65,7 +65,7 @@ s^{-1} \overline{C} \to s^{-1}\overline{C} \oplus (s^{-1}\overline{C} \otimes s^
 \]
 as a derivation.
 
-In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented  coalgebras that are non-negatively graded and for which the coaugmentation induces an isomorphism $\k \cong C_0$ of $\k$-modules.
+In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented coalgebras that are non-negatively graded and for which the coaugmentation induces an isomorphism $\k \cong C_0$ of $\k$-modules.
 We denote by $\coAlg^0$ the full subcategory of $\coAlg^\ast$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees.
 
 We now review the central examples of coaugmented coalgebras on which Adams used this construction.
@@ -106,7 +106,7 @@ To a morphism $\tau \colon [n] \to [n^\prime]$ it assigns the chain map
 \begin{tikzcd}[row sep=-3pt, column sep=normal,
 /tikz/column 1/.append style={anchor=base east},
 /tikz/column 2/.append style={anchor=base west}]
-\schains(\simplex^n)_m \arrow[r] &  \schains(\simplex^{n^\prime})_m \\
+\schains(\simplex^n)_m \arrow[r] & \schains(\simplex^{n^\prime})_m \\
 \big( [m] \to [n] \big) \arrow[r, mapsto] & \big( [m] \to [n] \xra{\tau} [n^\prime] \big).
 \end{tikzcd}
 \]
@@ -124,7 +124,7 @@ We review a classical lift to coalgebras of the functor of chains:
 \]
 
 Using a Kan extension along the Yoneda embedding, it suffices to equip the chains on standard simplices with a natural coalgebra structure.
-For any $n \in \N$, define $\epsilon  \colon \chains(\simplex^n) \to \k$ by
+For any $n \in \N$, define $\epsilon \colon \chains(\simplex^n) \to \k$ by
 \[
 \epsilon \big( [v_0, \dots, v_q] \big) = \begin{cases} 1 & \text{ if } q = 0, \\ 0 & \text{ if } q>0, \end{cases}
 \]
@@ -182,7 +182,7 @@ are defined by
 \gamma^1(0,0) = 0, \qquad
 \gamma^1(0,1) = 1, \qquad
 \gamma^1(1,0) = 1, \qquad
-\gamma^1(1,1) = 1, 
+\gamma^1(1,1) = 1,
 \end{gather*}
 
 The category of \textit{cubical sets (with connections)} is the functor category $\cSet = \Fun[\cube^\op, \Set]$.
@@ -212,7 +212,7 @@ To a morphism $\tau \colon 2^n \to 2^{n^\prime}$ it assigns the chain map
 \begin{tikzcd}[row sep=-3pt, column sep=normal,
 /tikz/column 1/.append style={anchor=base east},
 /tikz/column 2/.append style={anchor=base west}]
-\cchains(\cube^n)_m \arrow[r] &  \cchains(\cube^{n^\prime})_m \\
+\cchains(\cube^n)_m \arrow[r] & \cchains(\cube^{n^\prime})_m \\
 \big( 2^m \to 2^n \big) \arrow[r, mapsto] & \big( 2^m \to 2^n \stackrel{\tau}{\to} 2^{n^\prime} \big).
 \end{tikzcd}
 \]
@@ -240,15 +240,15 @@ For any $n \in \N$, define $\epsilon \colon \chains(\cube^n) \to \k$ by
 where
 \[
 \epsilon([0]) = \epsilon([1]) = 1, \qquad \epsilon([0, 1]) = 0,
-\] 
+\]
 and $\Delta \colon \chains(\cube^n) \to \chains(\cube^n)^{\otimes 2}$ by
-\[	
-\Delta (x_1 \otimes \dots \otimes x_n) = 	
-\sum \pm \left( x_1^{(1)} \otimes \dots \otimes x_n^{(1)} \right) \otimes 	
-\left( x_1^{(2)} \otimes \dots \otimes x_n^{(2)} \right),	
-\]	
+\[
+\Delta (x_1 \otimes \dots \otimes x_n) =
+\sum \pm \left( x_1^{(1)} \otimes \dots \otimes x_n^{(1)} \right) \otimes
+\left( x_1^{(2)} \otimes \dots \otimes x_n^{(2)} \right),
+\]
 where the sign is determined using the Koszul convention, and we are using Sweedler's notation
-\[	
+\[
 \Delta(x_i) = \sum x_i^{(1)} \otimes x_i^{(2)}
 \]
 for the chain map $\Delta \colon \chains(\cube^1) \to \chains(\cube^1)^{\otimes 2}$ defined by
@@ -259,7 +259,7 @@ for the chain map $\Delta \colon \chains(\cube^1) \to \chains(\cube^1)^{\otimes 
 We remark that, using the canonical isomorphism $\chains(\cube^n) \cong \chains(\cube^1)^{\otimes n}$, the coproduct $\Delta$ can be described as the composition
 \[
 \begin{tikzcd}
-\chains(\cube^1)^{\otimes n} \arrow[r, "\Delta^{\otimes n}"] & \left( \chains(\cube^1)^{\otimes 2}  \right)^{\otimes n} \arrow[r, "sh"] & \left( \chains(\cube^1)^{\otimes n} \right)^{\otimes 2}
+\chains(\cube^1)^{\otimes n} \arrow[r, "\Delta^{\otimes n}"] & \left( \chains(\cube^1)^{\otimes 2} \right)^{\otimes n} \arrow[r, "sh"] & \left( \chains(\cube^1)^{\otimes n} \right)^{\otimes 2}
 \end{tikzcd}
 \]
 where $sh$ is the shuffle map that places tensor factors in odd position first.
