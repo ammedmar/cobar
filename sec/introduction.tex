@@ -159,24 +159,26 @@ Nevertheless, we construct a zig-zag of natural quasi-isomorphisms of $E_{\infty
 
 \subsection*{Relation to previous work}
 
-For any $0$-reduced simplicial set $X$, the natural coassociative coproduct on $\cobar \schains(X)$ obtained by Baues can be described directly in terms of an $E_2$-coalgebra structure on $\schains(X)$.
-Furthermore, in the $1$-connected setting, Kadeishvili described cup-$i$ products extending the Serre product and then identified the algebraic structure on the simplicial cochains on $X$ giving rise to these operations \cite{kadeishvili1999coproducts, kadeishvili2003cupi}.
+Using more abstract methods, in \cite{hess2006adamshilton} Hess, Parent, Scott, and Tonks constructed a coproduct on $\cobar \schains(X)$ for any $1$-reduced simplicial set $X$, which coincides with Baues' coproduct.
+A priori, their methods imply that this coproduct corresponds, up to homotopy, to the Alexander--Whitney coproduct on $\schains(\kan(X))$, a result that Franz showed to hold strictly in \cite{franz2020szczarba}. Our approach allows us to go beyond the coassociative coalgebra structure and compare directly the cobar construction and the chains on the Kan loop group as $E_{\infty}$-coalgebras.
 
-B. Fresse used the surjection algebra structure on simplicial cochains to obtain a Barratt-Eccles algebra structure on their bar construction \cite{fresse2003hopf}.
-Our results are similar to Fresse's but we emphasize the geometric perspective developed by Baues' combinatorial insights.
-In fact, the present article may be considered as an extension of Baues' \cite{baues1998hopf} to the context of $E_{\infty}$-coalgebras and non-simply connected spaces.
+The works of V.A. Smirnov \cite{smirnov1990iterated}, J. R. Smith \cite{smith1994cobar, smith2000operads}, and Kadeishvili–Saneblidze \cite{kadeishvili1998iterating} predict the existence of an $E_\infty$-algebra structure on $\cobar \schains(X)$ going beyond Baues' coassociative coalgebra structure. Motivated by modeling iterated loop spaces algebraically, 
+Fresse developed an abstract algebraic framework to construct an $E_{\infty}$-algebra structure on the bar construction of an $E_{\infty}$-algebra \cite{fresse2010bar}. In Fresse's approach, the model category structure on operads is the operating framework. He proves that the bar construction can be iterated for $E_{\infty}$-algebras if the operad model is assumed cofibrant.
+We mention that the reduced version of the $E_{\infty}$-operad $\UM$  cofibrant, although we do not use this observation in the present article. In the work of Fresse, one requires finiteness assumptions and restrictions on the fundamental group of the underlying space to relate to the based loop space, which we remove in this work.
 
-More abstract viewpoints for the iteration of the cobar and bar functors were respectively given in \cite{smith1994cobar} and \cite{fresse2010props} by J. Smith and Fresse, respectively.
-In Smith's approach, it is described how certain coalgebraic structure, called an $\mathfrak{m}$-coalgebra structure, on the chains of a simplicial complex passes to the cobar construction and how they correspond to operations on chains on the based loop space.
-In Fresse's approach, the model category structure on operads is the operating framework; he proves that the bar construction can be iterated for $E_{\infty}$-algebras if the operad model is assumed cofibrant.
-Although we do not pursue the following observation in this article, we mention that the reduced version of the $E_{\infty}$-operad $\UM$ is cofibrant.
-In both \cite{fresse2010bar} and \cite{smith1994cobar} there are restrictions on the fundamental group of the underlying space or simplicial set as well as finiteness assumptions, which we remove in this work.
-Also their non-effective constructions leave somewhat unexplored the cubical geometry used in the seminal works of both Adams and Baues.
+These results establish the existence of higher structures on the bar and cobar constructions. We now review part of the history of the problem of describing such structures effectively, and our contribution to it.
+Kadeishvili described explicitly Steenrod cup-$i$ coproducts on $\cobar \schains(X)$ compatible with the monoid structure for any reduced simplicial set $X$ \cite{kadeishvili1999coproducts, kadeishvili2003cupi}.
+Kadeishvili, as Baues, used cubical methods to define these operations, and to compare them, in the $1$-connected setting, with cup-$i$ coproducts  extending the Serre coalgebra structure on the cubical singular chains on the based loop space.
+We can regard Kadeishvili's operations as part of the arity 2 action of our model $\UM$ for the $E_{\infty}$-operad. We also compare the resulting $E_\infty$-bialgebra structure on the cobar construction to the cubical chains on the based loop space without the $1$-connected hypothesis.
+
+Taking Kadeishvili's cup-$i$ construction as starting point, B. Fresse provided the bar construction of an algebra over the surjection operad with the structure of an algebra over the Barratt–Eccles operad \cite{fresse2003hopf}. Fresse applies this construction to the surjection algebra structure of the cochains on a simplicial set $X$ and compares the resulting Baratt-Eccles algebra to the singular cochains on the based loop space, under restrictions on the fundamental group of $X$.
+Our results in the first part of the present article are similar to Fresse's.
+However, we make use of coalgebras instead of algebras, which allows us to treat the non-simply connected case. We also emphasize the cubical perspectives developed and exploited in Adams' and Baues' seminal papers. 
 
 \subsection*{Outline}
 
 In \cref{s:preliminaries}, we recall well known algebraic and categorical definitions and constructions that will be used throughout this article.
 We review, in \cref{s:operads and props}, the basics of operads and props with the goal of recalling the $E_{\infty}$-operad $\UM$ and its actions on simplicial and cubical chains.
 We construct a Hopf operad structure on $\UM$ in \cref{s:monoidal}, and show that the cubical chains functor from cubical sets to $\UM$-coalgeras is monoidal.
-We prove \cref{t:1st main thm in the intro} in \cref{s:theorem1} by constructing a monoidal cubical set model of the based loop space that agrees with the cobar construction after applying the functor of cubical chains.
+We prove \cref{t:1st main thm in the intro} in \cref{s:theorem1} using Baues' cubical cobar construction and the $\UM$-structure on cubical chains.
 Finally, in \cref{s:theorem2}, we review some facts and constructions from homotopy theory and use them to prove \cref{t:2nd main thm in the intro}.
