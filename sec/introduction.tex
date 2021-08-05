@@ -64,12 +64,11 @@ Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \
 We extend Baues' work by lifting $\cobar \schains$ to the category of $E_{\infty}$-\textit{bialgebras}, that is to say, of monoids in $E_{\infty}$-\textit{coalgebras}; a notion that should not be confused with that of bialgebras over an $E_{\infty}$-prop.
 An $E_{\infty}$-coalgebra is essentially a coalgebra that is commutative up to an infinite family of coherent homotopies which is regarded as extra structure.
 This algebraic structure is conveniently defined using the framework and language of operads.
-
-More precisely, we construct a lift of $\cchainsAs \ccobar \colon \sSet^0 \to \Mon_{\coAlg}$ to the category of monoids in $\coAlg_\UM$, where $\coAlg_\UM$ is the category of coalgebas over the combinatorial model $\UM$ of the $E_{\infty}$-operad introduced via a finitely presented prop in \cite{medina2020prop1}.
-For this statement to be meaningful, we first need to define a monoidal structure on $\coAlg_\UM$.
+We construct a lift of $\cchainsAs \ccobar \colon \sSet^0 \to \Mon_{\coAlg}$ to the category of monoids in $\coAlg_\UM$, where $\coAlg_\UM$ is the category of coalgebas over the operad $\UM$ introduced via a finitely presented prop in \cite{medina2020prop1}.
+This is a model of the $E_\infty$-operad that explicitly acts on both simplicial and cubical chains.
+For this lift to be meaningful, we first need to define a monoidal structure on $\coAlg_\UM$.
 We do so by introducing a Hopf structure on $\UM$, that is to say, by making it into an operad over the category of coalgebras, a structure that has other potential applications \cite{livernet2008hopf}.
-Once we have shown that $\coAlg_\UM$ is a monoidal category, we prove the main technical result of this work.
-It states that the functor $\cchainsUM \colon \cSet \to \coAlg_\UM$ defined in \cite{medina2021cubical} as a lift of $\cchainsAs$ is monoidal.
+Once we have shown that $\coAlg_\UM$ is a monoidal category, we prove the main technical result of this work, stating that the lift $\cchainsUM \colon \cSet \to \coAlg_\UM$ of $\cchainsAs$ defined in \cite{medina2021cubical} is monoidal.
 
 Generalizing Baues' first step in the construction of his lift of Adams' cobar construction, we have that $\cchainsUM(\ccobar X)$ is a monoid in $\coAlg_\UM$.
 This is because $\ccobar X$ is a monoid in $\cSet$ and $\cchainsUM$ is shown to be a monoidal functor.
@@ -174,7 +173,7 @@ Using more abstract methods, in \cite{hess2006adamshilton} Hess, Parent, Scott, 
 A priori, their methods imply that this coproduct corresponds, up to homotopy, to the Alexander--Whitney coproduct on $\schains(\kan(X))$, a result that Franz showed to hold strictly in \cite{franz2020szczarba}.
 Our approach allows us to go beyond the coalgebra structure and compare directly the cobar construction and the chains on the Kan loop group as $E_{\infty}$-coalgebras.
 
-The works of V.A. Smirnov \cite{smirnov1990iterated}, J.R. Smith \cite{smith1994cobar, smith2000operads}, and Kadeishvili–Saneblidze \cite{kadeishvili1998iterating} predict the existence of an $E_\infty$-algebra structure on $\cobar \schains(X)$.
+The works of V.A. Smirnov \cite{smirnov1990iterated}, J.R. Smith \cite{smith1994cobar, smith2000operads}, and Kadeishvili–Saneblidze \cite{kadeishvili1998iterating} predict the existence of an $E_\infty$-coalgebra structure on $\cobar \schains(X)$.
 In \cite{fresse2010bar}, B. Fresse used a model category structure on reduced operads \cite{berger2003modelcategory, hinich1997homologicalalgebra} to iterate the bar construction on algebras over cofibrant $E_\infty$-operads.
 We mention that the reduced version of the $E_{\infty}$-operad $\UM$ is cofibrant, although we do not use this observation here.
 In the work of Fresse, finiteness assumptions and restrictions on the fundamental group are required to model the based loop space.
@@ -187,7 +186,7 @@ We can regard Kadeishvili's operations as part of the arity 2 action of our mode
 Taking Kadeishvili's cup-$i$ construction as starting point, Fresse provided the bar construction of an algebra over the surjection operad with the structure of an algebra over the Barratt–Eccles operad \cite{fresse2003hopf}.
 Fresse applies this construction to the surjection algebra structure of the cochains on a simplicial set $X$ and compares the resulting Baratt-Eccles algebra to the singular cochains on the based loop space, under restrictions on the fundamental group of $X$.
 Our results in the first part of the present article are similar to Fresse's.
-However, we make use of coalgebras instead of algebras, which allows us to relate our constructions to the base loop space in the general non-simply connected case.
+However, we make use of coalgebras instead of algebras, which allows us to relate our constructions to the based loop space in the general non-simply connected case.
 Additionally, our approach is grounded on and further develops the cubical perspective at the heart of Adams' and Baues' seminal papers.
 
 \subsection*{Outline}
