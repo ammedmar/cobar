@@ -5,32 +5,21 @@ The first goal of this section is to construct a monoidal structure on $\coAlg_\
 We will do so by providing $\M$ with the structure of a Hopf prop.
 Then, we will show that the functor $\cchainsUM \colon \cSet \to \coAlg_{\UM}$ defined in \cref{ss:e-infty on cubical} is monoidal.
 
-\subsection{Cartesian product and Day convolution} \label{ss:day convolution}
+\subsection{Monoidal structures on presheaves} \label{ss:day convolution}
 
-We recall the monoidal structures on simplicial and cubical sets which are relevant for this article.
-
-Given simplicial sets $X$ and $X^\prime$ their \textit{Cartesian product} $X \times X^\prime$ is induced from
+Let $\sA$ be a category in $\Cat$ and consider two presheaves $P$ and $P^\prime$ over $\sA$.
+Their \textit{Cartesian product} is defined by
 \[
-(X \times X^\prime)_n = X_n \times X^\prime_n.
+(P \times P^\prime)(a) = P(a) \times P^\prime(a),
 \]
-This construction makes $\sSet$ into a symmetric monoidal category with unit $\simplex^0$.
-We remark that Cartesian product of simplicial sets coincides with the more general notion of categorical product, since limits of presheaves are computed object-wise.
-
-We now recall a monoidal structure, called the \textit{Day convolution}, on the category of presheaves over a monoidal category.
-Let $(\mathsf{J}, \boxtimes)$ be a monoidal category.
-Define
+and, if $(\sA, \otimes)$ is a monoidal category, their \textit{Day convolution product} by
 \[
-\otimes \colon \Fun[\mathsf{J}^{\op}, \Set] \times \Fun[\mathsf{J}^{\op}, \Set]\to \Fun[\mathsf{J}^{\op}, \Set]
+P \otimes P^\prime \, = \! \colim_{\substack{\yoneda(a) \to F \\ \yoneda(a^\prime) \to F^\prime}} \yoneda(a \otimes a^\prime).
 \]
-by the formula
-\[
-F \otimes F^\prime = \colim_{\substack{\mathcal{Y}(i) \to F \\ \mathcal{Y}(j) \to F^\prime}} \yoneda(i \boxtimes j).
-\]
+These induce natural monoidal structures on the category of presheaves over $\sA$.
 
-This notion makes $\cSet$ into a (non-symmetric) monoidal category with unit $\cube^0$.
-Furthermore, with this monoidal structure $\cSing$ is a monoidal functor.
+In this work we endow $\sSet$ and $\cSet$ with the Cartesian product and Day convolution monoidal structures respectively.
 
-Throughout this article we will always consider $\sSet$ and $\cSet$ as monoidal categories equipped with the Cartesian product and Day convolution, respectively.
 
 \subsection{Triangulation and its right adjoint} \label{ss:triangulation and its adjoint}
 
