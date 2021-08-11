@@ -89,17 +89,7 @@ where the wedge symbol now means we identify the last vertex of $\simplex^{n_i}$
 Then $\mathcal{S}$ is a fully faithful functor, so $\Nec$ may be identified with the full sub-category of $\sSet_{*,*}$ having as objects those double pointed simplicial sets of the form $\simplex^{n_1} \vee \dots \vee \simplex^{n_k}$.
 The \textit{dimension} of a necklace $T = [n_1] \vee \dots \vee[n_k]$ is defined by $\dim(T) = n_1 + \dots + n_k-k$.
 
-The category of \textit{necklical sets} is the functor category $\nSet = \Fun[\Nec^{\op}, \Set]$.
-The \textit{Yoneda embedding}
-\[
-\mathcal{Y} \colon \Nec \to \nSet,
-\]
-is the functor induced by by $T \mapsto \Nec(-,T)$.
-
-The category of necklical sets $\nSet$ is a (non-symmetric) monoidal category when equipped with the Day convolution structure $\otimes \colon \nSet \times \nSet \to \nSet$ (\cref{ss:day convolution}) given by
-\[
-K \otimes K' \, = \colim_{\substack{\mathcal{Y}(T) \to K, \\ \mathcal{Y}(T')\to K'}} \mathcal{Y}(T \vee T').
-\]
+The (non-symmetric) monoidal category of \textit{necklical sets} $\Fun[\Nec^{\op}, \Set]$ equipped with Day convolution (\cref{ss:day convolution}) is denoted by $\nSet$.
 
 \subsection{From necklaces to cubes}
 
