@@ -32,9 +32,8 @@ P(a) \, \cong \colim_{\yoneda(a) \to P} \yoneda(a).
 
 \subsection{Chain complexes}
 
-Fix a commutative and unital ring $\k$ and denoted by $\Ch$ the category of differential graded $\k$-modules with the homological convention.
-Its objects and morphisms are referred to as \textit{chain complexes} and \textit{chain maps} respectively.
-For chain complexes $C$ and $C^\prime$ we regard, as usual, their product $C \otimes C^\prime$ and set of linear maps $\Hom(C, C^\prime)$ as a chain complexes, making $\Ch$ into a closed symmetric monoidal category.
+Throughout this article $\k$ denotes a commutative and unital ring and we work over its associated closed symmetric monoidal category of differential (homological) graded $\k$-modules $(\Ch, \otimes, \k)$.
+We refer to the objects and morphisms of this category as \textit{chain complexes} and \textit{chain maps} respectively. We denote by $\Hom(C, C^\prime)$ the chain complex of $\k$-linear maps between chain complexes $C$ and $C^\prime$, and refer to the functor $\Hom(-, \k)$ as \textit{linear duality}.
 The $i^\th$ \textit{suspension} functor $s^i \colon \Ch \to \Ch$ is defined at the level of graded modules by $(s^{i}M)_n = M_{n-i}$.
 
 \subsection{Coalgebras} \label{ss:coalgebras}
@@ -62,9 +61,13 @@ We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and remark that a mon
 A \textit{coaugmentation} on a coalgebra $C$ is a morphism $\nu \colon \k \to C$ in $\coAlg$.
 A coalgebra is said to be \textit{coaugmented} if it is equipped with a coaugmentation.
 
-We denote by $\coAlg^\ast$ the category coaugmented coalgebras with morphisms being coaugmentation preserving coalgebra morphisms.
+We denote by $\coAlg^\ast$ the category of coaugmented coalgebras with morphisms being coaugmentation preserving coalgebra morphisms. In other words, $\coAlg^\ast$ is the slice category $\k \downarrow \mathsf{coMon}_{\Ch},$ where $\mathsf{coMon}_{\Ch}$ is the category of comonoids in $\Ch$ and $\k$ is regarded as an object in $\mathsf{coMon}_{\Ch}$ by considering it as a chain complex concentrated in degree $0$ with coproduct determined by $1_{\k} \mapsto 1_{\k} \otimes 1_{\k}.$
 
-The \textit{cobar construction} is the functor $\cobar \colon \coAlg^\ast \to \Mon_{\Ch}$ defined on objects as follows.
+The \textit{cobar construction} is the functor 
+\[
+\cobar \colon \coAlg^\ast \to \Mon_{\Ch}
+\]
+defined on objects as follows.
 Let $(C, \partial, \Delta, \varepsilon, \nu)$ be the data of a coaugmented coalgebra.
 Denote by $\overline{C}$ the cokernel of $\nu \colon \k \to C$ and recall that $s^{-1}$ is the $(-1)^\th$ suspension.
 The cobar construction $\cobar C$ of this coaugmented coalgebra is the graded module
@@ -79,9 +82,15 @@ s^{-1} \overline{C} \to s^{-1}\overline{C} \oplus (s^{-1}\overline{C} \otimes s^
 as a derivation.
 
 In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented coalgebras that are non-negatively graded and for which the coaugmentation induces an isomorphism $\k \cong C_0$ of $\k$-modules.
-We denote by $\coAlg^0$ the full subcategory of $\coAlg^\ast$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees.
+We denote by $\coAlg^0$ the full subcategory of $\coAlg^\ast$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees. 
 
-We now review the central examples of coaugmented coalgebras on which Adams used this construction.
+The object $ \cobar(C) \in \Mon_{\Ch}$ may be equipped with a natural augmentation map $\cobar(C) \to \k$ in $\Mon_{\Ch}$ given by the projection map to the first summand term. Therefore, the cobar construction may be regarded as a functor between slice categories
+\[
+\cobar \colon \k \downarrow \mathsf{coMon}_{\Ch} \to \Mon_{\Ch} \downarrow \k,
+\]
+however, we will not require the data of augmentations in this article. 
+
+We now review the central examples of coaugmented coalgebras to which Adams applied the cobar construction.
 
 \subsection{Simplicial sets}
 

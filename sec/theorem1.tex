@@ -156,25 +156,11 @@ For any reduced simplicial set $X$, we define a necklical set $\ncobar(X) \colon
 \[
 \ncobar(X) \, = \! \colim_{\mathcal{S}(T) \to X} \mathcal{Y}(T).
 \]
-The product
+The monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ given by concatenation of necklaces induces a natural product
 \[
 \ncobar(X) \otimes \ncobar(X) \to \ncobar(X)
 \]
-is induced by the monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ given by concatenation of necklaces.
-More precisely, using that
-\[
-\mathcal{Y}(T) \cong \colim_{(R \to T) \in \Nec \downarrow T} \mathcal{Y}(R),
-\]
-we may describe the product
-\[
-\ncobar(X) \otimes \ncobar(X) \to \ncobar(X)
-\]
-by
-\[
-[f\colon \mathcal{S}(T) \to X, R \to T] \otimes [f'\colon \mathcal{S}(T') \to X, R' \to T'] \mapsto [f \vee g\colon \mathcal{S}(T\vee T') \to X, R \vee R'\to T \vee T'],
-\]
-where $(f\colon \mathcal{S}(T) \to X), (f'\colon \mathcal{S}(T') \to X) \in \mathcal{S} \downarrow X$, $ (R\to T) \in \Nec \downarrow T$, and $(R' \to T') \in \Nec \downarrow T'$.
-The bracket notation $[f\colon \mathcal{S}(T) \to X, R\to T]$ denotes the equivalence class of a pair $(f \colon \mathcal{S}(T) \to X, R \to T)$ in the colimit defining $\ncobar(X)$.
+making $\ncobar(X)$ into a monoid in the monoidal category $\nSet$. 
 
 We may now define the \textit{cubical cobar construction}
 \[
