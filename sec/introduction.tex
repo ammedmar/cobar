@@ -1,7 +1,7 @@
 
 \section{Introduction}
 
-A form of the \textit{homotopy hypothesis}, a cornerstone of modern algebraic topology, recast the homotopy theory of pointed spaces in terms of topological groups.
+A form of the \textit{homotopy hypothesis}, a cornerstone of modern algebraic topology, recasts the homotopy theory of pointed spaces in terms of topological groups.
 More concretely, associated to any pointed topological space $(Z,z)$ one may naturally associate a topological monoid $\loops_z Z$ -- its \textit{based loop space} -- whose points are pairs $(\gamma, r)$ where $r \in \R_{\geq 0}$ and $\gamma \colon [0,r] \to Z$ is a continuous map with $\gamma(0) = z = \gamma(r)$.
 We consider $\loops_z Z$ to be equipped with the compact-open topology and continuous multiplication
 \[
@@ -21,11 +21,13 @@ Furthermore, $\loops_z Z$ is weak homotopy equivalent to a topological group whe
 The pointed space $(Z,z)$ may then be recovered, up to weak homotopy equivalence, from $\loops_z Z$ through the \textit{classifying space}, or \textit{delooping}, construction.
 
 A principal goal of algebraic topology, if not its \textit{raison d'\^{e}tre}, is to encode the theory of topological spaces up to some specified notion of equivalence in terms of combinatorial or algebraic objects, allowing for the effective analysis of topological properties quantitatively.
-We will focus on weak homotopy equivalences, where an important example of this representation process is provided by the functor of singular chains
+We will focus on spaces up to weak homotopy equivalence, where a first example of this algebraization process is provided by the functor of singular chains
 \[
-\Schains \colon \Top \to \Ch.
+\Schains \colon \Top \to \Ch,
 \]
-More homotopical information can encoded if the resulting chain complexes are considered as differential graded (dg) coassociative coalgebras, or, better still, as homotopy coherent coassociative and cocommutative coalgebras, also known as $E_\infty$-coalgebras.
+which associates a chain complex over a fixed commutative ring to any topological space. 
+
+The singular chains construction may be thought of as a way of linearizing a topological space. More homotopical information can be encoded if the resulting chain complex is equipped with non-linear algebraic structure approximating the diagonal map $Z \to Z \times Z$. In other words, if we regard the singular chains as a differential graded (dg) coassociative coalgebra, or, better still, as a homotopy coherent coassociative and cocommutative coalgebra, also known as an $E_\infty$-coalgebra.
 Diagrammatically, this can be represented as lifts of the form
 \begin{equation}
 \begin{tikzcd}[column sep=normal, row sep=small]
@@ -39,13 +41,13 @@ Diagrammatically, this can be represented as lifts of the form
 \end{equation}
 The study of $E_\infty$-structures has a long history, where (co)homology operations \cite{steenrod1962cohomology, may1970general}, the recognition of infinite loop spaces \cite{boardman1973homotopy, may1972geometry}, and the complete algebraic representation of the $p$-adic homotopy category \cite{mandell2001padic} are key milestones.
 
-One may obtain a algebraic model for based loop spaces by consider their singular chains.
-A smaller model was introduced by F.~Adams in 1956 via its \textit{cobar construction} \cite{adams1956cobar}, a functor
+One may obtain an algebraic model for based loop spaces by considering their singular chains.
+A smaller model was introduced by F.~Adams in 1956 via the \textit{cobar construction} \cite{adams1956cobar}, a functor
 \[
 \cobar \colon \coAlg^\ast \to \Mon_{\Ch}
 \]
 from the category of coaugemented dg coassociative coalgebras to the category of dg associative algebras, which we regard in this article as monoids in $\Ch$.
-He constructed for any pointed space $(Z,z)$ a \textit{comparison map}
+He constructed, for any pointed space $(Z,z)$, a \textit{comparison map}
 \begin{equation} \label{e:adams map}
 \theta_Z \colon \cobar \sSchainsAS(Z,z) \to \cSchains(\loops_z Z),
 \end{equation}
