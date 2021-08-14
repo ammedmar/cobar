@@ -1,16 +1,55 @@
 
 \section{Introduction}
 
-In 1956, F. Adams introduced the cobar construction to model algebraically the passage from a simply connected pointed space to its topological monoid of based loops \cite{adams1956cobar}.
-Fixing a commutative ring, the algebraic cobar construction may be described as a functor $\cobar \colon \coAlg^\ast \to \Mon_{\Ch}$ from the category of coaugemented (differential graded coassociative) coalgebras to the category of (dga) algebras, which we regard in this article as monoids in $\Ch$, the category of chain complexes.
-For any pointed space $(Z, z)$, Adams constructed a \textit{comparison map}
+The \textit{homotopy hypothesis}, a cornerstone of modern algebraic topology, recast the homotopy theory of pointed spaces in terms of topological groups.
+More concretely, associated to any pointed topological space $(Z,z)$ one may naturally associate a topological monoid $\loops_z Z$ -- its \textit{based loop space} -- whose points are pairs $(\gamma, r)$ where $r \in \R_{\geq 0}$ and $\gamma \colon [0,r] \to Z$ is a continuous map with $\gamma(0) = z = \gamma(r)$.
+We consider $\loops_z Z$ to be equipped with the compact-open topology and continuous multiplication
+\[ 
+\star \colon \loops_z Z \times \loops_z Z \to \loops_z Z
+\]
+given by \textit{concatenation} of loops, with the identity element being the \textit{constant loop} $(c_r,0)$.
+This construction gives rise to a functor
+\[
+\loops \colon \Top^{\ast} \to \Mon_{\Top}
+\]
+from the category of pointed topological spaces to the category of topological monoids.
+For any pointed topological space $(Z,z)$, the topological monoid $\loops_z Z$ has the special property that its elements have inverses \textit{up to homotopy}.
+In fact, for any loop $\gamma \colon [0,r] \to Z $ one may define a new loop $\overline{\gamma} \colon [0,r] \to Z$ which runs $\gamma$ in the opposite direction, namely $\overline{\gamma}(t) = \gamma(r-t)$.
+The loops $\gamma \star \overline{\gamma}$ and $\overline{\gamma} \star \gamma$ are both homotopic to $c_z$.
+Consequently, the set of path components $\pi_0(\loops_z Z)$ has an induced group structure, which is naturally isomorphic to the fundamental group $\pi_1(Z,z)$.
+Furthermore, $\loops_z Z$ is weak homotopy equivalent to a topological group where the group identities hold strictly.
+The pointed space $(Z,z)$ may then be recovered, up to weak homotopy equivalence, from $\loops_z Z$ through the \textit{classifying space}, or \textit{delooping}, construction.
+
+A principal goal of algebraic topology, if not its \textit{raison d'\^{e}tre}, is to encode the theory of topological spaces up to some specified notion of equivalence in terms of combinatorial or algebraic objects, unlocking the effective analysis of quantitative and qualitative topological properties.
+We will focus on weak homotopy equivalences, where important example of this representation process is provided by the functor of singular chains
+\[
+\chains \colon \Top \to \Ch.
+\]
+More homotopical information can encoded if the resulting chain complexes are considered as differential graded (dg) coalgebras, or, better still, as homotopy coherent coassociative and cocommutative coalgebras, also known as $E_\infty$-coalgebras.
+Diagrammatically, this amounts to a lift of the form
+\begin{equation}
+\begin{tikzcd}[column sep=normal, row sep=small]
+& \coAlg_{E_\infty} \arrow[d] \\
+\Top \arrow[ur, "\chains_{E_\infty}", out=60, in=180] \arrow[r, "\chains"] & \Ch.
+\end{tikzcd}
+\end{equation}
+The study of $E_\infty$-structures has a long history, where (co)homology operations \cite{steenrod1962cohomology, may1970general}, the recognition of infinite loop spaces \cite{boardman1973homotopy, may1972geometry}, and complete algebraic models for $p$-adic homotopy types \cite{mandell2001padic} are key milestones.
+
+For based loop spaces, a first approximation to an algebraic model was described by F. Adams in 1956 in terms of the \textit{cobar construction} \cite{adams1956cobar} of the coalgebra of singular chains on the underlying pointed space.
+The cobar construction may be described as a functor 
+\[
+\cobar \colon \coAlg^\ast \to \Mon_{\Ch}
+\]
+from the category of coaugemented dg coassociative coalgebras to the category of dg associative algebras, which we regard in this article as monoids in $\Ch$.
+Adams constructed for any pointed space $(Z, z)$ a \textit{comparison map}
 \begin{equation} \label{e:adams map}
 \theta_Z \colon \cobar \sS(Z, z) \to \cS(\loops_z Z),
 \end{equation}
-a natural chain map of monoids in $\Ch$, where $\sS(Z,z)$ is a pointed version of the usual singular chains in $Z$ and $S^{\cube}(\loops_zZ)$ is the monoid of cubical singular chains on the monoid of Moore loops.
+a natural chain map of monoids in $\Ch$, where $\cS(\loops_z Z)$ is the monoid of cubical singular chains on the based loop space.
 Adams proved that $\theta_Z$ is a quasi-isomorphism if $Z$ is simply connected, a result extended to path-connected spaces in \cite{rivera2018cubical} by considering finer homotopical algebra, and in \cite{hess2010cobar} by a localization procedure.
 
-We continue in this article the exploration of the rich interplay between geometric, combinatorial, and algebraic structures arising from the cobar construction and its relationship to the based loop space.
+In this article we enhance the cobar construction with additional chain level algebraic structure that encodes further information regarding the underlying homotopy type. We describe this additional algebraic structure explicitly and effectively and explain its relation to certain combinatorial and geometric structures arising from the cobar construction and its relationship to the based loop space. 
+
 Our starting point is an insight of H.~Baues which is best explained in terms of \textit{cubical sets} (with connections), i.e., presheaves over the
 strict monoidal category generated by the diagram
 \[
@@ -19,10 +58,8 @@ strict monoidal category generated by the diagram
 \end{tikzcd}
 \]
 restricted by certain relations \cite{brown1981cubes}.
-%The functor of cubical singular chains $S^\cube$ appearing in the target of Adams' comparison map \eqref{e:adams map} is equal to the composition $\cchains \cSing$, where $\cSing$ is constructed by considering all continuous maps from geometric cubes and $\cchains$ is the (normalized) cubical chains functor.
 With the Day convolution monoidal structure the singular complex functor $\cSing \colon \cSet \to \Top$ and the functor of (normalized) chains $\cchains \colon \cSet \to \Ch$ are monoidal.
 
-%Consequently, $S^\cube(\loops_z Z)$ is a monoid in $\Ch$ since $\loops_z Z$ is a monoid in $\Top$ for any pointed space $(Z, z)$.
 Cubical chains are equipped with a natural coalgebra structure coming from Serre's chain approximation to the diagonal.
 This structure lifts $\cchains$ to the category of coalgebras as a monoidal functor $\cchainsAs \colon \cSet \to \coAlg$, which, in particular, makes $\cS(\loops_z Z) = \cchains \cSing(\loops_z Z) $ into a monoid in $\coAlg$ for any pointed space $(Z, z)$.
 
@@ -56,8 +93,8 @@ In other words, Baues' lifted Adams' cobar construction $\cobar \schains$ so tha
 \]
 Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of bialgebras, i.e., of monoids in $\coAlg$.
 
-Our first result extends Baues' work by lifting $\cobar \schains$ to the category of $E_\infty$-bialgebras, that is of monoids in the category of coalgebras equipped with an infinite family of coherent homotopies enforcing, in a derived sense, the coassociativity and cocommutativity of the coproduct.
-The study of $E_\infty$-structures has a long history, where (co)homology operations \cite{steenrod1962cohomology, may1970general}, the recognition of infinite loop spaces \cite{boardman1973homotopy, may1972geometry} and algebraic models for the homotopy category \cite{mandell2001padic} are key milestones.
+Our first result extends Baues' work by lifting $\cobar \schains$ to the category of $E_\infty$-bialgebras, that is of monoids in the category of coalgebras equipped with the additional structure of an infinite family of coherent homotopies enforcing, in a derived sense, the coassociativity and cocommutativity of the coproduct.
+The study of $E_\infty$-structures has a long history, where (co)homology operations \cite{steenrod1962cohomology, may1970general}, the recognition of infinite loop spaces \cite{boardman1973homotopy, may1972geometry}, and algebraic models for homotopy types \cite{mandell2001padic} are key milestones.
 
 In more detail, our first result constructs a lift of $\cchainsAs \ccobar \colon \sSet^0 \to \Mon_{\coAlg}$ to the category of monoids in $\coAlg_\UM$, where $\coAlg_\UM$ is the category of coalgebas over the operad $\UM$ introduced via a finitely presented prop in \cite{medina2020prop1}.
 This is a model of the $E_\infty$-operad that explicitly acts on both simplicial and cubical chains.

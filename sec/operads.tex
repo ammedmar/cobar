@@ -11,24 +11,25 @@ From the same reference we recall a combinatorial $\UM$-coalgebra structure on s
 Let $\S$ be the category whose objects are the natural numbers and whose set of morphisms between $m$ and $n$ is empty if $m \neq n$ and is otherwise the symmetric group $\S_n$.
 A (left) \textit{$\S$-module} (resp. $\S$-\textit{bimodule}) is a functor from $\S$ (resp. $\S \times \S^\op$) to $\Ch$.
 We respectively denote by $\Smod$ and $\Sbimod$ the categories of left $\S$-modules and of $\S$-bimodules with morphisms given by natural transformations.
-We notice that the group homomorphisms $\S_n \to \S_n \times \S_1$ induce a forgetful functor $\forget \colon \Sbimod \to \Smod$.
-Explicitly, for a prop $\cP$ we have $\forget(\cP)(r) = \cP(1, r)$ for each $r \in \N$.
+The group homomorphisms $\S_n \to \S_n \times \S_1$ induce a forgetful functor $\forget \colon \Sbimod \to \Smod$.
+Explicitly, $\forget(\cP)(r) = \cP(1, r)$ for $r \in \N$.
+The similarly defined forgetful functor to right $\S$-modules will not be used.
 
 \subsection{Composition structures}
 
 We can define \textit{operads} and \textit{props} by enriching $\S$-modules and $\S$-bimodules with certain composition structures.
 For a complete presentation of these concepts we refer to Definition~11 and 54 of \cite{markl2008props}.
 Intuitively, using examples defined in the next subsection, operads and props can be understood by abstracting the composition structure naturally present in the left $\S$-module $\End^C$, naturally an operad, and the $\S$-bimodule $\End^C_C$, naturally a prop.
-
-We remark that if $\cP$ is a prop, then its composition structure provides $\forget(\cP)$ with the structure of an operad.
+We remark that the prop structure on $\cP$ restricts to an operad structure on $\forget(\cP)$.
 
 \subsection{Representations}
 
 Given a chain complex $C$ define
-\begin{align*}
-\End^C(r) &= \Hom(C, C^{\otimes r}), \\
-\End^C_C(s, r) &= \Hom(C^{\otimes s}, C^{\otimes r}),
-\end{align*}
+\[
+\End^C(r) = \Hom(C, C^{\otimes r})
+\quad \text{and} \quad
+\End^C_C(s, r) = \Hom(C^{\otimes s}, C^{\otimes r})
+\]
 with their natural operad and prop structures respectively.
 
 Given an operad $\cO$, an $\cO$-\textit{structure} on $C$ is an operad morphism $\cO \to \End^C$.
