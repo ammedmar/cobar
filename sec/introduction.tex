@@ -1,10 +1,10 @@
 
 \section{Introduction}
 
-The \textit{homotopy hypothesis}, a cornerstone of modern algebraic topology, recast the homotopy theory of pointed spaces in terms of topological groups.
+A form of the \textit{homotopy hypothesis}, a cornerstone of modern algebraic topology, recast the homotopy theory of pointed spaces in terms of topological groups.
 More concretely, associated to any pointed topological space $(Z,z)$ one may naturally associate a topological monoid $\loops_z Z$ -- its \textit{based loop space} -- whose points are pairs $(\gamma, r)$ where $r \in \R_{\geq 0}$ and $\gamma \colon [0,r] \to Z$ is a continuous map with $\gamma(0) = z = \gamma(r)$.
 We consider $\loops_z Z$ to be equipped with the compact-open topology and continuous multiplication
-\[ 
+\[
 \star \colon \loops_z Z \times \loops_z Z \to \loops_z Z
 \]
 given by \textit{concatenation} of loops, with the identity element being the \textit{constant loop} $(c_r,0)$.
@@ -20,35 +20,40 @@ Consequently, the set of path components $\pi_0(\loops_z Z)$ has an induced grou
 Furthermore, $\loops_z Z$ is weak homotopy equivalent to a topological group where the group identities hold strictly.
 The pointed space $(Z,z)$ may then be recovered, up to weak homotopy equivalence, from $\loops_z Z$ through the \textit{classifying space}, or \textit{delooping}, construction.
 
-A principal goal of algebraic topology, if not its \textit{raison d'\^{e}tre}, is to encode the theory of topological spaces up to some specified notion of equivalence in terms of combinatorial or algebraic objects, unlocking the effective analysis of quantitative and qualitative topological properties.
-We will focus on weak homotopy equivalences, where important example of this representation process is provided by the functor of singular chains
+A principal goal of algebraic topology, if not its \textit{raison d'\^{e}tre}, is to encode the theory of topological spaces up to some specified notion of equivalence in terms of combinatorial or algebraic objects, allowing for the effective analysis of topological properties quantitatively.
+We will focus on weak homotopy equivalences, where an important example of this representation process is provided by the functor of singular chains
 \[
-\chains \colon \Top \to \Ch.
+\Schains \colon \Top \to \Ch.
 \]
 More homotopical information can encoded if the resulting chain complexes are considered as differential graded (dg) coalgebras, or, better still, as homotopy coherent coassociative and cocommutative coalgebras, also known as $E_\infty$-coalgebras.
-Diagrammatically, this amounts to a lift of the form
+Diagrammatically, this can be represented as lifts of the form
 \begin{equation}
 \begin{tikzcd}[column sep=normal, row sep=small]
 & \coAlg_{E_\infty} \arrow[d] \\
-\Top \arrow[ur, "\chains_{E_\infty}", out=60, in=180] \arrow[r, "\chains"] & \Ch.
+& \coAlg \arrow[d] \\
+\Top \arrow[uur, "\Schains_{E_\infty}", out=90, in=180] \arrow[r, "\Schains"]
+\arrow[ur, "\Schains_{\!\As}", out=60, in=180, near end]
+\arrow[r, "\Schains"]
+& \Ch.
 \end{tikzcd}
 \end{equation}
 The study of $E_\infty$-structures has a long history, where (co)homology operations \cite{steenrod1962cohomology, may1970general}, the recognition of infinite loop spaces \cite{boardman1973homotopy, may1972geometry}, and complete algebraic models for $p$-adic homotopy types \cite{mandell2001padic} are key milestones.
 
-For based loop spaces, a first approximation to an algebraic model was described by F. Adams in 1956 in terms of the \textit{cobar construction} \cite{adams1956cobar} of the coalgebra of singular chains on the underlying pointed space.
-The cobar construction may be described as a functor 
+For based loop spaces, using the fact they are spaces, one could obtain a large algebraic model by consider their singular chains.
+A smaller model was introduced by F. Adams in 1956 via its \textit{cobar construction} \cite{adams1956cobar}, a functor
 \[
 \cobar \colon \coAlg^\ast \to \Mon_{\Ch}
 \]
 from the category of coaugemented dg coassociative coalgebras to the category of dg associative algebras, which we regard in this article as monoids in $\Ch$.
-Adams constructed for any pointed space $(Z, z)$ a \textit{comparison map}
+He constructed for any pointed space $(Z,z)$ a \textit{comparison map}
 \begin{equation} \label{e:adams map}
-\theta_Z \colon \cobar \sS(Z, z) \to \cS(\loops_z Z),
+\theta_Z \colon \cobar \sSchains(Z,z) \to \cSchains(\loops_z Z),
 \end{equation}
-a natural chain map of monoids in $\Ch$, where $\cS(\loops_z Z)$ is the monoid of cubical singular chains on the based loop space.
+a natural chain map of monoids in $\Ch$, where $\sSchains(Z,z)$ is the coalgebra of simplicial singular chains on $(Z,z)$ and $\cSchains(\loops_z Z)$ is the monoid of cubical singular chains on its based loop space.
 Adams proved that $\theta_Z$ is a quasi-isomorphism if $Z$ is simply connected, a result extended to path-connected spaces in \cite{rivera2018cubical} by considering finer homotopical algebra, and in \cite{hess2010cobar} by a localization procedure.
 
-In this article we enhance the cobar construction with additional chain level algebraic structure that encodes further information regarding the underlying homotopy type. We describe this additional algebraic structure explicitly and effectively and explain its relation to certain combinatorial and geometric structures arising from the cobar construction and its relationship to the based loop space. 
+In this article we enhance the cobar construction $\cobar \sSchains(Z,z)$ with an explicitly constructed $E_\infty$-structure compatible with its monoid structure, and show that
+%and explain its relation to certain combinatorial and geometric structures arising from the cobar construction and its relationship to the based loop space.
 
 Our starting point is an insight of H.~Baues which is best explained in terms of \textit{cubical sets} (with connections), i.e., presheaves over the
 strict monoidal category generated by the diagram
@@ -61,7 +66,7 @@ restricted by certain relations \cite{brown1981cubes}.
 With the Day convolution monoidal structure the singular complex functor $\cSing \colon \cSet \to \Top$ and the functor of (normalized) chains $\cchains \colon \cSet \to \Ch$ are monoidal.
 
 Cubical chains are equipped with a natural coalgebra structure coming from Serre's chain approximation to the diagonal.
-This structure lifts $\cchains$ to the category of coalgebras as a monoidal functor $\cchainsAs \colon \cSet \to \coAlg$, which, in particular, makes $\cS(\loops_z Z) = \cchains \cSing(\loops_z Z) $ into a monoid in $\coAlg$ for any pointed space $(Z, z)$.
+This structure lifts $\cchains$ to the category of coalgebras as a monoidal functor $\cchainsAs \colon \cSet \to \coAlg$, which, in particular, makes $\cSchains(\loops_z Z) = \cchains \cSing(\loops_z Z) $ into a monoid in $\coAlg$ for any pointed space $(Z, z)$.
 
 Denoting by $\sSet^0$ the category of reduced simplicial sets, we reinterpret Baues' geometric cobar construction from \cite{baues1998hopf} as a functor
 \begin{equation} \label{e:cubical cobar construction}
@@ -74,7 +79,7 @@ Second, we equip cubical sets with the data of connections in order to obtain, b
 Adams' comparison map factors as a composition
 \begin{equation} \label{e:baues factorization of adams map}
 \begin{tikzcd}[column sep = small]
-\theta_Z \colon \cobar \sS(Z, z) \arrow[r] &
+\theta_Z \colon \cobar \sSchains(Z, z) \arrow[r] &
 \cchains(\ccobar \sSing(Z, z)) \arrow[r] &
 S^{\cube}(\loops_z Z),
 \end{tikzcd}
@@ -91,7 +96,7 @@ In other words, Baues' lifted Adams' cobar construction $\cobar \schains$ so tha
 \sSet^0 \arrow[r, "\cobar \schains"] \arrow[u, "\ccobar"] & \Mon_{\Ch}.
 \end{tikzcd}
 \]
-Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of bialgebras, i.e., of monoids in $\coAlg$.
+Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar \sSchains(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of bialgebras, i.e., of monoids in $\coAlg$.
 
 Our first result extends Baues' work by lifting $\cobar \schains$ to the category of $E_\infty$-bialgebras, that is of monoids in the category of coalgebras equipped with the additional structure of an infinite family of coherent homotopies enforcing, in a derived sense, the coassociativity and cocommutativity of the coproduct.
 The study of $E_\infty$-structures has a long history, where (co)homology operations \cite{steenrod1962cohomology, may1970general}, the recognition of infinite loop spaces \cite{boardman1973homotopy, may1972geometry}, and algebraic models for homotopy types \cite{mandell2001padic} are key milestones.
@@ -105,7 +110,7 @@ Once we have shown that $\coAlg_\UM$ is a monoidal category, we prove the main t
 Generalizing Baues' first step in the construction of his lift of Adams' cobar construction, we have that $\cchainsUM(\ccobar X)$ is a monoid in $\coAlg_\UM$.
 This is because $\ccobar X$ is a monoid in $\cSet$ and $\cchainsUM$ is shown to be a monoidal functor.
 Then, for any reduced simplicial set $X$, we use the natural isomorphism $\cobar \schains(X) \to \cchains(\ccobar X)$ to transfer the constructed $E_{\infty}$-bialgebra structure on $\cchains(\ccobar X)$ to $\cobar \schains(X)$.
-In particular, for any pointed space $(Z, z)$ Adams' comparison map $\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras.
+In particular, for any pointed space $(Z, z)$ Adams' comparison map $\theta_Z \colon \cobar \sSchains(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras.
 We condense this discussion in our main result.
 
 \begin{theorem} \label{t:1st main thm in the intro}
@@ -119,7 +124,7 @@ We condense this discussion in our main result.
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\]
-	Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
+	Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar \sSchains(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
 \end{theorem}
 
 We turn now to a second result in this work.
