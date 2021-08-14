@@ -63,7 +63,7 @@ A coalgebra is said to be \textit{coaugmented} if it is equipped with a coaugmen
 
 We denote by $\coAlg^\ast$ the category of coaugmented coalgebras with morphisms being coaugmentation preserving coalgebra morphisms. In other words, $\coAlg^\ast$ is the slice category $\k \downarrow \mathsf{coMon}_{\Ch},$ where $\mathsf{coMon}_{\Ch}$ is the category of comonoids in $\Ch$ and $\k$ is regarded as an object in $\mathsf{coMon}_{\Ch}$ by considering it as a chain complex concentrated in degree $0$ with coproduct determined by $1_{\k} \mapsto 1_{\k} \otimes 1_{\k}.$
 
-The \textit{cobar construction} is the functor 
+The \textit{cobar construction} is the functor
 \[
 \cobar \colon \coAlg^\ast \to \Mon_{\Ch}
 \]
@@ -82,13 +82,13 @@ s^{-1} \overline{C} \to s^{-1}\overline{C} \oplus (s^{-1}\overline{C} \otimes s^
 as a derivation.
 
 In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented coalgebras that are non-negatively graded and for which the coaugmentation induces an isomorphism $\k \cong C_0$ of $\k$-modules.
-We denote by $\coAlg^0$ the full subcategory of $\coAlg^\ast$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees. 
+We denote by $\coAlg^0$ the full subcategory of $\coAlg^\ast$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees.
 
 The object $ \cobar(C) \in \Mon_{\Ch}$ may be equipped with a natural augmentation map $\cobar(C) \to \k$ in $\Mon_{\Ch}$ given by the projection map to the first summand term. Therefore, the cobar construction may be regarded as a functor between slice categories
 \[
 \cobar \colon \k \downarrow \mathsf{coMon}_{\Ch} \to \Mon_{\Ch} \downarrow \k,
 \]
-however, we will not require the data of augmentations in this article. 
+however, we will not require the data of augmentations in this article.
 
 We now review the central examples of coaugmented coalgebras to which Adams applied the cobar construction.
 
@@ -135,7 +135,7 @@ We review a classical lift to coalgebras of the functor of chains:
 \[
 \begin{tikzcd}
 & \coAlg \arrow[d] \\
-\sSet \arrow[r, "\schains"] \arrow[ur, "\schainsAs", out=70, in=180] & \Ch.
+\sSet \arrow[r, "\schains"] \arrow[ur, "\schainsA", out=70, in=180] & \Ch.
 \end{tikzcd}
 \]
 
@@ -149,10 +149,10 @@ and $\Delta \colon \chains(\simplex^n) \to \chains(\simplex^n)^{\otimes2}$ by
 \Delta \big( [v_0, \dots, v_q] \big) = \sum_{i=0}^q \ [v_0, \dots, v_i] \otimes [v_i, \dots, v_q].
 \]
 
-If $X$ is a reduced simplicial set then $\schainsAs(X)$ becomes a connected coalgebra with the coaugmentation $\nu \colon \k \to \schains(X)$ induced by sending $1$ to the basis element represented by the unique $0$-simplex of $X$.
-Hence, the functor $\schainsAs$ restricts to a functor
+If $X$ is a reduced simplicial set then $\schainsA(X)$ becomes a connected coalgebra with the coaugmentation $\nu \colon \k \to \schains(X)$ induced by sending $1$ to the basis element represented by the unique $0$-simplex of $X$.
+Hence, the functor $\schainsA$ restricts to a functor
 \[
-\schainsAs \colon \sSet^0 \to \coAlg^0.
+\schainsA \colon \sSet^0 \to \coAlg^0.
 \]
 
 \subsection{Simplicial singular complex}
@@ -171,7 +171,7 @@ The chain complex $\chains(\cSing Z)$ is referred to as the \textit{simplicial s
 
 We modify this construction for a pointed topological space $(Z, z)$ by considering only maps of $\gsimplex^n \to Z$ sending all vertices to $z$.
 This produces a reduced simplicial set $\sSing(Z, z)$.
-We will refer to $\schains(\sSing(Z, z))$ as the \textit{simplicial singular chains on $(Z, z)$} and for simplicity denote it by $\sS(Z, z)$.
+We will refer to $\schains(\sSing(Z, z))$ as the \textit{simplicial singular chains on $(Z, z)$} and for simplicity denote it by $\sSchains(Z, z)$.
 
 \subsection{Cubical sets} \label{ss:cubical sets}
 
@@ -240,7 +240,7 @@ We review a classical lift to the category of coalgebras of the functor of cubic
 \[
 \begin{tikzcd}
 & \coAlg \arrow[d] \\
-\cSet \arrow[r, "\cchains"] \arrow[ur, "\cchainsAs", out=70, in=180] & \Ch.
+\cSet \arrow[r, "\cchains"] \arrow[ur, "\cchainsA", out=70, in=180] & \Ch.
 \end{tikzcd}
 \]
 Using a Yoneda extension, it suffices to equip the chains on standard cubes with a natural coalgebra structure.
@@ -287,4 +287,4 @@ It has a right adjoint $\cSing \colon \Top \to \cSet$ given by
 Z \to \Big(2^n \mapsto \Top(\gcube^n, Z)\Big)
 \]
 and referred to as the \textit{cubical singular complex} of the topological space $Z$.
-We will refer to $\chains(\cSing Z)$ as the \textit{cubical singular chains} of $Z$ and for simplicity denote it by $\cS(Z)$.
+We will refer to $\chains(\cSing Z)$ as the \textit{cubical singular chains} of $Z$ and for simplicity denote it by $\cSchains(Z)$.

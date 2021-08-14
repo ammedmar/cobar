@@ -2,7 +2,7 @@
 \section{Adams's map as an \pdfEinfty-bialgebra quasi-isomorphism} \label{s:theorem1}
 
 The goal of this section is to prove \cref{t:1st main thm in the intro}.
-Explicitly, we construct a natural $E_{\infty}$-bialgebra structure on $\cobar \schains(X)$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(Z, z)$, Adams' comparison map $\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
+Explicitly, we construct a natural $E_{\infty}$-bialgebra structure on $\cobar \schainsA(X)$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(Z, z)$, Adams' comparison map $\theta_Z \colon \cobar \sSchainsAS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
 
 The first goal is achieved using a categorical reformulation of Baues' geometric cobar construction (\cref{ss:cubical cobar}) together with the natural $\UM$-coalgebra structure defined on cubical chains (\cref{ss:e-infty on cubical}) and its monoidal properties (\cref{l:cubical e-infty chains are monoidal}).
 The second goal is obtained by factoring Adams' comparison map through this cubical model (\cref{ss:factorization of adams}).
@@ -11,7 +11,7 @@ The second goal is obtained by factoring Adams' comparison map through this cubi
 
 In \cite{adams1956cobar}, Adams constructed a natural map of algebras
 \begin{equation} \label{e:adams map 2}
-\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z),
+\theta_Z \colon \cobar \sSchainsAS(Z, z) \to S^{\cube}(\loops_z Z),
 \end{equation}
 for any pointed topological space $(Z, z)$.
 The construction is based on a collection of continuous maps
@@ -40,10 +40,10 @@ For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Z, z)$ with $n>1$, let
 \[
 \theta_Z([\sigma]) = P(\sigma) \circ \theta_n.
 \]
-Since the underlying graded algebra of $\cobar \sS(Z, z)$ is free, we may extend the above to an algebra map $\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z)$.
+Since the underlying graded algebra of $\cobar \sSchainsAS(Z, z)$ is free, we may extend the above to an algebra map $\theta_Z \colon \cobar \sSchainsAS(Z, z) \to S^{\cube}(\loops_z Z)$.
 The compatibility equations for the maps $\theta_n$ imply that $\theta_Z$ is a chain map.
 
-We will construct an $E_{\infty}$-bialgebra structure on $\cobar \sS(Z, z)$ and show that, when $S^{\cube}(\loops_z Z)$ is equipped with the $E_{\infty}$-coalgebra structure described in \cref{ss:e-infty on cubical}, the map $\theta_Z$ is a map of $E_{\infty}$-coalgebras.
+We will construct an $E_{\infty}$-bialgebra structure on $\cobar \sSchainsAS(Z, z)$ and show that, when $S^{\cube}(\loops_z Z)$ is equipped with the $E_{\infty}$-coalgebra structure described in \cref{ss:e-infty on cubical}, the map $\theta_Z$ is a map of $E_{\infty}$-coalgebras.
 With this goal in mind, we describe a categorical version of Adams' constructions.
 
 \subsection{Necklical sets}
@@ -160,7 +160,7 @@ The monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ given by concaten
 \[
 \ncobar(X) \otimes \ncobar(X) \to \ncobar(X)
 \]
-making $\ncobar(X)$ into a monoid in the monoidal category $\nSet$. 
+making $\ncobar(X)$ into a monoid in the monoidal category $\nSet$.
 
 We may now define the \textit{cubical cobar construction}
 \[
@@ -179,7 +179,7 @@ We now relate the cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}
 \begin{lemma} \label{l:ccobar and cobar}
 	There is a natural isomorphisms of functors
 	\[
-	\cchains \ccobar \cong \cobar \schains \colon \sSet^0 \to \Mon_{\Ch}.
+	\cchains \ccobar \cong \cobar \schainsA \colon \sSet^0 \to \Mon_{\Ch}.
 	\]
 \end{lemma}
 
@@ -189,10 +189,10 @@ We now relate the cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}
 
 	To define an algebra map
 	\[
-	\varphi_X \colon \cchains(\mathcal{P}_!(\ncobar(X))) \xra{\cong} \cobar \schains(X)
+	\varphi_X \colon \cchains(\mathcal{P}_!(\ncobar(X))) \xra{\cong} \cobar \schainsA(X)
 	\]
 	it suffices to define it on any generator of the form $\alpha=[\sigma \colon \simplex^{n+1} \to X, \iota_{n}]$, i.e., when $T$ is of the form $T = [n+1]$, for some $n \geq 0$.
-	If $n = 0$ let $\varphi_X(\alpha)= [\overline{\sigma}] + 1_\k$, where $[\overline{\sigma}] \in s^{-1} \overline{ \schains(X)} \subset \cobar \schains(X)$ denotes the (length $1$) generator in the cobar construction of $\schains(X)$ determined by $\sigma \in X_{n+1}$ and $1_\k$ denotes the unit of the underlying ring $\k$.
+	If $n = 0$ let $\varphi_X(\alpha)= [\overline{\sigma}] + 1_\k$, where $[\overline{\sigma}] \in s^{-1} \overline{ \schains(X)} \subset \cobar \schainsA(X)$ denotes the (length $1$) generator in the cobar construction of $\schains(X)$ determined by $\sigma \in X_{n+1}$ and $1_\k$ denotes the unit of the underlying ring $\k$.
 	If $n > 0$, we let $\varphi_X(\alpha)=[\overline{\sigma}]$.
 	A straightforward computation yields that this gives rise to a well defined isomorphism of algebras, which is compatible with the differentials, and natural with respect to maps of simplicial sets.
 \end{proof}
@@ -202,11 +202,11 @@ A similar result to \cref{l:ccobar and cobar} was observed in the case of $1$-re
 
 The original cobar construction of Adams produces monoids in $\Ch$.
 Baues enriched this construction to produce monoids in $\coAlg$.
-He did this by using a version of the isomorphism $\cchains \ccobar \cong \cobar \schains$ of \cref{l:ccobar and cobar} and the Serre coalgebra on cubical chains.
-Since $\ccobar$ produces monoids in $\cSet$ and $\cchainsAs$ is monoidal, the functor $\cchainsAs \ccobar$ produces bialgebras, as claimed.
+He did this by using a version of the isomorphism $\cchains \ccobar \cong \cobar \schainsA$ of \cref{l:ccobar and cobar} and the Serre coalgebra on cubical chains.
+Since $\ccobar$ produces monoids in $\cSet$ and $\cchainsA$ is monoidal, the functor $\cchainsA \ccobar$ produces bialgebras, as claimed.
 
 After \cite{medina2021cubical}, we know that cubical chains can be enriched with an $E_\infty$-coalgebra structure extending the Serre coalgebra (\cref{ss:e-infty on cubical}).
-This $\UM$-structure can be transferred via $\cchains \ccobar \cong \cobar \schains$ to provide the cobar construction with and $E_\infty$-structure extending Baues coalgebra structure.
+This $\UM$-structure can be transferred via $\cchains \ccobar \cong \cobar \schainsA$ to provide the cobar construction with and $E_\infty$-structure extending Baues coalgebra structure.
 Furthermore, thanks to \cref{l:cubical e-infty chains are monoidal}, we know that $\cchainsUM$ is monoidal and therefore, $\cchains \ccobar$ produces monoids in $\coAlg_{\UM}$, i.e., $E_\infty$-bialgebras.
 This discussion proves the first half of \cref{t:1st main thm in the intro}, which we collect in the following.
 
@@ -215,9 +215,9 @@ This discussion proves the first half of \cref{t:1st main thm in the intro}, whi
 	\[
 	\begin{tikzcd}
 	& \Mon_{\coAlg_\UM} \arrow[d] \\
-	\Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180] \arrow[r, "\cchainsAs"]
+	\Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180] \arrow[r, "\cchainsA"]
 	& \Mon_{\coAlg} \arrow[d] \\
-	\sSet^0 \arrow[r, "\cobar \schains"] \arrow[u, "\ccobar"]
+	\sSet^0 \arrow[r, "\cobar \schainsA"] \arrow[u, "\ccobar"]
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\]
@@ -227,8 +227,8 @@ This discussion proves the first half of \cref{t:1st main thm in the intro}, whi
 
 Throughout this subsection let us consider $\k$ to be the finite field $\Fp$ and $X$ a reduced simplicial set.
 
-Since $\cobar \schains(X)$ is isomorphic to the chains on a cubical set (\cref{l:ccobar and cobar}), its mod $p$ homology is a priori equipped with a right action of the Steenrod algebra \cite{steenrod1962cohomology, milnor1958steenrod}.
-As an application of the explicit construction of a natural $\UM$-coalgebra structure on $\cobar \schains(X)$, we can describe at the chain level this action using the constructions of \cite{medina2020maysteenrod}.
+Since $\cobar \schainsA(X)$ is isomorphic to the chains on a cubical set (\cref{l:ccobar and cobar}), its mod $p$ homology is a priori equipped with a right action of the Steenrod algebra \cite{steenrod1962cohomology, milnor1958steenrod}.
+As an application of the explicit construction of a natural $\UM$-coalgebra structure on $\cobar \schainsA(X)$, we can describe at the chain level this action using the constructions of \cite{medina2020maysteenrod}.
 More explicitly, let $\Cp$ be the cyclic group of order $p$ and
 \[
 \begin{tikzcd} [column sep = .5cm]
@@ -236,9 +236,9 @@ More explicitly, let $\Cp$ be the cyclic group of order $p$ and
 \end{tikzcd}
 \]
 be the minimal free resolution of $\Fp$ as an $\Fp[\Cp]$-module.
-Consider the $\Cp$-equivariant quasi-isomorphism $\psi_\UM \colon \cW(p) \to \UM(p)$ constructed in \cite{medina2020maysteenrod}, and denote by $\psi^{\cobar}$ its composition with the morphism $\UM \to \End^{\cobar \schains(X)}$ defining our $E_\infty$-coalgebra structure on $\cobar \schains(X)$.
+Consider the $\Cp$-equivariant quasi-isomorphism $\psi_\UM \colon \cW(p) \to \UM(p)$ constructed in \cite{medina2020maysteenrod}, and denote by $\psi^{\cobar}$ its composition with the morphism $\UM \to \End^{\cobar \schainsA(X)}$ defining our $E_\infty$-coalgebra structure on $\cobar \schainsA(X)$.
 
-If $p$ is the even prime, the Steenrod square $P_s$ is represented by the map sending a representative $\mu$ of a class in the $k^\th$ homology of $\cobar \schains(X)$ to the following element in its double linear dual:
+If $p$ is the even prime, the Steenrod square $P_s$ is represented by the map sending a representative $\mu$ of a class in the $k^\th$ homology of $\cobar \schainsA(X)$ to the following element in its double linear dual:
 \[
 \mu \mapsto
 \Big( \alpha \mapsto (\alpha \otimes \alpha) \big( \psi^{\cobar}(e_{k+2s})(\mu) \big) \Big).
@@ -264,7 +264,7 @@ We now use the ideas developed so far to study the based loop space of a pointed
 
 Adams' comparison map can be factored as a composition
 \begin{equation} \label{e:factorization of adams}
-\theta_Z \colon \cobar \sS(Z, z) \xrightarrow{\cong}
+\theta_Z \colon \cobar \sSchainsAS(Z, z) \xrightarrow{\cong}
 \cchains \ccobar(\sSing(Z, z)) \xrightarrow{\cchains(\Theta)}
 S^{\cube}(\loops_z Z).
 \end{equation}
@@ -282,11 +282,11 @@ where the maps $\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n)$ are those d
 
 Adams' comparison map
 \[
-\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z)
+\theta_Z \colon \cobar \sSchainsAS(Z, z) \to S^{\cube}(\loops_z Z)
 \]
 was originally identified to be a morphism of monoids in $\Ch$ which, if applied to simply-connected spaces, induces a homology isomorphism.
 Baues showed that $\theta_Z$ is in fact a morphism of monoids in $\coAlg$, i.e., of bialgebras.
-Whereas, using that $\sSing(Z, z)$ is a fibrant reduced simplicial set, the second named author and M. Zeinalian \cite{rivera2018cubical} showed that for a possibly non-simply connected pointed space $(Z,y)$ the algebras $\cobar \sS(Z, z)$ and $S^{\cube}(\loops_zZ)$ are quasi-isomorphic.
+Whereas, using that $\sSing(Z, z)$ is a fibrant reduced simplicial set, the second named author and M. Zeinalian \cite{rivera2018cubical} showed that for a possibly non-simply connected pointed space $(Z,y)$ the algebras $\cobar \sSchainsAS(Z, z)$ and $S^{\cube}(\loops_zZ)$ are quasi-isomorphic.
 Later on, the second named author and S. Saneblidze
 \cite{rivera2019path} showed that $\Theta \colon \ccobar(\sSing(Z, z)) \to \cSing(\loops_z Z)$ is a weak homotopy equivalence monoids in $\cSet$.
 
@@ -297,5 +297,5 @@ since $\cchainsUM$ is monoidal (\cref{l:cubical e-infty chains are monoidal}).
 We summarize this discussion, which constitutes the second half of \cref{t:1st main thm in the intro}, in the following.
 
 \begin{lemma} \label{l:adams comparison is an e-infty bialgebra map}
-	Adams' comparison map $\theta_Z \colon \cobar \sS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$ for any pointed space $(Z, z)$.
+	Adams' comparison map $\theta_Z \colon \cobar \sSchainsAS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$ for any pointed space $(Z, z)$.
 \end{lemma}
