@@ -2,7 +2,7 @@
 \section{Adams's map as an \pdfEinfty-bialgebra quasi-isomorphism} \label{s:theorem1}
 
 The goal of this section is to prove \cref{t:1st main thm in the intro}.
-Explicitly, we construct a natural $E_{\infty}$-bialgebra structure on $\cobar \schainsA(X)$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(Z, z)$, Adams' comparison map $\theta_Z \colon \cobar \sSchainsAS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
+Explicitly, we construct a natural $E_{\infty}$-bialgebra structure on $\cobar \schainsA(X)$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(Z,z)$, Adams' comparison map $\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
 
 The first goal is achieved using a categorical reformulation of Baues' geometric cobar construction (\cref{ss:cubical cobar}) together with the natural $\UM$-coalgebra structure defined on cubical chains (\cref{ss:e-infty on cubical}) and its monoidal properties (\cref{l:cubical e-infty chains are monoidal}).
 The second goal is obtained by factoring Adams' comparison map through this cubical model (\cref{ss:factorization of adams}).
@@ -11,9 +11,9 @@ The second goal is obtained by factoring Adams' comparison map through this cubi
 
 In \cite{adams1956cobar}, Adams constructed a natural map of algebras
 \begin{equation} \label{e:adams map 2}
-\theta_Z \colon \cobar \sSchainsAS(Z, z) \to S^{\cube}(\loops_z Z),
+\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z),
 \end{equation}
-for any pointed topological space $(Z, z)$.
+for any pointed topological space $(Z,z)$.
 The construction is based on a collection of continuous maps
 \[
 \theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n),
@@ -31,19 +31,19 @@ For any continuous map of spaces $f \colon Z \to Z'$, we denote by $P(f) \colon 
 Given any two composable paths $\alpha$ and $\beta$, the dot symbol in $\alpha \cdot \beta$ denotes the composition (or concatenation) of paths.
 
 Adams' map $\theta_Z$ is now given as follows.
-For any singular $1$-simplex $\sigma \in S^{\Delta}_1(Z, z)$ let
+For any singular $1$-simplex $\sigma \in S^{\Delta}_1(Z,z)$ let
 \[
 \theta_Z([\sigma]) = P(\sigma) \circ \theta_1 - c_z,
 \]
-where $c_z \in S^{\cube}_0(\loops_z Z)$ is the singular $0$-cube determined by the constant loop at $z \in Z$.
-For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Z, z)$ with $n>1$, let
+where $c_z \in \cSchains_0(\loops_z Z)$ is the singular $0$-cube determined by the constant loop at $z \in Z$.
+For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Z,z)$ with $n>1$, let
 \[
 \theta_Z([\sigma]) = P(\sigma) \circ \theta_n.
 \]
-Since the underlying graded algebra of $\cobar \sSchainsAS(Z, z)$ is free, we may extend the above to an algebra map $\theta_Z \colon \cobar \sSchainsAS(Z, z) \to S^{\cube}(\loops_z Z)$.
+Since the underlying graded algebra of $\cobar \sSchainsA(Z,z)$ is free, we may extend the above to an algebra map $\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z)$.
 The compatibility equations for the maps $\theta_n$ imply that $\theta_Z$ is a chain map.
 
-We will construct an $E_{\infty}$-bialgebra structure on $\cobar \sSchainsAS(Z, z)$ and show that, when $S^{\cube}(\loops_z Z)$ is equipped with the $E_{\infty}$-coalgebra structure described in \cref{ss:e-infty on cubical}, the map $\theta_Z$ is a map of $E_{\infty}$-coalgebras.
+We will construct an $E_{\infty}$-bialgebra structure on $\cobar \sSchainsA(Z,z)$ and show that, when $\cSchains(\loops_z Z)$ is equipped with the $E_{\infty}$-coalgebra structure described in \cref{ss:e-infty on cubical}, the map $\theta_Z$ is a map of $E_{\infty}$-coalgebras.
 With this goal in mind, we describe a categorical version of Adams' constructions.
 
 \subsection{Necklical sets}
@@ -260,17 +260,17 @@ In similar effective manner, explicit Cartan and Adem coboundaries \cite{medina2
 
 \subsection{Factorization of Adams' map} \label{ss:factorization of adams}
 
-We now use the ideas developed so far to study the based loop space of a pointed topological space $(Z, z)$.
+We now use the ideas developed so far to study the based loop space of a pointed topological space $(Z,z)$.
 
 Adams' comparison map can be factored as a composition
 \begin{equation} \label{e:factorization of adams}
-\theta_Z \colon \cobar \sSchainsAS(Z, z) \xrightarrow{\cong}
-\cchains \ccobar(\sSing(Z, z)) \xrightarrow{\cchains(\Theta)}
-S^{\cube}(\loops_z Z).
+\theta_Z \colon \cobar \sSchainsA(Z,z) \xrightarrow{\cong}
+\cchains \ccobar(\sSing(Z,z)) \xrightarrow{\cchains(\Theta)}
+\cSchains(\loops_z Z).
 \end{equation}
 The first map is the natural isomorphism of algebras given by \cref{l:ccobar and cobar}. The second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
 \[
-\Theta \colon \ccobar(\sSing(Z, z)) \to \cSing(\loops_z Z)
+\Theta \colon \ccobar(\sSing(Z,z)) \to \cSing(\loops_z Z)
 \]
 determined through the monoid structure by sending an $n$-simplex $(\sigma \colon \gsimplex^n \to Z)$ to the singular $(n-1)$-cube
 \[
@@ -282,13 +282,13 @@ where the maps $\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n)$ are those d
 
 Adams' comparison map
 \[
-\theta_Z \colon \cobar \sSchainsAS(Z, z) \to S^{\cube}(\loops_z Z)
+\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z)
 \]
 was originally identified to be a morphism of monoids in $\Ch$ which, if applied to simply-connected spaces, induces a homology isomorphism.
 Baues showed that $\theta_Z$ is in fact a morphism of monoids in $\coAlg$, i.e., of bialgebras.
-Whereas, using that $\sSing(Z, z)$ is a fibrant reduced simplicial set, the second named author and M. Zeinalian \cite{rivera2018cubical} showed that for a possibly non-simply connected pointed space $(Z,y)$ the algebras $\cobar \sSchainsAS(Z, z)$ and $S^{\cube}(\loops_zZ)$ are quasi-isomorphic.
+Whereas, using that $\sSing(Z,z)$ is a fibrant reduced simplicial set, the second named author and M. Zeinalian \cite{rivera2018cubical} showed that for a possibly non-simply connected pointed space $(Z,y)$ the algebras $\cobar \sSchainsA(Z,z)$ and $\cSchains(\loops_zZ)$ are quasi-isomorphic.
 Later on, the second named author and S. Saneblidze
-\cite{rivera2019path} showed that $\Theta \colon \ccobar(\sSing(Z, z)) \to \cSing(\loops_z Z)$ is a weak homotopy equivalence monoids in $\cSet$.
+\cite{rivera2019path} showed that $\Theta \colon \ccobar(\sSing(Z,z)) \to \cSing(\loops_z Z)$ is a weak homotopy equivalence of monoids in $\cSet$.
 
 We now show that $\theta_Z$ is in fact a quasi-isomorphism of $E_{\infty}$-bialgebras.
 Considering the factorization \eqref{e:factorization of adams} of Adams' comparison map.
@@ -297,5 +297,5 @@ since $\cchainsUM$ is monoidal (\cref{l:cubical e-infty chains are monoidal}).
 We summarize this discussion, which constitutes the second half of \cref{t:1st main thm in the intro}, in the following.
 
 \begin{lemma} \label{l:adams comparison is an e-infty bialgebra map}
-	Adams' comparison map $\theta_Z \colon \cobar \sSchainsAS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$ for any pointed space $(Z, z)$.
+	Adams' comparison map $\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$ for any pointed space $(Z,z)$.
 \end{lemma}
