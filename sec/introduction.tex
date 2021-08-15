@@ -1,7 +1,7 @@
 
 \section{Introduction}
 
-A form of the \textit{homotopy hypothesis}, a cornerstone of modern algebraic topology, recasts the homotopy theory of pointed spaces in terms of topological groups.
+A form of the \textit{homotopy hypothesis}, a cornerstone of modern algebraic topology, recasts the homotopy theory of pointed topological spaces in terms of topological groups.
 More concretely, associated to any pointed topological space $(Z,z)$ one may naturally associate a topological monoid $\loops_z Z$ -- its \textit{based loop space} -- whose points are pairs $(\gamma, r)$ where $r \in \R_{\geq 0}$ and $\gamma \colon [0,r] \to Z$ is a continuous map with $\gamma(0) = z = \gamma(r)$.
 We consider $\loops_z Z$ to be equipped with the compact-open topology and continuous multiplication
 \[
@@ -27,7 +27,9 @@ We will focus on spaces up to weak homotopy equivalence, where a first example o
 \]
 which associates a chain complex over a fixed commutative ring to any topological space. 
 
-The singular chains construction may be thought of as a way of linearizing a topological space. More homotopical information can be encoded if the resulting chain complex is equipped with non-linear algebraic structure approximating the diagonal map $Z \to Z \times Z$. In other words, if we regard the singular chains as a differential graded (dg) coassociative coalgebra, or, better still, as a homotopy coherent coassociative and cocommutative coalgebra, also known as an $E_\infty$-coalgebra.
+The singular chains construction may be thought of as a linearization of a topological space and, as expected, much structure is lost by it.
+More homotopical information can be encoded if the resulting chain complex is equipped with non-linear structure, for example, a chain approximation to the diagonal map $Z \to Z \times Z$.
+In this case, we regard the singular chains as a differential graded (dg) coassociative coalgebra, or better still, if a coherent family of homotopies enforcing its derived cocommutativity is considered, as an $E_\infty$-coalgebra.
 Diagrammatically, this can be represented as lifts of the form
 \begin{equation}
 \begin{tikzcd}[column sep=normal, row sep=small]
@@ -41,7 +43,10 @@ Diagrammatically, this can be represented as lifts of the form
 \end{equation}
 The study of $E_\infty$-structures has a long history, where (co)homology operations \cite{steenrod1962cohomology, may1970general}, the recognition of infinite loop spaces \cite{boardman1973homotopy, may1972geometry}, and the complete algebraic representation of the $p$-adic homotopy category \cite{mandell2001padic} are key milestones.
 
-One may obtain an algebraic model for based loop spaces by considering their singular chains.
+Returning to based loop spaces, one may obtain an algebraic model for them by considering their singular chains.
+
+\anibal{Discuss E-infty bialgebra on cubical singular chains on loops before}
+
 A smaller model was introduced by F.~Adams in 1956 via the \textit{cobar construction} \cite{adams1956cobar}, a functor
 \[
 \cobar \colon \coAlg^\ast \to \Mon_{\Ch}
@@ -125,7 +130,7 @@ We condense this discussion in our main result.
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\]
-	Furthermore, when $(Z, z)$ is a pointed space, Adams' comparison map $\theta_Z \colon \cobar \sSchainsAS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
+	Furthermore, for any pointed space $(Z,z)$, Adams' comparison map $\theta_Z \colon \cobar \sSchainsAS(Z, z) \to S^{\cube}(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
 \end{theorem}
 
 We turn now to a second result in this work.
