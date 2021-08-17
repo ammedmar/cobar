@@ -61,35 +61,35 @@ We now review these constructions and, in \cref{ss:extended cubical cobar}, rein
 
 Denote the composition of the functor of chains and the cobar construction by
 \[
-\A \defeq \cobar \schainsA \colon \sSet^0 \to \Mon_{\Ch},
+\adams \defeq \cobar \schainsA \colon \sSet^0 \to \Mon_{\Ch},
 \]
 and define the functor
 \[
-\Ahat \colon \sSet^0 \to \Mon_{\Ch}
+\adamsE \colon \sSet^0 \to \Mon_{\Ch}
 \]
 to be the localization of the set of $0$-cycles
 \[
-A_X = \{ [\overline{\sigma}]+1_\k \mid \sigma \in X_1 \} \subset \A(X)_0
+A_X = \{ [\overline{\sigma}]+1_\k \mid \sigma \in X_1 \} \subset \adams(X)_0
 \]
-in the associative algebra $\A(X)$.
+in the associative algebra $\adams(X)$.
 
-The algebra $\Ahat(X)$ coincides with Hess--Tonk's extended cobar construction applied to the coalgebra $\schains(X)$ at the $\k$-basis of the degree $1$-elements given by the set $X_1$.
-More precisely, using the notation of \cite{hess2010cobar}, we have $\Ahat(X) = \widehat{\cobar} \schains(X)$, where the fixed basis in the latter is given the set $X_1$.
+The algebra $\adamsE(X)$ coincides with Hess--Tonk's extended cobar construction applied to the coalgebra $\schains(X)$ at the $\k$-basis of the degree $1$-elements given by the set $X_1$.
+More precisely, using the notation of \cite{hess2010cobar}, we have $\adamsE(X) = \widehat{\cobar} \schains(X)$, where the fixed basis in the latter is given the set $X_1$.
 Note that the extended cobar construction is not a functorial construction with respect to maps in $\coAlg$ since it depends on a choice of basis of the degree one $\k$-module in the underlying coalgebra.
 It is, however, functorial with respect to maps of reduced simplicial sets and that is how we have interpreted it.
 
 Furthermore, for any reduced simplicial set $X$, the natural quasi-isomorphism of algebras
 \[
-\phi_X \colon \Ahat(X) \to \schains(\kan(X))
+\phi_X \colon \adamsE(X) \to \schains(\kan(X))
 \]
 constructed in \cite{hess2010cobar} induces a natural isomorphism
 \[
-H_0(\Ahat(X)) \cong \k[\pi_1(X)].
+H_0(\adamsE(X)) \cong \k[\pi_1(X)].
 \]
 
 \subsection{Extended cubical cobar construction} \label{ss:extended cubical cobar}
 
-We now want to lift the localization procedure used to define $\Ahat$ to the level of monoidal cubical sets.
+We now want to lift the localization procedure used to define $\adamsE$ to the level of monoidal cubical sets.
 
 We define a functor
 \[
@@ -101,56 +101,56 @@ Define the \textit{extended cubical cobar construction}
 \[
 \ccobarE \colon \sSet^0 \to \Mon_{\cSet}
 \]
-to be the composition of functors $\ccobarE = \mathcal{P}_{!} \ncobarE$.
+to be the composition of functors $\ccobarE = \cP_{!} \ncobarE$.
 
 As an immediate consequence of \cref{l:ccobar and cobar}, we obtain the following isomorphism after localizing.
 
 \begin{corollary}
 	There is a natural isomorphism of functors
 	\[
-	\cchains \ccobarE \, \cong \Ahat \colon \sSet^0 \to \Mon_{\Ch}.
+	\cchains \ccobarE \, \cong \adamsE \colon \sSet^0 \to \Mon_{\Ch}.
 	\]
 \end{corollary}
 
 \begin{proof}
-	The isomorphism $\varphi_X \colon \cchains(\ccobar(X))\to \A(X)$
+	The isomorphism $\varphi_X \colon \cchains(\ccobar(X))\to \adams(X)$
 	of \cref{l:ccobar and cobar} induces a bijection between the sets
 	$X_1$ and $A_X$.
-	Hence, the result follows directly from the definitions of $\ccobarE(X)$ and $\Ahat(X)$, where the sets $X_1$ and $A_X$, respectively, have been formally inverted.
+	Hence, the result follows directly from the definitions of $\ccobarE(X)$ and $\adamsE(X)$, where the sets $X_1$ and $A_X$, respectively, have been formally inverted.
 \end{proof}
 
-\subsection{The functor $\Ahat_{\UM}$} \label{s:ahatum}
+\subsection{The functor $\adamsE_{\UM}$} \label{s:ahatum}
 
 Define the functor
 \[
-\Ahat_{\coAlg} \colon \sSet^0 \to \Mon_{\coAlg}
+\adamsEA \colon \sSet^0 \to \Mon_{\coAlg}
 \]
 as the composition
 \[
-\Ahat_{\coAlg} = \cchainsA \ccobarE.
+\adamsEA = \cchainsA \ccobarE.
 \]
 Similarly define
 \[
-\Ahat_{\UM} \colon \sSet^0 \to \Mon_{\coAlg_{\UM}}
+\adamsE_{\UM} \colon \sSet^0 \to \Mon_{\coAlg_{\UM}}
 \]
 as the composition
 \[
-\Ahat_{\UM} = \cchainsUM \ccobarE.
+\adamsE_{\UM} = \cchainsUM \ccobarE.
 \]
 
-It follows directly from the definitions that $\Ahat_{\coAlg}$ is a lift of $\Ahat$, and $\Ahat_{\UM}$ is a lift $\Ahat_{\coAlg}$.
+It follows directly from the definitions that $\adamsEA$ is a lift of $\adamsE$, and $\adamsE_{\UM}$ is a lift $\adamsEA$.
 This discussion constitutes the first half of \cref{t:2nd main thm in the intro}, which we collect in the following.
 
 \begin{lemma} \label{l:AhatUM}
-The functor $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$ fits into a commutative diagram
+The functor $\adamsEUM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$ fits into a commutative diagram
 	\[
 	\begin{tikzcd}[row sep=small]
 	& \Mon_{\coAlg_\UM} \arrow[d] \\
 	& \Mon_{\coAlg} \arrow[d] \\
 	\sSet^0
-	\arrow[r, "\Ahat"', ]
-	\arrow[ru, "\Ahat_{\coAlg}"', out=45, in=180]
-	\arrow[ruu, "\Ahat_\UM", out=90, in=180]
+	\arrow[r, "\adamsE"', ]
+	\arrow[ru, "\adamsEA"', out=45, in=180]
+	\arrow[ruu, "\adamsEUM", out=90, in=180]
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\]
@@ -313,7 +313,7 @@ obtained in \cref{widehatgcobarandG}
  can be described explicitly in terms of the Szczarba operators used in \cite{hess2010cobar}.
 More precisely, Hess and Tonk's comparison map is precisely the composition
 \[
-\Ahat(X) = \cchains(\ccobarE(X)) \to \schains(\mathcal{T}\ccobarE(X)) \to \schains (\kan(X)),
+\adamsE(X) = \cchains(\ccobarE(X)) \to \schains(\mathcal{T}\ccobarE(X)) \to \schains (\kan(X)),
 \]
 where the first map is determined by the shuffle quasi-isomorphism
 $\cchains(\cube^n)\to \schains \big( (\simplex^1)^{\times n} \big)$ from a cube to its triangulation and the second map is induced by the weak equivalence of \cref{widehatgcobarandG} after applying chains.
@@ -327,13 +327,13 @@ We review from \cite{medina2021cubical} the relationship between the $E_\infty$-
 In \cite[p.442]{serre1951homologie}, the \textit{Serre--Cartan collapse} $\gcube^n \to \gsimplex^n$ was introduced and used to define a natural quasi-isomorphism of coalgebras $\sSchains(Z) \to \cSchains(Z)$ for any topological space $Z$.
 This map factors as the composition
 \[
-\schains(\sSing(Z)) \xra{\CS_{\sSing(Z)}}
+\schains(\sSing(Z)) \xra{\cartanserre_{\sSing(Z)}}
 \cchains(\mathcal{U} \sSing(Z)) \to
 \cchains(\cSing(Z)),
 \]
-where the first map $\CS_X$, referred to as the \textit{Serre--Cartan comparison map}, is a quasi-isomorphism defined for any simplicial set $X$, and the second map is induced from a morphism of cubical sets.
+where the first map $\cartanserre_X$, referred to as the \textit{Serre--Cartan comparison map}, is a quasi-isomorphism defined for any simplicial set $X$, and the second map is induced from a morphism of cubical sets.
 
-Although both $\schains(X)$ and $\cchains(\mathcal{U} X)$ have natural $\UM$-structures, the map $\CS_X$ is not a morphism of $\UM$-coalgebras for a generic simplicial set $X$.
+Although both $\schains(X)$ and $\cchains(\mathcal{U} X)$ have natural $\UM$-structures, the map $\cartanserre_X$ is not a morphism of $\UM$-coalgebras for a generic simplicial set $X$.
 Nevertheless, after restriction of their $\UM$-structures via an inclusion of $E_\infty$-operads $\USL \to \UM$, the Cartan-Serre comparison map becomes a morphism of $E_\infty$-coalgebras.
 The operad $\USL$ is generated as a suboperad of $\UM$ by all immerse connected graphs of the form
 \input{aux/surjection_like}
@@ -343,7 +343,7 @@ From \cite{medina2021cubical} we have the following.
 \begin{proposition} \label{p:simplicialandcubical}
 	The suboperad $\USL$ of $\UM$ is an $E_\infty$-operad and the Cartan-Serre comparison map
 	\[
-	\CS_X \colon \schains(X) \to \cchains(\mathcal U X)
+	\cartanserre_X \colon \schains(X) \to \cchains(\mathcal U X)
 	\]
 	is a natural quasi-isomorphism of $\USL$-coalgebras for any simplicial set $X$.
 \end{proposition}
@@ -376,7 +376,7 @@ The $E_{\infty}$-coalgebra structures on the simplicial chains on a triangulated
 
 \subsection{The extended cobar construction and the chains on the Kan loop group}
 
-Applying \cref{l:zigzag} to $Y = \ccobarE(X)$, we obtain that $\schainsUSL (\mathcal{T} \ccobarE(X))$ and $\cchainsUSL(\ccobarE(X)) = \Ahat_{\USL}(X)$ are quasi-isomorphic via a zig-zag of natural maps of $\USL$-coalgebras.
+Applying \cref{l:zigzag} to $Y = \ccobarE(X)$, we obtain that $\schainsUSL (\mathcal{T} \ccobarE(X))$ and $\cchainsUSL(\ccobarE(X)) = \adamsE_{\USL}(X)$ are quasi-isomorphic via a zig-zag of natural maps of $\USL$-coalgebras.
 By \cref{widehatgcobarandG} we have a weak equivalence of simplicial monoids
 \[
 \mathcal{T}\ccobarE(X) \xrightarrow{\simeq} \kan(X)
@@ -387,9 +387,9 @@ By naturality, we have an induced quasi-isomorphism of $\USL$-coalgebras
 \schainsUSL \big( \mathcal{T} \ccobarE(X) \big) \xra{\simeq}
 \schainsUSL (\kan(X)).
 \]
-Therefore, $\Ahat_{\USL}(X)$ and $\schainsUSL(\kan(X))$ are quasi-isomorphic through a zig-zag of natural maps of $\USL$-coalgebras, as desired.
+Therefore, $\adamsE_{\USL}(X)$ and $\schainsUSL(\kan(X))$ are quasi-isomorphic through a zig-zag of natural maps of $\USL$-coalgebras, as desired.
 We summarize this discussion in the following lemma, constituting the second half of \cref{t:2nd main thm in the intro}.
 
 \begin{lemma}\label{l:AhatandGX}
-	For any reduced simplicial set $X$, there is a zig-zag of natural quasi-isomorphisms of $\USL$-coalgebras between $\Ahat_\USL(X)$ and $\schainsUSL(\kan(X))$.
+	For any reduced simplicial set $X$, there is a zig-zag of natural quasi-isomorphisms of $\USL$-coalgebras between $\adamsE_\USL(X)$ and $\schainsUSL(\kan(X))$.
 \end{lemma}

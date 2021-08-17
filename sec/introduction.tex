@@ -31,7 +31,7 @@ Diagrammatically, this can be represented as lifts of the form
 & \coAlg_{E_\infty} \arrow[d] \\
 & \coAlg \arrow[d] \\
 \Top \arrow[uur, "\Schains_{E_\infty}", out=90, in=180] \arrow[r, "\Schains"]
-\arrow[ur, "\SchainsAS", out=60, in=180, near end]
+\arrow[ur, "\SchainsA", out=60, in=180, near end]
 \arrow[r, "\Schains"]
 & \Ch.
 \end{tikzcd}
@@ -75,7 +75,7 @@ We interpret Baues' geometric cobar construction, originally defined for $1$-red
 \begin{equation} \label{e:cubical cobar construction}
 \ccobar \colon \sSet^0 \to \Mon_{\cSet}
 \end{equation}
-whose key difference with Baues' original construction is the use of connections to obtain a natural construction before geometric realization.
+whose key difference with Baues' original work is the use of connections to obtain a natural construction before geometric realization.
 Baues showed that Adams' comparison map factors as a composition
 \begin{equation} \label{e:baues factorization of adams map}
 \begin{tikzcd}[column sep = small]
@@ -146,59 +146,47 @@ This can be seen from the fact that $H_0(\cobar \schainsA(X))$ need not be a gro
 K. Hess and A. Tonks proposed a way of modifying the cobar construction so that it could be compared to the chains on the Kan loop group \cite{hess2010cobar}.
 They construct a localized version of the cobar construction, called \textit{extended cobar construction}, which we interpret as a functor
 \[
-\Ahat \colon \sSet^0 \to \Mon_\Ch
+\adamsE \colon \sSet^0 \to \Mon_\Ch
 \]
-extending the composition
-\[
-\A \defeq \cobar \schainsA \colon \sSet^0 \to \Mon_\Ch
-\]
-by formally inverting a basis of the $\k$-module of $0$-degree elements in $\mathcal{A}(X)$.
-Hess and Tonks also describe a natural quasi-isomorphism of monoids in $\Ch$
-\[
-\phi_X \colon \Ahat(X) \to \schains(\kan(X))
-\]
-in terms of a sequence of simplicial operators known as the \textit{Szczarba operators}.
-
-\anibal{Why are this operators mentioned?}
+defined by extending the composition $\adams \defeq \cobar \schainsA$, by formally inverting a basis of the $\k$-module of $0$-degree elements in $\adams(X)$.
+Hess and Tonks also describe a natural quasi-isomorphism $\phi_X \colon \adamsE(X) \to \schains(\kan(X))$ of monoids in $\Ch$.
 
 Using Baues’ geometric cobar construction, Franz described in \cite{franz2020szczarba} a lift of the extended cobar construction to monoids in coalgebras,
 \[
-\Ahat_{\coAlg} \colon \sSet^0 \to \Mon_{\coAlg}
+\adamsE_{\!\As} \colon \sSet^0 \to \Mon_{\coAlg}
 \]
-and showed using Hess--Tonks' comparison map that $\Ahat_{\coAlg}(X)$ and $\schains(\kan(X))$ are quasi-isomorphic as monoids in $\coAlg$.
-
-\anibal{Note to self: The subscript should be $\As$ but that collides with the $\Ahat$ notation.}
+and showed using Hess--Tonks' comparison map that $\adamsEA(X)$ and $\schains(\kan(X))$ are quasi-isomorphic as monoids in $\coAlg$.
 
 Using similar methods to those leading to \cref{t:1st main thm in the intro}, we construct in \cref{s:ahatum} a further lift
 \[
-\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM},
+\adamsEUM \colon \sSet^0 \to \Mon_{\coAlg_\UM},
 \]
 making the extended cobar construction of any reduced simplicial set into a natural $E_\infty$-bialgebra.
-Then, we turn to the problem of comparing $\Ahat_\UM(X)$ and $\schainsUM(\kan(X))$.
+Then, we turn to the problem of comparing $\adamsEUM(X)$ and $\schainsUM(\kan(X))$.
 
 We begin by observing that $\schainsUM(\kan(X))$ is not an $E_\infty$-bialgebra.
 This is because the action on simplicial chains of the operad $\UM$, or any other known $E_\infty$-operad, is not compatible with the lax monoidal structure on $\chains$ defined by the Eilenberg-Zilber shuffle map.
 We underscore this as another important reason for the consideration of cubical chains, where the action of $\UM$ is monoidal (\cref{l:cubical e-infty chains are monoidal}).
-Hence, the best we could hope for is for $\Ahat_\UM(X)$ and $\schainsUM(\kan(X))$ to be quasi-isomorphic as $\UM$-coalgebras.
-We accomplish this by constructing a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras connecting $\Ahat(X)$ and $\schains(\kan(X))$, for any reduced simplicial set $X$.
-In order to make this into a precise statement, we must take into account a technical subtlety and consider both $\Ahat(X)$ and $\schains(\kan(X))$ as coalgebras over a suboperad $\USL \subseteq \UM$ which is also $E_\infty$.
-We denote the composition of $\Ahat_\UM$ and $\schainsUM$ with the forgetful functor $\coAlg_\UM \to \coAlg_\USL$ by $\Ahat_\USL$ and $\chains_\USL$ respectively.
+Hence, the best we could hope for is for $\adamsEUM(X)$ and $\schainsUM(\kan(X))$ to be quasi-isomorphic as $\UM$-coalgebras.
+We accomplish this by constructing a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras connecting $\adamsE(X)$ and $\schains(\kan(X))$, for any reduced simplicial set $X$.
+In order to make this into a precise statement, we must take into account a technical subtlety and consider both $\adamsE(X)$ and $\schains(\kan(X))$ as coalgebras over a suboperad $\USL \subseteq \UM$ which is also $E_\infty$.
+We denote the composition of $\adamsEUM$ and $\schainsUM$ with the forgetful functor $\coAlg_\UM \to \coAlg_\USL$ by $\adamsE_\USL$ and $\chains_\USL$ respectively.
 Our second main result is the following.
 
 \begin{theorem} \label{t:2nd main thm in the intro}
-	The functor $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$ fits into a commutative diagram
+	The functor $\adamsEUM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$ fits into a commutative diagram
 	\[
 	\begin{tikzcd}[row sep=small]
 	& \Mon_{\coAlg_\UM} \arrow[d] \\
 	& \Mon_{\coAlg} \arrow[d] \\
 	\sSet^0
-	\arrow[r, "\Ahat", ]
-	\arrow[ru, "\Ahat_{\!\As}", out=45, in=180, near end]
-	\arrow[ruu, "\Ahat_\UM", out=90, in=180]
+	\arrow[r, "\adamsE", ]
+	\arrow[ru, "\adamsEA", out=45, in=180, near end]
+	\arrow[ruu, "\adamsEUM", out=90, in=180]
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\]
-	Furthermore, for any reduced simplicial set $X$, there is a zig-zag of natural quasi-isomorphisms of $E_\infty$-coalgebras between $\Ahat_\USL(X)$ and $\schainsUSL(\kan(X))$.
+	Furthermore, for any reduced simplicial set $X$, there is a zig-zag of natural quasi-isomorphisms of $E_\infty$-coalgebras between $\adamsE_\USL(X)$ and $\schainsUSL(\kan(X))$.
 \end{theorem}
 
 We remark that the comparison map of Hess and Tonks does not preserve the $E_\infty$-coalgebra structure.

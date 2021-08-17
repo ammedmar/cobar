@@ -7,7 +7,7 @@ Explicitly, we construct a natural $E_{\infty}$-bialgebra structure on $\cobar \
 The first goal is achieved using a categorical reformulation of Baues' geometric cobar construction (\cref{ss:cubical cobar}) together with the natural $\UM$-coalgebra structure defined on cubical chains (\cref{ss:e-infty on cubical}) and its monoidal properties (\cref{l:cubical e-infty chains are monoidal}).
 The second goal is obtained by factoring Adams' comparison map through this cubical model (\cref{ss:factorization of adams}).
 
-\subsection{Adams' map}\label{adamsmaps}
+\subsection{Adams' map} \label{ss:adams maps}
 
 In \cite{adams1956cobar}, Adams constructed a natural map of algebras
 \begin{equation} \label{e:adams map 2}
@@ -99,50 +99,50 @@ We now describe a categorical version of Adams' maps
 \]
 by constructing a monoidal functor
 \[
-\mathcal{P} \colon \Nec \to \cube.
+\cP \colon \Nec \to \cube.
 \]
 
-We first set $\mathcal{P}([0])=2^0$.
-On any other necklace $T \in \Nec$ we define $\mathcal{P}( T )= 2^{\dim(T)}$.
-In order to define $\mathcal{P}$ on morphisms, it is sufficient to consider the following cases.
+We first set $\cP([0])=2^0$.
+On any other necklace $T \in \Nec$ we define $\cP( T )= 2^{\dim(T)}$.
+In order to define $\cP$ on morphisms, it is sufficient to consider the following cases.
 \begin{enumerate}
-	\item For any $\partial^j \colon [n] \to [n+1]$ such that $0< j<{n+1}$, define $\mathcal{P}(\partial^j) \colon 2^{n-1}\to 2^{n}$ to be the cubical coface functor $\mathcal{P}(f)= \delta_0^{j}$.
+	\item For any $\partial^j \colon [n] \to [n+1]$ such that $0< j<{n+1}$, define $\cP(\partial^j) \colon 2^{n-1}\to 2^{n}$ to be the cubical coface functor $\cP(f)= \delta_0^{j}$.
 
 	\item For any $\Delta_{[j], [n+1-j]} \colon [j] \vee [n+1-j] \to [n+1]$ such that $0<j<n+1$, define
 	\[
-	\mathcal{P}(\Delta_{[j], [n+1-j]}) \colon 2^{n-1}\to 2^{n}
+	\cP(\Delta_{[j], [n+1-j]}) \colon 2^{n-1}\to 2^{n}
 	\]
-	to be the cubical coface functor $\mathcal{P}(f)=\delta_1^{j}$.
+	to be the cubical coface functor $\cP(f)=\delta_1^{j}$.
 
 	\item We now consider morphisms of the form $s^j \colon [n+1] \to [n]$ for $n>0$.
-	If $j=0$ or $j=n$, then $\mathcal{P}(f) \colon 2^n \to 2^{n-1}$ is defined to be the cubical codegeneracy functor $\mathcal{P}(s^j)= \varepsilon^{j}$.
-	If $0<j<n$, then we define $\mathcal{P}(s^j) \colon 2^n \to 2^{n-1}$ to be the cubical coconnection functor $\gamma^{j}$.
+	If $j=0$ or $j=n$, then $\cP(f) \colon 2^n \to 2^{n-1}$ is defined to be the cubical codegeneracy functor $\cP(s^j)= \varepsilon^{j}$.
+	If $0<j<n$, then we define $\cP(s^j) \colon 2^n \to 2^{n-1}$ to be the cubical coconnection functor $\gamma^{j}$.
 
-	\item For $s^0 \colon [1] \to [0]$ we define $\mathcal{P}(s^0) \colon 2^0 \to 2^0$ to be the identity functor.
+	\item For $s^0 \colon [1] \to [0]$ we define $\cP(s^0) \colon 2^0 \to 2^0$ to be the identity functor.
 \end{enumerate}
 
 \begin{remark}
-	The functor $\mathcal{P}$ is neither faithful or full.
-	However, for any necklace $T' \in \Nec$ with $\dim(T')=n+1$ and any cubical coface functor $\delta_{\epsilon}^j \colon 2^n \to 2^{n+1}$ for $0 \leq j \leq n+1$, there exists a unique pair $(T, f \colon T \hookrightarrow T')$, where $T \in \Nec$ with $\dim(T)=n$ and $f \colon T \hookrightarrow T'$ is an injective morphism in $\Nec$, such that $\mathcal{P}(f) = \delta_{\epsilon}^j $.
+	The functor $\cP$ is neither faithful or full.
+	However, for any necklace $T' \in \Nec$ with $\dim(T')=n+1$ and any cubical coface functor $\delta_{\epsilon}^j \colon 2^n \to 2^{n+1}$ for $0 \leq j \leq n+1$, there exists a unique pair $(T, f \colon T \hookrightarrow T')$, where $T \in \Nec$ with $\dim(T)=n$ and $f \colon T \hookrightarrow T'$ is an injective morphism in $\Nec$, such that $\cP(f) = \delta_{\epsilon}^j $.
 \end{remark}
 
-The functor $\mathcal{P} \colon \Nec \to \cube$ induces an adjunction between $\cSet$ and $\nSet$ with right and left adjoint functors given respectively by
+The functor $\cP \colon \Nec \to \cube$ induces an adjunction between $\cSet$ and $\nSet$ with right and left adjoint functors given respectively by
 \[
-\mathcal{P}^\ast \colon \cSet \to \nSet,
+\cP^\ast \colon \cSet \to \nSet,
 \qquad \text{and} \qquad
-\mathcal{P}_{!} \colon \nSet \to \cSet.
+\cP_{!} \colon \nSet \to \cSet.
 \]
 Explicitly, for a cubical set $Y \colon \cube^\op \to \Set$,
 \[
-\mathcal{P}^\ast(Y)= Y \circ \mathcal{P}^\op,
+\cP^\ast(Y)= Y \circ \cP^\op,
 \]
 and for a necklical set $K \colon \Nec^\op \to \Set$,
 \[
-\mathcal{P}_{!}(K) \ =
-\colim_{\mathcal{Y}(T) \to K} \mathcal{P}(T) \ \cong
+\cP_{!}(K) \ =
+\colim_{\mathcal{Y}(T) \to K} \cP(T) \ \cong
 \colim_{\mathcal{Y}(T) \to K} \cube^{\dim(T)}.
 \]
-Since $\mathcal{P}$ is a monoidal functor, the functor $\mathcal{P}_{!} \colon \nSet \to \cSet$ is a monoidal as well.
+Since $\cP$ is a monoidal functor, the functor $\cP_{!} \colon \nSet \to \cSet$ is a monoidal as well.
 
 \subsection{Cubical cobar construction} \label{ss:cubical cobar}
 
@@ -168,7 +168,7 @@ We may now define the \textit{cubical cobar construction}
 \]
 as the composition
 \[
-\ccobar = \mathcal{P}_! \, \ncobar.
+\ccobar = \cP_! \, \ncobar.
 \]
 This reinterpretation of Baues construction in terms of cubical sets was also studied in \cite{rivera2018cubical}.
 
@@ -185,18 +185,18 @@ We now relate the cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}
 
 \begin{proof}
 	Denote by $\iota_n \in (\cube^n)_n$ the top dimensional non-degenerate element of the standard $n$-cube $\cube^n$.
-	Note that for a reduced simplicial set $X$, we may represent any non-degenerate $n$-cube $\alpha \in (\mathcal{P}_!(\ncobar(X)))_n$ as a pair $\alpha = [\sigma \colon \mathcal{Y}(T) \to X, \iota_n]$ for some $T = [n_1] \vee \dots \vee [n_k] \in \Nec$ with $\dim(T) = n_1 + \dots + n_k - k = n$.
+	Note that for a reduced simplicial set $X$, we may represent any non-degenerate $n$-cube $\alpha \in (\cP_!(\ncobar(X)))_n$ as a pair $\alpha = [\sigma \colon \mathcal{Y}(T) \to X, \iota_n]$ for some $T = [n_1] \vee \dots \vee [n_k] \in \Nec$ with $\dim(T) = n_1 + \dots + n_k - k = n$.
 
 	To define an algebra map
 	\[
-	\varphi_X \colon \cchains(\mathcal{P}_!(\ncobar(X))) \xra{\cong} \cobar \schainsA(X)
+	\varphi_X \colon \cchains(\cP_!(\ncobar(X))) \xra{\cong} \cobar \schainsA(X)
 	\]
 	it suffices to define it on any generator of the form $\alpha=[\sigma \colon \simplex^{n+1} \to X, \iota_{n}]$, i.e., when $T$ is of the form $T = [n+1]$, for some $n \geq 0$.
 	If $n = 0$ let $\varphi_X(\alpha)= [\overline{\sigma}] + 1_\k$, where $[\overline{\sigma}] \in s^{-1} \overline{ \schains(X)} \subset \cobar \schainsA(X)$ denotes the (length $1$) generator in the cobar construction of $\schains(X)$ determined by $\sigma \in X_{n+1}$ and $1_\k$ denotes the unit of the underlying ring $\k$.
 	If $n > 0$, we let $\varphi_X(\alpha)=[\overline{\sigma}]$.
 	A straightforward computation yields that this gives rise to a well defined isomorphism of algebras, which is compatible with the differentials, and natural with respect to maps of simplicial sets.
 \end{proof}
-A similar result to \cref{l:ccobar and cobar} was observed in the case of $1$-reduced simplicial sets in Section 3.5 of \cite{berger1995loops}.
+A similar result to \cref{l:ccobar and cobar} was observed in the case of $1$-reduced simplicial sets in \cite[Section~3.5]{berger1995loops}.
 
 \subsection{An \pdfEinfty-bialgebra structure on the cobar construction} \label{ss:e-infty on cobar}
 
@@ -276,7 +276,7 @@ determined through the monoid structure by sending an $n$-simplex $(\sigma \colo
 \[
 P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \loops_z Z,
 \]
-where the maps $\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n)$ are those defined by Adams and discussed in \cref{adamsmaps}.
+where the maps $\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n)$ are those defined by Adams and discussed in \cref{ss:adams maps}.
 
 \subsection{Adams's map as an \pdfEinfty-bialgebra quasi-isomorphism}
 
