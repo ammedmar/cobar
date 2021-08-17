@@ -129,8 +129,19 @@ We will show the following is well defined in \cref{t:cubical structure on M}.
 	\[
 	\Delta_{\M}(\Gamma) = \iota_\Gamma^{\otimes 2} \circ \Delta \left( [0,1]^{\otimes d} \right),
 	\]
-	where $d = \bars{\Gamma}$, and the \textit{counit} $\epsilon_\M \colon \M \to \underline{\k}$ by requiring $\epsilon_M(\Gamma) = 1$ if the degree of $\Gamma$ is $0$, where $\underline{\k}$ is the $\S$-bimodule with $\underline{\k}(m, n) = \k$.
+	where $d = \bars{\Gamma}$, and the \textit{counit} $\epsilon_\M \colon \M \to \underline{\k}$ by requiring $\epsilon_M(\Gamma) = 1$ if the degree of $\Gamma$ is $0$, where $\underline{\k}$ is the $\S$-bimodule with $\underline{\k}(m,n) = \k$.
 \end{definition}
+
+We remark that this Hopf algebra structure is obtained by extending the assignments:
+\begin{align*}
+&\Delta_\M && \varepsilon_\M \\
+\coproduct & \mapsto \coproduct \otimes \coproduct \,, &
+\coproduct & \mapsto 1, \\
+\counit \ & \mapsto \ \counit \ \otimes \ \counit \,, &
+\counit \ & \mapsto 1, \\
+\product & \mapsto \rightboundary \ \otimes \product + \product \otimes \ \leftboundary \,, &
+\coproduct & \mapsto 0.
+\end{align*}
 
 \begin{theorem} \label{t:cubical structure on M}
 	The maps $\Delta_\M$ and $\varepsilon_\M$ are well defined and make $\M$ into a Hopf prop.
