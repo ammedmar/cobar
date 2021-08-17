@@ -2,13 +2,10 @@
 \section{Relation to Kan's loop group construction} \label{s:theorem2}
 
 The goal of this section is to prove \cref{t:2nd main thm in the intro}.
-Explicitly, we construct an $E_{\infty}$-coalgebra structure on the extended cobar construction of \cite{hess2010cobar} together with a natural zig-zag of quasi-isomorphisms of $E_{\infty}$-coalgebras connecting it to the chains on the Kan loop group.
+Explicitly, we extend the $E_{\infty}$-coalgebra structure on the cobar construction given by \cref{l:lift of cobar to e-infty} to the extended cobar construction of \cite{hess2010cobar} (\cref{l:AhatUM}). Then, we relate the extended cobar construction and the simplicial chains on the Kan loop group as $E_{\infty}$-coalgebras (\cref{l:AhatandGX}).
 
-Our comparison uses the rigidification functor, a construction introduced by Cordier and used by Lurie, Dugger, and Spivak in the theory of $\infty$-categories, as a middle object to relate the Kan loop group and the cubical cobar construction.
-The rigidification functor is naturally isomorphic to the triangulation of the cubical cobar construction, as explained in \cref{Candgcobar}.
-In \cref{CandG}, we show that a localized version of the rigidification functor agrees, up to homotopy, with the Kan loop group.
-\cref{t:2nd main thm in the intro} then follows by applying the corresponding functors of normalized chains and comparing these via the Serre--Cartan map, as explained in the last three subsections.
-Our arguments rely on several classical results from homotopy theory, which we review for completeness.
+The first goal is achieved by interpreting the extended cobar construction as a monoidal cubical set (\cref{ss:extended cubical cobar}).
+The second goal is obtained by using the rigidification functor (\cref{ss:rigidification}) as a middle object. The rigidification functor is naturally isomorphic to the triangulation of the cubical cobar construction (\cref{Candgcobar}). Furthermore, a localized version of the rigidification functor agrees, up to homotopy, with the Kan loop group (\cref{CandG}). This fact relies on classical results from homotopy theory. Finally, \cref{t:2nd main thm in the intro} follows by applying the corresponding functors of normalized chains and comparing these via the Serre--Cartan map, as explained in the last three subsections.
 
 \subsection{Kan's loop group construction}
 
@@ -144,7 +141,7 @@ as the composition
 It follows directly from the definitions that $\Ahat_{\coAlg}$ is a lift of $\Ahat$, and $\Ahat_{\UM}$ is a lift $\Ahat_{\coAlg}$.
 This discussion constitutes the first half of \cref{t:2nd main thm in the intro}, which we collect in the following.
 
-\begin{lemma}
+\begin{lemma} \label{l:AhatUM}
 The functor $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$ fits into a commutative diagram
 	\[
 	\begin{tikzcd}[row sep=small]
@@ -159,13 +156,13 @@ The functor $\Ahat_\UM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$ fits into a commuta
 	\]
 \end{lemma}
 
-\subsection{Rigidification and homotopy coherent nerve}
+\subsection{Rigidification and homotopy coherent nerve}\label{ss:rigidification}
 
 In order to relate the functors $\ccobarE \colon \sSet^0 \to \Mon_{\cSet}$ and $\kan \colon \sSet^0\to \sGrp$ we introduce a third construction, the \textit{rigidification functor}
 \[
-\rigid \colon \sSet^0 \to \Mon_{\sSet},
+\rigid \colon \sSet^0 \to \Mon_{\sSet}.
 \]
-which is obtained by restricting to $\sSet^0$ a more general construction
+This functor is obtained by restricting to $\sSet^0$ a more general construction
 \[
 \rigid \colon \sSet \to \Cat_{\simplex},
 \]
@@ -393,6 +390,6 @@ By naturality, we have an induced quasi-isomorphism of $\USL$-coalgebras
 Therefore, $\Ahat_{\USL}(X)$ and $\schainsUSL(\kan(X))$ are quasi-isomorphic through a zig-zag of natural maps of $\USL$-coalgebras, as desired.
 We summarize this discussion in the following lemma, constituting the second half of \cref{t:2nd main thm in the intro}.
 
-\begin{lemma}
+\begin{lemma}\label{l:AhatandGX}
 	For any reduced simplicial set $X$, there is a zig-zag of natural quasi-isomorphisms of $\USL$-coalgebras between $\Ahat_\USL(X)$ and $\schainsUSL(\kan(X))$.
 \end{lemma}

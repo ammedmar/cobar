@@ -27,8 +27,9 @@ is referred to as a \textit{Yoneda extension}.
 We refer to the objects in $\Fun[\sA^\op, \Set]$ as \textit{presheaves on $\sA$} and to those in the image of the Yoneda embedding as \textit{representables}.
 We remark that for any presheaf $P$ on $\sA$ and object $a$ of $\sA$
 \[
-P(a) \, \cong \colim_{\yoneda(a) \to P} \yoneda(a).
+P \, \cong \colim_{\yoneda(a) \to P} \yoneda(a).
 \]
+In other words, any presheaf is isomorphic to a colimit of representables.
 
 \subsection{Chain complexes}
 
@@ -61,7 +62,7 @@ We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and remark that a mon
 A \textit{coaugmentation} on a coalgebra $C$ is a morphism $\nu \colon \k \to C$ in $\coAlg$.
 A coalgebra is said to be \textit{coaugmented} if it is equipped with a coaugmentation.
 
-We denote by $\coAlg^\ast$ the category of coaugmented coalgebras with morphisms being coaugmentation preserving coalgebra morphisms. In other words, $\coAlg^\ast$ is the slice category $\k \downarrow \mathsf{coMon}_{\Ch},$ where $\mathsf{coMon}_{\Ch}$ is the category of comonoids in $\Ch$ and $\k$ is regarded as an object in $\mathsf{coMon}_{\Ch}$ by considering it as a chain complex concentrated in degree $0$ with coproduct determined by $1_{\k} \mapsto 1_{\k} \otimes 1_{\k}.$
+We denote by $\coAlg^\ast$ the category of coaugmented coalgebras with morphisms being coaugmentation preserving coalgebra morphisms.
 
 The \textit{cobar construction} is the functor
 \[
@@ -84,11 +85,7 @@ as a derivation.
 In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented coalgebras that are non-negatively graded and for which the coaugmentation induces an isomorphism $\k \cong C_0$ of $\k$-modules.
 We denote by $\coAlg^0$ the full subcategory of $\coAlg^\ast$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees.
 
-The object $ \cobar(C) \in \Mon_{\Ch}$ may be equipped with a natural augmentation map $\cobar(C) \to \k$ in $\Mon_{\Ch}$ given by the projection map to the first summand term. Therefore, the cobar construction may be regarded as a functor between slice categories
-\[
-\cobar \colon \k \downarrow \mathsf{coMon}_{\Ch} \to \Mon_{\Ch} \downarrow \k,
-\]
-however, we will not require the data of augmentations in this article.
+The object $ \cobar(C) \in \Mon_{\Ch}$ may be equipped with a natural augmentation map $\cobar(C) \to \k$ in $\Mon_{\Ch}$ given by the projection map to the first summand term. Therefore, the cobar construction may be regarded as a functor from coaugmented coalgebras to augmented algebras. However, we will not require the data of augmentations in this article.
 
 We now review the central examples of coaugmented coalgebras to which Adams applied the cobar construction.
 
