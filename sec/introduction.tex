@@ -1,19 +1,10 @@
 
 \section{Introduction}
 
-%The \textit{homotopy hypothesis}, a cornerstone of modern algebraic topology, postulates an equivalence between the theory of topological spaces, considered up to weak homotopy equivalence, and the study of certain categorical structures in which every morphism is invertible in a derived sense.
-%In the strict (non-derived) context, it is well known that categories with only invertible morphisms having a single object are equivalent to groups, which leads to a particular embodiment of this principle recasting the homotopy theory of pointed topological spaces in terms of topological groups.
-
-One of the many connections between topology and algebra is given by the equivalence between the homotopy theory of pointed spaces and that of topological groups.
-More concretely, associated to any pointed topological space $(Z,z)$ one may naturally associate a topological monoid $\loops_z Z$ -- its \textit{based loop space} -- whose points are pairs $(\gamma, r)$ where $r \in \R_{\geq 0}$ and $\gamma \colon [0,r] \to Z$ is a continuous map with $\gamma(0) = z = \gamma(r)$.
-We consider $\loops_z Z$  equipped with the compact-open topology and a continuous multiplication given by \textit{concatenation} of loops, whose identity element is the \textit{constant loop} $(c_r,0)$.
-This construction gives rise to a functor
-\[
-\loops \colon \Top^{\ast} \to \Mon_{\Top}
-\]
-from the category of pointed topological spaces to the category of topological monoids.
-For any pointed topological space $(Z,z)$, the topological monoid $\loops_z Z$ has the special property of having \textit{inverses up to homotopy}; for any loop $\gamma \colon [0,r] \to Z $ its concatenation with the loop $\overline{\gamma} \colon [0,r] \to Z$ which runs $\gamma$ in the opposite direction, namely $\overline{\gamma}(t) = \gamma(r-t)$, is homotopic to the constant loop.
-Consequently, the set of path components $\pi_0(\loops_z Z)$ has an induced group structure, which is naturally isomorphic to the fundamental group $\pi_1(Z,z)$.
+For any pointed topological space $(Z,z)$ there is a naturally associated topological monoid $\loops_z Z$ -- its \textit{based loop space} -- whose points are pairs $(\gamma, r)$ where $r \in \R_{\geq 0}$ and $\gamma \colon [0,r] \to Z$ is a continuous map with $\gamma(0) = z = \gamma(r)$.
+We consider $\loops_z Z$  equipped with the compact-open topology and the continuous multiplication defined by \textit{concatenation} of loops, whose identity element is the \textit{constant loop} $(c_r,0)$.
+For any loop $\gamma \colon [0,r] \to Z $ its concatenation with the loop $\overline{\gamma} \colon [0,r] \to Z$ which runs $\gamma$ in the opposite direction, namely $\overline{\gamma}(t) = \gamma(r-t)$, is homotopic to the constant loop.
+Consequently, we may say that $\loops_z Z$ has inverses \textit{up to homotopy}, and we have that the set of path components $\pi_0(\loops_z Z)$ has an induced group structure naturally isomorphic to the fundamental group $\pi_1(Z,z)$.
 Furthermore, $\loops_z Z$ is weak homotopy equivalent to a topological group where the group identities hold strictly \cite{milnor1956bundles}, \cite{berger1995loops}.
 The pointed space $(Z,z)$ may then be recovered, up to weak homotopy equivalence, from the weak homotopy type of the topological monoid $\loops_z Z$ through the \textit{classifying space}, or \textit{delooping}, construction.
 
@@ -25,7 +16,7 @@ We will focus on spaces up to weak homotopy equivalence, where a first example o
 which associates a chain complex over a fixed commutative ring to any topological space.
 
 The singular chains construction may be thought of as a linearization of a topological space and, as expected, much structure is lost by it.
-More homotopical information can be encoded if the resulting chain complex is equipped with non-linear structure, for example, a chain approximation to the diagonal map $Z \to Z \times Z$.
+More homotopical information can be encoded if the resulting chain complex is equipped with non-linear structure, for example, a chain approximation to the diagonal map.
 In this case, we regard the singular chains as a differential graded (dg) coassociative coalgebra, or better still, if a coherent family of homotopies enforcing its derived cocommutativity is considered, as an $E_\infty$-coalgebra.
 Diagrammatically, this can be represented as lifts of the form
 \begin{equation}
@@ -112,7 +103,7 @@ This has consequences for both algebraic models for the based loop space conside
 Let $(Z,z)$ be a pointed space and $X$ a reduced simplicial set, for example $X = \sSing(Z,z)$.
 Since $\cSing(\loops_z Z)$ and $\ccobar X$ are monoids in $\cSet$ we have that both $\cSchainsUM(\loops_z Z)$ and $\cchainsUM \ccobar(X) \cong \cobar \schainsA(X)$ are monoids in $\coAlg_\UM$.
 Furthermore, if $X = \sSing(Z,z)$, Adams' comparison map $\theta_Z$ preserves this additional structure.
-We condense this discussion in our main result.
+We condense this discussion in our first main result.
 
 \begin{theorem} \label{t:1st main thm in the intro}
 	The functor $\cchainsUM$ is monoidal and its associated functor on monoids fits in the following diagram commuting up to a natural isomorphism:
@@ -125,7 +116,11 @@ We condense this discussion in our main result.
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\]
-Furthermore, for any pointed space $(Z,z)$, Adams' comparison map $\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
+Furthermore, Adams' comparison map
+\[
+\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z)
+\]
+is a quasi-isomorphism of $E_{\infty}$-bialgebras for any pointed space $(Z,z)$.
 \end{theorem}
 
 We turn now to a second result in this work, which is concerned with a classical combinatorial model for the based loop space described by Kan in the framework of simplicial sets.
@@ -140,8 +135,9 @@ For any reduced simplicial set, a combinatorial analogue of the based loop space
 with the property that the geometric realization $\bars{\kan(X)}$ is, for any reduced simplicial set $X$, homotopy equivalent as a topological monoid to the based loop space $\loops_b \bars{X}$ \cite{berger1995loops}.
 The statement, made precise using model categories, is that the Kan loop group construction together with its right adjoint, a combinatorial model for the classifying space, define an equivalence of homotopy theories.
 
-Our second result establishes a comparison through explicit maps between the natural algebraic structure on the cobar construction and that of the (normalized) simplicial chains on the Kan loop group, as we explain next in more detail. In \cite{mcclure2003multivariable, berger2004combinatorial}, the functor of simplicial chains $\schains$ was lifted to that of $E_{\infty}$-coalgebras, a result generalized in \cite{medina2020prop1} using a lift $\schainsUM \colon \sSet \to \coAlg_{\UM}$.
-Hence, a natural problem is to compare explicitly $\cobar \schainsA(X)$ and $\schainsUM(\kan(X))$ as $\UM$-coalgebras.
+Our second result establishes a comparison through explicit maps between the natural algebraic structure on the cobar construction and that of the (normalized) simplicial chains on the Kan loop group, as we explain next in more detail.
+In \cite{mcclure2003multivariable, berger2004combinatorial}, the functor of simplicial chains $\schains$ was lifted to that of $E_{\infty}$-coalgebras, a result generalized in \cite{medina2020prop1} using a lift $\schainsUM \colon \sSet \to \coAlg_{\UM}$.
+Hence, a natural problem is to compare explicitly $\cobar \schainsA(X)$ and $\schainsUM(\kan(X))$ with their respective $\UM$-structures.
 
 First note that for an arbitrary reduced simplicial set $X$, the monoids $\cobar \schainsA(X)$ and $\schains(\kan(X))$ are not quasi-isomorphic.
 This can be seen from the fact that $H_0(\cobar \schainsA(X))$ need not be a group ring, while $H_0(\kan(X))$ is always isomorphic to $ \k[\pi_1(|X|)]$.
@@ -170,9 +166,9 @@ We begin by observing that $\schainsUM(\kan(X))$ is not an $E_\infty$-bialgebra.
 This is because the action on simplicial chains of the operad $\UM$, or any other known $E_\infty$-operad, is not compatible with the lax monoidal structure on $\chains$ defined by the Eilenberg-Zilber shuffle map.
 We underscore this as another important reason for the consideration of cubical chains, where the action of $\UM$ is monoidal (\cref{l:cubical e-infty chains are monoidal}).
 Hence, the best we could hope for is for $\adamsEUM(X)$ and $\schainsUM(\kan(X))$ to be quasi-isomorphic as $\UM$-coalgebras.
-We accomplish this by constructing a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras connecting $\adamsE(X)$ and $\schains(\kan(X))$, for any reduced simplicial set $X$.
+We accomplish this by constructing a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras connecting $\adamsE(X)$ and $\schains(\kan(X))$ for any reduced simplicial set $X$.
 In order to make this into a precise statement, we must take into account a technical subtlety and consider both $\adamsE(X)$ and $\schains(\kan(X))$ as coalgebras over a suboperad $\USL \subseteq \UM$ which is also $E_\infty$.
-We denote the composition of $\adamsEUM$ and $\schainsUM$ with the forgetful functor $\coAlg_\UM \to \coAlg_\USL$ by $\adamsE_\USL$ and $\chains_\USL$ respectively.
+We denote the composition of $\adamsEUM$ and $\schainsUM$ with the forgetful functor $\coAlg_\UM \to \coAlg_\USL$ by $\adamsE_\USL$ and $\schainsUSL$ respectively.
 Our second main result is the following.
 
 \begin{theorem} \label{t:2nd main thm in the intro}
@@ -188,10 +184,10 @@ Our second main result is the following.
 	& \Mon_{\Ch}.
 	\end{tikzcd}
 	\]
-	Furthermore, for any reduced simplicial set $X$, there is a zig-zag of natural quasi-isomorphisms of $E_\infty$-coalgebras between $\adamsE_\USL(X)$ and $\schainsUSL(\kan(X))$.
+	Furthermore, $\adamsE_\USL(X)$ and $\schainsUSL(\kan(X))$ are quasi-isomorphic as $E_\infty$-coalg-ebras for any reduced simplicial set $X$.
 \end{theorem}
 
-We remark that the comparison map of Hess and Tonks does not preserve the $E_\infty$-coalgebra structure.
+We remark that the comparison in the previous theorem is through a zig-zag of $E_\infty$-coalgebra quasi-isomorphisms, and that the Hess--Tonks comparison map does not preserve this structure.
 
 \subsection*{Relation to previous work}
 
@@ -199,7 +195,7 @@ Using more abstract methods, in \cite{hess2006adamshilton} Hess, Parent, Scott, 
 A priori, their methods imply that this coproduct corresponds, up to homotopy, to the Alexander--Whitney coproduct on $\schains(\kan(X))$, a result that Franz showed to hold strictly in \cite{franz2020szczarba}.
 Our approach allows us to go beyond the coalgebra structure and compare directly the cobar construction and the chains on the Kan loop group as $E_{\infty}$-coalgebras.
 
-The works of V.A. Smirnov \cite{smirnov1990iterated}, J.R. Smith \cite{smith1994cobar, smith2000operads}, and Kadeishvili–Saneblidze \cite{kadeishvili1998iterating} predict the existence of an $E_\infty$-coalgebra structure on $\cobar \schainsA(X)$.
+The works of V.A. Smirnov \cite{smirnov1990iterated}, J.R. Smith \cite{smith1994cobar, smith2000operads}, T. Kadeishvili and S. Saneblidze \cite{kadeishvili1998iterating} predict the existence of an $E_\infty$-coalgebra structure on the cobar construction on the chains of a reduced simplicial set $\cobar \schainsA(X)$.
 In \cite{fresse2010bar}, B. Fresse used a model category structure on reduced operads \cite{berger2003modelcategory, hinich1997homologicalalgebra} to iterate the bar construction on algebras over cofibrant $E_\infty$-operads.
 We mention that the reduced version of the $E_\infty$-operad $\UM$ is cofibrant, although we do not use this observation here.
 In the work of Fresse, finiteness assumptions and restrictions on the fundamental group are required to model the based loop space.
