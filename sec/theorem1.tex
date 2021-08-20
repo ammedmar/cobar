@@ -93,17 +93,13 @@ The (non-symmetric) monoidal category of \textit{necklical sets} $\Fun[\Nec^{\op
 
 \subsection{From necklaces to cubes}
 
-We now describe a categorical version of Adams' maps
-\[
-\theta_n \colon \gcube^{n-1} \to P(\gsimplex^{n};0,n)
-\]
-by constructing a monoidal functor
+We now describe a categorical version of Adams' maps $\theta_n \colon \gcube^{n-1} \to P(\gsimplex^{n};0,n)$ by constructing a monoidal functor
 \[
 \cP \colon \Nec \to \cube.
 \]
 
 We first set $\cP([0])=2^0$.
-On any other necklace $T \in \Nec$ we define $\cP( T )= 2^{\dim(T)}$.
+On any other necklace $T \in \Nec$ we define $\cP(T) = 2^{\dim(T)}$.
 In order to define $\cP$ on morphisms, it is sufficient to consider the following cases.
 \begin{enumerate}
 	\item For any $\partial^j \colon [n] \to [n+1]$ such that $0< j<{n+1}$, define $\cP(\partial^j) \colon 2^{n-1}\to 2^{n}$ to be the cubical coface functor $\cP(f)= \delta_0^{j}$.
@@ -236,7 +232,7 @@ More explicitly, let $\Cp$ be the cyclic group of order $p$ and
 \end{tikzcd}
 \]
 be the minimal free resolution of $\Fp$ as an $\Fp[\Cp]$-module.
-Consider the $\Cp$-equivariant quasi-isomorphism $\psi_\UM \colon \cW(p) \to \UM(p)$ constructed in \cite{medina2020maysteenrod}, and denote by $\psi^{\cobar}$ its composition with the morphism $\UM \to \End^{\cobar \schainsA(X)}$ defining our $E_\infty$-coalgebra structure on $\cobar \schainsA(X)$.
+Consider the $\Cp$-equivari-ant quasi-isomorphism $\psi_\UM \colon \cW(p) \to \UM(p)$ constructed in \cite{medina2020maysteenrod}, and denote by $\psi^{\cobar}$ its composition with the morphism $\UM \to \End^{\cobar \schainsA(X)}$ defining our $E_\infty$-coalgebra structure on $\cobar \schainsA(X)$.
 
 If $p$ is the even prime, the Steenrod square $P_s$ is represented by the map sending a representative $\mu$ of a class in the $k^\th$ homology of $\cobar \schainsA(X)$ to the following element in its double linear dual:
 \[
@@ -256,7 +252,7 @@ m = (p-1)/2.
 \]
 
 The map $\psi^{\cobar}$, being a special case of the map $\psi^\cube$ defined in \cite{medina2020maysteenrod}, can be described effectively, and it has been implemented in the specialized computer algebra system \texttt{ComCH} \cite{medina2021computer}.
-In similar effective manner, explicit Cartan and Adem coboundaries \cite{medina2020cartan, medina2020adem} can be described, in the $p = 2$ case, for cochain level Steenrod squares of the cobar construction of $\schains(X)$.
+In similar effective manner, explicit Cartan and Adem coboundaries \cite{medina2020cartan, medina2021adem} can be described, in the $p = 2$ case, for cochain level Steenrod squares of the cobar construction of $\schains(X)$.
 
 \subsection{Factorization of Adams' map} \label{ss:factorization of adams}
 
@@ -268,7 +264,8 @@ Adams' comparison map can be factored as a composition
 \cchains \ccobar(\sSing(Z,z)) \xrightarrow{\cchains(\Theta)}
 \cSchains(\loops_z Z).
 \end{equation}
-The first map is the natural isomorphism of algebras given by \cref{l:ccobar and cobar}. The second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
+The first map is the natural isomorphism of algebras given by \cref{l:ccobar and cobar}.
+The second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
 \[
 \Theta \colon \ccobar(\sSing(Z,z)) \to \cSing(\loops_z Z)
 \]

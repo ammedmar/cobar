@@ -34,12 +34,13 @@ In other words, any presheaf is isomorphic to a colimit of representables.
 \subsection{Chain complexes}
 
 Throughout this article $\k$ denotes a commutative and unital ring and we work over its associated closed symmetric monoidal category of differential (homological) graded $\k$-modules $(\Ch, \otimes, \k)$.
-We refer to the objects and morphisms of this category as \textit{chain complexes} and \textit{chain maps} respectively. We denote by $\Hom(C, C^\prime)$ the chain complex of $\k$-linear maps between chain complexes $C$ and $C^\prime$, and refer to the functor $\Hom(-, \k)$ as \textit{linear duality}.
+We refer to the objects and morphisms of this category as \textit{chain complexes} and \textit{chain maps} respectively.
+We denote by $\Hom(C, C^\prime)$ the chain complex of $\k$-linear maps between chain complexes $C$ and $C^\prime$, and refer to the functor $\Hom(-, \k)$ as \textit{linear duality}.
 The $i^\th$ \textit{suspension} functor $s^i \colon \Ch \to \Ch$ is defined at the level of graded modules by $(s^{i}M)_n = M_{n-i}$.
 
 \subsection{Coalgebras} \label{ss:coalgebras}
 
-A \textit{coalgebra} consists of an object $C$ in $\Ch$ and morphisms $\Delta \colon C \to C \otimes C$ and $\varepsilon \colon C \to \k$ in this category satisfying the usual coassociativity and counitality relations.
+A \textit{coalgebra} consists of a chain complex $C$ and chain maps $\Delta \colon C \to C \otimes C$ and $\varepsilon \colon C \to \k$ satisfying the usual coassociativity and counitality relations.
 This notion is equivalent to that of a comonoid in $\Ch$.
 Denote by $\coAlg$ the category of coalgebras with morphisms being structure preserving chain maps.
 The category $\coAlg$ is symmetric monoidal, with braiding induced from $\Ch$ and structure maps of a product $C \otimes C^\prime$ given by
@@ -85,7 +86,9 @@ as a derivation.
 In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented coalgebras that are non-negatively graded and for which the coaugmentation induces an isomorphism $\k \cong C_0$ of $\k$-modules.
 We denote by $\coAlg^0$ the full subcategory of $\coAlg^\ast$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees.
 
-The object $ \cobar(C) \in \Mon_{\Ch}$ may be equipped with a natural augmentation map $\cobar(C) \to \k$ in $\Mon_{\Ch}$ given by the projection map to the first summand term. Therefore, the cobar construction may be regarded as a functor from coaugmented coalgebras to augmented algebras. However, we will not require the data of augmentations in this article.
+The object $ \cobar(C) \in \Mon_{\Ch}$ may be equipped with a natural augmentation map $\cobar(C) \to \k$ in $\Mon_{\Ch}$ given by the projection map to the first summand term.
+Therefore, the cobar construction may be regarded as a functor from coaugmented coalgebras to augmented algebras.
+However, we will not require the data of augmentations in this article.
 
 We now review the central examples of coaugmented coalgebras to which Adams applied the cobar construction.
 

@@ -9,13 +9,14 @@
 	url=false,
 	doi=false,
 	isbn=false,
-	eprint=false]{biblatex}
-	
+	eprint=false
+	]{biblatex}
+
 \renewbibmacro{in:}{}
 
 \addbibresource{aux/bibliography.bib}
 \addbibresource{aux/usualpapers.bib}
-\addbibresource{aux/mypapers.bib}	
+\addbibresource{aux/mypapers.bib}
 
 \DeclareFieldFormat{title}{\myhref{\mkbibemph{#1}}}
 \DeclareFieldFormat
@@ -54,7 +55,7 @@
 	colorlinks=true,
 	pagebackref=false,
 	pdfpagelabels]{hyperref}
-	
+
 \hypersetup{
 	colorlinks,
 	citecolor=blue,
@@ -68,8 +69,8 @@
 \crefname{subsection}{\subsectionSymbol\!}{subsections}
 
 % layout
-\addtolength{\textwidth}{1.2in}
-\addtolength{\textheight}{1.2in}
+\addtolength{\textwidth}{0in}
+\addtolength{\textheight}{0in}
 \calclayout
 
 % update to MSC2020

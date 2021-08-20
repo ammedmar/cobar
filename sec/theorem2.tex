@@ -2,10 +2,15 @@
 \section{Relation to Kan's loop group construction} \label{s:theorem2}
 
 The goal of this section is to prove \cref{t:2nd main thm in the intro}.
-Explicitly, we extend the $E_{\infty}$-coalgebra structure on the cobar construction given by \cref{l:lift of cobar to e-infty} to the extended cobar construction of \cite{hess2010cobar} (\cref{l:AhatUM}). Then, we relate the extended cobar construction and the simplicial chains on the Kan loop group as $E_{\infty}$-coalgebras (\cref{l:AhatandGX}).
+Explicitly, we extend the $E_{\infty}$-coalgebra structure on the cobar construction given by \cref{l:lift of cobar to e-infty} to the extended cobar construction of \cite{hess2010cobar} (\cref{l:AhatUM}).
+Then, we relate the extended cobar construction and the simplicial chains on the Kan loop group as $E_{\infty}$-coalgebras (\cref{l:AhatandGX}).
 
 The first goal is achieved by interpreting the extended cobar construction as a monoidal cubical set (\cref{ss:extended cubical cobar}).
-The second goal is obtained by using the rigidification functor (\cref{ss:rigidification}) as a middle object. The rigidification functor is naturally isomorphic to the triangulation of the cubical cobar construction (\cref{Candgcobar}). Furthermore, a localized version of the rigidification functor agrees, up to homotopy, with the Kan loop group (\cref{CandG}). This fact relies on classical results from homotopy theory. Finally, \cref{t:2nd main thm in the intro} follows by applying the corresponding functors of normalized chains and comparing these via the Serre--Cartan map, as explained in the last three subsections.
+The second goal is obtained by using the rigidification functor (\cref{ss:rigidification}) as a middle object.
+The rigidification functor is naturally isomorphic to the triangulation of the cubical cobar construction (\cref{Candgcobar}).
+Furthermore, a localized version of the rigidification functor agrees, up to homotopy, with the Kan loop group (\cref{CandG}).
+This fact relies on classical results from homotopy theory.
+Finally, \cref{t:2nd main thm in the intro} follows by applying the corresponding functors of normalized chains and comparing these via the Serre--Cartan map, as explained in the last three subsections.
 
 \subsection{Kan's loop group construction}
 
@@ -213,7 +218,7 @@ The next result, which is an observation of the second named author and Zeinalia
 \begin{proposition} \label{Candgcobar}
 	The composition
 	\[
-	\mathcal{T} \, \ccobar \colon \sSet^0 \to \Mon_{\sSet}
+	\triangulate \, \ccobar \colon \sSet^0 \to \Mon_{\sSet}
 	\]
 	is naturally isomorphic to
 	\[
@@ -231,7 +236,8 @@ Denote by
 \[
 \iota \colon \sGrp \to \Mon_{\sSet}
 \]
-the natural fully faithful embedding through which we may regard simplicial groups as simplicial monoids. The starting point of the comparison between the rigidification functor and Kan's loop group functor is the following statement about their adjoints, which is Proposition 2.6.2 in \cite{hinich2007deformation}.
+the natural fully faithful embedding through which we may regard simplicial groups as simplicial monoids.
+The starting point of the comparison between the rigidification functor and Kan's loop group functor is the following statement about their adjoints, which is Proposition 2.6.2 in \cite{hinich2007deformation}.
 
 \begin{proposition} \label{p:hinich}
 	For any simplicial group $\mathcal{G} \in \sGrp$, there is a natural weak homotopy equivalence
@@ -291,7 +297,7 @@ We have the following comparison between the triangulation of the localized geom
 \begin{corollary} \label{widehatgcobarandG}
 	There is a natural weak equivalence of simplicial monoids
 	\[
-	\mathcal{T} \ccobarE(X) \xrightarrow{\simeq} \kan(X)
+	\triangulate \ccobarE(X) \xrightarrow{\simeq} \kan(X)
 	\]
 	for any reduced simplicial set $X$.
 \end{corollary}
@@ -299,7 +305,7 @@ We have the following comparison between the triangulation of the localized geom
 \begin{proof}
 	After localizing the isomorphism of \cref{Candgcobar} at the $1$-simplices, we obtain a natural isomorphism of simplicial monoids
 	\[
-	\mathcal{T} \ccobarE(X) \cong \localization_{X_1} \! \rigid(X).
+	\triangulate \ccobarE(X) \cong \localization_{X_1} \! \rigid(X).
 	\]
 	Hence, the result follows from \cref{CandG}.
 \end{proof}
@@ -307,18 +313,18 @@ We have the following comparison between the triangulation of the localized geom
  The above statement should be understood as a lift of Hess and Tonk's quasi-isomorphism between the extended cobar construction and the chains on the Kan loop group to the level of simplicial sets.
 In fact, it is explained in \cite{minichello2021path} how the weak equivalence
 \[
-\mathcal{T} \ccobarE(X) \cong \mathcal{L}_{X_1} \! \rigid(X) \to \kan(X)
+\triangulate \ccobarE(X) \cong \mathcal{L}_{X_1} \! \rigid(X) \to \kan(X)
 \]
 obtained in \cref{widehatgcobarandG}
  can be described explicitly in terms of the Szczarba operators used in \cite{hess2010cobar}.
 More precisely, Hess and Tonk's comparison map is precisely the composition
 \[
-\adamsE(X) = \cchains(\ccobarE(X)) \to \schains(\mathcal{T}\ccobarE(X)) \to \schains (\kan(X)),
+\adamsE(X) = \cchains(\ccobarE(X)) \to \schains(\triangulate\ccobarE(X)) \to \schains (\kan(X)),
 \]
 where the first map is determined by the shuffle quasi-isomorphism
 $\cchains(\cube^n)\to \schains \big( (\simplex^1)^{\times n} \big)$ from a cube to its triangulation and the second map is induced by the weak equivalence of \cref{widehatgcobarandG} after applying chains.
 The first map in this composition preserves the coassociative coalgebra structures but not the $\UM$-coalgebra structures.
-Nevertheless, in the following sections, we describe a zig-zag of quasi-isomorphisms of $E_{\infty}$-coalgebras between $\cchains(\ccobarE(X))$ and $\schains(\mathcal{T}\ccobarE(X))$.
+Nevertheless, in the following sections, we describe a zig-zag of quasi-isomorphisms of $E_{\infty}$-coalgebras between $\cchains(\ccobarE(X))$ and $\schains(\triangulate\ccobarE(X))$.
 
 \subsection{Serre--Cartan comparison map}
 
@@ -357,17 +363,17 @@ The $E_{\infty}$-coalgebra structures on the simplicial chains on a triangulated
 \begin{lemma} \label{l:zigzag}
 	For any cubical set $Y$ there are natural quasi-isomorphisms of $\USL$-coalgebras
 	\begin{equation} \label{e:zig-zag of quasi-isos}
-	\schainsUSL(\mathcal{T}Y) \xra{\simeq}
-	\cchainsUSL(\mathcal{U}\mathcal{T}Y) \xleftarrow{\simeq}
+	\schainsUSL(\triangulate Y) \xra{\simeq}
+	\cchainsUSL(\mathcal{U}\triangulate Y) \xleftarrow{\simeq}
 	\cchainsUSL(Y).
 	\end{equation}
 \end{lemma}
 
 \begin{proof}
 	The first map in \eqref{e:zig-zag of quasi-isos} is a quasi-isomorphism of $\USL$-coalgebras by \cref{p:simplicialandcubical}.
-	Whereas the second is induced by the morphism of cubical sets $Y \to \mathcal{U} \mathcal{T} (Y)$ given by the unit of the adjunction
+	Whereas the second is induced by the morphism of cubical sets $Y \to \mathcal{U} \triangulate (Y)$ given by the unit of the adjunction
 	\[
-	\mathcal{T} \colon \cSet \leftrightarrows \sSet :\! \mathcal{U}
+	\triangulate \colon \cSet \leftrightarrows \sSet :\! \mathcal{U}
 	\]
 	of \cref{ss:triangulation and its adjoint}.
 	The unit map is in fact a weak homotopy equivalence of cubical sets since the adjunction defines a Quillen equivalence between the Kan-Quillen model structure and an analogue model structure on $\cSet$ in which all objects are cofibrant \cite{cisinski2006presheaves}.
@@ -376,15 +382,15 @@ The $E_{\infty}$-coalgebra structures on the simplicial chains on a triangulated
 
 \subsection{The extended cobar construction and the chains on the Kan loop group}
 
-Applying \cref{l:zigzag} to $Y = \ccobarE(X)$, we obtain that $\schainsUSL (\mathcal{T} \ccobarE(X))$ and $\cchainsUSL(\ccobarE(X)) = \adamsE_{\USL}(X)$ are quasi-isomorphic via a zig-zag of natural maps of $\USL$-coalgebras.
+Applying \cref{l:zigzag} to $Y = \ccobarE(X)$, we obtain that $\schainsUSL (\triangulate \ccobarE(X))$ and $\cchainsUSL(\ccobarE(X)) = \adamsE_{\USL}(X)$ are quasi-isomorphic via a zig-zag of natural maps of $\USL$-coalgebras.
 By \cref{widehatgcobarandG} we have a weak equivalence of simplicial monoids
 \[
-\mathcal{T}\ccobarE(X) \xrightarrow{\simeq} \kan(X)
+\triangulate \ccobarE(X) \xrightarrow{\simeq} \kan(X)
 \]
 for any reduced simplicial set $X$.
 By naturality, we have an induced quasi-isomorphism of $\USL$-coalgebras
 \[
-\schainsUSL \big( \mathcal{T} \ccobarE(X) \big) \xra{\simeq}
+\schainsUSL \big( \triangulate \ccobarE(X) \big) \xra{\simeq}
 \schainsUSL (\kan(X)).
 \]
 Therefore, $\adamsE_{\USL}(X)$ and $\schainsUSL(\kan(X))$ are quasi-isomorphic through a zig-zag of natural maps of $\USL$-coalgebras, as desired.
