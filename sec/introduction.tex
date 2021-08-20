@@ -1,8 +1,10 @@
 
 \section{Introduction}
 
-The \textit{homotopy hypothesis}, a cornerstone of modern algebraic topology, postulates an equivalence between the theory of topological spaces, considered up to weak homotopy equivalence, and the study of certain categorical structures in which every morphism is invertible in a derived sense.
-In the strict (non-derived) context, it is well known that categories with only invertible morphisms having a single object are equivalent to groups, which leads to a particular embodiment of this principle recasting the homotopy theory of pointed topological spaces in terms of topological groups.
+%The \textit{homotopy hypothesis}, a cornerstone of modern algebraic topology, postulates an equivalence between the theory of topological spaces, considered up to weak homotopy equivalence, and the study of certain categorical structures in which every morphism is invertible in a derived sense.
+%In the strict (non-derived) context, it is well known that categories with only invertible morphisms having a single object are equivalent to groups, which leads to a particular embodiment of this principle recasting the homotopy theory of pointed topological spaces in terms of topological groups.
+
+One of the many connections between topology and algebra is given by the equivalence between the homotopy theory of pointed spaces and that of topological groups.
 More concretely, associated to any pointed topological space $(Z,z)$ one may naturally associate a topological monoid $\loops_z Z$ -- its \textit{based loop space} -- whose points are pairs $(\gamma, r)$ where $r \in \R_{\geq 0}$ and $\gamma \colon [0,r] \to Z$ is a continuous map with $\gamma(0) = z = \gamma(r)$.
 We consider $\loops_z Z$  equipped with the compact-open topology and a continuous multiplication given by \textit{concatenation} of loops, whose identity element is the \textit{constant loop} $(c_r,0)$.
 This construction gives rise to a functor
@@ -61,16 +63,16 @@ His insights are best explained in terms of \textit{cubical sets} (with connecti
 \end{tikzcd}
 \]
 restricted by certain relations \cite{brown1981cubes}.
-With the Day convolution monoidal structure on $\cSet$, the singular complex functor $\cSing \colon \cSet \to \Top$ and the functor of (normalized) chains $\cchains \colon \cSet \to \Ch$ are both monoidal, which explains the monoid structure on
+With the Day convolution monoidal structure on $\cSet$, the cubical singular complex functor $\cSing \colon \cSet \to \Top$ and the functor of (normalized) chains $\cchains \colon \cSet \to \Ch$ are both monoidal, which explains the monoid structure on
 \[
 \cSchains(\loops_z Z) \defeq \cchains \cSing(\loops_z Z).
 \]
 Furthermore, cubical chains are equipped with a natural coalgebra structure coming from Serre's chain approximation to the diagonal.
 This structure lifts $\cchains$ to the category of coalgebras as a monoidal functor $\cchainsA$ which, in particular, makes $\cSchainsA(\loops_z Z)=\cchainsA\cSing(\loops_z Z)$ into a bialgebra, i.e., a monoid in $\coAlg$.
 
-In \cite{baues1998hopf}, Baues reinterpreted Adams' algebraic construction at a deeper geometrical level allowing him to endow $\cobar \sSchainsA(Z,z)$ with the structure of a bialgebra, and to show that Adams' comparison map $\theta_Z$ is a quasi-isomorphism of bialgebras when $Z$ is simply-connected.
+In \cite{baues1998hopf}, Baues reinterpreted Adams' algebraic construction at a deeper geometric level allowing him to endow $\cobar \sSchainsA(Z,z)$ with the structure of a bialgebra, and to show that Adams' comparison map $\theta_Z$ is a quasi-isomorphism of bialgebras when $Z$ is simply-connected.
 
-The simplicial singular complex of a topological space is an example of an object in $\sSet^0$, the category of ($0$-)reduced simplicial sets.
+The simplicial singular complex  $\sSing(Z,z)$ of a pointed topological space $(Z,z)$ is an example of an object in $\sSet^0$, the category of ($0$-)reduced simplicial sets.
 We interpret Baues' geometric cobar construction, originally defined for $1$-reduced simplicial sets, in more category-theoretic terms as a functor
 \begin{equation} \label{e:cubical cobar construction}
 \ccobar \colon \sSet^0 \to \Mon_{\cSet}
@@ -126,11 +128,11 @@ We condense this discussion in our main result.
 Furthermore, for any pointed space $(Z,z)$, Adams' comparison map $\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z)$ is a quasi-isomorphism of $E_{\infty}$-bialgebras or, more specifically, of monoids in $\coAlg_\UM$.
 \end{theorem}
 
-We turn now to a second result in this work, which is concerned with a classical combinatorial model for the based loop space described by Kan in the framework of reduced simplicial sets.
+We turn now to a second result in this work, which is concerned with a classical combinatorial model for the based loop space described by Kan in the framework of simplicial sets.
 
 Let us start by recalling that reduced simplicial sets model the homotopy theory of pointed topological spaces.
 This was established by Quillen using the language of model categories, basing his comparison on the \textit{geometric realization} and \textit{simplicial singular complex} functors.
-The homotopy hypothesis has a manifestation in this combinatorial model as well; stating that the homotopy theory of reduced simplicial sets is equivalent to that of \textit{simplicial groups}, functors from the opposite of the simplex category to the category of groups.
+The equivalence between the homotopy theories of pointed spaces and topological groups may be reformulated by stating that the homotopy theory of reduced simplicial sets is equivalent to that of \textit{simplicial groups}, functors from the opposite of the simplex category to the category of groups.
 For any reduced simplicial set, a combinatorial analogue of the based loop space is given by the \textit{Kan loop group construction}, a functor
 \[
 \kan \colon \sSet^0 \to \sGrp
@@ -205,22 +207,14 @@ In the work of Fresse, finiteness assumptions and restrictions on the fundamenta
 The results we have surveyed establish the existence of higher structures on the bar and cobar constructions associated to reduced simplicial sets.
 We now review part of the history of the problem of describing such structures effectively, and our contribution to it.
 Kadeishvili described explicitly Steenrod cup-$i$ coproducts on $\cobar \schainsA(X)$ compatible with its monoid structure \cite{kadeishvili1999coproducts, kadeishvili2003cupi}.
-Kadeishvili, as Baues, used cubical methods to define these operations, and to compare them, in the $1$-connected setting, with cup-$i$ coproducts extending the Serre coalgebra structure on the cubical singular chains on the based loop space.
-We can regard Kadeishvili's operations as part of the arity 2 action of our model $\UM$ for the $E_{\infty}$-operad.
-Taking Kadeishvili's cup-$i$ construction as starting point, Fresse provided the bar construction of an algebra over the surjection operad with the structure of an algebra over the Barratt–Eccles operad \cite{fresse2003hopf}.
-Fresse applies this construction to the surjection algebra structure of the cochains on a simplicial set $X$ and compares the resulting Baratt-Eccles algebra to the singular cochains on the based loop space, under restrictions on the fundamental group of $X$.
-Our results in the first part of the present article are similar to Fresse's.
-However, we make use of coalgebras instead of algebras, which allows us to relate our constructions to the based loop space in the general non-simply connected case.
-Additionally, our approach is grounded on and further develops the cubical perspective at the heart of Adams' and Baues' seminal papers.
+Kadeishvili, as Baues, used cubical methods to define these operations and to compare them, in the $1$-connected setting, to cup-$i$ coproducts extending the Serre coalgebra structure on the cubical singular chains on the based loop space.
+Kadeishvili's cup-$i$ coproducts can be obtained from the arity 2 part of our action of $\UM$ on the cobar construction.
+Taking Kadeishvili's work as a starting point, Fresse provided the bar construction of an algebra over the surjection operad with the structure of a comonoid in the category of algebras over the Baratt-Eccles operad \cite{fresse2003hopf}.
+Fresse then proves that, for any simplicial set $X$ with suitable restrictions on its fundamental group and finiteness assumptions on its cohomology, the bar construction of the surjection algebra of simplicial cochains on $X$ is quasi-isomorphic to the singular cochains on the based loop space of $|X|$ as an $E_{\infty}$-algebra.
 
-We also emphasize that our approach allows us to show that the cobar construction of the chains on a pointed space and the chains on the based loop space are quasi-isomorphic as $E_{\infty}$-bialgebras, i.e. as monoids in the category of $E_{\infty}$-coalgebras, and not just as $E_{\infty}$-coalgebras. To the best of our knowledge, this result is new.
-
-\anibal{This makes it sound that the previous as $E_\infty$-coalgebras this was done before.}
-
-Taking into account the monoid structure of the based loop space is essential to our perspective of modeling homotopy types in terms of categorical structures, as discussed in the introduction.
-
-\anibal{I am not sure if this is a good last sentence. PS, this IS the introduction (referring to the last fragment)}
-
+Our results in the first part of the present article are similar to those obtained by Fresse in \cite{fresse2003hopf} and described above.
+However, we make use of coalgebras instead of algebras, which allows us to relate our constructions to the based loop space without imposing restrictions on the underlying homotopy type.
+Furthermore, by grounding our approach on the cubical perspective at the heart of Adams' and Baues' seminal papers, we are also able to relate the cobar construction and the singular chains on the based loop space as $E_{\infty}$-bialgebras, i.e. as monoids in the category of $E_{\infty}$-coalgebras, and not just as $E_{\infty}$-coalgebras.
 
 \subsection*{Outline}
 
