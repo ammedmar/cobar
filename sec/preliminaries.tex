@@ -110,7 +110,7 @@ We denote the full subcategory of reduced simplicial sets by $\sSet^0$.
 
 For non-negative integers $m$ and $n$, let $\simplex_{\deg} \big( [m], [n] \big)$ be the subset of \textit{degenerate morphisms} in $\simplex \big( [m], [n] \big)$, i.e., those of the form $\sigma_i \circ \tau$ with $\tau$ any morphism in $\simplex \big( [m], [n+1] \big)$.
 The functor of \textit{simplicial chains} $\schains \colon \sSet \to \Ch$ is the Yoneda extension of the functor $\simplex \to \Ch$ defined next.
-To an object $[n]$ it assigns the chain complex having in degree $m$ the module
+It assigns to an object $[n]$ the chain complex having in degree $m$ the module
 \[
 \frac{\k\{\simplex \big( [m], [n] \big) \}}{\k\{\simplex_{\deg} \big( [m], [n] \big) \}},
 \]
@@ -210,11 +210,11 @@ For any cubical set $Y$ we write, as usual, $Y_n$ instead of $Y(2^n)$.
 
 For non-negative integers $m$ and $n$, let $\cube_{\deg}(2^m, 2^n)$ be the subset of \textit{degenerate morphisms} in $\cube(2^m, 2^n)$, i.e., those of the form $\sigma_i \circ \tau$ or $\gamma_i \circ \tau$ with $\tau$ any morphism in $\cube(2^m, 2^{n+1})$.
 The functor of (cubical) \textit{chains} $\cchains \colon \cSet \to \Ch$ is the Yoneda extension of the functor $\cube \to \Ch$ defined next.
-To an object $2^n$ it assigning the chain complex having in degree $m$ the module
+It assigns to an object $2^n$ the chain complex having in degree $m$ the module
 \[
 \frac{\k\{\cube(2^m, 2^n)\}}{\k\{\cube_{\deg}(2^m, 2^n)\}}
 \]
-and differential defined by
+and differential induced by
 \[
 \partial (\id_{2^n}) = \sum_{i=1}^{n} \ (-1)^i \
 \big(\delta_i^1 - \delta_i^0 \big).
