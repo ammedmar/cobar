@@ -1,18 +1,21 @@
 \usepackage{amssymb}
 \usepackage{tikz-cd}
-\usepackage{mathbbol}
+\usepackage{mathbbol} % changes \mathbb{} and adds more support
+\usepackage[shortcuts]{extdash} % hyphenation, e.g. non\-/constructively
+\usepackage{csquotes}
 
 % bibliography
-\usepackage[backend=biber,
+\usepackage[
+	backend=biber,
 	style=alphabetic,
 	backref=true,
 	url=false,
 	doi=false,
 	isbn=false,
-	eprint=false
-	]{biblatex}
+	eprint=false]{biblatex}
 
-\renewbibmacro{in:}{}
+\renewbibmacro{in:}{}  % don't display "in:" before the journal name
+\AtEveryBibitem{\clearfield{pages}}  % don't show page numbers
 
 \addbibresource{aux/bibliography.bib}
 \addbibresource{aux/usualpapers.bib}
@@ -44,7 +47,8 @@
 }
 
 % references
-\usepackage[bookmarks=true,
+\usepackage[
+	bookmarks=true,
 	linktocpage=true,
 	bookmarksnumbered=true,
 	breaklinks=true,
