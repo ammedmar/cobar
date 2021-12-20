@@ -19,15 +19,15 @@ The construction is based on a collection of continuous maps
 \[
 \theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n),
 \]
-where $P(\gsimplex^n;0,n)$ denotes the topological space of Moore paths in $\gsimplex^n$ from the $0$-th vertex $v_0$ to the $n$-th vertex $v_n$.
+where $P(\gsimplex^n;0,n)$ denotes the topological space of Moore paths in $\gsimplex^n$ from the $0^\th$ vertex $v_0$ to the $n^\th$ vertex $v_n$.
 These maps are constructed inductively so that following equations are satisfied:
 \begin{enumerate}
 	\item $\theta_1(0)\colon \gcube^1 \to \gsimplex^1$ is the path $\theta_1(0)(s) = sv_1 +(1-s)v_0$.
 	\item $\theta_n \circ e_j^0 = P(d_j) \circ \theta_{n-1}$.
 	\item $\theta_n \circ e_j^1 = (P(f_j) \circ \theta_j) \cdot (P(l_{n-j}) \circ \theta_{n-j})$.
 \end{enumerate}
-In the above equations $f_j\colon \gsimplex^j \rightarrow \gsimplex^n$ and $l_{n-j}\colon \gsimplex^{n-j} \rightarrow \gsimplex^n$ denote the first $j$-th face map and last $(n-j)$-th face map of $\gsimplex^n$, respectively, and
-$e_j^0,e_j^1\colon \gcube^{n-1} \rightarrow \gcube^{n}$ denote the $j$-th bottom and top cubical face maps, respectively.
+In the above equations $f_j\colon \gsimplex^j \rightarrow \gsimplex^n$ and $l_{n-j}\colon \gsimplex^{n-j} \rightarrow \gsimplex^n$ denote the first $j^\th$ face map and last $(n-j)^\th$ face map of $\gsimplex^n$, respectively, and
+$e_j^0,e_j^1\colon \gcube^{n-1} \rightarrow \gcube^{n}$ denote the $j^\th$ bottom and top cubical face maps, respectively.
 For any continuous map of spaces $f \colon Z \to Z'$, we denote by $P(f) \colon P(Z) \to P(Z')$ the induced map at the level of spaces of paths.
 Given any two composable paths $\alpha$ and $\beta$, the dot symbol in $\alpha \cdot \beta$ denotes the composition (or concatenation) of paths.
 
@@ -72,8 +72,8 @@ together with $[0]$ serving as the monoidal unit.
 
 The morphism of $\Nec$ are generated through the monoidal structure by the following four types of morphisms:
 \begin{enumerate}
-	\item $\partial^j \colon [n-1] \to [n]$ for $j = 1, \dots, n-1$
-	\item $\Delta_{[j], [n-j]} \colon [j] \vee [n-j] \to [n]$ for $j = 1, \dots, n-1$
+	\item $\partial^j \colon [n-1] \to [n]$ for $j = 1, \dots, n-1$,
+	\item $\Delta_{[j], [n-j]} \colon [j] \vee [n-j] \to [n]$ for $j = 1, \dots, n-1$,
 	\item $s^j \colon [n+1] \to [n]$ for $j = 0, \dots, n$ and $n>0$, and
 	\item $s^0 \colon [1] \to [0]$.
 \end{enumerate}
