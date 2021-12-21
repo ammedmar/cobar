@@ -9,8 +9,7 @@ Consequently, we may say that $\loops_z Z$ has inverses \textit{up to homotopy},
 Furthermore, $\loops_z Z$ is weak homotopy equivalent to a topological group where the group identities hold strictly \cite{milnor1956bundles}, \cite{berger1995loops}.
 The pointed space $(Z,z)$ may then be recovered, up to weak homotopy equivalence, from the weak homotopy type of the topological monoid $\loops_z Z$ through the \textit{classifying space}, or \textit{delooping}, construction.
 
-A principal goal of algebraic topology, if not its \textit{raison d'\^{e}tre}, is to encode the theory of topological spaces up to some specified notion of equivalence in terms of combinatorial or algebraic objects, allowing for the effective analysis of topological properties quantitatively.
-We will focus on spaces up to weak homotopy equivalence, where a first example of an algebraization procedure is provided by the functor of simplicial or cubical singular chains
+One of the principal goals of algebraic topology is to encode the theory of topological spaces up to some specified notion of equivalence in terms of combinatorial or algebraic objects, allowing for the effective analysis of topological properties. We will focus on spaces up to weak homotopy equivalence, where a first example of an algebraization procedure is provided by the functor of simplicial or cubical singular chains
 \[
 \Schains \colon \Top \to \Ch,
 \]
@@ -60,7 +59,11 @@ With the Day convolution monoidal structure on $\cSet$, the cubical singular com
 \cSchains(\loops_z Z) \defeq \cchains \cSing(\loops_z Z).
 \]
 Furthermore, cubical chains are equipped with a natural coalgebra structure coming from Serre's chain approximation to the diagonal.
-This structure lifts $\cchains$ to the category of coalgebras as a monoidal functor $\cchainsA$ which, in particular, makes $\cSchainsA(\loops_z Z)=\cchainsA\cSing(\loops_z Z)$ into a bialgebra, i.e., a monoid in $\coAlg$.
+This structure provides a lift of $\cchains$ to the category of coalgebras via a monoidal functor 
+\[
+\cchainsA: \cSet \to \coAlg.
+\]
+In particular, this construction makes $\cSchainsA(\loops_z Z)=\cchainsA\cSing(\loops_z Z)$ into a bialgebra, i.e., a monoid in $\coAlg$.
 
 In \cite{baues1998hopf}, Baues reinterpreted Adams' algebraic construction at a deeper geometric level allowing him to endow $\cobar \sSchainsA(Z,z)$ with the structure of a bialgebra, and to show that Adams' comparison map $\theta_Z$ is a quasi-isomorphism of bialgebras when $Z$ is simply-connected.
 
@@ -94,11 +97,14 @@ In other words, Baues' lifted Adams' cobar construction $\cobar \schainsA$ so th
 \end{tikzcd}
 \]
 
-Returning to our contribution, the first result presented in this article is the construction of a lift of $\cchainsA \ccobar$ to the category of monoids in $\coAlg_\UM$, where $\coAlg_\UM$ is the category of coalgebras over the operad $\UM$ introduced via a finitely presented prop in \cite{medina2020prop1}.
+The first result presented in this article is the construction of a lift of $\cchainsA \ccobar: \sSet^0 \to \Mon_{\coAlg}$ to the category of monoids in $\coAlg_\UM$, where $\coAlg_\UM$ is the category of coalgebras over the operad $\UM$ introduced via a finitely presented prop in \cite{medina2020prop1}.
 This is a model of the $E_\infty$-operad that explicitly acts on both simplicial and cubical chains.
 For this lift to be meaningful, we first need to define a monoidal structure on $\coAlg_\UM$.
 We do so by introducing a Hopf structure on $\UM$, that is to say, by making it into an operad over $\coAlg$, a structure that has other potential applications \cite{livernet2008hopf}.
-Once we have shown that $\coAlg_\UM$ is a monoidal category, we prove the main technical result of this work; that the lift $\cchainsUM \colon \cSet \to \coAlg_\UM$ of $\cchainsA$ defined in \cite{medina2021cubical} is monoidal.
+Once we have shown that $\coAlg_\UM$ is a monoidal category, we prove the main technical result of this work; that the lift 
+\[\cchainsUM \colon \cSet \to \coAlg_\UM
+\]
+of $\cchainsA$ defined in \cite{medina2021cubical} is monoidal.
 
 This has consequences for both algebraic models for the based loop space considered so far.
 Let $(Z,z)$ be a pointed space and $X$ a reduced simplicial set, for example $X = \sSing(Z,z)$.
@@ -126,9 +132,9 @@ is a quasi-isomorphism of $E_{\infty}$-bialgebras for any pointed space $(Z,z)$.
 
 We turn now to a second result in this work, which is concerned with a classical combinatorial model for the based loop space described by Kan in the framework of simplicial sets.
 
-Let us start by recalling that reduced simplicial sets model the homotopy theory of pointed topological spaces.
+Let us start by recalling that reduced simplicial sets model the homotopy theory of pointed path-connected topological spaces.
 This was established by Quillen using the language of model categories, basing his comparison on the \textit{geometric realization} and \textit{simplicial singular complex} functors.
-The equivalence between the homotopy theories of pointed spaces and topological groups may be reformulated by stating that the homotopy theory of reduced simplicial sets is equivalent to that of \textit{simplicial groups}, functors from the opposite of the simplex category to the category of groups.
+The equivalence between the homotopy theories of pointed connected spaces and topological groups may be reformulated by stating that the homotopy theory of reduced simplicial sets is equivalent to that of \textit{simplicial groups}, functors from the opposite of the simplex category to the category of groups.
 For any reduced simplicial set, a combinatorial analogue of the based loop space is given by the \textit{Kan loop group construction}, a functor
 \[
 \kan \colon \sSet^0 \to \sGrp
@@ -154,7 +160,7 @@ Using Baues’ geometric cobar construction, Franz described in \cite{franz2020s
 \[
 \adamsE_{\!\As} \colon \sSet^0 \to \Mon_{\coAlg}
 \]
-and showed using Hess--Tonks' comparison map that $\adamsEA(X)$ and $\schains(\kan(X))$ are quasi-isomorphic as monoids in $\coAlg$.
+and showed that Hess--Tonks' comparison map preserves the coalgebra structures. %$\adamsEA(X)$ and $\schains(\kan(X))$ are quasi-isomorphic as monoids in $\coAlg$.
 
 Using similar methods to those leading to \cref{t:1st main thm in the intro}, we construct in \cref{s:ahatum} a further lift
 \[
@@ -166,8 +172,8 @@ Then, we turn to the problem of comparing $\adamsEUM(X)$ and $\schainsUM(\kan(X)
 We begin by observing that $\schainsUM(\kan(X))$ is not an $E_\infty$-bialgebra.
 This is because the action on simplicial chains of the operad $\UM$, or any other known $E_\infty$-operad, is not compatible with the lax monoidal structure on $\chains$ defined by the Eilenberg-Zilber shuffle map.
 We underscore this as another important reason for the consideration of cubical chains, where the action of $\UM$ is monoidal (\cref{l:cubical e-infty chains are monoidal}).
-Hence, the best we could hope for is for $\adamsEUM(X)$ and $\schainsUM(\kan(X))$ to be quasi-isomorphic as $\UM$-coalgebras.
-We accomplish this by constructing a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras connecting $\adamsE(X)$ and $\schains(\kan(X))$ for any reduced simplicial set $X$.
+%Hence, the best we could hope for is for $\adamsEUM(X)$ and $\schainsUM(\kan(X))$ to be quasi-isomorphic as $\UM$-coalgebras.
+Nevertheless, we construct a zig-zag of natural quasi-isomorphisms of $E_{\infty}$-coalgebras connecting $\adamsE(X)$ and $\schains(\kan(X))$ for any reduced simplicial set $X$.
 In order to make this into a precise statement, we must take into account a technical subtlety and consider both $\adamsE(X)$ and $\schains(\kan(X))$ as coalgebras over a suboperad $\USL \subseteq \UM$ which is also a model for the $E_\infty$-operad.
 We denote the composition of $\adamsEUM$ and $\schainsUM$ with the forgetful functor $\coAlg_\UM \to \coAlg_\USL$ by $\adamsE_\USL$ and $\schainsUSL$, respectively.
 Our second main result is the following.

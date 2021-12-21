@@ -46,7 +46,7 @@ between the associated categories of monoids.
 \subsection{Serre coalgebra} \label{ss:serre coalgebra sym monoidal}
 
 Recall that both $\Ch$ and $\coAlg$ are symmetric monoidal categories.
-If $\cSet$ is equipped with the Day convolution monoidal structure (\cref{ss:day convolution}), then the functors $\cchains$ and its lift $\cchainsA$ are symmetric monoidal.
+If $\cSet$ is equipped with the Day convolution monoidal structure (\cref{ss:day convolution}), then the functors $\cchains$ and its lift $\cchainsA$ are monoidal.
 Together with straightforward computations, these statements follow from the fact that the chain complexes $\chains(\cube^p) \otimes \chains(\cube^q)$ and $\chains(\cube^{p+q})$ are canonically isomorphic for any $p, q \geq 0$.
 
 For later reference we record the following consequence of the previous claims and the fact that, for any coalgebra, the braiding $x \otimes y \mapsto (-1)^{\bars{x} \bars{y}} y \otimes x$ is a morphism of coalgebras.
@@ -179,11 +179,11 @@ We remark that this Hopf algebra structure is obtained by extending the assignme
 		\hfill
 		\begin{tikzcd}
 		\productcounit \arrow[r, "\Delta_\M"] \arrow[d, <->] &[-0pt] \counit\ \counit \, \otimes \productcounit + \productcounit \otimes \, \counit\ \counit \arrow[d, <->] \\
-		0 \arrow[r, "\Delta_\M"] & \ 0,
+		0 \arrow[r, "\Delta_\M"] & \ 0.
 		\end{tikzcd}
 		\hspace*{.6cm}
 	\end{center}
-	and it is a chain map since
+	It is a chain map since
 	\begin{center}
 		\qquad
 		\begin{tikzcd}
@@ -205,7 +205,7 @@ We remark that this Hopf algebra structure is obtained by extending the assignme
 	One can check similarly that $\varepsilon_\M$ is a well defined morphism of $\S$-bimodules.
 
 	Since we are using the Serre coalgebra structure, for each biarity $(m,n)$ we obtain a coalgebra.
-	Furthermore, $\Delta_\M$ is compatible with the composition structure since for any pair of characteristic maps $\iota_\Gamma$ and $\iota_{\Gamma^\prime}$, the chain map $\iota_\Gamma \otimes \iota_{\Gamma^\prime}$ is a characteristic map for any composition of $\Gamma$ and $\Gamma^\prime$ with the induce order on vertices.
+	Furthermore, $\Delta_\M$ is compatible with the composition structure since for any pair of characteristic maps $\iota_\Gamma$ and $\iota_{\Gamma^\prime}$, the chain map $\iota_\Gamma \otimes \iota_{\Gamma^\prime}$ is a characteristic map for any composition of $\Gamma$ and $\Gamma^\prime$ with the induced order on vertices.
 	The compatibility of $\epsilon_\M$ is immediate.
 \end{proof}
 
