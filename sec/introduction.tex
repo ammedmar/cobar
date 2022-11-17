@@ -64,7 +64,7 @@ This structure provides a lift of $\cchains$ to the category of coalgebras via a
 \[
 \cchainsA \colon \cSet \to \coAlg.
 \]
-In particular, this construction makes $\cSchainsA(\loops_z Z)=\cchainsA\cSing(\loops_z Z)$ into a bialgebra, i.e., a monoid in $\coAlg$.
+In particular, this construction makes $\cSchainsA(\loops_z Z) = \cchainsA\cSing(\loops_z Z)$ into a bialgebra, i.e., a monoid in $\coAlg$.
 
 In \cite{baues1998hopf}, Baues reinterpreted Adams' algebraic construction at a deeper geometric level allowing him to endow $\cobar \sSchainsA(Z,z)$ with the structure of a bialgebra, and to show that Adams' comparison map $\theta_Z$ is a quasi-isomorphism of bialgebras when $Z$ is simply-connected.
 
@@ -103,9 +103,10 @@ This is a model of the $E_\infty$-operad that explicitly acts on both simplicial
 For this lift to be meaningful, we first need to define a monoidal structure on $\coAlg_\UM$.
 We do so by introducing a Hopf structure on $\UM$, that is to say, by making it into an operad over $\coAlg$, a structure that has other potential applications \cite{livernet2008hopf}.
 Once we have shown that $\coAlg_\UM$ is a monoidal category, we prove the main technical result of this work; that the lift
-\[\cchainsUM \colon \cSet \to \coAlg_\UM
+\[
+\cchainsUM \colon \cSet \to \coAlg_\UM
 \]
-of $\cchainsA$ defined in \cite{medina2021cubical} is monoidal.
+of $\cchainsA$ defined in \cite{medina2022cube_einfty} is monoidal.
 
 This has consequences for both algebraic models for the based loop space considered so far.
 Let $(Z,z)$ be a pointed space and $X$ a reduced simplicial set, for example $X = \sSing(Z,z)$.
@@ -192,7 +193,7 @@ Our second main result is the following.
 		& \Mon_{\Ch}.
 	\end{tikzcd}
 	\]
-	Furthermore, $\adamsE_\USL(X)$ and $\schainsUSL(\kan(X))$ are quasi-isomorphic as $E_\infty$-coalg-ebras for any reduced simplicial set $X$.
+	Furthermore, $\adamsE_\USL(X)$ and $\schainsUSL(\kan(X))$ are quasi-isomorphic as $E_\infty$-coalgebras for any reduced simplicial set $X$.
 \end{theorem}
 
 We remark that the comparison in the previous theorem is through a zig-zag of $E_\infty$-coalgebra quasi-isomorphisms, and that the Hess--Tonks comparison map does not preserve this structure.
@@ -213,7 +214,7 @@ We now review part of the history of the problem of describing such structures e
 Kadeishvili described explicitly Steenrod cup-$i$ coproducts on $\cobar \schainsA(X)$ compatible with its monoid structure \cite{kadeishvili1999coproducts, kadeishvili2003cupi}.
 Kadeishvili, as Baues, used cubical methods to define these operations and to compare them, in the $1$-connected setting, to cup-$i$ coproducts extending the Serre coalgebra structure on the cubical singular chains on the based loop space.
 Kadeishvili's cup-$i$ coproducts can be obtained from the arity 2 part of our action of $\UM$ on the cobar construction.
-Taking Kadeishvili's work as a starting point, Fresse provided the bar construction of an algebra over the surjection operad with the structure of a comonoid in the category of algebras over the Baratt-Eccles operad \cite{fresse2003hopf}.
+Taking Kadeishvili's work as a starting point, Fresse provided the bar construction of an algebra over the surjection operad with the structure of a comonoid in the category of algebras over the Barratt--Eccles operad \cite{fresse2003hopf}.
 Fresse then proves that, for any simplicial set $X$ with suitable restrictions on its fundamental group and finiteness assumptions on its cohomology, the bar construction of the surjection algebra of simplicial cochains on $X$ is quasi-isomorphic to the singular cochains on the based loop space of $|X|$ as an $E_{\infty}$-algebra.
 
 Our results in the first part of the present article are similar to those obtained by Fresse in \cite{fresse2003hopf} and described above.
@@ -224,6 +225,6 @@ Furthermore, by grounding our approach on the cubical perspective at the heart o
 
 In \cref{s:preliminaries}, we recall well known algebraic and categorical definitions and constructions that will be used throughout this article.
 We review, in \cref{s:operads and props}, the foundations of the theory of operads and props with the goal of recalling the $E_{\infty}$-operad $\UM$ and its actions on simplicial and cubical chains.
-We construct a Hopf operad structure on $\UM$ in \cref{s:monoidal}, and show that the cubical chains functor from cubical sets to $\UM$-coalgeras is monoidal.
+We construct a Hopf operad structure on $\UM$ in \cref{s:monoidal}, and show that the cubical chains functor from cubical sets to $\UM$-coalgebras is monoidal.
 We prove \cref{t:1st main thm in the intro} in \cref{s:theorem1} using Baues' cubical cobar construction \eqref{e:cubical cobar construction} and the $\UM$-structure on cubical chains.
 Finally, in \cref{s:theorem2}, we review some facts and constructions from homotopy theory and use them to prove \cref{t:2nd main thm in the intro}.
