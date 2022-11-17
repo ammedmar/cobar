@@ -148,16 +148,16 @@ It follows directly from the definitions that $\adamsEA$ is a lift of $\adamsE$,
 This discussion constitutes the first half of \cref{t:2nd main thm in the intro}, which we collect in the following.
 
 \begin{lemma} \label{l:AhatUM}
-The functor $\adamsEUM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$ fits into a commutative diagram
+	The functor $\adamsEUM \colon \sSet^0 \to \Mon_{\coAlg_\UM}$ fits into a commutative diagram
 	\[
 	\begin{tikzcd}[row sep=small]
-	& \Mon_{\coAlg_\UM} \arrow[d] \\
-	& \Mon_{\coAlg} \arrow[d] \\
-	\sSet^0
-	\arrow[r, "\adamsE"', ]
-	\arrow[ru, "\adamsEA"', out=45, in=180]
-	\arrow[ruu, "\adamsEUM", out=90, in=180]
-	& \Mon_{\Ch}.
+		& \Mon_{\coAlg_\UM} \arrow[d] \\
+		& \Mon_{\coAlg} \arrow[d] \\
+		\sSet^0
+		\arrow[r, "\adamsE"', ]
+		\arrow[ru, "\adamsEA"', out=45, in=180]
+		\arrow[ruu, "\adamsEUM", out=90, in=180]
+		& \Mon_{\Ch}.
 	\end{tikzcd}
 	\]
 \end{lemma}
@@ -311,13 +311,13 @@ We have the following comparison between the triangulation of the localized geom
 	Hence, the result follows from \cref{CandG}.
 \end{proof}
 
- The above statement should be understood as a lift of Hess and Tonk's quasi-isomorphism between the extended cobar construction and the chains on the Kan loop group to the level of simplicial sets.
+The above statement should be understood as a lift of Hess and Tonk's quasi-isomorphism between the extended cobar construction and the chains on the Kan loop group to the level of simplicial sets.
 In fact, it is explained in \cite{minichello2021path} how the weak equivalence
 \[
 \triangulate \ccobarE(X) \cong \mathcal{L}_{X_1} \! \rigid(X) \to \kan(X)
 \]
 obtained in \cref{widehatgcobarandG}
- can be described explicitly in terms of the Szczarba operators used in \cite{hess2010cobar}.
+can be described explicitly in terms of the Szczarba operators used in \cite{hess2010cobar}.
 More precisely, Hess and Tonk's comparison map is precisely the composition
 \[
 \adamsE(X) = \cchains(\ccobarE(X)) \to \schains(\triangulate\ccobarE(X)) \to \schains (\kan(X)),
@@ -328,6 +328,8 @@ The first map in this composition preserves the coassociative coalgebra structur
 Nevertheless, in the following sections, we describe a zig-zag of quasi-isomorphisms of $E_{\infty}$-coalgebras between $\cchains(\ccobarE(X))$ and $\schains(\triangulate\ccobarE(X))$.
 
 \subsection{Serre--Cartan comparison map}
+
+\anibal{Update with new version of cubical paper}
 
 We review from \cite{medina2021cubical} the relationship between the $E_\infty$-structures defined on simplicial chains in \cref{ss:e-infty on simplicial} and on cubical chains in \cref{ss:e-infty on cubical}.
 
@@ -364,9 +366,9 @@ The $E_{\infty}$-coalgebra structures on the simplicial chains on a triangulated
 \begin{lemma} \label{l:zigzag}
 	For any cubical set $Y$ there are natural quasi-isomorphisms of $\USL$-coalgebras
 	\begin{equation} \label{e:zig-zag of quasi-isos}
-	\schainsUSL(\triangulate Y) \xra{\simeq}
-	\cchainsUSL(\mathcal{U}\triangulate Y) \xleftarrow{\simeq}
-	\cchainsUSL(Y).
+		\schainsUSL(\triangulate Y) \xra{\simeq}
+		\cchainsUSL(\mathcal{U}\triangulate Y) \xleftarrow{\simeq}
+		\cchainsUSL(Y).
 	\end{equation}
 \end{lemma}
 

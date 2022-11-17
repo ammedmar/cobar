@@ -12,7 +12,7 @@ The second goal is obtained by factoring Adams' comparison map through this cubi
 
 In \cite{adams1956cobar}, Adams constructed a natural map of algebras
 \begin{equation} \label{e:adams map 2}
-\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z),
+	\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z),
 \end{equation}
 for any pointed topological space $(Z,z)$.
 The construction is based on a collection of continuous maps
@@ -82,7 +82,7 @@ Consider the functor
 \[
 \mathcal{S} \colon \Nec \to \sSet_{*,*}
 \]
- induced by sending any necklace $T = [n_1] \vee \dots \vee[n_k]$ to the simplicial set
+induced by sending any necklace $T = [n_1] \vee \dots \vee[n_k]$ to the simplicial set
 \[
 \mathcal{S}(T) = \simplex^{n_1} \vee \dots \vee \simplex^{n_k},
 \]
@@ -210,11 +210,11 @@ This discussion proves the first half of \cref{t:1st main thm in the intro}, whi
 	The functor $\cchainsUM$ is monoidal and fits in the following diagram commuting up to a natural isomorphism:
 	\[
 	\begin{tikzcd}
-	& \Mon_{\coAlg_\UM} \arrow[d] \\
-	\Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180] \arrow[r, "\cchainsA"]
-	& \Mon_{\coAlg} \arrow[d] \\
-	\sSet^0 \arrow[r, "\cobar \schainsA"] \arrow[u, "\ccobar"]
-	& \Mon_{\Ch}.
+		& \Mon_{\coAlg_\UM} \arrow[d] \\
+		\Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180] \arrow[r, "\cchainsA"]
+		& \Mon_{\coAlg} \arrow[d] \\
+		\sSet^0 \arrow[r, "\cobar \schainsA"] \arrow[u, "\ccobar"]
+		& \Mon_{\Ch}.
 	\end{tikzcd}
 	\]
 \end{lemma}
@@ -228,7 +228,7 @@ As an application of the explicit construction of a natural $\UM$-coalgebra stru
 More explicitly, let $\Cp$ be the cyclic group of order $p$ and
 \[
 \begin{tikzcd} [column sep = .5cm]
-\cW(p) = \Fp[\Cp]\{e_0\} & \arrow[l, "\,T"'] \Fp[\Cp]\{e_1\} & \arrow[l, "\,N"'] \Fp[\Cp]\{e_2\} & \arrow[l, "\,T"'] \dotsb
+	\cW(p) = \Fp[\Cp]\{e_0\} & \arrow[l, "\,T"'] \Fp[\Cp]\{e_1\} & \arrow[l, "\,N"'] \Fp[\Cp]\{e_2\} & \arrow[l, "\,T"'] \dotsb
 \end{tikzcd}
 \]
 be the minimal free resolution of $\Fp$ as an $\Fp[\Cp]$-module.
@@ -260,9 +260,9 @@ We now use the ideas developed so far to study the based loop space of a pointed
 
 Adams' comparison map can be factored as a composition
 \begin{equation} \label{e:factorization of adams}
-\theta_Z \colon \cobar \sSchainsA(Z,z) \xrightarrow{\cong}
-\cchains \ccobar(\sSing(Z,z)) \xrightarrow{\cchains(\Theta)}
-\cSchains(\loops_z Z).
+	\theta_Z \colon \cobar \sSchainsA(Z,z) \xrightarrow{\cong}
+	\cchains \ccobar(\sSing(Z,z)) \xrightarrow{\cchains(\Theta)}
+	\cSchains(\loops_z Z).
 \end{equation}
 The first map is the natural isomorphism of algebras given by \cref{l:ccobar and cobar}.
 The second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
