@@ -2,15 +2,13 @@
 
 \section{Conventions and preliminaries} \label{s:preliminaries}
 
-\subsection{Category theory}
+\subsection{Presheaves and monoids}
 
-\subsubsection{Presheaves}
-
-Given categories $\sB$ and $\sC$ we denote their associated \textit{functor category} by $\Fun[\sB, \sC]$.
 Recall that a category is said to be \textit{small} if its objects and morphisms form sets.
 We denote the category of small categories by $\Cat$.
+Given categories $\sB$ and $\sC$ with $\sB$ small we denote their associated \textit{functor category} by $\Fun(\sB, \sC)$.
 A category is said to be \textit{cocomplete} if any functor to it from a small category has a colimit.
-If $\sA$ is small and $\sC$ cocomplete, then the (left) \textit{Kan extension of $g$ along $f$} exists for any pair of functors $f$ and $g$ in the diagram below, and it is the initial object in $\Fun[\sB, \sC]$ making
+If $\sA$ is small and $\sC$ cocomplete, then the (left) \textit{Kan extension} of $g$ along $f$ exists for any pair of functors $f$ and $g$ in the diagram below, and it is the initial object in $\Fun(\sB, \sC)$ making
 \begin{equation*}
 	\begin{tikzcd}[column sep=normal, row sep=normal]
 		\sA \arrow[d, "f"'] \arrow[r, "g"] & \sC \\
@@ -20,36 +18,28 @@ If $\sA$ is small and $\sC$ cocomplete, then the (left) \textit{Kan extension of
 commute.
 A Kan extension along the \textit{Yoneda embedding}, i.e., the functor
 \[
-\yoneda \colon \sA \to \Fun[\sA^\op, \Set]
+\yoneda \colon \sA \to \Fun(\sA^\op, \Set)
 \]
 induced by the assignment
 \[
 a \mapsto \big( a^\prime \mapsto \sA(a^\prime, a) \big),
 \]
 is referred to as a \textit{Yoneda extension}.
-We refer to the objects in $\Fun[\sA^\op, \Set]$ as \textit{presheaves on $\sA$} and to those in the image of the Yoneda embedding as \textit{representables}.
-We remark that for any presheaf $P$ on $\sA$ and object $a$ of $\sA$
+Objects in the image of the Yoneda embedding are said to be \textit{representable}.
+We remark that any presheaf is isomorphic to a colimit of representables presheaves:
 \[
-P \, \cong \colim_{\yoneda(a) \to P} \yoneda(a).
+P \, \cong \colim_{\yoneda(a) \downarrow P} \yoneda(a).
 \]
-In other words, any presheaf is isomorphic to a colimit of representables.
 
-\subsubsection{Monoids}
-
-A \textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \otimes, \mathbb{1})$ is an object $M$ together with two morphisms $\mu \colon M \otimes M \to M$, called \textit{multiplication} and $\eta \colon \mathbb{1} \to M$, called \textit{unit}, satisfying the usual associativity and unital relations.
-Monoids in $\Ch$ are called \textit{algebras} and those in $\coAlg$ are called \textit{bialgebras}.
+A \textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \otimes, \mathbb{1})$ is an object $M$ together with two morphisms $\mu \colon M \otimes M \to M$ and $\eta \colon \mathbb{1} \to M$, called \textit{multiplication} and \textit{unit} respectively, satisfying the usual associativity and unital relations.
 We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and remark that a monoidal functor $\sC \to \sC^\prime$ induces a functor between their categories of monoids $\Mon_\sC \to \Mon_{\sC^\prime}$.
 
-\subsection{Homological algebra}
-
-\subsubsection{Chain complexes}
+\subsection{Coalgebras}\label{ss:coalgebras}
 
 Throughout this article $\k$ denotes a commutative and unital ring and we work over its associated closed symmetric monoidal category of differential (homologically) graded $\k$-modules $(\Ch, \otimes, \k)$.
 We refer to the objects and morphisms of this category as \textit{chain complexes} and \textit{chain maps} respectively.
 We denote by $\Hom(C, C^\prime)$ the chain complex of $\k$-linear maps between chain complexes $C$ and $C^\prime$, and refer to the functor $\Hom(-, \k)$ as \textit{linear duality}.
 The $i^\th$ \textit{suspension} functor $s^i \colon \Ch \to \Ch$ is defined at the level of graded modules by $(s^{i}M)_n = M_{n-i}$.
-
-\subsubsection{Coalgebras} \label{ss:coalgebras}
 
 A \textit{coalgebra} consists of a chain complex $C$ and chain maps $\Delta \colon C \to C \otimes C$ and $\varepsilon \colon C \to \k$ satisfying the usual coassociativity and counitality relations.
 This notion is equivalent to that of a comonoid in $\Ch$.
@@ -63,74 +53,45 @@ The category $\coAlg$ is symmetric monoidal, with braiding induced from $\Ch$ an
 	\k \otimes \k \xra{\cong} \k.
 \end{gather*}
 
-\subsection{Simplicial notions}
+A \textit{coaugmentation} on a coalgebra $C$ is a coalgebra map $\nu \colon \k \to C$.
+A coalgebra is said to be \textit{coaugmented} if it is equipped with a coaugmentation.
+We denote by $\coAlg^\ast$ the category of coaugmented coalgebras with morphisms being coaugmentation preserving coalgebra maps.
+A coaugmented coalgebra is a \textit{connected coalgebra} if it is $0$ in negative degrees and the coaugmentation induces an isomorphism $\k \cong C_0$ of $\k$-modules.
+We denote by $\coAlg^0$ the full subcategory of $\coAlg^\ast$ defined by these.
 
-\subsubsection{Simplicial sets}
+\subsection{Simplicial algebraic topology}
 
 The \textit{simplex category} is denoted by $\simplex$ and its objects by $[n]$.
-Its morphisms are generated by the usual (simplicial) \textit{coface} and \textit{codegeneracy maps}
-\[
-\delta_i \colon [n-1] \to [n], \qquad \sigma_i \colon [n+1] \to [n]
-\]
-for $j \in \{0, \dots, n\}$.
-The category of \textit{simplicial sets} $\Fun[\simplex^\op, \Set]$ is denoted by $\sSet$ and the \textit{standard $n$-simplex} $\yoneda [n] = \simplex(-, [n])$ by $\simplex^n$.
-For any simplicial set $X$ we write, as usual, $X_n$ instead of $X \big( [n] \big)$, and identify the elements of $\simplex^n_m$ with increasing tuples $[v_0, \dots, v_m]$ where $v_i \in \{0, \dots, n\}$.
+%Its morphisms are generated by the usual \textit{coface} $\delta_i \colon [n-1] \to [n]$ and \textit{codegeneracy} $\sigma_i \colon [n+1] \to [n]$ maps.
+The category of \textit{simplicial sets} $\Fun(\simplex^\op, \Set)$ is denoted by $\sSet$ and the \textit{standard $n$-simplex} $\yoneda [n] = \simplex(-, [n])$ by $\simplex^n$.
+For any simplicial set $X$ we write, as usual, $X_n$ instead of $X [n]$, and identify the elements of $\simplex^n_m$ with increasing tuples $[v_0, \dots, v_m]$ where $v_i \in \{0, \dots, n\}$.
 
 If $X$ is such that $X_0$ is a singleton set we say that $X$ is \textit{reduced}.
 We denote the full subcategory of reduced simplicial sets by $\sSet^0$.
 
-\subsubsection{Simplicial chains} \label{ss:simplicial sets}
-
-For non-negative integers $m$ and $n$, let $\simplex_{\deg} \big( [m], [n] \big)$ be the subset of \textit{degenerate morphisms} in $\simplex \big( [m], [n] \big)$, i.e., those of the form $\sigma_i \circ \tau$ with $\tau$ any morphism in $\simplex \big( [m], [n+1] \big)$.
-The functor of \textit{simplicial chains} $\schains \colon \sSet \to \Ch$ is the Yoneda extension of the functor $\simplex \to \Ch$ defined next.
-It assigns to an object $[n]$ the chain complex having in degree $m$ the module
+We denote the topological $n$-simplex by $\gsimplex^{n}$ and consider the usual adjunction pair defined by the \textit{geometric realization} and \textit{singular complex}
 \[
-\frac{\k\{\simplex \big( [m], [n] \big) \}}{\k\{\simplex_{\deg} \big( [m], [n] \big) \}},
-\]
-and differential
-\[
-\partial(\tau) = \sum (-1)^i \tau \circ \delta_i.
-\]
-To a morphism $\tau \colon [n] \to [n^\prime]$ it assigns the chain map
-\[
-\begin{tikzcd}[row sep=-3pt, column sep=normal,
-	/tikz/column 1/.append style={anchor=base east},
-	/tikz/column 2/.append style={anchor=base west}]
-	\schains(\simplex^n)_m \arrow[r] & \schains(\simplex^{n^\prime})_m \\
-	\big( [m] \to [n] \big) \arrow[r, mapsto] & \big( [m] \to [n] \xra{\tau} [n^\prime] \big).
+\begin{tikzcd}
+	\bars{\ } \colon \sSet  \arrow[r, shift left=.5ex] &
+	\Top :\! \sSing. \arrow[l, shift left=.5ex]
 \end{tikzcd}
 \]
+
+The functor of (normalized) \textit{simplicial chains} $\schains \colon \sSet \to \Ch$ is obtained from the geometric realization and the functor of cellular chains.
 When no confusion arises from doing so we write $\chains$ instead of $\schains$ and refer to it simply as the functor of \textit{chains}.
+We will denote the functor of (simplicial) \textit{singular chains} $\schains \circ \sSing \colon \Top \to \Ch$ by $\sSchains$.
 
-\subsubsection{Simplicial singular complex}
+We modify this construction for a pointed topological space $(\fZ,z)$ by only considering maps $\gsimplex^n \to \fZ$ sending all vertices to $z$.
+This produces a reduced simplicial set $\sSing(\fZ,z)$ whose chains we denote by $\sSchains(\fZ,z)$.
 
-Consider the topological $n$-simplex
-\[
-\gsimplex^{n} = \{(x_0, \dots, x_n) \in [0,1]^{n+1} \mid \ \textstyle{\sum}_i x_i = 1\}.
-\]
-The assignment $[n] \to \gsimplex^n$ defines a functor $\simplex \to \Top$ whose Yoneda extension is known as (simplicial) \textit{geometric realization}.
-It has a right adjoint $\sSing \colon \Top \to \sSet$ given by
-\[
-Z \to \Big( [n] \mapsto \Top(\gsimplex^n, Z) \Big)
-\]
-and referred to as the \textit{simplicial singular complex} of the topological space $Z$.
-The chain complex $\chains(\cSing Z)$ is referred to as the \textit{simplicial singular chains} of $Z$.
-
-We modify this construction for a pointed topological space $(Z,z)$ by only considering maps $\gsimplex^n \to Z$ sending all vertices to $z$.
-This produces a reduced simplicial set $\sSing(Z,z)$.
-We will refer to $\schains(\sSing(Z,z))$ as the \textit{simplicial singular chains on $(Z,z)$} and for simplicity denote it by $\sSchains(Z,z)$.
-
-\subsubsection{Alexander--Whitney coalgebra} \label{ss:aw coalgebra}
-
-We review a classical lift to coalgebras of the functor of chains:
+There is a classical lift of the functor of chains to coalgebras:
 \[
 \begin{tikzcd}
 	& \coAlg \arrow[d] \\
-	\sSet \arrow[r, "\schains"] \arrow[ur, "\schainsA", out=70, in=180] & \Ch.
+	\sSet \arrow[r, "\schains"] \arrow[ur, "\schainsA", out=70, in=180] & \Ch
 \end{tikzcd}
 \]
-
-Using a Yoneda extension, it suffices to equip the chains on standard simplices with a natural coalgebra structure.
+defined, via a Yoneda extension, by the following structure on the chains of standard simplices.
 For any $n \in \N$, define $\epsilon \colon \chains(\simplex^n) \to \k$ by
 \[
 \epsilon \big( [v_0, \dots, v_q] \big) = \begin{cases} 1 & \text{ if } q = 0, \\ 0 & \text{ if } q>0, \end{cases}
@@ -177,7 +138,7 @@ are defined by
 \end{gather*}
 We remark that the cube category without connections will not be considered in this work.
 
-The category of \textit{cubical sets} $\Fun[\cube^\op, \Set]$ is denoted by $\cSet$ and
+The category of \textit{cubical sets} $\Fun(\cube^\op, \Set)$ is denoted by $\cSet$ and
 the \textit{standard $n$-cube} $\yoneda(2^n) = \cube(-, 2^n)$ by $\cube^n$.
 For any cubical set $Y$ we write, as usual, $Y_n$ instead of $Y(2^n)$.
 
