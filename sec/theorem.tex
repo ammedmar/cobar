@@ -1,6 +1,6 @@
 % !TEX root = ../cobar1.tex
 
-\section{Adams's model of based loop spaces} \label{s:theorem1}
+\section{Adams's model of based loop spaces}\label{s:theorem1}
 
 %The goal of this section is to prove \cref{t:1st main thm in the intro}.
 %Explicitly, we construct a natural $E_{\infty}$-bialgebra structure on $\cobar \schainsA(X)$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(Z,z)$, Adams' comparison map $\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
@@ -8,7 +8,7 @@
 %The first goal is achieved using a categorical reformulation of Baues' geometric cobar construction (\cref{ss:cubical cobar}) together with the natural $\UM$-coalgebra structure defined on cubical chains (\cref{ss:e-infty on cubical}) and its monoidal properties (\cref{l:cubical e-infty chains are monoidal}).
 %The second goal is obtained by factoring Adams' comparison map through this cubical model (\cref{ss:factorization of adams}).
 
-\subsection{The cobar construction} \label{ss:cobar construction}
+\subsection{The cobar construction}\label{ss:cobar construction}
 
 Recall the algebraic notions introduced in \cref{ss:coalgebras}.
 The \textit{cobar construction} is the functor
@@ -20,28 +20,23 @@ Let $(C, \partial, \Delta, \varepsilon, \nu)$ be the data of a coaugmented coalg
 Denote by $\overline{C}$ the cokernel of $\nu \colon \k \to C$ and recall that $s^{-1}$ is the $(-1)^\th$ suspension.
 The cobar construction $\cobar C$ of this coaugmented coalgebra is the graded module
 \[
-T(s^{-1} \overline{C}) = \k \oplus s^{-1}\overline{C} \oplus (s^{-1}\overline{C})^{\otimes 2} \oplus (s^{-1}\overline{C})^{\otimes 3} \oplus \dots
+T(s^{-1} \overline{C}) = \k \oplus s^{-1}\overline{C} \oplus (s^{-1}\overline{C})^{\ot 2} \oplus (s^{-1}\overline{C})^{\ot 3} \oplus \dots
 \]
-regarded as a monoid in $\Ch$ with $\mu \colon T(s^{-1} \overline{C})^{\otimes 2} \to T(s^{-1} \overline{C})$ given by concatenation, $\eta \colon \k \to T(s^{-1} \overline{C})$ by the obvious inclusion, and differential constructed by extending the linear map
+regarded as a monoid in $\Ch$ with $\mu \colon T(s^{-1} \overline{C})^{\ot 2} \to T(s^{-1} \overline{C})$ given by concatenation, $\eta \colon \k \to T(s^{-1} \overline{C})$ by the obvious inclusion, and differential constructed by extending the linear map
 \[
-- s^{-1} \circ \partial \circ s^{+1} \ + \ (s^{-1} \otimes s^{-1}) \circ \Delta \circ s^{+1} \colon
-s^{-1} \overline{C} \to s^{-1}\overline{C} \oplus (s^{-1}\overline{C} \otimes s^{-1}\overline{C}) \hookrightarrow T(s^{-1}C)
+- s^{-1} \circ \partial \circ s^{+1} \ + \ (s^{-1} \ot s^{-1}) \circ \Delta \circ s^{+1} \colon
+s^{-1} \overline{C} \to s^{-1}\overline{C} \oplus (s^{-1}\overline{C} \ot s^{-1}\overline{C}) \hookrightarrow T(s^{-1}C)
 \]
 as a derivation.
 
-In this article we are mostly concerned with \textit{connected} coalgebras, namely coaugmented coalgebras that are non-negatively graded and for which the coaugmentation induces an isomorphism $\k \cong C_0$ of $\k$-modules.
-We denote by $\coAlg^0$ the full subcategory of $\coAlg^\ast$ consisting of connected coalgebras, and remark that if $C \in \coAlg^0$, then $ \cobar(C)$ is concentrated on non-negative degrees.
+%The object $\cobar(C) \in \Mon_{\Ch}$ may be equipped with a natural augmentation map $\cobar(C) \to \k$ in $\Mon_{\Ch}$ given by the projection map to the first summand term.
+%Therefore, the cobar construction may be regarded as a functor from coaugmented coalgebras to augmented algebras.
+%However, we will not require the data of augmentations in this article.
 
-The object $\cobar(C) \in \Mon_{\Ch}$ may be equipped with a natural augmentation map $\cobar(C) \to \k$ in $\Mon_{\Ch}$ given by the projection map to the first summand term.
-Therefore, the cobar construction may be regarded as a functor from coaugmented coalgebras to augmented algebras.
-However, we will not require the data of augmentations in this article.
-
-%We now review the central examples of coaugmented coalgebras to which Adams applied the cobar construction.
-
-\subsection{Adams' map} \label{ss:adams maps}
+\subsection{Adams' map}\label{ss:adams maps}
 
 In \cite{adams1956cobar}, Adams constructed a natural map of algebras
-\begin{equation} \label{e:adams map 2}
+\begin{equation}\label{e:adams map 2}
 	\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z),
 \end{equation}
 for any pointed topological space $(Z,z)$.

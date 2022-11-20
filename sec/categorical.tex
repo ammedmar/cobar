@@ -8,7 +8,7 @@ Similar constructions and results may be found in \cite{baues1980geometry}, \cit
 \subsection{Necklical sets}
 
 Let us consider the subcategory $\simplex_{*,*}$ of the simplex category $\simplex$ with the same objects and morphisms given by functors $f \colon [n] \to [m]$ satisfying $f(0) = 0$ and $f(n) = m$.
-It is a strict monoidal category when equipped with the monoidal structure $[n] \otimes [m] = [n+m]$, thought of as identifying the elements $n \in [n]$ and $0 \in [m]$, and unit given by $[0]$.
+It is a strict monoidal category when equipped with the monoidal structure $[n] \ot [m] = [n+m]$, thought of as identifying the elements $n \in [n]$ and $0 \in [m]$, and unit given by $[0]$.
 In passing, we mention that this category is $\op$-dual to the augmented simplex category, a form of Joyal duality.
 
 The \textit{necklace category} $\Nec$ is obtained from $\simplex_{*,*}$ as follows.
@@ -96,7 +96,7 @@ and for a necklical set $K \colon \Nec^\op \to \Set$,
 \]
 Since $\cP$ is a monoidal functor, the functor $\cP_{!} \colon \nSet \to \cSet$ is a monoidal as well.
 
-\subsection{Cubical cobar construction} \label{ss:cubical cobar}
+\subsection{Cubical cobar construction}\label{ss:cubical cobar}
 
 Using the framework of necklical sets, we may reinterpret a Baues' geometric cobar construction from \cite{baues1998hopf} as a functor
 \[
@@ -110,7 +110,7 @@ For any reduced simplicial set $X$, we define a necklical set $\ncobar(X) \colon
 \]
 The monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ given by concatenation of necklaces induces a natural product
 \[
-\ncobar(X) \otimes \ncobar(X) \to \ncobar(X)
+\ncobar(X) \ot \ncobar(X) \to \ncobar(X)
 \]
 making $\ncobar(X)$ into a monoid in the monoidal category $\nSet$.
 
@@ -128,7 +128,7 @@ This reinterpretation of Baues construction in terms of cubical sets was also st
 
 We now relate the cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}$ to the cobar construction $\cobar \colon \coAlg \to \Mon_{\Ch}$ (\cref{ss:cobar construction}).
 
-\begin{lemma} \label{l:ccobar and cobar}
+\begin{lemma}\label{l:ccobar and cobar}
 	There is a natural isomorphisms of functors
 	\[
 	\cchains \ccobar \cong \cobar \schainsA \colon \sSet^0 \to \Mon_{\Ch}.
