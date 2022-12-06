@@ -26,10 +26,7 @@ a \mapsto \big( a^\prime \mapsto \sA(a^\prime, a) \big),
 \]
 is referred to as a \textit{Yoneda extension}.
 Objects in the image of the Yoneda embedding are said to be \textit{representable}.
-We remark that any presheaf is isomorphic to a colimit of representables presheaves:
-\[
-P \, \cong \colim_{\yoneda(a) \downarrow P} \yoneda(a).
-\]
+Any presheaf $P$ is isomorphic to a colimit of representables presheaves $P \, \cong \colim_{\yoneda(a) \downarrow P} \yoneda(a)$.
 
 A \textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with two morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$, called \textit{multiplication} and \textit{unit} respectively, satisfying the usual associativity and unital relations.
 We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and remark that a monoidal functor $\sC \to \sC^\prime$ induces a functor between their categories of monoids $\Mon_\sC \to \Mon_{\sC^\prime}$.
@@ -151,7 +148,7 @@ We denote the topological $n$-cube by $\gcube^{n}$ and consider the usual adjunc
 The functor of (normalized) \textit{cubical chains} $\cchains \colon \cSet \to \Ch$ is obtained from the geometric realization and the functor of cellular chains.
 When no confusion arises from doing so we write $\chains$ instead of $\cchains$ and refer to it simply as the functor of \textit{chains}.
 We remark that $\chains(\cube^n)$ is canonically isomorphic to $\chains(\cube^1)^{\ot n}$ and that $\chains(\cube^1)$ is canonically isomorphic to the cellular chains on the topological interval with its usual CW structure.
-We use these isomorphisms to denote the elements of $\chains(\cube^n)$ as sums of terms of the form $x_1 \ot \dots \ot x_n$ with $x_i \in \big\{[0], [0,1], [1] \big\}$.
+We use these isomorphisms to denote the elements of $\chains(\cube^n)$ as integral linear combinations monoids of the form $x_1 \ot\dotsb\ot x_n$ with $x_i \in \big\{[0], [0,1], [1] \big\}$.
 We will denote the functor of (cubical) \textit{singular chains} $\cchains \circ \cSing \colon \Top \to \Ch$ by $\cSchains$.
 
 There is a classical lift of the functor of cubical chains to the category of coalgebras

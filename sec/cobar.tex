@@ -1,9 +1,79 @@
 % !TEX root = ../cobar1.tex
 
-\section{Cubical cobar construction}
+\section{Adams's model of the based loop space}\label{s:theorem1}
 
 We construct a cubical model for the based loop space using necklical sets, a notion related to both simplicial sets and cubical sets.
 Similar constructions and results may be found in \cite{baues1980geometry}, \cite{berger1995loops}, \cite{baues1998hopf}, \cite{dugger2011rigidification}, \cite{galvez2020hopf}, and \cite{rivera2018cubical, rivera2019path}.
+
+%The goal of this section is to prove \cref{t:1st main thm in the intro}.
+%Explicitly, we construct a natural $E_{\infty}$-bialgebra structure on $\cobar \schainsA(X)$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(Z,z)$, Adams' comparison map $\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
+%
+%The first goal is achieved using a categorical reformulation of Baues' geometric cobar construction (\cref{ss:cubical cobar}) together with the natural $\UM$-coalgebra structure defined on cubical chains (\cref{ss:e-infty on cubical}) and its monoidal properties (\cref{t:cubical e-infty chains are monoidal}).
+%The second goal is obtained by factoring Adams' comparison map through this cubical model (\cref{ss:factorization of adams}).
+
+\subsection{The cobar construction}\label{ss:cobar construction}
+
+Recall the algebraic notions introduced in \cref{ss:coalgebras}.
+The \textit{cobar construction} is the functor
+\[
+\cobar \colon \coAlg^\ast \to \Mon_{\Ch}
+\]
+defined on objects as follows.
+Let $(C, \partial, \Delta, \varepsilon, \nu)$ be the data of a coaugmented coalgebra.
+Denote by $\overline{C}$ the cokernel of $\nu \colon \k \to C$ and recall that $s^{-1}$ is the $(-1)^\th$ suspension.
+The cobar construction $\cobar C$ of this coaugmented coalgebra is the graded module
+\[
+T(s^{-1} \overline{C}) = \k \oplus s^{-1}\overline{C} \oplus (s^{-1}\overline{C})^{\ot 2} \oplus (s^{-1}\overline{C})^{\ot 3} \oplus \dots
+\]
+regarded as a monoid in $\Ch$ with $\mu \colon T(s^{-1} \overline{C})^{\ot 2} \to T(s^{-1} \overline{C})$ given by concatenation, $\eta \colon \k \to T(s^{-1} \overline{C})$ by the obvious inclusion, and differential constructed by extending the linear map
+\[
+- s^{-1} \circ \partial \circ s^{+1} \ + \ (s^{-1} \ot s^{-1}) \circ \Delta \circ s^{+1} \colon
+s^{-1} \overline{C} \to s^{-1}\overline{C} \oplus (s^{-1}\overline{C} \ot s^{-1}\overline{C}) \hookrightarrow T(s^{-1}C)
+\]
+as a derivation.
+
+%The object $\cobar(C) \in \Mon_{\Ch}$ may be equipped with a natural augmentation map $\cobar(C) \to \k$ in $\Mon_{\Ch}$ given by the projection map to the first summand term.
+%Therefore, the cobar construction may be regarded as a functor from coaugmented coalgebras to augmented algebras.
+%However, we will not require the data of augmentations in this article.
+
+\subsection{Adams' map}\label{ss:adams maps}
+
+In \cite{adams1956cobar}, Adams constructed a natural map of algebras
+\begin{equation}\label{e:adams map 2}
+	\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z),
+\end{equation}
+for any pointed topological space $(Z,z)$.
+The construction is based on a collection of continuous maps
+\[
+\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n),
+\]
+where $P(\gsimplex^n;0,n)$ denotes the topological space of Moore paths in $\gsimplex^n$ from the $0^\th$ vertex $v_0$ to the $n^\th$ vertex $v_n$.
+These maps are constructed inductively so that following equations are satisfied:
+\begin{enumerate}
+	\item $\theta_1(0)\colon \gcube^1 \to \gsimplex^1$ is the path $\theta_1(0)(s) = sv_1 +(1-s)v_0$.
+	\item $\theta_n \circ e_j^0 = P(d_j) \circ \theta_{n-1}$.
+	\item $\theta_n \circ e_j^1 = (P(f_j) \circ \theta_j) \cdot (P(l_{n-j}) \circ \theta_{n-j})$.
+\end{enumerate}
+In the above equations $f_j\colon \gsimplex^j \rightarrow \gsimplex^n$ and $l_{n-j}\colon \gsimplex^{n-j} \rightarrow \gsimplex^n$ denote the first $j^\th$ face map and last $(n-j)^\th$ face map of $\gsimplex^n$, respectively, and
+$e_j^0,e_j^1\colon \gcube^{n-1} \rightarrow \gcube^{n}$ denote the $j^\th$ bottom and top cubical face maps, respectively.
+For any continuous map of spaces $f \colon Z \to Z'$, we denote by $P(f) \colon P(Z) \to P(Z')$ the induced map at the level of spaces of paths.
+Given any two composable paths $\alpha$ and $\beta$, the dot symbol in $\alpha \cdot \beta$ denotes the composition (or concatenation) of paths.
+
+Adams' map $\theta_Z$ is now given as follows.
+For any singular $1$-simplex $\sigma \in S^{\Delta}_1(Z,z)$ let
+\[
+\theta_Z([\sigma]) = P(\sigma) \circ \theta_1 - c_z,
+\]
+where $c_z \in \cSchains_0(\loops_z Z)$ is the singular $0$-cube determined by the constant loop at $z \in Z$.
+For any singular $n$-simplex $\sigma \in S^{\Delta}_n(Z,z)$ with $n>1$, let
+\[
+\theta_Z([\sigma]) = P(\sigma) \circ \theta_n.
+\]
+Since the underlying graded algebra of $\cobar \sSchainsA(Z,z)$ is free, we may extend the above to an algebra map $\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z)$.
+The compatibility equations for the maps $\theta_n$ imply that $\theta_Z$ is a chain map.
+
+We will construct an $E_{\infty}$-bialgebra structure on $\cobar \sSchainsA(Z,z)$ and show that, when $\cSchains(\loops_z Z)$ is equipped with the $E_{\infty}$-coalgebra structure described in \cref{ss:e-infty on cubical}, the map $\theta_Z$ is a map of $E_{\infty}$-coalgebras.
+With this goal in mind, we describe a categorical version of Adams' constructions.
 
 \subsection{Necklical sets}
 
