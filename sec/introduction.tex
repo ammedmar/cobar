@@ -2,163 +2,68 @@
 
 \section{Introduction}
 
-For any pointed topological space $(Z,z)$ there is a naturally associated topological monoid $\loops_z Z$ -- its \textit{based loop space} -- whose points are pairs $(\gamma, r)$ where $r \in \R_{\geq 0}$ and $\gamma \colon [0,r] \to Z$ is a continuous map with $\gamma(0) = z = \gamma(r)$.
-We consider $\loops_z Z$  equipped with the compact-open topology and the continuous multiplication defined by \textit{concatenation} of loops, whose identity element is the \textit{constant loop} $(c_r,0)$.
-For any loop $\gamma \colon [0,r] \to Z $ its concatenation with the loop $\overline{\gamma} \colon [0,r] \to Z$ which runs $\gamma$ in the opposite direction, namely $\overline{\gamma}(t) = \gamma(r-t)$, is homotopic to the constant loop.
-Consequently, we may say that $\loops_z Z$ has inverses \textit{up to homotopy}, and we have that the set of path components $\pi_0(\loops_z Z)$ has an induced group structure naturally isomorphic to the fundamental group $\pi_1(Z,z)$.
-Furthermore, $\loops_z Z$ is weak homotopy equivalent to a topological group where the group identities hold strictly \cite{milnor1956bundles}, \cite{berger1995loops}.
-The pointed space $(Z,z)$ may then be recovered, up to weak homotopy equivalence, from the weak homotopy type of the topological monoid $\loops_z Z$ through the \textit{classifying space}, or \textit{delooping}, construction.
+For any topological space $\fX$, its complex of singular chains $\Schains(\fX)$ -- regarded as a differential graded module -- encodes the homology of $\fX$ in its quasi-isomorphism type.
+More homotopical information can be stored in the q-i type of this chain complex if considered as a (dg) coalgebra, which we will denote $\SchainsA(\fX)$, where the coproduct comes from a chain approximation to the diagonal $\fX \to \fX \times \fX$.
+For example, the cohomology ring of $\fX$ is retained, but additional invariants like the action of the Steenrod algebra on its mod $p$ cohomology is not.
+In Mandell's seminal work \cite{mandell2006homotopy_type} it is shown that, when $\fX$ is nilpotent and finite type, the entire homotopy type of $\fX$ can be encoded in the q-i type of this complex if considered as an $E_\infty$-coalgebra, a structure providing $\SchainsA(\fX)$ with coherent homotopies witnessing the derived coassociativity and cocommutativity of the coproduct, which come from the corresponding strict relations satisfied by the diagonal map.
 
-%One of the principal goals of algebraic topology is to encode the theory of topological spaces up to some specified notion of equivalence in terms of combinatorial or algebraic objects, allowing for the effective analysis of topological properties.
-%We will focus on spaces up to weak homotopy equivalence, where a first example of an algebraization procedure is provided by the functor of simplicial or cubical singular chains
-%\[
-%\Schains \colon \Top \to \Ch,
-%\]
-%which associates a chain complex over a fixed commutative ring to any topological space.
+In this work we are interested in modeling algebraically the homotopy type of the based loop space $\loops_z \fZ$ of a pointed space $(\fZ,z)$, which is not just a space but a topological monoid with the concatenation of loops.
+%Recall \textit{based loop space} $\loops_z \fZ$ construction for a pointed space $(\fZ,z)$ -- build from pointed maps from the circle and equipped with a monoid structure coming from concatenation.
 
-The singular chains construction may be thought of as a linearization of a topological space which, as expected, losses much structure.
-More homotopical information can be encoded if the resulting chain complex is equipped with non-linear structure, for example, a chain approximation to the diagonal map.
-In this case, we regard the singular chains as a differential graded (dg) coassociative coalgebra, or better still, if a coherent family of homotopies enforcing its derived cocommutativity is considered, as an $E_\infty$-coalgebra.
-Diagrammatically, this can be represented as lifts of the form
-\begin{equation}
-	\begin{tikzcd}[column sep=normal, row sep=small]
-		& \coAlg_{E_\infty} \arrow[d] \\
-		& \coAlg \arrow[d] \\
-		\Top \arrow[uur, "\Schains_{E_\infty}", out=90, in=180] \arrow[r, "\Schains"]
-		\arrow[ur, "\SchainsA", out=60, in=180, near end]
-		\arrow[r, "\Schains"]
-		& \Ch.
-	\end{tikzcd}
-\end{equation}
-The study of $E_\infty$-structures has a long history, where (co)homology operations \cite{steenrod1962cohomology, may1970general}, the recognition of infinite loop spaces \cite{boardman1973homotopy, may1972geometry}, and the complete algebraic representation of the $p$-adic homotopy category \cite{mandell2001padic} are key milestones.
+The first contribution of this paper is to explicitly endow the cubical singular chains of $\loops_z \fZ$ with the structure of a monoid in a category of $E_\infty$-coalgebras extending the Serre diagonal.
+More specifically, we verify that the monoid structure in $\cSchains(\loops_z \fZ)$ -- induced from concatenation of loops -- is compatible with the $E_\infty$-coalgebra structure on cubical singular chains introduced in \cite{medina2022cube_einfty}.
 
-For based loop spaces we will consider two algebraic models which we now describe for a pointed space $(Z, z)$.
-The first is given by the cubical singular chains $\cSchains(\loops_z Z)$ which, as we recall below, is a monoid in $\Ch$.
-The second, introduced by F.~Adams in \cite{adams1956cobar}, is defined by applying his \textit{cobar construction}
+We will also concern ourselves with another algebraic approximation to the homotopy type of $\loops_z \fZ$, which was introduced by Adams \cite{adams1956cobar}.
+It is obtained using his celebrated \textit{cobar construction} functor $\cobar$, which associates to a coaugmented coalgebra a monoid in chain complexes.
+More specifically, by applying $\cobar$ to the simplicial singular chains of $(\fZ, z)$, a coalgebra with the Alexander--Whitney diagonal that is build using maps of simplices sending all vertices to the base point.
+Adams constructed a natural monoid chain map $\theta$ from his model $\cobar \sSchainsA(\fZ, z)$ to $\cSchains(\loops_z \fZ)$ and proved it to be a q-i if $\fZ$ is simply-connected, a statement that also holds true for path-connected spaces after \cite{hess2010cobar} or \cite{rivera2018cubical}.
+The second main contribution of this paper is to make Adams model $\cobar \sSchainsA(\fZ, z)$ into a monoid in $E_\infty$-coalgebras and to prove that
 \[
-\cobar \colon \coAlg^\ast \to \Mon_{\Ch},
+\theta \colon \cobar \sSchainsA(\fZ, z) \to \cSchains(\loops_z \fZ)
 \]
-a functor from coaugemented (dg) coassociative coalgebras to monoids in $\Ch$, to the coalgebra of pointed simplicial singular chains $\sSchainsA(Z,z)$.
-In the same reference, Adams constructed a comparison map between these models, a natural chain map of monoids in $\Ch$
-\begin{equation} \label{e:adams map}
-	\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z),
-\end{equation}
-which he proved to be a quasi-isomorphism if $Z$ is simply connected, a result extended to path-connected spaces in \cite{rivera2018cubical} by considering finer homotopical algebra, and in \cite{hess2010cobar} by a localization procedure.
+respects this higher structure.
 
-In this article we enhance both of these models by explicitly constructing an $E_\infty$-bialgebra structure on them, i.e., an $E_\infty$-coalgebra structure compatible with its monoid structure, and show that Adams' comparison map is a quasi-isomorphism of $E_\infty$-bialgebras.
+Our starting point is groundbreaking work by H.~Baues, which imply statements similar to those in this work but in the category of coalgebras.
+In \cite{baues1998hopf}, he reinterpreted Adams' algebraic construction at a deeper geometric level.
+This allowed him to endow $\cobar \sSchainsA(\fZ, z)$ with the structure of a monoid in coalgebras and to show that $\theta$ preserves this structure.
+To prove the statements of this work we interpret Adams' constructions at an even deeper categorical level.
+The simplicial singular complex $\sSing(\fZ, z)$ is an example of an object in the category $\sSet^0$ of $0$-reduced simplicial sets.
+We interpret Baues' geometric cobar construction, originally defined for $1$-reduced simplicial sets, as a functor
+\begin{equation*}
+	\ccobar \colon \sSet^0 \to \Mon_{\cSet},
+\end{equation*}
+where $\Mon_{\cSet}$ is the category of monoids in cubical sets.
+The key difference with Baues' original work is the use of connections to obtain a natural construction before geometric realization.
 
-Our starting point is groundbreaking work by H.~Baues that allowed him to accomplish analogous statements using bialgebras instead of $E_\infty$-bialgebras.
-His insights are best explained in terms of \textit{cubical sets} (with connections).
-%, i.e., objects in the category $\cSet$ of presheaves over the strict monoidal category generated by the diagram
-%\[
-%\begin{tikzcd}
-%	1 \arrow[r, out=45, in=135, "\delta^0"] \arrow[r, out=-45, in=-135, "\delta^1"'] & 2 \arrow[l, "\sigma"'] &[-10pt] \arrow[l, "\gamma"'] 2 \times 2
-%\end{tikzcd}
-%\]
-%restricted by certain relations \cite{brown1981cubes}.
-With the Day convolution monoidal structure on $\cSet$, the cubical singular complex functor $\cSing \colon \cSet \to \Top$ and the functor of (normalized) chains $\cchains \colon \cSet \to \Ch$ are both monoidal, which explains the monoid structure on
-\[
-\cSchains(\loops_z Z) \defeq \cchains \cSing(\loops_z Z).
-\]
-Furthermore, cubical chains are equipped with a natural coalgebra structure coming from Serre's chain approximation to the diagonal.
-This structure provides a lift of $\cchains$ to the category of coalgebras via a monoidal functor
-\[
-\cchainsA \colon \cSet \to \coAlg.
-\]
-In particular, this construction makes $\cSchainsA(\loops_z Z) = \cchainsA\cSing(\loops_z Z)$ into a bialgebra, i.e., a monoid in $\coAlg$.
+Additionally, we need a suitable model of the $E_\infty$-operad, which we take to be the operad $\UM$ introduced in \cite{medina2020prop1}.
+After proving that its coalgebras form a monoidal category, we show that the functor $\cchainsUM$ from cubical sets to $\UM$-coalgebras is monoidal, which implies that $\cchainsUM (\ccobar X)$ is a monoid in $\UM$-coalgebras for any 0-reduced simplicial set.
+More precisely we have the following.
 
-In \cite{baues1998hopf}, Baues reinterpreted Adams' algebraic construction at a deeper geometric level allowing him to endow $\cobar \sSchainsA(Z,z)$ with the structure of a bialgebra, and to show that Adams' comparison map $\theta_Z$ is a quasi-isomorphism of bialgebras when $Z$ is simply-connected.
-
-The simplicial singular complex  $\sSing(Z,z)$ of a pointed topological space $(Z,z)$ is an example of an object in $\sSet^0$, the category of ($0$-)reduced simplicial sets.
-We interpret Baues' geometric cobar construction, originally defined for $1$-reduced simplicial sets, in more category-theoretic terms as a functor
-\begin{equation} \label{e:cubical cobar construction}
-	\ccobar \colon \sSet^0 \to \Mon_{\cSet}
-\end{equation}
-whose key difference with Baues' original work is the use of connections to obtain a natural construction before geometric realization.
-Baues showed that Adams' comparison map factors as a composition
-\begin{equation} \label{e:baues factorization of adams map}
-	\begin{tikzcd}[column sep = small]
-		\theta_Z \colon \cobar \sSchainsA(Z,z) \arrow[r] &
-		\cchainsA(\ccobar \sSing(Z,z)) \arrow[r] &
-		\cSchainsA(\loops_z Z),
-	\end{tikzcd}
-\end{equation}
-where the first chain map is an isomorphism and the second is induced from an inclusion
-\[
-\ccobar \sSing(Z,z) \to \cSing(\loops_z Z)
-\]
-of monoids in $\cSet$ which is a weak equivalence following \cite{rivera2019path}.
-
-The first map in \eqref{e:baues factorization of adams map} is defined for a general reduced simplicial set $X$ and it is always an isomorphism.
-This permitted Baues to transfer the Serre coalgebra structure on $\cchainsA \ccobar(X)$ to $\cobar \schainsA(X)$ and show it compatible with the monoid structure.
-In other words, Baues' lifted Adams' cobar construction $\cobar \schainsA$ so that it fits in the following diagram commuting up to a natural isomorphism:
-\[
-\begin{tikzcd}
-	\Mon_{\cSet} \arrow[r, "\cchainsA \ "] & \Mon_{\coAlg} \arrow[d] \\
-	\sSet^0 \arrow[r, "\cobar \schainsA"] \arrow[u, "\ccobar"] & \Mon_{\Ch}.
-\end{tikzcd}
-\]
-
-The first result presented in this article is the construction of a lift of $\cchainsA \ccobar \colon \sSet^0 \to \Mon_{\coAlg}$ to the category of monoids in $\coAlg_\UM$, where $\coAlg_\UM$ is the category of coalgebras over the operad $\UM$ introduced via a finitely presented prop in \cite{medina2020prop1}.
-This is a model of the $E_\infty$-operad that explicitly acts on both simplicial and cubical chains.
-For this lift to be meaningful, we first need to define a monoidal structure on $\coAlg_\UM$.
-We do so by introducing a Hopf structure on $\UM$, that is to say, by making it into an operad over $\coAlg$, a structure that has other potential applications \cite{livernet2008hopf}.
-Once we have shown that $\coAlg_\UM$ is a monoidal category, we prove the main technical result of this work; that the lift
-\[
-\cchainsUM \colon \cSet \to \coAlg_\UM
-\]
-of $\cchainsA$ defined in \cite{medina2022cube_einfty} is monoidal.
-
-This has consequences for both algebraic models for the based loop space considered so far.
-Let $(Z,z)$ be a pointed space and $X$ a reduced simplicial set, for example $X = \sSing(Z,z)$.
-Since $\cSing(\loops_z Z)$ and $\ccobar X$ are monoids in $\cSet$ we have that both $\cSchainsUM(\loops_z Z)$ and $\cchainsUM \ccobar(X) \cong \cobar \schainsA(X)$ are monoids in $\coAlg_\UM$.
-Furthermore, if $X = \sSing(Z,z)$, Adams' comparison map $\theta_Z$ preserves this additional structure.
-We condense this discussion in our first main result.
-
-\begin{theorem} \label{t:1st main thm in the intro}
-	The functor $\cchainsUM$ is monoidal and its associated functor on monoids fits in the following diagram commuting up to a natural isomorphism:
+\begin{theorem*}
+	The functor $\cchainsUM$ is monoidal and its associated functor on monoids fits in the following diagram commuting up to natural isomorphisms:
 	\[
 	\begin{tikzcd} [row sep=small]
 		& \Mon_{\coAlg_\UM} \arrow[d] \\
 		\Mon_{\cSet} \arrow[ru, "\cchainsUM", out=70, in=180, near start] \arrow[r, "\cchainsA"]
 		& \Mon_{\coAlg} \arrow[d] \\
 		\sSet^0 \arrow[r, "\cobar \schainsA"] \arrow[u, "\ccobar"]
-		& \Mon_{\Ch}.
+		& \Mon_{\Ch},
 	\end{tikzcd}
 	\]
-	Furthermore, Adams' comparison map
-	\[
-	\theta_Z \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z)
-	\]
-	is a quasi-isomorphism of $E_{\infty}$-bialgebras for any pointed space $(Z,z)$.
-\end{theorem}
+	where the unlabeled arrows are forgetful functors.
+\end{theorem*}
 
-%\subsection*{Relation to previous work}
-%
-%Using more abstract methods, in \cite{hess2006adamshilton} Hess, Parent, Scott, and Tonks constructed a coproduct on $\cobar \schainsA(X)$ for any $1$-reduced simplicial set $X$, which coincides with Baues' coproduct.
-%A priori, their methods imply that this coproduct corresponds, up to homotopy, to the Alexander--Whitney coproduct on $\schains(\kan(X))$, a result that Franz showed to hold strictly in \cite{franz2020szczarba}.
-%Our approach allows us to go beyond the coalgebra structure and compare directly the cobar construction and the chains on the Kan loop group as $E_{\infty}$-coalgebras.
-%
-%The works of V.A. Smirnov \cite{smirnov1990iterated}, J.R. Smith \cite{smith1994cobar, smith2000operads}, T. Kadeishvili and S. Saneblidze \cite{kadeishvili1998iterating} predict the existence of an $E_\infty$-coalgebra structure on the cobar construction on the chains of a reduced simplicial set $\cobar \schainsA(X)$.
-%In \cite{fresse2010bar}, B. Fresse used a model category structure on reduced operads \cite{berger2003modelcategory, hinich1997homologicalalgebra} to iterate the bar construction on algebras over cofibrant $E_\infty$-operads.
-%We mention that the reduced version of the $E_\infty$-operad $\UM$ is cofibrant, although we do not use this observation here.
-%In the work of Fresse, finiteness assumptions and restrictions on the fundamental group are required to model the based loop space.
-%
-%The results we have surveyed establish the existence of higher structures on the bar and cobar constructions associated to reduced simplicial sets.
-%We now review part of the history of the problem of describing such structures effectively, and our contribution to it.
-%Kadeishvili described explicitly Steenrod cup-$i$ coproducts on $\cobar \schainsA(X)$ compatible with its monoid structure \cite{kadeishvili1999coproducts, kadeishvili2003cupi}.
-%Kadeishvili, as Baues, used cubical methods to define these operations and to compare them, in the $1$-connected setting, to cup-$i$ coproducts extending the Serre coalgebra structure on the cubical singular chains on the based loop space.
-%Kadeishvili's cup-$i$ coproducts can be obtained from the arity 2 part of our action of $\UM$ on the cobar construction.
-%Taking Kadeishvili's work as a starting point, Fresse provided the bar construction of an algebra over the surjection operad with the structure of a comonoid in the category of algebras over the Barratt--Eccles operad \cite{fresse2003hopf}.
-%Fresse then proves that, for any simplicial set $X$ with suitable restrictions on its fundamental group and finiteness assumptions on its cohomology, the bar construction of the surjection algebra of simplicial cochains on $X$ is quasi-isomorphic to the singular cochains on the based loop space of $|X|$ as an $E_{\infty}$-algebra.
-%
-%Our results in the first part of the present article are similar to those obtained by Fresse in \cite{fresse2003hopf} and described above.
-%However, we make use of coalgebras instead of algebras, which allows us to relate our constructions to the based loop space without imposing restrictions on the underlying homotopy type.
-%Furthermore, by grounding our approach on the cubical perspective at the heart of Adams' and Baues' seminal papers, we are also able to relate the cobar construction and the singular chains on the based loop space as $E_{\infty}$-bialgebras, i.e. as monoids in the category of $E_{\infty}$-coalgebras, and not just as $E_{\infty}$-coalgebras.
-%
-%\subsection*{Outline}
-%
-%In \cref{s:preliminaries}, we recall well known algebraic and categorical definitions and constructions that will be used throughout this article.
-%We review, in \cref{s:operads and props}, the foundations of the theory of operads and props with the goal of recalling the $E_{\infty}$-operad $\UM$ and its actions on simplicial and cubical chains.
-%We construct a Hopf operad structure on $\UM$ in \cref{s:monoidal}, and show that the cubical chains functor from cubical sets to $\UM$-coalgebras is monoidal.
-%We prove \cref{t:1st main thm in the intro} in \cref{s:theorem1} using Baues' cubical cobar construction \eqref{e:cubical cobar construction} and the $\UM$-structure on cubical chains.
+In the above diagram, the arrow from $\sSet^0$ to $\Mon_{\Ch}$ is Adams' construction, the one from $\sSet^0$ to $\Mon_{\coAlg}$ is Baues' enhancement, and the one from $\sSet^0$ to $\Mon_{\coAlg_{\UM}}$ is our contribution.
+
+Additionally we have the following statement when the 0-reduced simplicial set comes from a pointed space.
+
+\begin{theorem*}
+	For any pointed space $(\fZ, z)$, the map
+	\[
+	\theta \colon \cobar \sSchainsA(\fZ, z) \to \cSchains(\loops_z \fZ)
+	\]
+	is a q-i of monoids in $\UM$-coalgebras.
+\end{theorem*}
+
+As mentioned before, the fact that $\theta$ respects the monoid structure in $\Ch$ was proven by Adams, whereas the compatibility of the monoid structure with the Serre coalgebra structure was established by Baues.
+Our contribution is the compatibility of the monoid structure with a full $E_\infty$-coalgebra extension of Serre's coalgebra.
