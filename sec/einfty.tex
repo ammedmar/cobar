@@ -140,7 +140,7 @@ This discussion proves the first half of \cref{t:1st main thm in the intro}, whi
 Throughout this subsection let us consider $\k$ to be the finite field $\Fp$ and $X$ a reduced simplicial set.
 
 Since $\cobar \schainsA(X)$ is isomorphic to the chains on a cubical set (\cref{t:ccobar and cobar}), its mod $p$ homology is a priori equipped with a right action of the Steenrod algebra \cite{steenrod1962cohomology, milnor1958steenrod}.
-As an application of the explicit construction of a natural $\UM$-coalgebra structure on $\cobar \schainsA(X)$, we can describe at the chain level this action using the constructions of \cite{medina2021may_st}.
+As an application of the explicit construction of a natural $\UM$-coalgebra structure on $\cobar \schainsA(X)$, we can describe the chain level this action using the constructions of \cite{medina2021may_st}.
 More explicitly, let $\Cp$ be the cyclic group of order $p$ and
 \[
 \begin{tikzcd} [column sep = .5cm]
@@ -170,26 +170,7 @@ m = (p-1)/2.
 The map $\psi^{\cobar}$, being a special case of the map $\psi^\cube$ defined in \cite{medina2021may_st}, can be described effectively, and it has been implemented in the specialized computer algebra system \texttt{ComCH} \cite{medina2021comch}.
 In similar effective manner, explicit Cartan and Adem coboundaries \cite{medina2020cartan, medina2021adem} can be described, in the $p = 2$ case, for cochain level Steenrod squares of the cobar construction of $\schains(X)$.
 
-\subsection{Factorization of Adams' map}\label{ss:factorization of adams}
 
-We now use the ideas developed so far to study the based loop space of a pointed topological space $(Z,z)$.
-
-Adams' comparison map can be factored as a composition
-\begin{equation}\label{e:factorization of adams}
-	\theta_Z \colon \cobar \sSchainsA(Z,z) \xrightarrow{\cong}
-	\cchains \ccobar(\sSing(Z,z)) \xrightarrow{\cchains(\Theta)}
-	\cSchains(\loops_z Z).
-\end{equation}
-The first map is the natural isomorphism of algebras given by \cref{t:ccobar and cobar}.
-The second map is given by applying the cubical chains functor $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
-\[
-\Theta \colon \ccobar(\sSing(Z,z)) \to \cSing(\loops_z Z)
-\]
-determined through the monoid structure by sending an $n$-simplex $(\sigma \colon \gsimplex^n \to Z)$ to the singular $(n-1)$-cube
-\[
-P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \loops_z Z,
-\]
-where the maps $\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n)$ are those defined by Adams and discussed in \cref{ss:adams maps}.
 
 \subsection{Adams's map as a monoidal \pdfEinfty-coalgebra quasi-isomorphism}
 
