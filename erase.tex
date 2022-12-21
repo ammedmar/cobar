@@ -1,0 +1,59 @@
+\documentclass{amsart}
+\input{aux/style}
+\input{aux/usualcmds}
+\input{aux/commands}
+
+\newcommand{\sk}[1]{\\ #1\ &}
+\begin{document}
+	\begin{align*}
+		(a \ot b) \ast (c \ot d) =\ &
+		(-1)^{bc+a+b+c} \aug(b) (a \ast c) \ot d \,+\,
+		(-1)^{bc+a} a \ot \aug(c) (b \ast d)
+	\end{align*}
+	\begin{align}&
+		\bd\big((a \ot b) \ast (c \ot d)\big) \sk{=}
+		(-1)^{bc+a+b+c} \big(\aug(b) \bd (a \ast c) \ot d \,+\, (-1)^{a+c+1} \aug(b) (a \ast c) \ot \bd d\big) \sk{+}
+		(-1)^{bc+a} \big(\bd a \ot \aug(c) (b \ast d) \,+\, (-1)^{a} a \ot \aug(c) \bd (b \ast d)\big) \sk{=}
+		(-1)^{bc+a+b+c} \aug(b) \big(\bd a \ast c + a \ast \bd c + \aug(a) \ot c - a \ot \aug(c)\big) \ot d \sk{+}
+		(-1)^{a+c+1} \aug(b) (a \ast c) \ot \bd d \sk{+}
+		\bd a \ot \aug(c) (b \ast d) \sk{+}
+		a \ot \aug(c) \big(\bd b \ast d + b \ast \bd d + \aug(b) \ot d - b \ot \aug(d)\big) \sk{=}
+		\aug(b) (\bd a \ast c) \ot d \sk{+}
+		\aug(b) (a \ast \bd c) \ot d \sk{+}
+		\aug(a) \aug(b) \ c \ot d \sk{-}
+		\aug(b) \aug(c) \ a \ot d \sk{+}
+		\aug(b) (a \ast c) \ot \bd d \sk{+}
+		\bd a \ot \aug(c) (b \ast d) \sk{+}
+		\aug(c) a \ot (\bd b \ast d) \sk{+}
+		\aug(c) a \ot (b \ast \bd d) \sk{+}
+		\aug(b) \aug(c) \ a \ot d \sk{-}
+		\aug(c) \aug(d) \ a \ot b
+	\end{align}
+	On the other hand
+	\begin{align}&
+		\bd (a \ot b) \ast (c \ot d) \sk{=}
+		(\bd a \ot b) \ast (c \ot d) \sk{+}
+		(a \ot \bd b) \ast (c \ot d) \sk{=}
+		\aug(b) (\bd a \ast c) \ot d \,+\, \bd a \ot \aug(c) (b \ast d) \sk{+}
+		\aug(\bd b) (a \ast c) \ot d \,+\, a \ot \aug(c) (\bd b \ast d) \sk{=}
+		\aug(b) (\bd a \ast c) \ot d \sk{+}
+		\bd a \ot \aug(c) (b \ast d) \sk{+}
+		a \ot \aug(c) (\bd b \ast d)
+	\end{align}
+	and
+	\begin{align}&
+		(a \ot b) \ast \bd (c \ot d) \sk{=}
+		(a \ot b) \ast (\bd c \ot d) \sk{+}
+		(a \ot b) \ast (c \ot \bd d) \sk{=}
+		\aug(b) (a \ast \bd c) \ot d \,+\, \bd a \ot \aug(\bd c) (b \ast d) \sk{+}
+		\aug(b) (a \ast c) \ot \bd d \,+\, a \ot \aug(c) (b \ast \bd d) \sk{+}
+		\aug(b) (a \ast \bd c) \ot d \sk{+}
+		\aug(b) (a \ast c) \ot \bd d \sk{+}
+		a \ot \aug(c) (b \ast \bd d)
+	\end{align}
+
+	\noindent\textbf{Pairs}
+	\[
+	6-21, 7-29, 9-14, 12-23, 13-31.
+	\]
+\end{document}
