@@ -77,28 +77,23 @@ The model of the $E_\infty$-operad used in the proposition above is denoted by $
 In this section we show that the category of $\cM$-bialgebras is monoidal.
 More specifically, that the monoidal category structure on $\coAlg$ induces one on $\biAlg_{\M}$.
 
-\begin{lemma}
+\begin{lemma}\label{l:monoidal M-bialg}
 	Let $C$ and $C'$ be $\M$-bialgebras.
 	The coalgebra $C \ot C'$ is a natural $\M$-bialgebra with
-	\begin{multline}\label{eq:monoidal_product}
-		(c_1 \ot c_1') \ast (c_2 \ot c'_2) = \\
-		(-1)^{\bars{c_1} + \bars{c'_1}}
-		\Big(
-		(-1)^{\bars{c_2}} \aug(c'_1) \big(c_1 \ot (c_2 \ast c'_2)\big)
-		\ + \
-		(-1)^{\bars{c_1}} \aug(c_2) \big((c_1 \ast c'_1) \ot c'_2\big)
-		\Big)
-	\end{multline}
+	\begin{equation}\label{eq:monoidal_product}
+		(a \ot b) \ast (c \ot d) =
+		a \aug(c) \ot (b \ast d) + (a \ast c) \ot \aug(b) d,
+	\end{equation}
+	where $a,c \in C$ and $b,d \in C'$ are arbitrary elements.
 \end{lemma}
 
-\begin{proof}
-	TBW
-\end{proof}
+The proof of this lemma is a straightforward computation which for completeness is presented in \cref{s:appendix}.
 
 \begin{remark}
-	The prop controlling $\cM$-bialgebras is obtained by applying the functor of chains to a cellular prop whose cells are cubical \cite{medina2021prop2}.
-	The $\ast$ map is represented by a cell isomorphic to the interval $[01]$, with $[1]$ corresponding to $\aug \ot \, \id$ and $[0]$ to $\id \ot \aug$, and \cref{eq:monoidal_product} above comes from the diagonal $[01] \mapsto [0] \ot [01] + [01] \ot [1]$.
-	In fact, if so inclined, one can observe that this prop is Hopf, that is to say, that for each biarity the corresponding chain complex is in fact a coalgebra in a compatible way.
+	The prop $\cM$ controlling $\cM$-bialgebras is obtained by applying the functor of chains to a cellular prop whose cells are cubical \cite{medina2021prop2}.
+	The $\ast$ map is represented by a cell isomorphic to the interval $[01]$, with $[1]$ corresponding to $\aug \ot \, \id$ and $[0]$ to $\id \ot \aug$.
+	\cref{eq:monoidal_product} comes from the diagonal $[01] \mapsto [0] \ot [01] + [01] \ot [1]$.
+	In fact, if so inclined, one can observe that $\cM$ is Hopf, that is to say, that for each biarity $(s,r)$ the the chain complex $\cM(s,r)$ is a coalgebra in a compatible way.
 \end{remark}
 
 It can be inspected that using this theorem on $\chains(\cube^n) \cong \chains(\cube^1)^{\ot n}$ one recovers the $\cM$-bialgebra described in \cref{ex:cubical e-infty}.
@@ -115,7 +110,6 @@ Since for any two cubical sets $X$ and $X'$ we have $\chains(X \times X') \cong 
 %Since $\ccobar$ produces monoids in $\cSet$ and $\cchainsA$ is monoidal, the functor $\cchainsA \ccobar$ produces bialgebras, as claimed.
 
 We now use the natural equivalence of functors $\cchains \ccobar \cong \cobar \schainsA$ proven in \cref{t:ccobar and cobar} to transfer structure.
-
 
 After \cite{medina2022cube_einfty}, we know that cubical chains can be enriched with an $E_\infty$-coalgebra structure extending the Serre coalgebra (\cref{ss:e-infty on cubical}).
 This $\UM$-structure can be transferred via $\cchains \ccobar \cong \cobar \schainsA$ to provide the cobar construction with and $E_\infty$-structure extending Baues coalgebra structure.
@@ -169,7 +163,6 @@ m = (p-1)/2.
 
 The map $\psi^{\cobar}$, being a special case of the map $\psi^\cube$ defined in \cite{medina2021may_st}, can be described effectively, and it has been implemented in the specialized computer algebra system \texttt{ComCH} \cite{medina2021comch}.
 In similar effective manner, explicit Cartan and Adem coboundaries \cite{medina2020cartan, medina2021adem} can be described, in the $p = 2$ case, for cochain level Steenrod squares of the cobar construction of $\schains(X)$.
-
 
 
 \subsection{Adams's map as a monoidal \pdfEinfty-coalgebra quasi-isomorphism}

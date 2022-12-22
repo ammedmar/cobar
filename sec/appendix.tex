@@ -1,0 +1,94 @@
+% !TEX root = ../cobar1.tex
+
+\newcommand{\sk}[1]{\\ #1\ &}
+\newcommand{\bdast}[2]{\bd #1 \ast #2 + (-1)^{#1+1} #1 \ast \bd #2 + \aug(#1) #2 + (-1)^{#1+1} #1 \aug(#2)}
+
+\section{Proof of \cref{l:monoidal M-bialg}}\label{s:appendix}
+
+We want to verify that if $C$ and $C'$ are $\M$-bialgebras, then the coalgebra $C \ot C'$ is also a natural $\M$-bialgebra with
+\begin{equation}\label{eq:monoidal appendix}
+	(a \ot b) \ast (c \ot d) =
+	a \aug(c) \ot (b \ast d) + (a \ast c) \ot \aug(b) d,
+\end{equation}
+for any $a,c \in C$ and $b,d \in C'$.
+
+The first thing to notice is that, since $\aug(b \ast d) = \aug(a \ast c) = 0$, we have
+\begin{multline*}
+	\aug\big((a \ot b) \ast (c \ot d)\big) =
+	\aug\big(a \aug(c) \ot (b \ast d)\big) + \aug\big((a \ast c) \ot \aug(b) d\big) \\ =
+	\aug(a) \aug(c) \ot \aug(b \ast d) + \aug(a \ast c) \ot \aug(b) \aug(d) = 0.
+\end{multline*}
+
+Next we will show that the degree $1$ linear map in $\Hom\big((C \ot C')^{\ot 2}, C \ot C'\big)$ defined by \cref{eq:monoidal appendix} is such that its boundary in this complex is equal to $\aug \ot\, \id - \id \ot \aug$.
+To prove this, one needs to be careful regarding the Koszul sign convention.
+Let us start by recasting this condition for an arbitrary $\cM$-bialgebra in terms of two arbitrary elements $x$ and $y$ in it.
+Since $\ast(x \ot y) = (-1)^x x \ast y$ we have the following equivalent identities:
+\begin{align*}
+	(\bd \ast)(x \ot y) =\ & (\aug \ot\, \id - \id \ot \aug)(x \ot y), \\
+	(\bd \circ \ast + \ast \circ (\bd \ot\, \id + \id \ot \bd))(x \ot y) =\ & \aug(x) \ot\, y - x \ot \aug(y), \\
+	(-1)^x \bd (x \ast y) + (-1)^{x-1} \bd x \ast y + x \ot \bd y =\ & \aug(x) \ot\, y - x \ot \aug(y), \\
+	\bd (x \ast y) =\ & \bdast{x}{y}.
+\end{align*}
+Let us start computing the left hand side of the above expression.
+\begin{align*}&
+	\bd\big((a \ot b) \ast (c \ot d)\big) \sk{=}
+	\bd\big(a \aug(c) \ot (b \ast d) + (a \ast c) \ot \aug(b) d\big) \sk{=}
+	\bd a \aug(c) \ot (b \ast d) \,+\, (-1)^{a} a \aug(c) \ot \bd(b \ast d) \sk{+}
+	\bd (a \ast c) \ot \aug(b) d \,+\, (-1)^{a+c+1} (a \ast c) \ot \aug(b) \bd d \sk{=}
+	\bd a \aug(c) \ot (b \ast d) \sk{+}
+	(-1)^a a \aug(c) \ot (\bdast{b}{d}) \sk{+}
+	(\bdast{a}{c}) \ot \aug(b) d \sk{+}
+	(-1)^{a+c+1} (a \ast c) \ot \aug(b) \bd d.
+\end{align*}
+Recasting this expression for easier matching we have that $\bd\big((a \ot b) \ast (c \ot d)\big)$ is equal to
+\begin{align}& \label{x4}
+	(-1)^0 \bd a \aug(c) \ot (b \ast d) \sk{+} \label{x5}
+	(-1)^{a} a \aug(c) \ot (\bd b \ast d) \sk{+} \label{x6}
+	(-1)^{a+b+1} a \aug(c) \ot (b \ast \bd d) \sk{+} \label{x7}
+	(-1)^a a \aug(c) \ot \aug(b) d \sk{+} \label{x8}
+	(-1)^{a+b+1} a \aug(c) \ot b \aug(d) \sk{+} \label{x9}
+	(-1)^0 (\bd a \ast c) \ot \aug(b) d \sk{+} \label{x10}
+	(-1)^{a+1} (a \ast \bd c) \ot \aug(b) d \sk{+} \label{x11}
+	(-1)^0 \aug(a) c \ot \aug(b) d \sk{+} \label{x12}
+	(-1)^{a+1} a \aug(c) \ot \aug(b) d \sk{+} \label{x13}
+	(-1)^{a+c+1} (a \ast c) \ot \aug(b) \bd d.
+\end{align}
+Additionally, on one hand we have that
+\begin{equation*}
+	\bd (a \ot b) \ast (c \ot d) \,=\,
+	(\bd a \ot b) \ast (c \ot d) \,+\,
+	(-1)^a (a \ot \bd b) \ast (c \ot d),
+\end{equation*}
+or in more matchable terms that $\bd (a \ot b) \ast (c \ot d)$ is equal to
+\begin{align}& \label{x14}
+	(-1)^0 \bd a \aug(c) \ot (b \ast d) \sk{+} \label{x15}
+	(-1)^0 (\bd a \ast c) \ot \aug(b) d \sk{+} \label{x16}
+	(-1)^{a} a \aug(c) \ot (\bd b \ast d),
+\end{align}
+while on the other we have that
+\begin{equation*}
+	(a \ot b) \ast \bd (c \ot d) \,=\,
+	(a \ot b) \ast (\bd c \ot d) \,+\,
+	(-1)^{c} (a \ot b) \ast (c \ot \bd d),
+\end{equation*}
+or in more matchable terms that $(-1)^{a+b+1}(a \ot b) \ast \bd (c \ot d)$
+\begin{align}& \label{x17}
+	(-1)^{a+1} (a \ast \bd c) \ot \aug(b) d \sk{+} \label{x18}
+	(-1)^{a+b+1} a \aug(c) \ot (b \ast \bd d) \sk{+} \label{x19}
+	(-1)^{a+c+1} (a \ast c) \ot \aug(b) \bd d.
+\end{align}
+We notice the following matching
+\begin{center}
+	\eqref{x4}-\eqref{x14} :
+	\eqref{x5}-\eqref{x16} :
+	\eqref{x6}-\eqref{x18} :
+	\eqref{x7}-\eqref{x12} :
+	\eqref{x9}-\eqref{x15} :
+	\eqref{x10}-\eqref{x17} :
+	\eqref{x13}-\eqref{x19}.
+\end{center}
+Additionally, the sum of the unmatched terms \eqref{x11} and \eqref{x8} correspond to
+\[
+\aug(a \ot b) (c \ot b) + (-1)^{a+b+1} (a \ot b) \aug(c \ot d),
+\]
+which concludes the proof.
