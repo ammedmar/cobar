@@ -26,17 +26,22 @@ is referred to as a \textit{Yoneda extension}.
 Objects in the image of the Yoneda embedding are said to be \textit{representable}.
 Any presheaf $P$ is isomorphic to a colimit of representables presheaves $P \, \cong \colim_{\yoneda(a) \downarrow P} \yoneda(a)$.
 
-\subsection{Monoids}
-
-A \textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with two morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$, called \textit{multiplication} and \textit{unit} respectively, satisfying the usual associativity and unital relations.
-We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and remark that a monoidal functor $\sC \to \sC^\prime$ induces a functor between their categories of monoids $\Mon_\sC \to \Mon_{\sC^\prime}$.
-
-\subsection{Coalgebras}\label{ss:coalgebras}
+\subsection{Chain complexes}
 
 Throughout this article $\k$ denotes a commutative and unital ring and we work over its associated closed symmetric monoidal category of differential (homologically) graded $\k$-modules $(\Ch, \ot, \k)$.
 We refer to the objects and morphisms of this category as \textit{chain complexes} and \textit{chain maps} respectively.
 We denote by $\Hom(C, C^\prime)$ the chain complex of $\k$-linear maps between chain complexes $C$ and $C^\prime$, and refer to the functor $\Hom(-, \k)$ as \textit{linear duality}.
 The $i^\th$ \textit{suspension} functor $s^i \colon \Ch \to \Ch$ is defined at the level of graded modules by $(s^{i}M)_n = M_{n-i}$.
+
+
+\subsection{Monoids}
+
+A \textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with two morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$, called \textit{multiplication} and \textit{unit} respectively, satisfying the usual associativity and unital relations.
+We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and remark that a monoidal functor $\sC \to \sC^\prime$ induces a functor between their categories of monoids $\Mon_\sC \to \Mon_{\sC^\prime}$.
+
+For example, a monoid in $(\Ch, \ot, \k)$ is a differential graded $\k$-algebra. A morphism $f: A \to A'$ in $\Mon_\Ch$ inducing an isomorphism on homology will be called a \textit{monoidal quasi-isomorphism.}
+
+\subsection{Coalgebras}\label{ss:coalgebras}
 
 A \textit{coalgebra} consists of a chain complex $C$ and chain maps $\Delta \colon C \to C \ot C$ and $\varepsilon \colon C \to \k$ satisfying the usual coassociativity and counitality relations.
 This notion is equivalent to that of a comonoid in $\Ch$.
