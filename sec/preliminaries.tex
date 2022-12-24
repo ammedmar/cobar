@@ -101,6 +101,7 @@ and $\Delta \colon \chains(\simplex^n) \to \chains(\simplex^n)^{\ot2}$ by
 \[
 \Delta \big( [v_0, \dots, v_q] \big) = \sum_{i=0}^q \ [v_0, \dots, v_i] \ot [v_i, \dots, v_q].
 \]
+We refer to this lift as the \textit{Alexander--Whitney coalgebra} structure on simplicial chains.
 
 If $X$ is a reduced simplicial set then $\schainsA(X)$ becomes a connected coalgebra with the coaugmentation $\nu \colon \k \to \schains(X)$ induced by sending $1$ to the basis element represented by the unique $0$-simplex of $X$.
 Hence, the functor $\schainsA$ restricts to a functor
@@ -163,6 +164,11 @@ There is a classical lift of the functor of cubical chains to the category of co
 \end{tikzcd}
 \]
 defined, using a Yoneda extension, by the tensor product structure (\cref{ss:coalgebras}) defined on $\chains(\cube^n) \cong \chains(\cube^1)^{\ot n}$ via the identification of $\chains(\cube^1)$ and $\chains(\simplex^1)$.
+We refer to this lift as the \textit{Serre coalgebra} structure on cubical chains.
+We will prove in \cref{ss:cube_einfty revisited} a generalization of the following reformulation of this definition.
+\begin{proposition}\label{p:serre coalgebra}
+	The functor $\cchainsA \colon \cSet \to \coAlg$ is the unique monoidal functor defined by the coalgebra structure on $\chains(\cube^1)$.
+\end{proposition}
 
 %\subsubsection{Cubical chains}
 %
