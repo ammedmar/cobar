@@ -2,7 +2,7 @@
 
 \section{Adams's model of the based loop space}\label{s:theorem1}
 
-In this section we revisit Adams's classical cobar construction as a model for the based loop space. A deeper exploration of Adams's comparison map from the cobar construction of the simplicial singular chains on a space to the cubical chains on the based loop space naturally leads us to the framework of necklical sets, a notion related to both simplicial sets and cubical sets.  We use this framework to construct a functorial cubical model for the based loop space. Similar constructions and results may be found in \cite{baues1980geometry}, \cite{berger1995loops}, \cite{baues1998hopf}, \cite{dugger2011rigidification}, \cite{galvez2020hopf}, and \cite{rivera2018cubical, rivera2019path}.
+In this section we revisit Adams's classical cobar construction as a model for the based loop space. A deeper exploration of Adams's comparison map from the cobar construction of the simplicial singular chains on a space to the cubical chains on the based loop space naturally leads us to the framework of necklical sets, a notion related to both simplicial sets and cubical sets. We use this framework to construct a functorial cubical model for the based loop space. Similar constructions and results may be found in \cite{baues1980geometry}, \cite{berger1995loops}, \cite{baues1998hopf}, \cite{dugger2011rigidification}, \cite{galvez2020hopf}, and \cite{rivera2018cubical, rivera2019path}.
 
 %The goal of this section is to prove \cref{t:1st main thm in the intro}.
 %Explicitly, we construct a natural $E_{\infty}$-bialgebra structure on $\cobar \schainsA(X)$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(\fX,x)$, Adams's comparison map $\theta_{\fX} \colon \cobar \sSchainsA(\fX,x) \to \cSchains(\loops_x \fX)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
@@ -24,18 +24,18 @@ Denote by $\Top^\ast$ the category of pointed topological spaces. The \textit{ba
 associates to any pointed space $(\fX,x)$ the topological monoid
 \[\loops_x \fX= \{ \alpha \colon [0,r] \to \fX \mid r \in [0, \infty), \text{$\alpha$ is continuous, and } \alpha(0)=x=\alpha(r)\}
 \]
-of loops in $\fX$ based at $x$ with variable parameter $r$. The topology of $\loops_x \fX$ is given by the compact-open topology. The monoid structure \[\loops_x \fX  \times \loops_x \fX \to \loops_x \fX\] is given by concatenation of loops and adding the corresponding parameters. The unit is the constant loop at $x$ with parameter $r=0$. On any morphism $f \colon (\fX,x) \to (\fX',x')$, the induced monoid map $\loops (f) \colon \loops_x \fX \to \loops_{x'} \fX'$ is given by $\loops(f) (\alpha) = f\circ\alpha$. It will also be useful to consider the \textit{free path space} functor
+of loops in $\fX$ based at $x$ with variable parameter $r$. The topology of $\loops_x \fX$ is given by the compact-open topology. The monoid structure \[\loops_x \fX \times \loops_x \fX \to \loops_x \fX\] is given by concatenation of loops and adding the corresponding parameters. The unit is the constant loop at $x$ with parameter $r=0$. On any morphism $f \colon (\fX,x) \to (\fX',x')$, the induced monoid map $\loops (f) \colon \loops_x \fX \to \loops_{x'} \fX'$ is given by $\loops(f) (\alpha) = f\circ\alpha$. It will also be useful to consider the \textit{free path space} functor
 \[
-P \colon \Top \to \Top
+\rP \colon \Top \to \Top
 \]
-which associates to any space $\fX$ the space $P\fX$ of all continuous paths $\alpha \colon [0,r] \to \fX$ with variable parameter $r$ and no restrictions on the endpoints.
+which associates to any space $\fX$ the space $\rP\fX$ of all continuous paths $\alpha \colon [0,r] \to \fX$ with variable parameter $r$ and no restrictions on the endpoints.
 \subsection{The cobar construction}\label{ss:cobar construction}
 In the following, we use the algebraic notions introduced in \cref{ss:coalgebras}. The \textit{cobar construction} is the functor
 \[
 \cobar \colon \coAlg^\ast \to \Mon_{\Ch}
 \]
 defined on objects as follows.
-Let $(C, \partial, \Delta, \varepsilon, \nu)$ be a coaugmented coalgebra.
+Let $(C, \Delta, \varepsilon, \nu)$ be a coaugmented coalgebra.
 Denote by $\overline{C}$ the cokernel of the coaugmentation $\nu \colon \k \to C$ and recall that $s^{-1}$ is the $(-1)^\th$ suspension functor.
 The cobar construction $\cobar C$ of this coaugmented coalgebra is the graded module
 \[
@@ -46,7 +46,7 @@ regarded as a monoid in $\Ch$ with free associative product $\mu \colon T(s^{-1}
 - s^{-1} \circ \partial \circ s^{+1} \ + \ (s^{-1} \ot s^{-1}) \circ \Delta \circ s^{+1} \colon
 s^{-1} \overline{C} \to s^{-1}\overline{C} \oplus (s^{-1}\overline{C} \ot s^{-1}\overline{C}) \hookrightarrow T(s^{-1}C)
 \]
-as a derivation using the freeness of the underlying graded monoid.  On morphisms, the functor $\cobar$ is defined using the functoriality of the free graded monoid construction. For any $x_1, \cdots, x_k \in \overline{C}$, we denote
+as a derivation using the freeness of the underlying graded monoid. On morphisms, the functor $\cobar$ is defined using the functoriality of the free graded monoid construction. For any $x_1, \cdots, x_k \in \overline{C}$, we denote
 \[
 [x_1| \cdots | x_k]= s^{-1} x_1 \otimes \cdots \otimes s^{-1}x_k \in (s^{-1}\overline{C})^{\otimes k}.
 \]
@@ -56,6 +56,7 @@ as a derivation using the freeness of the underlying graded monoid.  On morphism
 %However, we will not require the data of augmentations in this article.
 
 \subsection{Adams's map}\label{ss:adams maps}
+
 In \cite{adams1956cobar}, Adams made precise the sense in which the cobar functor may be understood as an algebraic analogue of the based loop space functor, by constructing a natural chain map of monoids
 \begin{equation}\label{e:adams map 2}
 	\theta_{\fX} \colon \cobar \sSchainsA(\fX,x) \to \cSchains(\loops_x \fX),
@@ -89,17 +90,17 @@ Conditions (1), (2), and (3) then imply that $\theta_{\fX}$ is a chain map.
 Furthermore, we have the following result.
 
 \begin{proposition}[\cite{adams1956cobar}\cite{rivera2018cubical}]
-    For any pointed space $(\fX,x)$
-    \[
-    \theta_{\fX} \colon \cobar \sSchainsA(\fX,x) \to \cSchains(\loops_x \fX)
-    \]
-    is a monoidal quasi-isomorphism.
+	For any pointed space $(\fX,x)$
+	\[
+	\theta_{\fX} \colon \cobar \sSchainsA(\fX,x) \to \cSchains(\loops_x \fX)
+	\]
+	is a monoidal quasi-isomorphism.
 \end{proposition}
 
 The above theorem was proven by Adams assuming the fundamental group $\pi_1(\fX,x)$ is trivial. In the non-simply connected case, the statement was proven in \cite{rivera2018rigidification} and, using a different argument, in \cite{rivera2019path}.
 
 \begin{remark}
-    Adams originally worked with the sub-coalgebra $\sSchainsA(\fX,x)^1$ of $\sSchainsA(\fX,x)$ generated by singular simplices $\sigma \colon \gsimplex^n \to \fX$ collapsing the $1$-skeleton of $\gsimplex^n$ to $x \in \fX$. If $\fX$ is simply connected, the inclusion map $\sSchainsA(\fX,x)^1  \hookrightarrow \sSchainsA(\fX,x)$ induces a quasi-isomorphism on homology. In this case, the degree $1$ module in $\sSchainsA(\fX,x)^1$ is trivial, so that $\cobar \sSchainsA(\fX,x)^1$ is connected, i.e. isomorphic to the underlying ring $\k$ in degree $0$. The cobar construction does not preserve quasi-isomorphisms in general. It does preserve quasi-isomorphisms between coaugmented coalgebras that are trivial in degree $1$.
+  Adams originally worked with the sub-coalgebra $\sSchainsA(\fX,x)^1$ of $\sSchainsA(\fX,x)$ generated by singular simplices $\sigma \colon \gsimplex^n \to \fX$ collapsing the $1$-skeleton of $\gsimplex^n$ to $x \in \fX$. If $\fX$ is simply connected, the inclusion map $\sSchainsA(\fX,x)^1 \hookrightarrow \sSchainsA(\fX,x)$ induces a quasi-isomorphism on homology. In this case, the degree $1$ module in $\sSchainsA(\fX,x)^1$ is trivial, so that $\cobar \sSchainsA(\fX,x)^1$ is connected, i.e. isomorphic to the underlying ring $\k$ in degree~$0$. The cobar construction does not preserve quasi-isomorphisms in general. It does preserve quasi-isomorphisms between coaugmented coalgebras that are trivial in degree $1$.
 \end{remark}
 
 %We will construct an $E_{\infty}$-bialgebra structure on $\cobar \sSchainsA(\fX,x)$ and show that, when $\cSchains(\loops_x \fX)$ is equipped with the $E_{\infty}$-coalgebra structure described in \cref{ss:e-infty on cubical}, the map $\theta_{\fX}$ is a map of $E_{\infty}$-coalgebras.
@@ -109,11 +110,10 @@ The above theorem was proven by Adams assuming the fundamental group $\pi_1(\fX,
 
 For any pointed space $(\fX,x)$, the underlying graded $\k$-module of $\cobar \sSchainsA(\fX,x)$ can be described as the graded $\k$-module freely generated by finite ordered sequences
 \[T=(\sigma_1, \cdots, \sigma_k)\]
-of simplices $\sigma_i \in \text{Sing}^{\simplex}_{n_i}(\fX,x)$, with degree $|T|:= n_1 + \cdots + n_k -k$,  modulo the sub $\k$-module generated by those sequences with at least one degenerate simplex. The differential of $\cobar \sSchainsA(\fX,x)$ on a generator $T$ of degree $n$ is given by a signed sum of all generators $T'$ of degree $n-1$ that, in certain sense, fit inside $T$. Furthermore, the monoid structure of $\cobar \sSchainsA(\fX,x)$ is induced by simply concatenating these ordered sequences of simplices. This perspective suggests that $\cobar \sSchainsA(\fX,x)$ may be obtained by applying a normalized chains functor to certain cellular monoid, naturally associated to $(\fX,x)$, with cells labeled by finite ordered sequences of simplices in $\sSing(\fX,x)$. A geometric construction reflecting this idea was described in \cite{baues1980geometry}. We instead take a categorical approach and make this discussion precise through the framework of \textit{necklaces} and \textit{necklical sets} as we now discuss.
+of simplices $\sigma_i \in \text{Sing}^{\simplex}_{n_i}(\fX,x)$, with degree $|T|:= n_1 + \cdots + n_k -k$, modulo the sub $\k$-module generated by those sequences with at least one degenerate simplex. The differential of $\cobar \sSchainsA(\fX,x)$ on a generator $T$ of degree $n$ is given by a signed sum of all generators $T'$ of degree $n-1$ that, in certain sense, fit inside $T$. Furthermore, the monoid structure of $\cobar \sSchainsA(\fX,x)$ is induced by simply concatenating these ordered sequences of simplices. This perspective suggests that $\cobar \sSchainsA(\fX,x)$ may be obtained by applying a normalized chains functor to certain cellular monoid, naturally associated to $(\fX,x)$, with cells labeled by finite ordered sequences of simplices in $\sSing(\fX,x)$. A geometric construction reflecting this idea was described in \cite{baues1980geometry}. We instead take a categorical approach and make this discussion precise through the framework of \textit{necklaces} and \textit{necklical sets} as we now discuss.
 
 Consider the subcategory $\simplex_{*,*}$ of the simplex category $\simplex$ with the same objects and morphisms given by functors $f \colon [n] \to [m]$ satisfying $f(0) = 0$ and $f(n) = m$.
 It is a strict monoidal category when equipped with the monoidal structure $[n] \ot [m] = [n+m]$, thought of as identifying the elements $n \in [n]$ and $0 \in [m]$, and unit given by $[0]$. Heuristically, we may think of $\simplex_{*,*}$ as a category of models for cells parametrizing families of paths with fixed endpoints inside a simplex.
-
 
 %In passing, we mention that this category is $\op$-dual to the augmented simplex category, a form of Joyal duality. do we need this?
 
@@ -154,10 +154,13 @@ The \textit{dimension} of a necklace $T = [n_1] \vee \dots \vee[n_k]$ is defined
 The category of \textit{necklical sets} $\Fun(\Nec^{\op}, \Set)$ %equipped with Day convolution (\cref{ss:day convolution})%
 becomes a (non-symmetric) monoidal category with monoidal structure induced from $(\Nec, \vee)$. We denote the monoidal category of necklical sets by $\nSet$.
 
-\begin{remark} The category of necklaces was introduced in \cite{dugger2011rigidification} to give an explicit description of the homotopy coherent nerve functor and its left adjoint.
+\begin{remark}
+	The category of necklaces was introduced in \cite{dugger2011rigidification} to give an explicit description of the homotopy coherent nerve functor and its left adjoint.
 \end{remark}
 
-\subsection{From necklaces to cubes} We now describe a functorial relation between necklaces and cubes. This will be used to explain how Adams' map is induced by a deeper categorical construction. The main idea is that to any necklace one may associate a cube such that codimension $1$ injections of necklaces correspond to cubical coface maps.
+\subsection{From necklaces to cubes}
+
+We now describe a functorial relation between necklaces and cubes. This will be used to explain how Adams' map is induced by a deeper categorical construction. The main idea is that to any necklace one may associate a cube such that codimension $1$ injections of necklaces correspond to cubical coface maps.
 
 We begin by defining a monoidal functor
 \[
@@ -185,7 +188,6 @@ In order to define $\cP$ on morphisms, it is sufficient to consider the followin
 \begin{remark}
 	The functor $\cP$ is neither faithful or full.
 	However, for any necklace $T' \in \Nec$ with $\dim(T')=n+1$ and any cubical coface functor $\delta_{\epsilon}^j \colon 2^n \to 2^{n+1}$ for $0 \leq j \leq n+1$, there exists an map $f \colon T \hookrightarrow T'$, where $T \in \Nec$ with $\dim(T)=n$ such that $\mathcal{S}(f) \colon \mathcal{S}(T) \hookrightarrow \mathcal{S}(T')$ is an injective morphism in $\Nec$ and $\cP(f) = \delta_{\epsilon}^j$.
-
 \end{remark}
 
 The functor $\cP \colon \Nec \to \cube$ induces an adjunction between $\cSet$ and $\nSet$ with right and left adjoint functors given respectively by
@@ -232,8 +234,11 @@ as the composition
 \[
 \ccobar = \cP_! \, \circ \ncobar.
 \]
-\begin{remark} This reinterpretation of Baues's construction in terms of cubical sets was also studied in \cite{rivera2018cubical}. In this reference, it is also proven that the composition of functor $\mathcal{T} \circ \ccobar$, where $\mathcal{T} \colon \Mon_{\cSet} \to \Mon_{\sSet}$ is the triangulation functor, coincides with the left adjoint of the homotopy coherent nerve functor restricted to $\sSet^0.$
+
+\begin{remark}
+	This reinterpretation of Baues's construction in terms of cubical sets was also studied in \cite{rivera2018cubical}. In this reference, it is also proven that the composition of functor $\mathcal{T} \circ \ccobar$, where $\mathcal{T} \colon \Mon_{\cSet} \to \Mon_{\sSet}$ is the triangulation functor, coincides with the left adjoint of the homotopy coherent nerve functor restricted to $\sSet^0.$
 \end{remark}
+
 \subsection{Relation to the cobar construction}
 
 We now relate the cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}$ to the cobar construction $\cobar \colon \coAlg^\ast \to \Mon_{\Ch}$ (\cref{ss:cobar construction}).
