@@ -1,3 +1,93 @@
+%\subsubsection{Cubical chains}
+%
+%For non-negative integers $m$ and $n$, let $\cube_{\deg}(2^m, 2^n)$ be the subset of \textit{degenerate morphisms} in $\cube(2^m, 2^n)$, i.e., those of the form $\sigma_i \circ \tau$ or $\gamma_i \circ \tau$ with $\tau$ any morphism in $\cube(2^m, 2^{n+1})$.
+%The functor of (cubical) \textit{chains} $\cchains \colon \cSet \to \Ch$ is the Yoneda extension of the functor $\cube \to \Ch$ defined next.
+%It assigns to an object $2^n$ the chain complex having in degree $m$ the module
+%\[
+%\frac{\k\{\cube(2^m, 2^n)\}}{\k\{\cube_{\deg}(2^m, 2^n)\}}
+%\]
+%and differential induced by
+%\[
+%\partial (\id_{2^n}) = \sum_{i=1}^{n} \ (-1)^i \
+%\big(\delta_i^1 - \delta_i^0 \big).
+%\]
+%To a morphism $\tau \colon 2^n \to 2^{n^\prime}$ it assigns the chain map
+%\[
+%\begin{tikzcd}[row sep=-3pt, column sep=normal,
+%	/tikz/column 1/.append style={anchor=base east},
+%	/tikz/column 2/.append style={anchor=base west}]
+%	\cchains(\cube^n)_m \arrow[r] & \cchains(\cube^{n^\prime})_m \\
+%	\big( 2^m \to 2^n \big) \arrow[r, mapsto] & \big( 2^m \to 2^n \stackrel{\tau}{\to} 2^{n^\prime} \big).
+%\end{tikzcd}
+%\]
+%
+%When no confusion arises we write $\chains$ instead of $\cchains$.
+
+
+%\subsubsection{Cubical singular complex}
+%
+%Consider the topological $n$-cube
+%\[
+%\gcube^{n} = \{(x_1, \dots, x_n) \mid x_i \in [0,1]\}.
+%\]
+%The assignment $2^n \to \gcube^n$ defines a functor $\cube \to \Top$ whose Yoneda extension is known as \textit{geometric realization}.
+%It has a right adjoint $\cSing \colon \Top \to \cSet$ given by
+%\[
+%Z \to \Big(2^n \mapsto \Top(\gcube^n, Z)\Big)
+%\]
+%and referred to as the \textit{cubical singular complex} of the topological space $Z$.
+%We will refer to $\chains(\cSing Z)$ as the \textit{cubical singular chains} of $Z$ and for simplicity denote it by $\cSchains(Z)$.
+
+%\subsubsection{Serre coalgebra}\label{ss:serre coalgebra}
+%
+%We review a classical lift of the functor of cubical chains to the category of coalgebras
+%\[
+%\begin{tikzcd}
+%	& \coAlg \arrow[d] \\
+%	\cSet \arrow[r, "\cchains"] \arrow[ur, "\cchainsA", out=70, in=180] & \Ch.
+%\end{tikzcd}
+%\]
+%Using a Yoneda extension, it suffices to equip the chains on standard cubes with a natural coalgebra structure.
+%For any $n \in \N$, define $\epsilon \colon \chains(\cube^n) \to \k$ by
+%\[
+%\epsilon \left( x_1 \ot \dots \ot x_d \right) = \epsilon(x_1) \dotsm \epsilon(x_n),
+%\]
+%where
+%\[
+%\epsilon([0]) = \epsilon([1]) = 1, \qquad \epsilon([0, 1]) = 0,
+%\]
+%and $\Delta \colon \chains(\cube^n) \to \chains(\cube^n)^{\ot 2}$ by
+%\[
+%\Delta (x_1 \ot \dots \ot x_n) =
+%\sum \pm \left( x_1^{(1)} \ot \dots \ot x_n^{(1)} \right) \ot
+%\left( x_1^{(2)} \ot \dots \ot x_n^{(2)} \right),
+%\]
+%where the sign is determined using the Koszul convention, and we are using Sweedler's notation
+%\[
+%\Delta(x_i) = \sum x_i^{(1)} \ot x_i^{(2)}
+%\]
+%for the chain map $\Delta \colon \chains(\cube^1) \to \chains(\cube^1)^{\ot 2}$ defined by
+%\[
+%\Delta([0]) = [0] \ot [0], \quad \Delta([1]) = [1] \ot [1], \quad \Delta([0,1]) = [0] \ot [0,1] + [0,1] \ot [1].
+%\]
+%
+%Using the canonical isomorphism $\chains(\cube^n) \cong \chains(\cube^1)^{\ot n}$, the coproduct $\Delta$ can be described as the composition
+%\[
+%\begin{tikzcd}
+%	\chains(\cube^1)^{\ot n} \arrow[r, "\Delta^{\ot n}"] & \left( \chains(\cube^1)^{\ot 2} \right)^{\ot n} \arrow[r, "sh"] & \left( \chains(\cube^1)^{\ot n} \right)^{\ot 2},
+%\end{tikzcd}
+%\]
+%where $sh$ is the shuffle map that places tensor factors in odd position first.
+
+
+
+
+
+
+
+
+
+
 %Recall that for any pointed topological space $(\fZ,z)$ there is a naturally associated topological monoid $\loops_z \fZ$ -- its \textit{based loop space} -- whose points are pairs $(\gamma, r)$ where $r \in \R_{\geq 0}$ and $\gamma \colon [0,r] \to \fZ$ is a continuous map with $\gamma(0) = z = \gamma(r)$.
 %We consider $\loops_z \fZ$  equipped with the compact-open topology and the continuous multiplication defined by \textit{concatenation} of loops.
 \todo{@manuel: this is important because of ...}
