@@ -272,12 +272,13 @@ In this subsection we describe an extension of the tensor product of coalgebras 
 \end{proof}
 
 We now give a more conceptual description of the monoidal structure on $\biAlg_\M$, which generalizes to $\coAlg_\UM$.
-The prop $\cM$ is obtained by applying the functor of cellular chains to a CW prop whose cells are cubical \cite{medina2021prop2}.
-More explicitly, for any $n$-cell $D$ there is a cellular map $\gcube^n \to D$ induced by the assignments
+The prop $\cM$ is obtained by applying the functor of cellular chains to a CW prop \cite{medina2021prop2}.
+In fact, these cells are cubical.
+For any $n$-cell $D$ there is a cellular map $\gcube^n \to D$ induced by the assignments
 \[
-\stackrel{\cellcoproduct}{\gcube^0}\,, \qquad
-\stackrel{\cellcounit}{\gcube^0}\,, \qquad
-\stackrel{\cellcoboundary}{\gcube^1}\,.
+\stackrel{\cellcoproduct}{\gcube^0} \qquad\qquad
+\stackrel{\cellcounit}{\gcube^0} \qquad\qquad
+\stackrel{\cellcoboundary}{\gcube^1}
 \]
 We use the induced chain map $\phi_D$ and the Serre diagonal to define a diagonal on $\cM$ compatible with its prop structure as follows
 \[
@@ -348,40 +349,40 @@ We now use the natural equivalence of functors $\cchains \ccobar \cong \cobar \s
 	\]
 \end{lemma}
 
-\subsection{Steenrod operations}
-
-Throughout this subsection let us consider $\k$ to be the finite field $\Fp$ and $X$ a reduced simplicial set.
-
-Since $\cobar \schainsA(X)$ is isomorphic to the chains on a cubical set (\cref{t:ccobar and cobar}), its mod $p$ homology is a priori equipped with a right action of the Steenrod algebra \cite{steenrod1962cohomology, milnor1958steenrod}.
-As an application of the explicit construction of a natural $\UM$-coalgebra structure on $\cobar \schainsA(X)$, we can describe the chain level this action using the constructions of \cite{medina2021may_st}.
-More explicitly, let $\Cp$ be the cyclic group of order $p$ and
-\[
-\begin{tikzcd} [column sep = .5cm]
-	\cW(p) = \Fp[\Cp]\{e_0\} & \arrow[l, "\,T"'] \Fp[\Cp]\{e_1\} & \arrow[l, "\,N"'] \Fp[\Cp]\{e_2\} & \arrow[l, "\,T"'] \dotsb
-\end{tikzcd}
-\]
-be the minimal free resolution of $\Fp$ as an $\Fp[\Cp]$-module.
-Consider the $\Cp$-equivari-ant quasi-isomorphism $\psi_\UM \colon \cW(p) \to \UM(p)$ constructed in \cite{medina2021may_st}, and denote by $\psi^{\cobar}$ its composition with the morphism $\UM \to \End^{\cobar \schainsA(X)}$ defining our $E_\infty$-coalgebra structure on $\cobar \schainsA(X)$.
-
-If $p$ is the even prime, the Steenrod square $P_s$ is represented by the map sending a representative $\mu$ of a class in the $k^\th$ homology of $\cobar \schainsA(X)$ to the following element in its double linear dual:
-\[
-\mu \mapsto
-\Big( \alpha \mapsto (\alpha \ot \alpha) \big( \psi^{\cobar}(e_{k+2s})(\mu) \big) \Big).
-\]
-Similarly, if $p$ is an odd prime, the action of the Steenrod operations $\beta^\varepsilon P_{s}$ where $\varepsilon = 0,1$ are represented by
-\[
-\mu \mapsto
-\Big( \alpha \mapsto \alpha^{\ot p} \big( (-1)^p \, \nu(q) \, \psi^{\cobar}(e_{(2s-q)(p-1)-\varepsilon})(\mu) \big) \Big)
-\]
-where
-\[
-q = -k -2s(p-1) + \varepsilon, \qquad
-\nu(q) = (-1)^{q(q-1)m/2}(m!)^q, \qquad
-m = (p-1)/2.
-\]
-
-The map $\psi^{\cobar}$, being a special case of the map $\psi^\cube$ defined in \cite{medina2021may_st}, can be described effectively, and it has been implemented in the specialized computer algebra system \texttt{ComCH} \cite{medina2021comch}.
-In similar effective manner, explicit Cartan and Adem coboundaries \cite{medina2020cartan, medina2021adem} can be described, in the $p = 2$ case, for cochain level Steenrod squares of the cobar construction of $\schains(X)$.
+%\subsection{Steenrod operations}
+%
+%Throughout this subsection let us consider $\k$ to be the finite field $\Fp$ and $X$ a reduced simplicial set.
+%
+%Since $\cobar \schainsA(X)$ is isomorphic to the chains on a cubical set (\cref{t:ccobar and cobar}), its mod $p$ homology is a priori equipped with a right action of the Steenrod algebra \cite{steenrod1962cohomology, milnor1958steenrod}.
+%As an application of the explicit construction of a natural $\UM$-coalgebra structure on $\cobar \schainsA(X)$, we can describe the chain level this action using the constructions of \cite{medina2021may_st}.
+%More explicitly, let $\Cp$ be the cyclic group of order $p$ and
+%\[
+%\begin{tikzcd} [column sep = .5cm]
+%	\cW(p) = \Fp[\Cp]\{e_0\} & \arrow[l, "\,T"'] \Fp[\Cp]\{e_1\} & \arrow[l, "\,N"'] \Fp[\Cp]\{e_2\} & \arrow[l, "\,T"'] \dotsb
+%\end{tikzcd}
+%\]
+%be the minimal free resolution of $\Fp$ as an $\Fp[\Cp]$-module.
+%Consider the $\Cp$-equivari-ant quasi-isomorphism $\psi_\UM \colon \cW(p) \to \UM(p)$ constructed in \cite{medina2021may_st}, and denote by $\psi^{\cobar}$ its composition with the morphism $\UM \to \End^{\cobar \schainsA(X)}$ defining our $E_\infty$-coalgebra structure on $\cobar \schainsA(X)$.
+%
+%If $p$ is the even prime, the Steenrod square $P_s$ is represented by the map sending a representative $\mu$ of a class in the $k^\th$ homology of $\cobar \schainsA(X)$ to the following element in its double linear dual:
+%\[
+%\mu \mapsto
+%\Big( \alpha \mapsto (\alpha \ot \alpha) \big( \psi^{\cobar}(e_{k+2s})(\mu) \big) \Big).
+%\]
+%Similarly, if $p$ is an odd prime, the action of the Steenrod operations $\beta^\varepsilon P_{s}$ where $\varepsilon = 0,1$ are represented by
+%\[
+%\mu \mapsto
+%\Big( \alpha \mapsto \alpha^{\ot p} \big( (-1)^p \, \nu(q) \, \psi^{\cobar}(e_{(2s-q)(p-1)-\varepsilon})(\mu) \big) \Big)
+%\]
+%where
+%\[
+%q = -k -2s(p-1) + \varepsilon, \qquad
+%\nu(q) = (-1)^{q(q-1)m/2}(m!)^q, \qquad
+%m = (p-1)/2.
+%\]
+%
+%The map $\psi^{\cobar}$, being a special case of the map $\psi^\cube$ defined in \cite{medina2021may_st}, can be described effectively, and it has been implemented in the specialized computer algebra system \texttt{ComCH} \cite{medina2021comch}.
+%In similar effective manner, explicit Cartan and Adem coboundaries \cite{medina2020cartan, medina2021adem} can be described, in the $p = 2$ case, for cochain level Steenrod squares of the cobar construction of $\schains(X)$.
 
 
 \subsection{Adams's map as a monoidal \pdfEinfty-coalgebra quasi-isomorphism}

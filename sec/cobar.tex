@@ -133,7 +133,7 @@ Namely, the set of objects of $\Nec$ is the set of monomials
 \]
 together with $[0]$ serving as the monoidal unit.
 
-The morphisms of $\Nec$ are generated through the monoidal structure by the following four types of morphisms for all $n \in\N_{>0} $
+The morphisms of $\Nec$ are generated through the monoidal structure by the following four types of morphisms for all $n \in\N_{>0}$
 \begin{enumerate}
 	\item $\partial^j \colon [n-1] \to [n]$ for $j = 1, \dots, n-1$,
 	\item $\Delta_{[j], [n-j]} \colon [j] \vee [n-j] \to [n]$ for $j = 1, \dots, n-1$,
@@ -153,8 +153,7 @@ where the wedge symbol now means we identify the last vertex of $\simplex^{n_i}$
 Then $\mathcal{S}$ is a fully faithful functor, so $\Nec$ may be identified with the full sub-category of $\sSet_{*,*}$ having as objects those double pointed simplicial sets of the form $\simplex^{n_1} \vee \dots \vee \simplex^{n_k}$.
 The \textit{dimension} of a necklace $T = [n_1] \vee \dots \vee[n_k]$ is defined by $\dim(T) = n_1 + \dots + n_k-k$.
 
-The category of \textit{necklical sets} $\Fun(\Nec^{\op}, \Set)$ %equipped with Day convolution (\cref{ss:day convolution})%
-becomes a (non-symmetric) monoidal category with monoidal structure induced from $(\Nec, \vee)$. We denote the monoidal category of necklical sets by $\nSet$.
+The category of \textit{necklical sets} $\Fun(\Nec^{\op}, \Set)$ becomes a (non-symmetric) monoidal category with monoidal structure induced from $(\Nec, \vee)$. We denote the monoidal category of necklical sets by $\nSet$.
 
 \begin{remark*}
 	The category of necklaces was introduced in \cite{dugger2011rigidification} to give an explicit description of the homotopy coherent nerve functor and its left adjoint.
@@ -238,7 +237,7 @@ as the composition
 \]
 
 \begin{remark}
-	This reinterpretation of Baues's construction in terms of cubical sets was also studied in \cite{rivera2018cubical}. In this reference, it is also proven that the composition of functor $\mathcal{T} \circ \ccobar$, where $\mathcal{T} \colon \Mon_{\cSet} \to \Mon_{\sSet}$ is the triangulation functor, coincides with the left adjoint of the homotopy coherent nerve functor restricted to $\sSet^0.$
+	This reinterpretation of Baues' construction in terms of cubical sets was also studied in \cite{rivera2018cubical}. In this reference, it is also proven that the composition of functor $\mathcal{T} \circ \ccobar$, where $\mathcal{T} \colon \Mon_{\cSet} \to \Mon_{\sSet}$ is the triangulation functor, coincides with the left adjoint of the homotopy coherent nerve functor restricted to $\sSet^0.$
 \end{remark}
 
 \subsection{Relation to the cobar construction}
@@ -269,7 +268,7 @@ We now relate the cubical cobar functor $\ccobar \colon \sSet^0 \to \Mon_{\cSet}
 A similar result to \cref{t:ccobar and cobar} was observed in the case of $1$-reduced simplicial sets in \cite[Section~3.5]{berger1995loops}.
 
 \subsection{Factorization of Adams's map}\label{ss:factorization of adams}
-%We now use the ideas developed so far to study the based loop space of a pointed topological space $(\fX,x)$.
+
 Adams's comparison map can be factored as a composition
 \begin{equation}\label{e:factorization of adams}
 	\theta_\fX \colon \cobar \sSchainsA(\fX,x) \xrightarrow{\cong}
@@ -291,10 +290,10 @@ where the maps $\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n)$ are those d
 
 \subsection{A monoidal coalgebra structure on the cobar construction}
 
-We follow \cite{baues1998hopf} to construct a coalgebra structure on $\cobar \sSchainsA(\fX,x)$, compatible with both the differential and monoid structure, such that Adams's map becomes a map of monoids in the category of (dg) coalgebras.
+We follow \cite{baues1998hopf} to construct a coalgebra structure on $\cobar \sSchainsA(\fX,x)$, compatible with both the differential and monoid structure, such that Adams's map becomes a map of monoids in the category of coalgebras.
 
 Recall there is a lift
 \[
 \cchainsA \colon \cSet \to \coAlg
 \]
-of $\cchains \colon \cSet \to \Ch$ determined by Alexander-Whitney coproduct on $\schains(\simplex^1) \cong \cchains(\cube^1)$ and the isomorphism $\cchains(\cube^n)\cong \cchains(\cube^1)^{\otimes n}$ (\cref{ss:cubical}). Since the functor $\cchainsA$ is monoidal, $\cchainsA( \ccobar(\sSing(\fX,x)))$ becomes a monoid in $\coAlg$, i.e. a \textit{monoidal coalgebra} or, equivalently, an associative coassociative dg bialgebra. Similarly, the lift $\cchainsA$ equips $\cSing(\loops_x \fX)$ with a natural monoidal coalgebra structure as well. Consequently, the isomorphism in (\ref{e:factorization of adams}) endows $\cobar \sSchainsA(\fX,x)$ with a natural monoidal coalgebra structure making $\theta_\fX$ into natural map of monoidal coalgebras.
+of $\cchains \colon \cSet \to \Ch$ determined by Alexander--Whitney coproduct on $\schains(\simplex^1) \cong \cchains(\cube^1)$ and  $\cchains(\cube^n)\cong \cchains(\cube^1)^{\otimes n}$ (\cref{ss:cubical}). Since the functor $\cchainsA$ is monoidal, $\cchainsA( \ccobar(\sSing(\fX,x)))$ becomes a monoid in $\coAlg$, i.e. a \textit{monoidal coalgebra} or, equivalently, an associative coassociative dg bialgebra. Similarly, the lift $\cchainsA$ equips $\cSing(\loops_x \fX)$ with a natural monoidal coalgebra structure as well. Consequently, the isomorphism in (\ref{e:factorization of adams}) endows $\cobar \sSchainsA(\fX,x)$ with a natural monoidal coalgebra structure making $\theta_\fX$ into natural map of monoidal coalgebras.
