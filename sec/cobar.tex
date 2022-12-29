@@ -14,14 +14,19 @@ Similar constructions and results may be found in \cite{baues1980geometry}, \cit
 %The second goal is obtained by factoring Adams's comparison map through this cubical model (\cref{ss:factorization of adams}).
 
 \subsection{The based loop space}
-%The \textit{path space} functor
+
+The \textit{path space} of a space $\fX$ is defined by
+%associating to any space $\fX$ the space
+%functor
 %\[
-%P: \Top \to \Top
+%P \colon \Top \to \Top
 %\]
-%is defined by associating to any space $\fX$ the space
-%\[ P\fX = \{\alpha \colon [0,r] \to \fX | r \in [0,\infty) \text{ and $\alpha$ is continuous}\}
-%\]
-%equipped with compact-open topology.
+\[
+P\fX = \big\{\alpha \colon [0,r] \to \fX \mid \text{$\alpha$ continuous and } r \in [0,\infty)\big\}
+\]
+equipped with compact-open topology.
+For any $x,x' \in \fX$ the subset $P(\fX, x, x')$ consists of those paths starting and ending at $x$ and $x'$ respectively.
+We will think of this construction as a functor on bipointed spaces in the obvious way.
 
 Denote by $\Top^\ast$ the category of pointed topological spaces.
 The \textit{based loop space} functor
@@ -30,28 +35,32 @@ The \textit{based loop space} functor
 \]
 associates to any pointed space $(\fX,x)$ the topological monoid
 \[
-\loops_x \fX =
-\big\{\alpha \colon [0,r] \to \fX \mid r \in [0, \infty), \,\alpha \text{ continuous with } \alpha(0)=x=\alpha(r)\big\}
+\loops_x \fX = P(\fX,x,x)
+%\big\{\alpha \colon [0,r] \to \fX \mid r \in [0, \infty), \,\alpha \text{ continuous with } \alpha(0)=x=\alpha(r)\big\}
 \]
-of loops in $\fX$ based at $x$ with variable parameter $r$.
-The topology of $\loops_x \fX$ is given by the compact-open topology.
+of loops in $\fX$ based at $x$.
+%with variable parameter $r$.
+%The topology of $\loops_x \fX$ is given by the compact-open topology.
 The monoid structure
 \[
 \loops_x \fX \times \loops_x \fX \to \loops_x \fX
 \]
-is given by concatenation of loops and adding the corresponding parameters.
+is given by the concatenation of loops with addition of parameters.
 The unit is the constant loop at $x$ with parameter $r=0$.
-On any morphism $f \colon (\fX,x) \to (\fX',x')$, the induced monoid map $\loops (f) \colon \loops_x \fX \to \loops_{x'} \fX'$ is given by $\loops(f)(\alpha) = f\circ\alpha$.
+%On any morphism $f \colon (\fX,x) \to (\fX',x')$, the induced monoid map $\loops (f) \colon \loops_x \fX \to \loops_{x'} \fX'$ is given by $\loops(f)(\alpha) = f\circ\alpha$.
 
-It will also be useful to consider the \textit{free path space} functor
-\[
-P \colon \Top \to \Top
-\]
-which associates to any space $\fX$ the space $P\fX$ of all continuous paths $\alpha \colon [0,r] \to \fX$ with variable parameter $r$ and no restrictions on the endpoints.
+%It will also be useful to consider the \textit{free path space} functor
+%\[
+%P \colon \Top \to \Top
+%\]
+%which associates to any space $\fX$ the space $P\fX$ of all continuous paths $\alpha \colon [0,r] \to \fX$ with variable parameter $r$ and no restrictions on the endpoints.
+
+\anibal{Please explain the monoid structure on $\cSchains(\loops_x \fX)$ here.}
 
 \subsection{The cobar construction}\label{ss:cobar construction}
 
-In the following, we use the algebraic notions introduced in \cref{ss:coalgebras}.
+We now describe an algebraic analogue of the based loop space introduced by Adams \cite{adams1956cobar}.
+%In the following we use the algebraic notions introduced in \cref{ss:coalgebras}.
 The \textit{cobar construction} is the functor
 \[
 \cobar \colon \coAlg^\ast \to \Mon_{\Ch}
@@ -75,22 +84,20 @@ For any $x_1, \dots, x_k \in \overline{C}$, we denote
 [x_1| \cdots | x_k]= s^{-1} x_1 \otimes \cdots \otimes s^{-1}x_k \in (s^{-1}\overline{C})^{\otimes k}.
 \]
 
-%The object $\cobar(C) \in \Mon_{\Ch}$ may be equipped with a natural augmentation map $\cobar(C) \to \k$ in $\Mon_{\Ch}$ given by the projection map to the first summand term.
-%Therefore, the cobar construction may be regarded as a functor from coaugmented coalgebras to augmented algebras.
-%However, we will not require the data of augmentations in this article.
-
 \subsection{Adams's map}\label{ss:adams maps}
 
-In \cite{adams1956cobar}, Adams made precise the sense in which the cobar functor may be understood as an algebraic analogue of the based loop space functor, by constructing a natural monoidal chain map
+Adams made precise the sense in which the cobar functor may be understood as an algebraic analogue of the based loop space functor, by constructing a natural monoidal chain map
 \begin{equation}\label{e:adams map 2}
 	\theta_{\fX} \colon \cobar \sSchainsA(\fX,x) \to \cSchains(\loops_x \fX),
 \end{equation}
-for any pointed topological space $(\fX,x)$.
-The construction is based on a collection of continuous maps
+for any pointed topological space $(\fX,x)$, and showing it to be a quasi-isomorphism for simply-connected spaces in \cite{adams1956cobar}, a hypothesis removed in \cite{rivera2018rigidification} and, using a different argument, also in \cite{rivera2019path}.
+
+We now describe the construction of Adams' map, whose combinatorial essence is the observation that the set of ascending chains in $0 < \dots < n$ containing $0$ to $n$, with the inclusion order, is isomorphic to the cubical lattice.
+To define Adams' map one uses a collection of continuous maps
 \[
-\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n),
+\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n),
 \]
-where $P(\gsimplex^n;0,n)$ denotes the subspace of $P \gsimplex^n$ consisting of all paths in $\gsimplex^n$ from the $0^\th$ vertex to the $n^\th$ vertex.
+where $v_i$ denoted the $i^\th$ vertex of $\gsimplex^n$ and $P(\gsimplex^n;v_0,v_n)$ is subspace of $P \gsimplex^n$ consisting of the paths from $v_0$ to $v_n$.
 These maps are required to satisfy the following compatibility conditions:
 \begin{enumerate}
 	\item $\theta_1(0)\colon \gcube^1 \to \gsimplex^1$ is the path $\theta_1(0)(s) = sv_1 +(1-s)v_0$.
@@ -115,18 +122,6 @@ For any singular $n$-simplex $\sigma \in \sSchains(\fX,x)$ with $n>1$, let
 \]
 Since the underlying graded monoid structure of $\cobar \sSchainsA(\fX,x)$ is free, we may extend the above to a monoidal chain map $\theta_{\fX} \colon \cobar \sSchainsA(\fX,x) \to \cSchains(\loops_x \fX)$.
 Conditions (1), (2), and (3) then imply that $\theta_{\fX}$ is a chain map.
-Furthermore, we have the following result.
-
-\begin{proposition}
-	For any pointed space $(\fX,x)$
-	\[
-	\theta_{\fX} \colon \cobar \sSchainsA(\fX,x) \to \cSchains(\loops_x \fX)
-	\]
-	is a monoidal quasi-isomorphism.
-\end{proposition}
-
-The above theorem was proved in \cite{adams1956cobar} assuming the fundamental group $\pi_1(\fX,x)$ is trivial.
-In the non-simply connected case, the statement was proven in \cite{rivera2018rigidification} and, using a different argument, in \cite{rivera2019path}.
 
 \begin{remark}
 	Adams originally worked with the sub-coalgebra $\sSchainsA(\fX,x)^1$ of $\sSchainsA(\fX,x)$ generated by singular simplices $\sigma \colon \gsimplex^n \to \fX$ collapsing the $1$-skeleton of $\gsimplex^n$ to $x \in \fX$.
@@ -136,9 +131,6 @@ In the non-simply connected case, the statement was proven in \cite{rivera2018ri
 	The cobar construction does not preserve quasi-isomorphisms in general.
 	It does preserve quasi-isomorphisms between coaugmented coalgebras that are trivial in degree $1$.
 \end{remark}
-
-%We will construct an $E_{\infty}$-bialgebra structure on $\cobar \sSchainsA(\fX,x)$ and show that, when $\cSchains(\loops_x \fX)$ is equipped with the $E_{\infty}$-coalgebra structure described in \cref{ss:e-infty on cubical}, the map $\theta_{\fX}$ is a map of $E_{\infty}$-coalgebras.
-%With this goal in mind, we describe a categorical version of Adams's constructions.
 
 \subsection{Necklaces}
 
