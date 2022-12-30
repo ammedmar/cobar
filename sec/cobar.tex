@@ -25,7 +25,7 @@ The \textit{path space} of a space $\fX$ is defined by
 P\fX = \big\{\alpha \colon [0,r] \to \fX \mid \text{$\alpha$ continuous and } r \in [0,\infty)\big\}
 \]
 equipped with compact-open topology.
-For any $x,x' \in \fX$ the subset $P(\fX, x, x')$ consists of those paths starting and ending at $x$ and $x'$ respectively.
+For any $x,x' \in \fX$ the subset $P(\fX;x,x')$ consists of those paths starting and ending at $x$ and $x'$ respectively.
 We will think of this construction as a functor on bipointed spaces in the obvious way.
 
 Denote by $\Top^\ast$ the category of pointed topological spaces.
@@ -35,7 +35,7 @@ The \textit{based loop space} functor
 \]
 associates to any pointed space $(\fX,x)$ the topological monoid
 \[
-\loops_x \fX = P(\fX,x,x)
+\loops_x \fX = P(\fX;x,x)
 %\big\{\alpha \colon [0,r] \to \fX \mid r \in [0, \infty), \,\alpha \text{ continuous with } \alpha(0)=x=\alpha(r)\big\}
 \]
 of loops in $\fX$ based at $x$.
@@ -70,7 +70,8 @@ Let $(C, \Delta, \varepsilon, \nu)$ be a coaugmented coalgebra.
 Denote by $\overline{C}$ the cokernel of the coaugmentation $\nu \colon \k \to C$ and recall that $\s{}$ is the suspension functor.
 The cobar construction $\cobar C$ of this coaugmented coalgebra is the graded module
 \[
-T(\s{-1} \overline{C}) = \k \oplus \s{-1}\overline{C} \oplus (\s{-1}\overline{C})^{\ot 2} \oplus (\s{-1}\overline{C})^{\ot 3} \oplus \dots
+T(\s{-1} \overline{C}) =
+\k \oplus \s{-1}\overline{C} \oplus (\s{-1}\overline{C})^{\ot 2} \oplus (\s{-1}\overline{C})^{\ot 3} \oplus \dots
 \]
 regarded as a monoid in $\Ch$ with free associative product $\mu \colon T(\s{-1} \overline{C})^{\ot 2} \to T(\s{-1} \overline{C})$ given by concatenation, unit map $\eta \colon \k \to T(\s{-1} \overline{C})$ by the obvious inclusion, and differential constructed by extending the linear map
 \[
@@ -92,33 +93,42 @@ Adams made precise the sense in which the cobar functor may be understood as an 
 \end{equation}
 for any pointed topological space $(\fX,x)$, and showing it to be a quasi-isomorphism for simply-connected spaces in \cite{adams1956cobar}, a hypothesis removed in \cite{rivera2018rigidification} and, using a different argument, also in \cite{rivera2019path}.
 
-We now describe the construction of Adams' map, whose combinatorial essence is the observation that the set of ascending chains in $0 < \dots < n$ containing $0$ to $n$, with the inclusion order, is isomorphic to the cubical lattice.
+We now describe the construction of Adams' map, whose combinatorial essence is the observation that the set of ascending chains in $0 < \dots < n$ containing $0$ and $n$, with the inclusion order, is isomorphic to the $(n-1)^\th$ cubical lattice.
 To define Adams' map one uses a collection of continuous maps
 \[
 \theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n),
 \]
-where $v_i$ denoted the $i^\th$ vertex of $\gsimplex^n$ and $P(\gsimplex^n;v_0,v_n)$ is subspace of $P \gsimplex^n$ consisting of the paths from $v_0$ to $v_n$.
-These maps are required to satisfy the following compatibility conditions:
+%where $v_i$ denoted the $i^\th$ vertex of $\gsimplex^n$ and $P(\gsimplex^n;v_0,v_n)$ is subspace of $P \gsimplex^n$ consisting of the paths from $v_0$ to $v_n$.
+satisfying:
 \begin{enumerate}
-	\item $\theta_1(0)\colon \gcube^1 \to \gsimplex^1$ is the path $\theta_1(0)(s) = sv_1 +(1-s)v_0$.
-	\item $\theta_n \circ e_j^0 = P(d_j) \circ \theta_{n-1}$.
-	\item $\theta_n \circ e_j^1 = (P(f_j) \circ \theta_j) \cdot (P(l_{n-j}) \circ \theta_{n-j})$.
+	\item $\theta_1(0)\colon \gcube^1 \to \gsimplex^1$ is the path $\theta_1(0)(t) = tv_1 +(1-t)v_0$,
+	\item $\theta_n \circ \delta_0^j = P(\delta^j) \circ \theta_{n-1}$,
+	\item $\theta_n \circ \delta_1^j =
+	\big(P(\delta^{f^n_j}) \circ \theta_j\big) \cdot \big(P(\delta^{\ell^n_{n-j}}) \circ \theta_{n-j}\big)$,
 \end{enumerate}
-In the above equations, $v_0$ and $v_1$ denote the first and last vertices of $\gsimplex^1$, $d_j \colon \gsimplex^{n-1} \to \gsimplex^n$ is the $j$-th coface inclusion, the maps $f_j\colon \gsimplex^j \rightarrow \gsimplex^n$ and $l_{n-j}\colon \gsimplex^{n-j} \rightarrow \gsimplex^n$ denote the inclusion of the first $j$-dimensional face and last $(n-j)$-dimensional face into $\gsimplex^n$, respectively, and
-$e_j^0,e_j^1\colon \gcube^{n-1} \rightarrow \gcube^{n}$ denote the $j^\th$ bottom and top cubical coface maps, respectively.
-For any two compossible paths $\alpha$ and $\beta$, the dot symbol in $\alpha \cdot \beta$ denotes the composition (or concatenation) of paths.
-
-Adams argued there exists a (non-unique) collection of maps $\{\theta_n\}$ satisfying (1), (2), and (3).
-This may be shown by induction and using the contractibility of $P(\gsimplex^n; 0,n)$.
-Given any such collection of maps, one may define $\theta_{\fX}$ as follows.
-For any singular $1$-simplex $\sigma \in S^{\Delta}_1(\fX,x)$ let
+where
 \[
-\theta_{\fX}([\sigma]) = P(\sigma) \circ \theta_1 - c_x,
+\begin{split}
+	\delta^{f^n_j} \defeq \delta^n \dotsm \, \delta^{n-j+1} &\,\colon\ \gsimplex^j \to \gsimplex^n, \\
+	\delta^{\ell^n_{n-j}} \defeq \delta^{n-j-1} \dotsm \, \delta^{0} &\, \colon\ \gsimplex^{n-j} \to \gsimplex^n,
+\end{split}
+\]
+are respectively the inclusions into the first and last faces of $\gsimplex^n$.
+%In the above equations, $v_0$ and $v_1$ denote the first and last vertices of $\gsimplex^1$, $d_j \colon \gsimplex^{n-1} \to \gsimplex^n$ is the $j$-th coface inclusion,
+%the maps $f_j \colon \gsimplex^j \rightarrow \gsimplex^n$ and $l_{n-j} \colon \gsimplex^{n-j} \rightarrow \gsimplex^n$ denote the inclusion of the first $j$-dimensional face and last $(n-j)$-dimensional face into $\gsimplex^n$, respectively, and
+%$e_j^0,e_j^1\colon \gcube^{n-1} \rightarrow \gcube^{n}$ denote the $j^\th$ bottom and top cubical coface maps, respectively.
+%For any two compossible paths $\alpha$ and $\beta$, the dot symbol in $\alpha \cdot \beta$ denotes the composition (or concatenation) of paths.
+
+Adams showed the existence of a (non-unique) collection of such maps $\{\theta_n\}$ by induction, using the contractibility of $P(\gsimplex^n;v_0,v_n)$.
+One then defines $\theta_{\fX}$ as follows.
+For any singular $1$-simplex $\sigma \in \sSchainsA(\fX,x)$ let
+\[
+\theta_{\fX}[\sigma] = P(\sigma) \circ \theta_1 - c_x,
 \]
 where $(c_x \colon \gcube^0 \to \loops_x \fX) \in \cSchains(\loops_x \fX)$ is the singular $0$-cube determined by the constant loop at $x \in \fX$.
 For any singular $n$-simplex $\sigma \in \sSchains(\fX,x)$ with $n>1$, let
 \[
-\theta_{\fX}([\sigma]) = P(\sigma) \circ \theta_n.
+\theta_{\fX}[\sigma] = P(\sigma) \circ \theta_n.
 \]
 Since the underlying graded monoid structure of $\cobar \sSchainsA(\fX,x)$ is free, we may extend the above to a monoidal chain map $\theta_{\fX} \colon \cobar \sSchainsA(\fX,x) \to \cSchains(\loops_x \fX)$.
 Conditions (1), (2), and (3) then imply that $\theta_{\fX}$ is a chain map.
