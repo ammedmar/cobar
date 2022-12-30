@@ -15,38 +15,43 @@ Similar constructions and results may be found in \cite{baues1980geometry}, \cit
 
 \subsection{The based loop space}
 
-The \textit{path space} of a space $\fX$ is defined by
-%associating to any space $\fX$ the space
-%functor
-%\[
-%P \colon \Top \to \Top
-%\]
+The \textit{path space} functor
 \[
-P\fX = \big\{\alpha \colon [0,r] \to \fX \mid \text{$\alpha$ continuous and } r \in [0,\infty)\big\}
+P \colon \Top \to \Top
+\]
+assigns to $\fX$ the space
+\[
+P(\fX) = \big\{\alpha \colon [0,r] \to \fX \mid \text{$\alpha$ continuous and } r \in [0,\infty)\big\}
 \]
 equipped with compact-open topology.
-For any $x,x' \in \fX$ the subset $P(\fX;x,x')$ consists of those paths starting and ending at $x$ and $x'$ respectively.
+For any $x,x' \in \fX$ the subspace $P(\fX;x,x')$ consists of those paths starting and ending at $x$ and $x'$ respectively.
 We will think of this construction as a functor on bipointed spaces in the obvious way.
+There is a composition structure
+\begin{equation}\label{eq:composition structure}
+	\begin{split}
+		P(\fX;x,x') \times P(\fX;x',x'') &\to P(\fX;x,x'') \\
+		(\alpha, \beta) &\mapsto \alpha \cdot \beta.
+	\end{split}
+\end{equation}
+given by concatenation of paths with addition of parameters and identities given by constant paths with parameter $r=0$.
 
-Denote by $\Top^\ast$ the category of pointed topological spaces.
+Denote by $\Top^\ast$ the category of pointed topological spaces, which we think of as a full subcategory of that of bipointed spaces in the obvious way.
 The \textit{based loop space} functor
 \[
 \loops \colon \Top^\ast \to \Mon_{\Top}
 \]
-associates to any pointed space $(\fX,x)$ the topological monoid
+associates to a pointed space $(\fX,x)$ the space
 \[
 \loops_x \fX = P(\fX;x,x)
-%\big\{\alpha \colon [0,r] \to \fX \mid r \in [0, \infty), \,\alpha \text{ continuous with } \alpha(0)=x=\alpha(r)\big\}
 \]
-of loops in $\fX$ based at $x$.
+of loops in $\fX$ based at $x$ with the monoid structure induced from the composition structure \eqref{eq:composition structure}.
 %with variable parameter $r$.
 %The topology of $\loops_x \fX$ is given by the compact-open topology.
-The monoid structure
-\[
-\loops_x \fX \times \loops_x \fX \to \loops_x \fX
-\]
-is given by the concatenation of loops with addition of parameters.
-The unit is the constant loop at $x$ with parameter $r=0$.
+%The monoid structure
+%\[
+%\loops_x \fX \times \loops_x \fX \to \loops_x \fX
+%\]
+%with addition of parameters.
 %On any morphism $f \colon (\fX,x) \to (\fX',x')$, the induced monoid map $\loops (f) \colon \loops_x \fX \to \loops_{x'} \fX'$ is given by $\loops(f)(\alpha) = f\circ\alpha$.
 
 %It will also be useful to consider the \textit{free path space} functor
@@ -55,12 +60,11 @@ The unit is the constant loop at $x$ with parameter $r=0$.
 %\]
 %which associates to any space $\fX$ the space $P\fX$ of all continuous paths $\alpha \colon [0,r] \to \fX$ with variable parameter $r$ and no restrictions on the endpoints.
 
-\anibal{Please explain the monoid structure on $\cSchains(\loops_x \fX)$ here.}
+Since $\cSing$ is lax monoidal, $\cSing(\loops_x \fX)$ is a monoid in $\cSet$, and, since $\cchains$ is monoidal, $\cSchains(\fX,x)$ is a monoid in $\Ch$.
 
 \subsection{The cobar construction}\label{ss:cobar construction}
 
 We now describe an algebraic analogue of the based loop space introduced by Adams \cite{adams1956cobar}.
-%In the following we use the algebraic notions introduced in \cref{ss:coalgebras}.
 The \textit{cobar construction} is the functor
 \[
 \cobar \colon \coAlg^\ast \to \Mon_{\Ch}
@@ -91,7 +95,7 @@ Adams made precise the sense in which the cobar functor may be understood as an 
 \begin{equation}\label{e:adams map 2}
 	\theta_{\fX} \colon \cobar \sSchainsA(\fX,x) \to \cSchains(\loops_x \fX),
 \end{equation}
-for any pointed topological space $(\fX,x)$, and showing it to be a quasi-isomorphism for simply-connected spaces in \cite{adams1956cobar}, a hypothesis removed in \cite{rivera2018rigidification} and, using a different argument, also in \cite{rivera2019path}.
+for any pointed topological space $(\fX,x)$, and showing it to be a quasi-isomorphism for simply-connected spaces in \cite{adams1956cobar}, a hypothesis removed in \cite{rivera2018cubical} and, using a different argument, also in \cite{rivera2019path}.
 
 We now describe the construction of Adams' map, whose combinatorial essence is the observation that the set of ascending chains in $0 < \dots < n$ containing $0$ and $n$, with the inclusion order, is isomorphic to the $(n-1)^\th$ cubical lattice.
 To define Adams' map one uses a collection of continuous maps
@@ -99,18 +103,22 @@ To define Adams' map one uses a collection of continuous maps
 \theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n),
 \]
 %where $v_i$ denoted the $i^\th$ vertex of $\gsimplex^n$ and $P(\gsimplex^n;v_0,v_n)$ is subspace of $P \gsimplex^n$ consisting of the paths from $v_0$ to $v_n$.
-satisfying:
+satisfying for each $j$ that
 \begin{enumerate}
 	\item $\theta_1(0)\colon \gcube^1 \to \gsimplex^1$ is the path $\theta_1(0)(t) = tv_1 +(1-t)v_0$,
-	\item $\theta_n \circ \delta_0^j = P(\delta^j) \circ \theta_{n-1}$,
+	\item $\theta_n \circ \delta_0^j = P(\delta^j) \circ \theta_{n-1}$, and
 	\item $\theta_n \circ \delta_1^j =
 	\big(P(\delta^{f^n_j}) \circ \theta_j\big) \cdot \big(P(\delta^{\ell^n_{n-j}}) \circ \theta_{n-j}\big)$,
 \end{enumerate}
-where
+where, for $\epsilon \in \{0,1\}$,
+\[
+\delta_\epsilon^j = \id_{\gcube^{j-1}} \times \delta_\epsilon \times \id_{\gcube^{n-j-2}} \,\colon\ \gcube^{n-2} \to \gcube^{n-1},
+\]
+and
 \[
 \begin{split}
-	\delta^{f^n_j} \defeq \delta^n \dotsm \, \delta^{n-j+1} &\,\colon\ \gsimplex^j \to \gsimplex^n, \\
-	\delta^{\ell^n_{n-j}} \defeq \delta^{n-j-1} \dotsm \, \delta^{0} &\, \colon\ \gsimplex^{n-j} \to \gsimplex^n,
+	\delta^{f^n_j} = \delta^n \circ \dotsb \circ \delta^{n-j+1} &\,\colon\ \gsimplex^j \to \gsimplex^n, \\
+	\delta^{\ell^n_{n-j}} = \delta^{n-j-1} \circ \dotsb \circ \delta^{0} &\, \colon\ \gsimplex^{n-j} \to \gsimplex^n,
 \end{split}
 \]
 are respectively the inclusions into the first and last faces of $\gsimplex^n$.
@@ -119,8 +127,8 @@ are respectively the inclusions into the first and last faces of $\gsimplex^n$.
 %$e_j^0,e_j^1\colon \gcube^{n-1} \rightarrow \gcube^{n}$ denote the $j^\th$ bottom and top cubical coface maps, respectively.
 %For any two compossible paths $\alpha$ and $\beta$, the dot symbol in $\alpha \cdot \beta$ denotes the composition (or concatenation) of paths.
 
-Adams showed the existence of a (non-unique) collection of such maps $\{\theta_n\}$ by induction, using the contractibility of $P(\gsimplex^n;v_0,v_n)$.
-One then defines $\theta_{\fX}$ as follows.
+Adams showed the existence of a (non-unique) collection of such maps by induction, using the contractibility of $P(\gsimplex^n;v_0,v_n)$.
+He then defined $\theta_{\fX}$ as follows.
 For any singular $1$-simplex $\sigma \in \sSchainsA(\fX,x)$ let
 \[
 \theta_{\fX}[\sigma] = P(\sigma) \circ \theta_1 - c_x,
@@ -148,7 +156,7 @@ For any pointed space $(\fX,x)$, the underlying graded $\k$-module of $\cobar \s
 \[
 T = (\sigma_1, \dots, \sigma_k)
 \]
-of simplices $\sigma_i \in \text{Sing}^{\simplex}_{n_i}(\fX,x)$, with degree $|T|:= n_1 + \cdots + n_k -k$, modulo the sub $\k$-module generated by those sequences with at least one degenerate simplex.
+of simplices $\sigma_i \in \sSing(\fX,x)$, with degree $\bars{T} = \bars{\sigma_1}+\dots+\bars{\sigma_k} - k$, modulo the sub $\k$-module generated by those sequences with at least one degenerate simplex.
 The differential of $\cobar \sSchainsA(\fX,x)$ on a generator $T$ of degree $n$ is given by a signed sum of all generators $T'$ of degree $n-1$ that, in certain sense, fit inside $T$.
 Furthermore, the monoid structure of $\cobar \sSchainsA(\fX,x)$ is induced by simply concatenating these ordered sequences of simplices.
 This perspective suggests that $\cobar \sSchainsA(\fX,x)$ may be obtained by applying a normalized chains functor to certain cellular monoid, naturally associated to $(\fX,x)$, with cells labeled by finite ordered sequences of simplices in $\sSing(\fX,x)$.
@@ -194,7 +202,7 @@ induced by sending any necklace $T = [n_1] \vee \dots \vee[n_k]$ to the simplici
 \]
 where the wedge symbol now means we identify the last vertex of $\simplex^{n_i}$ with the first vertex of $\simplex^{n_{i+1}}$ for $i = 1, \dots, k-1$ and the two base points are given by the first vertex of $\simplex^{n_1}$ and the last vertex of $\simplex^{n_k}$.
 Then $\mathcal{S}$ is a fully faithful functor, so $\Nec$ may be identified with the full sub-category of $\sSet_{*,*}$ having as objects those double pointed simplicial sets of the form $\simplex^{n_1} \vee \dots \vee \simplex^{n_k}$.
-The \textit{dimension} of a necklace $T = [n_1] \vee \dots \vee[n_k]$ is defined by $\dim(T) = n_1 + \dots + n_k-k$.
+The \textit{dimension} of a necklace $T = [n_1] \vee\dots\vee [n_k]$ is defined by $\dim(T) = n_1 + \dots + n_k-k$.
 
 The category of \textit{necklical sets} $\Fun(\Nec^{\op}, \Set)$ becomes a (non-symmetric) monoidal category with monoidal structure induced from $(\Nec, \vee)$.
 We denote the monoidal category of necklical sets by $\nSet$.
@@ -214,7 +222,7 @@ We begin by defining a monoidal functor
 \cP \colon \Nec \to \cube
 \]
 as follows.
-First define $\cP([0])=2^0$.
+First define $\cP[0] = 2^0$.
 On any other necklace $T \in \Nec$, define $\cP(T) = 2^{\dim(T)}$.
 In order to define $\cP$ on morphisms, it is sufficient to consider the following cases.
 \begin{enumerate}
@@ -272,7 +280,7 @@ The monoidal structure $\vee \colon \Nec \times \Nec \to \Nec$ given by concaten
 \[
 \ncobar(X) \ot \ncobar(X) \to \ncobar(X)
 \]
-making $\ncobar(X)$ into a monoid in the monoidal category $\nSet$.
+making $\ncobar(X)$ into a monoid in $\nSet$.
 
 We may now define the \textit{cubical cobar construction}
 \[
@@ -324,12 +332,8 @@ Adams's comparison map can be factored as a composition
 	\cchains \ccobar(\sSing(\fX,x)) \xrightarrow{\cchains(\Theta)}
 	\cSchains(\loops_x \fX).
 \end{equation}
-The first map is the natural isomorphism of algebras given by \cref{t:ccobar and cobar}.
-The second map is given by applying the cubical chains functor
-\[
-\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}
-\]
-to the map of monoidal cubical sets
+The first map is the monoidal isomorphism induced by \cref{t:ccobar and cobar}.
+The second map is given by applying chains $\cchains \colon \Mon_{\cSet} \to \Mon_{\Ch}$ to the map of monoidal cubical sets
 \[
 \Theta \colon \ccobar(\sSing(\fX,x)) \to \cSing(\loops_x \fX)
 \]
@@ -337,7 +341,7 @@ determined through the monoid structure by sending an $n$-simplex $(\sigma \colo
 \[
 P(\sigma) \circ \theta_n \colon \gcube^{n-1} \to \loops_x \fX,
 \]
-where the maps $\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n)$ are those defined by Adams and discussed in \cref{ss:adams maps}.
+where the maps $\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;0,n)$ are discussed in \cref{ss:adams maps}.
 
 \subsection{A monoidal coalgebra structure on the cobar construction}
 

@@ -4,7 +4,7 @@
 
 In this section we recall the model $\UM$ of the $E_\infty$-operad, whose category of coalgebras we show to be monoidal.
 We use this structure to construct a monoidal functor $\cchainsUM \colon \cSet \to \coAlg_\UM$ extending the Serre coalgebra structure.
-This endows for any pointed topological space both $\cobar \sSchainsA(\fX,x)$ and $\cSchainsA(\loops_x \fX)$ with the structure of a monoidal $E_\infty$-algebra preserved by Adams' map.
+This endows for any pointed topological space both $\cobar \sSchainsA(\fX,x)$ and $\cSchainsA(\loops_x \fX)$ with the structure of a monoidal $E_\infty$-coalgebra which is preserved by Adams' map.
 
 \subsection{\pdfEinfty-operads}
 
@@ -300,7 +300,6 @@ The diagonal on the prop $\cM$ induces one on the operad $\UM$ and defines, as u
 \subsection{Revisiting the \pdfEinfty-coalgebra structure on cubical chains}\label{ss:cube_einfty revisited}
 
 In this subsection we use the monoidal structure on $\UM$-coalgebras to recover the $E_\infty$-structure on cubical chains (\cref{ss:cubical e-infty}).
-We prove the following generalization of \cref{p:serre coalgebra}.
 
 \begin{theorem}\label{t:cubical e-infty chains are monoidal}
 	The functor $\cchainsUM \colon \cSet \to \coAlg_\UM$ is the unique monoidal functor defined by the $\M$-bialgebra structure on $\chains(\cube^1)$.
@@ -340,19 +339,18 @@ Diagrammatically,
 	& \Mon_{\Ch}.
 \end{tikzcd}
 \]
-
-
-% After \cite{medina2022cube_einfty}, we know that cubical chains can be enriched with an $E_\infty$-coalgebra structure extending the Serre coalgebra (\cref{ss:e-infty on cubical}).
-% This $\UM$-structure can be transferred via $\cchains \ccobar \cong \cobar \schainsA$ to provide the cobar construction with and $E_\infty$-structure extending Baues coalgebra structure.
-% Furthermore, thanks to \cref{t:cubical e-infty chains are monoidal}, we know that $\cchainsUM$ is monoidal and therefore, $\cchains \ccobar$ produces monoids in $\coAlg_{\UM}$, i.e., $E_\infty$-bialgebras.
-% This discussion proves the first half of \cref{t:1st main thm in the intro}, which we collect in the following.
+Furthermore, using the factorization of Adams' map described in \cref{ss:factorization of adams} and the naturality of our monoidal $E_\infty$-structure, we conclude that for any pointed topological space $\fX$,
+\[
+\theta_\fX \colon \cobar \sSchainsA(\fX,x) \to \cSchainsUM(\loops_x \fX)
+\]
+is a monoidal quasi-isomorphism of $E_{\infty}$-coalgebras.
 
 %\subsection{Steenrod operations}
 %
 %Throughout this subsection let us consider $\k$ to be the finite field $\Fp$ and $X$ a reduced simplicial set.
 %
-%Since $\cobar \schainsA(X)$ is isomorphic to the chains on a cubical set (\cref{t:ccobar and cobar}), its mod $p$ homology is a priori equipped with a right action of the Steenrod algebra \cite{steenrod1962cohomology, milnor1958steenrod}.
-%As an application of the explicit construction of a natural $\UM$-coalgebra structure on $\cobar \schainsA(X)$, we can describe the chain level this action using the constructions of \cite{medina2021may_st}.
+%Since $\cobar \schainsA(X)$ is isomorphic to the chains on a cubical set (\cref{t:ccobar and cobar}), its mod~$p$ homology is a priori equipped with a right action of the Steenrod algebra \cite{steenrod1962cohomology, milnor1958steenrod}.
+%As an application of the explicit construction of a natural $\UM$-coalgebra structure on $\cobar \schainsA(X)$, we can describe at the chain level this action using the constructions of \cite{medina2021may_st}.
 %More explicitly, let $\Cp$ be the cyclic group of order $p$ and
 %\[
 %\begin{tikzcd} [column sep = .5cm]
@@ -360,7 +358,7 @@ Diagrammatically,
 %\end{tikzcd}
 %\]
 %be the minimal free resolution of $\Fp$ as an $\Fp[\Cp]$-module.
-%Consider the $\Cp$-equivari-ant quasi-isomorphism $\psi_\UM \colon \cW(p) \to \UM(p)$ constructed in \cite{medina2021may_st}, and denote by $\psi^{\cobar}$ its composition with the morphism $\UM \to \End^{\cobar \schainsA(X)}$ defining our $E_\infty$-coalgebra structure on $\cobar \schainsA(X)$.
+%Consider the $\Cp$-equivari-ant quasi-isomorphism $\psi_\UM \colon \cW(p) \to \UM(p)$ constructed in \cite{medina2021may_st} or more explicitly in \cite{medina2022dennis}, and denote by $\psi^{\cobar}$ its composition with the morphism $\UM \to \End^{\cobar \schainsA(X)}$ defining our $E_\infty$-coalgebra structure on $\cobar \schainsA(X)$.
 %
 %If $p$ is the even prime, the Steenrod square $P_s$ is represented by the map sending a representative $\mu$ of a class in the $k^\th$ homology of $\cobar \schainsA(X)$ to the following element in its double linear dual:
 %\[
@@ -380,13 +378,4 @@ Diagrammatically,
 %\]
 %
 %The map $\psi^{\cobar}$, being a special case of the map $\psi^\cube$ defined in \cite{medina2021may_st}, can be described effectively, and it has been implemented in the specialized computer algebra system \texttt{ComCH} \cite{medina2021comch}.
-%In similar effective manner, explicit Cartan and Adem coboundaries \cite{medina2020cartan, medina2021adem} can be described, in the $p = 2$ case, for cochain level Steenrod squares of the cobar construction of $\schains(X)$.
-
-
-\subsection{Adams's map as a monoidal \pdfEinfty-coalgebra quasi-isomorphism}
-
-Using the factorization of Adams' map described in \cref{ss:factorization of adams} and the naturality of our monoidal $E_\infty$-structure, we conclude that for any pointed topological space $\fX$,
-\[
-\theta_\fX \colon \cobar \sSchainsA(Z,z) \to \cSchains(\loops_z Z)
-\]
-is a monoidal quasi-isomorphism of $E_{\infty}$-coalgebras.
+%In similar effective manner, explicit Cartan and Adem coboundaries \cite{medina2020cartan, medina2021adem} can be described in the $p = 2$ case.
