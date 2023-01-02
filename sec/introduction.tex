@@ -46,16 +46,16 @@ from the category of $0$-reduced simplicial sets to that of monoidal cubical set
 The key difference with Baues' original work is the use of connections to obtain a natural construction before geometric realization.
 
 Additionally, we need a suitable model of the $E_\infty$-operad endowing cubical chains with a natural $E_\infty$-coalgebra extending the Serre diagonal.
-For this we we take to be the operad $\UM$ introduced in \cite{medina2020prop1}.
+For this we take the operad $\UM$ introduced in \cite{medina2020prop1}.
 After proving that its coalgebras form a monoidal category, we show that the functor $\cchainsUM \colon \cSet \to \coAlg_\UM$ -- defined in \cite{medina2022cube_einfty} with a different sign convention -- is monoidal.
-This allows us to prove the following.
+This allows us to prove the following generalization of Adams and Baues structures.
 %This functors is equal to that introduced in \cite{medina2022cube_einfty} up to signs.
 
 %that $\cchainsUM$ from cubical sets to $\UM$-coalgebras is monoidal, which implies that $\cchainsUM(\ccobar X)$ is a monoidal $\UM$-coalgebra for any 0-reduced simplicial set.
 %More precisely, we prove the following.
 
 \begin{theorem*}
-	The following diagram commuting up to natural isomorphisms:
+	The following diagram commutes up to natural isomorphisms:
 	\[
 	\begin{tikzcd} [row sep=small]
 		& \Mon_{\coAlg_\UM} \arrow[d] \\
@@ -69,7 +69,6 @@ This allows us to prove the following.
 \end{theorem*}
 
 In the above diagram, the arrow from $\sSet^0$ to $\Mon_{\Ch}$ is Adams' cobar construction, the one from $\sSet^0$ to $\Mon_{\coAlg}$ is Baues' enhancement, and the one from $\sSet^0$ to $\Mon_{\coAlg_{\UM}}$ is our lift.
-
 Additionally we have the following statement about Adams's map.
 
 \begin{theorem*}
