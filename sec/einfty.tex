@@ -273,20 +273,20 @@ In this subsection we describe an extension of the tensor product of coalgebras 
 
 We now give a more conceptual description of the monoidal structure on $\biAlg_\M$, which generalizes to $\coAlg_\UM$.
 The prop $\cM$ is obtained by applying the functor of cellular chains to a CW prop \cite{medina2021prop2}.
-In fact, these cells are cubical.
-For any $n$-cell $D$ there is a cellular map $\gcube^n \to D$ induced by the assignments
+These cells are in fact cubical, generated through compositions by the generators
 \[
-\stackrel{\cellcoproduct}{\gcube^0} \qquad\qquad
-\stackrel{\cellcounit}{\gcube^0} \qquad\qquad
-\stackrel{\cellcoboundary}{\gcube^1}
+\stackrel{\cellcoproduct}{\ \gcube^0,} \qquad\qquad
+\stackrel{\cellcounit}{\ \gcube^0,} \qquad\qquad
+\stackrel{\cellcoboundary}{\ \gcube^1.}
 \]
-We use the induced chain map $\phi_D$ and the Serre diagonal to define a diagonal on $\cM$ compatible with its prop structure as follows
-\[
-\begin{tikzcd}[column sep=normal]
-	\chains(\cube^n) \arrow[r,"\phi_D"] \arrow[d, "\Delta"] & \arrow[d, "\Delta_\cM"] \cM \\
-	\chains(\cube^n)^{\ot 2} \arrow[r,"\phi_D^{\ot 2}"] & \cM^{\ot 2}.
-\end{tikzcd}
-\]
+The Serre diagonal defines a diagonal $\Delta_\cM$ on $\cM$ compatible with its prop structure.
+More specifically, for any basis element $\mu$ in $\M$ we have a chain map $\phi_\mu \colon \chains(\cube^n) \to \cM$ with $\phi_\mu(2^n) = \mu$, and $\Delta_\cM(\mu)$ is set to be $\phi_D^{\ot 2} \circ \Delta (2^n)$.
+%\[
+%\begin{tikzcd}[column sep=normal]
+%	\chains(\cube^n) \arrow[r,"\phi_D"] \arrow[d, "\Delta"] & \arrow[d, "\Delta_\cM"] \cM \\
+%	\chains(\cube^n)^{\ot 2} \arrow[r,"\phi_D^{\ot 2}"] & \cM^{\ot 2}.
+%\end{tikzcd}
+%\]
 %\raisebox{3pt}{$\xmapsto{\Delta_\cM}$}
 Crucially, $\Delta_\cM$ acts on the generators by
 \begin{align*}
@@ -294,15 +294,15 @@ Crucially, $\Delta_\cM$ acts on the generators by
 	\counit \ \quad &\mapsto \ \quad \counit \ \raisebox{3pt}{$\ot$} \; \counit \,, \\
 	\product \quad &\mapsto \, \quad \rightboundary \ \raisebox{3pt}{$\ot$} \product \ \raisebox{3pt}{$+$} \ \product \raisebox{3pt}{$\ot$} \ \leftboundary \,,
 \end{align*}
-recovering the statement of \cref{l:monoidal M-bialg}.
-The diagonal on the prop $\cM$ induces one on the operad $\UM$ and defines, as usual for so-called Hopf operads, the monoidal structure on $\coAlg_\UM$.
+which recovers the statement of \cref{l:monoidal M-bialg}.
+The structure preserving diagonal on the prop $\cM$ induces one on the operad $\UM$ and defines, as usual for so-called Hopf operads, a monoidal structure on $\coAlg_\UM$.
 
 \subsection{Revisiting the \pdfEinfty-coalgebra structure on cubical chains}\label{ss:cube_einfty revisited}
 
 In this subsection we use the monoidal structure on $\UM$-coalgebras to recover the $E_\infty$-structure on cubical chains (\cref{ss:cubical e-infty}).
 
 \begin{theorem}\label{t:cubical e-infty chains are monoidal}
-	The functor $\cchainsUM \colon \cSet \to \coAlg_\UM$ is the unique monoidal functor defined by the $\M$-bialgebra structure on $\chains(\cube^1)$.
+	$\cchainsUM \colon \cSet \to \coAlg_\UM$ is the monoidal functor determined by the $\M$-bialgebra structure on $\chains(\cube^1)$.
 \end{theorem}
 
 \begin{proof}
@@ -329,7 +329,7 @@ In this subsection we use the monoidal structure on $\UM$-coalgebras to recover 
 %Since $\ccobar$ produces monoids in $\cSet$ and $\cchainsA$ is monoidal, the functor $\cchainsA \ccobar$ produces bialgebras, as claimed.
 
 Using \cref{t:cubical e-infty chains are monoidal} and the natural equivalence of functors $\cchains \ccobar \cong \cobar \schainsA$ proven in \cref{t:ccobar and cobar}, we can transfer a monoidal $E_\infty$-structure to the Adams' cobar construction of any reduced simplicial set, extending the monoidal coalgebra structure defined by Baues.
-Diagrammatically,
+This is summarized by the following diagram commuting up to isomorphisms:
 \[
 \begin{tikzcd}
 	& \Mon_{\coAlg_\UM} \arrow[d] \\
@@ -344,6 +344,22 @@ Furthermore, using the factorization of Adams' map described in \cref{ss:factori
 \theta_\fX \colon \cobar \sSchainsA(\fX,x) \to \cSchainsUM(\loops_x \fX)
 \]
 is a monoidal quasi-isomorphism of $E_{\infty}$-coalgebras.
+These results were announced in the introduction.
+
+\subsection{Finer homotopy invariants at the chain level}
+
+As mentioned in the introduction, Adams' small models for based loop spaces provide advantages for the explicit analysis of their homotopical invariants.
+Our construction allows for the study of the coaction of the dual Steenrod algebra on the mod~$p$ homology
+\[
+\rH \xra{\cong}
+\rH^{\vee\vee} \!\xra{\rS^\vee}
+(\cA \ot \rH^{\vee})^\vee \xla{\cong}
+\cA^\vee \!\ot \rH^{\vee\vee} \xla{\cong}
+\cA^\vee \!\ot \rH
+\]
+of these spaces \cite{steenrod1962cohomology} at the chain level.
+Explicit descriptions of the map $\rS$ are presented at the chain level in \cite{medina2021may_st} and \cite{medina2022dennis}, which were implemented in the computer algebra system \texttt{ComCH} \cite{medina2021comch}.
+For $p=2$, secondary operations are also available at the cochain level following \cite{medina2020cartan} and \cite{medina2021adem}.
 
 %\subsection{Steenrod operations}
 %
