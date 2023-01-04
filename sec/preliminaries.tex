@@ -73,14 +73,16 @@ For any simplicial set $X$ we write, as usual, $X_n$ instead of $X[n]$, and iden
 If $X$ is such that $X_0$ is a singleton set we say that $X$ is \textit{reduced}.
 We denote the full subcategory of reduced simplicial sets by $\sSet^0$.
 
-We denote the topological $n$-simplex by $\gsimplex^{n}$ and consider the usual adjunction pair formed by the \textit{geometric realization} and \textit{singular complex}
+We consider the \textit{topological $n$-simplex} $\gsimplex^n$ embedded in $\mathbb{R}^{n+1}$ as 
+\[ \gsimplex^n = \{ (x_0, \dots, x_n) \in \mathbb{R}^{n+1} | x_0^2 + \dots + x_n^2=1\} \]
+so that the $i$-th vertex is given by the standard basis vector $v_i=(0,\ldots,1, \ldots,0) \in \mathbb{R}^{n+1}$ with $1$ in the $i$-th entry and $0$ in all other entries. Consider the usual adjunction pair formed by the \textit{geometric realization} and \textit{singular complex}
 \[
 \begin{tikzcd}
 	\bars{\ } \colon \sSet \arrow[r, shift left=.5ex] &
 	\Top :\! \sSing, \arrow[l, shift left=.5ex]
 \end{tikzcd}
 \]
-coming from the cosimplicial space defined by the spaces $\gsimplex^n$ and usual coface inclusions $\delta^i \colon \gsimplex^{n-1} \to \gsimplex^n$ and codegeneracy projections $\sigma^j \colon \gsimplex^n \to \gsimplex^{n-1}$.
+determined by the cosimplicial space defined by the spaces $\gsimplex^n$ and usual coface inclusions $\delta^i \colon \gsimplex^{n-1} \to \gsimplex^n$ and codegeneracy projections $\sigma^j \colon \gsimplex^n \to \gsimplex^{n-1}$.
 
 The functor of (normalized) \textit{simplicial chains} $\schains \colon \sSet \to \Ch$ is obtained from the geometric realization and the functor of cellular chains.
 When no confusion arises from doing so we write $\chains$ instead of $\schains$ and refer to it simply as the functor of \textit{chains}.

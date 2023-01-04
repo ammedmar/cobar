@@ -33,7 +33,7 @@ There is a composition structure
 		(\alpha, \beta) &\mapsto \alpha \cdot \beta
 	\end{split}
 \end{equation}
-given by concatenation of paths with addition of parameters and identities given by constant paths with parameter $r=0$.
+given by concatenation of paths with addition of parameters, whose identities are constant paths with $r=0$.
 
 Denote by $\Top^\ast$ the category of pointed topological spaces, which we think of as a full subcategory of that of bipointed spaces in the obvious way.
 The \textit{based loop space} functor
@@ -104,8 +104,8 @@ To define Adams' map one uses a collection of continuous maps
 \]
 %where $v_i$ denoted the $i^\th$ vertex of $\gsimplex^n$ and $P(\gsimplex^n;v_0,v_n)$ is subspace of $P \gsimplex^n$ consisting of the paths from $v_0$ to $v_n$.
 satisfying for each $j$ that
-\begin{enumerate}
-	\item $\theta_1(0)\colon \gcube^1 \to \gsimplex^1$ is the path $\theta_1(0)(t) = tv_1 +(1-t)v_0$,
+\begin{enumerate} \label{adamsequations}
+	\item $\theta_1(0)\colon [0,\sqrt{2}] \to \gsimplex^1$ is the path $\theta_1(0)(s) = v_0+ \frac{s}{\sqrt{2}}(v_1-v_0)$,
 	\item $\theta_n \circ \delta_0^j = P(\delta^j) \circ \theta_{n-1}$, and
 	\item $\theta_n \circ \delta_1^j =
 	\big(P(\delta^{f^n_j}) \circ \theta_j\big) \cdot \big(P(\delta^{\ell^n_{n-j}}) \circ \theta_{n-j}\big)$,
@@ -149,6 +149,56 @@ Conditions (1), (2), and (3) then imply that $\theta_{\fX}$ is a chain map.
 	The cobar construction does not preserve quasi-isomorphisms in general.
 	It does preserve quasi-isomorphisms between coaugmented coalgebras that are trivial in degree $1$.
 \end{remark}
+
+\subsection{An explicit choice for Adams' maps}
+
+The following is an explicit example of a collection of maps 
+\[
+\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n)
+\]
+satisfying equations \ref{adamsequations}. 
+
+Given $v,w \in \mathbb{R}^{n+1}$ denote by
+\[\gamma(v,w) \colon [0, |w - v|] \to \mathbb{R}^{n+1}\] 
+the straight line path from $v$ to $w$ parameterized by arc length, i.e.
+\[\gamma(v,w)(s)= v+\frac{s}{|w-v|}(w-v).\]
+For any $\mathbf{t}=(t_1, \dots, t_{n-1}) \in \gcube^{n-1}$ define
+\[
+p_1(\mathbf{t}), \dots, p_{n-1}(\mathbf{t}) \in \gsimplex^n
+\]
+inductively by
+\[
+p_1(\mathbf{t})=v_0+ t_1(v_1-v_0)
+\]
+and
+\[
+p_j(\mathbf{t})= p_{j-1}(\mathbf{t}) + t_j(v_j-p_{j-1}(\mathbf{t})).
+\]
+Also denote 
+\[
+d_{\mathbf{t}}= |p_1(\mathbf{t})- v_0| + |p_2(\mathbf{t})-p_1(\mathbf{t})| + \dots + |v_n - p_{n-1}(\mathbf{t})|.
+\]
+We may now define 
+\[
+\theta_n(\mathbf{t}) \colon [0, d_{\mathbf{t}}] \to \gsimplex^n
+\]
+as the piece-wise linear path given by concatenating the straight line segments connecting the ordered sequence of points $v_0, p_1(\mathbf{t}), \dots, p_n(\mathbf{t}), v_n$, i.e.
+\[
+\theta_n(\mathbf{t}) = \gamma(v_0,p_1(\mathbf{t})) \cdot \gamma(p_1(\mathbf{t}), p_2(\mathbf{t})) \cdot \ldots \cdot \gamma(p_{n-1}(\mathbf{t}),v_n).
+\]
+A straightforward check yields that equations \ref{adamsequations} are satisfied. 
+
+See \textcolor{blue}{Figure 1} for a picture of $\theta_1, \theta_2$ and $\theta_3$. The red paths in $\gsimplex^1, \gsimplex^2$, and $\gsimplex^3$ are the images of $\theta_1(\{0\})$, $\theta_2(t_1)$, and $\theta_3(t_1,t_2)$, respectively. 
+
+Given an ordered sequence of non-zero positive integers $(n_1, \ldots, n_k)$ consider the ordered wedge of spaces $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$, called the \textit{topological necklace} corresponding to $(n_1, \ldots, n_k)$, obtained by identifying the last vertex of $\gsimplex^{n_i}$ with the first vertex of $\gsimplex^{n_{i+1}}$ for $i=1, \cdots, k-1$. %Note we have a homeomorphism \[\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k} \cong | \simplex^{n_1} \vee \cdots \vee \simplex^{n_k}|.\]
+We may extend the collection $\{ \theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n)\}$ to a collection of continuous maps 
+\[ \{ \theta_{(n_1, \ldots, n_k)} \colon \gcube^{n_1 + \cdots + n_k-k} \to P(\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k})\} \]
+by setting
+\[\theta_{(n_1, \ldots, n_k)}(t_1, \ldots, t_{n_1+ \cdots + n_k-k})= \theta_{n_1}(t_1, \ldots, t_{n_1-1})\cdot \ldots \cdot \theta_{n_k}(t_{n_1+ \cdots n_{k-1}-k},\ldots,t_{n_1 + \cdots +n_k-k}).\]
+Thus we can think of the topological necklace $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$ as a space parameterizing a $(n_1+ \cdots + n_k-k)$-dimensional family of paths between the first and last vertices. See \textcolor{blue}{Figure 2} for a picture of the path $\theta_{(2,1,3,2)}(t_1,t_2,t_3,t_4).$
+
+In \textcolor{blue}{Figure 3}, we have labeled the faces of the singular cube
+$\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n)$ with those necklaces parametrizing families of paths for $n=1,2,3$ showing how equations \ref{adamsequations} are satisfied in these particular examples. 
 
 \subsection{Necklaces}
 
@@ -211,10 +261,7 @@ We denote the monoidal category of necklical sets by $\nSet$.
 	The category of necklaces was introduced in \cite{dugger2011rigidification} to give an explicit description of the homotopy coherent nerve functor and its left adjoint.
 \end{remark*}
 
-\begin{remark*}
-The following is an explicit example of collection of maps 
-\[ \theta_n: \gcube^{n-1} \to P(\gsimplex^n;0,n)\]
-\end{remark*}
+
 
 \subsection{From necklaces to cubes}
 
