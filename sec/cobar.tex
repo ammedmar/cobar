@@ -100,12 +100,12 @@ for any pointed topological space $(\fX,x)$, and showing it to be a quasi-isomor
 We now describe the construction of Adams' map, whose combinatorial essence is the observation that the set of ascending chains in $0 < \dots < n$ containing $0$ and $n$, with the inclusion order, is isomorphic to the $(n-1)^\th$ cubical lattice.
 To define Adams' map one uses a collection of continuous maps
 \[
-\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n),
+\set[\big]{\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n)}_{n\in\N},
 \]
 %where $v_i$ denoted the $i^\th$ vertex of $\gsimplex^n$ and $P(\gsimplex^n;v_0,v_n)$ is subspace of $P \gsimplex^n$ consisting of the paths from $v_0$ to $v_n$.
 satisfying for each $j$ the following conditions:
 \begin{enumerate}
-	\item $\theta_1(0)\colon [0,\sqrt{2}] \to \gsimplex^1$ is the path $\theta_1(0)(s) = v_0+ \frac{s}{\sqrt{2}}(v_1-v_0)$,
+	\item $\theta_1(0)\colon [0,\sqrt{2}] \to \gsimplex^1$ is the path $\theta_1(0)(s) = v_0 + \frac{s}{\sqrt{2}}(v_1-v_0)$,
 	\item $\theta_n \circ \delta_0^j = P(\delta^j) \circ \theta_{n-1}$, and
 	\item $\theta_n \circ \delta_1^j =
 	\big(P(\delta^{f^n_j}) \circ \theta_j\big) \cdot \big(P(\delta^{\ell^n_{n-j}}) \circ \theta_{n-j}\big)$,
@@ -150,11 +150,11 @@ Conditions (1), (2), and (3) then imply that $\theta_{\fX}$ is a chain map.
 	It does preserve quasi-isomorphisms between coaugmented coalgebras that are trivial in degree $1$.
 \end{remark}
 
-\subsection{An explicit choice for Adams' maps}
+\subsection{An explicit choice}
 
-The following is an explicit example of a collection of maps
+We now construct an explicit collection of maps
 \[
-\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n)
+\set[\big]{\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n)}_{n\in\N}
 \]
 satisfying the conditions in \cref{ss:adams maps}.
 
@@ -186,16 +186,26 @@ as the piecewise linear path given by concatenating the straight line segments c
 \theta_n(\bft) =
 \gamma(v_0,p_1(\bft)) \cdot \gamma(p_1(\bft), p_2(\bft)) \cdot\ \dotsb\ \cdot \gamma(p_{n-1}(\bft),v_n).
 \]
-A straightforward check yields that the conditions in \cref{ss:adams maps} are satisfied.
+Please consult \cref{f:theta1} for an example illustrating this construction.
 
-See \textcolor{blue}{Figure 1} for a picture of $\theta_1, \theta_2$ and $\theta_3$. The red paths in $\gsimplex^1, \gsimplex^2$, and $\gsimplex^3$ are the images of $\theta_1(\{0\})$, $\theta_2(t_1)$, and $\theta_3(t_1,t_2)$, respectively.
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{aux/theta1.pdf}
+	\caption{In red, the path $\theta_3(\bft) \in P(\gsimplex^3, v_0, v_3)$ associated to a $\bft \in \gcube^2$.}
+	\label{f:theta1}
+\end{figure}
 
-%Note we have a homeomorphism \[\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k} \cong | \simplex^{n_1} \vee \cdots \vee \simplex^{n_k}|.\]
-We may extend the collection
-\[
-\{\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n)\}
-\]
-defined above to a collection of continuous maps
+A straightforward computation proves that the conditions in \cref{ss:adams maps} are satisfied by this collection.
+A diagrammatical verification in low dimensions is provided in \cref{f:theta3}.
+
+\begin{figure}[b]
+	\centering
+	\includegraphics[scale=.5]{aux/theta3.pdf}
+	\caption{The faces of the $2$-cube in blue, labeled by a red element in their corresponding family of paths.}
+	\label{f:theta3}
+\end{figure}
+
+We can extend this collection $\{\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n)\}$ to one of the form
 \[
 \set[\big]{\theta_{(n_1, \dots, n_k)} \colon \gcube^{n_1 + \dots + n_k-k} \to P(\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k})}
 \]
@@ -205,10 +215,15 @@ We do so by setting
 	\theta_{(n_1, \ldots, n_k)}(t_1, \ldots, t_{n_1+ \cdots + n_k-k}) \\ =
 	\theta_{n_1}(t_1, \ldots, t_{n_1-1}) \cdot\ \dots\ \cdot \theta_{n_k}(t_{n_1+ \cdots n_{k-1}-k},\ldots,t_{n_1 + \cdots +n_k-k}).
 \end{multline*}
-Thus we can think of the topological necklace $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$ as a space parameterizing a $(n_1+ \cdots + n_k-k)$-dimensional family of paths between the first and last vertices. See \textcolor{blue}{Figure 2} for a picture of the path $\theta_{(2,1,3,2)}(t_1,t_2,t_3,t_4).$
+Thus we can think of the topological necklace $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$ as a space parameterizing a $(n_1+ \cdots + n_k-k)$-dimensional family of paths between the first and last vertices.
+Please consult \cref{f:theta2} for an example illustrating this construction.
 
-In \textcolor{blue}{Figure 3}, we have labeled the faces of the singular cube
-$\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n)$ with those necklaces parameterizing families of paths for $n=1,2,3$ showing how the conditions in \cref{ss:adams maps} are satisfied in these particular examples.
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{aux/theta2.pdf}
+	\caption{In red, the path $\theta_{(2,1,3,2)}(\bft)$ in $P(\gsimplex^2 \vee \gsimplex^1 \vee \gsimplex^3 \vee \gsimplex^2)$ associated to an element $\bft$ in $\gcube^{4}$.}
+	\label{f:theta2}
+\end{figure}
 
 \subsection{Necklaces}
 
