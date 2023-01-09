@@ -2,27 +2,14 @@
 
 \section{Introduction}
 
-For any topological space $\fX$, its complex of simplicial or cubical singular chains $\Schains(\fX)$ -- regarded as a differential graded (dg) abelian group -- encodes the homology of $\fX$ in its quasi-isomorphism type.
+For any topological space $\fX$, its complex of simplicial or cubical singular chains $\Schains(\fX)$ -- regarded as a (dg) abelian group -- encodes the homology of $\fX$ in its quasi-isomorphism type.
 More homotopical information can be stored in the quasi-isomorphism type of this chain complex if considered as a (dg) coassociative coalgebra, which we will denote $\SchainsA(\fX)$, where the coproduct comes from a canonical choice of chain approximation to the diagonal $\fX \to \fX \times \fX$.
-%, attributed respectively to Alexander--Whitney and Serre.
-For instance, the cohomology ring of $\fX$ is retained, but the action of the Steenrod algebra on its mod $p$ cohomology is not.
+For instance, the cohomology ring of $\fX$ is retained, but the action of the Steenrod algebra on its mod~$p$ cohomology is not.
 
 In Mandell's seminal work \cite{mandell2006homotopy_type} it is shown that, when $\fX$ is nilpotent and finite type, the entire homotopy type of $\fX$ can be encoded in the quasi-isomorphism type of this complex if considered as an $E_\infty$-coalgebra, a structure providing $\SchainsA(\fX)$ with coherent homotopies witnessing the derived cocommutativity of the coproduct coming from the strict symmetry of the diagonal map.
 
-%In this work we are interested in modeling algebraically the homotopy type of the based loop space $\loops_x \fX$ of a pointed space $(\fX, x)$.
-%Via concatenation of loops this space is a topological monoid, whose induced structure on the set of path-connected components is a group; the fundamental group of the underlying space.
-
 The first contribution of this paper is to explicitly endow the cubical singular chains of the based loop space $\loops_x \fX$, with the structure of a monoidal $E_\infty$-coalgebra extending the Serre diagonal.
 More specifically, we verify that the monoid structure induced on $\cSchains(\loops_x \fX)$ by the concatenation of loops is compatible with a natural $E_\infty$-coalgebra structure on cubical singular chains, similar to the one defined in \cite{medina2022cube_einfty}.
-%We denote this functor by $\cchainsUM \colon \cSet \to \coAlg_\UM$
-
-%We will also concern ourselves with another algebraic model approximating the homotopy type of $\loops_x \fX$.
-%which was introduced by Adams \cite{adams1956cobar}.
-%This model \cite{adams1956cobar} is obtained by applying Adams' celebrated \textit{cobar construction} functor $\cobar$ to a pointed version of the coalgebra of simplicial singular chains of $(\fX, x)$.
-%The cobar functor may be thought of as an algebraic counterpart to the based loop space.
-%Just like the based loop space functor is part of a duality between pointed topological spaces and group-like topological monoids, the cobar functor is part of one between a pointed version of dg coalgebras and monoids in chain complexes.
-% (i.e. dg algebras).
-%Adams' cobar construction provides a model for the quasi-isomorphism type of the monoid of chains on the based loop space.
 
 Applying Adams' cobar construction to the coalgebra of simplicial singular chains of $(\fX, x)$, he obtained another monoidal algebraic model $\cobar \sSchainsA(\fX, x)$ of $\loops_x \fX$ \cite{adams1956cobar}.
 More precisely, he constructed a natural monoidal chain map $\theta$ from $\cobar \sSchainsA(\fX, x)$ to $\cSchains(\loops_x \fX)$ and proved it to be a quasi-isomorphism if $\fX$ is simply-connected, a statement that also holds true for path-connected spaces after \cite{rivera2018cubical}.
@@ -33,6 +20,7 @@ The second main contribution of this paper is to make Adams model into a monoida
 \theta \colon \cobar \sSchainsA(\fX, x) \to \cSchains(\loops_x \fX)
 \]
 respects this higher structure.
+Although we do not pursuit here, we remark that the explicit nature of our $E_\infty$-extension invites the study of primary and secondary operations for loops spaces using Adams' model and the tools developed in \cite{medina2021may_st}, \cite{medina2020cartan}, \cite{medina2021adem}, and \cite{medina2021comch}.
 
 Our starting point is groundbreaking work by H.~Baues, which imply statements similar to those in this work but in the category of coalgebras.
 He reinterpreted Adams' algebraic construction at a deeper geometric level \cite{baues1998hopf}, which allowed him to endow $\cobar \sSchainsA(\fX, x)$ with the structure of a monoidal coalgebra, and to show that $\theta$ preserves this structure.
