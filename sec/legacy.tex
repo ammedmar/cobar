@@ -1,3 +1,59 @@
+%The original cobar construction of Adams produces a monoid in $\Ch$ from a connected coalgebra. Baues enriched this construction to produce a monoid in $\coAlg$.
+%He did this by using a version of the isomorphism $\cchains \ccobar \cong \cobar \schainsA$ of \cref{t:ccobar and cobar} and the Serre coalgebra on cubical chains.
+%Since $\ccobar$ produces monoids in $\cSet$ and $\cchainsA$ is monoidal, the functor $\cchainsA \ccobar$ produces bialgebras, as claimed.
+
+
+%\subsection{Finer homotopy invariants at the chain level}
+%
+%As mentioned in the introduction, Adams' small models for based loop spaces provide advantages for the explicit analysis of their homotopical invariants.
+%Our construction allows for the study of the coaction of the dual Steenrod algebra on the mod~$p$ homology
+%\[
+%\rH \xra{\cong}
+%\rH^{\vee\vee} \!\xra{\rS^\vee}
+%(\cA \ot \rH^{\vee})^\vee \xla{\cong}
+%\cA^\vee \!\ot \rH^{\vee\vee} \xla{\cong}
+%\cA^\vee \!\ot \rH
+%\]
+%of these spaces \cite{steenrod1962cohomology} at the chain level.
+%Explicit descriptions of the map $\rS$ are presented at the chain level in \cite{medina2021may_st} and \cite{medina2022dennis}, which were implemented in the computer algebra system \texttt{ComCH} \cite{medina2021comch}.
+%For $p=2$, secondary operations are also available at the cochain level following \cite{medina2020cartan} and \cite{medina2021adem}.
+
+%\subsection{Steenrod operations}
+%
+%Throughout this subsection let us consider $\k$ to be the finite field $\Fp$ and $X$ a reduced simplicial set.
+%
+%Since $\cobar \schainsA(X)$ is isomorphic to the chains on a cubical set (\cref{t:ccobar and cobar}), its mod~$p$ homology is a priori equipped with a right action of the Steenrod algebra \cite{steenrod1962cohomology, milnor1958steenrod}.
+%As an application of the explicit construction of a natural $\UM$-coalgebra structure on $\cobar \schainsA(X)$, we can describe at the chain level this action using the constructions of \cite{medina2021may_st}.
+%More explicitly, let $\Cp$ be the cyclic group of order $p$ and
+%\[
+%\begin{tikzcd} [column sep = .5cm]
+%	\cW(p) = \Fp[\Cp]\{e_0\} & \arrow[l, "\,T"'] \Fp[\Cp]\{e_1\} & \arrow[l, "\,N"'] \Fp[\Cp]\{e_2\} & \arrow[l, "\,T"'] \dotsb
+%\end{tikzcd}
+%\]
+%be the minimal free resolution of $\Fp$ as an $\Fp[\Cp]$-module.
+%Consider the $\Cp$-equivari-ant quasi-isomorphism $\psi_\UM \colon \cW(p) \to \UM(p)$ constructed in \cite{medina2021may_st} or more explicitly in \cite{medina2022dennis}, and denote by $\psi^{\cobar}$ its composition with the morphism $\UM \to \End^{\cobar \schainsA(X)}$ defining our $E_\infty$-coalgebra structure on $\cobar \schainsA(X)$.
+%
+%If $p$ is the even prime, the Steenrod square $P_s$ is represented by the map sending a representative $\mu$ of a class in the $k^\th$ homology of $\cobar \schainsA(X)$ to the following element in its double linear dual:
+%\[
+%\mu \mapsto
+%\Big( \alpha \mapsto (\alpha \ot \alpha) \big( \psi^{\cobar}(e_{k+2s})(\mu) \big) \Big).
+%\]
+%Similarly, if $p$ is an odd prime, the action of the Steenrod operations $\beta^\varepsilon P_{s}$ where $\varepsilon = 0,1$ are represented by
+%\[
+%\mu \mapsto
+%\Big( \alpha \mapsto \alpha^{\ot p} \big( (-1)^p \, \nu(q) \, \psi^{\cobar}(e_{(2s-q)(p-1)-\varepsilon})(\mu) \big) \Big)
+%\]
+%where
+%\[
+%q = -k -2s(p-1) + \varepsilon, \qquad
+%\nu(q) = (-1)^{q(q-1)m/2}(m!)^q, \qquad
+%m = (p-1)/2.
+%\]
+%
+%The map $\psi^{\cobar}$, being a special case of the map $\psi^\cube$ defined in \cite{medina2021may_st}, can be described effectively, and it has been implemented in the specialized computer algebra system \texttt{ComCH} \cite{medina2021comch}.
+%In similar effective manner, explicit Cartan and Adem coboundaries \cite{medina2020cartan, medina2021adem} can be described in the $p = 2$ case.
+
+
 %\subsubsection{Cubical chains}
 %
 %For non-negative integers $m$ and $n$, let $\cube_{\deg}(2^m, 2^n)$ be the subset of \textit{degenerate morphisms} in $\cube(2^m, 2^n)$, i.e., those of the form $\sigma_i \circ \tau$ or $\gamma_i \circ \tau$ with $\tau$ any morphism in $\cube(2^m, 2^{n+1})$.
