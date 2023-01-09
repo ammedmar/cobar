@@ -2,8 +2,9 @@
 
 \section{Conventions and preliminaries}\label{s:preliminaries}
 
-\subsection{Categorical notions}\label{ss:category theory}
-Given categories $\sB$ and $\sC$ we denote by $\Fun(\sB, \sC)$ their associated \textit{functor category}, i.e. the category whose objects are functors and morphisms are natural transformations. 
+%\subsection{Categorical notions}\label{ss:category theory}
+
+%Given categories $\sB$ and $\sC$ we denote by $\Fun(\sB, \sC)$ their associated \textit{functor category}, i.e. the category whose objects are functors and morphisms are natural transformations.
 %A category is said to be \textit{cocomplete} if any functor to it from a small category has a colimit.
 %If $\sA$ is small and $\sC$ cocomplete, then the (left) \textit{Kan extension} of $g$ along $f$ exists for any pair of functors $f$ and $g$ in the diagram below, and it is the initial object in $\Fun(\sB, \sC)$ making
 %\begin{equation*}
@@ -13,42 +14,48 @@ Given categories $\sB$ and $\sC$ we denote by $\Fun(\sB, \sC)$ their associated 
 	%\end{tikzcd}
 %\end{equation*}
 %commute.
-We denote by $\Set$ the category of sets.
-For any small category $\sA$, we refer to $\Fun(\sA^\op, \Set)$ as the category of \textit{presheaves over} $\sA$.
-The category $\Fun(\sA^\op, \Set)$ is cocomplete.
-The \textit{Yoneda embedding} is the functor
-\[
-\yoneda \colon \sA \to \Fun(\sA^\op, \Set)
-\]
-induced by the assignment
-\[
-a \mapsto \big(a^\prime \mapsto \sA(a^\prime, a)\big).
-\]
+%The category $\Fun(\sA^\op, \Set)$ of functors from a small category $\sA$ to the category of sets $\Set$ is cocomplete.
+%The \textit{Yoneda embedding} is the functor
+%\[
+%\yoneda \colon \sA \to \Fun(\sA^\op, \Set)
+%\]
+%induced by the assignment
+%\[
+%a \mapsto \big(a^\prime \mapsto \sA(a^\prime, a)\big).
+%\]
 %is referred to as a \textit{Yoneda extension}.
 %Objects in the image of the Yoneda embedding are said to be \textit{representable}.
 %Any presheaf $P$ is isomorphic to a colimit of representables presheaves $P \, \cong \colim_{\yoneda(a) \to P} \yoneda(a)$.
+%If $(\sA, \otimes, \mathbb{1})$ is a monoidal category, then  $\Fun(\sA^\op, \Set)$ becomes a monoidal category when equipped with the \textit{Day convolution product}.
 
-If $(\sA, \otimes, \mathbb{1})$ is a monoidal category, then  $\Fun(\sA^\op, \Set)$ becomes a monoidal category when equipped with the \textit{Day convolution product} defined by
-\[ F \boxtimes G = \colim_{\yoneda(a) \to F, \text{ }\yoneda(b) \to G} \yoneda(a \otimes b),
-\]
-for any $F,G \in \Fun(\sA^\op, \Set)$, where the colimit is taken over the category whose objects are pairs of morphisms $(\yoneda(a) \to F, \yoneda(b) \to G)$ in $\Fun(\sA^\op, \Set)$ for $a,b \in \sA$ and morphisms are pairs of commutative triangles. 
+%defined for any $F,G \in \Fun(\sA^\op, \Set)$ by
+%\[
+%F \otimes G \ = \colim_{\substack{\yoneda(a) \to F \\ \yoneda(b) \to G}} \yoneda(a \otimes b),
+%\]
+%where the colimit is taken over the category whose objects are pairs of morphisms $(\yoneda(a) \to F, \yoneda(b) \to G)$ in $\Fun(\sA^\op, \Set)$ for $a,b \in \sA$ and morphisms are pairs of commutative triangles.
 
-Throughout this article $\k$ denotes a commutative and unital ring and we work over its associated closed symmetric monoidal category of differential (homologically) graded $\k$-modules $(\Ch, \ot, \k)$.
-We refer to the objects and morphisms of this category as \textit{chain complexes} and \textit{chain maps} respectively.
-We denote by $\Hom(C, C^\prime)$ the chain complex of $\k$-linear maps between chain complexes $C$ and $C^\prime$, and refer to the functor $\Hom(-, \k)$ as \textit{linear duality}.
-The $i^\th$ \textit{suspension} functor $s^i \colon \Ch \to \Ch$ is defined at the level of graded modules by $(s^{i}C)_n = C_{n-i}$.
+%A \textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$ satisfying the usual associativity and unital relations.
+%We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and remark that a lax monoidal functor $\sC \to \sC^\prime$ induces a functor between their categories of monoids $\Mon_\sC \to \Mon_{\sC^\prime}$.
 
+%Throughout this article $\k$ denotes a commutative and unital ring and we work over its associated symmetric monoidal category of (homologically) graded chain complexes of $\k$-modules $(\Ch, \ot, \k)$.
+%
+%As usual, we refer to the objects and morphisms of this category as \textit{chain complexes} and \textit{chain maps} respectively.
+%We denote by $\Hom(C, C^\prime)$ the chain complex of $\k$-linear maps between chain complexes $C$ and $C^\prime$, and refer to the functor $\Hom(-, \k)$ as \textit{linear duality}.
 
-A \textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$ satisfying the usual associativity and unital relations.
-We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and remark that a lax monoidal functor $\sC \to \sC^\prime$ induces a functor between their categories of monoids $\Mon_\sC \to \Mon_{\sC^\prime}$.
+%The $i^\th$ \textit{suspension} functor $s^i \colon \Ch \to \Ch$ is defined by $(s^{i}C)_n = C_{n-i}$.
+%A monoid in $(\Ch, \ot, \k)$, referred to as a \textit{monoidal chain complex}, is a differential graded $\k$-algebra.
 
-For example, a monoid in $(\Ch, \ot, \k)$, referred to as a \textit{monoidal chain complex}, is a differential graded $\k$-algebra.
-A morphism $f \colon A \to A'$ in $\Mon_\Ch$ inducing an isomorphism on homology will be called a \textit{monoidal quasi-isomorphism.}
+%A \textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$ satisfying the usual associativity and unital relations.
+%We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and remark that a lax monoidal functor $\sC \to \sC^\prime$ induces a functor between their categories of monoids $\Mon_\sC \to \Mon_{\sC^\prime}$.
+
+%A morphism $f \colon A \to A'$ in $\Mon_\Ch$ inducing an isomorphism on homology will be called a \textit{monoidal quasi-isomorphism.}
 
 \subsection{Coalgebras}\label{ss:coalgebras}
 
+Throughout this article $\k$ denotes a commutative and unital ring and we work over its associated symmetric monoidal category of (homologically) graded chain complexes of $\k$-modules $(\Ch, \ot, \k)$.
+
 A \textit{coalgebra} consists of a chain complex $C$ and chain maps $\Delta \colon C \to C \ot C$ and $\varepsilon \colon C \to \k$ satisfying the usual coassociativity and counitality relations.
-This notion is equivalent to that of a comonoid in $\Ch$.
+%This notion is equivalent to that of a comonoid in $\Ch$.
 Denote by $\coAlg$ the category of coalgebras with morphisms being structure preserving chain maps.
 The category $\coAlg$ is symmetric monoidal, with braiding induced from $\Ch$ and structure maps of a product $C \ot C^\prime$ given by
 \begin{gather*}
@@ -65,11 +72,20 @@ We denote by $\coAlg^\ast$ the category of coaugmented coalgebras with morphisms
 A coaugmented coalgebra is a \textit{connected coalgebra} if it is $0$ in negative degrees and the coaugmentation induces an isomorphism $\k \cong C_0$ of $\k$-modules.
 We denote by $\coAlg^0$ the full subcategory of $\coAlg^\ast$ defined by these.
 
+\subsection{Monoids}
+
+A \textit{monoidal object} in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$ satisfying the usual associativity and unital relations.
+The category of these together with structure preserving morphisms, referred to as \textit{monoidal morphisms}, is denoted $\Mon_\sC$.
+%\textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$ satisfying the usual associativity and unital relations.
+%We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and
+We remark that a lax monoidal functor $\sC \to \sC^\prime$ induces a functor between their categories of monoids $\Mon_\sC \to \Mon_{\sC^\prime}$.
+For example, the forgetful functor from $\coAlg$ to $\Ch$ is monoidal and so, it induces a forgetful functor from monoidal coalgebras to monoidal chain complexes, which are more commonly known as bialgebras and algebras respectively, but this terminology is no well suited for our purposes.
+
 \subsection{Simplicial theory}\label{ss:simplicial}
 
 The \textit{simplex category} is denoted by $\simplex$ and its objects by $[n]$. The morphisms in $\simplex$ are generated by coface maps, denoted by $\partial^{j}_n \colon [n-1] \to [n]$ for $0\leq j \leq n$, and codegeneracy maps, denoted by $\xi^{j}_n \colon [n+1] \to [n]$ for $0 \leq j \leq n+1$. These satisfy the usual cosimplicial identities. For simplicity, we omit the subscript in the notation when there is no risk of confusion and simply denote these maps by $\partial^{j} \colon [n-1] \to [n]$ and $\xi^{j} \colon [n+1] \to [n]$.
 
-The category of \textit{simplicial sets} $\Fun(\simplex^\op, \Set)$ is denoted by $\sSet$ and the \textit{standard $n$-simplex} $\yoneda [n] = \simplex(-, [n])$ by $\simplex^n$.
+The category of \textit{simplicial sets} $\Fun(\simplex^\op, \Set)$ is denoted by $\sSet$ and the \textit{standard $n$-simplex} $\simplex(-, [n])$ by $\simplex^n$.
 For any simplicial set $X$ we write, as usual, $X_n$ instead of $X[n]$, and identify the elements of $\simplex^n_m$ with increasing tuples $[v_0, \dots, v_m]$ where $v_i \in \{0, \dots, n\}$.
 
 If $X$ is such that $X_0$ is a singleton set we say that $X$ is \textit{reduced}.
@@ -100,7 +116,7 @@ We now recall a classical chain approximation of the diagonal map on the chains 
 	\sSet \arrow[r, "\schains"] \arrow[ur, "\schainsA", out=70, in=180] & \Ch.
 \end{tikzcd}
 \]
- %via a Yoneda extension, by the following structure on the chains of standard simplices.% 
+ %via a Yoneda extension, by the following structure on the chains of standard simplices.%
  For any $n \in \N$, define $\Delta \colon \chains(\simplex^n) \to \chains(\simplex^n)^{\ot2}$ by
 \[
 \Delta \big( [v_0, \dots, v_q] \big) = \sum_{i=0}^q \ [v_0, \dots, v_i] \ot [v_i, \dots, v_q]
@@ -108,7 +124,7 @@ We now recall a classical chain approximation of the diagonal map on the chains 
 and $\epsilon \colon \chains(\simplex^n) \to \k$ by
 \[
 \epsilon \big( [v_0, \dots, v_q] \big) = \begin{cases} 1 & \text{ if } q = 0, \\ 0 & \text{ if } q>0. \end{cases}
-\] This construction gives rise to a cosimplicial coalgebra $[n] \mapsto \schainsA(\simplex^n)$. For an arbitrary simplicial set $X$ define 
+\] This construction gives rise to a cosimplicial coalgebra $[n] \mapsto \schainsA(\simplex^n)$. For an arbitrary simplicial set $X$ define
 \[
 \schainsA(X) = \colim_{\simplex^n \to X} \schainsA(\simplex^n).
 \]
@@ -141,9 +157,9 @@ for $p,q \in \{0,1\}$.
 We remark that the cube category without connections will not be considered in this work.
 
 The category of \textit{cubical sets} $\Fun(\cube^\op, \Set)$ is denoted by $\cSet$ and
-the \textit{standard $n$-cube} $\yoneda(2^n)$ by $\cube^n$.
+the \textit{standard $n$-cube} $\cube(-, 2^n)$ by $\cube^n$.
 For any cubical set $Y$ we write, as usual, $Y_n$ instead of $Y(2^n)$.
-The monoidal structure on $\cube$ induces one on $\cSet$ as described in \cref{ss:category theory}.
+The monoidal structure on $\cube$ induces one on $\cSet$ via the Day convolution product.
 More explicitly, for two cubical sets we have
 \[
 (Y \times Y')_n = \bigsqcup_{i+j=n} Y_i \times Y'_j.
