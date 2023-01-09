@@ -31,15 +31,13 @@ a \mapsto \big(a^\prime \mapsto \sA(a^\prime, a)\big).
 If $(\sA, \otimes, \mathbb{1})$ is a monoidal category, then  $\Fun(\sA^\op, \Set)$ becomes a monoidal category when equipped with the \textit{Day convolution product} defined by
 \[ F \boxtimes G = \colim_{\yoneda(a) \to F, \text{ }\yoneda(b) \to G} \yoneda(a \otimes b),
 \]
-for any $F,G \in \Fun(\sA^\op, \Set)$.
-\subsection{Chain complexes}
+for any $F,G \in \Fun(\sA^\op, \Set)$, where the colimit is taken over the category whose objects are pairs of morphisms $(\yoneda(a) \to F, \yoneda(b) \to G)$ in $\Fun(\sA^\op, \Set)$ for $a,b \in \sA$ and morphisms are pairs of commutative triangles. 
 
 Throughout this article $\k$ denotes a commutative and unital ring and we work over its associated closed symmetric monoidal category of differential (homologically) graded $\k$-modules $(\Ch, \ot, \k)$.
 We refer to the objects and morphisms of this category as \textit{chain complexes} and \textit{chain maps} respectively.
 We denote by $\Hom(C, C^\prime)$ the chain complex of $\k$-linear maps between chain complexes $C$ and $C^\prime$, and refer to the functor $\Hom(-, \k)$ as \textit{linear duality}.
 The $i^\th$ \textit{suspension} functor $s^i \colon \Ch \to \Ch$ is defined at the level of graded modules by $(s^{i}C)_n = C_{n-i}$.
 
-\subsection{Monoids}
 
 A \textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$ satisfying the usual associativity and unital relations.
 We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and remark that a lax monoidal functor $\sC \to \sC^\prime$ induces a functor between their categories of monoids $\Mon_\sC \to \Mon_{\sC^\prime}$.
