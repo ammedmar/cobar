@@ -100,12 +100,13 @@ so that the $i$-th vertex is given by the standard basis vector $v_i=(0,\ldots,1
 	\Top :\! \sSing, \arrow[l, shift left=.5ex]
 \end{tikzcd}
 \]
-determined by the cosimplicial space defined by the spaces $\gsimplex^n$ and usual coface inclusions $\delta^i \colon \gsimplex^{n-1} \to \gsimplex^n$ and codegeneracy projections $\sigma^j \colon \gsimplex^n \to \gsimplex^{n-1}$.
+determined by
+% the cosimplicial space defined by
+the spaces $\gsimplex^n$ and usual coface inclusions $\delta^i \colon \gsimplex^{n-1} \to \gsimplex^n$ and codegeneracy projections $\sigma^j \colon \gsimplex^n \to \gsimplex^{n-1}$.
 
 The functor of (normalized) \textit{simplicial chains} $\schains \colon \sSet \to \Ch$ is obtained from the geometric realization and the functor of cellular chains.
 When no confusion arises from doing so we write $\chains$ instead of $\schains$ and refer to it simply as the functor of \textit{chains}.
 We will denote the functor of (simplicial) \textit{singular chains} $\schains \circ \sSing \colon \Top \to \Ch$ by $\sSchains$.
-
 We modify this construction for a pointed topological space $(\fX,x)$ by only considering maps $\gsimplex^n \to \fX$ sending all vertices to $x$.
 This produces a reduced simplicial set $\sSing(\fX,x)$ whose normalized chains we denote by $\sSchains(\fX,x)$.
 
@@ -116,7 +117,7 @@ We now recall a classical chain approximation of the diagonal map on the chains 
 	\sSet \arrow[r, "\schains"] \arrow[ur, "\schainsA", out=70, in=180] & \Ch.
 \end{tikzcd}
 \]
- %via a Yoneda extension, by the following structure on the chains of standard simplices.%
+It suffices to define this functor $\schainsA$ on standard simplices.
  For any $n \in \N$, define $\Delta \colon \chains(\simplex^n) \to \chains(\simplex^n)^{\ot2}$ by
 \[
 \Delta \big( [v_0, \dots, v_q] \big) = \sum_{i=0}^q \ [v_0, \dots, v_i] \ot [v_i, \dots, v_q]
@@ -124,11 +125,13 @@ We now recall a classical chain approximation of the diagonal map on the chains 
 and $\epsilon \colon \chains(\simplex^n) \to \k$ by
 \[
 \epsilon \big( [v_0, \dots, v_q] \big) = \begin{cases} 1 & \text{ if } q = 0, \\ 0 & \text{ if } q>0. \end{cases}
-\] This construction gives rise to a cosimplicial coalgebra $[n] \mapsto \schainsA(\simplex^n)$. For an arbitrary simplicial set $X$ define
-\[
-\schainsA(X) = \colim_{\simplex^n \to X} \schainsA(\simplex^n).
 \]
-This construction is known as the \textit{Alexander--Whitney coalgebra} structure on the simplicial chains.
+We referred to this lift as the \textit{Alexander--Whitney coalgebra} structure on simplicial chains.
+% This construction gives rise to a cosimplicial coalgebra $[n] \mapsto \schainsA(\simplex^n)$. For an arbitrary simplicial set $X$ define
+% \[
+% \schainsA(X) = \colim_{\simplex^n \to X} \schainsA(\simplex^n).
+% \]
+% This construction is known as the \textit{Alexander--Whitney coalgebra} structure on simplicial chains.
 
 If $X$ is a reduced simplicial set then $\schainsA(X)$ becomes a connected coalgebra with the coaugmentation $\nu \colon \k \to \schains(X)$ induced by sending $1$ to the basis element represented by the unique $0$-simplex of $X$.
 Hence, the functor $\schainsA$ restricts to a functor
@@ -159,7 +162,7 @@ We remark that the cube category without connections will not be considered in t
 The category of \textit{cubical sets} $\Fun(\cube^\op, \Set)$ is denoted by $\cSet$ and
 the \textit{standard $n$-cube} $\cube(-, 2^n)$ by $\cube^n$.
 For any cubical set $Y$ we write, as usual, $Y_n$ instead of $Y(2^n)$.
-The monoidal structure on $\cube$ induces one on $\cSet$ via the Day convolution product.
+The monoidal structure on $\cube$ induces one on $\cSet$.
 More explicitly, for two cubical sets we have
 \[
 (Y \times Y')_n = \bigsqcup_{i+j=n} Y_i \times Y'_j.
@@ -183,7 +186,6 @@ Notice that $\cSing$ is lax monoidal
 (\gcube^n \to \fX) \times (\gcube^m \to \fX') \mapsto (\gcube^{n+m} \to \fX \times \fX').
 \]
 %coming from the cocubical space defined by the spaces $\gcube^n$ and usual coface inclusions $\delta^i_{\varepsilon} \colon \gcube^{n-1} \to \gcube^n$ and codegeneracy and coconnection projections $\sigma^j, \gamma^j \colon \gcube^n \to \gcube^{n-1}$.
-
 
 The functor of (normalized) \textit{cubical chains} $\cchains \colon \cSet \to \Ch$ is the unique monoidal functor defined by assigning to $\cube^1$ the usual cellular chains of the interval $\gcube^1$.
 When no confusion arises from doing so we write $\chains$ instead of $\cchains$ and refer to it simply as the functor of \textit{chains}.
