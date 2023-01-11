@@ -2,8 +2,8 @@
 
 \section{Introduction}
 
-For any topological space $\fX$, its complex of simplicial or cubical singular chains $\Schains(\fX)$ -- regarded as a (dg) abelian group -- encodes the homology of $\fX$ in its quasi-isomorphism type.
-More homotopical information can be stored in the quasi-isomorphism type of this chain complex if considered as a (dg) coassociative coalgebra, which we will denote $\SchainsA(\fX)$, where the coproduct comes from a canonical choice of chain approximation to the diagonal $\fX \to \fX \times \fX$.
+For any topological space $\fX$, its complex of simplicial or cubical singular chains $\Schains(\fX)$ -- regarded as a differential graded (dg) abelian group -- encodes the homology of $\fX$ in its quasi-isomorphism type.
+More homotopical information can be stored in the quasi-isomorphism type of this chain complex if considered as a coassociative coalgebra, which we will denote $\SchainsA(\fX)$, where the coproduct comes from a natural choice of chain approximation to the diagonal $\fX \to \fX \times \fX$.
 For instance, the cohomology ring of $\fX$ is retained, but the action of the Steenrod algebra on its mod~$p$ cohomology is not.
 
 In Mandell's seminal work \cite{mandell2006homotopy_type} it is shown that, when $\fX$ is nilpotent and finite type, the entire homotopy type of $\fX$ can be encoded in the quasi-isomorphism type of this complex if considered as an $E_\infty$-coalgebra, a structure providing $\SchainsA(\fX)$ with coherent homotopies witnessing the derived cocommutativity of the coproduct coming from the strict symmetry of the diagonal map.
@@ -12,7 +12,7 @@ The first contribution of this paper is to explicitly endow the cubical singular
 More specifically, we verify that the monoid structure induced on $\cSchains(\loops_x \fX)$ by the concatenation of loops is compatible with a natural $E_\infty$-coalgebra structure on cubical singular chains, similar to the one defined in \cite{medina2022cube_einfty}.
 
 Applying Adams' cobar construction to the coalgebra of simplicial singular chains of $(\fX, x)$, one obtains another monoidal algebraic model $\cobar \sSchainsA(\fX, x)$ of $\loops_x \fX$ \cite{adams1956cobar}.
-More precisely, he constructed a natural monoidal chain map $\theta$ from $\cobar \sSchainsA(\fX, x)$ to $\cSchains(\loops_x \fX)$ and proved it to be a quasi-isomorphism if $\fX$ is simply-connected, a statement that also holds true for path-connected spaces after \cite{rivera2018cubical}.
+More precisely, Adams constructed a natural monoidal chain map $\theta$ from $\cobar \sSchainsA(\fX, x)$ to $\cSchains(\loops_x \fX)$ and proved it to be a quasi-isomorphism if $\fX$ is simply-connected, a statement that also holds true for path-connected spaces after \cite{rivera2018cubical}.
 The model $\cobar \sSchainsA(\fX, x)$ is smaller than $\cSchains(\loops_x \fX)$ and unlocks effective analysis of quantitative and qualitative properties of $\loops_x \fX$, as illustrated for instance in \cite{chainalgebraloops} and \cite{adamscobarequivalence}.
 
 The second main contribution of this paper is to make Adams model into a monoidal $E_\infty$-coalgebra and to prove that
@@ -20,10 +20,9 @@ The second main contribution of this paper is to make Adams model into a monoida
 \theta \colon \cobar \sSchainsA(\fX, x) \to \cSchains(\loops_x \fX)
 \]
 respects this higher structure.
-Although we do not pursuit here, we remark that the explicit nature of our $E_\infty$-extension invites the study of primary and secondary operations for loops spaces using Adams' model and the tools developed in \cite{medina2021may_st}, \cite{medina2020cartan}, \cite{medina2021adem}, and \cite{medina2021comch}.
+Although not pursued in the present article, we remark that the explicit nature of our $E_\infty$-extension invites the study of primary and secondary operations for loops spaces using Adams' model and the tools developed in \cite{medina2021may_st}, \cite{medina2020cartan}, \cite{medina2021adem}, and \cite{medina2021comch}.
 
-Our starting point is groundbreaking work by H.~Baues, which imply statements similar to those in this work but in the category of coalgebras.
-He reinterpreted Adams' algebraic construction at a deeper geometric level \cite{baues1998hopf}, which allowed him to endow $\cobar \sSchainsA(\fX, x)$ with the structure of a monoidal coalgebra, and to show that $\theta$ preserves this structure.
+Our starting point is groundbreaking work by Baues, which imply statements similar to those in this work but in the category of (coassociative) coalgebras. Baues reinterpreted Adams' algebraic construction at a deeper geometric level \cite{baues1998hopf}, which allowed him to endow $\cobar \sSchainsA(\fX, x)$ with the structure of a monoidal coalgebra, and to show that $\theta$ preserves this structure.
 To prove our statement we interpret Adams' construction at an even deeper categorical level.
 %The simplicial singular complex $\sSing(\fX, x)$ is an example of an object in the category $\sSet^0$ of $0$-reduced simplicial sets.
 We interpret Baues' geometric cobar construction, originally defined for $1$-reduced simplicial sets, as a functor
@@ -36,7 +35,7 @@ The key difference with Baues' original work is the use of connections to obtain
 Additionally, we need a suitable model of the $E_\infty$-operad endowing cubical chains with a natural $E_\infty$-coalgebra extending the Serre diagonal.
 For this we take the operad $\UM$ introduced in \cite{medina2020prop1}.
 After proving that its coalgebras form a monoidal category, we show that the functor $\cchainsUM \colon \cSet \to \coAlg_\UM$ -- defined in \cite{medina2022cube_einfty} with a different sign convention -- is monoidal.
-This allows us to prove the following generalization of Adams and Baues structures.
+This allows us to construct the following extension of Adams and Baues' structures.
 %This functors is equal to that introduced in \cite{medina2022cube_einfty} up to signs.
 
 %that $\cchainsUM$ from cubical sets to $\UM$-coalgebras is monoidal, which implies that $\cchainsUM(\ccobar X)$ is a monoidal $\UM$-coalgebra for any 0-reduced simplicial set.
@@ -56,8 +55,9 @@ This allows us to prove the following generalization of Adams and Baues structur
 	where the unlabeled arrows are forgetful functors.
 \end{theorem*}
 
-In the above diagram, the arrow from $\sSet^0$ to $\Mon_{\Ch}$ is Adams' cobar construction, the one from $\sSet^0$ to $\Mon_{\coAlg}$ is Baues' enhancement, and the one from $\sSet^0$ to $\Mon_{\coAlg_{\UM}}$ is our lift.
-Additionally we have the following statement about Adams's map.
+In the diagram of the above theorem, the arrow from $\sSet^0$ to $\Mon_{\Ch}$ is Adams' cobar construction, the one from $\sSet^0$ to $\Mon_{\coAlg}$ is Baues' enhancement, and the one from $\sSet^0$ to $\Mon_{\coAlg_{\UM}}$ is our lift.
+Additionally, we prove the following statement about Adams's map.
+
 
 \begin{theorem*}
 	For any pointed space $(\fX, x)$,
@@ -66,6 +66,22 @@ Additionally we have the following statement about Adams's map.
 	\]
 	is a quasi-isomorphism of monoidal $\UM$-coalgebras.
 \end{theorem*}
-
-The fact that $\theta$ respects the monoid structure in $\Ch$ was proven by Adams, whereas the compatibility of the monoid structure with the Serre coalgebra structure was established by Baues.
+ 
+The fact that $\theta$ respects the monoid structure in $\Ch$ was proven by Adams, whereas the compatibility of the monoid structure with the Serre coalgebra structure was established by Baues. 
 Our contribution is the compatibility of the monoid structure with a full $E_\infty$-coalgebra extension of Serre's coalgebra.
+We also remark that, whereas both Adams and Baues worked in the setting where the underlying space is simply connected, the above theorem does not require any connectivity or finiteness hypotheses. %When $\fX$ is a $2$-connected space of finite type, Mandell's result implies that the homotopy type of the based loop space is completely encoded on the quasi-isomorphism type of the $E_{\infty}$-coalgebra structure on the cobar construction. A version of this result is expected to hold in  greater generality by considering $E_{\infty}$-coalgebras under a stronger notion of weak equivalence drawn from Koszul duality theory, see \cite{RWZ22}. 
+
+% In \cite{fresse2010bar}, abstract homotopy theoretic tools are used to show that the bar construction of the underlying $E_1$-algebra of an arbitrary $E_{\infty}$-algebra carries an induced $E_{\infty}$-algebra structure.
+% No compatibility between this structure and the comonid one is established there, and the relationship with the based loop space is accomplished only under certain connectivity, finiteness, and completeness assumptions.
+
+\subsection*{Related work}
+
+Kadeishvili \cite{kadeishvili1999coproducts, kadeishvili2003cupi} explicitly described monoidal cup-$i$ coproducts on $\cobar \schainsA(X)$ extending Baues coalgebra.
+Kadeishvili, as Baues, used cubical methods to define these coproducts and to compare them, in the $1$-connected setting, to cup-$i$ coproducts extending the Serre coalgebra structure on the cubical singular chains of the based loop space.
+Additionally, there are several papers \cite{smirnov1990iterated, smith1994cobar, smith2000operads, kadeishvili1998iterating} that predict the existence of, but do not construct, an $E_\infty$-structure on the cobar construction on the chains of simply connected simplicial sets.
+
+On the dual side, Fresse \cite{fresse2003hopf} provided the bar construction of an algebra over the surjection operad with the structure of a comonoid in the category of algebras over the Barratt--Eccles operad.
+Additionally, in \cite{fresse2010bar} he used a model category structure on reduced operads \cite{berger2003modelcategory, hinich1997homologicalalgebra} to iterate the bar construction on algebras over cofibrant $E_\infty$-operads.
+
+The use of coalgebras instead of algebras allows us to relate the cobar construction to the based loop space directly --via the Adams map-- without imposing restrictions on the underlying homotopy type, as done by Fresse.
+Furthermore, by grounding our approach on the cubical perspective at the heart of Adams' and Baues' seminal papers, we are able to preserve the natural monoidal structures when defining our $E_\infty$-enhancements.
