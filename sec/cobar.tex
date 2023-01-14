@@ -27,7 +27,8 @@ There is a composition structure
 		(\alpha, \beta) &\mapsto \alpha \cdot \beta
 	\end{split}
 \end{equation}
-given by concatenation of paths with addition of parameters, whose identities are constant paths with $r=0$. We may assemble this data into a topologically enriched category $\mathcal{P}(\fX)$ that has the points of $\fX$ as objects, the spaces $P(\fX;x,x')$ as morphisms from $x$ to $x'$, concatenation of paths as composition, and constant paths as identity morphisms.
+given by concatenation of paths with addition of parameters, whose identities are constant paths with $r=0$.
+We may assemble this data into a topologically enriched category $\mathcal{P}(\fX)$ that has the points of $\fX$ as objects, the spaces $P(\fX;x,x')$ as morphisms from $x$ to $x'$, concatenation of paths as composition, and constant paths as identity morphisms.
 
 Denote by $\Top^\ast$ the category of pointed topological spaces, which we think of as a full subcategory of that of bipointed spaces in the obvious way.
 The \textit{based loop space} functor
@@ -71,7 +72,8 @@ For any $x_1, \dots, x_k \in \overline{C}$, we denote
 
 \subsection{Adams's map}\label{ss:adams maps}
 
-Adams made precise the sense in which the cobar functor may be understood as an algebraic analogue of the based loop space functor. This was achieved by constructing a natural monoidal chain map
+Adams made precise the sense in which the cobar functor may be understood as an algebraic analogue of the based loop space functor.
+This was achieved by constructing a natural monoidal chain map
 \begin{equation}\label{e:adams map 2}
 	\theta_{\fX} \colon \cobar \sSchainsA(\fX,x) \to \cSchains(\loops_x \fX),
 \end{equation}
@@ -250,8 +252,8 @@ induced by sending any necklace $T = [n_1] \vee \dots \vee[n_k]$ to the simplici
 \]
 where the wedge symbol now means we identify the last vertex of $\simplex^{n_i}$ with the first vertex of $\simplex^{n_{i+1}}$ for $i = 1, \dots, k-1$ and the two base points are given by the first vertex of $\simplex^{n_1}$ and the last vertex of $\simplex^{n_k}$.
 Then $\mathcal{S}$ is a fully faithful functor, so $\Nec$ may be identified with the full sub-category of $\sSet_{*,*}$ having as objects those double pointed simplicial sets of the form $\simplex^{n_1} \vee \dots \vee \simplex^{n_k}$.
-The \textit{dimension} of a necklace $T = [n_1] \vee\dots\vee [n_k]$ is defined by $\dim(T) = n_1 + \dots + n_k-k$. Note there is a canonical homeomorphism \[\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k} \cong | \simplex^{n_1} \vee \cdots \vee \simplex^{n_k}|.\]
-
+The \textit{dimension} of a necklace $T = [n_1] \vee\dots\vee [n_k]$ is defined by $\dim(T) = n_1 + \dots + n_k-k$.
+Note there is a canonical homeomorphism \[\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k} \cong | \simplex^{n_1} \vee \cdots \vee \simplex^{n_k}|.\]
 
 The category of \textit{necklical sets} $\Fun(\Nec^{\op}, \Set)$ becomes a (non-symmetric) monoidal category with monoidal structure induced from $(\Nec, \vee)$.
 We denote the monoidal category of necklical sets by $\nSet$.
@@ -262,8 +264,13 @@ We denote the monoidal category of necklical sets by $\nSet$.
 
 \subsection{From necklaces to cubes}
 
-In \cref{explicitchoice} we described an explicit way of decomposing a topological necklace $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$ into a family of paths connecting the first and last vertices parameterized by an $(n_1 + \cdots + n_k-k)$-dimensional cube. This construction satisfies conditions (1), (2), and (3) in \cref{ss:adams maps}. In particular, conditions (2) and (3) may be interpreted as saying that each face in the codimension $1$ boundary of such a cube of paths is in one-to-one correspondence with codimension $1$ ``sub-necklaces" inside $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$ connecting the first and last vertices. Furthermore, sub-necklaces in $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$ are in one-to-one correspondence with the poset \[\{ J \subseteq \{0,\ldots, n_1+ \cdots + n_k-k\} | 0,n_1+ \cdots +n_k-k \in J \}\]
-ordered by inclusion, which has a canonical cubical structure. We build upon this observation to describe a functorial relation between necklaces and cubes. This will be used to explain how Adams' map is induced by a deeper categorical construction.
+In \cref{explicitchoice} we described an explicit way of decomposing a topological necklace $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$ into a family of paths connecting the first and last vertices parameterized by an $(n_1 + \cdots + n_k-k)$-dimensional cube.
+This construction satisfies conditions (1), (2), and (3) in \cref{ss:adams maps}.
+In particular, conditions (2) and (3) may be interpreted as saying that each face in the codimension $1$ boundary of such a cube of paths is in one-to-one correspondence with codimension $1$ ``sub-necklaces" inside $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$ connecting the first and last vertices.
+Furthermore, sub-necklaces in $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$ are in one-to-one correspondence with the poset \[\{ J \subseteq \{0,\ldots, n_1+ \cdots + n_k-k\} | 0,n_1+ \cdots +n_k-k \in J \}\]
+ordered by inclusion, which has a canonical cubical structure.
+We build upon this observation to describe a functorial relation between necklaces and cubes.
+This will be used to explain how Adams' map is induced by a deeper categorical construction.
 
 We begin by defining a monoidal functor
 \[
