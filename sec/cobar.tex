@@ -7,12 +7,6 @@ A deeper exploration of Adams's comparison map from the cobar construction of th
 We use this framework to construct a functorial cubical model for the based loop space.
 Similar constructions and results may be found in \cite{baues1980geometry}, \cite{berger1995loops}, \cite{baues1998hopf}, \cite{dugger2011rigidification}, \cite{galvez2020hopf}, and \cite{rivera2018cubical, rivera2019path}.
 
-%The goal of this section is to prove \cref{t:1st main thm in the intro}.
-%Explicitly, we construct a natural $E_{\infty}$-bialgebra structure on $\cobar \schainsA(X)$ for any reduced simplicial set $X$ (\cref{l:lift of cobar to e-infty}); and show that when $X$ is the singular complex of a topological space $(\fX,x)$, Adams's comparison map $\theta_{\fX} \colon \cobar \sSchainsA(\fX,x) \to \cSchains(\loops_x \fX)$ is a quasi-isomorphism of $E_\infty$-bialgebras (\cref{l:adams comparison is an e-infty bialgebra map}).
-%
-%The first goal is achieved using a categorical reformulation of Baues' geometric cobar construction (\cref{ss:cubical cobar}) together with the natural $\UM$-coalgebra structure defined on cubical chains (\cref{ss:e-infty on cubical}) and its monoidal properties (\cref{t:cubical e-infty chains are monoidal}).
-%The second goal is obtained by factoring Adams's comparison map through this cubical model (\cref{ss:factorization of adams}).
-
 \subsection{The based loop space}
 
 The \textit{path space} functor
@@ -33,7 +27,7 @@ There is a composition structure
 		(\alpha, \beta) &\mapsto \alpha \cdot \beta
 	\end{split}
 \end{equation}
-given by concatenation of paths with addition of parameters, whose identities are constant paths with $r=0$. We may assemble this data into a topologically enriched category $\mathcal{P}(\fX)$ that has the points of $\fX$ as objects, the spaces $P(\fX;x,x')$ as morphisms from $x$ to $x'$, concatenation of paths as composition, and constant paths as identity morphisms. 
+given by concatenation of paths with addition of parameters, whose identities are constant paths with $r=0$. We may assemble this data into a topologically enriched category $\mathcal{P}(\fX)$ that has the points of $\fX$ as objects, the spaces $P(\fX;x,x')$ as morphisms from $x$ to $x'$, concatenation of paths as composition, and constant paths as identity morphisms.
 
 Denote by $\Top^\ast$ the category of pointed topological spaces, which we think of as a full subcategory of that of bipointed spaces in the obvious way.
 The \textit{based loop space} functor
@@ -45,20 +39,6 @@ associates to a pointed space $(\fX,x)$ the space
 \loops_x \fX = P(\fX;x,x)
 \]
 of loops in $\fX$ based at $x$ with the monoid structure induced from the composition structure \eqref{eq:composition structure}.
-%with variable parameter $r$.
-%The topology of $\loops_x \fX$ is given by the compact-open topology.
-%The monoid structure
-%\[
-%\loops_x \fX \times \loops_x \fX \to \loops_x \fX
-%\]
-%with addition of parameters.
-%On any morphism $f \colon (\fX,x) \to (\fX',x')$, the induced monoid map $\loops (f) \colon \loops_x \fX \to \loops_{x'} \fX'$ is given by $\loops(f)(\alpha) = f\circ\alpha$.
-
-%It will also be useful to consider the \textit{free path space} functor
-%\[
-%P \colon \Top \to \Top
-%\]
-%which associates to any space $\fX$ the space $P\fX$ of all continuous paths $\alpha \colon [0,r] \to \fX$ with variable parameter $r$ and no restrictions on the endpoints.
 
 Since $\cSing$ is lax monoidal, $\cSing(\loops_x \fX)$ is a monoid in $\cSet$, and, since $\cchains$ is monoidal, $\cSchains(\fX,x)$ is a monoid in $\Ch$.
 
@@ -102,7 +82,6 @@ To define Adams' map one uses a collection of continuous maps
 \[
 \set[\big]{\theta_n \colon \gcube^{n-1} \to P(\gsimplex^n;v_0,v_n)}_{n\in\N},
 \]
-%where $v_i$ denoted the $i^\th$ vertex of $\gsimplex^n$ and $P(\gsimplex^n;v_0,v_n)$ is subspace of $P \gsimplex^n$ consisting of the paths from $v_0$ to $v_n$.
 satisfying for each $j$ the following conditions:
 \begin{enumerate}
 	\item $\theta_1(0)\colon [0,\sqrt{2}] \to \gsimplex^1$ is the path $\theta_1(0)(s) = v_0 + \frac{s}{\sqrt{2}}(v_1-v_0)$,
@@ -122,10 +101,6 @@ and
 \end{split}
 \]
 are respectively the inclusions into the first and last faces of $\gsimplex^n$.
-%In the above equations, $v_0$ and $v_1$ denote the first and last vertices of $\gsimplex^1$, $d_j \colon \gsimplex^{n-1} \to \gsimplex^n$ is the $j$-th coface inclusion,
-%the maps $f_j \colon \gsimplex^j \rightarrow \gsimplex^n$ and $l_{n-j} \colon \gsimplex^{n-j} \rightarrow \gsimplex^n$ denote the inclusion of the first $j$-dimensional face and last $(n-j)$-dimensional face into $\gsimplex^n$, respectively, and
-%$e_j^0,e_j^1\colon \gcube^{n-1} \rightarrow \gcube^{n}$ denote the $j^\th$ bottom and top cubical coface maps, respectively.
-%For any two compossible paths $\alpha$ and $\beta$, the dot symbol in $\alpha \cdot \beta$ denotes the composition (or concatenation) of paths.
 
 Adams showed the existence of a (non-unique) collection of such maps by induction, using the contractibility of $P(\gsimplex^n;v_0,v_n)$.
 He then defined $\theta_{\fX}$ as follows.
@@ -243,9 +218,6 @@ Consider the subcategory $\simplex_{*,*}$ of the simplex category $\simplex$ wit
 It is a strict monoidal category when equipped with the monoidal structure $[n] \ot [m] = [n+m]$, thought of as identifying the elements $n \in [n]$ and $0 \in [m]$, and unit given by $[0]$.
 Heuristically, we may think of $\simplex_{*,*}$ as a category of models for cells parameterizing families of paths with fixed endpoints inside a simplex.
 
-%In passing, we mention that this category is $\op$-dual to the augmented simplex category, a form of Joyal duality.
-%do we need this?
-
 The \textit{necklace category} $\Nec$ is obtained from $\simplex_{*,*}$ as follows.
 Thinking of $\simplex_{*,*}$ as a monoid in $\Cat$, we first apply the bar construction to it and produce a simplicial object in $\Mon_{\Cat}$ which, after realization, defines the strict monoidal category $\Nec$.
 We denote the monoidal structure by
@@ -278,7 +250,7 @@ induced by sending any necklace $T = [n_1] \vee \dots \vee[n_k]$ to the simplici
 \]
 where the wedge symbol now means we identify the last vertex of $\simplex^{n_i}$ with the first vertex of $\simplex^{n_{i+1}}$ for $i = 1, \dots, k-1$ and the two base points are given by the first vertex of $\simplex^{n_1}$ and the last vertex of $\simplex^{n_k}$.
 Then $\mathcal{S}$ is a fully faithful functor, so $\Nec$ may be identified with the full sub-category of $\sSet_{*,*}$ having as objects those double pointed simplicial sets of the form $\simplex^{n_1} \vee \dots \vee \simplex^{n_k}$.
-The \textit{dimension} of a necklace $T = [n_1] \vee\dots\vee [n_k]$ is defined by $\dim(T) = n_1 + \dots + n_k-k$. Note there is a canonical homeomorphism \[\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k} \cong | \simplex^{n_1} \vee \cdots \vee \simplex^{n_k}|.\] 
+The \textit{dimension} of a necklace $T = [n_1] \vee\dots\vee [n_k]$ is defined by $\dim(T) = n_1 + \dots + n_k-k$. Note there is a canonical homeomorphism \[\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k} \cong | \simplex^{n_1} \vee \cdots \vee \simplex^{n_k}|.\]
 
 
 The category of \textit{necklical sets} $\Fun(\Nec^{\op}, \Set)$ becomes a (non-symmetric) monoidal category with monoidal structure induced from $(\Nec, \vee)$.
@@ -288,9 +260,8 @@ We denote the monoidal category of necklical sets by $\nSet$.
 	The category of necklaces was introduced in \cite{dugger2011rigidification} to give an explicit description of the homotopy coherent nerve functor and its left adjoint.
 \end{remark*}
 
-
-
 \subsection{From necklaces to cubes}
+
 In \cref{explicitchoice} we described an explicit way of decomposing a topological necklace $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$ into a family of paths connecting the first and last vertices parameterized by an $(n_1 + \cdots + n_k-k)$-dimensional cube. This construction satisfies conditions (1), (2), and (3) in \cref{ss:adams maps}. In particular, conditions (2) and (3) may be interpreted as saying that each face in the codimension $1$ boundary of such a cube of paths is in one-to-one correspondence with codimension $1$ ``sub-necklaces" inside $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$ connecting the first and last vertices. Furthermore, sub-necklaces in $\gsimplex^{n_1} \vee \cdots \vee \gsimplex^{n_k}$ are in one-to-one correspondence with the poset \[\{ J \subseteq \{0,\ldots, n_1+ \cdots + n_k-k\} | 0,n_1+ \cdots +n_k-k \in J \}\]
 ordered by inclusion, which has a canonical cubical structure. We build upon this observation to describe a functorial relation between necklaces and cubes. This will be used to explain how Adams' map is induced by a deeper categorical construction.
 
@@ -428,4 +399,3 @@ Recall the Serre coalgebra lift $\cchainsA \colon \cSet \to \coAlg$ of $\cchains
 Since $\cchainsA$ is monoidal and $\ccobar(\sSing(\fX,x))$ is a monoid, $\cchainsA(\ccobar(\sSing(\fX,x)))$ is a monoid in $\coAlg$.
 Similarly, the lift $\cchainsA$ equips $\cSing(\loops_x \fX)$ with a natural monoidal coalgebra structure as well.
 Consequently, the isomorphism in (\ref{e:factorization of adams}) endows $\cobar \sSchainsA(\fX,x)$ with a natural monoidal coalgebra structure making $\theta_\fX$ into natural map of monoidal coalgebras.
-

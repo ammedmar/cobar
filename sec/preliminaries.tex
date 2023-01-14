@@ -2,60 +2,11 @@
 
 \section{Conventions and preliminaries}\label{s:preliminaries}
 
-%\subsection{Categorical notions}\label{ss:category theory}
-
-%Given categories $\sB$ and $\sC$ we denote by $\Fun(\sB, \sC)$ their associated \textit{functor category}, i.e. the category whose objects are functors and morphisms are natural transformations.
-%A category is said to be \textit{cocomplete} if any functor to it from a small category has a colimit.
-%If $\sA$ is small and $\sC$ cocomplete, then the (left) \textit{Kan extension} of $g$ along $f$ exists for any pair of functors $f$ and $g$ in the diagram below, and it is the initial object in $\Fun(\sB, \sC)$ making
-%\begin{equation*}
-	%\begin{tikzcd}[column sep=normal, row sep=normal]
-		%\sA \arrow[d, "f"'] \arrow[r, "g"] & \sC \\
-		%\sB \arrow[dashed, ur, bend right] & \quad
-	%\end{tikzcd}
-%\end{equation*}
-%commute.
-%The category $\Fun(\sA^\op, \Set)$ of functors from a small category $\sA$ to the category of sets $\Set$ is cocomplete.
-%The \textit{Yoneda embedding} is the functor
-%\[
-%\yoneda \colon \sA \to \Fun(\sA^\op, \Set)
-%\]
-%induced by the assignment
-%\[
-%a \mapsto \big(a^\prime \mapsto \sA(a^\prime, a)\big).
-%\]
-%is referred to as a \textit{Yoneda extension}.
-%Objects in the image of the Yoneda embedding are said to be \textit{representable}.
-%Any presheaf $P$ is isomorphic to a colimit of representables presheaves $P \, \cong \colim_{\yoneda(a) \to P} \yoneda(a)$.
-%If $(\sA, \otimes, \mathbb{1})$ is a monoidal category, then  $\Fun(\sA^\op, \Set)$ becomes a monoidal category when equipped with the \textit{Day convolution product}.
-
-%defined for any $F,G \in \Fun(\sA^\op, \Set)$ by
-%\[
-%F \otimes G \ = \colim_{\substack{\yoneda(a) \to F \\ \yoneda(b) \to G}} \yoneda(a \otimes b),
-%\]
-%where the colimit is taken over the category whose objects are pairs of morphisms $(\yoneda(a) \to F, \yoneda(b) \to G)$ in $\Fun(\sA^\op, \Set)$ for $a,b \in \sA$ and morphisms are pairs of commutative triangles.
-
-%A \textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$ satisfying the usual associativity and unital relations.
-%We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and remark that a lax monoidal functor $\sC \to \sC^\prime$ induces a functor between their categories of monoids $\Mon_\sC \to \Mon_{\sC^\prime}$.
-
-%Throughout this article $\k$ denotes a commutative and unital ring and we work over its associated symmetric monoidal category of (homologically) graded chain complexes of $\k$-modules $(\Ch, \ot, \k)$.
-%
-%As usual, we refer to the objects and morphisms of this category as \textit{chain complexes} and \textit{chain maps} respectively.
-%We denote by $\Hom(C, C^\prime)$ the chain complex of $\k$-linear maps between chain complexes $C$ and $C^\prime$, and refer to the functor $\Hom(-, \k)$ as \textit{linear duality}.
-
-%The $i^\th$ \textit{suspension} functor $s^i \colon \Ch \to \Ch$ is defined by $(s^{i}C)_n = C_{n-i}$.
-%A monoid in $(\Ch, \ot, \k)$, referred to as a \textit{monoidal chain complex}, is a differential graded $\k$-algebra.
-
-%A \textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$ satisfying the usual associativity and unital relations.
-%We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and remark that a lax monoidal functor $\sC \to \sC^\prime$ induces a functor between their categories of monoids $\Mon_\sC \to \Mon_{\sC^\prime}$.
-
-%A morphism $f \colon A \to A'$ in $\Mon_\Ch$ inducing an isomorphism on homology will be called a \textit{monoidal quasi-isomorphism.}
-
 \subsection{Coalgebras}\label{ss:coalgebras}
 
 Throughout this article $\k$ denotes a commutative and unital ring and we work over its associated symmetric monoidal category of (homologically) graded chain complexes of $\k$-modules $(\Ch, \ot, \k)$.
 
 A \textit{coalgebra} consists of a chain complex $C$ and chain maps $\Delta \colon C \to C \ot C$ and $\varepsilon \colon C \to \k$ satisfying the usual coassociativity and counitality relations.
-%This notion is equivalent to that of a comonoid in $\Ch$.
 Denote by $\coAlg$ the category of coalgebras with morphisms being structure preserving chain maps.
 The category $\coAlg$ is symmetric monoidal, with braiding induced from $\Ch$ and structure maps of a product $C \ot C^\prime$ given by
 \begin{gather*}
@@ -76,8 +27,6 @@ We denote by $\coAlg^0$ the full subcategory of $\coAlg^\ast$ defined by these.
 
 A \textit{monoidal object} in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$ satisfying the usual associativity and unital relations.
 The category of these together with structure preserving morphisms, referred to as \textit{monoidal morphisms}, is denoted $\Mon_\sC$.
-%\textit{monoid} $(M, \mu, \eta)$ in a monoidal category $(\sC, \ot, \mathbb{1})$ is an object $M$ together with morphisms $\mu \colon M \ot M \to M$ and $\eta \colon \mathbb{1} \to M$ satisfying the usual associativity and unital relations.
-%We denote the category of monoids in $\sC$ by $\Mon_{\sC}$ and
 We remark that a lax monoidal functor $\sC \to \sC^\prime$ induces a functor between their categories of monoids $\Mon_\sC \to \Mon_{\sC^\prime}$.
 For example, the forgetful functor from $\coAlg$ to $\Ch$ is monoidal and so, it induces a forgetful functor from monoidal coalgebras to monoidal chain complexes, which are more commonly known as bialgebras and algebras respectively, but this terminology is no well suited for our purposes.
 
@@ -100,9 +49,7 @@ so that the $i$-th vertex is given by the standard basis vector $v_i=(0,\ldots,1
 	\Top :\! \sSing, \arrow[l, shift left=.5ex]
 \end{tikzcd}
 \]
-determined by
-% the cosimplicial space defined by
-the spaces $\gsimplex^n$ and usual coface inclusions $\delta^i \colon \gsimplex^{n-1} \to \gsimplex^n$ and codegeneracy projections $\sigma^j \colon \gsimplex^n \to \gsimplex^{n-1}$.
+determined by the spaces $\gsimplex^n$ and usual coface inclusions $\delta^i \colon \gsimplex^{n-1} \to \gsimplex^n$ and codegeneracy projections $\sigma^j \colon \gsimplex^n \to \gsimplex^{n-1}$.
 
 The functor of (normalized) \textit{simplicial chains} $\schains \colon \sSet \to \Ch$ is obtained from the geometric realization and the functor of cellular chains.
 When no confusion arises from doing so we write $\chains$ instead of $\schains$ and refer to it simply as the functor of \textit{chains}.
@@ -127,11 +74,6 @@ and $\epsilon \colon \chains(\simplex^n) \to \k$ by
 \epsilon \big( [v_0, \dots, v_q] \big) = \begin{cases} 1 & \text{ if } q = 0, \\ 0 & \text{ if } q>0. \end{cases}
 \]
 We referred to this lift as the \textit{Alexander--Whitney coalgebra} structure on simplicial chains.
-% This construction gives rise to a cosimplicial coalgebra $[n] \mapsto \schainsA(\simplex^n)$. For an arbitrary simplicial set $X$ define
-% \[
-% \schainsA(X) = \colim_{\simplex^n \to X} \schainsA(\simplex^n).
-% \]
-% This construction is known as the \textit{Alexander--Whitney coalgebra} structure on simplicial chains.
 
 If $X$ is a reduced simplicial set then $\schainsA(X)$ becomes a connected coalgebra with the coaugmentation $\nu \colon \k \to \schains(X)$ induced by sending $1$ to the basis element represented by the unique $0$-simplex of $X$.
 Hence, the functor $\schainsA$ restricts to a functor
@@ -185,7 +127,6 @@ Notice that $\cSing$ is lax monoidal
 \[
 (\gcube^n \to \fX) \times (\gcube^m \to \fX') \mapsto (\gcube^{n+m} \to \fX \times \fX').
 \]
-%coming from the cocubical space defined by the spaces $\gcube^n$ and usual coface inclusions $\delta^i_{\varepsilon} \colon \gcube^{n-1} \to \gcube^n$ and codegeneracy and coconnection projections $\sigma^j, \gamma^j \colon \gcube^n \to \gcube^{n-1}$.
 
 The functor of (normalized) \textit{cubical chains} $\cchains \colon \cSet \to \Ch$ is the unique monoidal functor defined by assigning to $\cube^1$ the usual cellular chains of the interval $\gcube^1$.
 When no confusion arises from doing so we write $\chains$ instead of $\cchains$ and refer to it simply as the functor of \textit{chains}.
@@ -201,11 +142,3 @@ $\cchainsA$ lifting the functor of chains
 \end{tikzcd}
 \]
 We refer to this lift as the \textit{Serre coalgebra} structure on cubical chains.
-
-%defined, using a Yoneda extension, by the tensor product structure (\cref{ss:coalgebras}) defined on $\chains(\cube^n) = \chains(\cube^1)^{\ot n}$ via the identification of $\chains(\cube^1)$ and $\chains(\simplex^1)$.
-%We refer to this lift as the \textit{Serre coalgebra} structure on cubical chains.
-%We will prove in \cref{ss:cube_einfty revisited} a generalization of the following reformulation of this definition.
-%
-%\begin{proposition}\label{p:serre coalgebra}
-%	The functor $\cchainsA \colon \cSet \to \coAlg$ is the unique monoidal functor defined by the coalgebra structure on $\chains(\cube^1)$.
-%\end{proposition}

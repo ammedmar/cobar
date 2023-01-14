@@ -24,7 +24,6 @@ Although not pursued in the present article, we remark that the explicit nature 
 
 Our starting point is groundbreaking work by Baues, which imply statements similar to those in this work but in the category of (coassociative) coalgebras. Baues reinterpreted Adams' algebraic construction at a deeper geometric level \cite{baues1998hopf}, which allowed him to endow $\cobar \sSchainsA(\fX, x)$ with the structure of a monoidal coalgebra, and to show that $\theta$ preserves this structure.
 To prove our statement we interpret Adams' construction at an even deeper categorical level.
-%The simplicial singular complex $\sSing(\fX, x)$ is an example of an object in the category $\sSet^0$ of $0$-reduced simplicial sets.
 We interpret Baues' geometric cobar construction, originally defined for $1$-reduced simplicial sets, as a functor
 \begin{equation*}
 	\ccobar \colon \sSet^0 \to \Mon_{\cSet},
@@ -36,10 +35,6 @@ Additionally, we need a suitable model of the $E_\infty$-operad endowing cubical
 For this we take the operad $\UM$ introduced in \cite{medina2020prop1}.
 After proving that its coalgebras form a monoidal category, we show that the functor $\cchainsUM \colon \cSet \to \coAlg_\UM$ -- defined in \cite{medina2022cube_einfty} with a different sign convention -- is monoidal.
 This allows us to construct the following extension of Adams and Baues' structures.
-%This functors is equal to that introduced in \cite{medina2022cube_einfty} up to signs.
-
-%that $\cchainsUM$ from cubical sets to $\UM$-coalgebras is monoidal, which implies that $\cchainsUM(\ccobar X)$ is a monoidal $\UM$-coalgebra for any 0-reduced simplicial set.
-%More precisely, we prove the following.
 
 \begin{theorem*}
 	The following diagram commutes up to natural isomorphisms:
@@ -66,13 +61,10 @@ Additionally, we prove the following statement about Adams's map.
 	\]
 	is a quasi-isomorphism of monoidal $\UM$-coalgebras.
 \end{theorem*}
- 
-The fact that $\theta$ respects the monoid structure in $\Ch$ was proven by Adams, whereas the compatibility of the monoid structure with the Serre coalgebra structure was established by Baues. 
-Our contribution is the compatibility of the monoid structure with a full $E_\infty$-coalgebra extension of Serre's coalgebra.
-We also remark that, whereas both Adams and Baues worked in the setting where the underlying space is simply connected, the above theorem does not require any connectivity or finiteness hypotheses. %When $\fX$ is a $2$-connected space of finite type, Mandell's result implies that the homotopy type of the based loop space is completely encoded on the quasi-isomorphism type of the $E_{\infty}$-coalgebra structure on the cobar construction. A version of this result is expected to hold in  greater generality by considering $E_{\infty}$-coalgebras under a stronger notion of weak equivalence drawn from Koszul duality theory, see \cite{RWZ22}. 
 
-% In \cite{fresse2010bar}, abstract homotopy theoretic tools are used to show that the bar construction of the underlying $E_1$-algebra of an arbitrary $E_{\infty}$-algebra carries an induced $E_{\infty}$-algebra structure.
-% No compatibility between this structure and the comonid one is established there, and the relationship with the based loop space is accomplished only under certain connectivity, finiteness, and completeness assumptions.
+The fact that $\theta$ respects the monoid structure in $\Ch$ was proven by Adams, whereas the compatibility of the monoid structure with the Serre coalgebra structure was established by Baues.
+Our contribution is the compatibility of the monoid structure with a full $E_\infty$-coalgebra extension of Serre's coalgebra.
+We also remark that, whereas both Adams and Baues worked in the setting where the underlying space is simply connected, the above theorem does not require any connectivity or finiteness hypotheses.
 
 \subsection*{Related work}
 
