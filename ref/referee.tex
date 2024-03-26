@@ -10,54 +10,185 @@
 \setlist{label=\arabic{enumi}.,itemsep=\medskipamount, left=0pt}
 
 %%%%%%%%%%%%%%%%%%%%%%
-\title[Referee reply]{Response to referee report \\ Adams' cobar construction as a monoidal $E_{\infty}$-coalgebra model of the based loop space}
+\title[Referee reply]{Response to the referee report of \\ Adams' cobar construction as a monoidal $E_{\infty}$-coalgebra model of the based loop space}
 
 \newcommand{\ar}{\medskip\noindent\textit{Reply}:\ }
 \renewcommand{\thesection}{\arabic{section}}
+\newcommand{\rp}{\medskip\noindent}
 
 \begin{document}
 	\noindent\today
 	\maketitle
 
-	We would like to thank the reviewer for a careful and insightful analysis of our paper, and for the many suggestions improving its presentation. We respond to each of the items in the reviewer's report. 
-	%We copy their report for completeness.
+	We would like to thank the reviewer for a careful and insightful analysis of our paper, and for the many suggestions improving its presentation.
+	We copy their report for completeness.
 
 	\section{Reviewer's summary}
-(Should we address the incorrect initial comment about the homology of the based loop space being determined by the homology of the underlying space, or should we just not comment on this to accelerate the process?)
+
+	(Should we address the incorrect initial comment about the homology of the based loop space being determined by the homology of the underlying space, or should we just not comment on this to accelerate the process?)
+
+	\anibal{I would not say anything, but it is up to you. I will copy their report at the end of this reviewing process.}
 
 	\section{Reviewer's individual items}
 
+	\noindent We now respond point by point to the referee's comments.
 
+	\rp (1) Last line of page 4: The “no” should be a “not”?
 
-	\begin{enumerate}
-	\item fixed
- \item  We have revised the introduction of the normalized chains and the singular chains functors based on these suggestions in (a), (b), and (c).
-  We prefer to keep the simplicial in parenthesis to emphasize the distinction between simplicial and cubical singular chains, which will play an important role in the paper. 
- \item This notation is introduced in the second paragraph of section 2.3. 
- \item (insert an approriate reference, perhaps Jardine's ``Categorical homotopy theory" or one of Anibal's papers on cubical sets)
- \item This has been appropriately revised.
- \item (maybe add Jardine's ``Categorical homotopy theory" section 3)
- \item  This has been revised and an explicit formula for the differential is now given. 
- \item This terminology has been added to the third sentence of section 3.1.
- \item This notation has been defined.
- \item This has been clarified. 
- \item We have rewritten this part to emphasize clarity. Note that this is only meant to be an informal introduction to a precise construction and statement (Theorem 3). 
- \item (not sure I followed this comment)
- \item (Should we define the Yoneda embedding?)
- \item fixed
- \item (Not sure I followed this comment, but the induced functor is clearly monoidal from its direct description). 
- \item (Can you add a sentence about this? Thank you)
-\item fixed
-\item (Is this what we are doing?)
- \item This has been revised for consistency. 
- \item (This statement should be revised, as it currently stands it sounds funny)
- \item fixed
- \item (how should we address this comment?)
- 
- 
- 
-	\end{enumerate}
+	\ar: Changed as suggested.
+
+	\rp (2) Section 2.3: I find it confusing the way the functors of chains are presented
+	and given that it is quite important for the paper which types of chains
+	precisely are being considered, one should be careful here.
+
+	\rp (a) In the sentence “The functor of (normalized) simplicial chains [...]”, it seems that $N^\Delta$ is given as the composition of two functors factoring by Top (since the authors say realisation lands in Top), but cellular chains are defined on the category of cellular spaces (and of course, any
+	given topological space has either zero or multiple cellular structures).
+	I see what is meant, but not only this is strictly speaking wrong, it seems confusing and I don’t see why not give the more direct explicit construction.
+
+	\rp (b) I have a similar remark concerning the singular chains, where the authors write explicitly a composition of functors.
+	I do fear I might be missing something though.
+
+	\rp (c) Also, I find it weird to write “(simplicial) singular chains”. Of course, later one realises simplicial is to distinguish from cubical, but in the context it is presented, it is more confusing than clarifying. I would	argue that “singular chains” is unambiguous and more clear than writing simplicial. Maybe with the rest of the paragraph more clear, this criticism goes away.
+
+	\ar We have revised the introduction of the normalized chains and the singular chains functors based on the suggestions presented in (a), (b).
+	It now reads:
+
+	\begin{quote}
+		The functor of (normalized) \textit{simplicial chains} $\schains \colon \sSet \to \Ch$ is defined on any simplicial set $X$ by first considering the chain complex $(\k[X], \partial)$, given on degree $n$ by the free $\k$-module generated by the $n$-simplices of $X$ with differential given by the alternating sum of face maps, and then modding out by the sub-chain complex of degenerate elements.
+		We remark that this functor is naturally equivalent to the composition of the geometric realization functor and that of cellular chains with respect to the standard CW structure.
+	\end{quote}
+
+	Regarding (c), we prefer to keep the simplicial in parenthesis to emphasize the distinction between simplicial and cubical singular chains, which will play an important role in the paper.
+
+	\rp (3) When defining the coproduct on $\chains(\triangle^n)$ the notation $[v_0,...,v_q]$ has not really been introduced.
+	Maybe it would clarify a bit better what the constructions exactly are, if something else is said here.
+
+	\ar This notation is introduced in the second paragraph of section 2.3.
+
+	\rp (4) Section 2.4: I am not extremely familiar with cubical theory, and generally	speaking this is less known than simplicial theory.
+	A reference for this section would be appreciated.
+
+	\ar We have added the following references to publications covering the topic more thoroughly: \cite{grandis2003cubical,medina2022cube_einfty,medina2023flowing}.
+
+	\rp (5) In the second diagram of this section, the authors talk about the obvious maps $\delta_i$, $\sigma$ and $\gamma \colon \mathbb{I}^1 \to \mathbb{I}^2$.
+	While the others seem obvious, $\gamma$ is not at all to me. There are multiple topological maps sending the vertices 00 to 0 and 01, 10, 11 to 1.
+	I suspect the authors intend to use the expression $\max(p, q)$, which does extend to the full square.
+
+	\ar This has been appropriately revised. \anibal{By doing what?}
+
+	\rp (6) Assuming the lack of a reference, a little bit more should be said about the adjunction presented, or at least give the simple formula for Sing on objects.
+
+	\ar References have been added to the beginning of this subsection.
+
+	\rp (7) Same comment as 2 concerning the last paragraph of page 6.
+
+	\ar This has been revised and an explicit formula for the differential is now given.
+	It now reads:
+
+	\begin{quote}
+		The functor of (normalized) \textit{cubical chains} $\cchains \colon \cSet \to \Ch$ is the unique monoidal functor defined by assigning to $\cube^1$ the usual cellular chains of the interval $\gcube^1$.
+		Explicitly, it is defined on any cubical set $Y$ by first considering the chain complex $(\k[Y], \delta)$, given on degree $n$ by the free $\k$-module generated by the $n$-cubes of $Y$ with differential $\delta$ given on any $n$-cube $y \in Y_n$ by
+		\[
+		\delta(y) = \sum_{i=1}^n (-1)^i
+		\big(
+		Y(\text{id}_2^{i-1} \times \delta_1 \times \text{id}_2^{n-i})(y) -
+		Y(\text{id}_2^{i-1} \times \delta_0 \times \text{id}_2^{n-i})(y)
+		\big),
+		\]
+		and then modding out by the sub-complex of degenerate cubes.
+	\end{quote}
+
+	\rp (8) Section 3.1: The based loop space are Moore loops, right?
+	If so, the word ``Moore'' should appear somewhere for clarity, no?
+
+	\ar This terminology has been added to the third sentence of section 3.1.
+
+	\rp (9) Beginning of section 3.3: Strictly speaking, $\sSchainsA$ was not introduced, only $\schainsA$.
+
+	\ar This notation has now been introduced. \anibal{Where?}
+
+	\rp (10) 5th line of page 9: “[t]he constant loop” has not been defined.
+	There are multiple constant loops, we want the one of length zero.
+
+	\ar This has now been clarified.\anibal{By doing what?}
+
+	\rp (11) Section 3.5: I find in the description of the differential of $\Omega S^\Delta_{\mathcal A s}(X, x)$ “Generators that, in a certain sense, fit inside T ” is not clear at all.
+	Also, the reader is expecting the differential to have two pieces and it seems that only one is mentioned, which is perhaps confusing.
+
+	\ar We have rewritten this part to emphasize clarity. Note that this is only meant to be an informal introduction to a precise construction and statement (Theorem 3).
+
+	\rp (12) Section 3.6: The first centered equation reads weirdly due to the way it is
+	formatted.
+
+	\ar We have reformatted it and it now display as follows:
+	\[
+	\set[\Big]{J \subseteq \set{0,\dots,n_1+\cdots+n_k-k} \mid 0,n_1+\cdots+n_k-k \in J}
+	\]
+
+	\rp (13) End of 3.6: In the last equation, the Yoneda $\yoneda$ was not introduced.
+	Notice that the cubical set right before being called $Y$ makes it more confusing.
+	($\yoneda$ is also being used later in the text.)
+
+	\ar We have now mentioned that $\yoneda \colon \Nec \to \nSet$ stands for the Yoneda embedding.
+
+	\rp (14) Last sentence of 3.6: “Since P is a monoidal,”
+
+	\ar Thank you, we have fixed this typo.
+
+	\rp (15) Last sentence of 3.6: Doesn’t the monoidality of P imply only the oplax monoidality of P!? In that case we wouldn’t be able to infer the sentence right before Remark 2.
+
+	\ar The induced functor is clearly monoidal from its explicit description.
+	\anibal{Just wondering something about the colimit of products not being the product of colimits.}
+
+	\rp (16) End of 4.4: Exactly how does this $E-\infty$ structure generalizes those previously introduced in [MS03; BF04]?
+
+	\ar The expanded sentence now reads:
+
+	\begin{quote}
+		We remark that this $E_\infty$-structure generalizes those previously introduced in \cite{mcclure2003multivariable,berger2004combinatorial} in the sense that any cooperation $\chains \to \chains^{\ot r}$ arising from the action of the Barratt-Eccles or surjection operad can be expressed as a cooperation arising from the action of $\UM$.
+	\end{quote}
+
+	(17) Equation (7) would benefit from parenthesis. Formula is in principle ambiguous as it is written.
+
+	\ar Changed as suggested.
+
+	(18) General remark for Section 4.4: When working with operads, the existence of a natural $\cO$-algebra structure on the tensor product of two $\cO$-algebras is equivalent to a morphism $\cO \to \cO \ot_H \cO$ where $\ot_H$ is the Hadamard (arity-wise) tensor product.
+	It feels that something similar is being done here.
+	Is there a prop structure on $\M \ot_H \M$? Are then the authors just defining a prop map $\Delta_\M \colon \M \to \M \ot_H \M$?
+
+	\ar Yes, this is indeed what we are doing.
+
+	\rp (19) Beginning of page 19: This is the first appearance of the phrase “Serre diagonal” besides the introduction.
+	Previously Serre coalgebra was mentioned.
+	Please clarify.
+
+	\ar This has been revised for consistency. \anibal{How?}
+
+	(20) Theorem 5 could be stated more clearly, either in the statement of the
+	theorem or before.
+
+	\ar It now reads:
+
+	\begin{quote}
+		We show that the monoidal structure on $\UM$-coalgebras recover the $E_\infty$-structure on cubical chains defined in 4.5.
+		In fact, we have the following stronger statement at the level of $\M$-bialgebras.
+
+		\medskip\noindent\textbf{Theorem 5}.
+		\textit{For any $n \in \N$, the $\M$-bialgebra structure on $\chains(\cube^n)$ agrees with the monoidal extension of the $\M$-bialgebra structure on $\chains(\cube^1)$.}
+	\end{quote}
+
+	\rp (21) There is a loose x at the end of section 4.8.
+
+	\ar Thank you, it is now fixed.
+
+	\rp (22) As a general comment, I think it might be confusing to the non-linear reader to figure out which chains notation means what, between $N$, $S$, $\Sing$, $\As$ in subscript and $\triangle$, $\square$ in superscript.
+
+	\anibal{Not sure what to say. Wanna take a first go?}
 
 	\section{Other changes}
 
+	\noindent (1) AMM's affiliation has been updated.
+
+	\sloppy
+	\printbibliography
 \end{document}

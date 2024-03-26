@@ -92,7 +92,8 @@ That is to say, these functors fit in a commutative diagram
 	\end{tikzcd}
 \end{equation*}
 where the vertical arrow is the obvious forgetful functor.
-We remark that this $E_\infty$-structure generalizes those previously introduced in \cite{mcclure2003multivariable,berger2004combinatorial}.
+
+We remark that this $E_\infty$-structure generalizes those previously introduced in \cite{mcclure2003multivariable,berger2004combinatorial} in the sense that any cooperation $\chains \to \chains^{\ot r}$ arising from the action of the Barratt-Eccles or surjection operad can be expressed as a cooperation arising from the action of $\UM$.
 
 \subsection{\pdfEinfty-structure on cubical chains}\label{ss:cubical e-infty}
 
@@ -257,15 +258,15 @@ The structure preserving diagonal on the prop $\cM$ induces one on the operad $\
 
 \subsection{Revisiting the \pdfEinfty-coalgebra structure on cubical chains}\label{ss:cube_einfty revisited}
 
-In this subsection we use the monoidal structure on $\UM$-coalgebras to recover the $E_\infty$-structure on cubical chains (\cref{ss:cubical e-infty}).
+We show that the monoidal structure on $\UM$-coalgebras recover the $E_\infty$-structure on cubical chains defined in \cref{ss:cubical e-infty}.
+In fact, we have the following stronger statement at the level of $\M$-bialgebras.
 
 \begin{theorem}\label{t:cubical e-infty chains are monoidal}
-	$\cchainsUM \colon \cSet \to \coAlg_\UM$ is the monoidal functor determined by the $\M$-bialgebra structure on $\chains(\cube^1)$.
+	For any $n \in \N$, the $\M$-bialgebra structure on $\chains(\cube^n)$ agrees with the monoidal extension of the $\M$-bialgebra structure on $\chains(\cube^1)$.
 \end{theorem}
 
 \begin{proof}
-	It suffices to show that for each $n \in \N$ the two $\M$-bialgebra structures on $\chains(\cube^n) = \chains(\cube^1)^{\ot n}$ agree.
-	Since the coalgebra part agrees by definition we focus on the product.
+	Since the coalgebra part agrees by definition, we focus on the product.
 	We will proceed by induction with the base case holding trivially.
 	Let $x = x_1 \ot \dotsb \ot x_n$ and $y = y_1 \ot \dotsb \ot y_n$ be two elements in $\chains(\cube^n)$.
 	The following straightforward computation verifies that $x \ast y$ in $\chains(\cube^n)$ corresponds to $(x_{<n} \ot x_n) \ast (y_{<n} \ot y_n)$ in $\chains(\cube^{n-1}) \ot \chains(\cube^1)$:
