@@ -28,7 +28,7 @@ There is a composition structure
 	\end{split}
 \end{equation}
 given by concatenation of paths with addition of parameters, whose identities are constant paths with $r=0$.
-We may assemble this data into a topologically enriched category $\mathcal{P}(\fX)$ that has the points of $\fX$ as objects, the spaces $P(\fX;x,x')$ as morphisms from $x$ to $x'$, concatenation of paths as composition, and constant paths as identity morphisms.
+We may assemble this data into a topologically enriched category $\mathcal{P}(\fX)$ that has the points of $\fX$ as objects, the spaces $P(\fX;x,x')$ as morphisms from $x$ to $x'$, concatenation of paths as composition, and constant paths with $r=0$ as identity morphisms.
 
 Denote by $\Top^\ast$ the category of pointed topological spaces, which we think of as a full subcategory of that of bipointed spaces in the obvious way.
 The \textit{based loop space} functor
@@ -110,7 +110,7 @@ For any singular $1$-simplex $\sigma \in \sSchainsA(\fX,x)$ let
 \[
 \theta_{\fX}[\sigma] = P(\sigma) \circ \theta_1 - c_x,
 \]
-where $(c_x \colon \gcube^0 \to \loops_x \fX) \in \cSchains(\loops_x \fX)$ is the singular $0$-cube determined by the constant loop (with length parameter $0$) at $x \in \fX$.
+where $(c_x \colon \gcube^0 \to \loops_x \fX) \in \cSchains(\loops_x \fX)$ is the singular $0$-cube determined by the constant loop (with $r=0$) at $x \in \fX$.
 For any singular $n$-simplex $\sigma \in \sSchains(\fX,x)$ with $n>1$, let
 \[
 \theta_{\fX}[\sigma] = P(\sigma) \circ \theta_n.
